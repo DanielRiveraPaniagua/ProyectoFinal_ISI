@@ -1,0 +1,29 @@
+############################ Proyecto final (Servicio de recomendacion de peliculas) ###################################
+
+Fichero de texto separado por ,
+
+Ficheros peliculas ()
+	- Nombres
+	- Año
+	- Lista de actores
+
+Grafo de dependencias entre actores. Medido por el numero de peliculas en el que trabajan juntos.
+
+-Lenguaje : JAVA;
+	* Software para grafos.
+	* Informacion volcada a una base de datos relacional.
+	* Eroku --> Sitio de despliegue de aplicaciones web --> Hay que usar PostgreSQL con menos de 10000 filas.
+	* Vamos a usar JDBC para acceder a bases de datos SQL  desde JAVA.
+	* Spark Framework --> Despliegue y programacion de aplicaciones web con microservicios.
+	* Testar todo el codigo con JUNIT y Mockito. Escribir los test antes de crear los metodos a testar.
+	* JDK 1.8.
+	* Documentacion basada en wikis de github y JavaDocs.
+	* Salida de los endpoints JSON o campos separados por ;
+	* Maven
+
+- Podemos incluir mas ficheros con informacion relativa a peliculas.
+- Usaremos Github y Travis.
+
+
+
+Deadline 20 de Enero
