@@ -1,0 +1,18 @@
+** Informaction about movies 
+   Source: https://introcs.cs.princeton.edu/java/45graph/
+
+These input files are as of November 2, 2006. The data is taken from
+the Internet Movie Database.
+
+File            Description                 #movies #actors #edges      
+--------------  --------------------------  ------- ------- ------
+cast.06.txt     movies release in 2006      8780    84236   103815
+cast.00-06.txt  movies release since 2000   52195   348497  606531
+cast.G.txt      movies rated G by MPAA      1288    21177   28485
+cast.PG.txt     movies rated PG by MPAA     3687    74724   116715
+cast.PG13.txt   movies rated PG-13 by MPAA  2538    70325   103265
+cast.mpaa.txt   movies rated by MPAA        21861   280624  627061
+cast.action.txt action movies               14938   139861  266485
+cast.rated.txt  popular movies              4527    122406  217603
+cast.all.txt    over 250,000 movies         285462  933864  3317266
+
