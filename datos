@@ -1,0 +1,4 @@
+https://datasets.imdbws.com/
+
+name.basics --> nm (id persona)/ nombre / año de nacimiento y año de muerte / profesion / id de peliculas famosas
+title.akas --> id de pelicula, titulo e idioma
