@@ -1,8 +1,20 @@
 https://datasets.imdbws.com/
 
 name.basics --> nm (id persona)/ nombre / año de nacimiento y año de muerte / profesion / id de peliculas famosas
+
 title.akas --> id de pelicula, titulo e idioma
+
 title basics -->
 pelicula id 	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear runtimeMinutes	genres
+
 title crew --->
 idpelicula	idDirectors	idwriters
+
+episodes --->
+id_serie	seasonNumber	episodeNumber
+
+title principal --->
+id_pelicula id_persona trabajo
+
+rating --->
+id_pelicula	puntuacionMedia	numeroVotos
