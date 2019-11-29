@@ -6,18 +6,20 @@ import limpiarDatos
 
 class TestLimpiarDatos(unittest.TestCase):
 
+#----------------------------------------Diferentes Tests para las películas --------------------------------------------------------------
+
     def test_extraer_peliculas_1(self):
         with open("./movies.txt", 'r') as reader:  
-            lines = [line.strip() for line in reader]
-        pelicula = lines[0]
-        id_pelicula = 1
-        self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'1,00:01:18 ,2007' +'\n')
+            lines = [line.strip() for line in reader] # se van guardando con strip todas las películas del .txt
+        pelicula = lines[0] #se obtiene la primera película
+        id_pelicula = 1 #identificador de la primera película
+        self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'1,00:01:18 ,2007' +'\n') #se compara el resultado con lo que se esperaba
 
     def test_extraer_peliculas_2(self):
         with open("./movies.txt", 'r') as reader: 
             lines = [line.strip() for line in reader]
-        pelicula = lines[1]
-        id_pelicula = 2
+        pelicula = lines[1] #se obtiene la segunda película
+        id_pelicula = 2 #identificador de la segunda película
         self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'2,002 agenti segretissimi ,1964' +'\n')
 
     def test_extraer_peliculas_3(self):
@@ -39,7 +41,9 @@ class TestLimpiarDatos(unittest.TestCase):
             lines=[line.strip() for line in reader]
         pelicula=lines[4]
         id_pelicula=5
-        self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'5,007 in Rio ,1979' +'\n')        
+        self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'5,007 in Rio ,1979' +'\n')       
+
+#----------------------------------------Diferentes Tests para los actores----------------------------------------------------------------------------         
       
     def test_extraer_actores_1(self):
         with open("./movies.txt", 'r') as reader:  
