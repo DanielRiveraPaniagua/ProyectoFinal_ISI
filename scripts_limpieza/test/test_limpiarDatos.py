@@ -22,7 +22,21 @@ class TestLimpiarDatos(unittest.TestCase):
         pelicula = lines[1]
         id_pelicula = 2
         self.assertEqual(limpiarDatos.extraer_peliculas(pelicula, id_pelicula),'2,002 agenti segretissimi ,1964' +'\n')
-  
+
+    def test_extraer_actores_1(self):
+        with open("./movies.txt", 'r') as reader:  
+            lines = [line.strip() for line in reader]
+        pelicula = lines[0]
+        id_pelicula = 1
+        self.assertEqual(limpiarDatos.extraer_actores(pelicula, id_pelicula),'Darrigo, Paul,1' +'\n' + 'Joëlle, Christine,1' +'\n')
+
+    def test_extraer_actores_2(self):
+        with open("./movies.txt", 'r') as reader:  
+            lines = [line.strip() for line in reader]
+        pelicula = lines[19]
+        id_pelicula = 20
+        self.assertEqual(limpiarDatos.extraer_actores(pelicula, id_pelicula),'van Kempen, Ad,20' + '\n'+ 'Schluter, Ariane,20' + '\n')
+    
                     
                  
 if __name__ == "__main__":
