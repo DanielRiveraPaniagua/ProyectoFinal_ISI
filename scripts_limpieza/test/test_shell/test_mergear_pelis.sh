@@ -7,7 +7,7 @@ load 'libs/bats-assert/load'
 @test "juntar archivos" {
     assert_equal $(for archivo in $(ls ../../../data/datosPeliculasActores/*.txt); 
     do
-		cat $archivo 
+		join $archivo 
 	done) datosMergeados.txt
 }
 
