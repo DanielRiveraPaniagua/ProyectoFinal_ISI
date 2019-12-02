@@ -6,5 +6,6 @@ sed 's/ //g' actores.txt > actores_bueno.txt
 
 meter inserts, para ellos mete a fuego los char necesarios para poder añadir inserts y añado manualmente las comillas para cada uno de los parametros ($1,$2,$3), y el resto como no tengo información sobre ello, lo he declarado "undefined".
 -
-awk -F"," '{print "INSERT INTO Actores(apellido,nombre,id_actor,pais_de_origen, fecha_nacimiento,fecha_muerte VALUES(""\"" $1 "\","  "\"" $2 "\"," $3 ", undefined," "undefined," "undefined);"}' actores_bueno.txt > insert.txt
+awk -F"," 'BEGIN{count=1} {print "INSERT INTO Actores(apellido,nombre,id_pelicula,id_actor,pais_de_origen, fecha_nacimiento,fecha_muerte) VALUES(""\"" $1 "\","  "\"" $2 "\"," $3  "," count++ "," """\"undefined" "\"," "\"undefined" "\"," "\"undefined" "\""");"}' actores_bueno.txt > insert.txt
+
 
