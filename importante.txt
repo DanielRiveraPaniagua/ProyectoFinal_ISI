@@ -1,0 +1,17 @@
+generos disponibles:
+	Documentary
+	Short
+	Animation
+	Comedy
+	Romance
+	Action
+	Sport
+	News
+	Fantasy
+	Horror
+	Drama
+	Biography
+	Crime
+	Western
+	Family
+	Adventure
