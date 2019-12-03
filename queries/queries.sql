@@ -15,7 +15,7 @@ ORDER BY directores.apellidos
 
 SELECT peliculas.nombre,
 peliculas.duracion
-FROM Películas
+FROM peliculas
 ORDER BY peliculas.duracion
 
 #Información de las películas
