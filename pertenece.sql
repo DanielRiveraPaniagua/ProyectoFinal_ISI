@@ -10,3 +10,9 @@ CREATE TABLE pertenece(
 
 
 );
+
+INSERT INTO pertenece VALUES('Short', '58271');
+INSERT INTO pertenece VALUES('Short', '91073');
+INSERT INTO pertenece VALUES('Documentary', '250256');
+
+
