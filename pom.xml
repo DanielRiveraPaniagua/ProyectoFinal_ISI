@@ -86,7 +86,7 @@
           <appName>peliculasurjc</appName>
           <processTypes>
             <!-- Tell Heroku how to launch your application -->
-            <web>java -jar ./target/peliculasurjc-0.0.1-jar-with-dependencies.jar</web>
+            <web>java -jar ./target/ProyectoFinal-0.0.1-jar-with-dependencies.jar</web>
           </processTypes>
         </configuration>
       </plugin>
