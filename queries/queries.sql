@@ -1,15 +1,5 @@
 .open sample.db
 
-#Películas por director
-
-SELECT peliculas.nombre,
-directores.nombre || ' ' || directores.apellidos
-FROM peliculas
-JOIN dirige
-ON peliculas.id_pel = dirige.id_pel
-JOIN directores
-ON dirige.id_dir = directores.id_dir
-ORDER BY directores.apellidos
 
 #Películas por género
 
@@ -60,6 +50,17 @@ SELECT peliculas.nombre, peliculas.anyo
 FROM peliculas
 GROUP BY peliculas.anyo
 ORDER BY peliculas.anyo
+
+#Películas por director
+
+SELECT peliculas.nombre,
+directores.nombre || ' ' || directores.apellidos
+FROM peliculas
+JOIN dirige
+ON peliculas.id_pel = dirige.id_pel
+JOIN directores
+ON dirige.id_dir = directores.id_dir
+ORDER BY directores.apellidos
 
 #Películas por duración
 
