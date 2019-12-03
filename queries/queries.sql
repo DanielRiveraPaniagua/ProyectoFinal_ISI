@@ -11,6 +11,56 @@ JOIN directores
 ON dirige.id_dir = directores.id_dir
 ORDER BY directores.apellidos
 
+#Películas por género
+
+SELECT peliculas.nombre, generos.nombre
+FROM peliculas
+JOIN adecuado_para
+ON peliculas.id_pelicula = adecuado_para.id_pelicula
+JOIN calificacion
+ON adecuado_para.id_pelicula = calificacion.id_pelicula
+JOIN pertenece
+ON calificacion.id_pelicula = pertenece.id_pelicula
+JOIN generos
+ON pertenece.nombre_genero = generos.id_genero
+GROUP BY generos.nombre
+ORDER BY generos.nombre
+
+#Actores por película
+
+SELECT actores.nombre || ' ' || actores.apellido, peliculas.nombre
+FROM actores
+JOIN trabajan
+ON actores.id_actor = trabajan.id_actor
+JOIN peliculas
+ON trabajan.id_pelicula = peliculas.id_pelicula
+ORDER BY peliculas.nombre
+
+#Películas por actor
+
+SELECT peliculas.nombre, actores.nombre || ' ' || actores.apellido
+FROM peliculas
+JOIN trabajan
+ON peliculas.id_pelicula = trabajan.id_pelicula
+JOIN actores
+ON trabajan.id_actor = actores.id_actor
+ORDER BY actores.apellido
+
+#N Películas por valoración
+
+SELECT peliculas.nombre, peliculas.rating
+FROM peliculas
+GROUP BY peliculas.rating 
+ORDER BY peliculas.rating DESC
+LIMIT 10
+
+#Películas por año
+
+SELECT peliculas.nombre, peliculas.anyo
+FROM peliculas
+GROUP BY peliculas.anyo
+ORDER BY peliculas.anyo
+
 #Películas por duración
 
 SELECT peliculas.nombre,
