@@ -1,0 +1,9 @@
+language: java
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  app: peliculasurjc
+  on:
+    all_branches: true
+  api_key:
+    secure: eVIERX85PqnHcxZlajZFwRwzZr+xboMGYF4iFIxdUbrOSaXTbkd4hNcOvxrm+v1R+lX1wEAN/AZjJy9E8nEneBCIlhzCKusvGfGFHf0W+b6XSjVbYxUUwGOlvlGEbt3rpmH11BoxJmlCYetjOnUjAnkJn2UT3QJBRH/YTHaURirDkFKGbvVX1n0jE1H/d8+aaH7Y0fWCePqrWSRKBhWELsVVJ5RBNUB/T7a/lA2mZdi3Qm1pViD+oO5uNMnRnP4l98frMdVU0tr8v5fP6BggSRzyW5NMswvXzbq4RsbbhewY4NtdbJ+9D71DYzfiX1gBG8xl4889LVP7FWY0NUgpqRMoM+uvQMxjXOsQbg/XYMsnhdNDNeUoGpEhR3z+9BvsF3xQuHXoVUqz4+GBJ+46ExhygswAmrBlbq5OsOWWBTJ4t54koPBz2kMhaNnhoPhrJvQQBV808/zQa95o2/vQVm3ljavg8Dde9AlX4GiNwFnyd9P0b/lDXzFK7mlPQyGfUxTSXGMd3ToGm1Oubr3iUGQdec2thM3Ln6ddGq7fgK2ulnrTkmG2+eEPYdSOf/qRLfaGYj5LeTXwI5UnnWTKK8v8UsBNq6/5TbhGcrMYTBW2Hz8V0FJbr624JGkGJ43ZKJFi+tO81lqvzD+KZQvq7+NKIlW1wcTyzUclt25r1Ks=
