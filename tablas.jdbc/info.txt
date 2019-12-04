@@ -1,0 +1,7 @@
+
+
+Este programa crea la tabla de películas a partir del fichero datos_peliculas.txt proporcionado por el grupo 6. 
+
+Este programa se importa como proyecto Maven en eclipse y tras ejecutarlo se llevan a cabo las peticiones get/post en http://localhost:4567.  Es necesario utilizar dentro de este proyecto el fichero pom.xml que nos dio Pedro con este programa.
+
+Tras hacer todos los inserts el programa genera automáticamente una base de datos llamada sample.db
