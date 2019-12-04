@@ -6,11 +6,11 @@
 SELECT peliculas.nombre, generos.nombre
 FROM peliculas
 JOIN adecuado_para
-ON peliculas.id_pelicula = adecuado_para.id_pelicula
+ON peliculas.id_pel = adecuado_para.id_pel
 JOIN calificacion
-ON adecuado_para.id_pelicula = calificacion.id_pelicula
+ON adecuado_para.id_pel = calificacion.id_pel
 JOIN pertenece
-ON calificacion.id_pelicula = pertenece.id_pelicula
+ON calificacion.id_pel = pertenece.id_pel
 JOIN generos
 ON pertenece.nombre_genero = generos.id_genero
 GROUP BY generos.nombre
@@ -23,7 +23,7 @@ FROM actores
 JOIN trabajan
 ON actores.id_actor = trabajan.id_actor
 JOIN peliculas
-ON trabajan.id_pelicula = peliculas.id_pelicula
+ON trabajan.id_pel = peliculas.id_pel
 ORDER BY peliculas.nombre
 
 #Películas por actor
@@ -31,7 +31,7 @@ ORDER BY peliculas.nombre
 SELECT peliculas.nombre, actores.nombre || ' ' || actores.apellido
 FROM peliculas
 JOIN trabajan
-ON peliculas.id_pelicula = trabajan.id_pelicula
+ON peliculas.id_pel = trabajan.id_pel
 JOIN actores
 ON trabajan.id_actor = actores.id_actor
 ORDER BY actores.apellido
@@ -59,7 +59,7 @@ FROM peliculas
 JOIN dirige
 ON peliculas.id_pel = dirige.id_pel
 JOIN directores
-ON dirige.id_dir = directores.id_dir
+ON dirige.id_direc = directores.id_direc
 ORDER BY directores.apellidos
 
 #Películas por duración
@@ -98,7 +98,7 @@ FROM peliculas
 JOIN trabajan
 ON peliculas.id_pel = trabajan.id_pel
 JOIN actores
-ON  trabajan.id_act = actores.id_act
+ON  trabajan.id_actor = actores.id_actor
 JOIN pertenecen
 ON peliculas.id_pel = pertenecen.id_pel
 JOIN generos
@@ -118,8 +118,10 @@ ORDER BY peliculas.pais
 SELECT actores.nombre || ' ' || actores.apellido AS 'Nombre actor',
 directores.nombre || ' ' || directores.apellido AS 'Nombre director'
 FROM actores
-JOIN peliculas ON actores.id_pel = peliculas.id_pel
-JOIN directores ON peliculas.id_pel = directores.id_pel
+JOIN trabajan ON actores.id_actor = trabajan.id_actor
+JOIN peliculas ON trabajan.id_pel = peliculas.id_pel
+JOIN dirigen ON peliculas.id_pel = dirigen.id_pel
+JOIN directores ON dirigen.id_direc = directores.id_direc
 ORDER BY actores.apellido
 
 
@@ -131,13 +133,15 @@ GROUP BY peliculas.idioma
 ORDER BY peliculas.idioma
 
 
-#Directores que trabajaron con cierto director.
+#Directores que trabajaron con cierto actor.
 
 SELECT directores.nombre || ' ' || directores.apellido AS 'Nombre director',
 actores.nombre || ' ' || actores.apellido AS 'Nombre actor'
 FROM directores
-JOIN peliculas ON directores.id_pel = peliculas.id_pel
-JOIN directores ON peliculas.id_pel = actores.id_pel
+JOIN dirigen on directores. id_direc = dirigen.id_direc 
+JOIN peliculas ON dirigen.id_pel = peliculas.id_pel
+JOIN trabajan ON peliculas.id_pel = trabajan.id_pel
+JOIN actores ON trabajan.id_actor = actores.id_actor
 ORDER BY directores.apellido
 
 
@@ -146,6 +150,7 @@ ORDER BY directores.apellido
 SELECT peliculas.nombre,
 guionistas.nombre || ' ' || guionistas.apellido AS 'Nombre guionista'
 FROM guionistas
-JOIN peliculas ON guionistas.id_pel = peliculas.id_pel
+JOIN escriben ON guionistas.id = escriben.id
+JOIN peliculas ON escriben.id_pel = peliculas.id_pel
 GROUP BY guionistas.id_pel
 ORDER BY guionistas.apellido
