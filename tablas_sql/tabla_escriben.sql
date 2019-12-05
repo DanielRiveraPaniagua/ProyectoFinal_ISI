@@ -1,11 +1,11 @@
 .open sample.db
 
 CREATE TABLE escriben(
-	id_pel INT NOT NULL,
-	id INT NOT NULL,
-	PRIMARY KEY (id_pel, id),
-	FOREIGN KEY(id_pel) REFERENCES peliculas(id_pel),
-	FOREIGN KEY(id) REFERENCES guionistas(id)
+	id_pelicula INT NOT NULL,
+	id_guionista INT NOT NULL,
+	PRIMARY KEY (id_pelicula, id_guionista),
+	FOREIGN KEY(id_pelicula) REFERENCES peliculas(id_pelicula),
+	FOREIGN KEY(id_guionista) REFERENCES guionistas(id_guionista)
 );
 
 
