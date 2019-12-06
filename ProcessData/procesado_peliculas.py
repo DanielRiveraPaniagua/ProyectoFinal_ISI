@@ -11,14 +11,14 @@ with open('title.basics.tsv','r') as tsv:
     for row in r:
         n = 0
         title = row[1]
-
+        print(title)
         for fila in re:
             # No encuentra la pelicula y solo da una vuelta dentro
-            n += 1
-            if n == 1:
-                print(fila)
+            #n += 1
+            #if n == 1:
+                #print(fila)
             if title == fila[3]:
-                print("entramos")
+                #print("entramos")
                 id = fila[0]
                 fecha = row[2]
                 movies.write(str(id) + ',' + title + ',' + fecha + '\n')
