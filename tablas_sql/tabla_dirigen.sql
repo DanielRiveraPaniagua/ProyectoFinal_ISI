@@ -1,10 +1,10 @@
 
 .open sample.db
 
-CREATE TABLE dirigen (id_pel INT NOT NULL, 
-		id_direc INT NOT NULL, 
-		PRIMARY KEY (id_pel, id_direc),
-		FOREIGN KEY id_pel REFERENCES peliculas(id_pel),
-		FOREIGN KEY id_direc REFERENCES directores(id_direc));
+CREATE TABLE dirigen (id_pelicula INT NOT NULL, 
+		id_director INT NOT NULL, 
+		PRIMARY KEY (id_pelicula, id_director),
+		FOREIGN KEY id_pelicula REFERENCES peliculas(id_pelicula),
+		FOREIGN KEY id_director REFERENCES directores(id_director));
 
 INSERTS //
