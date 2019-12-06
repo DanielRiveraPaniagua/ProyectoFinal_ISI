@@ -1,7 +1,5 @@
+El programa peliculas.java utiliza el fichero datos_peliculas.txt mientras que tanto actores.java como trabajan.java utilizan el fichero datos_actores.txt. Ambos ficheros son del grupo 3 y se encuentran en su repositorio.
 
-
-Este programa crea la tabla de películas a partir del fichero datos_peliculas.txt proporcionado por el grupo 6. 
-
-Este programa se importa como proyecto Maven en eclipse y tras ejecutarlo se llevan a cabo las peticiones get/post en http://localhost:4567.  Es necesario utilizar dentro de este proyecto el fichero pom.xml que nos dio Pedro con este programa.
+Estos programas se importan como proyectos Maven en eclipse y tras ejecutarlos se llevan a cabo las peticiones get/post en http://localhost:4567.  Es necesario utilizar dentro de este proyecto el fichero pom.xml que nos dio Pedro con este programa.
 
 Tras hacer todos los inserts el programa genera automáticamente una base de datos llamada sample.db

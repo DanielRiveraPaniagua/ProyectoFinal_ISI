@@ -22,8 +22,8 @@ import java.io.InputStreamReader;
 // This code is quite dirty. Use it just as a hello world example 
 // to learn how to use JDBC and SparkJava to upload a file, store 
 // it in a DB, and do a SQL SELECT query
-public class Peliculas {
-    
+public class Actores {
+
     // Connection to the SQLite database. Used by insert and select methods.
     // Initialized in main
     private static Connection connection;
@@ -35,13 +35,13 @@ public class Peliculas {
                                    request.params(":film"));
     }
 
-    public static String select(Connection conn, String table, String film) {
-	String sql = "SELECT * FROM " + table + " WHERE id_pelicula=?";
+    public static String select(Connection conn, String table, String id) {
+	String sql = "SELECT * FROM " + table + " WHERE id_actor=?";
 
 	String result = new String();
-	
+
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-		pstmt.setInt(1, Integer.parseInt(film));
+		pstmt.setString(1, id);
 		ResultSet rs = pstmt.executeQuery();
                 // Commit after query is executed
 		connection.commit();
@@ -54,32 +54,36 @@ public class Peliculas {
 		    result += "nombre = " + rs.getString("nombre") + "\n";
 		    System.out.println("nombre = "+rs.getString("nombre")+"\n");
 
-		    result += "fecha = " + rs.getString("fecha") + "\n";
-		    System.out.println("fecha = "+rs.getString("fecha")+"\n");
+		    result += "apellido = " + rs.getString("apellido") + "\n";
+		    System.out.println("apellido = "+rs.getString("apellido")+"\n");
 
-		    result += "duracion = " + rs.getString("duracion") + "\n";
-		    System.out.println("duracion = "+rs.getString("duracion")+"\n");
+		    result += "fecha_nac = " + rs.getString("fecha_nac") + "\n";
+		    System.out.println("fecha_nac = "+rs.getString("fecha_nac")+"\n");
 
-		    result += "rating = " + rs.getString("rating") + "\n";
-		    System.out.println("rating = "+rs.getString("rating")+"\n");
+		    result += "fecha_muer = " + rs.getString("fecha_muer") + "\n";
+		    System.out.println("fecha_muer = " + rs.getString ("fecha_muer")+"\n");
+
+	    	    result += "pais = " + rs.getString("pais") + "\n";
+		    System.out.println("pais = "+rs.getString("pais")+"\n");
 		}
 	    } catch (SQLException e) {
 	    System.out.println(e.getMessage());
 	}
-	
+
 	return result;
     }
-    
-    
-    public static void insert(Connection conn, int id, String nombre, String fecha, String duracion, int rating) {
-	String sql = "INSERT INTO peliculas(id_pelicula, nombre, fecha, duracion, rating) VALUES(?,?,?,?,?)";
+
+
+    public static void insert(Connection conn, int id, String nombre, String apellido, String fecha_nac, String fecha_muer, String pais) {
+	String sql = "INSERT INTO actores(id_actor, nombre, apellido, fecha_nac, fecha_muer, pais) VALUES(?,?,?,?,?,?)";
 
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 		pstmt.setInt(1, id);
 		pstmt.setString(2, nombre);
-		pstmt.setString(3, fecha);
-		pstmt.setString(4, duracion);
-		pstmt.setInt(5, rating);
+		pstmt.setString(3, apellido);
+		pstmt.setString(4, fecha_nac);
+		pstmt.setString(5, fecha_muer);
+		pstmt.setString(6, pais);
 		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	    System.out.println(e.getMessage());
@@ -89,7 +93,7 @@ public class Peliculas {
     public static void main(String[] args) throws 
 	ClassNotFoundException, SQLException {
 	port(getHerokuAssignedPort());
-	
+
 
 	// Connect to SQLite sample.db database
 	// connection will be reused by every query in this simplistic example
@@ -105,7 +109,7 @@ public class Peliculas {
 	// Main::doWork will return the result of the SQL select
 	// query. It could've been programmed using a lambda
 	// expression instead, as illustrated in the next sentence.
-	get("/:table/:film", Peliculas::doSelect);
+	get("/:table/:film", Actores::doSelect);
 
 	// In this case we use a Java 8 Lambda function to process the
 	// GET /upload_films HTTP request, and we return a form
@@ -128,11 +132,11 @@ public class Peliculas {
 			// Prepare SQL to create table
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30); // set timeout to 30 sec.
-			statement.executeUpdate("drop table if exists peliculas");
-			statement.executeUpdate("create table peliculas (id_pelicula INT, nombre string, fecha string, duracion string, rating INT, PRIMARY KEY (id_pelicula))");
+			statement.executeUpdate("drop table if exists actores");
+			statement.executeUpdate("create table actores (id_actor INT, nombre string, apellido string, fecha_nac string, fecha_muer string, pais string, PRIMARY KEY (id_actor))");
 
 
-			
+
 			// Read contents of input stream that holds the uploaded file
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
@@ -141,28 +145,32 @@ public class Peliculas {
 			    System.out.println(s);
 
 			    // Tokenize the film name and then the actors, separated by "/"
-			    StringTokenizer tokenizer = new StringTokenizer(s, "|");
+			    StringTokenizer tokenizer = new StringTokenizer(s, ",");
 
 			    // First token is the film name(year)
-			    int id = Integer.parseInt(tokenizer.nextToken());
+			    String apellido = tokenizer.nextToken();
 
 			    String nombre = tokenizer.nextToken();
 
- 			    String fecha = tokenizer.nextToken();
+ 			    int id_pel = Integer.parseInt (tokenizer.nextToken());
 
- 			    String duracion = tokenizer.nextToken();
+ 			    int id = Integer.parseInt(tokenizer.nextToken());
 
- 			    int rating = Integer.parseInt(tokenizer.nextToken());
+ 			    String fecha_nac = tokenizer.nextToken();
 
-			    if (id == 500) {
+ 			    String fecha_muer = tokenizer.nextToken();
+
+ 			    String pais = tokenizer.nextToken();
+
+			    if (id_pel == 501) {
 				break;
 			    }
 
-			    insert(connection, id, nombre, fecha, duracion, rating);
-			   
+			    insert(connection, id, nombre, apellido, fecha_nac, fecha_muer, pais);
+
 			    connection.commit();
 
-			    
+
 			}
 			input.close();
 		    }
