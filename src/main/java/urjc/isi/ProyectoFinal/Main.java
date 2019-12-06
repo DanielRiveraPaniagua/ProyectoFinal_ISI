@@ -8,11 +8,11 @@ import spark.Response;
 import java.net.URISyntaxException;
 
 public class Main {
-  
-    public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-	String result = new String("Film application is in WIP. THANKS!");
 
-	return result;
+    public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
+	     String result = new String("Film application is in WIP. THANKS!");
+
+	     return result;
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
@@ -20,7 +20,7 @@ public class Main {
 
         // spark server
         get("/welcome", Main::doWork);
-
+        redirect.get("*", "/welcome");
     }
 
     static int getHerokuAssignedPort() {
