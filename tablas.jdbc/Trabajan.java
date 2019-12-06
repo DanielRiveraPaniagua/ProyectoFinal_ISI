@@ -63,7 +63,7 @@ public class Trabajan {
     
     
     public static void insert(Connection conn, int id_pelicula, int id_actor) {
-	String sql = "INSERT INTO dirigen (id_pelicula, id_actor) VALUES(?,?)";
+	String sql = "INSERT INTO trabajan (id_pelicula, id_actor) VALUES(?,?)";
 
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 		pstmt.setInt(1, id_pelicula);
