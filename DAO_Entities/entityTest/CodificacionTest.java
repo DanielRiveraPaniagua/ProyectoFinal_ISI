@@ -53,11 +53,4 @@ public class CodificacionTest {
 		Genero genre = new Genero();
 		genre.setNombre(nombre);
 	}
-	
-		@Test
-		public void Testshouldfail(){
-			assertEquals(1,2);
-		}
-
-
 }
