@@ -112,8 +112,4 @@ public class MockitoTest {
 		osw.close();
 		verify(mock).close();
 	}
-	@Test
-	public void Testshouldfail(){
-		assertEquals(1,2);
-	}
 }
