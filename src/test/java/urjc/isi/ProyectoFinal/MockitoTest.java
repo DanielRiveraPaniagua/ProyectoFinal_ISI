@@ -15,7 +15,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class MockitoTests {
+public class MockitoTest {
 
 	@Test
 	public void MockListSize() {
