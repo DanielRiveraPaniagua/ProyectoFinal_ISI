@@ -9,24 +9,24 @@ import urjc.etsit.isi.entity.*;
 import java.util.*;
 
 public class CodificacionTest {
-	
+
 	private int id;
 	private String nombre;
 
-	@Before     
+	@Before
 	public void setUp()
 	{
 	   id = 0;
 	   nombre = "";
 	}
-	
-	@After     
+
+	@After
 	public void tearDown()
 	{
 	   id = 0;
 	   nombre = "";
 	}
-	
+
 	@Test()
 	public void testIdGreaterThan1()
 	{
@@ -34,10 +34,10 @@ public class CodificacionTest {
 		Genero genre = new Genero();
 		genre.setId(id);
 		assertEquals(23,genre.getId());
-		
+
 	}
 
-	
+
 	@Test(expected=InvalidParameter.class)
 	public void testIdLessThan1()
 	{
@@ -45,7 +45,7 @@ public class CodificacionTest {
 		Genero genre = new Genero();
 		genre.setId(id);
 	}
-	
+
 	@Test(expected=InvalidParameter.class)
 	public void testNullName()
 	{
@@ -53,7 +53,11 @@ public class CodificacionTest {
 		Genero genre = new Genero();
 		genre.setNombre(nombre);
 	}
-
+	
+		@Test
+		public void Testshouldfail(){
+			assertEquals(1,2);
+		}
 
 
 }

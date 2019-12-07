@@ -30,9 +30,9 @@ public class MockitoTests {
 		when(list.size()).thenReturn(10).thenReturn(20);
 		assertEquals(10, list.size()); // Primera llamada
 		assertEquals(20, list.size()); // Segunda llamada
-		assertEquals(20, list.size()); // Tercera llamada y 
+		assertEquals(20, list.size()); // Tercera llamada y
 		      						  // subsiguientes devuelven el mismo valor
-		
+
 		verify(list, times(3)).size();
 	}
 
@@ -49,15 +49,15 @@ public class MockitoTests {
 		List<String> list = mock(List.class);
 		when(list.get(anyInt())).thenReturn("Hello World");
 		when(list.get(3)).thenReturn("Bye World");
-		
+
 		assertEquals("Hello World", list.get(0));
 		assertEquals("Hello World", list.get(1));
 		assertEquals("Hello World", list.get(2));
 		assertEquals("Bye World", list.get(3));
-		
-		
+
+
 	}
-	
+
 	@Test
 	public void MockIterator_will_return_hello_world(){
 		Iterator i = mock(Iterator.class);
@@ -76,7 +76,7 @@ public class MockitoTests {
 		assertEquals(1,c.compareTo("Test"));
 		assertEquals(0,c.compareTo("Foo"));
 	}
-	
+
 
 	@Test
 	public void MockWithUnspecifiedArguments(){
@@ -95,14 +95,14 @@ public class MockitoTests {
 
 
 	@Test(expected=IOException.class)
-	public void MockOutputStreamWriterRethrowsAnExceptionFromOutputStream() 
+	public void MockOutputStreamWriterRethrowsAnExceptionFromOutputStream()
 			throws IOException{
 		OutputStream mock=mock(OutputStream.class);
 		OutputStreamWriter osw=new OutputStreamWriter(mock);
 		doThrow(new IOException()).when(mock).close();
 		osw.close();
 	}
-	
+
 
 	@Test
 	public void MockOutputStreamWriterClosesOutputStreamOnClose()
@@ -111,6 +111,11 @@ public class MockitoTests {
 		OutputStreamWriter osw=new OutputStreamWriter(mock);
 		osw.close();
 		verify(mock).close();
+	}
+
+	@Test
+	public void Testshouldfail(){
+		assertEquals(1,2);
 	}
 
 }
