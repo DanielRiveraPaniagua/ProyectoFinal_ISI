@@ -8,7 +8,7 @@ peliculas
 """
 def extraer_peliculas(line, id_pelicula):
     pelicula = line.split("/")[0].split("(")
-    return str(id_pelicula) + ',' + pelicula[0] + ',' + pelicula[1].replace(')','') + '\n'
+    return str(id_pelicula) + '|' + pelicula[0] + '|' + pelicula[1].replace(')','') + '\n'
 
 """
 Esta funcion extrae los nombres y apellidos de los actores que han trabajado en
