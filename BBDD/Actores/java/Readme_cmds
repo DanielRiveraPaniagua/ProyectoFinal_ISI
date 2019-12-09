@@ -1,0 +1,14 @@
+eliminar espacios en blanco, para poder añadir doble comillas
+-
+sed 's/ //g' actores.txt > actores_bueno.txt 
+(tambien se podria hacer a mano con notepad)
+
+meter inserts, para ellos mete a fuego los char necesarios para poder añadir inserts y añado manualmente las comillas para cada uno de los parametros ($1,$2,$3), y el resto como no tengo información sobre ello, lo he declarado "undefined".
+
+Además de esto al parecer existen actores sin apellido, luego es necesario añadir un condicional al awk para saber cuando tiene 3 valores el file actores.txt, o lo que elo mismo el 3 parametro ($3) es NULL.
+-
+awk -F"," 'BEGIN{count=1}
+	{if($3 != NULL)print "\"" $1 "\","  "\"" $2 "\"," $3  "," count++ "," """\"undefined" "\"," "\"undefined" "\"," "\"undefined" "\""; else if($3==NULL) print """\"undefined" "\","  "\"" $1 "\"," $2  "," count++ "," """\"undefined" "\"," "\"undefined" "\"," "\"undefined" "\""}' actores.txt > datos_actores.txt
+
+
+
