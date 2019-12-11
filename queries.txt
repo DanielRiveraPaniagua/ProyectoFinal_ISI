@@ -1,4 +1,25 @@
+* directores.txt * 
 select nconst, primaryName, birthYear, deathYear from name_basics
 where nconst in ( select tc.directors from Peliculas p
 inner join title_crew tc on tc.tconst = p.field1) AND
 primaryProfession like "%director%";
+
+* relacion_directores_peliculas.txt * 
+select tconst, directors from title_crew
+where directors in ( select nconst from name_basics
+where nconst in ( select tc.directors from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1) AND
+primaryProfession like "%director%");
+
+* guionistas.txt *
+select nconst, primaryName, birthYear, deathYear from name_basics
+where nconst in ( select tc.writers from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1) AND
+primaryProfession like "%writer%";
+
+* relacion_guionistas_peliculas.txt *
+select tconst, writers from title_crew
+where writers in ( select nconst from name_basics
+where nconst in ( select tc.writers from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1) AND
+primaryProfession like "%writer%");
