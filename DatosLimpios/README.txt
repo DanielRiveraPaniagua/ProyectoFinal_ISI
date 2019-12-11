@@ -1,5 +1,10 @@
 * FORMATO FICHEROS.TXT *
 
+ - datos_peliculas_FINAL.txt
+	-Tiene el siguiente formato, CADA CAMPO SEPARADO POR TABULADORES: id_imdb id_pedro titulo año
+	-Son unas 197.000 películas.
+	-Queda pendiente borrar el peliculas.txt anterior, cuando confirmemos que estos son los datos sobre los que queremos trabajar.
+
  - PELICULAS.TXT -> ID_FILM~TITLE~YEAR
  
 	1) Contiene las peliculas aportadas por el fichero de Pedro con los id de IMDb.
