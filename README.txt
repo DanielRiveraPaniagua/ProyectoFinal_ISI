@@ -1,13 +1,15 @@
 Informacion para nosotros Felipe (luego hay que quitarla cuando todo ok):
 Peliculas: 197971
 
-Nº directores sin LIKE en query: 57081
-Nº directores con LIKE en query: 53117
+Nº directores: 53117
 Nº relaciones directores_peliculas: 214531
+En la relacion se contemplan todas las peliculas para las cuales haya:
+ningun director (\N), un director o más.
 
-Nº guionistas sin LIKE en query: 43841
-Nº guionstas con LIKE en query: 38634
-Nº relaciones guionistas_peliculas:294536
+Nº guionstas: 38634
+Nº relaciones guionistas_peliculas: 327064
+En la relacion se contemplan todas las peliculas para las cuales haya:
+ningun guionista (\N), un guionista o más.
 
 ******************
 * directores.txt *
