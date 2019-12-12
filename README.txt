@@ -3,7 +3,7 @@ Peliculas: 197971
 
 Nº directores sin LIKE en query: 57081
 Nº directores con LIKE en query: 53117
-Nº relaciones directores_peliculas: 922307
+Nº relaciones directores_peliculas: 214531
 
 Nº guionistas sin LIKE en query: 43841
 Nº guionstas con LIKE en query: 38634
@@ -20,7 +20,7 @@ birthyear: Año de nacimiento
 deathyear: Año de muerte
 
 *************************************
-* relacion_directores_peliculas.txt *
+* relacion_directores_peliculas_final.txt *
 *************************************
 tconst	directors
 

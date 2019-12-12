@@ -1,15 +1,17 @@
 * directores.txt * 
-select nconst, primaryName, birthYear, deathYear from name_basics
+select DISTINCT(nconst), primaryName, birthYear, deathYear from name_basics
 where nconst in ( select tc.directors from Peliculas p
 inner join title_crew tc on tc.tconst = p.field1) AND
 primaryProfession like "%director%";
 
 * relacion_directores_peliculas.txt * 
-select tconst, directors from title_crew
-where directors in ( select nconst from name_basics
-where nconst in ( select tc.directors from Peliculas p
+select tc.directors from Peliculas p
 inner join title_crew tc on tc.tconst = p.field1) AND
 primaryProfession like "%director%");
+
+Obtengo fichero relacion_directores_guionistas_sin_split.txt.
+Mediante relacion_directores_peliculas.py obtengo el fichero final 
+de la relacion.
 
 * guionistas.txt *
 select nconst, primaryName, birthYear, deathYear from name_basics
