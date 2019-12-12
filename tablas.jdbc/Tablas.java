@@ -1,4 +1,5 @@
-package isi.final_prac;
+package prueba_jdbc.prueba_jdbc;
+
 
 import static spark.Spark.*;
 import spark.Request;
@@ -20,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 
-public class Tablas {
+public class tablas {
     
     
     private static Connection connection;
@@ -123,6 +124,18 @@ public class Tablas {
     	    System.out.println(e.getMessage());
     	}
         }
+    
+    public static void insert_trabajan(Connection conn, int id_pelicula, int id_actor) {
+    	String sql = "INSERT INTO trabajan (id_pelicula, id_actor) VALUES(?,?)";
+
+    	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    		pstmt.setInt(1, id_pelicula);
+    		pstmt.setInt(2, id_actor);
+    		pstmt.executeUpdate();
+    	    } catch (SQLException e) {
+    	    System.out.println(e.getMessage());
+    	}
+        }
 
     public static void main(String[] args) throws 
 	ClassNotFoundException, SQLException {
@@ -134,9 +147,9 @@ public class Tablas {
 	connection.setAutoCommit(false);
 
 	
-	get("/:table/:param", Tablas::doSelect);
+	get("/:table/:param", tablas::doSelect);
 	
-	get("/:tabla1/:tabla2/:param", Tablas::doSelectTwoTables);
+	get("/:tabla1/:tabla2/:param", tablas::doSelectTwoTables);
 
 	
 	get("/upload_peliculas", (req, res) -> 
@@ -228,8 +241,57 @@ public class Tablas {
 		return result;
 	    });
 
-    }
+    get("/upload_trabajan", (req, res) -> 
+    "<form action='/upload3' method='post' enctype='multipart/form-data'>" 
+    + "    <input type='file' name='uploaded_trabajan_file' accept='.txt'>"
+    + "    <button>Upload file</button>" + "</form>");
+    
+    
+    post("/upload3", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		try (InputStream input = req.raw().getPart("uploaded_trabajan_file").getInputStream()) { 
+		
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			statement.executeUpdate("drop table if exists trabajan");
+			statement.executeUpdate("create table trabajan (id_pelicula INT, id_actor INT, PRIMARY KEY (id_pelicula, id_actor), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_actor REFERENCES actores (id_actor))");
 
+
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			String s;
+			int iter = 1;
+			while ((s = br.readLine()) != null && iter <= 500) {
+				iter++;
+
+			    StringTokenizer tokenizer = new StringTokenizer(s, ",");
+
+			    String apellido = tokenizer.nextToken();
+
+			    String nombre = tokenizer.nextToken();
+
+			    int id_pel = Integer.parseInt (tokenizer.nextToken());
+
+ 			    int id_actor = Integer.parseInt(tokenizer.nextToken());
+
+ 			    String fecha_nac = tokenizer.nextToken();
+
+ 			    String fecha_muer = tokenizer.nextToken();
+
+ 			    String pais = tokenizer.nextToken();
+
+			    insert_trabajan(connection, id_pel, id_actor);
+			   
+			    connection.commit();
+			    
+			}
+			input.close();
+		    }
+		return result;
+	    });
+    }
+    
     static int getHerokuAssignedPort() {
 	ProcessBuilder processBuilder = new ProcessBuilder();
 	if (processBuilder.environment().get("PORT") != null) {
@@ -237,4 +299,4 @@ public class Tablas {
 	}
 	return 4567;
     }
-}
+   }
