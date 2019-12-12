@@ -1,4 +1,3 @@
-Informacion para nosotros Felipe (luego hay que quitarla cuando todo ok):
 Peliculas: 197971
 
 Nº directores: 53117
