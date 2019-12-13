@@ -35,3 +35,11 @@ join ID_PELI_ACTOR ON ID_500.field1=ID_PELI_ACTOR.FIELD1
 
 las 500 mejores peliculas por rating, con su campo rating
 {id_pelicula}.{id_pedro} {titulo} { año} {rating}
+
+*actors.txt
+{id_actor}.{nombre y apellidos} {año_nacimiento}{año_muerte}
+todos los actores de las peliculas que elegimos (las 500 mejores)
+
+*peliculas_actor_info.txt
+{id_pelicula}.{id_actor}.{nombre y apellidos} {año_nacimiento}{año_muerte}
+lo mismo que el anterior pero además con el id de la pelicula por si fuera de utilidad
