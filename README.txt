@@ -10,6 +10,9 @@ Nº relaciones guionistas_peliculas: 327064
 En la relacion se contemplan todas las peliculas para las cuales haya:
 ningun guionista (\N), un guionista o más.
 
+Nº generos: 29(contando tambien el \N)
+Nº relaciones peliculas_generos: 335445
+
 ******************
 * directores.txt *
 ******************
@@ -45,5 +48,20 @@ tconst	writers
 
 tconst: id_pelicula
 writers: id_guionista
+
+*************************************
+*  relacion_peliculas_generos.txt   *
+*************************************
+tconst  genres
+
+tconst: id_pelicula
+genres: género
+
+******************
+*   generos.txt  *
+******************
+genres
+
+genres: género
 
 La separacion entre atributos es un tabulador.
