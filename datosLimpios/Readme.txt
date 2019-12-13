@@ -11,4 +11,10 @@ FORMATO DE LOS FICHEROS DE DATOS LIMPIOS
 
 {id_pelicula}. {Nombre}. {fecha de salida}
 
+*id_peli_actor.txt
+FORMATO:
+{id_pelicula} .{id_actor}
+Fichero de información que relaciona las peliculas en las que ha trabajado el actor 
+
+
 
