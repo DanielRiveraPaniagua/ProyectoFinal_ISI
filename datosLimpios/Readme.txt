@@ -17,4 +17,13 @@ FORMATO:
 Fichero de información que relaciona las peliculas en las que ha trabajado el actor 
 
 
+*rating.txt
+FORMATO:
+{id_pelicula}. {rating}. {num_votos}
+Fiecho que contiene el id con cada una de las valoraciones y los votos
 
+*id_500_mejores.txt
+Fichero que obtiene las 500 mejores peliculas por rating
+para ello se ha empleado la querie---->
+SELECT * FROM RATING
+ORDER BY FIELD2 DESC limit 500
