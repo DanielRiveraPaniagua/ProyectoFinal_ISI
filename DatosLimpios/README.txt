@@ -32,8 +32,19 @@ join ID_PELI_ACTOR ON ID_500.field1=ID_PELI_ACTOR.FIELD1
 *peliculas_COMPLETO.txt
 
 las 500 mejores peliculas por rating, con su campo rating y num_votos
-{id_pelicula}.{id_pedro} {titulo} { año}{esAdulta} {rating} {num_votos}
+{id_pelicula}. {titulo} { año}{esAdulta} {rating} {num_votos}
 he tenido que separarlo por pipes, porque por tabuladores no se separaba bien el num_votos
+
+QUERIE:
+SELECT pelis.field1,pelis.field3,pelis.field4,info.isadult,rating.field2,rating.field3 FROM PELIS
+inner JOIN rating on rating.field1=pelis.field1
+inner join info on info.tconst=rating.field1
+order by rating.field2 desc ,
+ rating.field3 desc limit 500
+
+comando sh, para ver si hay repetido : awk '!NF || !seen[$0]++' pelis_v.txt > pelis_norepe.txt
+
+
 
 *actors.txt
 {id_actor}.{nombre y apellidos} {año_nacimiento}{año_muerte}
