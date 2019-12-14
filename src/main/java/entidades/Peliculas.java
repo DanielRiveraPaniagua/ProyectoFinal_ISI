@@ -2,6 +2,7 @@ package urjc.isi.entidades;
 
 import java.util.Objects;
 import urjc.isi.exceptions.*;
+import java.util.StringTokenizer;
 
 //Solamente es la definición de la tabla
 //sus campos y como trabajar con ellos
@@ -29,6 +30,16 @@ public class Peliculas {
     this.setDuracion(duracion);
     this.setRating(rating);
     this.setNVotos(nvotos);
+	}
+	public Peliculas(String line){
+		// Se tokeniza la linea
+		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
+		this.setIdPelicula(Integer.valueOf(tokenizer.nextToken()));
+		this.setTitulo(tokenizer.nextToken());
+		this.setAño(Integer.valueOf(tokenizer.nextToken()));
+		this.setDuracion(Double.valueOf(tokenizer.nextToken()));
+		this.setRating(Double.valueOf(tokenizer.nextToken()));
+		this.setNVotos(Integer.valueOf(tokenizer.nextToken()));
 	}
 
   // Setter Methods

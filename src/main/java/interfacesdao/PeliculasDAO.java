@@ -16,7 +16,7 @@ import javax.servlet.MultipartConfigElement;
 //puedan implementar de manera genérica
 
 //A estos metodos son a los que llamaremos para
-//implentar las distintas respuestas para el
+//implementar las distintas respuestas para el
 //servidor
 public class PeliculasDAO extends GenericDAO{
   //Para meterlo como parte de interfaz hay que encontrar comodefinir que detecte
@@ -39,22 +39,32 @@ public class PeliculasDAO extends GenericDAO{
   }
 
   @Override
-  public void uploadTable(BufferedReader br, Connection c)throws IOException,SQLException{
-    Peliculas pelicula = new Peliculas();
+  public void uploadTable(BufferedReader br, Connection c) throws IOException,SQLException {
     String s;
     while ((s = br.readLine()) != null) {
-			    StringTokenizer tokenizer = new StringTokenizer(s,"\t");
-          //Probablemente crear constructor que reciba una linea y
-          // la tokenize en Peliculas.java
-			     pelicula.setIdPelicula(Integer.valueOf(tokenizer.nextToken()));
-           pelicula.setTitulo(tokenizer.nextToken());
-           pelicula.setAño(Integer.valueOf(tokenizer.nextToken()));
-           pelicula.setDuracion(Double.valueOf(tokenizer.nextToken()));
-           pelicula.setRating(Double.valueOf(tokenizer.nextToken()));
-           pelicula.setNVotos(Integer.valueOf(tokenizer.nextToken()));
-				   insert(c, pelicula);
+			    Peliculas pelicula = new Peliculas(s);
+				insert(c, pelicula);
 			    c.commit();
-			}
+	}
   }
 
+  @Override
+  public void dropTable(Connection c) throws SQLException {
+	  Statement statement = c.createStatement();
+	  statement.setQueryTimeout(30);
+	  statement.executeUpdate("drop table if exists peliculas");
+  }
+
+  @Override
+  public Boolean tableExists(Connection c) throws SQLException {
+	  DatabaseMetaData dbm = c.getMetaData();
+	  ResultSet tables = dbm.getTables(null, null, "peliculas", null);
+	  if (tables.next()) {
+		  // La tabla existe
+		  return true;
+	  } else {
+		  // No existe la tabla
+		  return false;
+	  }
+  }
 }
