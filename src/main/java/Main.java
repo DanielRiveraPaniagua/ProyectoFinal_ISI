@@ -8,8 +8,7 @@ import spark.Response;
 import java.net.URISyntaxException;
 
 import java.sql.*;
-import urjc.isi.interfacesdao.GenericDAO;
-import urjc.isi.interfacesdao.PeliculasDAO;
+import urjc.isi.interfacesdao.*;
 import javax.servlet.MultipartConfigElement;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -64,10 +63,7 @@ public class Main {
         get("/:table/:film", Main::doSelect);
         c = DriverManager.getConnection("jdbc:sqlite:sample.db"); //Habría que usar el connect()
         c.setAutoCommit(false);
-        PeliculasDAO tables = new PeliculasDAO(); //No se que decir al respecto de que tengamos que
-            //instanciar un objeto para poder hacer uploadTable posteriormente...
-            //Si pasamos de la interfaz y solo hacemos la clase abastracta podemos
-            //hacer esos métodos static y no nos daría problemas. pero yo que se
+        GenericDAOInterface tables = new PeliculasDAO();
         post("/upload", (req, res) -> {
           req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
           String result = "File uploaded!";
@@ -77,7 +73,7 @@ public class Main {
             statement.setQueryTimeout(30); // set timeout to 30 sec.
             statement.executeUpdate("drop table if exists films");
             statement.executeUpdate("create table peliculas(idpelicula int,titulo string, año int, duracion double, rating double, nvotos int)");
-            
+
             InputStreamReader isr = new InputStreamReader(input);
             BufferedReader br = new BufferedReader(isr);
             tables.uploadTable(br,c);

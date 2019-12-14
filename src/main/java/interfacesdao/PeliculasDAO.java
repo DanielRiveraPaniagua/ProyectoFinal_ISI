@@ -9,7 +9,6 @@ import urjc.isi.entidades.Peliculas;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-import javax.servlet.MultipartConfigElement;
 
 //Aqui vienen las cosas propias de cada tabla,
 //es decir, las queries o cosas que no se
@@ -18,20 +17,21 @@ import javax.servlet.MultipartConfigElement;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
-public class PeliculasDAO extends GenericDAO{
+public class PeliculasDAO extends GenericDAO<Peliculas>{
   //Para meterlo como parte de interfaz hay que encontrar comodefinir que detecte
   // Peliculas como un objeto cualquiera, es decir que obligue a rellenar eso con
   //, por ejemplo, algo que extienda de Entidades
-  public static void insert(Connection c, Peliculas pelicula) {
+  @Override
+  public void insert(Connection c, Peliculas entity) {
   	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  		pstmt.setInt(1, pelicula.getIdPelicula());
-  		pstmt.setString(2, pelicula.getTitulo());
-      pstmt.setInt(3, pelicula.getAño());
-      pstmt.setDouble(4, pelicula.getDuracion());
-      pstmt.setDouble(5, pelicula.getRating());
-      pstmt.setInt(6, pelicula.getNVotos());
+  		pstmt.setInt(1, entity.getIdPelicula());
+  		pstmt.setString(2, entity.getTitulo());
+      pstmt.setInt(3, entity.getAño());
+      pstmt.setDouble(4, entity.getDuracion());
+      pstmt.setDouble(5, entity.getRating());
+      pstmt.setInt(6, entity.getNVotos());
   		pstmt.executeUpdate();
     } catch (SQLException e) {
   	    System.out.println(e.getMessage());
@@ -42,10 +42,10 @@ public class PeliculasDAO extends GenericDAO{
   public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException {
     String s;
     while ((s = br.readLine()) != null) {
-			    Peliculas pelicula = new Peliculas(s);
-				insert(c, pelicula);
-			    c.commit();
-	}
+      Peliculas pelicula = new Peliculas(s);
+      insert(c, pelicula);
+      c.commit();
+    }
   }
 
   @Override
@@ -67,7 +67,7 @@ public class PeliculasDAO extends GenericDAO{
 		  return false;
 	  }
   }
-
+  @Override
   public List<Peliculas> selectAll(Connection c){
 	  List<Peliculas> filmList = new ArrayList<>();
 	  String sql = "SELECT * from peliculas";
@@ -85,12 +85,12 @@ public class PeliculasDAO extends GenericDAO{
 			  // Añado la peli a la lista de pelis
 			  filmList.add(peli);
 		  }
-      } catch (SQLException e) {
+    } catch (SQLException e) {
 		  System.out.println(e.getMessage());
 	  }
 	  return filmList;
   }
-
+  @Override
   public Peliculas selectByID (Connection c, String idpelicula){
 	  String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
 	  Peliculas peli = new Peliculas();

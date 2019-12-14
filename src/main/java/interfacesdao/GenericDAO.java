@@ -1,15 +1,13 @@
 package urjc.isi.interfacesdao;
 
 import java.sql.*;
-import java.util.List;
-import urjc.isi.exceptions.*;
 import urjc.isi.interfacesdao.GenericDAOInterface;
 
 //Cosasa muy genericas, alguno de los métodos
 //se pueden quedar sin implementar, esos son los
 //que pueden venir de la interfaz para darles
 //caracter de obligatoriedad
-public abstract class GenericDAO implements GenericDAOInterface{
+public abstract class GenericDAO<T> implements GenericDAOInterface<T>{
 
 	private Connection c;
 
