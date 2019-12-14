@@ -8,7 +8,7 @@ import java.io.IOException;
 //propongo los siguientes
 //Falta mucho que implementar por aquí,...,mucho.
 public interface GenericDAOInterface{
-  public Boolean uploadTable(BufferedReader br,Connection c) throws IOException, SQLException;
+  public void uploadTable(BufferedReader br,Connection c) throws IOException, SQLException;
   // dropTable;
   // insert;
   // selectAll;

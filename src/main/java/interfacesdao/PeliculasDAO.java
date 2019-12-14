@@ -39,7 +39,7 @@ public class PeliculasDAO extends GenericDAO{
   }
 
   @Override
-  public Boolean uploadTable(BufferedReader br, Connection c)throws IOException,SQLException{
+  public void uploadTable(BufferedReader br, Connection c)throws IOException,SQLException{
     Peliculas pelicula = new Peliculas();
     String s;
     c.prepareStatement("create table peliculas(idpelicula int,titulo string, año int, duracion double, rating double, nvotos int)");
@@ -56,7 +56,6 @@ public class PeliculasDAO extends GenericDAO{
 				   insert(c, pelicula);
 			    c.commit();
 			}
-      return true;
   }
 
 }
