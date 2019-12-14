@@ -31,10 +31,11 @@ SELECT ID_500.FIELD1,ID_PELI_ACTOR.FIELD2 FROM ID_500
 join ID_PELI_ACTOR ON ID_500.field1=ID_PELI_ACTOR.FIELD1 
 
 
-*peliculas_RATING
+*peliculas_COMPLETO.txt
 
-las 500 mejores peliculas por rating, con su campo rating
-{id_pelicula}.{id_pedro} {titulo} { año} {rating}
+las 500 mejores peliculas por rating, con su campo rating y num_votos
+{id_pelicula}.{id_pedro} {titulo} { año}{esAdulta} {rating} {num_votos}
+he tenido que separarlo por pipes, porque por tabuladores no se separaba bien el num_votos
 
 *actors.txt
 {id_actor}.{nombre y apellidos} {año_nacimiento}{año_muerte}
