@@ -11,8 +11,8 @@ public interface GenericDAOInterface{
   public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException;
   public void dropTable(Connection c) throws SQLException;
   public Boolean tableExists(Connection c) throws SQLException;
-  // insert;
-  // selectAll;
+  // insert; Completado
+  // selectAll; Completado
   // selectByID;
   // deleteByID;
 }

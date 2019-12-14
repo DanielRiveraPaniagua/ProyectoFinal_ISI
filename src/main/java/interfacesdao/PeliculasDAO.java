@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 import urjc.isi.entidades.Peliculas;
 
-import java.util.StringTokenizer;
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import javax.servlet.MultipartConfigElement;
@@ -39,7 +39,7 @@ public class PeliculasDAO extends GenericDAO{
   }
 
   @Override
-  public void uploadTable(BufferedReader br, Connection c) throws IOException,SQLException {
+  public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException {
     String s;
     while ((s = br.readLine()) != null) {
 			    Peliculas pelicula = new Peliculas(s);
@@ -66,5 +66,48 @@ public class PeliculasDAO extends GenericDAO{
 		  // No existe la tabla
 		  return false;
 	  }
+  }
+
+  public List<Peliculas> selectAll(Connection c){
+	  List<Peliculas> filmList = new ArrayList<>();
+	  String sql = "SELECT * from peliculas";
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  Peliculas peli = new Peliculas();
+			  peli.setIdPelicula(Integer.parseInt(rs.getString("idpelicula")));
+			  peli.setTitulo(rs.getString("titulo"));
+			  peli.setAño(Integer.parseInt(rs.getString("año")));
+			  peli.setDuracion(Double.parseDouble(rs.getString("duracion")));
+			  peli.setRating(Double.parseDouble(rs.getString("rating")));
+			  peli.setNVotos(Integer.parseInt(rs.getString("nvotos")));
+			  // Añado la peli a la lista de pelis
+			  filmList.add(peli);
+		  }
+      } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
+  }
+
+  public Peliculas selectByID (Connection c, String idpelicula){
+	  String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
+	  Peliculas peli = new Peliculas();
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  peli.setIdPelicula(Integer.parseInt(rs.getString("idpelicula")));
+			  peli.setTitulo(rs.getString("titulo"));
+			  peli.setAño(Integer.parseInt(rs.getString("año")));
+			  peli.setDuracion(Double.parseDouble(rs.getString("duracion")));
+			  peli.setRating(Double.parseDouble(rs.getString("rating")));
+			  peli.setNVotos(Integer.parseInt(rs.getString("nvotos")));
+		  }
+      } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return peli;
   }
 }
