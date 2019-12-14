@@ -23,8 +23,6 @@
 *Relacion_id_peli_actor.txt
 FORMATO:
 {id_pelicula} .{id_actor}
-Fichero de información que relaciona las peliculas en las que ha trabajado el actor 
-Existen 334 campos, por alguna razón hay peliculas que no tienen actores(lo he comprobado y en imdb es así, porque serán cortos o algo)
 
 QUERIE:
 SELECT ID_500.FIELD1,ID_PELI_ACTOR.FIELD2 FROM ID_500
