@@ -18,6 +18,9 @@ public class Peliculas {
   private int nvotos;
 
   // Constructor
+	public Peliculas(){
+		; //Algo por defecto?
+	}
 	public Peliculas(int idpelicula, String titulo, int año,
                     double duracion, double rating, int nvotos){
     this.setIdPelicula(idpelicula);

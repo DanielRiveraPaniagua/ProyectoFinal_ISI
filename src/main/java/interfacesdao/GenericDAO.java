@@ -3,6 +3,7 @@ package urjc.isi.interfacesdao;
 import java.sql.*;
 import java.util.List;
 import urjc.isi.exceptions.*;
+import urjc.isi.interfacesdao.GenericDAOInterface;
 
 //Cosasa muy genericas, alguno de los métodos
 //se pueden quedar sin implementar, esos son los
