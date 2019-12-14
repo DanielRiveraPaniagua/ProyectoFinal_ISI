@@ -42,7 +42,6 @@ public class PeliculasDAO extends GenericDAO{
   public void uploadTable(BufferedReader br, Connection c)throws IOException,SQLException{
     Peliculas pelicula = new Peliculas();
     String s;
-    c.prepareStatement("create table peliculas(idpelicula int,titulo string, año int, duracion double, rating double, nvotos int)");
     while ((s = br.readLine()) != null) {
 			    StringTokenizer tokenizer = new StringTokenizer(s,"\t");
           //Probablemente crear constructor que reciba una linea y

@@ -76,7 +76,8 @@ public class Main {
             Statement statement = c.createStatement();
             statement.setQueryTimeout(30); // set timeout to 30 sec.
             statement.executeUpdate("drop table if exists films");
-
+            statement.executeUpdate("create table peliculas(idpelicula int,titulo string, año int, duracion double, rating double, nvotos int)");
+            
             InputStreamReader isr = new InputStreamReader(input);
             BufferedReader br = new BufferedReader(isr);
             tables.uploadTable(br,c);
