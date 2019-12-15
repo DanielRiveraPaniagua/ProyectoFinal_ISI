@@ -76,7 +76,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>urjc.isi.ProyectoFinal.Main </mainClass>
+              <mainClass>urjc.isi.proyectofinal.Main </mainClass>
             </manifest>
           </archive>
         </configuration>
