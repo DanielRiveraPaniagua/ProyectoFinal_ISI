@@ -1,4 +1,4 @@
-package urjc.isi.interfacesdao;
+package urjc.isi.dao.interfaces;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 //ciertos métodos que consideremos esenciales
 //propongo los siguientes
 //Falta mucho que implementar por aquí,...,mucho.
-public interface GenericDAOInterface<T>{
+public interface GenericDAO<T>{
   public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException;
   public void dropTable(Connection c) throws SQLException;
   public Boolean tableExists(Connection c) throws SQLException;

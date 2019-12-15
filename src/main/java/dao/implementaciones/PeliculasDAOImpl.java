@@ -1,10 +1,11 @@
-package urjc.isi.interfacesdao;
+package urjc.isi.dao.implementaciones;
 
 import java.sql.*;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.dao.interfaces.PeliculasDAO;
 
 import java.util.*;
 import java.io.BufferedReader;
@@ -17,7 +18,7 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
-public class PeliculasDAO extends GenericDAO<Peliculas>{
+public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements PeliculasDAO{
   //Para meterlo como parte de interfaz hay que encontrar comodefinir que detecte
   // Peliculas como un objeto cualquiera, es decir que obligue a rellenar eso con
   //, por ejemplo, algo que extienda de Entidades

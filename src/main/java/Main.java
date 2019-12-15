@@ -1,4 +1,4 @@
-package urjc.isi.ProyectoFinal;
+package urjc.isi.proyectofinal;
 
 import static spark.Spark.*;
 
@@ -8,7 +8,8 @@ import spark.Response;
 import java.net.URISyntaxException;
 
 import java.sql.*;
-import urjc.isi.interfacesdao.*;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.dao.interfaces.*;
 import javax.servlet.MultipartConfigElement;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -63,7 +64,7 @@ public class Main {
         get("/:table/:film", Main::doSelect);
         c = DriverManager.getConnection("jdbc:sqlite:sample.db"); //Habría que usar el connect()
         c.setAutoCommit(false);
-        GenericDAOInterface tables = new PeliculasDAO();
+        GenericDAO tables = new PeliculasDAOImpl();
         post("/upload", (req, res) -> {
           req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
           String result = "File uploaded!";
