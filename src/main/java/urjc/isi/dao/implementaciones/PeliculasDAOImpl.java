@@ -77,7 +77,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }
   }
   @Override
-  public List<Peliculas> selectAll(Connection c){
+  public List<Peliculas> selectAll(){
 	  List<Peliculas> filmList = new ArrayList<>();
 	  String sql = "SELECT * from peliculas";
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {

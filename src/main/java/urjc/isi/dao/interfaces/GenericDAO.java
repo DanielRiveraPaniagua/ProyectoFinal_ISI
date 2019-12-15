@@ -14,7 +14,7 @@ public interface GenericDAO<T>{
   public void dropTable(Connection c) throws SQLException;
   public Boolean tableExists(Connection c) throws SQLException;
   public void insert(Connection c, T entity);
-  public List<T> selectAll(Connection c);
+  public List<T> selectAll();
   public T selectByID(Connection c, String idpelicula);
   // deleteByID;
 }
