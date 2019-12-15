@@ -9,7 +9,7 @@ import urjc.isi.dao.interfaces.GenericDAO;
 //caracter de obligatoriedad
 public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 
-	private Connection c;
+	protected Connection c;
 
 	public GenericDAOImpl() {
 		this.c = connect();
