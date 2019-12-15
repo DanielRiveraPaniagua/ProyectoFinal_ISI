@@ -19,11 +19,18 @@ import java.io.InputStreamReader;
 
 public class Main {
 
+    public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
+       String result = new String("Film application is in WIP. THANKS!");
+
+       return result;
+    }
+    
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
+        get("/welcome", Main::doWork);
         AdminController adminController = new AdminController();
         adminController.adminHandler();
-    
+
     }
 
     static int getHerokuAssignedPort() {
