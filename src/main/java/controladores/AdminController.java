@@ -16,18 +16,18 @@ import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.AdminService;
 
 public class AdminController {
-	
+
 	private static AdminService as;
-	
+
 	public AdminController() {
 		as = new AdminService();
 	}
-	
+
 	public static String crearTablaPeliculas(Request request, Response response) {
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		return as.crearTablaPeliculas();
 	}
-	
+
 	public static String selectAllPeliculas(Request request, Response response) {
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		try {
@@ -38,10 +38,10 @@ public class AdminController {
 			return "Ha ocurrido un error accediendo a las peliculas";
 		}
 	}
-	
+
 	public void adminHandler() {
-		get("peliculas/crearTabla", AdminController::crearTablaPeliculas);
-		get("peliculas/selectAll", AdminController::selectAllPeliculas);
+		get("/crearTabla", AdminController::crearTablaPeliculas);
+		get("/selectAll", AdminController::selectAllPeliculas);
 	}
 
 

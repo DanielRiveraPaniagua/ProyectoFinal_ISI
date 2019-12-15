@@ -28,9 +28,11 @@ public class Main {
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
         get("/welcome", Main::doWork);
-        AdminController adminController = new AdminController();
-        adminController.adminHandler();
-
+        path("/peliculas",() -> {
+        	AdminController adminController = new AdminController();
+        	adminController.adminHandler();
+        });
+        redirect.get("*", "/welcome");
     }
 
     static int getHerokuAssignedPort() {
