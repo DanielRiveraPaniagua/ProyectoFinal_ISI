@@ -216,10 +216,13 @@ public class Peliculas {
 		return Objects.hash(id, nombre, anno, duracion, rating, nVotos);
 	}
 	
+	// Peta no se porque
+	/*
 	@Override
 	public String toString(){
-		return "Id Película: "+getId()+"\tTitulo: " + getNombre() +
-		" (" + getDate().toString() + ") " + "\tDuracion: "+getDuracion()+
-		"\tRating: "+getRating()+"\tNumero de Votos: "+getVotos();
+		return "Id Película: "+ getId() +"\tTitulo: " + getNombre() +
+		" (" + getDate().toString() + ") " + "\tDuracion: "+ getDuracion( )+
+		"\tRating: " + getRating() + "\tNumero de Votos: " + getVotos();
 	}
+	*/
 }

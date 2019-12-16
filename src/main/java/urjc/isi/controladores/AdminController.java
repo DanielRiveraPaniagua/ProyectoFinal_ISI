@@ -13,7 +13,9 @@ import javax.servlet.ServletException;
 import spark.Request;
 import spark.Response;
 
-import org.json.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.AdminService;
@@ -35,21 +37,37 @@ public class AdminController {
 	 * @param response
 	 * @return 
 	 */
-	public static String crearTablaPeliculas(Request request, Response response) {
+	public static JsonObject crearTablaPeliculas(Request request, Response response) {
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
-		return as.crearTablaPeliculas();
-		/*Deberiamos devolver un JSON*/
+		String output = as.crearTablaPeliculas();
+		response.type("application/json");
+		JsonObject json = new JsonObject();
+		json.addProperty("status", "SUCCESS");
+		json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+		json.addProperty("output", output);
+		return json;
 	}
 
-	public static String selectAllPeliculas(Request request, Response response) {
+	public static JsonObject selectAllPeliculas(Request request, Response response) {
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		response.type("application/json");
+		JsonObject json = new JsonObject();
 		try {
 			List<Peliculas> output = as.getAllPeliculas();
 			output.add(new Peliculas());
-			return output.toString();
+			output.add(new Peliculas());
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toString());;
+			}
+			json.add("output", array);
 		}catch(SQLException e) {
-			return "Ha ocurrido un error accediendo a las peliculas";
+			json.addProperty("status", "ERROR");
+			json.addProperty("serviceMessage", "Ocurrio un error accediendo a la base de datos");
 		}
+		return json;
 	}
 
 	public void adminHandler() {
