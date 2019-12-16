@@ -22,7 +22,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   //Para meterlo como parte de interfaz hay que encontrar comodefinir que detecte
   // Peliculas como un objeto cualquiera, es decir que obligue a rellenar eso con
   //, por ejemplo, algo que extienda de Entidades
-	
+
   @Override
   public void insert(Connection c, Peliculas entity) {
   	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
@@ -39,7 +39,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   	    System.out.println(e.getMessage());
   	}
   }
-  
+
 
   @Override
   public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException {
@@ -105,5 +105,14 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		  System.out.println(e.getMessage());
 	  }
 	  return peli;
+  }
+  @Override
+  public void deleteByID(Connection c, String idpelicula){
+	  String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
+		  pstmt.executeUpdate();
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
   }
 }
