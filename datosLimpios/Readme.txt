@@ -11,4 +11,3 @@ FORMATO DE LOS FICHEROS DE DATOS LIMPIOS
 
 {id_pelicula}. {Nombre}. {fecha de salida}
 
-
