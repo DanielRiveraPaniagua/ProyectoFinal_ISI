@@ -14,6 +14,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 	public GenericDAOImpl() {
 		this.c = connect();
 	}
+	
+	@Override
 	public Connection connect() {
 		try {
 			return DriverManager.getConnection("jdbc:sqlite:sample.db");
@@ -21,11 +23,28 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 			throw new RuntimeException(e);
 		}
 	}
-  public void close() {
-    try {
-        c.close();
-    } catch (SQLException e) {
-        throw new RuntimeException(e);
-    }
-  }
+	
+	@Override
+	public void close() {
+		try {
+			c.close();
+	  	}catch (SQLException e) {
+	  		throw new RuntimeException(e);
+	  	}
+	}
+	
+	@Override
+	public void createTable(String sql) throws SQLException{
+		Statement statement = c.createStatement();
+		statement.setQueryTimeout(30);
+		statement.executeUpdate(sql);
+	}
+	
+	@Override
+	public void dropTable(String sql) throws SQLException {
+		Statement statement = c.createStatement();
+		statement.setQueryTimeout(30);
+		statement.executeUpdate(sql);
+		//statement.executeUpdate("drop table if exists peliculas");
+	}
 }
