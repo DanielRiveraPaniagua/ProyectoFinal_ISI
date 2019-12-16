@@ -45,7 +45,7 @@ public interface GenericDAO<T>{
 
 	public List<T> selectAll();
 
-	public T selectByID(Connection c, String idpelicula);
+	public T selectByID(Connection c, String id);
 
-	public void deleteByID(Connection c, String idpelicula);
+	public void deleteByID(Connection c, String id);
 }
