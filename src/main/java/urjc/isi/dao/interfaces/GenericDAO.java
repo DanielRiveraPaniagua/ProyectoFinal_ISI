@@ -37,15 +37,15 @@ public interface GenericDAO<T>{
 	 */
 	public void dropTable(String sql) throws SQLException;
 
-	public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException;
+	public void uploadTable(BufferedReader br) throws IOException, SQLException;
 
-	public Boolean tableExists(Connection c) throws SQLException;
+	public Boolean tableExists() throws SQLException;
 
-	public void insert(Connection c, T entity);
+	public void insert(T entity);
 
 	public List<T> selectAll();
 
-	public T selectByID(Connection c, String id);
+	public T selectByID(String id);
 
-	public void deleteByID(Connection c, String id);
+	public void deleteByID(String id);
 }

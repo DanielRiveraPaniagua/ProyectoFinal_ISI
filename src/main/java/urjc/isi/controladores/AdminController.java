@@ -2,20 +2,16 @@ package urjc.isi.controladores;
 
 import static spark.Spark.*;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletException;
 
 import spark.Request;
 import spark.Response;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.AdminService;
@@ -43,7 +39,7 @@ public class AdminController {
 		response.type("application/json");
 		JsonObject json = new JsonObject();
 		json.addProperty("status", "SUCCESS");
-		json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+		json.addProperty("serviceMessage", "La peticion se manejó adecuadamente");
 		json.addProperty("output", output);
 		return json;
 	}
@@ -54,7 +50,6 @@ public class AdminController {
 		JsonObject json = new JsonObject();
 		try {
 			List<Peliculas> output = as.getAllPeliculas();
-			output.add(new Peliculas());
 			output.add(new Peliculas());
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");

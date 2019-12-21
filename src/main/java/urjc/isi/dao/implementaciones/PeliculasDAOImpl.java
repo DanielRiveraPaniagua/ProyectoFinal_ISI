@@ -1,8 +1,6 @@
 package urjc.isi.dao.implementaciones;
 
 import java.sql.*;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
 
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.dao.interfaces.PeliculasDAO;
@@ -19,40 +17,48 @@ import java.io.IOException;
 //implementar las distintas respuestas para el
 //servidor
 public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements PeliculasDAO{
-  //Para meterlo como parte de interfaz hay que encontrar comodefinir que detecte
-  // Peliculas como un objeto cualquiera, es decir que obligue a rellenar eso con
-  //, por ejemplo, algo que extienda de Entidades
-
+	
+	public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
+		Peliculas peli = new Peliculas();
+		
+		peli.setIdPelicula(Integer.valueOf(rs.getString("idpelicula")));
+		peli.setTitulo(rs.getString("titulo"));
+		peli.setAño(Integer.valueOf(rs.getString("año")));
+		peli.setDuracion(Double.valueOf(rs.getString("duracion")));
+		peli.setRating(Double.valueOf(rs.getString("rating")));
+		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
+		return peli;
+	}
   @Override
-  public void insert(Connection c, Peliculas entity) {
+  public void insert(Peliculas entity) {
   	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  		pstmt.setInt(1, entity.getId());
-  		pstmt.setString(2, entity.getNombre());
-	    pstmt.setDate(3, entity.getDate());
-	    pstmt.setDouble(4, entity.getDuracion());
-	    pstmt.setDouble(5, entity.getRating());
-	    pstmt.setInt(6, entity.getVotos());
+  		pstmt.setInt(1, entity.getIdPelicula());
+  		pstmt.setString(2, entity.getTitulo());
+  		pstmt.setInt(3, entity.getAño());
+      	pstmt.setDouble(4, entity.getDuracion());
+      	pstmt.setDouble(5, entity.getRating());
+      	pstmt.setInt(6, entity.getNVotos());
   		pstmt.executeUpdate();
     } catch (SQLException e) {
   	    System.out.println(e.getMessage());
   	}
   }
-
+ 
 
   @Override
-  public void uploadTable(BufferedReader br, Connection c) throws IOException, SQLException {
+  public void uploadTable(BufferedReader br) throws IOException, SQLException {
     String s;
     while ((s = br.readLine()) != null) {
-	    Peliculas pelicula = new Peliculas(s);
-	    insert(c, pelicula);
-	    c.commit();
+      Peliculas pelicula = new Peliculas(s);
+      insert(pelicula);
+      c.commit();
     }
   }
 
   @Override
-  public Boolean tableExists(Connection c) throws SQLException {
+  public Boolean tableExists() throws SQLException {
 	  DatabaseMetaData dbm = c.getMetaData();
 	  ResultSet tables = dbm.getTables(null, null, "peliculas", null);
 	  if (tables.next()) {
@@ -71,15 +77,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();
 		  while(rs.next()){
-			  Peliculas peli = new Peliculas();
-			  peli.setId(Integer.parseInt(rs.getString("idpelicula")));
-			  peli.setNombre(rs.getString("titulo"));
-			  peli.setDate(rs.getDate("año"));
-			  peli.setDuracion(Double.parseDouble(rs.getString("duracion")));
-			  peli.setRating(Double.parseDouble(rs.getString("rating")));
-			  peli.setVotos(Integer.parseInt(rs.getString("nvotos")));
-			  // Añado la peli a la lista de pelis
-			  filmList.add(peli);
+			  filmList.add(fromResultSet(rs));
 		  }
     } catch (SQLException e) {
 		  System.out.println(e.getMessage());
@@ -87,27 +85,20 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  return filmList;
   }
   @Override
-  public Peliculas selectByID (Connection c, String idpelicula){
+  public Peliculas selectByID (String idpelicula){
 	  String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
 	  Peliculas peli = new Peliculas();
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();
-		  while(rs.next()){
-			  peli.setId(Integer.parseInt(rs.getString("idpelicula")));
-			  peli.setNombre(rs.getString("titulo"));
-			  peli.setDate(rs.getDate("año"));
-			  peli.setDuracion(Double.parseDouble(rs.getString("duracion")));
-			  peli.setRating(Double.parseDouble(rs.getString("rating")));
-			  peli.setVotos(Integer.parseInt(rs.getString("nvotos")));
-		  }
+		  peli = fromResultSet(rs);
       } catch (SQLException e) {
 		  System.out.println(e.getMessage());
 	  }
 	  return peli;
   }
   @Override
-  public void deleteByID(Connection c, String idpelicula){
+  public void deleteByID(String idpelicula){
 	  String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 		  pstmt.executeUpdate();

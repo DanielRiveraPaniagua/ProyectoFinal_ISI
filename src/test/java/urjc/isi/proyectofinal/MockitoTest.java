@@ -1,4 +1,4 @@
-package urjc.isi.ProyectoFinal;
+package urjc.isi.proyectofinal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
