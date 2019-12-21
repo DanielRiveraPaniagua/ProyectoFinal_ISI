@@ -122,7 +122,7 @@ public class tablas {
     	    } catch (SQLException e) {
     	    System.out.println(e.getMessage());
     	}
-        }
+     }
     
     public static void insert_trabajan(Connection conn, String id_pelicula, String id_actor) {
     	String sql = "INSERT INTO trabajan (id_pelicula, id_actor) VALUES(?,?)";
@@ -134,7 +134,7 @@ public class tablas {
     	    } catch (SQLException e) {
     	    System.out.println(e.getMessage());
     	}
-        }
+     }
 
     public static void insert_dir(Connection conn, String id, String nombre, String apellido, String fecha_nac, String fecha_muer) {
     	String sql = "INSERT INTO directores(id_director, nombre, apellido, fecha_nac, fecha_muer) VALUES(?,?,?,?,?)";
@@ -165,7 +165,30 @@ public class tablas {
     	    System.out.println(e.getMessage());
     	}
         }
+    
+    public static void insert_escriben(Connection conn, String id_pelicula, String id_guionista) {
+    	String sql = "INSERT INTO trabajan (id_pelicula, id_guionista) VALUES(?,?)";
 
+    	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    		pstmt.setString(1, id_pelicula);
+    		pstmt.setString(2, id_guionista);
+    		pstmt.executeUpdate();
+    	    } catch (SQLException e) {
+    	    System.out.println(e.getMessage());
+    	}
+     }
+    
+    public static void insert_dirigen(Connection conn, String id_pelicula, String id_director) {
+    	String sql = "INSERT INTO trabajan (id_pelicula, id_director) VALUES(?,?)";
+
+    	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    		pstmt.setString(1, id_pelicula);
+    		pstmt.setString(2, id_director);
+    		pstmt.executeUpdate();
+    	    } catch (SQLException e) {
+    	    System.out.println(e.getMessage());
+    	}
+     }
     public static void main(String[] args) throws 
 	ClassNotFoundException, SQLException {
 	port(getHerokuAssignedPort());
@@ -413,6 +436,86 @@ public class tablas {
 		    }
 		return result;
 	    });
+    
+    get("/upload_escriben", (req, res) -> 
+    "<form action='/upload6' method='post' enctype='multipart/form-data'>" 
+    + "    <input type='file' name='uploaded_escriben_file' accept='.txt'>"
+    + "    <button>Upload file</button>" + "</form>");
+    
+    
+    post("/upload6", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		try (InputStream input = req.raw().getPart("uploaded_escriben_file").getInputStream()) { 
+		
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			statement.executeUpdate("drop table if exists trabajan");
+			statement.executeUpdate("create table trabajan (id_pelicula INT, id_actor INT, PRIMARY KEY (id_pelicula, id_guionista), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_guionista REFERENCES guionistas (id_guionista))");
+
+
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			String s;
+			int iter = 1;
+			while ((s = br.readLine()) != null && iter <= 500) {
+				iter++;
+
+			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
+
+			    String id_pel = tokenizer.nextToken();
+
+			    String id_guionista = tokenizer.nextToken();
+
+			    insert_trabajan(connection, id_pel, id_guionista);
+			   
+			    connection.commit();
+			    
+			}
+			input.close();
+		    }
+		return result;
+	    });
+    
+    get("/upload_dirigen", (req, res) -> 
+    "<form action='/upload7' method='post' enctype='multipart/form-data'>" 
+    + "    <input type='file' name='uploaded_dirigen_file' accept='.txt'>"
+    + "    <button>Upload file</button>" + "</form>");
+    
+    
+    post("/upload7", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		try (InputStream input = req.raw().getPart("uploaded_dirigen_file").getInputStream()) { 
+		
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			statement.executeUpdate("drop table if exists trabajan");
+			statement.executeUpdate("create table trabajan (id_pelicula INT, id_actor INT, PRIMARY KEY (id_pelicula, id_director), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_director REFERENCES directores (id_director))");
+
+
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			String s;
+			int iter = 1;
+			while ((s = br.readLine()) != null && iter <= 500) {
+				iter++;
+
+			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
+
+			    String id_pel = tokenizer.nextToken();
+
+			    String id_director = tokenizer.nextToken();
+
+			    insert_trabajan(connection, id_pel, id_director);
+			   
+			    connection.commit();
+			    
+			}
+			input.close();
+		    }
+		return result;
+	    });
     }
     
     static int getHerokuAssignedPort() {
@@ -422,4 +525,4 @@ public class tablas {
 	}
 	return 4567;
     }
-   }
+  }
