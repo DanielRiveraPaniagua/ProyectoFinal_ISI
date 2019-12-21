@@ -18,14 +18,16 @@ public class Main {
 
        return result;
     }
-
-    public static void main(String[] args) throws ClassNotFoundException,SQLException {
-        port(getHerokuAssignedPort());
-        get("/welcome", Main::doWork);
-        path("/peliculas",() -> {
+    public static void tables() {
+    	path("peliculas",() -> {
         	AdminController adminController = new AdminController();
         	adminController.adminHandler();
         });
+    }
+    public static void main(String[] args) throws ClassNotFoundException,SQLException {
+        port(getHerokuAssignedPort());
+        get("/welcome", Main::doWork);
+        path("/",() -> {tables();});
         redirect.get("*", "/welcome");
     }
 

@@ -11,8 +11,13 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 
 	protected Connection c;
 
-	public GenericDAOImpl() {
+	public GenericDAOImpl(){
 		this.c = connect();
+		try {
+			c.setAutoCommit(false);
+		}catch(SQLException e) {
+	  	    System.out.println(e.getMessage());
+		}
 	}
 
 	@Override
@@ -31,20 +36,5 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 	  	}catch (SQLException e) {
 	  		throw new RuntimeException(e);
 	  	}
-	}
-
-	@Override
-	public void createTable(String sql) throws SQLException{
-		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
-		statement.executeUpdate(sql);
-	}
-
-	@Override
-	public void dropTable(String sql) throws SQLException {
-		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
-		statement.executeUpdate(sql);
-		//statement.executeUpdate("drop table if exists peliculas");
 	}
 }

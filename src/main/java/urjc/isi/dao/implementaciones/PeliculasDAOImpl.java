@@ -17,10 +17,10 @@ import java.io.IOException;
 //implementar las distintas respuestas para el
 //servidor
 public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements PeliculasDAO{
-	
-	public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
+
+  public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
 		Peliculas peli = new Peliculas();
-		
+
 		peli.setIdPelicula(Integer.valueOf(rs.getString("idpelicula")));
 		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
@@ -28,6 +28,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setRating(Double.valueOf(rs.getString("rating")));
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
 		return peli;
+	}
+	@Override
+  public void createTable() throws SQLException{
+		Statement statement = c.createStatement();
+		statement.setQueryTimeout(30);
+		statement.executeUpdate("create table peliculas (idpelicula INT, titulo string, año string, duracion string, rating INT, nvotos INT, PRIMARY KEY (idpelicula))");
+	}
+	
+  public void dropTable() throws SQLException {
+		Statement statement = c.createStatement();
+		statement.setQueryTimeout(30);
+		statement.executeUpdate("drop table if exists peliculas");
 	}
   @Override
   public void insert(Peliculas entity) {
@@ -45,8 +57,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   	    System.out.println(e.getMessage());
   	}
   }
- 
-
   @Override
   public void uploadTable(BufferedReader br) throws IOException, SQLException {
     String s;
@@ -56,7 +66,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
       c.commit();
     }
   }
-
   @Override
   public Boolean tableExists() throws SQLException {
 	  DatabaseMetaData dbm = c.getMetaData();

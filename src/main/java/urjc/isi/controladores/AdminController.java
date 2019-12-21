@@ -5,8 +5,6 @@ import static spark.Spark.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.MultipartConfigElement;
-
 import spark.Request;
 import spark.Response;
 
@@ -26,14 +24,39 @@ public class AdminController {
 	public AdminController() {
 		as = new AdminService();
 	}
-
+	
+	public static String uploadTable(Request request, Response response) {
+		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>" 
+			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
+			    + "    <button>Upload file</button>" + "</form>";
+	}
+	public static String upload(Request request, Response response) {
+		return as.uploadTable(request);
+	}
+	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
+		List<Peliculas> output = as.getAllPeliculas();
+		String result = "";
+		for(int i = 0; i < output.size(); i++) {
+		    result = result + output.get(i).toHTMLString() +"</br>";
+		}
+		return result;
+	}
+	
+	public void adminHandler() {
+		//get("/crearTabla", AdminController::crearTablaPeliculas);
+		get("/selectAll", AdminController::selectAllPeliculas);
+		get("/uploadTable", AdminController::uploadTable);
+		post("/upload", AdminController::upload);
+	}
+	
 	/**
 	 * Metodo manejador del endpoint /peliculas/crearTabla 
 	 * @param request
 	 * @param response
 	 * @return 
 	 */
-	public static JsonObject crearTablaPeliculas(Request request, Response response) {
+	/*
+	public static JsonObject crearTablaPeliculas(Request request, Response response) throws SQLException{
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String output = as.crearTablaPeliculas();
 		response.type("application/json");
@@ -42,9 +65,9 @@ public class AdminController {
 		json.addProperty("serviceMessage", "La peticion se manejó adecuadamente");
 		json.addProperty("output", output);
 		return json;
-	}
+	}*/
+	/*public static JsonObject selectAllPeliculas(Request request, Response response){
 
-	public static JsonObject selectAllPeliculas(Request request, Response response) {
 		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		response.type("application/json");
 		JsonObject json = new JsonObject();
@@ -63,12 +86,5 @@ public class AdminController {
 			json.addProperty("serviceMessage", "Ocurrio un error accediendo a la base de datos");
 		}
 		return json;
-	}
-
-	public void adminHandler() {
-		get("/crearTabla", AdminController::crearTablaPeliculas);
-		get("/selectAll", AdminController::selectAllPeliculas);
-	}
-
-
+	}*/
 }

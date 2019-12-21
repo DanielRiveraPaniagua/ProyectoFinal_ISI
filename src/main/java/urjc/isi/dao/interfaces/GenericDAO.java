@@ -28,14 +28,14 @@ public interface GenericDAO<T>{
 	 * @param Consulta que permite la creacion de la tabla
 	 * @throws SQLException
 	 */
-	public void createTable(String sql) throws SQLException;
+	public void createTable() throws SQLException;
 
 	/**
 	 * Borra una tabla cualquiera
 	 * @param Consulta que permite borrar la tabla
 	 * @throws SQLException
 	 */
-	public void dropTable(String sql) throws SQLException;
+	public void dropTable() throws SQLException;
 
 	public void uploadTable(BufferedReader br) throws IOException, SQLException;
 
@@ -45,7 +45,7 @@ public interface GenericDAO<T>{
 
 	public List<T> selectAll();
 
-	public T selectByID(String id);
+	public T selectByID(String idpelicula);
 
-	public void deleteByID(String id);
+	public void deleteByID(String idpelicula);
 }

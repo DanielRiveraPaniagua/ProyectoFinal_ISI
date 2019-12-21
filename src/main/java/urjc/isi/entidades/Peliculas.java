@@ -125,4 +125,9 @@ public class Peliculas {
     " (" + getAño() + ") " + "\tDuracion: "+getDuracion()+
     "\tRating: "+getRating()+"\tNumero de Votos: "+getNVotos();
   }
+  public String toHTMLString() {
+	  return "Id Película: "+getIdPelicula()+"&emsp; Titulo: " + getTitulo() +
+	  " (" + getAño() + ") " + "&emsp; Duracion: "+getDuracion()+
+      "&emsp; Rating: "+getRating()+"&emsp; Numero de Votos: "+getNVotos();
+  }
 }
