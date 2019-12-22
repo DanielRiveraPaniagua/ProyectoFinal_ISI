@@ -38,7 +38,7 @@ public interface GenericDAO<T>{
 
 	public void uploadTable(BufferedReader br) throws IOException, SQLException;
 
-	public Boolean tableExists() throws SQLException;
+	public Boolean tableExists(String table) throws SQLException;
 
 	public void insert(T entity);
 

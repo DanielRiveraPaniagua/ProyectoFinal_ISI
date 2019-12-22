@@ -35,7 +35,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		statement.setQueryTimeout(30);
 		statement.executeUpdate("create table peliculas (idpelicula INT, titulo string, año string, duracion string, rating INT, nvotos INT, PRIMARY KEY (idpelicula))");
 	}
-	
+	@Override
   public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
@@ -66,18 +66,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
       c.commit();
     }
   }
-  @Override
-  public Boolean tableExists() throws SQLException {
-	  DatabaseMetaData dbm = c.getMetaData();
-	  ResultSet tables = dbm.getTables(null, null, "peliculas", null);
-	  if (tables.next()) {
-		  // La tabla existe
-		  return true;
-	  } else {
-		  // No existe la tabla
-		  return false;
-	  }
-  }
+  
   @Override
   public List<Peliculas> selectAll(){
 	  List<Peliculas> filmList = new ArrayList<>();
