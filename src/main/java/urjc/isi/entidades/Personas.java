@@ -2,6 +2,7 @@ package urjc.isi.entidades;
 
 import java.util.Objects;
 import urjc.isi.exceptions.*;
+import java.util.StringTokenizer;
 
 public class Personas {
 
@@ -9,10 +10,26 @@ public class Personas {
 	private String fullNombre;
 	private int fNacimiento;
 	private int fMuerte;
-	private String paisOrigen;
 
+
+  // Constructor
   public Personas(){
 	  ;
+  }
+
+  public Personas (int id, String fullNombre, int fNacimiento, int fMuerte){
+		this.setId(id);
+		this.setFullNombre(fullNombre);
+		this.setNacimiento(fNacimiento);
+		this.setMuerte(fMuerte);
+  }
+
+  public Personas(String line){ // Se tokeniza la linea
+	  StringTokenizer tokenizer = new StringTokenizer(line,"\t");
+	  this.setId(Integer.valueOf(tokenizer.nextToken()));
+	  this.setFullNombre(tokenizer.nextToken());
+	  this.setNacimiento(Integer.valueOf(tokenizer.nextToken()));
+	  this.setMuerte(Integer.valueOf(tokenizer.nextToken()));
   }
 
   // Setter Methods
@@ -40,12 +57,6 @@ public class Personas {
     }
     this.fMuerte = fMuerte;
   }
-  public void setPaisOrigen(String paisOrigen){
-    if(paisOrigen == null){
-      throw new InvalidParameter();
-    }
-    this.paisOrigen = paisOrigen;
-  }
 
   // Getter Methods
   public int getId() {
@@ -60,9 +71,6 @@ public class Personas {
   public int getMuerte(){
       return fMuerte;
   }
-  public String getPaisOrigen(){
-      return paisOrigen;
-  }
   // Overrided Methods
 	@Override
 	public boolean equals(Object other) {
@@ -75,17 +83,16 @@ public class Personas {
     return (this.id == otherP.id) &&
               Objects.equals(this.fullNombre,otherP.fullNombre) &&
               (this.fNacimiento == otherP.fNacimiento) &&
-              (this.fMuerte == otherP.fMuerte) &&
-              Objects.equals(this.paisOrigen,otherP.paisOrigen);
+              (this.fMuerte == otherP.fMuerte);
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(id,fullNombre,fNacimiento,fMuerte,paisOrigen);
+		return Objects.hash(id,fullNombre,fNacimiento,fMuerte);
 	}
     @Override
     public String toString(){
       return "Id: "+getId()+"\tNombre y apellido: " + getFullNombre() +
       "\tFecha Nacimiento: "+getNacimiento()+
-      "\tFecha Muerte: "+getMuerte()+"\tPaís Origen: "+getPaisOrigen();
+      "\tFecha Muerte: "+getMuerte();
     }
 }
