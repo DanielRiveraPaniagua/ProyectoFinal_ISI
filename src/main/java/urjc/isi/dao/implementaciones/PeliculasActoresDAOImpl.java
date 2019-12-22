@@ -89,7 +89,7 @@ public class PeliculasActoresDAOImpl extends GenericDAOImpl<PeliculasPersonas> i
 	  }
   }
   @Override
-  public PeliculasPersonas selectByIDPersona (String idpersona){
+  public PeliculasPersonas selectByIDActores (String idpersona){
 	  String sql = "SELECT * from peliculasactores WHERE idpersona=" + idpersona;
 	  PeliculasPersonas pp = new PeliculasPersonas();
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
@@ -102,7 +102,7 @@ public class PeliculasActoresDAOImpl extends GenericDAOImpl<PeliculasPersonas> i
 	  return pp;
   }
   @Override
-  public void deleteByIDPersona(String idpersona){
+  public void deleteByIDActores(String idpersona){
 	  String sql = "DELETE from peliculasactores WHERE idpersona=" + idpersona;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 		  pstmt.executeUpdate();
