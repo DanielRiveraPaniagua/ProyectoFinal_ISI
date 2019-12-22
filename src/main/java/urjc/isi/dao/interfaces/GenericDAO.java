@@ -6,9 +6,8 @@ import java.util.List;
 import java.io.BufferedReader;
 import java.io.IOException;
 //Con esta interfaz obligamos a que se implmenten
-//ciertos métodos que consideremos esenciales
-//propongo los siguientes
-//Falta mucho que implementar por aquí,...,mucho.
+//ciertos métodos que consideremos esenciales para
+//todas las clases
 
 public interface GenericDAO<T>{
 

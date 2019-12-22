@@ -9,9 +9,9 @@ import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-//Aqui vienen las cosas propias de cada tabla,
-//es decir, las queries o cosas que no se
-//puedan implementar de manera genérica
+//Aqui se implementan las interfaces própias y
+//la genérica puesto que hay métodos que no
+//pueden ser genéricos totalmente
 
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el

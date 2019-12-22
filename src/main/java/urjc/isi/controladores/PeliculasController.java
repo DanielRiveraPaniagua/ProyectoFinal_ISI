@@ -34,6 +34,7 @@ public class PeliculasController {
 	public static String upload(Request request, Response response) {
 		return ps.uploadTable(request);
 	}
+	
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output = ps.getAllPeliculas();
 		String result = "";

@@ -6,11 +6,11 @@ import java.util.StringTokenizer;
 
 //Solamente es la definición de la tabla
 //sus campos y como trabajar con ellos
+
 public class Peliculas {
 
-  // Mejorar los parametros inválidos
-	private int idpelicula; // Creo que esto debe cambiar a string
-                          // (depende del formato de la tabla)
+
+  private int idpelicula;
   private String titulo;
   private int año;
   private double duracion;
@@ -18,9 +18,7 @@ public class Peliculas {
   private int nvotos;
 
   // Constructor
-	public Peliculas(){
-		; //Algo por defecto?
-	}
+	public Peliculas(){} //Constructor por defecto
 	public Peliculas(int idpelicula, String titulo, int año,
                     double duracion, double rating, int nvotos){
     this.setIdPelicula(idpelicula);
@@ -30,8 +28,7 @@ public class Peliculas {
     this.setRating(rating);
     this.setNVotos(nvotos);
 	}
-	public Peliculas(String line){
-		// Se tokeniza la linea
+	public Peliculas(String line){// Se tokeniza la linea
 		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
 		this.setIdPelicula(Integer.valueOf(tokenizer.nextToken()));
 		this.setTitulo(tokenizer.nextToken());
@@ -115,17 +112,17 @@ public class Peliculas {
               (this.rating == otherP.rating) &&
               (this.nvotos == otherP.nvotos);
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(idpelicula,titulo,año,duracion,rating,nvotos);
-	}
+  @Override
+  public int hashCode() {
+	return Objects.hash(idpelicula,titulo,año,duracion,rating,nvotos);
+  }
   @Override
   public String toString(){
     return "Id Película: "+getIdPelicula()+"\tTitulo: " + getTitulo() +
     " (" + getAño() + ") " + "\tDuracion: "+getDuracion()+
     "\tRating: "+getRating()+"\tNumero de Votos: "+getNVotos();
   }
-  public String toHTMLString() {
+  public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
 	  return "Id Película: "+getIdPelicula()+"&emsp; Titulo: " + getTitulo() +
 	  " (" + getAño() + ") " + "&emsp; Duracion: "+getDuracion()+
       "&emsp; Rating: "+getRating()+"&emsp; Numero de Votos: "+getNVotos();
