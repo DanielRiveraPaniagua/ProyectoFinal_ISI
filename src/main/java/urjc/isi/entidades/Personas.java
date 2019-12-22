@@ -95,4 +95,9 @@ public class Personas {
       "\tFecha Nacimiento: "+getNacimiento()+
       "\tFecha Muerte: "+getMuerte();
     }
+	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
+  	  return "Id: "+getId()+"&emsp; Nombre y apellido: " + getFullNombre() +
+  	  "&emsp; Fecha nacimiento: "+getNacimiento()+
+        "&emsp; Fecha muerte: "+getMuerte();
+    }
 }

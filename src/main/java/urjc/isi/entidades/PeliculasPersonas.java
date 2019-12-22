@@ -68,4 +68,7 @@ public class PeliculasPersonas {
     public String toString(){
       return "Id pelicula: "+getIdPelicula()+"\tId persona: " + getIdPersona();
     }
+	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
+  	  return "Id pelicula: "+getIdPelicula()+"&emsp; Id persona: " + getIdPersona();
+    }
 }

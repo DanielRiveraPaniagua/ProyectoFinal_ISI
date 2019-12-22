@@ -9,7 +9,7 @@ import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> implements PeliculasPersonasDAO{
+public class PeliculasActoresDAOImpl extends GenericDAOImpl<PeliculasPersonas> implements PeliculasPersonasDAO{
 
   public PeliculasPersonas fromResultSet(ResultSet rs) throws  SQLException{
 		PeliculasPersonas pp = new PeliculasPersonas();
@@ -22,17 +22,17 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
-		statement.executeUpdate("create table peliculaspersonas (idpelicula INT, idpersona INT, PRIMARY KEY (idpelicula,idpersona))");
+		statement.executeUpdate("create table peliculasactores (idpelicula INT, idpersona INT, PRIMARY KEY (idpelicula,idpersona))");
 	}
 
   public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
-		statement.executeUpdate("drop table if exists peliculaspersonas");
+		statement.executeUpdate("drop table if exists peliculasactores");
 	}
   @Override
   public void insert(PeliculasPersonas entity) {
-  	String sql = "INSERT INTO peliculaspersonas(idpelicula,idpersona) VALUES(?,?)";
+  	String sql = "INSERT INTO peliculasactores(idpelicula,idpersona) VALUES(?,?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
   		pstmt.setInt(1, entity.getIdPelicula());
@@ -52,21 +52,9 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
     }
   }
   @Override
-  public Boolean tableExists() throws SQLException {
-	  DatabaseMetaData dbm = c.getMetaData();
-	  ResultSet tables = dbm.getTables(null, null, "peliculaspersonas", null);
-	  if (tables.next()) {
-		  // La tabla existe
-		  return true;
-	  } else {
-		  // No existe la tabla
-		  return false;
-	  }
-  }
-  @Override
   public List<PeliculasPersonas> selectAll(){
 	  List<PeliculasPersonas> ppList = new ArrayList<>();
-	  String sql = "SELECT * from peliculaspersonas";
+	  String sql = "SELECT * from peliculasactores";
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();
@@ -80,7 +68,7 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
   }
   @Override
   public PeliculasPersonas selectByID (String idpelicula){ // Selecciona peliculas
-	  String sql = "SELECT * from peliculaspersonas WHERE idpelicula=" + idpelicula;
+	  String sql = "SELECT * from peliculasactores WHERE idpelicula=" + idpelicula;
 	  PeliculasPersonas pp = new PeliculasPersonas();
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
@@ -93,7 +81,7 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
   }
   @Override
   public void deleteByID(String idpelicula){
-	  String sql = "DELETE from peliculaspersonas WHERE idpelicula=" + idpelicula;
+	  String sql = "DELETE from peliculasactores WHERE idpelicula=" + idpelicula;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 		  pstmt.executeUpdate();
 	  } catch (SQLException e) {
@@ -102,7 +90,7 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
   }
   @Override
   public PeliculasPersonas selectByIDPersona (String idpersona){
-	  String sql = "SELECT * from peliculaspersonas WHERE idpersona=" + idpersona;
+	  String sql = "SELECT * from peliculasactores WHERE idpersona=" + idpersona;
 	  PeliculasPersonas pp = new PeliculasPersonas();
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
@@ -115,7 +103,7 @@ public class PeliculasPersonasDAOImpl extends GenericDAOImpl<PeliculasPersonas> 
   }
   @Override
   public void deleteByIDPersona(String idpersona){
-	  String sql = "DELETE from peliculaspersonas WHERE idpersona=" + idpersona;
+	  String sql = "DELETE from peliculasactores WHERE idpersona=" + idpersona;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 		  pstmt.executeUpdate();
 	  } catch (SQLException e) {
