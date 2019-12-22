@@ -14,14 +14,14 @@ import spark.Request;
 import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
 import urjc.isi.entidades.*;
 
-public class AdminService {
+public class PeliculasService {
 
 	private PeliculasDAOImpl pelisDAO;
 
 	/**
 	 * Constructor por defecto
 	 */
-	public AdminService() {
+	public PeliculasService() {
 		pelisDAO = new PeliculasDAOImpl();
 	}
 

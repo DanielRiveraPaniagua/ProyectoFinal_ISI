@@ -8,33 +8,34 @@ import java.util.List;
 import spark.Request;
 import spark.Response;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
 import urjc.isi.entidades.Peliculas;
-import urjc.isi.service.AdminService;
+import urjc.isi.service.PeliculasService;
 
-public class AdminController {
+public class PeliculasController {
 
-	private static AdminService as;
-
+	private static PeliculasService ps;
+	private static String adminkey = "1234";
+	
 	/**
 	 * Constructor por defecto
 	 */
-	public AdminController() {
-		as = new AdminService();
+	public PeliculasController() {
+		ps = new PeliculasService();
 	}
 	
 	public static String uploadTable(Request request, Response response) {
+		if(!adminkey.equals(request.queryParams("key"))) {
+			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
+		}
 		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>" 
 			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 	public static String upload(Request request, Response response) {
-		return as.uploadTable(request);
+		return ps.uploadTable(request);
 	}
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
-		List<Peliculas> output = as.getAllPeliculas();
+		List<Peliculas> output = ps.getAllPeliculas();
 		String result = "";
 		for(int i = 0; i < output.size(); i++) {
 		    result = result + output.get(i).toHTMLString() +"</br>";
@@ -42,11 +43,11 @@ public class AdminController {
 		return result;
 	}
 	
-	public void adminHandler() {
+	public void peliculasHandler() {
 		//get("/crearTabla", AdminController::crearTablaPeliculas);
-		get("/selectAll", AdminController::selectAllPeliculas);
-		get("/uploadTable", AdminController::uploadTable);
-		post("/upload", AdminController::upload);
+		get("/selectAll", PeliculasController::selectAllPeliculas);
+		get("/uploadTable", PeliculasController::uploadTable);
+		post("/upload", PeliculasController::upload);
 	}
 	
 	/**

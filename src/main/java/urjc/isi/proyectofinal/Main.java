@@ -9,19 +9,19 @@ import java.net.URISyntaxException;
 
 import java.sql.*;
 
-import urjc.isi.controladores.AdminController;
+import urjc.isi.controladores.PeliculasController;
 
 public class Main {
 
-    public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
+	public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
        String result = new String("Film application is in WIP. THANKS!");
 
        return result;
     }
     public static void tables() {
     	path("peliculas",() -> {
-        	AdminController adminController = new AdminController();
-        	adminController.adminHandler();
+        	PeliculasController Controller = new PeliculasController();
+        	Controller.peliculasHandler();
         });
     }
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
