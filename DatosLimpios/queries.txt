@@ -1,0 +1,38 @@
+* directores.txt * 
+select DISTINCT(nconst), primaryName, birthYear, deathYear from name_basics
+where nconst in ( select tc.directors from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1) AND
+primaryProfession like "%director%";
+
+* relacion_directores_peliculas.txt * 
+select tc.tconst as "Id_film" ,tc.directors as "Id_director" from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1
+
+Obtengo fichero relacion_directores_peliculas_sin_split.txt
+Mediante relacion_directores_peliculas_final.py obtengo el fichero final 
+de la relacion con el formato especificado en README.txt
+
+* guionistas.txt *
+select nconst, primaryName, birthYear, deathYear from name_basics
+where nconst in ( select tc.writers from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1) AND
+primaryProfession like "%writer%";
+
+* relacion_guionistas_peliculas.txt *
+select tc.tconst as "Id_film" ,tc.writers as "Id_guionista" from Peliculas p
+inner join title_crew tc on tc.tconst = p.field1
+Obtengo fichero relacion_guionistas_peliculas_sin_split.txt
+Mediante relacion_guionistas_peliculas_final.py obtengo el fichero final 
+de la relacion con el formato especificado en README.txt
+
+* relacion_peliculas_generos.txt *
+SELECT t.tconst, t.genres FROM datos_peliculas_FINAL p
+inner join title t on t.tconst = p.field1;
+->Explicación:
+	De esta querie obtenemos un fichero el cual tendra en la primera columna el id de la pelicula y en la 		segunda todos los géneros separados por comas, pero en nustro caso lo que queremos es tener en cada 		línea un único genero(un único id de película con un único género), por lo que hemos hecho un scrip en 		python para ello.
+
+* generos.txt *
+SELECT p.field2 FROM relacion_peliculas_generos p
+GROUP BY p.field2;
+->Explicación:
+	Partiendo de la tabla anterior de películas y géneros, si ejecutamos esta querie obtenemos la tabla de 		generos.txt
