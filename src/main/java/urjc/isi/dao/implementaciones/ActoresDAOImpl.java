@@ -58,8 +58,8 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    while ((s = br.readLine()) != null) {
 	      Personas persona = new Personas(s);
 	      insert(persona);
-	      c.commit();
 	    }
+	    c.commit();
 	}
 
 	@Override

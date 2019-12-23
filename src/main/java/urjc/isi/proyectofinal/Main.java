@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 
 import java.sql.*;
 
-import urjc.isi.controladores.PeliculasController;
+import urjc.isi.controladores.*;
 
 public class Main {
 
@@ -23,6 +23,14 @@ public class Main {
         	PeliculasController Controller = new PeliculasController();
         	Controller.peliculasHandler();
         });
+    	path("actores",()->{
+    		ActoresController Controller = new ActoresController();
+    		Controller.peliculasHandler();
+    	});
+    	path("peliculasactores",()->{
+    		PeliculasActoresController Controller = new PeliculasActoresController();
+    		Controller.peliculasHandler();
+    	});
     }
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());

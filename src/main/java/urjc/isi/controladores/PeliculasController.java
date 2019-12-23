@@ -36,8 +36,13 @@ public class PeliculasController {
 	}
 	
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
-		List<Peliculas> output = ps.getAllPeliculas();
+		List<Peliculas> output;
 		String result = "";
+		if(request.queryParams("actor")!= null) {
+			output = ps.getAllPeliculasWithActor(request.queryParams("actor"));
+		}else {
+			output = ps.getAllPeliculas();
+		}
 		for(int i = 0; i < output.size(); i++) {
 		    result = result + output.get(i).toHTMLString() +"</br>";
 		}

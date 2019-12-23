@@ -15,49 +15,44 @@ import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
 import urjc.isi.entidades.*;
 
 public class PeliculasService {
-
-	private PeliculasDAOImpl pelisDAO;
-
-	/**
-	 * Constructor por defecto
-	 */
-	public PeliculasService() {
-		pelisDAO = new PeliculasDAOImpl();
+	
+	public String uploadTable(Request req){
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		try (InputStream input = req.raw().getPart("uploaded_films_file").getInputStream()) {
+		    pelisDAO.dropTable();
+		    pelisDAO.createTable();
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			pelisDAO.uploadTable(br);
+		} catch (IOException | ServletException | SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		pelisDAO.close();
+		return result;
 	}
+
+	public List<Peliculas> getAllPeliculas() throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectAll();
+		pelisDAO.close();
+		return result;
+	}
+	public List<Peliculas> getAllPeliculasWithActor(String name){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectAllwhereActor(name);
+		pelisDAO.close();
+		return result;
+	}
+	
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
 	 * @return Estado de salida
 	 */
-	public String crearTablaPeliculas()  throws SQLException{
+	/*public String crearTablaPeliculas()  throws SQLException{
 			pelisDAO.createTable();
 			return "Tabla creada con exito";
-	}
-
-	/**
-	 * Obtiene todas las peliculas que estan en la base de datos
-	 * @return
-	 * @throws SQLException
-	 */
-	public List<Peliculas> getAllPeliculas() throws SQLException{
-		return pelisDAO.selectAll();
-	}
-	
-	public String uploadTable(Request req){
-		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
-		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_films_file").getInputStream()) {
-			PeliculasDAOImpl peli = new PeliculasDAOImpl();
-		    peli.dropTable();
-		    peli.createTable();
-			InputStreamReader isr = new InputStreamReader(input);
-			BufferedReader br = new BufferedReader(isr);
-			peli.uploadTable(br);
-		} catch (IOException | ServletException | SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return result;
-	}
-	
-	
+	}*/
 }
