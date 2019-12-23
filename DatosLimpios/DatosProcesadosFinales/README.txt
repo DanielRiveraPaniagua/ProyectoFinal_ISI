@@ -25,3 +25,6 @@
 	
 	* relacion_peliculas_generos.txt
 	id_pelicula '\t' nombre_genero
+
+	* relacion_peliculas_ratings.txt
+	id_pelicula '\t' puntuacion_total '\t' num_votos
