@@ -1,3 +1,0 @@
-1	aladin	1998	1.5	3.5	2000
-2	alotroladin	1998	1.5	5	20000
-3	alfrente	2000	1	1	3

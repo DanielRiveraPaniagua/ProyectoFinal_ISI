@@ -34,12 +34,14 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
 		statement.executeUpdate("create table peliculas (idpelicula INT, titulo string, año string, duracion string, rating INT, nvotos INT, PRIMARY KEY (idpelicula))");
+		c.commit();	
 	}
 	@Override
   public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
 		statement.executeUpdate("drop table if exists peliculas");
+		c.commit();
 	}
   @Override
   public void insert(Peliculas entity) {
@@ -100,6 +102,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 		  pstmt.executeUpdate();
+	      c.commit();
 	  } catch (SQLException e) {
 		  System.out.println(e.getMessage());
 	  }

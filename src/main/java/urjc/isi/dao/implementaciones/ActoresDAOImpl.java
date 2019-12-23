@@ -28,6 +28,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
 		statement.executeUpdate("create table actores" + table);
+		c.commit();
 	}
 
 	@Override
@@ -35,6 +36,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		Statement statement = c.createStatement();
 		statement.setQueryTimeout(30);
 		statement.executeUpdate("drop table if exists actores");
+		c.commit();
 	}
 
 	@Override
@@ -97,6 +99,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  String sql = "DELETE from personas WHERE idpersona=" + idpersona;
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
+			  c.commit();
 		  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
