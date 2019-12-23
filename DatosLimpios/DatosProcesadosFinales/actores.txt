@@ -1,0 +1,1654 @@
+tt0105621	nm0010472	Scott Adair	\N	\N
+tt0105621	nm0038944	Mab Ashforth	1931	2017
+tt0105621	nm0087762	Dorothy Blass	\N	\N
+tt0105621	nm0239484	Allison Duboise	\N	\N
+tt0105621	nm0275884	Alida P. Field	\N	\N
+tt0105621	nm0615266	Sean Murray	1977	\N
+tt0105621	nm0894669	Glen Vernon	1923	1999
+tt0134350	nm0358154	Sarah Jane Hamilton	1971	\N
+tt0134350	nm0481815	Chasey Lain	1971	\N
+tt0134350	nm0630362	Kaylan Nicole	1973	\N
+tt0134350	nm0632022	Isis Nile	1969	\N
+tt0134350	nm0944418	Lilli Xene	1968	\N
+tt0352126	nm0467730	Corey Allen Kotler	1968	\N
+tt0352126	nm0608664	Gary Daniel Mosher	\N	\N
+tt0352126	nm0861944	Zachary Throne	1967	\N
+tt0352126	nm0910461	Michael Waltman	1946	2011
+tt0352126	nm0917955	Jerry Weil	1961	\N
+tt0352126	nm1261039	Harish Mandyam	1971	\N
+tt0352126	nm1320861	Scott Roe	\N	\N
+tt0409679	nm0943291	Randall Wulff	\N	\N
+tt0409679	nm1256993	Lena Diver	\N	\N
+tt0409679	nm1558282	Ken Wiley	\N	\N
+tt0409679	nm1616247	Art Roberts	\N	\N
+tt0413989	nm0243344	Scott duPont	\N	\N
+tt0413989	nm1664534	John Hill	\N	\N
+tt0413989	nm1790517	Robbie Lee	\N	\N
+tt0413989	nm1796858	Claude McFarlan	\N	\N
+tt0428438	nm1232899	Paul Juhn	\N	\N
+tt0428438	nm1233212	Philippe Cu Leong	\N	\N
+tt0428438	nm1741309	Richard Hahn	\N	\N
+tt0678150	nm0005226	Debra Messing	1968	\N
+tt0678150	nm0265670	Frankie Faison	1949	\N
+tt0678150	nm0832531	Adam Storke	1962	\N
+tt0678150	nm0893283	Vincent Ventresca	1966	\N
+tt0850271	nm1833972	Allison Norris	\N	\N
+tt0850271	nm2275778	Raymond Schmoll	\N	\N
+tt0850271	nm2369633	J. Jesse Harley	\N	\N
+tt0850271	nm2369715	Greg Estandia	\N	\N
+tt1000252	nm0855039	David Tennant	1971	\N
+tt1000252	nm1164725	Lucy Gaskell	1980	\N
+tt1000252	nm1303956	Freema Agyeman	1979	\N
+tt1000252	nm1659547	Carey Mulligan	1985	\N
+tt0015927	nm0383199	Walter Hiers	1893	1933
+tt0015927	nm0860092	Duane Thompson	1903	1970
+tt0015927	nm1275391	Buddy the Dog	\N	\N
+tt0266681	nm0430787	Arvind Joshi	\N	\N
+tt0266681	nm1163387	Kishore Bhatt	\N	\N
+tt0266681	nm1166325	Pallavi Mehta	\N	\N
+tt0266681	nm2140421	Kishore Jariwala	\N	\N
+tt0317589	nm0175260	Andrew Connolly	1965	\N
+tt0317589	nm0284126	Don Foley	\N	\N
+tt0317589	nm0634337	Patrick David Nolan	\N	\N
+tt0317589	nm1166723	Fidelma O'Dowd	\N	\N
+tt0317589	nm1168390	Karen Ward	\N	\N
+tt0317589	nm1168986	Jody Gannon	\N	\N
+tt0317589	nm3016093	Jeremy Chapman	\N	\N
+tt0317589	nm3016454	Bill McMahon	\N	\N
+tt0436850	nm1546398	Owen Miller	\N	\N
+tt0436850	nm1738261	Matt Milano	\N	\N
+tt0436850	nm1784610	Trevin Lica	\N	\N
+tt0436850	nm1789376	Jeanne Tidwell	\N	\N
+tt0450264	nm0012209	Michael Adler	\N	\N
+tt0450264	nm0798931	Julia Silverman	\N	\N
+tt0450264	nm1006966	Daniel Faltus	\N	\N
+tt0450264	nm1076037	Miriam Billington	\N	\N
+tt0602553	nm0039673	Ian Aspinall	1961	\N
+tt0602553	nm0103544	Luisa Bradshaw-White	1974	\N
+tt0602553	nm0250092	Jeremy Edwards	1971	\N
+tt0602553	nm0387704	Tina Hobley	1971	\N
+tt0602553	nm0493200	Denis Lawson	1947	\N
+tt0602553	nm0551136	Rocky Marshall	1967	\N
+tt0602553	nm0669286	Jan Pearson	1959	\N
+tt0602553	nm0755548	Laura Sadler	1980	2003
+tt0644572	nm0002786	Mia Korf	\N	\N
+tt0644572	nm0436751	Matt Kaminsky	1971	\N
+tt0116083	nm0006670	Paul F. Tompkins	1968	\N
+tt0116083	nm0426678	Jay Johnston	1968	\N
+tt0212808	nm0202542	Nalin Dave	\N	\N
+tt0212808	nm0810994	Snehlata	\N	\N
+tt0212808	nm1031273	Ramesh Mehta	1934	2012
+tt0212808	nm1032187	Arvind Rathod	\N	\N
+tt0212808	nm1032828	Shrikant Soni	\N	\N
+tt0212808	nm1033232	Upendra Trivedi	1936	2015
+tt0240312	nm0717902	Leonard Reina	\N	\N
+tt0240860	nm0003925	Julianne Buescher	1965	\N
+tt0240860	nm0011148	Lillian Adams	1922	2011
+tt0240860	nm1503808	John Savage	\N	\N
+tt0240860	nm1505194	Michael Craven Wells	\N	\N
+tt0271501	nm0255649	Keith Elshaw	\N	\N
+tt0271501	nm0499641	Lew Lehman	1933	2000
+tt0271501	nm0791774	Elizabeth Shepherd	1936	\N
+tt0317621	nm0128880	Sharon Kane	1956	\N
+tt0317621	nm0493058	Tom Lawrence	1937	\N
+tt0317621	nm0504459	Philip Lester	\N	\N
+tt0330058	nm0004800	Jessica Capshaw	1976	\N
+tt0330058	nm0437852	Lyle Kanouse	1952	\N
+tt0330058	nm0597314	Gary Molyneux	\N	\N
+tt0330058	nm0844172	Eric Szmanda	1975	\N
+tt0357592	nm0270194	Olegar Fedoro	1958	\N
+tt0357592	nm0341891	Yuriy Grigorev	1955	\N
+tt0369797	nm1330023	Kim Sønderholm	1973	\N
+tt0369797	nm1807925	Morten Holst	1982	\N
+tt0375896	nm0003078	Roger Cross	1969	\N
+tt0375896	nm0127437	Jordi Caballero	1965	\N
+tt0375896	nm0892259	Claudia Velasco	\N	\N
+tt0375896	nm1312136	Oscar Orosco	\N	\N
+tt0409922	nm0055819	Barbara Barnes-Hopkins	\N	\N
+tt0409922	nm0329192	Patrice Goodman	\N	\N
+tt0409922	nm1169838	Kate Kelton	1978	\N
+tt0409922	nm1227882	Herbert Johnson	1949	2015
+tt0423203	nm1035570	Ray Jarrell	\N	\N
+tt0423203	nm1092545	Tracy Coogan	\N	\N
+tt0423203	nm1760014	Jeannie Dalton	\N	\N
+tt0423203	nm1763343	Steve Chappell	\N	\N
+tt0423203	nm1764059	Trina Chambers	\N	\N
+tt0441819	nm0193160	Catherine Curtin	\N	\N
+tt0441819	nm1468085	Billy Finnigan	1982	\N
+tt0441819	nm1513297	Brianne Berkson	1985	\N
+tt0441819	nm1931149	Andrew Casertano	\N	\N
+tt0456174	nm0001817	Reginald VelJohnson	1952	\N
+tt0456174	nm0791648	Kiki Shepard	1951	\N
+tt0469176	nm1194034	Adam Cardon	1976	\N
+tt0469176	nm1705652	Irena Violette	\N	\N
+tt0469176	nm1785350	Sherry Mattson	\N	\N
+tt0476693	nm0666551	Craig Patton	1957	2015
+tt0476693	nm0724604	John Henry Richardson	\N	\N
+tt0476693	nm1483668	Kari Nissena	\N	\N
+tt0476693	nm1640208	Jake Galasso	1976	\N
+tt0477428	nm0133163	Roy Campolongo	\N	\N
+tt0477428	nm0170905	Deirdre Coleman Imus	1964	\N
+tt0477428	nm0278767	Andrew Fiscella	1966	\N
+tt0477428	nm2030693	Jim Evans	\N	\N
+tt0483638	nm1582340	Oscar Hoffmans	\N	\N
+tt0483638	nm2054509	Aukje Warners	\N	\N
+tt0483638	nm2056830	Jacob van Heerikhuizen	\N	\N
+tt0483638	nm2060207	Kenzo Alvares	\N	\N
+tt0491060	nm0006568	Maria Callas	1923	1977
+tt0796812	nm1977891	Dan O'Meara	\N	\N
+tt0796812	nm2048933	Max Bullis	1979	\N
+tt0796812	nm2257348	Cat Hartmann	\N	\N
+tt0796812	nm2258835	Steve Francois	\N	\N
+tt0796821	nm1107906	David Turnbull	1989	\N
+tt0796821	nm1110998	Jeff Sutton	1990	\N
+tt0796821	nm2256251	Josh Assor	\N	\N
+tt0796821	nm2257950	Jennifer McArthur	\N	\N
+tt0876152	nm0041556	Ferran Audí	\N	\N
+tt0876152	nm1301606	Diana Payne-Myers	\N	\N
+tt0933051	nm1868426	Chris Kapakos	\N	\N
+tt0933051	nm2110708	Joel Levitt	\N	\N
+tt0933051	nm2372963	Kameshia Duncan	\N	\N
+tt0933051	nm2501145	Johnny Mineo	1984	\N
+tt0933051	nm3099553	Lynda Lurei	\N	\N
+tt0933051	nm6587111	Dominick J. DeNucci	\N	\N
+tt0940646	nm0092768	Gigi Bolden	\N	\N
+tt0940646	nm1976420	Theodore Perkins	\N	\N
+tt0940646	nm2398744	Paul Parker	\N	\N
+tt0940646	nm2522291	Haile D'Alan	1988	\N
+tt0940646	nm2688277	Susan Agopian	\N	\N
+tt0940646	nm2701217	Jeremy Chada	\N	\N
+tt0940752	nm0108355	Oto Brezina	\N	\N
+tt0940752	nm1500093	Robert Olding	\N	\N
+tt0940752	nm2029452	Gary M. Robbins	\N	\N
+tt0940752	nm2173108	Kaya Rosenthal	1993	\N
+tt0990441	nm1910179	Sean Becker	1981	\N
+tt0990441	nm1912959	Payman Benz	1978	\N
+tt0990441	nm2300676	Chris Darnell	\N	\N
+tt0113393	nm0300137	Rostas Gabor	\N	\N
+tt0113393	nm0618160	Gisela Müller	1963	\N
+tt0113393	nm0886407	José van der Schoot	\N	\N
+tt0113393	nm0921073	Hermann Wenning	\N	\N
+tt0151756	nm0224494	Nikki Dial	1973	\N
+tt0151756	nm0599021	Jonathan Morgan	1966	\N
+tt0151756	nm0741668	Shanna Rose	\N	\N
+tt0151756	nm0922301	Randy West	1947	\N
+tt0151756	nm0934205	Ted Wilson	\N	\N
+tt0161523	nm0014959	Aja	1963	2006
+tt0161523	nm0083152	Bionca	1965	\N
+tt0161523	nm0101288	Patrick Collins	1951	\N
+tt0161523	nm0593722	Sharon Mitchell	1956	\N
+tt0161523	nm0598475	Carolyn Monroe	1968	\N
+tt0161523	nm0862518	Tianna	1963	\N
+tt0213098	nm0286194	Liane Forestieri	1975	\N
+tt0213098	nm0317398	Armin Gierster	\N	\N
+tt0213098	nm0375045	Otto Helfer	\N	\N
+tt0213098	nm0457189	László I. Kish	1957	\N
+tt0248017	nm0510967	Yang Lin	\N	\N
+tt0248017	nm0704511	Beulah Quo	1923	2002
+tt0248017	nm0790912	David Sheinkopf	\N	\N
+tt0248017	nm0837942	Larry Sullivan	1970	\N
+tt0300085	nm1075987	John Beda	\N	\N
+tt0300085	nm1078171	Cees Van Muiswinkel	\N	\N
+tt0300085	nm1078576	Liam Gorman	\N	\N
+tt0311402	nm0039398	Per Egil Aske	1954	\N
+tt0311402	nm0513064	Eli Anne Linnestad	1944	\N
+tt0311402	nm0654954	Suzanne Paalgard	\N	\N
+tt0311402	nm1127228	Arne Reitan	\N	\N
+tt0311402	nm1140842	Yngve Berven	\N	\N
+tt0379043	nm0847543	Ken Takemoto	1934	\N
+tt0379043	nm1405344	David Hall	1997	\N
+tt0379043	nm1436456	Hann Mao	\N	\N
+tt0379043	nm1437010	Elliot Persico	\N	\N
+tt0379043	nm1589093	Madison Hall	1994	\N
+tt0393643	nm0038252	Mario Arévalo	\N	\N
+tt0393643	nm0184379	Martha Covarrubias	\N	\N
+tt0393643	nm0247505	Carlos East Jr.	1980	\N
+tt0393643	nm0247513	Carlos East	1942	1994
+tt0393643	nm0247519	Ernesto East	1980	\N
+tt0393643	nm0333088	Sergio Goyri	1958	\N
+tt0393643	nm0350104	Roberto 'Flaco' Guzmán	1936	2002
+tt0393643	nm0584754	Cristina Michaus	\N	\N
+tt0393643	nm0643511	Gabriela Obregón	\N	\N
+tt0451270	nm1899747	Jackie Adeniji	\N	\N
+tt0451270	nm1904785	Maureen Cahill	\N	\N
+tt0451270	nm1906576	Hugh Anderson	\N	\N
+tt0451270	nm1907523	Taharah Azam	\N	\N
+tt0475026	nm0059065	Lourdes Bartolomé	\N	\N
+tt0475026	nm0410715	María Isasi	1975	\N
+tt0475026	nm1732381	Lilian Caro	\N	\N
+tt0475026	nm1782230	Montse Heras	\N	\N
+tt0485333	nm0162724	Petar Cirica	1975	\N
+tt0485333	nm0904009	Danijela Vranjes	1973	\N
+tt0485333	nm1460079	Djordje Sargas	\N	\N
+tt0956330	nm1456390	Alex Babic	\N	\N
+tt0956330	nm1544070	Adam Burton	\N	\N
+tt0956330	nm2458738	Guy Henderson	\N	\N
+tt0956330	nm2534034	Lauren Hennessy	\N	\N
+tt1136502	nm1128780	Elizabeth Tulloch	1981	\N
+tt1136502	nm1378589	David Walton	1978	\N
+tt1136502	nm1395512	Mike Faiola	\N	\N
+tt1136502	nm1974920	Scott Michael Foster	1985	\N
+tt0112409	nm0082798	Markus Binder	1963	\N
+tt0112409	nm0266273	Hans Peter Falkner	\N	\N
+tt0171829	nm0541809	Veljko Mandic	1924	1988
+tt0171829	nm0815474	Bert Sotlar	1921	1992
+tt0171829	nm0956934	Zoran Zindovic	\N	\N
+tt0239764	nm0031617	T.D. Antoine	\N	\N
+tt0239764	nm0114325	ND Brown	\N	\N
+tt0239764	nm0281693	Jaqueline Fleming	1977	\N
+tt0239764	nm0426441	William L. Johnson	\N	\N
+tt0239764	nm0427664	Burnadean Jones	1973	\N
+tt0239764	nm0427793	Clyde Risley Jones	\N	\N
+tt0239764	nm0809953	Sheree Fletcher	1967	\N
+tt0246792	nm1547010	Phil Reynolds	\N	\N
+tt0280203	nm0003758	Gustavo Lipsztein	\N	\N
+tt0280203	nm0006987	Jsu Garcia	1963	\N
+tt0280203	nm0683981	Linda Pine	1971	\N
+tt0280203	nm1006886	Anna Dresdan	\N	\N
+tt0308815	nm0113289	Claudia Brown	\N	\N
+tt0308815	nm0852957	Nick Taylor	1958	\N
+tt0308815	nm1129391	Richard May	\N	\N
+tt0308815	nm1129395	Robert Norton	\N	\N
+tt0360502	nm1352328	Baoling Yang	\N	\N
+tt0383369	nm0232046	Sheila Donald	1929	\N
+tt0383369	nm0360171	Ian Hanmore	1953	\N
+tt0383369	nm1463925	Harriet Hunter	\N	\N
+tt0403030	nm0086993	Jarred Blancard	1973	\N
+tt0403030	nm0756797	Daniela Saioni	\N	\N
+tt0412660	nm1469673	Vladimir Rodionov	\N	\N
+tt0412660	nm1587379	Avril Tembouret	\N	\N
+tt0412660	nm1689084	Flora Volpelière	\N	\N
+tt0427203	nm1438354	Jonathan Case	\N	\N
+tt0427203	nm1476521	Brad Goslee	\N	\N
+tt0427203	nm1763634	Michael Lippert	1984	\N
+tt0427203	nm1764067	Taylor Craft	\N	\N
+tt0430690	nm1746550	Michael Hughes	\N	\N
+tt0430690	nm1748451	Genevieve Genest	\N	\N
+tt0430690	nm1748497	Serena Hoffing	\N	\N
+tt0430690	nm1748498	Sian Horan	\N	\N
+tt0431787	nm0012419	Adriaan Adriaanse	1943	\N
+tt0431787	nm0250834	Corinne van Egeraat	\N	\N
+tt0431787	nm0576189	Sijtze van der Meer	1972	\N
+tt0431787	nm1028132	Fran Beumkes	1922	\N
+tt0431787	nm1760415	Isha Persoon	\N	\N
+tt0446582	nm0482730	The Dalai Lama	1935	\N
+tt0449496	nm0923105	Tara Westwood	\N	\N
+tt0449496	nm1838469	Jason Kaufman	\N	\N
+tt0449496	nm1839973	Steven Lubin	\N	\N
+tt0449496	nm1839988	Lucian Maisel	\N	\N
+tt0449496	nm3897822	Gary Troy	\N	\N
+tt0466427	nm0146099	Clare Cathcart	1965	2014
+tt0466427	nm0318821	Aidan Gillen	1968	\N
+tt0475571	nm0305953	Ana García	\N	\N
+tt0475571	nm1236106	Marta Fernández	1973	\N
+tt0475571	nm2014344	Jonás Domínguez	\N	\N
+tt0475571	nm8652775	Karlos Granada	\N	\N
+tt0476806	nm1226950	Carlos Berraymundo	\N	\N
+tt0476806	nm2016441	Pablo Oliaro	\N	\N
+tt0486758	nm0338676	Benton Greene	1972	\N
+tt0486758	nm1699444	Kimrie Lewis	\N	\N
+tt0486758	nm2082091	Gha'il Rhodes Benjamin	\N	\N
+tt0491122	nm0722871	Joseph Ribeiro	\N	\N
+tt0491122	nm1752882	Christa Martin	\N	\N
+tt0491122	nm1926719	Larissa Kasian	\N	\N
+tt0491122	nm1938623	Chandler Bolt	\N	\N
+tt0497117	nm1215181	Jean-Claude Montheil	\N	\N
+tt0497117	nm2145050	Maxime Fleuriot	\N	\N
+tt0764270	nm1502542	Elliot Young	\N	\N
+tt0764270	nm2148107	Luke Gray	\N	\N
+tt0764270	nm2151830	Chris Jones	\N	\N
+tt0764270	nm2159949	Richie Daysh	\N	\N
+tt0806192	nm0991553	Rich Ceraulo Ko	1977	\N
+tt0806192	nm1210133	Kiosha Lee	1981	\N
+tt0806192	nm1784670	Cazimir Milostan	\N	\N
+tt0806192	nm2267051	Lauren Kiang	\N	\N
+tt0811155	nm1022496	Richard Dawson	\N	\N
+tt0811155	nm1854161	Jessica Johnson	\N	\N
+tt0811155	nm2282024	Vicky Allen	\N	\N
+tt0811155	nm2282926	Alan Gordon	\N	2007
+tt0811155	nm2283954	Floss	\N	\N
+tt0811155	nm2284533	Liam Crowe	\N	\N
+tt0825494	nm0291044	Noah Frank	\N	\N
+tt0825494	nm0528841	Beverly Lynne	1973	\N
+tt0825494	nm1169254	Glen Meadows	1974	\N
+tt0825494	nm1258204	Kitt Pomidoro	\N	\N
+tt0825494	nm1617461	Eva Angelina	1985	\N
+tt0825494	nm1651332	Sarah Blake	1980	\N
+tt0877326	nm1106793	Bruno Amato	1961	\N
+tt0877326	nm1322386	Cecilie Bull	\N	\N
+tt0877326	nm1457994	Caroline Bielskis	1960	\N
+tt0877326	nm1866725	Sheila Cavalette	\N	\N
+tt0890763	nm0188027	Nancy Criss	1960	\N
+tt0890763	nm0188027	Nancy Criss	1960	\N
+tt0933551	nm0480798	James Lafferty	1985	\N
+tt0933551	nm0502342	Bethany Joy Lenz	1981	\N
+tt0933551	nm0614877	Chad Michael Murray	1981	\N
+tt0933551	nm1122026	Hilarie Burton	1982	\N
+tt0956216	nm2286894	Paul Gill	\N	\N
+tt0956216	nm2535833	Jason Allen Goodlin	\N	\N
+tt0956216	nm2538817	Jackie Marr	\N	\N
+tt0986342	nm2209442	Jason Hook	\N	\N
+tt0986342	nm2365960	Lazar Crawford	\N	\N
+tt0986342	nm2587728	Ryan Beringer	\N	\N
+tt0986342	nm2592579	Chantelle Bravo	\N	\N
+tt0036658	nm0199585	Billy Daniel	1912	1962
+tt0036658	nm0269709	Frank Faylen	1905	1985
+tt0036658	nm0426708	Johnny Johnston	1915	1996
+tt0036658	nm0711566	Mikhail Rasumny	1890	1956
+tt0036658	nm0760676	Olga San Juan	1927	2009
+tt0036658	nm0869811	Conrad Tovar	\N	\N
+tt0143768	nm0289740	Nikki Frame	\N	\N
+tt0143768	nm0522550	Jacqueline Lovell	1974	\N
+tt0204886	nm0473290	Rima Kshief	\N	\N
+tt0204886	nm0795386	Mohamed Shrief	\N	\N
+tt0204886	nm0795387	Zeina Shrief	\N	\N
+tt0230039	nm0382675	Tom Hickey	1944	\N
+tt0230039	nm0492572	Tom Lawlor	\N	\N
+tt0230039	nm0640873	Maurice O'Donoghue	\N	\N
+tt0230039	nm0730069	Helen Roche	\N	\N
+tt0230039	nm0730925	Charlie Roberts	\N	\N
+tt0230039	nm0929010	Graham Wilkinson	\N	\N
+tt0230039	nm1023822	Kevin Reynolds	\N	\N
+tt0257145	nm0531387	Jayson MacBride	\N	\N
+tt0257145	nm0541819	Mandingo	\N	\N
+tt0257145	nm0830293	Jack Wrangler	1946	2009
+tt0257145	nm1123219	Roger	1954	1991
+tt0257145	nm1579408	Tony Rusca	\N	\N
+tt0257145	nm1622883	Kees Chapman	\N	1988
+tt0257145	nm2131568	B. Lackey	\N	\N
+tt0272286	nm0953520	Drazen Zarkovic	1970	\N
+tt0272286	nm1203539	Sergije Michieli	\N	\N
+tt0272286	nm1205187	Tomislav Veliki	\N	\N
+tt0272286	nm1234404	Lana Slivar	\N	\N
+tt0272572	nm0005371	Robbie Robertson	1943	\N
+tt0303148	nm1088942	Dodji Akakpo	\N	\N
+tt0303148	nm1090343	Togbega Kwao Anipati IV	\N	\N
+tt0322693	nm0006924	Federico Marsicano	1971	\N
+tt0322693	nm0054680	Emanuela Barilozzi	\N	\N
+tt0322693	nm0714537	Paco Reconti	\N	\N
+tt0322693	nm1195756	Roberto Nieddu	\N	\N
+tt0325917	nm0084423	Katarina Bistrovic-Darvas	1972	\N
+tt0325917	nm0812506	Semka Sokolovic-Bertok	1935	2008
+tt0325917	nm0846314	Zoran Tadic	1941	2007
+tt0325917	nm0899237	Nina Violic	1972	\N
+tt0325917	nm0904289	Samir Vujcic	\N	\N
+tt0325917	nm0961800	Davor Svedruzic	1968	\N
+tt0325917	nm1017991	Tarik Filipovic	1972	\N
+tt0331591	nm0559127	Jadranka Matkovic	1951	\N
+tt0331591	nm0754494	Damir Saban	1958	\N
+tt0331591	nm0904352	Zeljko Vukmirica	1953	\N
+tt0331591	nm1242930	Renata Jurkovic	\N	\N
+tt0334516	nm1253241	Danica Simac	\N	\N
+tt0334516	nm1253242	Pave Simac	\N	\N
+tt0370024	nm0476094	Shishir Kurup	1961	\N
+tt0370024	nm0621244	Meera Simhan	\N	\N
+tt0370024	nm0713576	Kavi Raz	\N	\N
+tt0370024	nm1389185	Juhi Dudani	\N	\N
+tt0374991	nm0092653	Dijana Bolanca	1974	\N
+tt0374991	nm0444272	Hrvoje Keckes	1975	\N
+tt0374991	nm0463396	Marija Kohn	1934	2018
+tt0376991	nm1269566	Lyle Morris	\N	\N
+tt0376991	nm1425643	Gloria Nikkel	\N	\N
+tt0376991	nm1426384	Kyla Wills	\N	\N
+tt0376991	nm1427082	Cheryl Soluk	\N	\N
+tt0380654	nm1449795	Cristina Evangelisti	\N	\N
+tt0380654	nm1450532	Ismaele Lucci	\N	\N
+tt0380654	nm1451158	Domenico Ruoppolo	\N	\N
+tt0389246	nm0528824	Verónica Lynn	\N	\N
+tt0389246	nm0700267	Alberto Pujol	\N	\N
+tt0389246	nm1206875	Pablo Guevara	\N	\N
+tt0389246	nm1417057	Diana Splinter	\N	\N
+tt0397054	nm0463747	George Kokkoris	\N	\N
+tt0397054	nm1350094	Ford D'Aprix	\N	\N
+tt0397054	nm1526223	Daniel Samonas	1990	\N
+tt0397054	nm1553072	Thomas Mikusz	1970	\N
+tt0397054	nm1555472	Chanel Hart	\N	\N
+tt0408996	nm0087891	Bruce Blauer	1971	\N
+tt0408996	nm1600491	Shaeffer Dean	\N	\N
+tt0408996	nm1601314	Amelia Arden	\N	\N
+tt0408996	nm1601335	Eve Curtis	1965	\N
+tt0411640	nm1288273	David Portorreal	\N	\N
+tt0411640	nm1289709	Bill Fernandez	\N	\N
+tt0411640	nm1645454	Kate Clemons	\N	\N
+tt0427345	nm0644172	Baadja-Lyne Odums	\N	\N
+tt0427345	nm1344397	Sonia Maria Martin	\N	\N
+tt0427345	nm1616258	Stephen B. Turner	1976	\N
+tt0427345	nm1759588	Carol Soldo	1934	2019
+tt0430288	nm1595824	Jeffrey Adam Doyle	\N	\N
+tt0430288	nm1747382	Kirt Bobbi	\N	\N
+tt0430288	nm1750718	Chris Cichelly	\N	\N
+tt0430288	nm1750764	Kevin Doherty	\N	\N
+tt0432292	nm1758741	Ambessa Cantave	\N	\N
+tt0432292	nm2173249	Jacquelyn Richey	\N	\N
+tt0437371	nm0758119	Kristin Sales	\N	\N
+tt0437371	nm1839825	Joshua T. Harrel	\N	\N
+tt0442865	nm0923063	Rense Westra	1946	2015
+tt0442865	nm1822475	Gerrit Poortinga	\N	\N
+tt0442865	nm1822546	Albert Secuur	\N	\N
+tt0442865	nm1822627	Emmy Veneboer	\N	\N
+tt0446597	nm1531997	Rebekka Johnson	\N	\N
+tt0446597	nm1832037	Gustavo Alonso	\N	\N
+tt0446597	nm1833069	B.J. Gallagher	\N	\N
+tt0446597	nm2899076	Terrence Taylor	\N	\N
+tt0457311	nm0135821	Omar Caraballo	\N	\N
+tt0457311	nm0212839	Kevin Dean-Hackett	\N	\N
+tt0457311	nm1531307	Aubrey Chandler	1972	\N
+tt0457311	nm1807489	George Smith	\N	\N
+tt0457311	nm1889830	Nicalia Enna	\N	\N
+tt0457311	nm1893186	Zulma F. Deltoro	\N	\N
+tt0457311	nm1896481	Jay David	\N	\N
+tt0472533	nm1578008	Kelly Belmont	\N	\N
+tt0472533	nm1594887	Kristin Collins	\N	\N
+tt0472533	nm1603435	David August	\N	\N
+tt0472533	nm1615657	Chris Rebacz	\N	\N
+tt0681308	nm0167342	Michelle Clunie	1969	\N
+tt0681308	nm0318744	Thea Gill	1970	\N
+tt0681308	nm0363736	Gale Harold	1969	\N
+tt0681308	nm0365826	Randy Harrison	1977	\N
+tt0783477	nm0827079	Kenneth Stephens	\N	\N
+tt0783477	nm1400638	Mark Mena	\N	\N
+tt0783477	nm1853805	Ben Estrada	\N	\N
+tt0783477	nm2207301	Cody Harkins	\N	\N
+tt0783663	nm0590942	Yôko Minamino	1967	\N
+tt0783663	nm0634583	Hironobu Nomura	1965	\N
+tt0819620	nm0129244	Neill Calabro	1960	\N
+tt0819620	nm1158702	Clay Cranford	\N	\N
+tt0819620	nm2305081	Nikki Branum	\N	\N
+tt0819620	nm2306826	Trish Rich	\N	\N
+tt0819620	nm2311254	El Ledbetter	\N	\N
+tt0819620	nm2314124	Scottie Frazier	\N	\N
+tt0826747	nm1834001	Friedelise Stutte	1984	\N
+tt0826747	nm2315906	Christian Kerepeszki	1969	\N
+tt0826747	nm2317061	Colette Nussbaum	\N	\N
+tt0826747	nm2318955	Aaron Abu Toboul	\N	\N
+tt0829220	nm0022707	Iris Braydon	\N	\N
+tt0829220	nm0171227	Taji Coleman	\N	\N
+tt0829220	nm1231789	Sofie Calderon	\N	\N
+tt0829220	nm2096985	Chris Andrew Ciulla	1975	\N
+tt0866569	nm0004748	Julie Benz	1972	\N
+tt0866569	nm0355910	Michael C. Hall	1971	\N
+tt0866569	nm0454701	Erik King	\N	\N
+tt0866569	nm1358539	Jennifer Carpenter	1979	\N
+tt0873134	nm0631490	Bill Nighy	1949	\N
+tt0889210	nm2432043	K.K. Rawal	\N	\N
+tt0889210	nm2433287	Gregoire de Kalbermatten	\N	\N
+tt0889210	nm2434055	Sunita Gajare	\N	\N
+tt0889210	nm2434514	Shri Mataji Nirmala Devi	1923	2011
+tt0893541	nm0270295	Stella Feehilly	\N	\N
+tt0893541	nm0322416	Jack Gleeson	1992	\N
+tt0893541	nm0642828	William O'Sullivan	\N	\N
+tt0893541	nm1470142	Daniel Costello	\N	\N
+tt0948097	nm0312363	Andrew Geller	\N	\N
+tt0948097	nm2281539	Brad Baker	\N	\N
+tt0948097	nm2400675	David Goodman	\N	\N
+tt0948097	nm2699871	Laura Goodman	\N	\N
+tt0972573	nm0118661	Melinda Buckley	1954	\N
+tt0972573	nm4540999	Peter Olberg	\N	\N
+tt0972573	nm4541302	Al Berr	\N	\N
+tt0972573	nm4541386	Joan Rosenbaum	\N	\N
+tt0972573	nm4541508	Steve Schrader	\N	\N
+tt0972573	nm4541576	Amanda Olberg	\N	\N
+tt0972573	nm4541592	Gardner McFall	\N	\N
+tt0972573	nm4541604	Corinne Demole-Schutz	\N	\N
+tt0973806	nm0573502	James McMurtry	1962	\N
+tt0036520	nm0217869	René Deltgen	1909	1979
+tt0036520	nm0311413	Otto Gebühr	1877	1954
+tt0036520	nm0691995	Henny Porten	1890	1960
+tt0036520	nm0902185	Marina von Ditmar	1914	2014
+tt0045154	nm0297856	Yôko Fujita	\N	\N
+tt0045154	nm0297869	Kamatari Fujiwara	1905	1985
+tt0045154	nm0412806	Hajime Izu	1918	2005
+tt0045154	nm0793766	Takashi Shimura	1905	1982
+tt0095437	nm0780904	Rick Sebak	1953	\N
+tt0097685	nm0452530	Karin Kienzer	1960	\N
+tt0097685	nm1221876	Thomas Stolzetti	\N	\N
+tt0104925	nm0000722	Joss Ackland	1928	\N
+tt0110869	nm0100068	JR Bourne	1970	\N
+tt0110869	nm0992993	Isabel Duarte	\N	\N
+tt0110869	nm2079165	Michael Medeiros	\N	\N
+tt0110869	nm2083377	John Brinco	\N	\N
+tt0134557	nm0000292	Michelle Bauer	1958	\N
+tt0134557	nm0225714	Ronnie Dickson	\N	\N
+tt0134557	nm10821765	Michelle Adams	\N	\N
+tt0134557	nm8434118	Gotcha	\N	\N
+tt0141445	nm0143187	Caroline Case	\N	\N
+tt0141445	nm0275145	Joe Fersedi	\N	\N
+tt0141445	nm0484300	Vivian Lanco	\N	\N
+tt0141445	nm0949433	Damian Young	\N	\N
+tt0158838	nm0284036	Renée Fokker	1961	\N
+tt0158838	nm0340027	Aus Greidanus	1950	\N
+tt0158838	nm0904098	Jop de Vries	1962	\N
+tt0160029	nm0030217	Lisa Ann	1972	\N
+tt0160029	nm0035718	Hank Armstrong	1955	\N
+tt0160029	nm0213851	John Decker	1964	\N
+tt0160029	nm0277618	Jeanna Fine	1964	\N
+tt0160029	nm0356067	Roxanne Hall	1976	\N
+tt0160029	nm0518763	Nicole London	1969	\N
+tt0160029	nm0539909	Anna Malle	1967	2006
+tt0160029	nm0828782	Shelby Stevens	1968	\N
+tt0160043	nm0658137	Blake Palmer	1960	\N
+tt0160043	nm0706047	Mindy Rae	\N	\N
+tt0160043	nm0761518	David Sanders	\N	\N
+tt0160043	nm0841010	Helga Sven	1943	\N
+tt0160043	nm1134532	Jeff Conrad	\N	\N
+tt0170846	nm0463800	Irakli Kokrashvili	\N	\N
+tt0170846	nm0661258	R. Paremuzashvili	\N	\N
+tt0170846	nm0851591	Merab Tavadze	\N	\N
+tt0170846	nm0953314	Sergo Zakariadze	1909	1971
+tt0171575	nm0282459	Timo Flloko	1948	\N
+tt0171575	nm1039594	Elida Cangonji	\N	\N
+tt0171575	nm1041170	Drita Pelingu	1926	2013
+tt0171575	nm1041528	Stavri Shkurti	\N	\N
+tt0178644	nm1923975	Graham Mumford	\N	\N
+tt0194499	nm0420532	Mato Jelic	\N	\N
+tt0194499	nm0434331	Ivo Kadic	1929	\N
+tt0194499	nm0952380	Zivko Zalar	1948	\N
+tt0201072	nm0004293	Matt Bellner	1969	\N
+tt0201072	nm0787307	Erica Shaffer	1970	\N
+tt0201072	nm1059877	Rob McClure	\N	\N
+tt0203664	nm0168287	Arlene Cockburn	\N	\N
+tt0203664	nm0779084	Dougray Scott	1965	\N
+tt0203664	nm0913622	Wendy Wason	1976	\N
+tt0212393	nm0120966	Benjamin Burdick	\N	\N
+tt0212393	nm0829952	Ingrid Sthare	1971	\N
+tt0216236	nm0036439	Evan Arnold	\N	\N
+tt0216236	nm0382602	Blair Hickey	1969	\N
+tt0216236	nm0761510	Cynthia Sanders	\N	\N
+tt0216236	nm0954150	Kara Zediker	1969	\N
+tt0236688	nm0281885	Martin Flörchinger	1909	2004
+tt0236688	nm0836103	Otto Stübler	1901	1986
+tt0236688	nm0836706	Emil Stöhr	1907	1997
+tt0236688	nm0845756	Walther Süssenguth	1900	1964
+tt0236688	nm0880187	Gisela Uhlen	1919	2007
+tt0249895	nm0928646	Webb Wilder	\N	\N
+tt0249895	nm1028350	Roger Brinegar	\N	\N
+tt0249895	nm2084358	Jimmy Daniels	\N	\N
+tt0249895	nm2087075	Laura Orange	\N	\N
+tt0253479	nm1351280	Chavdar Monov	\N	\N
+tt0260552	nm1396715	Mário Lara	1965	\N
+tt0260552	nm4931040	David Fine	\N	\N
+tt0276359	nm1789589	Daniel Brantley	\N	\N
+tt0276359	nm1816905	Agnes Ausborn	\N	\N
+tt0281312	nm0154427	Vannasone Chavadong	\N	\N
+tt0282998	nm0001292	Erin Gray	1950	\N
+tt0282998	nm0130254	Shannon Callahan	\N	\N
+tt0282998	nm0192842	Jill Curran	\N	\N
+tt0282998	nm0205234	Nonalee Davis	\N	\N
+tt0282998	nm0433224	Karin Justman	1970	\N
+tt0282998	nm0644902	Soon-Tek Oh	1932	2018
+tt0282998	nm0661850	Jane Park Smith	\N	\N
+tt0282998	nm0668262	Ashlee Payne	\N	\N
+tt0286735	nm0575729	Kristopher Medina	\N	\N
+tt0286735	nm1307896	Sandra Flammer	\N	\N
+tt0293104	nm0363887	Jesse Bob Harper	\N	\N
+tt0293104	nm0704127	Peter Quintana	\N	\N
+tt0293104	nm0835001	Johnny Strong	\N	\N
+tt0293104	nm0836608	Alexandra Styron	\N	\N
+tt0294645	nm0014732	John Ainsworth	1924	2013
+tt0294645	nm0289847	France-Noëlle	\N	\N
+tt0294645	nm0502091	Jeanne Lennox	\N	\N
+tt0294645	nm1044556	José Guerra	\N	\N
+tt0294645	nm1049178	Serge Rachevsky	\N	\N
+tt0298336	nm0077074	Jesse Bernstein	1974	\N
+tt0298336	nm0159068	Precious Chong	\N	\N
+tt0298336	nm0842270	John Sweet	1960	2017
+tt0298336	nm1067559	Whitney Laux	\N	\N
+tt0308623	nm0226619	Franjo Dijak	1977	\N
+tt0308623	nm0750714	Rakan Rushaidat	1977	\N
+tt0308623	nm1007922	Janko Rakos	1974	\N
+tt0308623	nm1100373	Tena Stivicic	1977	\N
+tt0308623	nm1127520	Mersudin Smajic	\N	\N
+tt0308623	nm1128193	Tomislav Fiket	\N	\N
+tt0310025	nm0432934	Zvonimir Juric	1971	\N
+tt0310025	nm0816297	Filip Sovagovic	1966	\N
+tt0310025	nm0884142	Kruno Valentic	1932	2000
+tt0310025	nm0954103	Mirta Zecevic	1969	\N
+tt0311095	nm1139365	Laurel Aiello	\N	\N
+tt0311095	nm1140690	Jeffrey Alfiero	\N	\N
+tt0311095	nm1141793	Christina Knowles	1980	\N
+tt0311095	nm1143309	Jason Crane	\N	\N
+tt0318852	nm0623424	Musarrat Nazir	1937	\N
+tt0318852	nm0624194	Neelo	1941	\N
+tt0318852	nm0706691	Sultan Rahi	1938	1996
+tt0318852	nm3788073	Bibbo	\N	1972
+tt0324655	nm0339698	Bojana Gregoric	1972	\N
+tt0324655	nm0559127	Jadranka Matkovic	1951	\N
+tt0324655	nm1007197	Hana Hegedusic	1976	\N
+tt0324655	nm1125351	Simon Bogojevic-Narath	1968	\N
+tt0324655	nm1126481	Igor Kuduz	1967	\N
+tt0324655	nm1193889	Zlatko Bokulic	\N	\N
+tt0324655	nm1202032	Zdravko Bokulic	\N	\N
+tt0326019	nm0395707	Ana Horvat	\N	\N
+tt0326019	nm0824921	Vinko Stefanac	1969	\N
+tt0326019	nm0953659	Jasna Zastavnikovic	1973	\N
+tt0326019	nm1102330	Drago Utjesanovic	1972	\N
+tt0326019	nm1204309	Mirej Stanic	\N	\N
+tt0326019	nm1205187	Tomislav Veliki	\N	\N
+tt0326444	nm0304910	Tamara Garbajs	1976	\N
+tt0326444	nm0340762	Goran Grgic	1965	\N
+tt0326444	nm0581879	Igor Mesin	1967	\N
+tt0326444	nm1126599	Edvin Liveric	1970	\N
+tt0326951	nm0015440	Kumiko Akiyoshi	1954	\N
+tt0326951	nm0038378	Yukiji Asaoka	1935	\N
+tt0326951	nm0157384	Takeo Chii	1942	2012
+tt0326951	nm0767984	Kenji Sawada	1948	\N
+tt0327418	nm1215969	Marilyn Brennan	\N	\N
+tt0327418	nm1218536	Michael Cullinan	\N	\N
+tt0327418	nm1218722	John Mazenko	\N	\N
+tt0327418	nm1218786	Donald Quinn	\N	\N
+tt0334433	nm1254425	Drazen Bratulic	1971	\N
+tt0334433	nm1255060	Renata Mohr	\N	\N
+tt0364684	nm1366495	Forrest Blackburn	\N	\N
+tt0364684	nm1368649	George Nielson	\N	\N
+tt0364684	nm4955109	Andrew David James	\N	\N
+tt0365070	nm0301630	Maria Galante	\N	\N
+tt0365070	nm1371848	Jeff Riebe	\N	\N
+tt0366327	nm0207468	Ingeborg de Blende	\N	\N
+tt0366327	nm0324075	Noël Godin	1945	\N
+tt0366327	nm0783706	Claude Semal	\N	\N
+tt0366327	nm0869099	Daniel Toscan du Plantier	1941	2003
+tt0371560	nm0486198	Ted Lange	1948	\N
+tt0371560	nm0611976	Greg Mullavey	1939	\N
+tt0371560	nm1172993	Sasha Perl-Raver	\N	\N
+tt0371560	nm1433100	Lee Anne Moore	\N	\N
+tt0372967	nm1076073	Frank Bonsangue	1956	\N
+tt0373670	nm1374695	Vincenzo Carbone	\N	\N
+tt0373670	nm1410163	Vincenzo Brusà	\N	\N
+tt0373670	nm1410250	Vincenzo Carbone	\N	\N
+tt0373670	nm1411212	Alessia Guarnaccia	\N	\N
+tt0378052	nm0108355	Oto Brezina	\N	\N
+tt0378052	nm0410336	Mark Irvingsen	\N	\N
+tt0378052	nm0757701	Joe Salazar	\N	\N
+tt0378052	nm1436451	Liisa Evastina	1980	\N
+tt0388728	nm0081930	Stéphane Bignon	\N	\N
+tt0388728	nm0086992	Bernard Blancan	1958	\N
+tt0388728	nm0488623	Arnaud Larrieu	1966	\N
+tt0388728	nm0488626	Jean-Marie Larrieu	1965	\N
+tt0388728	nm0549659	Serge Marquand	1930	2004
+tt0388728	nm1498906	Lucienne Deschamps	\N	\N
+tt0395642	nm1531570	Sarah Ellquist	1980	\N
+tt0395642	nm1534558	Chris Mammone	\N	\N
+tt0398261	nm1546201	Sean Boyd	1967	\N
+tt0398261	nm1550674	Terry McInroy	\N	\N
+tt0398261	nm1555255	John T. Woods	1979	\N
+tt0403149	nm0498990	Christian Leffler	\N	\N
+tt0403454	nm0047175	Carla Jo Bailey	\N	\N
+tt0403454	nm0081879	John Bigham	\N	\N
+tt0403454	nm1377386	Ina Burke	\N	\N
+tt0403454	nm1456446	Tom Chalmers	\N	\N
+tt0410044	nm1625816	The Puzzled Townsfolk of Nederland Colorado	\N	\N
+tt0411811	nm0207344	Gelli de Belen	1973	\N
+tt0411811	nm0516405	Rachel Lobangco	\N	\N
+tt0411811	nm0764133	Jimmy Santos	\N	\N
+tt0411811	nm1403402	Raymart Santiago	1973	\N
+tt0412595	nm0191504	Max Cullen	1940	\N
+tt0412595	nm1055348	Jennie Dibley	\N	\N
+tt0412595	nm1116918	Sean Lynch	\N	\N
+tt0412595	nm1625746	Tanc Sade	1980	\N
+tt0415077	nm1591492	Casey Collins	\N	\N
+tt0415077	nm1642664	Jerry Thompson	\N	\N
+tt0415077	nm1642665	Mike Thompson	\N	\N
+tt0415077	nm1645391	Robert Shupe	\N	\N
+tt0417252	nm0719959	Dan Renzi	1974	\N
+tt0417252	nm1409196	Samuel Child	1976	\N
+tt0417252	nm1658735	Bob Brindley	\N	\N
+tt0419744	nm0331252	Cari Gorostiza	\N	\N
+tt0419744	nm1535872	Alicia Fitzgerald	\N	\N
+tt0419744	nm1675679	Jennifer Colon	1981	\N
+tt0419744	nm1752559	Maria Rodriguez	\N	\N
+tt0422878	nm0190295	Donna Cruz	1977	\N
+tt0422878	nm0209644	Angelu De Leon	\N	\N
+tt0422878	nm0209662	Keempee de Leon	1973	\N
+tt0422878	nm1082487	Mely Tagasa	\N	2018
+tt0422878	nm1232141	Alice Dixson	1969	\N
+tt0422878	nm1340290	Zeny Zabala	1937	2017
+tt0422878	nm2056718	Paco Arespacochaga	\N	\N
+tt0422878	nm2152652	Lander Vera-Perez	\N	\N
+tt0423212	nm0540545	Don Maloney	\N	\N
+tt0423212	nm1555075	Christopher Rydman	\N	\N
+tt0423212	nm1711921	Celia Anne Browne	\N	\N
+tt0423212	nm1711995	Kathleen Hale	\N	\N
+tt0438096	nm1390314	Hervé Joseph Lebrun	\N	\N
+tt0439741	nm1795253	Denny Doran	\N	\N
+tt0439741	nm1795991	Kenny Howell	\N	\N
+tt0439741	nm1796939	John Milhalpolous	\N	\N
+tt0439741	nm1824521	Alex Magosci	\N	\N
+tt0442233	nm0642969	Lee Oakes	1974	\N
+tt0442233	nm0649775	Stuart Organ	\N	\N
+tt0442233	nm0716490	Vincent Regan	1965	\N
+tt0442233	nm0925815	Robert Whitelock	\N	\N
+tt0442233	nm1814270	Bobby Moore	\N	\N
+tt0442233	nm1832967	Ryan Downing	\N	\N
+tt0443342	nm0593511	Kirsty Mitchell	1974	\N
+tt0443342	nm1557765	James Nightingale	\N	\N
+tt0443342	nm1822360	Derek Manway	\N	\N
+tt0452255	nm0499856	John Lehr	1967	\N
+tt0452255	nm0993496	Kate Connor	\N	\N
+tt0452255	nm1120201	Steven Brandon	1978	\N
+tt0452255	nm1316530	Joe Finfera	1968	\N
+tt0457616	nm0065157	Jack Beck	\N	\N
+tt0457616	nm1731013	Tamara Luzeckyj	\N	\N
+tt0458461	nm1102908	Chantal Simpson	1982	\N
+tt0458461	nm1583983	Ben Affan	1980	\N
+tt0467840	nm1587067	Ben Seery	\N	\N
+tt0467840	nm1666970	Stuart Lumsden	\N	\N
+tt0467840	nm1815305	Kym Bidstrup	\N	\N
+tt0467840	nm1965368	Amy Hope	\N	\N
+tt0468470	nm1276179	Annette Kelly	\N	\N
+tt0468470	nm1842823	Ted Fletcher	\N	\N
+tt0468470	nm1970585	David B. Lobb	\N	\N
+tt0468747	nm1752522	Mark Joseph	1981	\N
+tt0468747	nm1782770	Simon Brandon	1982	\N
+tt0468747	nm1922625	Henry Martens	1978	\N
+tt0469945	nm1648330	Duane Noch	\N	\N
+tt0469945	nm1854226	Bobby Hamilton	1978	\N
+tt0469945	nm1854267	Rebecca Lynne	1986	\N
+tt0469945	nm1860198	James Schaeffer	\N	\N
+tt0477030	nm1756578	Joseph M. Clark IV	1983	\N
+tt0477030	nm1882013	Robert M. Clark	1983	\N
+tt0477030	nm2013255	Amanda Flournoy	\N	\N
+tt0477030	nm2020573	Josh Negrin	1985	\N
+tt0477030	nm2820443	Cindy Clark	\N	2008
+tt0478780	nm1800265	Gay Linn Kirkpatrick	\N	\N
+tt0478780	nm1847332	Elyse Scafidi	\N	\N
+tt0478780	nm1951608	Jesse Phillips March	\N	\N
+tt0478780	nm2047832	Melanie Brooks	\N	\N
+tt0478780	nm2224713	Angela Baker	\N	\N
+tt0478780	nm2228526	April M. Bloom	\N	\N
+tt0479023	nm1626150	Courtney Merritt	1989	\N
+tt0479023	nm1679354	Erik Soulliard	\N	\N
+tt0479023	nm1682559	Steve Arons	\N	\N
+tt0479023	nm1974297	Hugh Anderson	\N	\N
+tt0479023	nm1983302	Brian Harnick	\N	\N
+tt0479023	nm2002715	John Miller	\N	\N
+tt0479023	nm2025942	R.J. Carey	\N	\N
+tt0479023	nm2033307	Lisa Pierce	\N	\N
+tt0479581	nm1189307	Johnny Ferretti	\N	\N
+tt0479581	nm1351916	Claire Smithies	\N	\N
+tt0479581	nm1828110	Marisa Matarazzo	\N	\N
+tt0479581	nm2041174	William Van Cuyck	\N	\N
+tt0480243	nm1297428	Tara Platt	1978	\N
+tt0480243	nm2034715	Michael Zac	\N	\N
+tt0480261	nm0165091	Jonathan Clarkson	\N	\N
+tt0480261	nm0288148	Mia Fothergill	\N	\N
+tt0480261	nm1648161	Janet Greaves	\N	\N
+tt0480261	nm2034516	Posy Miller	\N	\N
+tt0482119	nm0281534	Herbert Fleischmann	1925	1984
+tt0482119	nm0295435	Hans Karl Friedrich	1929	\N
+tt0482119	nm0323615	Boy Gobert	1925	1986
+tt0482119	nm0389240	Paul Hoffmann	1902	1990
+tt0482119	nm0583734	Inge Meysel	1910	2004
+tt0482119	nm0938212	Christian Wolff	1938	\N
+tt0482119	nm2055822	Marie-Luise Etzel	1925	1986
+tt0482371	nm1842740	Chun Ming Huang	\N	\N
+tt0483511	nm10625959	Pablo De La Pena	\N	\N
+tt0483511	nm1941757	Sean H.A. Gallagher	\N	\N
+tt0483511	nm2058398	Stacey Severovich	\N	\N
+tt0483511	nm2295951	David Moss	\N	\N
+tt0486203	nm0177761	John Cooney	1979	\N
+tt0486203	nm1179578	Joel Johnstone	1984	\N
+tt0486203	nm1724350	Jamieson Rhyme	\N	\N
+tt0486203	nm2083931	Randy Scott	\N	\N
+tt0486570	nm2079246	Sebastian Bach	\N	\N
+tt0486570	nm2082253	Oliver Jerke	\N	\N
+tt0486570	nm2084809	Stefan Appelt	\N	\N
+tt0486570	nm2137598	Tom	\N	\N
+tt0488292	nm0060302	Roberta Bassin	\N	\N
+tt0488292	nm0780822	Alisha Seaton	1976	\N
+tt0488292	nm1505194	Michael Craven Wells	\N	\N
+tt0488292	nm2876644	Russ Burd	\N	\N
+tt0588618	nm0112001	Golden Brooks	1970	\N
+tt0588618	nm0428382	Jill Marie Jones	1975	\N
+tt0588618	nm0743896	Tracee Ellis Ross	1972	\N
+tt0588618	nm0925316	Persia White	1972	\N
+tt0757270	nm0009486	Tommy Abuel	\N	\N
+tt0757270	nm0042564	Amy Austria	1961	\N
+tt0757270	nm0246582	Gloria Diaz	1950	\N
+tt0757270	nm0305182	Eddie Garcia	1929	2019
+tt0757270	nm1005097	Lyka Ugarte	\N	\N
+tt0757270	nm1564129	Suzanne Gonzales	\N	\N
+tt0758013	nm0264579	Patrick Fabian	1964	\N
+tt0758013	nm0609055	Paige Moss	1973	\N
+tt0758013	nm1904216	Warner Munroe	\N	\N
+tt0758013	nm2134903	Tubbs	\N	\N
+tt0770538	nm0112001	Golden Brooks	1970	\N
+tt0770538	nm0428382	Jill Marie Jones	1975	\N
+tt0770538	nm0743896	Tracee Ellis Ross	1972	\N
+tt0770538	nm0925316	Persia White	1972	\N
+tt0772159	nm1103765	Les Guthman	\N	\N
+tt0782128	nm0112173	Nick Brooks	\N	\N
+tt0782128	nm0121239	Vince Burger	\N	\N
+tt0782128	nm1709858	Ian Capone	\N	\N
+tt0782128	nm1970669	Chipps Cooney	\N	\N
+tt0785042	nm0453920	Karl Kimbrough	1973	\N
+tt0785042	nm0535931	Joe Maggard	1955	\N
+tt0785042	nm2206663	Jason Maggard	\N	\N
+tt0791120	nm0021543	Lucio Allocca	1943	\N
+tt0800038	nm1022782	Jon Donahue	1971	\N
+tt0800220	nm2187683	Kathleen Maressa	\N	\N
+tt0800220	nm2256679	Daniel Levitch	\N	\N
+tt0805493	nm0653959	Rick Overton	1954	\N
+tt0805493	nm1212588	Courtney Taylor Burness	1995	\N
+tt0805493	nm2200852	Jeanne Hanna	1931	\N
+tt0805493	nm2273581	Jelani Hamm	\N	\N
+tt0808309	nm1338759	Riva Di Paola	\N	\N
+tt0808309	nm2059726	Elizabeth Deren	\N	\N
+tt0808309	nm2543921	Joanne Chesterton	\N	\N
+tt0808309	nm2547754	Paul DeRivera	\N	\N
+tt0808536	nm1291892	Eric Deskin	1964	\N
+tt0808536	nm1406386	Nirene DiNardo	\N	\N
+tt0808536	nm1699451	Danielle Lozeau	1987	\N
+tt0808536	nm1820643	Matt Sarno	\N	\N
+tt0808536	nm1945061	Mike Boland	\N	\N
+tt0808536	nm2276144	Josh Hesser	\N	\N
+tt0808536	nm3433646	Richard Pacheco	\N	2017
+tt0808922	nm2274479	Madhura Pai	\N	\N
+tt0808922	nm2275379	R.J. Leon	\N	\N
+tt0808922	nm2277140	Maryann Wilson	\N	\N
+tt0808922	nm2277993	Debbie Kwan	\N	\N
+tt0810360	nm0059424	Rami Baruch	\N	\N
+tt0810360	nm0394834	Gabriel Horn	1978	\N
+tt0810360	nm0466206	Michael Koresh	\N	\N
+tt0810360	nm2285420	Ernest Leb	\N	\N
+tt0813988	nm1814328	Blake Shepard	1984	\N
+tt0813988	nm2288829	London Clark	\N	\N
+tt0813988	nm2289567	Catie Duffey	\N	\N
+tt0813988	nm2292248	Sarah Shea	\N	\N
+tt0813988	nm2293051	Chelsea Turgeon	\N	\N
+tt0827703	nm1410259	Cristina Carrasco Catalán	\N	\N
+tt0827703	nm1829022	Manel López	\N	\N
+tt0827703	nm2027012	Francesc Isern	\N	\N
+tt0827703	nm2319655	Félix Andreassi	\N	\N
+tt0827703	nm2321506	Montse Figueras	\N	\N
+tt0827703	nm2321708	Amador Millán	\N	\N
+tt0827703	nm2322450	Dani Martí	\N	\N
+tt0835358	nm2345672	Derich Wittliff	\N	\N
+tt0838287	nm1145336	Jimmy Gary Jr.	1972	\N
+tt0838287	nm1698829	Belgrave Henderson	\N	\N
+tt0838287	nm1738378	Jan Uczkowski	1996	\N
+tt0838287	nm2345768	Chump Mullen	\N	\N
+tt0852991	nm4133796	Sean Doerr	\N	\N
+tt0858427	nm0079016	Roberto Bestazzoni	\N	\N
+tt0858427	nm1332454	Carlos Leal	1969	\N
+tt0858427	nm2384022	Vincent David	\N	\N
+tt0858427	nm2428982	Julie Nicolet	\N	\N
+tt0874915	nm1014018	Josh Greene	\N	\N
+tt0878826	nm2061663	Regan Zajac	\N	\N
+tt0878826	nm2418994	Adam Rindy	\N	\N
+tt0897418	nm0448562	Des Kenny	\N	\N
+tt0897418	nm1275421	Ronnie Drew	1934	2008
+tt0897418	nm2447033	David McCarton	\N	\N
+tt0897418	nm2448528	Shana Sturtz	\N	\N
+tt0898932	nm1336213	Philipp Christopher	1980	\N
+tt0898932	nm2447865	Anna Kararina	\N	\N
+tt0900363	nm2454943	Jillian Hernan	\N	\N
+tt0903571	nm0024302	Ambika	\N	\N
+tt0903571	nm0884872	Ravi Vallathol	\N	\N
+tt0903571	nm11175824	Sharron James	\N	\N
+tt0903571	nm1643039	Tom George	1970	\N
+tt0903571	nm2365003	Sush Nayar	\N	\N
+tt0903571	nm2437346	Rachana Nair	\N	\N
+tt0905031	nm0001857	Henry Winkler	1945	\N
+tt0930888	nm0034925	Jun Aristorenas	1933	2000
+tt0930888	nm1105803	Jay Manalo	\N	\N
+tt0930888	nm1259022	Joko Diaz	\N	\N
+tt0930888	nm1259037	Ace Espinosa	\N	\N
+tt0930888	nm1403402	Raymart Santiago	1973	\N
+tt0963890	nm1089596	Hans Ebson	1974	\N
+tt0963890	nm1458145	Nick Capra	1976	\N
+tt0963890	nm1556558	Dean Monroe	1972	\N
+tt0963890	nm1693987	Kamrun	1973	\N
+tt0963890	nm1770111	Trevor Knight	\N	\N
+tt0963890	nm2429489	Brian Bodine	1979	\N
+tt0963890	nm2434856	Jherrad Lopez	\N	\N
+tt0963890	nm2540217	C.J. Madison	1972	\N
+tt0963890	nm2547046	Jack London	\N	\N
+tt0966578	nm1397842	Katrin Filzen	1976	\N
+tt0966578	nm2559107	Eva-Katrin Hermann	1979	\N
+tt0970940	nm2415923	Kerry Valderrama	\N	\N
+tt0971219	nm0121895	Tom Burke	1981	\N
+tt0971219	nm1544039	Kirsty Besterman	1980	\N
+tt0984094	nm2585067	Alhelí Pérez	\N	\N
+tt0984094	nm2587606	Camilo Bockman	\N	\N
+tt0986258	nm1862428	Nathan Collett	\N	\N
+tt0986258	nm2405675	Wayne Baldwin	\N	\N
+tt0986258	nm2474358	Clay Mitchell	\N	\N
+tt0986258	nm2586950	Tim Aslin	\N	\N
+tt0994918	nm0306957	Jack Gardner	1902	1977
+tt1181602	nm1817537	Maria Olga Matte	\N	\N
+tt1181602	nm2910260	Francisca Walker	\N	\N
+tt1181602	nm2926981	Diego Ruiz	\N	\N
+tt0061341	nm0412615	Shima Iwashita	1941	\N
+tt0061341	nm0644561	Mayumi Ogawa	1939	\N
+tt0061341	nm0766225	Kei Satô	1928	2010
+tt0061341	nm0945734	Tsutomu Yamazaki	1936	\N
+tt0108969	nm0000833	Joe Don Baker	1936	\N
+tt0108969	nm0001080	Lindsay Crouse	1948	\N
+tt0108969	nm0001453	Piper Laurie	1932	\N
+tt0108969	nm0001715	George C. Scott	1927	1999
+tt0108969	nm0004844	Dan Cortese	1967	\N
+tt0108969	nm0011198	Mary Kay Adams	1962	\N
+tt0108969	nm0105211	Jennifer Bransford	1968	\N
+tt0108969	nm0365480	Anthony Harrison	1961	\N
+tt0108969	nm0461679	Terence Knox	1946	\N
+tt0108969	nm0767205	Ron Sauvé	\N	2009
+tt0126003	nm0913801	Hamako Watanabe	1910	1999
+tt0126003	nm1148767	Roppa Furukawa	1903	1961
+tt0126003	nm1150036	Aiko Mieki	\N	\N
+tt0126003	nm1152720	Haruhisa Kawada	\N	\N
+tt0138151	nm0083334	Alastair Bird	\N	\N
+tt0138151	nm0423446	Michael Jocelyn	\N	\N
+tt0138151	nm0948123	Françoise Yip	1972	\N
+tt0138151	nm2315645	David Pan	\N	\N
+tt0138151	nm2327837	Lucy Moojabber	\N	\N
+tt0138151	nm2328250	Paul Cum	\N	\N
+tt0160411	nm0001985	Christy Canyon	1966	\N
+tt0160411	nm0228636	Teri Diver	1965	2001
+tt0160411	nm0452074	Kia	1963	\N
+tt0160411	nm0539909	Anna Malle	1967	2006
+tt0160411	nm0835048	Samantha Strong	1967	\N
+tt0167458	nm0042124	Nora Aunor	1953	\N
+tt0167458	nm0095007	Dina Bonnevie	1961	\N
+tt0167458	nm0305182	Eddie Garcia	1929	2019
+tt0167458	nm0759252	Phillip Salvador	\N	\N
+tt0170783	nm0476746	Sofiya Kuzeva	\N	\N
+tt0170783	nm0794885	Hristo Shopov	1964	\N
+tt0170783	nm0821551	Georgi Staykov	1964	\N
+tt0170783	nm1457061	Svetla Todorova	\N	\N
+tt0171346	nm0705752	Gulielm Radoja	\N	\N
+tt0171346	nm0742930	Kadri Roshi	1924	2007
+tt0171346	nm1040603	Bujar Lako	1947	2016
+tt0171346	nm1232906	Llambi Kaçani	\N	\N
+tt0188888	nm0252170	Kathelijne Eisses	\N	\N
+tt0188888	nm0380997	Lotte Herstel	\N	\N
+tt0188888	nm0761444	Abel Sanders	\N	\N
+tt0198609	nm0188292	Mladen Crnobrnja	1939	2000
+tt0198609	nm0275285	Boris Festini	1930	2013
+tt0198609	nm0380839	Zdenka Hersak	1928	\N
+tt0198609	nm0432838	Slavko Juraga	1959	\N
+tt0198609	nm0438634	Vjenceslav Kapural	1934	\N
+tt0198609	nm0816297	Filip Sovagovic	1966	\N
+tt0198931	nm0009900	Dejan Acimovic	1963	\N
+tt0198931	nm0093527	Mirko Boman	1926	2013
+tt0198931	nm0227347	Slobodan Dimitrijevic	1941	1999
+tt0198931	nm0253213	Mila Elegovic	1970	\N
+tt0205255	nm0145236	José Luis Castiñeira de Dios	1947	\N
+tt0205255	nm1498641	Nicolás Brizuela	\N	\N
+tt0205255	nm1501006	Oscar Alem	1941	2017
+tt0217239	nm0827868	Tom Stern	\N	\N
+tt0217239	nm0935664	Alex Winter	1965	\N
+tt0225968	nm0305182	Eddie Garcia	1929	2019
+tt0225968	nm0735019	Ric Rodrigo	\N	\N
+tt0225968	nm0813098	Charito Solis	1935	1998
+tt0225968	nm1026134	Mario Monte	\N	\N
+tt0251627	nm0010675	Tara Marks	\N	\N
+tt0251627	nm0151220	Jim Chance	\N	\N
+tt0251627	nm0265544	Jennifer Fairclough	\N	\N
+tt0251627	nm0270271	Kevin Thomas Fee	\N	\N
+tt0251627	nm0284820	Jennifer Fontaine	1974	\N
+tt0251627	nm0448103	Jimmy Kennedy	\N	\N
+tt0251627	nm0535002	Michael Madison	1976	\N
+tt0251627	nm0714640	Petur Redbird	\N	\N
+tt0251627	nm0889211	Sue Vannasing	1979	\N
+tt0262044	nm0083369	Emily Bird	\N	\N
+tt0262044	nm0083422	Nathaniel Bird	\N	\N
+tt0262044	nm0169678	Paula Pisani Cohen	\N	\N
+tt0262044	nm0243281	Daniel Dupont	\N	\N
+tt0267030	nm0806182	Sieger Sloot	1977	\N
+tt0267030	nm1151879	Jeroen van Koningsbrugge	1973	\N
+tt0267030	nm1562630	Willem Elzenga	\N	\N
+tt0271695	nm0007123	Mammootty	1951	\N
+tt0271695	nm0018203	Lalu Alex	\N	\N
+tt0271695	nm0707490	Captain Raju	\N	2018
+tt0271695	nm0882219	Urvashi	\N	\N
+tt0273959	nm0746222	Philippe Roux	\N	\N
+tt0273959	nm1317250	Daniel Cotard	\N	\N
+tt0273959	nm1595661	Jean-Max Borot	\N	\N
+tt0273959	nm1701688	Daniel Gauthier	\N	\N
+tt0310894	nm1136264	Katia Goldmann	\N	\N
+tt0310894	nm1136267	Hassan Goliat	\N	\N
+tt0310894	nm1137027	Jérôme Leucailletel	\N	\N
+tt0310894	nm1222976	Michael Pérez	\N	\N
+tt0312009	nm0624599	Joseph Neibich	1975	\N
+tt0312009	nm1140875	Amy Bollenbacher	\N	\N
+tt0312009	nm1140952	Matt Bushell	1974	\N
+tt0312009	nm1282072	Jennifer Johnson	\N	\N
+tt0317877	nm0641063	Dean O'Gorman	1976	\N
+tt0317877	nm10130153	Seiji Aramaki	\N	\N
+tt0317877	nm10130155	Leonardo Dipa	\N	\N
+tt0317877	nm1572292	Derek Judge	\N	\N
+tt0317877	nm1909387	Juri Inahara	\N	\N
+tt0317877	nm1941072	Daniel Sing	1974	\N
+tt0321433	nm0476206	Daniel Kusan	1975	\N
+tt0321433	nm1009498	Anita Matic Delic	1975	\N
+tt0322754	nm0623126	Bojan Navojec	1976	\N
+tt0322754	nm0700159	Mirta Puhlovski	1978	\N
+tt0322754	nm1194960	Ivana Jelic	\N	\N
+tt0322754	nm1195053	Mai Karas	\N	\N
+tt0326305	nm0084484	Rene Bitorajac	1972	\N
+tt0326305	nm0253213	Mila Elegovic	1970	\N
+tt0326305	nm0623126	Bojan Navojec	1976	\N
+tt0326305	nm1012165	Sven Sestak	1974	\N
+tt0336543	nm0095007	Dina Bonnevie	1961	\N
+tt0336543	nm0261807	Gary Estrada	\N	\N
+tt0336543	nm0599004	Cesar Montano	1962	\N
+tt0336543	nm0602784	Vina Morales	1975	\N
+tt0336543	nm0708288	Daria Ramirez	\N	\N
+tt0336543	nm1106049	Bb Gandanghari	1965	\N
+tt0336543	nm1232141	Alice Dixson	1969	\N
+tt0336543	nm1340290	Zeny Zabala	1937	2017
+tt0336543	nm3524731	Dante Ponce	1969	\N
+tt0338108	nm1005263	Mike Smith	\N	\N
+tt0338108	nm1254478	Benjamin Dane	1962	\N
+tt0338108	nm1275453	Michael Duwe	\N	\N
+tt0338108	nm1275609	Susan Fossen	\N	\N
+tt0338108	nm1275984	Janie Horn	\N	\N
+tt0338108	nm1277641	T.C. Taiclet	\N	\N
+tt0338108	nm1289270	Dewayne Marshall	\N	\N
+tt0338108	nm6007979	Derek A. Jones	\N	\N
+tt0354194	nm1322914	Benson Gilchrist	1981	\N
+tt0354194	nm1323822	Adepero Oduye	\N	\N
+tt0354194	nm1325208	Janelle Bernard	\N	\N
+tt0354194	nm1325218	Marisa Byer	\N	\N
+tt0362249	nm0234989	Christopher Douglas	1969	\N
+tt0363488	nm0034158	Julie Arebalo	1975	\N
+tt0363488	nm0557287	Bryan Massey	1971	\N
+tt0363488	nm1392544	Barry Johnson	\N	\N
+tt0363488	nm1395749	Ralph Stevens	\N	\N
+tt0374980	nm0836982	Nada Subotic	1931	2016
+tt0374980	nm1065966	Niksa Marinovic	1974	\N
+tt0374980	nm1066781	Enes Vejzovic	1977	\N
+tt0374980	nm1085832	Jagoda Kralj	1953	\N
+tt0374980	nm1415338	Natasa Dangubic	\N	\N
+tt0378713	nm0275832	Gerlach Fiedler	1925	2010
+tt0378713	nm0295470	Uwe Friedrichsen	1934	2016
+tt0378713	nm0414272	Ernst Jacobi	1933	\N
+tt0378713	nm0499757	Peter Lehmbrock	1919	1990
+tt0379304	nm0206319	Bing Davao	\N	\N
+tt0379304	nm0233616	Dexter Doria	\N	\N
+tt0379304	nm0273650	Maritoni Fernandez	1970	\N
+tt0379304	nm0434899	Odette Khan	\N	\N
+tt0379304	nm0553445	Albert Martinez	1963	\N
+tt0379304	nm0704269	Rufa Mae Quinto	1978	\N
+tt0379304	nm1077723	Ama Quiambao	1947	2013
+tt0379304	nm1105803	Jay Manalo	\N	\N
+tt0379304	nm1189068	Tita De Villa	1926	\N
+tt0381281	nm0190295	Donna Cruz	1977	\N
+tt0381281	nm1202405	Malou de Guzman	\N	\N
+tt0381281	nm1204735	Ai-Ai de las Alas	1964	\N
+tt0381281	nm1456492	Jason Everly	\N	\N
+tt0381719	nm0883524	Catherine Valbregue	\N	\N
+tt0387331	nm1488111	Viridiana Rojas	\N	\N
+tt0389863	nm0377034	Brad William Henke	1966	\N
+tt0389863	nm0429760	Kathryn Joosten	1939	2012
+tt0389863	nm0658760	Eduardo Palomo	1962	2003
+tt0389863	nm1179675	Pablo Santos	1987	2006
+tt0389863	nm1474634	G.O. Parsons	1982	\N
+tt0390202	nm0237244	Milena Dravic	1940	2018
+tt0390202	nm0345545	Aleksandra Guberinic	\N	\N
+tt0390202	nm0350296	Nenad Gvozdenovic	1962	\N
+tt0390202	nm0468186	Ranko Kovacevic	1934	\N
+tt0390202	nm0664608	Mihajlo 'Bata' Paskaljevic	1923	2004
+tt0390202	nm0831206	Fedja Stojanovic	1948	\N
+tt0390202	nm1298816	Miomira Dragicevic	\N	\N
+tt0390202	nm1312257	Milos Vlalukin	1980	\N
+tt0401639	nm0318527	Jack Gilford	1908	1990
+tt0401639	nm0513860	Lynne Lipton	\N	\N
+tt0401639	nm0567389	David McDaniel	1948	2013
+tt0402347	nm0004861	Josie Davis	1973	\N
+tt0402347	nm1323001	Mitch Malem	\N	\N
+tt0402347	nm1566190	Brandon Pizzola	\N	\N
+tt0405076	nm0828840	Wass Stevens	1970	\N
+tt0405076	nm1029865	Wayne Gurman	\N	\N
+tt0405076	nm1049267	Lou Torres	1957	\N
+tt0405076	nm1584619	Cesar Corrasco	\N	\N
+tt0405310	nm0062389	Carolyn Baeumler	\N	\N
+tt0405310	nm0160249	Jay Alan Christianson	1961	\N
+tt0405310	nm1358948	Katerina Astrakhan	\N	\N
+tt0405310	nm1725763	Tom Forrest	\N	\N
+tt0405339	nm1249558	Frank Franconeri	\N	\N
+tt0405339	nm1518600	Shae Kennedy	\N	\N
+tt0405339	nm1585973	Joseph Lopinto	\N	\N
+tt0405459	nm0198278	Erynn Dalton	\N	\N
+tt0405459	nm1349132	Jim Gibbons	\N	\N
+tt0405459	nm1584552	Dave Clark	\N	\N
+tt0405459	nm1585540	Jesse Jackson	\N	\N
+tt0406710	nm1648650	Bill Lewis	\N	\N
+tt0406710	nm1798607	Jonathan Wanicur	\N	\N
+tt0406710	nm1800383	Kerri Ann Lang	\N	\N
+tt0406710	nm2477458	Susan Simon	\N	\N
+tt0411463	nm0161204	Danny Chung	\N	\N
+tt0411463	nm1028530	Eric Casaccio	1972	\N
+tt0411463	nm1238567	Rollence Patugan	\N	\N
+tt0411463	nm1395158	Eric Dean	1971	\N
+tt0411463	nm1645304	James Kyson	1975	\N
+tt0417694	nm0750823	Ian Ruskin	\N	\N
+tt0418159	nm1663692	Eric Kalb	\N	\N
+tt0426967	nm0147738	Larry Cedar	1955	\N
+tt0426993	nm0663020	Tim Parks	\N	\N
+tt0426993	nm1735868	Corey Giann Antonio	1972	\N
+tt0426993	nm1738269	Brice Myracle	\N	\N
+tt0426993	nm1740126	Karen Jewell	1979	\N
+tt0428459	nm1143345	Paul Fowles	\N	\N
+tt0428459	nm1792922	Tanya Fraser	1979	\N
+tt0428459	nm2628568	Jamie Levack	\N	\N
+tt0428459	nm2646148	Geoff the Force	\N	\N
+tt0428459	nm3033733	Lada Darewych	\N	\N
+tt0428459	nm3990831	Irene Burns	\N	\N
+tt0428459	nm3991338	Max Farnell	\N	\N
+tt0430008	nm1747514	Alan Donath	\N	\N
+tt0430008	nm1748203	Taffy Whales	\N	\N
+tt0430008	nm1750737	Noah Dahl	1997	\N
+tt0430008	nm1750918	Robert Kropf	\N	\N
+tt0431145	nm0114855	Veronica Brown	\N	\N
+tt0431145	nm1376075	Dougald Park	\N	\N
+tt0431145	nm1594619	Camille Rousseau	\N	\N
+tt0431145	nm1738172	Toby Hemingway	1983	\N
+tt0431379	nm0506249	Valerie Levitt	\N	\N
+tt0431379	nm0845917	Mohammed Tabatabai	\N	\N
+tt0431379	nm1753906	Adam Van Conant	\N	\N
+tt0431379	nm1754128	Heidi Hazen	\N	\N
+tt0438070	nm0044859	Todd Babcock	1969	\N
+tt0438070	nm1373247	Jessica Schatz	\N	\N
+tt0438070	nm3011238	Jack the Dog	\N	\N
+tt0438332	nm0252196	Kris Eivers	\N	\N
+tt0438332	nm1794459	Jeff Baskin	\N	\N
+tt0438332	nm1796999	Jeff Mora	\N	\N
+tt0438332	nm1798649	Tim Whidden	\N	\N
+tt0441667	nm1490262	Nancy Fassett	1969	\N
+tt0441667	nm1654743	Jason Dugre	\N	\N
+tt0441667	nm7342410	Janna Copley	\N	\N
+tt0441667	nm7347508	Merritt Gibbons	\N	\N
+tt0446731	nm0095213	Jay Bontatibus	1964	2017
+tt0446731	nm0118011	Ian Buchanan	1957	\N
+tt0446731	nm0250737	Scott Egan	1970	\N
+tt0446731	nm0396592	Gary Edward	\N	\N
+tt0446766	nm1470561	Ryan Jordan	1980	\N
+tt0446766	nm1838475	Mark Kramer	\N	\N
+tt0446766	nm1838758	Ashley Thompson	\N	\N
+tt0446766	nm1854554	Patrick Croghan	\N	\N
+tt0446766	nm1855488	James Faassé	\N	\N
+tt0446766	nm1859972	Luis Esparza	\N	\N
+tt0446766	nm1861734	Duke Windsor	\N	\N
+tt0460601	nm0446876	Siobhan Kelley	\N	\N
+tt0460601	nm1056805	Karl Argue	\N	\N
+tt0460601	nm1079822	Paul Kealyn	\N	\N
+tt0460601	nm1924105	Aiden Condoran	\N	\N
+tt0464119	nm6019622	Sunny Wagner	\N	\N
+tt0464327	nm0263906	Rainer Ewerrien	1960	\N
+tt0464332	nm0288042	Seth Foster	\N	\N
+tt0464332	nm0339787	Dean Gregory	\N	\N
+tt0464332	nm1359415	Kirk David Duncan	\N	\N
+tt0464332	nm6024889	Vava Buitenkant	\N	\N
+tt0469536	nm1971728	Radovan Hakl	\N	\N
+tt0469536	nm1971910	Michal Kaspar	\N	\N
+tt0469536	nm1972351	Petr Hetmanek	\N	\N
+tt0469536	nm1972715	Jiri Dolezel	\N	\N
+tt0469536	nm1973357	Zbynek Divis	\N	\N
+tt0469536	nm1973695	Petr Martinec	\N	\N
+tt0469536	nm1973738	Lucie Maryskova	\N	\N
+tt0469536	nm1975616	Lukas Kokrment	\N	\N
+tt0469536	nm1977135	Michael Peterek	\N	\N
+tt0472557	nm0397902	Tracy Howe	\N	\N
+tt0472557	nm0550025	Stacy Marr	\N	\N
+tt0472557	nm1143550	Grant Reynolds	1972	\N
+tt0472557	nm1995542	Wenzel Jones	\N	\N
+tt0473396	nm0092411	Louise Boisvert	\N	\N
+tt0473396	nm1506331	Demetrios Koutsoufis	\N	\N
+tt0473396	nm1991628	Azl Golanski	\N	\N
+tt0473396	nm1993183	Mbenjayi Kusombi	\N	\N
+tt0477836	nm0634201	Barbara Nola	1968	\N
+tt0477836	nm1380810	Goran Manic	\N	\N
+tt0477836	nm2607539	Sven Jakir	1983	\N
+tt0479895	nm1134599	Robert G. McKay	\N	\N
+tt0479895	nm1349174	Ian MacRae	\N	\N
+tt0479895	nm1394595	Rhoda Pauley	\N	\N
+tt0479895	nm1998480	Dmitry Pomirchy	1991	\N
+tt0484372	nm1420410	Ryan E. Heppe	1974	\N
+tt0484372	nm2066025	Lucas Heppe	\N	\N
+tt0484372	nm2068051	Joseph Benso	\N	\N
+tt0484372	nm2073031	Andrew Hicks	\N	\N
+tt0484372	nm2088063	Andy Marx	\N	\N
+tt0484372	nm2089543	Michael Webb	\N	\N
+tt0489816	nm0380718	Scott Herriott	1959	\N
+tt0496969	nm0181397	Rez Cortez	1956	\N
+tt0496969	nm0547431	Anna Marin	\N	\N
+tt0496969	nm0611644	Niño Muhlach	1971	\N
+tt0496969	nm0659173	Panchito	1925	1995
+tt0496969	nm1047739	Ricky Belmonte	1947	2001
+tt0496969	nm1170111	Donna Villa	1959	2017
+tt0515207	nm0000867	Jason Bateman	1969	\N
+tt0515207	nm0004715	Will Arnett	1970	\N
+tt0515207	nm0005577	Portia de Rossi	1973	\N
+tt0515207	nm0148418	Michael Cera	1988	\N
+tt0691059	nm0206043	Robert Daws	1959	\N
+tt0691059	nm0730284	Amy Robbins	1971	\N
+tt0691059	nm1099188	Julian Ovenden	1976	\N
+tt0691059	nm1300277	Zoie Kennedy	1977	\N
+tt0702009	nm0024404	Lauren Ambrose	1978	\N
+tt0702009	nm0175814	Frances Conroy	1953	\N
+tt0702009	nm0355910	Michael C. Hall	1971	\N
+tt0702009	nm0470244	Peter Krause	1965	\N
+tt0702030	nm0024404	Lauren Ambrose	1978	\N
+tt0702030	nm0175814	Frances Conroy	1953	\N
+tt0702030	nm0355910	Michael C. Hall	1971	\N
+tt0702030	nm0470244	Peter Krause	1965	\N
+tt0751104	nm0000096	Gillian Anderson	1968	\N
+tt0751104	nm0000141	David Duchovny	1960	\N
+tt0751104	nm0537089	John Mahon	1938	\N
+tt0751104	nm0571106	Michael McKean	1947	\N
+tt0759922	nm1026120	Camille Mana	1983	\N
+tt0759922	nm1705697	Vanessa Long	1984	\N
+tt0759922	nm1993774	Amy Lemons	1981	\N
+tt0759922	nm2139531	Morgan Collett	\N	\N
+tt0759922	nm2144497	Kassie Spielman	1984	\N
+tt0759922	nm2258540	Adam Young	\N	\N
+tt0774044	nm0419758	Selina Jayne	\N	\N
+tt0774044	nm2186521	Patricia Spingeld	\N	\N
+tt0774044	nm2193474	Kimberly Jentzen	\N	\N
+tt0774044	nm2195266	Mark Bedard	\N	\N
+tt0774110	nm1866685	Jason Coviello	\N	\N
+tt0774110	nm2023533	Michael Best	\N	\N
+tt0774110	nm2134249	AudioMike	\N	\N
+tt0774110	nm2188359	Dean Compton	\N	\N
+tt0774110	nm2190525	Constance Elmore	\N	\N
+tt0774110	nm2210654	Tara Blaine	\N	\N
+tt0774110	nm2235894	Amber Bogdewiecz	\N	\N
+tt0774110	nm2236898	Shae Dixon	\N	\N
+tt0776014	nm0073678	Justin Berfield	1986	\N
+tt0776014	nm0186505	Bryan Cranston	1956	\N
+tt0776014	nm0434223	Jane Kaczmarek	1955	\N
+tt0776014	nm0557733	Christopher Masterson	1980	\N
+tt0782686	nm0374037	Hein van der Heijden	1958	\N
+tt0782686	nm0854617	Saskia Temmink	1968	\N
+tt0795415	nm0835764	King Stuart	\N	\N
+tt0795415	nm1784670	Cazimir Milostan	\N	\N
+tt0795415	nm2268395	Joseph Beck	\N	\N
+tt0795415	nm2289526	Patrick Thompson	\N	\N
+tt0799943	nm2018544	Steven Sonntag	1973	\N
+tt0799943	nm2116945	Florian Mallok	\N	\N
+tt0808445	nm0295273	Kinky Friedman	1944	\N
+tt0808445	nm1571534	Maria Gundy	\N	\N
+tt0808445	nm2278315	Gordon Craig	\N	\N
+tt0808445	nm6915568	Benny Attardo	\N	\N
+tt0814613	nm0435377	Jansug Kakhidze	1936	2002
+tt0824372	nm1653465	Ryan Ward	1979	\N
+tt0830689	nm1322978	Ville Grönroos	\N	\N
+tt0830689	nm2327369	Samuel Häkkinen	\N	\N
+tt0830689	nm2328668	Olli Valkama	\N	\N
+tt0830689	nm2330344	Iiro Soikkeli	\N	\N
+tt0833025	nm0177553	Susan Cookson	1965	\N
+tt0833025	nm0531546	Simon MacCorkindale	1952	2010
+tt0833025	nm0715059	James Redmond	1971	\N
+tt0833025	nm0860054	Derek Thompson	1948	\N
+tt0833025	nm0992699	Ben Price	1972	\N
+tt0833025	nm1935468	Janine Mellor	1980	\N
+tt0837428	nm0001459	Denis Leary	1957	\N
+tt0837428	nm0564548	James McCaffrey	1959	\N
+tt0837428	nm0569079	Jack McGee	1949	\N
+tt0837428	nm1280183	Michael Lombardi	1976	\N
+tt0845992	nm1651176	Dale D. Moore	\N	\N
+tt0845992	nm1670446	Dustin Miles	1983	\N
+tt0845992	nm2358944	Noelle Bohaty	\N	\N
+tt0845992	nm2390788	William Lynn	\N	\N
+tt0856480	nm0000871	Randall Batinkoff	1968	\N
+tt0856480	nm0005192	Kellie Martin	1975	\N
+tt0856480	nm0278000	Stewart Finlay-McLennan	1957	\N
+tt0856480	nm0776078	Emily Schulman	1977	\N
+tt0857372	nm1301340	Camille Natta	1977	\N
+tt0857372	nm2331786	David Atrakchi	\N	\N
+tt0857372	nm2380099	Luna Bersanetti	\N	\N
+tt0889201	nm1483968	Stephen DeCordova	\N	\N
+tt0889201	nm1740957	Chris Hill	\N	\N
+tt0889201	nm1981212	Scott Conley	1978	\N
+tt0889201	nm2018423	Javier Guerrero	\N	\N
+tt0955389	nm1092027	Daniel Farber	1977	\N
+tt0955389	nm1898118	Jeff M. Lewis	1981	\N
+tt0955389	nm1996621	Travis Sentell	\N	\N
+tt0955389	nm2008941	Taylor M. Dooley	\N	\N
+tt0972565	nm0177970	Darin Cooper	1966	\N
+tt0972565	nm0342957	Brian Groh	\N	\N
+tt0972565	nm1254427	Scott Bridges	1973	\N
+tt0972565	nm2041297	Tannis Hanson	\N	\N
+tt0985615	nm0207344	Gelli de Belen	1973	\N
+tt0985615	nm1106049	Bb Gandanghari	1965	\N
+tt0985615	nm1295612	Anjo Yllana	\N	\N
+tt0985615	nm1299540	Janno Gibbs	1969	\N
+tt1095575	nm1501050	Jonah Bobo	1997	\N
+tt1095575	nm2200866	Jordan Coleman	\N	\N
+tt1095575	nm2326353	Jake Goldberg	\N	\N
+tt1095575	nm7572002	Sean Curley	\N	\N
+tt1127708	nm0666604	Mike Patton	1968	\N
+tt1127708	nm1655889	Ellen McLain	1952	\N
+tt1127708	nm1722958	Alesia Glidewell	1978	\N
+tt0008955	nm0071132	Harry Benham	1884	1969
+tt0008955	nm0203836	Marion Davies	1897	1961
+tt0008955	nm0413349	Charles Jackson	1903	1968
+tt0008955	nm0449979	Willette Kershaw	1881	1960
+tt0008955	nm0499548	George LeGuere	1887	1947
+tt0008955	nm0640311	Edward O'Connor	1862	1932
+tt0008955	nm0838019	Danny Sullivan	1874	1937
+tt0015138	nm0313695	Jean Georgescu	1904	1994
+tt0036081	nm0405904	Carola Höhn	1910	2005
+tt0036081	nm0436922	Fritz Kampers	1891	1950
+tt0036081	nm0549010	Elisabeth Markus	1895	1970
+tt0036081	nm0559832	Albert Matterstock	1911	1960
+tt0041736	nm0039517	Raoul Aslan	1886	1958
+tt0041736	nm0525064	Walther Ludwig	1902	1981
+tt0041736	nm0773469	Karl Schmitt-Walter	1900	1985
+tt0041736	nm0777695	Elisabeth Schwarzkopf	1915	2006
+tt0041736	nm1076851	Elisabeth Höngen	1906	1997
+tt0041736	nm3861326	Hans Braun	\N	\N
+tt0056030	nm0194388	Tatiana Czechowska	1903	1968
+tt0056030	nm0524830	Wanda Luczycka	1907	1996
+tt0056030	nm0749060	Kazimierz Rudzki	1911	1976
+tt0056030	nm0843686	Danuta Szaflarska	1915	2017
+tt0057640	nm0045921	Nicole Badal	\N	\N
+tt0057640	nm0252485	Monica Ekman	1941	\N
+tt0057640	nm0577867	Marisa Mell	1939	1992
+tt0057640	nm1043309	Christina Granberg	\N	\N
+tt0058875	nm0014338	Peter Arens	1928	2015
+tt0058875	nm0160019	Eva Christian	1937	\N
+tt0058875	nm0260242	Peter Eschberg	1936	\N
+tt0058875	nm0378916	Arnold Herff	1929	2016
+tt0058875	nm0405912	Klaus Höhne	1927	2006
+tt0058875	nm0509586	Karl Lieffen	1926	1999
+tt0058875	nm0576888	Eva Maria Meineke	1923	2018
+tt0058875	nm0627240	Günther Neutze	1921	1991
+tt0058875	nm0717946	Heinz Reincke	1925	2011
+tt0058875	nm0782374	Signe Seidel	1940	\N
+tt0073489	nm0194203	Tadeusz Cygler	1914	1987
+tt0073489	nm0252236	Bohdan Ejmont	1928	2010
+tt0073489	nm0398721	Mieczyslaw Hryniewicz	1949	\N
+tt0073489	nm0459186	Maria Klejdysz	1927	2009
+tt0080022	nm0000532	Malcolm McDowell	1943	\N
+tt0080022	nm0114788	Tim Brown	\N	\N
+tt0080022	nm0184493	Julie Covington	1947	\N
+tt0080022	nm0514742	Susan Littler	1948	1982
+tt0080022	nm0680216	Anton Phillips	1943	\N
+tt0080022	nm0925268	Nick White	\N	\N
+tt0084302	nm0017988	Mija Aleksic	1923	1995
+tt0084302	nm0226699	Bogdan Diklic	1953	\N
+tt0084302	nm0831262	Danilo 'Bata' Stojkovic	1934	2002
+tt0084302	nm0904303	Pavle Vuisic	1926	1988
+tt0084302	nm0017988	Mija Aleksic	1923	1995
+tt0084302	nm0226699	Bogdan Diklic	1953	\N
+tt0084302	nm0831262	Danilo 'Bata' Stojkovic	1934	2002
+tt0084302	nm0904303	Pavle Vuisic	1926	1988
+tt0085157	nm0165063	Lincoln Clarkes	\N	\N
+tt0085157	nm0357621	Samantha Hamernes-Coombs	\N	\N
+tt0085157	nm0498514	Susan Lee-Nova	\N	\N
+tt0085157	nm0713686	Al Razutis	1946	\N
+tt0089117	nm0699738	Philip Pucci	1962	\N
+tt0096403	nm0151572	Rousy Chanev	1945	\N
+tt0096403	nm0438872	Max Freeman	1960	\N
+tt0096403	nm0473029	Ivan Krystev	1940	2005
+tt0096403	nm0671635	Anya Pencheva	1957	\N
+tt0104439	nm0698653	Santisuk Promsiri	\N	\N
+tt0104439	nm0837701	Chintara Sukapatana	1965	\N
+tt0104439	nm1039649	Paweena Chariffsakul	\N	\N
+tt0104439	nm1040484	Somrachanee Kesorn	\N	\N
+tt0112982	nm0081307	Christa Biedermann	\N	\N
+tt0113505	nm0768160	Fern Sawyer	\N	\N
+tt0113505	nm0950319	Jan Youren	\N	\N
+tt0124998	nm0022081	Alicia Alonzo	\N	\N
+tt0124998	nm0042124	Nora Aunor	1953	\N
+tt0124998	nm0511276	Anita Linda	1924	\N
+tt0124998	nm0738122	Dennis Roldan	\N	\N
+tt0126773	nm0331074	Hogan Gorman	\N	\N
+tt0126773	nm0334295	Sasha Graham	\N	\N
+tt0126773	nm0996919	Clare Giarratana	\N	\N
+tt0126773	nm1761317	Michael LaFetra	\N	\N
+tt0131267	nm0205577	Tony Davis	1967	\N
+tt0131267	nm0289347	Desiree Foxx	\N	\N
+tt0131267	nm0363544	Nick Harmon	1963	\N
+tt0131267	nm0500213	Frankie Leigh	1967	\N
+tt0131267	nm0797382	Rocco Siffredi	1964	\N
+tt0131267	nm0823034	Stella Star	1966	\N
+tt0131267	nm0835048	Samantha Strong	1967	\N
+tt0131267	nm0835446	T.J. Stryker	\N	\N
+tt0131267	nm0852855	Martin Taylor	\N	\N
+tt0137602	nm0043816	Ebony Ayes	1962	\N
+tt0137602	nm0210593	Mauvais De Noir	\N	\N
+tt0137602	nm0252795	Tony El-ay	\N	\N
+tt0137602	nm0263219	Sherry Evans	\N	\N
+tt0137602	nm0279435	Dan T. Mann	1954	\N
+tt0137602	nm0522677	Lorrie Lovett	1962	\N
+tt0137602	nm0889189	Gary Vann	\N	\N
+tt0137602	nm0925496	Tammy White	1964	\N
+tt0141822	nm0017062	Mircea Albulescu	1934	2016
+tt0141822	nm0225216	Ion Dichiseanu	1933	\N
+tt0141822	nm0229780	Emilia Dobrin	1948	\N
+tt0141822	nm0638378	Dan Nutu	1944	\N
+tt0142589	nm0083152	Bionca	1965	\N
+tt0142589	nm0088297	Bunny Bleu	1964	\N
+tt0142589	nm0604517	Britt Morgan	1963	\N
+tt0142589	nm0903869	Tasha Voux	1958	\N
+tt0142589	nm1705717	Bonnie Miller	\N	\N
+tt0144871	nm1160200	Dianna Rose	\N	\N
+tt0144871	nm1160309	Zack Settel	\N	\N
+tt0148661	nm3143450	Chris Thomas	\N	\N
+tt0182214	nm0014959	Aja	1963	2006
+tt0182214	nm0227110	Rocky Dilorenzo	\N	\N
+tt0182214	nm0402836	Heather Hunter	1969	\N
+tt0182214	nm0461014	Michael Knight	\N	\N
+tt0182214	nm0498319	Suzy Lee	\N	\N
+tt0182214	nm0767368	Rick Savage	1950	\N
+tt0193590	nm0065431	Heinrich Becker	\N	\N
+tt0193590	nm0080805	Gerhard Biastock	\N	\N
+tt0193590	nm0215029	Johann Deibitsch	\N	\N
+tt0193590	nm0251438	Irenäus Eibl-Eibesfeldt	1928	2018
+tt0195985	nm0003630	Ryan Glorioso	1973	\N
+tt0195985	nm0680445	Heather Phillips	\N	\N
+tt0201499	nm0032955	Hugo Arana	1943	\N
+tt0201499	nm0196179	Héctor da Rosa	\N	\N
+tt0201499	nm0288449	Ivonne Fournery	\N	\N
+tt0201499	nm0321122	Cecilia Gispert	\N	\N
+tt0206755	nm0033934	Agnès Ardant	\N	\N
+tt0206755	nm0035280	Jean-Pierre Armand	1950	\N
+tt0206755	nm0041308	Marianne Aubert	\N	\N
+tt0206755	nm0108639	Jean-Paul Bride	\N	\N
+tt0206755	nm0535898	Pauline Magenta	\N	\N
+tt0206755	nm0896284	Béatrice Vidal	\N	\N
+tt0207754	nm0474092	Drazen Kuhn	1965	\N
+tt0207754	nm0841384	Boris Svrtan	1964	\N
+tt0209012	nm0153713	Charley Chase	1893	1940
+tt0209012	nm0278006	James Finlayson	1887	1953
+tt0209012	nm0335495	Katherine Grant	1904	1937
+tt0209012	nm0497265	Florence Lee	1888	1962
+tt0209012	nm0949927	Noah Young	1887	1958
+tt0219294	nm0024886	Maurizio Amigoni	\N	\N
+tt0219294	nm0080578	Alessandro Bianchi	1969	\N
+tt0219294	nm0116671	Andrea Bruschi	1968	\N
+tt0219294	nm0700298	Michelangelo Pulci	1968	\N
+tt0226138	nm0098667	Philip Botti	\N	\N
+tt0226138	nm0298110	Lou Fulgoni	\N	\N
+tt0226138	nm0298111	Ray Fulgoni	\N	\N
+tt0226138	nm0668007	Jimmy Pawlak	\N	\N
+tt0226138	nm0756045	B.J. Sage	\N	\N
+tt0226138	nm0938136	Scott Wolfe	\N	\N
+tt0226953	nm0460461	Budd Knapp	1913	1982
+tt0230829	nm0005156	Eric Lloyd	1986	\N
+tt0230829	nm0143620	Susan Cash	1956	\N
+tt0230829	nm0218749	Michael Dempsey	\N	\N
+tt0230829	nm0743717	Natanya Ross	1981	\N
+tt0234687	nm0381546	Caroline Hessdörfer	\N	\N
+tt0234687	nm0405443	Alexander Häfner	\N	\N
+tt0234687	nm0760370	Jan Samtleben	\N	\N
+tt0234687	nm0786179	Julia Seufert	\N	\N
+tt0234687	nm0919239	Julia Weissenberger	\N	\N
+tt0234687	nm0919240	Kerstin Weissenberger	\N	\N
+tt0234687	nm0929562	Nikolai Will	1981	\N
+tt0241961	nm0149953	Jonathan Chalker	\N	\N
+tt0241961	nm0174044	James Compton	\N	\N
+tt0241961	nm0236015	Lea Downey	\N	\N
+tt0241961	nm0518754	Melissa London	\N	\N
+tt0243114	nm0032737	Carlos Aragón	\N	\N
+tt0243114	nm0142266	Silvia Carusillo	\N	\N
+tt0243114	nm0215813	Hernan Del Riego	\N	\N
+tt0243114	nm0430471	Adrian Joskowicz	\N	\N
+tt0243114	nm0584754	Cristina Michaus	\N	\N
+tt0243114	nm0691806	Gabriel Porras	1968	\N
+tt0243114	nm0735896	Joaquín Rodríguez	\N	\N
+tt0244862	nm0080590	Cheryl Bianchi	\N	\N
+tt0244862	nm0225963	John Diehl	1950	\N
+tt0244862	nm0539791	Lisa Malkiewicz	\N	\N
+tt0244862	nm0782723	Philip Seitz	1945	2009
+tt0244862	nm1043097	William Scurry	\N	\N
+tt0248973	nm0187087	Dave Creadeau	\N	\N
+tt0252198	nm1105837	Yannis Mavrikios	\N	\N
+tt0252198	nm2576140	Dimitris Maronitis	\N	\N
+tt0253828	nm0032661	Müjde Ar	1954	\N
+tt0253828	nm0621870	Adile Nasit	1930	1987
+tt0253828	nm0784038	Sener Sen	1941	\N
+tt0253828	nm0839017	Kemal Sunal	1944	2000
+tt0253828	nm0032661	Müjde Ar	1954	\N
+tt0253828	nm0621870	Adile Nasit	1930	1987
+tt0253828	nm0784038	Sener Sen	1941	\N
+tt0253828	nm0839017	Kemal Sunal	1944	2000
+tt0254448	nm0113265	Christopher E. Brown	\N	\N
+tt0254448	nm0668094	Jill Pixley	\N	\N
+tt0254448	nm0726779	Paul Rigne Roach	\N	\N
+tt0254448	nm1050045	Ravi Kline	\N	\N
+tt0265605	nm0849114	Constantin Tanase	1880	1945
+tt0265605	nm4478069	Stefan Dominikowsky	\N	\N
+tt0274694	nm0006982	Adoor Bhasi	1929	1990
+tt0274694	nm0009760	Achankunju	\N	\N
+tt0274694	nm0039596	Asokan	\N	\N
+tt0274694	nm0151531	Prathapachandran	1941	2004
+tt0274694	nm0433884	K.P.A.C. Lalitha	\N	\N
+tt0274694	nm0482320	Mohanlal	1960	\N
+tt0274694	nm0579445	Menaka	\N	\N
+tt0275376	nm0442680	Kakhi Kavsadze	1935	\N
+tt0275376	nm0476914	Davit Kvachadze	\N	\N
+tt0275376	nm0581898	Lali Meskhi	\N	\N
+tt0275376	nm2190287	Givi Bumbiashvili	\N	\N
+tt0278473	nm0388137	Carl Hodges	\N	\N
+tt0278473	nm0835058	Steven J. Strong	\N	\N
+tt0278473	nm0838694	Dirk Wayne Summers	1931	\N
+tt0279844	nm0030721	Leo Antadze	\N	\N
+tt0279844	nm0049079	Dato Bakhtadze	1966	\N
+tt0279844	nm0066675	Zura Begalishvili	\N	\N
+tt0279844	nm0452033	Nanuka Khuskivadze	\N	\N
+tt0279844	nm0594758	Eka Mjavanadze	\N	\N
+tt0279844	nm0683585	Leo Pilpani	\N	\N
+tt0279844	nm0804102	Tamari Skhirtladze	\N	\N
+tt0281892	nm0300499	Jeff Gadbois	\N	\N
+tt0281892	nm0310086	James Gaulke	\N	\N
+tt0281892	nm0536830	Casey Maher	\N	\N
+tt0281892	nm0698763	John Prosky	\N	\N
+tt0283404	nm0677328	Oscar Peterson	1925	2007
+tt0283524	nm0153973	Lyuben Chatalov	1950	\N
+tt0283524	nm0463684	Nevena Kokanova	1938	2000
+tt0283524	nm0464060	Todor Kolev	1939	2013
+tt0283524	nm0561415	Stefan Mavrodiyev	1943	\N
+tt0285522	nm0121018	Elguja Burduli	1941	\N
+tt0285522	nm0121024	Gia Burjanadze	\N	\N
+tt0285522	nm0434542	Lika Kavzharadze	1959	2017
+tt0285522	nm0462122	Otar Koberidze	1924	2015
+tt0285522	nm0992140	Levan Tutberidze	1959	\N
+tt0285522	nm2243429	Zaza Magalashvili	\N	\N
+tt0292659	nm0799982	Larry Simms	1934	2009
+tt0292659	nm0823864	Ralph Staub	1899	1969
+tt0300972	nm0017807	Alona Alegre	\N	\N
+tt0300972	nm0042124	Nora Aunor	1953	\N
+tt0300972	nm0209649	Christopher De Leon	1956	\N
+tt0300972	nm0890645	Romeo Vasquez	1939	2017
+tt0301255	nm0047681	Allen Bain	\N	\N
+tt0301255	nm0132301	Christian Campbell	1972	\N
+tt0301255	nm0237982	Neil Driscoll Jr.	1974	\N
+tt0301255	nm0256121	Ethan Embry	1978	\N
+tt0304654	nm0189584	Randy Crowder	\N	\N
+tt0304654	nm0347140	Bennet Guillory	1949	\N
+tt0307139	nm0099909	John Bourgeois	\N	\N
+tt0307139	nm0513468	Eugene Lipinski	1956	\N
+tt0312280	nm0680919	Philly Abe	\N	\N
+tt0312280	nm1559852	Benjamin Schmideg	1986	\N
+tt0312280	nm1674381	Maria Angelico	\N	\N
+tt0315251	nm0787463	Neer Bikram Shah	\N	\N
+tt0315251	nm1086713	Bipana Thapa	1977	\N
+tt0315251	nm1098416	Gauri Malla	\N	\N
+tt0315251	nm1101742	Rajesh Hamal	1964	\N
+tt0315841	nm0019461	Mukhammad Ali	\N	\N
+tt0315841	nm0611489	Ato Mukhamedzhanov	1940	2002
+tt0315841	nm0834259	Juris Strenga	1937	\N
+tt0315841	nm0952319	Bakhtiyar Zakirov	1962	2005
+tt0315841	nm1164749	Guna Geikina	\N	\N
+tt0315841	nm1167377	Umed Sadykov	\N	\N
+tt0316090	nm0015476	Tekin Akmansoy	1924	2013
+tt0316090	nm0040320	Abdullah Ataç	1918	1987
+tt0316090	nm0079976	Gönül Bayhan	1932	2015
+tt0316090	nm0412745	Sabiha Izer	\N	\N
+tt0316090	nm0638151	Nurhan Nur	1930	\N
+tt0316090	nm1162984	Sevim Akmansoy	\N	\N
+tt0316090	nm1164429	Orhan Erçin	1926	1993
+tt0316531	nm1166065	Kai-duc Luong	\N	\N
+tt0316531	nm1169900	Rebecca Mach	\N	\N
+tt0317077	nm0202515	Charlie Davao	1934	2010
+tt0317077	nm0317822	Mark Gil	1961	2014
+tt0317077	nm0317863	Rosemarie Gil	1942	\N
+tt0317077	nm0894063	Ace Vergel	1952	2007
+tt0317077	nm0894494	Ruel Vernal	\N	\N
+tt0317077	nm1085391	Vivian Foz	\N	\N
+tt0317077	nm1205110	Juan Rodrigo	\N	\N
+tt0318272	nm0313687	Alexandru Georgescu	1948	\N
+tt0318272	nm0691251	Valentin Popescu	1955	\N
+tt0318272	nm0856286	Maria Teslaru	\N	\N
+tt0318272	nm6452288	Bogdan Rebenciuc	\N	\N
+tt0318547	nm0085764	Michael Blackman	\N	\N
+tt0318547	nm1172273	Megan Henning	1978	\N
+tt0318547	nm1172479	Serge Kirsanov	\N	\N
+tt0318547	nm1172742	Ashley McNulty	1978	\N
+tt0318547	nm1172982	Suzy Pearce	\N	\N
+tt0321639	nm0082008	André Bijelic	\N	\N
+tt0321639	nm0817875	Brad Spencer	1969	\N
+tt0321639	nm1192226	Kelley Doris	\N	\N
+tt0323676	nm0960836	Luka Dragic	1979	\N
+tt0323676	nm1095544	Dusan Bucan	1976	\N
+tt0323676	nm1146292	Marija Skaricic	1977	\N
+tt0323676	nm1193980	Zana Bumber	1977	\N
+tt0323676	nm1195458	Jerko Marcic	\N	\N
+tt0344006	nm1675426	Rogelio Rodriguez	\N	\N
+tt0344006	nm1675942	Katherine Solem	\N	\N
+tt0344605	nm1287432	Frida Østby Hansen	\N	\N
+tt0344605	nm1288666	Simen Svedal	1994	\N
+tt0344605	nm1289363	Emilio Sølna	\N	\N
+tt0344605	nm1289527	Mari Jerstad	\N	\N
+tt0344847	nm0710353	Guillaume Rannou	\N	\N
+tt0344847	nm0882905	Laurent Vacher	\N	\N
+tt0344847	nm1204852	Vincent Debost	\N	\N
+tt0344847	nm1292008	Henri Dugue	\N	\N
+tt0353975	nm0419688	Jayaram	\N	\N
+tt0353975	nm0558981	Mathu	\N	\N
+tt0353975	nm0690450	Kaviyoor Ponnamma	\N	\N
+tt0353975	nm0820208	Sreenivasan	\N	\N
+tt0353975	nm0858128	Thilakan	1935	2012
+tt0353975	nm8012719	Rahul Lakshman	\N	\N
+tt0354598	nm1146968	Carol Ann Leif	\N	\N
+tt0354598	nm1262896	Lisa Anderson	\N	\N
+tt0354598	nm1379818	Kissy Dugan	\N	\N
+tt0354875	nm0004291	Nargis	1929	1981
+tt0354875	nm0403952	Anwar Hussain	1928	1988
+tt0354875	nm1189842	Nazir Kashmiri	\N	\N
+tt0354875	nm1927212	D.K. Sapru	1916	1979
+tt0355967	nm0080228	Bhanupriya	\N	\N
+tt0355967	nm0471464	Krishnamraju	1940	\N
+tt0355967	nm0595934	Mohan Babu	1950	\N
+tt0355967	nm0764762	Sharada	1945	\N
+tt0361308	nm0001304	Fred Gwynne	1926	1993
+tt0361308	nm0415528	Madhur Jaffrey	1933	\N
+tt0363756	nm0159527	Navin Chowdhry	1971	\N
+tt0363756	nm0751085	Clive Russell	1945	\N
+tt0363756	nm0782247	Zohra Sehgal	1912	2014
+tt0368047	nm0266696	Brett Fancy	1964	\N
+tt0368047	nm0285726	Julia Ford	1963	\N
+tt0368047	nm1378483	Thomas Grant	\N	\N
+tt0368047	nm1382417	Joseph Friend	\N	\N
+tt0368848	nm0028098	Sergio Andrade	\N	\N
+tt0368848	nm1173944	Heather J. Braden	1976	\N
+tt0368848	nm1853224	Jon Bennet	\N	\N
+tt0368848	nm2091134	Hermeilio Miguel Aquino	\N	\N
+tt0369047	nm1384488	Glenda Cole	\N	\N
+tt0369047	nm1386260	Lucian McAfee	\N	\N
+tt0369047	nm1393092	Gib Bathrick	\N	\N
+tt0369047	nm1395428	Jonathan Bass	\N	\N
