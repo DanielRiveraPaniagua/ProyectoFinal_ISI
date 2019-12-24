@@ -1,6 +1,6 @@
 * FORMATO FICHEROS.TXT *
 	* peliculas.txt
-	id_film '\t' titulo '\t' año '\t' duracion
+	id_film '\t' titulo '\t' año '\t' duracion '\t' isAdult '\t' ranking '\t' num.votos
 	
 	* actores.txt
 	id_film '\t' id_actor '\t' nombre_actor '\t' año_nacimiento '\t' año_muerte
