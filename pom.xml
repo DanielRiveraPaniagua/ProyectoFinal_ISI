@@ -42,10 +42,11 @@
     	<version>1.7.25</version>
     </dependency>
     <dependency>
-     <groupId>org.xerial</groupId>
-     <artifactId>sqlite-jdbc</artifactId>
-     <version>3.21.0</version>
-   </dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.0-801.jdbc4</version>
+      <scope>compile</scope>
+    </dependency>
 	<dependency>
 	    <groupId>com.google.code.gson</groupId>
 	    <artifactId>gson</artifactId>
