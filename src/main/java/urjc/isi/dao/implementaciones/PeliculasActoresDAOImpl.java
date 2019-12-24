@@ -12,14 +12,12 @@ public class PeliculasActoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
   	@Override
   	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
 		statement.executeUpdate("create table peliculasactores (idpelicula INT, idpersona INT, PRIMARY KEY (idpelicula,idpersona))");
 		c.commit();
   	}
   	@Override
   	public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
 		statement.executeUpdate("drop table if exists peliculasactores");
 		c.commit();
   	}

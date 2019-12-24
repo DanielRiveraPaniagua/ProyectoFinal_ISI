@@ -32,14 +32,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
-		statement.executeUpdate("create table peliculas (idpelicula INT, titulo string, año string, duracion string, rating INT, nvotos INT, PRIMARY KEY (idpelicula))");
+		statement.executeUpdate("create table peliculas (idpelicula INT, titulo text, año text, duracion text, rating INT, nvotos float(2), PRIMARY KEY (idpelicula))");
 		c.commit();	
 	}
 	@Override
   public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
 		statement.executeUpdate("drop table if exists peliculas");
 		c.commit();
 	}

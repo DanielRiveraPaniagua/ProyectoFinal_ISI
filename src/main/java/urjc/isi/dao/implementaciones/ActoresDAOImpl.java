@@ -26,7 +26,6 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
 		statement.executeUpdate("create table actores" + table);
 		c.commit();
 	}
@@ -34,7 +33,6 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	@Override
    public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.setQueryTimeout(30);
 		statement.executeUpdate("drop table if exists actores");
 		c.commit();
 	}
