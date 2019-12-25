@@ -39,7 +39,7 @@ public class PeliculasActoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
 		while ((s = br.readLine()) != null) {
 			Relaciones pp = new Relaciones(s);
 			insert(pp);
+			c.commit();
 		}
-		c.commit();
 	}
 }
