@@ -17,7 +17,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	public Personas fromResultSet(ResultSet rs) throws  SQLException{
 		Personas persona = new Personas();
 
-		persona.setId(Integer.valueOf(rs.getString("idpersona")));
+		persona.setId(rs.getString("idpersona"));
 		persona.setFullNombre(rs.getString("fullnombre"));
 		persona.setNacimiento(Integer.valueOf(rs.getString("fnacimiento")));
 		persona.setMuerte(Integer.valueOf(rs.getString("fmuerte")));
@@ -42,7 +42,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	 	String sql = "INSERT INTO actores(idpersona,fullnombre,fnacimiento,fmuerte) VALUES(?,?,?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-	  		pstmt.setInt(1, entity.getId());
+	  		pstmt.setString(1, entity.getId());
 	  		pstmt.setString(2, entity.getFullNombre());
 	  		pstmt.setInt(3, entity.getNacimiento());
 	      	pstmt.setInt(4, entity.getMuerte());

@@ -21,7 +21,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
 		Peliculas peli = new Peliculas();
 
-		peli.setIdPelicula(Integer.valueOf(rs.getString("idpelicula")));
+		peli.setIdPelicula(rs.getString("idpelicula"));
 		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
 		peli.setDuracion(Double.valueOf(rs.getString("duracion")));
@@ -32,7 +32,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table peliculas (idpelicula INT, titulo text, año text, duracion text, rating INT, nvotos float(2), PRIMARY KEY (idpelicula))");
+		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, rating INT, nvotos float(2), PRIMARY KEY (idpelicula))");
 		c.commit();	
 	}
 	@Override
@@ -46,7 +46,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  		pstmt.setInt(1, entity.getIdPelicula());
+  		pstmt.setString(1, entity.getIdPelicula());
   		pstmt.setString(2, entity.getTitulo());
   		pstmt.setInt(3, entity.getAño());
       	pstmt.setDouble(4, entity.getDuracion());

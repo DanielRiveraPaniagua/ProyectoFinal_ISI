@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 public class Personas {
 
-	private int id;
+	private String id;
 	private String fullNombre;
 	private int fNacimiento;
 	private int fMuerte;
@@ -17,7 +17,7 @@ public class Personas {
 	  ;
   }
 
-  public Personas (int id, String fullNombre, int fNacimiento, int fMuerte){
+  public Personas (String id, String fullNombre, int fNacimiento, int fMuerte){
 		this.setId(id);
 		this.setFullNombre(fullNombre);
 		this.setNacimiento(fNacimiento);
@@ -26,17 +26,17 @@ public class Personas {
 
   public Personas(String line){ // Se tokeniza la linea
 	  StringTokenizer tokenizer = new StringTokenizer(line,"\t");
-	  this.setId(Integer.valueOf(tokenizer.nextToken()));
+	  this.setId(tokenizer.nextToken());
 	  this.setFullNombre(tokenizer.nextToken());
 	  this.setNacimiento(Integer.valueOf(tokenizer.nextToken()));
 	  this.setMuerte(Integer.valueOf(tokenizer.nextToken()));
   }
 
   // Setter Methods
-  public void setId(int id){
-    if(id <= 0){
-      throw new InvalidParameter();
-    }
+  public void setId(String id){
+	  if(id == null){
+	      throw new InvalidParameter();
+	    }
     this.id = id;
   }
   public void setFullNombre(String fullNombre){
@@ -59,7 +59,7 @@ public class Personas {
   }
 
   // Getter Methods
-  public int getId() {
+  public String getId() {
 	  return id;
   }
   public String getFullNombre() {
@@ -80,7 +80,7 @@ public class Personas {
 
     Personas otherP = (Personas)other;
 
-    return (this.id == otherP.id) &&
+    return Objects.equals(this.id,otherP.id) &&
               Objects.equals(this.fullNombre,otherP.fullNombre) &&
               (this.fNacimiento == otherP.fNacimiento) &&
               (this.fMuerte == otherP.fMuerte);

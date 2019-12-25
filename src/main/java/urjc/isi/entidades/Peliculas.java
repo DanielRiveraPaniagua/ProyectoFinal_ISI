@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class Peliculas {
 
 
-  private int idpelicula;
+  private String idpelicula;
   private String titulo;
   private int año;
   private double duracion;
@@ -19,7 +19,7 @@ public class Peliculas {
 
   // Constructor
 	public Peliculas(){} //Constructor por defecto
-	public Peliculas(int idpelicula, String titulo, int año,
+	public Peliculas(String idpelicula, String titulo, int año,
                     double duracion, double rating, int nvotos){
     this.setIdPelicula(idpelicula);
     this.setTitulo(titulo);
@@ -30,7 +30,7 @@ public class Peliculas {
 	}
 	public Peliculas(String line){// Se tokeniza la linea
 		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
-		this.setIdPelicula(Integer.valueOf(tokenizer.nextToken()));
+		this.setIdPelicula(tokenizer.nextToken());
 		this.setTitulo(tokenizer.nextToken());
 		this.setAño(Integer.valueOf(tokenizer.nextToken()));
 		this.setDuracion(Double.valueOf(tokenizer.nextToken()));
@@ -39,11 +39,11 @@ public class Peliculas {
 	}
 
   // Setter Methods
-  public void setIdPelicula(int idpelicula){
-    if(idpelicula <= 0){
-      throw new InvalidParameter();
-    }
-    this.idpelicula = idpelicula;
+  public void setIdPelicula(String idpelicula){
+	  if(idpelicula == null){
+	      throw new InvalidParameter();
+	    }
+	  this.idpelicula = idpelicula;
   }
   public void setTitulo(String titulo){
     if(titulo == null){
@@ -64,7 +64,7 @@ public class Peliculas {
     this.duracion = duracion;
   }
   public void setRating(double rating){
-    if(rating < 0 | rating > 5.0){
+    if(rating < 0 | rating > 10.0){
       throw new InvalidParameter();
     }
     this.rating = rating;
@@ -77,7 +77,7 @@ public class Peliculas {
   }
 
   // Getter Methods
-	public int getIdPelicula() {
+	public String getIdPelicula() {
 		return idpelicula;
 	}
 	public String getTitulo() {
@@ -105,8 +105,8 @@ public class Peliculas {
 
     Peliculas otherP = (Peliculas)other;
 
-    return (this.idpelicula == otherP.idpelicula) &&
-              Objects.equals(this.titulo,otherP.titulo) &&
+    return Objects.equals(this.idpelicula, otherP.idpelicula) &&
+    		Objects.equals(this.titulo,otherP.titulo) &&
               (this.año == otherP.año) &&
               (this.duracion == otherP.duracion) &&
               (this.rating == otherP.rating) &&

@@ -12,7 +12,7 @@ public class PeliculasActoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
   	@Override
   	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table peliculasactores (idpelicula INT, idpersona INT, PRIMARY KEY (idpelicula,idpersona))");
+		statement.executeUpdate("create table peliculasactores (idpelicula text, idpersona text, PRIMARY KEY (idpelicula,idpersona))");
 		c.commit();
   	}
   	@Override
@@ -26,8 +26,8 @@ public class PeliculasActoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
 	  String sql = "INSERT INTO peliculasactores(idpelicula,idpersona) VALUES(?,?)";
 
   		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  			pstmt.setInt(1, entity.getIdtabla1()); //Peliculas
-  			pstmt.setInt(2, entity.getIdtabla2()); //Persona
+  			pstmt.setString(1, entity.getIdtabla1()); //Peliculas
+  			pstmt.setString(2, entity.getIdtabla2()); //Persona
   			pstmt.executeUpdate();
   		} catch (SQLException e) {
     		System.out.println(e.getMessage());

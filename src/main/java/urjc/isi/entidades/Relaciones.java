@@ -6,8 +6,8 @@ import java.util.StringTokenizer;
 
 public class Relaciones {
 
-	private int idtabla1;
-	private int idtabla2;
+	private String idtabla1;
+	private String idtabla2;
 
 
   // Constructor
@@ -15,36 +15,36 @@ public class Relaciones {
 		;
 	}
 
-	public Relaciones (int id_pelicula, int id_persona){
+	public Relaciones (String id_pelicula, String id_persona){
 		  this.setIdtabla1(id_pelicula);
 		  this.setIdtabla2(id_persona);
 	}
 
 	public Relaciones (String line){ // Se tokeniza la linea
 		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
-		this.setIdtabla1(Integer.valueOf(tokenizer.nextToken()));
-		this.setIdtabla2(Integer.valueOf(tokenizer.nextToken()));
+		this.setIdtabla1(tokenizer.nextToken());
+		this.setIdtabla2(tokenizer.nextToken());
 	}
 
   // Setter Methods
-  public void setIdtabla1(int idtabla1){
-    if(idtabla1 <= 0){
+  public void setIdtabla1(String idtabla1){
+    if(idtabla1 == null){
       throw new InvalidParameter();
     }
     this.idtabla1 = idtabla1;
   }
-  public void setIdtabla2(int idtabla2){
-    if(idtabla2 <= 0){
+  public void setIdtabla2(String idtabla2){
+    if(idtabla2 == null){
       throw new InvalidParameter();
     }
     this.idtabla2 = idtabla2;
   }
 
   // Getter Methods
-  public int getIdtabla1() {
+  public String getIdtabla1() {
 	return idtabla1;
   }
-  public int getIdtabla2() {
+  public String getIdtabla2() {
 	return idtabla2;
   }
 
@@ -57,8 +57,8 @@ public class Relaciones {
 
     Relaciones otherR = (Relaciones)other;
 
-    return (this.idtabla1 == otherR.idtabla1) &&
-              (this.idtabla2==otherR.idtabla2);
+    return Objects.equals(this.idtabla1, otherR.idtabla1) &&
+              Objects.equals(this.idtabla2,otherR.idtabla2);
 	}
 	@Override
 	public int hashCode() {
