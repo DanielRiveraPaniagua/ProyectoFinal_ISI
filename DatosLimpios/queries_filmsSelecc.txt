@@ -1,0 +1,29 @@
+* Obtengo directores.txt *
+select DISTINCT d.* from peliculas p
+inner join relacion_directores_peliculas r on r.field1 = p.field1
+inner join directores d on r.field2 = d.field1
+
+* Obtengo relacion_directores_peliculas.txt *
+select DISTINCT r.* from peliculas p
+inner join relacion_directores_peliculas r on r.field1 = p.field1
+
+* Obtengo guionistas.txt * 
+select DISTINCT g.* from peliculas p
+inner join relacion_guionistas_peliculas r on r.field1 = p.field1
+inner join guionistas g on r.field2 = g.field1
+
+* Obtengo relacion_guionistas_peliculas.txt *
+select DISTINCT r.* from peliculas p
+inner join relacion_guionistas_peliculas r on r.field1 = p.field1
+
+* Obtengo generos.txt *
+select DISTINCT g.* from peliculas p
+inner join relacion_peliculas_generos r on r.field1 = p.field1
+inner join generos g on g.field1 = r.field2
+
+* Obtengo relacion_generos_peliculas.txt *
+select DISTINCT r.* from peliculas p
+inner join relacion_peliculas_generos r on r.field1 = p.field1
+
+
+
