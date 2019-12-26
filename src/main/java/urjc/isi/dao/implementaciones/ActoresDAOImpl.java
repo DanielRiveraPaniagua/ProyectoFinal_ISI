@@ -19,8 +19,8 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 
 		persona.setId(rs.getString("idpersona"));
 		persona.setFullNombre(rs.getString("fullnombre"));
-		persona.setNacimiento(Integer.valueOf(rs.getString("fnacimiento")));
-		persona.setMuerte(Integer.valueOf(rs.getString("fmuerte")));
+		persona.setNacimiento(rs.getString("fnacimiento"));
+		persona.setMuerte(rs.getString("fmuerte"));
 		return persona;
 	}
 	@Override
@@ -44,8 +44,8 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getId());
 	  		pstmt.setString(2, entity.getFullNombre());
-	  		pstmt.setInt(3, entity.getNacimiento());
-	      	pstmt.setInt(4, entity.getMuerte());
+	  		pstmt.setString(3, entity.getNacimiento());
+	      	pstmt.setString(4, entity.getMuerte());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());

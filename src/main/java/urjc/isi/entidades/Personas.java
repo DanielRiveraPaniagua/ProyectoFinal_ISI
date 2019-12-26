@@ -8,8 +8,8 @@ public class Personas {
 
 	private String id;
 	private String fullNombre;
-	private int fNacimiento;
-	private int fMuerte;
+	private String fNacimiento;
+	private String fMuerte;
 
 
   // Constructor
@@ -17,7 +17,7 @@ public class Personas {
 	  ;
   }
 
-  public Personas (String id, String fullNombre, int fNacimiento, int fMuerte){
+  public Personas (String id, String fullNombre, String fNacimiento, String fMuerte){
 		this.setId(id);
 		this.setFullNombre(fullNombre);
 		this.setNacimiento(fNacimiento);
@@ -28,8 +28,8 @@ public class Personas {
 	  StringTokenizer tokenizer = new StringTokenizer(line,"\t");
 	  this.setId(tokenizer.nextToken());
 	  this.setFullNombre(tokenizer.nextToken());
-	  this.setNacimiento(Integer.valueOf(tokenizer.nextToken()));
-	  this.setMuerte(Integer.valueOf(tokenizer.nextToken()));
+	  this.setNacimiento(tokenizer.nextToken());
+	  this.setMuerte(tokenizer.nextToken());
   }
 
   // Setter Methods
@@ -45,16 +45,10 @@ public class Personas {
     }
     this.fullNombre = fullNombre;
   }
-  public void setNacimiento(int fNacimiento){
-	if(fNacimiento < 1800 || fNacimiento > 2100){
-	  throw new InvalidParameter();
-    }
+  public void setNacimiento(String fNacimiento){
     this.fNacimiento = fNacimiento;
   }
-  public void setMuerte(int fMuerte){
-	if(fMuerte < 1800 || fMuerte > 2100){
-	  throw new InvalidParameter();
-    }
+  public void setMuerte(String fMuerte){
     this.fMuerte = fMuerte;
   }
 
@@ -65,10 +59,10 @@ public class Personas {
   public String getFullNombre() {
 	  return fullNombre;
   }
-  public int getNacimiento(){
+  public String getNacimiento(){
       return fNacimiento;
   }
-  public int getMuerte(){
+  public String getMuerte(){
       return fMuerte;
   }
   // Overrided Methods
@@ -82,8 +76,8 @@ public class Personas {
 
     return Objects.equals(this.id,otherP.id) &&
               Objects.equals(this.fullNombre,otherP.fullNombre) &&
-              (this.fNacimiento == otherP.fNacimiento) &&
-              (this.fMuerte == otherP.fMuerte);
+              Objects.equals(this.fNacimiento, otherP.fNacimiento) &&
+              Objects.equals(this.fMuerte, otherP.fMuerte);
 	}
 	@Override
 	public int hashCode() {
@@ -91,12 +85,12 @@ public class Personas {
 	}
     @Override
     public String toString(){
-      return "Id: "+getId()+"\tNombre y apellido: " + getFullNombre() +
+      return "Id: "+getId()+"\tNombre: " + getFullNombre() +
       "\tFecha Nacimiento: "+getNacimiento()+
       "\tFecha Muerte: "+getMuerte();
     }
 	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
-  	  return "Id: "+getId()+"&emsp; Nombre y apellido: " + getFullNombre() +
+  	  return "Id: "+getId()+"&emsp; Nombre: " + getFullNombre() +
   	  "&emsp; Fecha nacimiento: "+getNacimiento()+
         "&emsp; Fecha muerte: "+getMuerte();
     }
