@@ -25,26 +25,17 @@ public class tablas {
     
     
     private static Connection connection;
-
     
-    public static String doSelect(Request request, Response response) {
-	return select (connection, request.params(":table"), 
-                                   request.params(":param"));
-    }
-    
-    public static String doSelectTwoTables(Request request, Response response) {
-    	return selectTwoTables (connection, request.params(":tabla1"), 
-                                       request.params(":tabla2"),
-                                       request.params(":param"));
+    public static String doSelectAll(Request request, Response response) {
+    	return selectAll (connection, request.params(":tabla"));
         }
 
-    public static String select(Connection conn, String table, String film) {
-	String sql = "SELECT * FROM " + table + " WHERE id_pelicula=?";
+    public static String selectAll(Connection conn, String tabla) {
+	String sql = "SELECT * FROM " + tabla;
 
 	String result = new String();
 	
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-		pstmt.setInt(1, Integer.parseInt(film));
 		ResultSet rs = pstmt.executeQuery();
  
 		connection.commit();
@@ -52,41 +43,17 @@ public class tablas {
 		while (rs.next()) {
 		    result += "id_pelicula = " + rs.getString("id_pelicula") + "\n";
 
-		    result += "nombre = " + rs.getString("nombre") + "\n";
+		    result += "titulo = " + rs.getString("titulo") + "\n";
 
 		    result += "fecha = " + rs.getString("fecha") + "\n";
 
 		    result += "duracion = " + rs.getString("duracion") + "\n";
 
+		    result += "isAdult = " + rs.getString("isAdult") + "\n";
+			
 		    result += "rating = " + rs.getString("rating") + "\n";
-		}
-	    } catch (SQLException e) {
-	    System.out.println(e.getMessage());
-	}
-	
-	return result;
-    }
-    public static String selectTwoTables(Connection conn, String tabla1, String tabla2, String id) {
-	String sql = "SELECT * FROM " + tabla2 + " WHERE id_actor=?";
 
-	String result = new String();
-	
-	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-		pstmt.setInt(1, Integer.parseInt(id));
-		ResultSet rs = pstmt.executeQuery();
- 
-		connection.commit();
-
-		while (rs.next()) {
-		    result += "id_actor = " + rs.getString("id_actor") + "\n";
-
-		    result += "nombre = " + rs.getString("nombre") + "\n";
-
-		    result += "apellido = " + rs.getString("apellido") + "\n";
-
-		    result += "fecha_nac = " + rs.getString("fecha_nac") + "\n";
-
-		    result += "fecha_muer = " + rs.getString("fecha_muer") + "\n";
+		    result += "numVotos = " + rs.getString("numVotos") + "\n";
 		}
 	    } catch (SQLException e) {
 	    System.out.println(e.getMessage());
@@ -94,15 +61,17 @@ public class tablas {
 	return result;
 	}
     
-    public static void insert_pel(Connection conn, String id, String nombre, String fecha, String duracion, String rating) {
-	String sql = "INSERT INTO peliculas(id_pelicula, nombre, fecha, duracion, rating) VALUES(?,?,?,?,?)";
+    public static void insert_pel(Connection conn, String id, String nombre, String fecha, String duracion, String isAdult, String rating, String numVotos) {
+	String sql = "INSERT INTO peliculas(id_pelicula, titulo, fecha, duracion, isAdult, rating, numVotos) VALUES(?,?,?,?,?,?,?)";
 
 	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 		pstmt.setString(1, id);
 		pstmt.setString(2, nombre);
 		pstmt.setString(3, fecha);
 		pstmt.setString(4, duracion);
-		pstmt.setString(5, rating);
+		pstmt.setString(5, isAdult);
+		pstmt.setString(6, rating);
+		pstmt.setString(7, numVotos);
 		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	    System.out.println(e.getMessage());
@@ -167,7 +136,7 @@ public class tablas {
         }
     
     public static void insert_escriben(Connection conn, String id_pelicula, String id_guionista) {
-    	String sql = "INSERT INTO trabajan (id_pelicula, id_guionista) VALUES(?,?)";
+    	String sql = "INSERT INTO escriben (id_pelicula, id_guionista) VALUES(?,?)";
 
     	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
     		pstmt.setString(1, id_pelicula);
@@ -179,11 +148,34 @@ public class tablas {
      }
     
     public static void insert_dirigen(Connection conn, String id_pelicula, String id_director) {
-    	String sql = "INSERT INTO trabajan (id_pelicula, id_director) VALUES(?,?)";
+    	String sql = "INSERT INTO dirigen (id_pelicula, id_director) VALUES(?,?)";
 
     	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
     		pstmt.setString(1, id_pelicula);
     		pstmt.setString(2, id_director);
+    		pstmt.executeUpdate();
+    	    } catch (SQLException e) {
+    	    System.out.println(e.getMessage());
+    	}
+     }
+
+    public static void insert_generos(Connection conn, String nombre) {
+    	String sql = "INSERT INTO generos (nombre) VALUES(?)";
+
+    	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    		pstmt.setString(1, nombre);
+    		pstmt.executeUpdate();
+    	    } catch (SQLException e) {
+    	    System.out.println(e.getMessage());
+    	}
+     }
+
+    public static void insert_pertenecen(Connection conn, String id_pelicula, String nombre) {
+    	String sql = "INSERT INTO pertenecen (id_pelicula, nombre) VALUES(?,?)";
+
+    	try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    		pstmt.setString(1, id_pelicula);
+    		pstmt.setString(2, nombre);
     		pstmt.executeUpdate();
     	    } catch (SQLException e) {
     	    System.out.println(e.getMessage());
@@ -199,12 +191,20 @@ public class tablas {
 	connection.setAutoCommit(false);
 
 	
-	get("/:table/:param", tablas::doSelect);
+	get("/welcome", (req, res) -> 
+	    "<form action='/pag_principal' method='post' enctype='multipart/form-data'>" 
+	    + "</form>");
+
+	post("/pag_principal", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "Bienvenidos a nuestra web de peliculas";
+		return result;
+	});
 	
-	get("/:tabla1/:tabla2/:param", tablas::doSelectTwoTables);
+	get("/:tabla/selectAll", tablas::doSelectAll);
 
 
-   		// PARA PELICULAS FICHERO PELICULAS_COMPLETO.TXT
+   		// PARA PELICULAS FICHERO DatosLimpios/DatosProcesadosFinales/peliculas.txt
 	
 	get("/upload_peliculas", (req, res) -> 
 	    "<form action='/upload' method='post' enctype='multipart/form-data'>" 
@@ -219,15 +219,14 @@ public class tablas {
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30); 
 			statement.executeUpdate("drop table if exists peliculas");
-			statement.executeUpdate("create table peliculas (id_pelicula INT, nombre string, fecha string, duracion string, rating INT, PRIMARY KEY (id_pelicula))");
+			statement.executeUpdate("create table peliculas (id_pelicula INT, titulo string, fecha string, duracion string, isAdult INT, rating INT, numVotos INT, PRIMARY KEY (id_pelicula))");
 
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
-			    StringTokenizer tokenizer = new StringTokenizer(s, "|");
+			while ((s = br.readLine()) != null) {
+				
+			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 
 			    String id = tokenizer.nextToken();
 
@@ -237,9 +236,13 @@ public class tablas {
 
  			    String duracion = tokenizer.nextToken();
 
+			    String isAdult = tokenizer.nextToken();
+
  			    String rating = tokenizer.nextToken();
 
-			    insert_pel(connection, id, nombre, fecha, duracion, rating);
+			    String numVotos = tokenizer.nextToken();
+
+			    insert_pel(connection, id, nombre, fecha, duracion, isAdult, rating, numVotos);
 			   
 			    connection.commit();			    
 			}
@@ -248,7 +251,7 @@ public class tablas {
 		return result;
 	    });
       
-		// PARA ACTORES FICHERO ACTORS.TXT
+		// PARA ACTORES FICHERO ACTORES.TXT
 
     get("/upload_actores", (req, res) -> 
     "<form action='/upload2' method='post' enctype='multipart/form-data'>" 
@@ -268,11 +271,12 @@ public class tablas {
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			
+			while ((s = br.readLine()) != null) {
 				
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
+
+			    String id_pel = tokenizer.nextToken();
 			    
 			    String id_act = tokenizer.nextToken();
 
@@ -297,7 +301,7 @@ public class tablas {
 		return result;
 	    });
 
-		// PARA TRABAJAN FICHERO RELACION_ID_PELI_ACTOR.TXT
+		// PARA TRABAJAN FICHERO RELACION_PELICULA_ACTOR.TXT
 
     get("/upload_trabajan", (req, res) -> 
     "<form action='/upload3' method='post' enctype='multipart/form-data'>" 
@@ -319,9 +323,7 @@ public class tablas {
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			while ((s = br.readLine()) != null) {
 
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 
@@ -359,9 +361,7 @@ public class tablas {
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			while ((s = br.readLine()) != null) {
 				
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 			    
@@ -408,9 +408,7 @@ public class tablas {
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			while ((s = br.readLine()) != null) {	
 				
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 			    
@@ -450,16 +448,14 @@ public class tablas {
 		
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);
-			statement.executeUpdate("drop table if exists trabajan");
-			statement.executeUpdate("create table trabajan (id_pelicula INT, id_actor INT, PRIMARY KEY (id_pelicula, id_guionista), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_guionista REFERENCES guionistas (id_guionista))");
+			statement.executeUpdate("drop table if exists escriben");
+			statement.executeUpdate("create table escriben (id_pelicula INT, id_guionista INT, PRIMARY KEY (id_pelicula, id_guionista), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_guionista REFERENCES guionistas (id_guionista))");
 
 
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			while ((s = br.readLine()) != null) {
 
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 
@@ -467,7 +463,7 @@ public class tablas {
 
 			    String id_guionista = tokenizer.nextToken();
 
-			    insert_trabajan(connection, id_pel, id_guionista);
+			    insert_escriben(connection, id_pel, id_guionista);
 			   
 			    connection.commit();
 			    
@@ -490,16 +486,14 @@ public class tablas {
 		
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);
-			statement.executeUpdate("drop table if exists trabajan");
-			statement.executeUpdate("create table trabajan (id_pelicula INT, id_actor INT, PRIMARY KEY (id_pelicula, id_director), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_director REFERENCES directores (id_director))");
+			statement.executeUpdate("drop table if exists dirigen");
+			statement.executeUpdate("create table dirigen (id_pelicula INT, id_director INT, PRIMARY KEY (id_pelicula, id_director), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY id_director REFERENCES directores (id_director))");
 
 
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
 			String s;
-			int iter = 1;
-			while ((s = br.readLine()) != null && iter <= 500) {
-				iter++;
+			while ((s = br.readLine()) != null) {
 
 			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
 
@@ -507,7 +501,7 @@ public class tablas {
 
 			    String id_director = tokenizer.nextToken();
 
-			    insert_trabajan(connection, id_pel, id_director);
+			    insert_dirigen(connection, id_pel, id_director);
 			   
 			    connection.commit();
 			    
@@ -516,6 +510,88 @@ public class tablas {
 		    }
 		return result;
 	    });
+
+	//PARA GENEROS FICHERO GENEROS.TXT
+
+    get("/upload_generos", (req, res) -> 
+    "<form action='/upload8' method='post' enctype='multipart/form-data'>" 
+    + "    <input type='file' name='uploaded_generos_file' accept='.txt'>"
+    + "    <button>Upload file</button>" + "</form>");
+    
+    
+    post("/upload8", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		try (InputStream input = req.raw().getPart("uploaded_generos_file").getInputStream()) { 
+		
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			statement.executeUpdate("drop table if exists generos");
+			statement.executeUpdate("create table generos (nombre String, PRIMARY KEY (nombre))");
+
+
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			String s;
+			while ((s = br.readLine()) != null) {
+
+			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
+
+			    String nombre = tokenizer.nextToken();
+
+			    insert_generos(connection, nombre);
+			   
+			    connection.commit();
+			    
+			}
+			input.close();
+		    }
+		return result;
+	    });
+
+	//PARA PERTENECEN FICHERO RELACION_PELICULAS_GENEROS.TXT
+
+    get("/upload_pertenecen", (req, res) -> 
+    "<form action='/upload9' method='post' enctype='multipart/form-data'>" 
+    + "    <input type='file' name='uploaded_pertenecen_file' accept='.txt'>"
+    + "    <button>Upload file</button>" + "</form>");
+    
+    
+    post("/upload9", (req, res) -> {
+		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
+		String result = "File uploaded!";
+		try (InputStream input = req.raw().getPart("uploaded_pertenecen_file").getInputStream()) { 
+		
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			statement.executeUpdate("drop table if exists pertenecen");
+			statement.executeUpdate("create table pertenecen (id_pelicula INT, nombre String, PRIMARY KEY (id_pelicula,nombre), FOREIGN KEY id_pelicula REFERENCES peliculas (id_pelicula), FOREIGN KEY nombre REFERENCES generos (nombre))");
+
+
+			InputStreamReader isr = new InputStreamReader(input);
+			BufferedReader br = new BufferedReader(isr);
+			String s;
+			while ((s = br.readLine()) != null) {
+
+			    StringTokenizer tokenizer = new StringTokenizer(s, "/t");
+
+			    String id = tokenizer.nextToken();
+
+			    String nombre = tokenizer.nextToken();
+
+			    insert_pertenecen(connection, id, nombre);
+			   
+			    connection.commit();
+			    
+			}
+			input.close();
+		    }
+		return result;
+	    });
+
+	get("/*", (req, res) -> 
+	    "<form action='/welcome' method='get' enctype='multipart/form-data'>" 
+	    + "</form>");
     }
     
     static int getHerokuAssignedPort() {
