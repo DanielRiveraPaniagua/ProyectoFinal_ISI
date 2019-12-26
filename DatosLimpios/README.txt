@@ -2,7 +2,7 @@
 	* peliculas.txt
 	id_film '\t' titulo '\t' año '\t' duracion '\t' isAdult '\t' ranking '\t' num.votos
 	
-	* actores.txt
+	* actores.txt (falta)
 	id_film '\t' id_actor '\t' nombre_actor '\t' año_nacimiento '\t' año_muerte
 	
 	* directores.txt
@@ -20,9 +20,9 @@
 	* relacion_guionistas_peliculas.txt
 	id_film '\t' id_guionista
 	
-	* relacion_pelicula_actor.txt
+	* relacion_pelicula_actor.txt (falta)
 	id_pelicual '\t' id_actor
 	
-	* relacion_peliculas_generos.txt
+	* relacion_generos_peliculas.txt
 	id_pelicula '\t' nombre_genero
 
