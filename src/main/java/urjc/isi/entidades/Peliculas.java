@@ -64,7 +64,7 @@ public class Peliculas {
     this.duracion = duracion;
   }
   public void setRating(double rating){
-    if(rating < 0 | rating > 10.0){
+    if(rating < 0 || rating > 10.0){
       throw new InvalidParameter();
     }
     this.rating = rating;
