@@ -5,16 +5,32 @@
 
 SELECT peliculas.nombre, generos.nombre
 FROM peliculas
-JOIN adecuado_para
-ON peliculas.id_pel = adecuado_para.id_pel
-JOIN calificacion
-ON adecuado_para.id_pel = calificacion.id_pel
 JOIN pertenece
-ON calificacion.id_pel = pertenece.id_pel
+ON peliculas.id_pelicula = pertenece.id_pelicula
 JOIN generos
-ON pertenece.nombre_genero = generos.id_genero
+ON pertenece.id_genero = generos.id_genero
 GROUP BY generos.nombre
 ORDER BY generos.nombre
+
+#Peliculas para adultos
+
+SELECT peliculas.nombre
+FROM peliculas 
+JOIN adecuado_para
+ON peliculas.id_pelicula = adecuado_para.id_pelicula
+JOIN calificacion
+ON adecuado_para.id_edades = calificacion.id_edades
+WHERE calificacion.is_adult = 1
+
+#Películas para niños
+SELECT peliculas.nombre
+FROM peliculas 
+JOIN adecuado_para
+ON peliculas.id_pelicula = adecuado_para.id_pelicula
+JOIN calificacion
+ON adecuado_para.id_edades = calificacion.id_edades
+WHERE calificacion.is_adult = 0
+
 
 #Actores por película
 
@@ -76,17 +92,6 @@ peliculas.año,
 peliculas.duracion,
 peliculas.rating
 FROM peliculas
-ORDER BY peliculas.nombre
-
-#Películas por categoría (de edad)
-
-SELECT peliculas.nombre,
-calificacion.nombre
-FROM peliculas
-JOIN adecuado_para
-ON peliculas.id_pel = adecuado_para.id_pel
-JOIN calificacion
-ON adecuado_para.id_cal  = calificacion.id_calificacion
 ORDER BY peliculas.nombre
 
 #Películas de un actor de cierto género
