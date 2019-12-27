@@ -16,10 +16,18 @@ public class PeliculasActoresService {
 	
 	private PeliculasActoresDAOImpl peac ;
 	
+	/**
+	 * Constructor por defecto
+	 */
 	public PeliculasActoresService() {
 		peac = new PeliculasActoresDAOImpl();
 	}
 	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla PeliculasActores
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";

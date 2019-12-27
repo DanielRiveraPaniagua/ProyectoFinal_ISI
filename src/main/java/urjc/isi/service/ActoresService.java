@@ -18,16 +18,29 @@ public class ActoresService {
 	
 	private ActoresDAOImpl actores;
 	
+	/**
+	 * Constructor por defecto
+	 */
 	public ActoresService() {
 		actores = new ActoresDAOImpl();
 	}
-
+	
+	/**
+	 * Metodo encargado de procesar un selectAll de la tabla actores
+	 * @return Lista de actores de la tabla Actores
+	 * @throws SQLException
+	 */
 	public List<Personas> getAllActores() throws SQLException{
 		List<Personas> result = actores.selectAll();
 		actores.close();
 		return result;
 	}
 	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla Actores
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";

@@ -23,6 +23,12 @@ public class PeliculasController {
 		ps = new PeliculasService();
 	}
 	
+	/**
+	 * Maneja las peticiones que llegan al endpoint /peliculas/uploadTable
+	 * @param request
+	 * @param response
+	 * @return El formulario para subir el fichero con las pseudoqueries o una redireccion al endpoint /welcome
+	 */
 	public static String uploadTable(Request request, Response response) {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
@@ -32,15 +38,28 @@ public class PeliculasController {
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 	
+	/**
+	 * Metodo que se encarga de manejar las peticiones a /peliculas/upload
+	 * @param request
+	 * @param response
+	 * @return Mensaje de estado sobre la subida de los registros
+	 */
 	public static String upload(Request request, Response response) {
 		return ps.uploadTable(request);
 	}
 	
+	/**
+	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
+	 * @param request
+	 * @param response
+	 * @return Listado de peliculas que estan en la tabla Peliculas de la base de datos
+	 * @throws SQLException
+	 */
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
 		if(request.queryParams("actor")!= null) {
-			output = ps.getAllPeliculasWithActor(request.queryParams("actor"));
+			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
 		}else {
 			output = ps.getAllPeliculas();
 		}
@@ -50,6 +69,9 @@ public class PeliculasController {
 		return result;
 	}
 	
+	/**
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
+	 */
 	public void peliculasHandler() {
 		//get("/crearTabla", AdminController::crearTablaPeliculas);
 		get("/selectAll", PeliculasController::selectAllPeliculas);

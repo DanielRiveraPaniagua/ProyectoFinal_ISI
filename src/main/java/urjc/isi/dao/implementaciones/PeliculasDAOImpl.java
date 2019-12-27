@@ -113,7 +113,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
   
 	@Override
-	public List<Peliculas> selectAllwhereActor(String name) {
+	public List<Peliculas> selectAllWhereActor(String name) {
 	  List<Peliculas> filmList = new ArrayList<>();
 	  String sql = "SELECT * from peliculas as p " +
 			  "Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
