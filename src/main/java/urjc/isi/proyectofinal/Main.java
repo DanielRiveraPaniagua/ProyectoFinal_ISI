@@ -42,10 +42,6 @@ public class Main {
     		PeliculasActoresController Controller = new PeliculasActoresController();
     		Controller.peliculasActoresHandler();
     	});
-    	path("generos",()->{ //añadido nuevo 
-    		GenerosController Controller =new GenerosController();
-    		Controller.peliculasHandler();
-    	});
     }
     
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
