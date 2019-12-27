@@ -21,14 +21,13 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   public Generos fromResultSet(ResultSet rs) throws  SQLException{
 		Generos gene = new Generos();
 
-		gene.setIdGenero(rs.getString("idgenero"));
 		gene.setNombre(rs.getString("nombre"));
 		return gene;
 	}
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table generos (idgenero text, nombre text, PRIMARY KEY (idgenero))");
+		statement.executeUpdate("create table generos ( nombre text, PRIMARY KEY (nombre))");
 		c.commit();	
 	}
 	@Override
@@ -39,11 +38,10 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	}
   @Override
   public void insert(Generos entity) {
-  	String sql = "INSERT INTO generos(idgenero,nombre) VALUES(?,?)";
+  	String sql = "INSERT INTO generos(nombre) VALUES(?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  		pstmt.setString(1, entity.getIdGenero());
-  		pstmt.setString(2, entity.getNombre());
+  		pstmt.setString(1, entity.getNombre());
   		pstmt.executeUpdate();
     } catch (SQLException e) {
   	    System.out.println(e.getMessage());
@@ -76,26 +74,11 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   }
   @Override
   public Generos selectByID (String idgenero){
-	  String sql = "SELECT * from generos WHERE idgenero=" + idgenero;
-	  Generos gene = new Generos();
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  gene = fromResultSet(rs);
-      } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return gene;
+	  return null;
   }
   @Override
   public void deleteByID(String idgenero){
-	  String sql = "DELETE from generos WHERE idgenero=" + idgenero;
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
-		  pstmt.executeUpdate();
-	      c.commit();
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
+	  ;
   }
   
   @Override
