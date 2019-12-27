@@ -6,6 +6,9 @@ import static spark.Spark.post;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
@@ -57,8 +60,21 @@ public class ActoresController {
 	public static String selectAllActores(Request request, Response response) throws SQLException {
 		List<Personas> output = as.getAllActores();
 		String result = "";
-		for(int i = 0; i < output.size(); i++) {
-		    result = result + output.get(i).toHTMLString() +"</br>";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
 		}
 		return result;
 	}

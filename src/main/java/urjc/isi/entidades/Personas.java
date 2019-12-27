@@ -4,6 +4,8 @@ import java.util.Objects;
 import urjc.isi.exceptions.*;
 import java.util.StringTokenizer;
 
+import com.google.gson.JsonObject;
+
 public class Personas {
 
 	private String id;
@@ -102,4 +104,12 @@ public class Personas {
 				"&emsp; Fecha nacimiento: "+getNacimiento()+
 				"&emsp; Fecha muerte: "+getMuerte();
     }
+	
+	public JsonObject toJSONObject () {
+		JsonObject personaJSON = new JsonObject();
+		personaJSON.addProperty("Nombre completo", getFullNombre());
+		personaJSON.addProperty("Fecha de nacimiento", getNacimiento());
+		personaJSON.addProperty("Fecha de muerte", getMuerte());
+		return personaJSON;
+	}
 }
