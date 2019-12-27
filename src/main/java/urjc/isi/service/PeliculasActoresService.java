@@ -14,6 +14,18 @@ import urjc.isi.dao.implementaciones.PeliculasActoresDAOImpl;
 
 public class PeliculasActoresService {
 	
+	private PeliculasActoresDAOImpl peac ;
+	
+	/**
+	 * Constructor por defecto
+	 */
+	public PeliculasActoresService() {}
+	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla PeliculasActores
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
 		PeliculasActoresDAOImpl peac = new PeliculasActoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));

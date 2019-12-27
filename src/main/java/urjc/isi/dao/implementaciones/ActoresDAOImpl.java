@@ -23,6 +23,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		persona.setMuerte(rs.getString("fmuerte"));
 		return persona;
 	}
+	
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
@@ -52,6 +53,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	  	}
 		
 	}
+	
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;

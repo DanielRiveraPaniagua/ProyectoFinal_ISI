@@ -16,10 +16,22 @@ import urjc.isi.entidades.*;
 
 public class PeliculasService {
 	
+	private PeliculasDAOImpl pelisDAO ;
+	
+	/**
+	 * Constructor por defecto
+	 */
+	public PeliculasService() {}
+	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla Peliculas
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		try (InputStream input = req.raw().getPart("uploaded_films_file").getInputStream()) {
 		    pelisDAO.dropTable();
 		    pelisDAO.createTable();
@@ -33,15 +45,26 @@ public class PeliculasService {
 		return result;
 	}
 
+	/**
+	 * Metodo encargado de procesar un selectAll de la tabla Peliculas
+	 * @return Lista de actores de la tabla Peliculas
+	 * @throws SQLException
+	 */
 	public List<Peliculas> getAllPeliculas() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAll();
 		pelisDAO.close();
 		return result;
 	}
-	public List<Peliculas> getAllPeliculasWithActor(String name){
+	
+	/**
+	 * Metodo encargado de procesar un la salida de todas la lista con todas las peliculas de un actor
+	 * @return Lista de actores de la tabla Actores
+	 * @throws SQLException
+	 */
+	public List<Peliculas> getAllPeliculasByActor(String name){
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllwhereActor(name);
+		List<Peliculas> result = pelisDAO.selectAllWhereActor(name);
 		pelisDAO.close();
 		return result;
 	}

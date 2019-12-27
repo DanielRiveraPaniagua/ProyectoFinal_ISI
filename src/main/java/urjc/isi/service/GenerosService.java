@@ -1,6 +1,7 @@
 package urjc.isi.service;
 
 import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,8 +12,8 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.ActoresDAOImpl;
-import urjc.isi.entidades.Personas;
+import urjc.isi.dao.implementaciones.GenerosDAOImpl;
+import urjc.isi.entidades.Generos;
 
 public class GenerosService {
 

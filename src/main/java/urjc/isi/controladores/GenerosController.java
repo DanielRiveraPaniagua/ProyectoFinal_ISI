@@ -1,6 +1,7 @@
 package urjc.isi.controladores;
 
 import static spark.Spark.get;
+
 import static spark.Spark.post;
 
 import java.sql.SQLException;
@@ -8,8 +9,8 @@ import java.util.List;
 
 import spark.Request;
 import spark.Response;
-import urjc.isi.entidades.Personas;
-import urjc.isi.service.ActoresService;
+import urjc.isi.entidades.Generos;
+import urjc.isi.service.GenerosService;
 
 public class GenerosController {
 	private static GenerosService gs;

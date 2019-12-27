@@ -15,7 +15,17 @@ import urjc.isi.dao.implementaciones.ActoresDAOImpl;
 import urjc.isi.entidades.Personas;
 
 public class ActoresService {
-
+	
+	/**
+	 * Constructor por defecto
+	 */
+	public ActoresService() {}
+	
+	/**
+	 * Metodo encargado de procesar un selectAll de la tabla actores
+	 * @return Lista de actores de la tabla Actores
+	 * @throws SQLException
+	 */
 	public List<Personas> getAllActores() throws SQLException{
 		ActoresDAOImpl actores = new ActoresDAOImpl();
 		List<Personas> result = actores.selectAll();
@@ -23,6 +33,11 @@ public class ActoresService {
 		return result;
 	}
 	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla Actores
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
 		ActoresDAOImpl actores = new ActoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
