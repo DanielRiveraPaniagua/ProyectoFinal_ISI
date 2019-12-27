@@ -20,6 +20,7 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 	  	    System.out.println(e.getMessage());
 		}
 	}
+	
 	@Override
 	public Connection connect() {
 		URI dbUri;
@@ -38,6 +39,7 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 			throw new RuntimeException(e);
 		}*/
 	}
+	
 	@Override
 	public void close() {
 		try {
@@ -46,15 +48,14 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 	  		throw new RuntimeException(e);
 	  	}
 	}
+	
 	@Override
 	  public Boolean tableExists(String table) throws SQLException {
 		  DatabaseMetaData dbm = c.getMetaData();
 		  ResultSet tables = dbm.getTables(null, null, table, null);
 		  if (tables.next()) {
-			  // La tabla existe
 			  return true;
 		  } else {
-			  // No existe la tabla
 			  return false;
 		  }
 	  }

@@ -13,11 +13,22 @@ import urjc.isi.controladores.*;
 
 public class Main {
 
-	public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
+	/**
+	 * Este metodo devuelve la respuesta por defecto a cualquier endpoint no contemplado en la API REST y al /welcome
+	 * @param request
+	 * @param response
+	 * @return Respuesta por defecto de la aplicación
+	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException
+	 */
+	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
        String result = new String("Film application is in WIP. THANKS!");
-
        return result;
     }
+	
+	/**
+	 * Este metodo es un gestor de los endpoints asociados a cada una de las tablas de la base de datos
+	 */
     public static void tables() {
     	path("peliculas",() -> {
         	PeliculasController Controller = new PeliculasController();
@@ -25,20 +36,25 @@ public class Main {
         });
     	path("actores",()->{
     		ActoresController Controller = new ActoresController();
-    		Controller.peliculasHandler();
+    		Controller.actoresHandler();
     	});
     	path("peliculasactores",()->{
     		PeliculasActoresController Controller = new PeliculasActoresController();
-    		Controller.peliculasHandler();
+    		Controller.peliculasActoresHandler();
     	});
     }
+    
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
-        get("/welcome", Main::doWork);
+        get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
         redirect.get("*", "/welcome");
     }
 
+    /**
+     * Este metodo asigna el puerto en el que va a correr la aplicación en Heroku
+     * @return puerto en el que va a correr la aplicación
+     */
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
