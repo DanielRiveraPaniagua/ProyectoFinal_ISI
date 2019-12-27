@@ -38,7 +38,8 @@ public class PeliculasGenerosController {
 		String result = "<form action='/generos/upload' method='post' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
 		{
 			for(int i = 0; i < output.size(); i++) {
-			    result = result + "<option value=" + i + "\">" + output.get(i).toHTMLString() + "</option>\n";
+				String[] tokens= output.get(i).toHTMLString().split("\\s");
+			    result = result + "<option value=" + i + "\">" + tokens[1] + "</option>\n";
 			}
 		    result = result + "  </select>\n" + 
 		    "  <input type=\"submit\" value=\"Submit\">"
