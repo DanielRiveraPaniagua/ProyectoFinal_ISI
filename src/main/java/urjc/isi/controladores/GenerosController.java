@@ -22,8 +22,8 @@ public class GenerosController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/actores/upload' method='post' enctype='multipart/form-data'>" 
-			    + "    <input type='file' name='uploaded_actores_file' accept='.txt'>"
+		return "<form action='/generos/upload' method='post' enctype='multipart/form-data'>" 
+			    + "    <input type='file' name='uploaded_generos_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 	public static String upload(Request request, Response response) {

@@ -27,7 +27,7 @@ public class GenerosService {
 		GenerosDAOImpl generos = new GenerosDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_actores_file").getInputStream()) {
+		try (InputStream input = req.raw().getPart("uploaded_generos_file").getInputStream()) {
 		    generos.dropTable();
 		    generos.createTable();
 			InputStreamReader isr = new InputStreamReader(input);
