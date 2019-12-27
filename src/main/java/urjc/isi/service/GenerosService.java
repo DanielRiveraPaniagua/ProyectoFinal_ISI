@@ -16,27 +16,27 @@ import urjc.isi.entidades.Personas;
 
 public class GenerosService {
 
-	public List<Personas> getAllActores() throws SQLException{
-		ActoresDAOImpl actores = new ActoresDAOImpl();
-		List<Personas> result = actores.selectAll();
-		actores.close();
+	public List<Generos> getAllGeneros() throws SQLException{
+		GenerosDAOImpl generos = new GenerosDAOImpl();
+		List<Generos> result = generos.selectAll();
+		generos.close();
 		return result;
 	}
 	
 	public String uploadTable(Request req){
-		ActoresDAOImpl actores = new ActoresDAOImpl();
+		GenerosDAOImpl generos = new GenerosDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
 		try (InputStream input = req.raw().getPart("uploaded_actores_file").getInputStream()) {
-		    actores.dropTable();
-		    actores.createTable();
+		    generos.dropTable();
+		    generos.createTable();
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
-			actores.uploadTable(br);
+			generos.uploadTable(br);
 		} catch (IOException | ServletException | SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		actores.close();
+		generos.close();
 		return result;
 	}
 	
