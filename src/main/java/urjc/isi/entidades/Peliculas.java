@@ -154,4 +154,5 @@ public class Peliculas {
 		peliculaJSON.addProperty("Numero de votos", getNVotos());
 		return peliculaJSON;
 	}
+	
 }

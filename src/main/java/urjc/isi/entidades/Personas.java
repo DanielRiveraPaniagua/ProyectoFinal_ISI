@@ -112,4 +112,5 @@ public class Personas {
 		personaJSON.addProperty("Fecha de muerte", getMuerte());
 		return personaJSON;
 	}
+	
 }
