@@ -16,14 +16,10 @@ import urjc.isi.entidades.Personas;
 
 public class ActoresService {
 	
-	private ActoresDAOImpl actores;
-	
 	/**
 	 * Constructor por defecto
 	 */
-	public ActoresService() {
-		actores = new ActoresDAOImpl();
-	}
+	public ActoresService() {}
 	
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla actores
@@ -31,6 +27,7 @@ public class ActoresService {
 	 * @throws SQLException
 	 */
 	public List<Personas> getAllActores() throws SQLException{
+		ActoresDAOImpl actores = new ActoresDAOImpl();
 		List<Personas> result = actores.selectAll();
 		actores.close();
 		return result;
@@ -42,6 +39,7 @@ public class ActoresService {
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
+		ActoresDAOImpl actores = new ActoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
 		try (InputStream input = req.raw().getPart("uploaded_actores_file").getInputStream()) {

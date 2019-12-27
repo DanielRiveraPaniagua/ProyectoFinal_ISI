@@ -36,15 +36,44 @@ public interface GenericDAO<T>{
 	 */
 	public void dropTable() throws SQLException;
 
+	/**
+	 * Inserta registros en una tabla cualquiera
+	 * @param br
+	 * @throws IOException
+	 * @throws SQLException
+	 */
 	public void uploadTable(BufferedReader br) throws IOException, SQLException;
 
+	/**
+	 * Comprueba si una tabla existe en la base de datos
+	 * @param Nombre de la tabla a comprobar
+	 * @return true si la tabla existe
+	 * @throws SQLException
+	 */
 	public Boolean tableExists(String table) throws SQLException;
 
+	/**
+	 * Inserta en su tabla correspondiente una entidad de tipo generico
+	 * @param entity
+	 */
 	public void insert(T entity);
 
+	/**
+	 * Selecciona todos los registros de una tabla cualquiera
+	 * @return
+	 */
 	public List<T> selectAll();
 
-	public T selectByID(String idpelicula);
+	/**
+	 * Selecciona un registro de cualquier tabla pasandole su id como parametro
+	 * @param id
+	 * @return El registro que se asocia con esa clave primaria
+	 */
+	public T selectByID(String id);
 
-	public void deleteByID(String idpelicula);
+	/**
+	 * Elimina un registro de cualquier tabla pasandole su id como parametro
+	 * @param id
+	 */
+	public void deleteByID(String id);
 }

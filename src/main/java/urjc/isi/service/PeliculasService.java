@@ -21,9 +21,7 @@ public class PeliculasService {
 	/**
 	 * Constructor por defecto
 	 */
-	public PeliculasService() {
-		pelisDAO = new PeliculasDAOImpl();
-	}
+	public PeliculasService() {}
 	
 	/**
 	 * Metodo encargado de procesar la subida de los registros de la tabla Peliculas
@@ -31,6 +29,7 @@ public class PeliculasService {
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
 		try (InputStream input = req.raw().getPart("uploaded_films_file").getInputStream()) {
@@ -52,6 +51,7 @@ public class PeliculasService {
 	 * @throws SQLException
 	 */
 	public List<Peliculas> getAllPeliculas() throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAll();
 		pelisDAO.close();
 		return result;
@@ -63,6 +63,7 @@ public class PeliculasService {
 	 * @throws SQLException
 	 */
 	public List<Peliculas> getAllPeliculasByActor(String name){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAllWhereActor(name);
 		pelisDAO.close();
 		return result;
