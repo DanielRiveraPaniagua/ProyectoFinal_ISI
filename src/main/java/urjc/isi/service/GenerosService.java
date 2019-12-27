@@ -17,6 +17,11 @@ import urjc.isi.entidades.Generos;
 
 public class GenerosService {
 
+	/**
+	 * Metodo encargado de procesar un selectAll de la tabla Generos
+	 * @return Lista de generos de la tabla Generos
+	 * @throws SQLException
+	 */
 	public List<Generos> getAllGeneros() throws SQLException{
 		GenerosDAOImpl generos = new GenerosDAOImpl();
 		List<Generos> result = generos.selectAll();
@@ -24,6 +29,11 @@ public class GenerosService {
 		return result;
 	}
 	
+	/**
+	 * Metodo encargado de procesar la subida de los registros de la tabla Generos
+	 * @param req
+	 * @return Estado de la subida
+	 */
 	public String uploadTable(Request req){
 		GenerosDAOImpl generos = new GenerosDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));

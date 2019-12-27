@@ -54,7 +54,7 @@ public class ActoresController {
 	 * Maneja las peticiones al endpoint /actores/selectAll
 	 * @param request
 	 * @param response
-	 * @return La lista de actores que hay en la tabla Actores de la base de datos en formato HTML
+	 * @return La lista de actores que hay en la tabla Actores de la base de datos en formato HTML o JSON
 	 * @throws SQLException
 	 */
 	public static String selectAllActores(Request request, Response response) throws SQLException {

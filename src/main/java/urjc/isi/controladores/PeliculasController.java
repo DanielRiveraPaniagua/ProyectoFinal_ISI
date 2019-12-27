@@ -55,7 +55,7 @@ public class PeliculasController {
 	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
 	 * @param request
 	 * @param response
-	 * @return Listado de peliculas que estan en la tabla Peliculas de la base de datos
+	 * @return Listado de peliculas que estan en la tabla Peliculas de la base de datos en formato HTML o JSON
 	 * @throws SQLException
 	 */
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
