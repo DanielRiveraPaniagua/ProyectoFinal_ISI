@@ -4,6 +4,8 @@ import java.util.Objects;
 import urjc.isi.exceptions.*;
 import java.util.StringTokenizer;
 
+import com.google.gson.JsonObject;
+
 //Solamente es la definición de la tabla
 //sus campos y como trabajar con ellos
 
@@ -140,5 +142,16 @@ public class Peliculas {
 		return "Id Película: "+getIdPelicula()+"&emsp; Titulo: " + getTitulo() +
 				" (" + getAño() + ") " + "&emsp; Duracion: "+getDuracion()+
 				"&emsp; Rating: "+getRating()+"&emsp; Numero de Votos: "+getNVotos();
+	}
+	
+	public JsonObject toJSONObject () {
+		JsonObject peliculaJSON = new JsonObject();
+		peliculaJSON.addProperty("Id", getIdPelicula());
+		peliculaJSON.addProperty("Titulo", getTitulo());
+		peliculaJSON.addProperty("Año", getAño());
+		peliculaJSON.addProperty("Duracion", getDuracion());
+		peliculaJSON.addProperty("Rating", getRating());
+		peliculaJSON.addProperty("Numero de votos", getNVotos());
+		return peliculaJSON;
 	}
 }

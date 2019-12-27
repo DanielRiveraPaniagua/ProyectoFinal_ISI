@@ -5,6 +5,9 @@ import static spark.Spark.*;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 import spark.Request;
 import spark.Response;
 
@@ -58,13 +61,25 @@ public class PeliculasController {
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		if(request.queryParams("actor")!= null) {
+		if(request.queryParams("actor")!= null) 
 			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
-		}else {
+		else 
 			output = ps.getAllPeliculas();
-		}
-		for(int i = 0; i < output.size(); i++) {
-		    result = result + output.get(i).toHTMLString() +"</br>";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
 		}
 		return result;
 	}
@@ -79,42 +94,4 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 	}
 	
-	/**
-	 * Metodo manejador del endpoint /peliculas/crearTabla 
-	 * @param request
-	 * @param response
-	 * @return 
-	 */
-	/*
-	public static JsonObject crearTablaPeliculas(Request request, Response response) throws SQLException{
-		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
-		String output = as.crearTablaPeliculas();
-		response.type("application/json");
-		JsonObject json = new JsonObject();
-		json.addProperty("status", "SUCCESS");
-		json.addProperty("serviceMessage", "La peticion se manejó adecuadamente");
-		json.addProperty("output", output);
-		return json;
-	}*/
-	/*public static JsonObject selectAllPeliculas(Request request, Response response){
-
-		request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
-		response.type("application/json");
-		JsonObject json = new JsonObject();
-		try {
-			List<Peliculas> output = as.getAllPeliculas();
-			output.add(new Peliculas());
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toString());;
-			}
-			json.add("output", array);
-		}catch(SQLException e) {
-			json.addProperty("status", "ERROR");
-			json.addProperty("serviceMessage", "Ocurrio un error accediendo a la base de datos");
-		}
-		return json;
-	}*/
 }
