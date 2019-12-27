@@ -29,18 +29,21 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
 		return peli;
 	}
-	@Override
+  
+  @Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
 		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, rating Decimal(4,2), nvotos INT, PRIMARY KEY (idpelicula))");
 		c.commit();	
 	}
-	@Override
+  
+  @Override
   public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.executeUpdate("drop table if exists peliculas");
 		c.commit();
 	}
+  
   @Override
   public void insert(Peliculas entity) {
   	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
@@ -57,6 +60,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   	    System.out.println(e.getMessage());
   	}
   }
+  
   @Override
   public void uploadTable(BufferedReader br) throws IOException, SQLException {
     String s;

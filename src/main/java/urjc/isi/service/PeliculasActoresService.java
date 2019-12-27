@@ -14,8 +14,13 @@ import urjc.isi.dao.implementaciones.PeliculasActoresDAOImpl;
 
 public class PeliculasActoresService {
 	
+	private PeliculasActoresDAOImpl peac ;
+	
+	public PeliculasActoresService() {
+		peac = new PeliculasActoresDAOImpl();
+	}
+	
 	public String uploadTable(Request req){
-		PeliculasActoresDAOImpl peac = new PeliculasActoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
 		try (InputStream input = req.raw().getPart("uploaded_peliculasactores_file").getInputStream()) {

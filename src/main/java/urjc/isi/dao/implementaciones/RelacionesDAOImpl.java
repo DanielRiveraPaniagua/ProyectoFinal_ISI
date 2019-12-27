@@ -19,6 +19,7 @@ public abstract class RelacionesDAOImpl<T> implements RelacionesDAO<T>{
 	  	    System.out.println(e.getMessage());
 		}
 	}
+	
 	@Override
 	public Connection connect() {
 		URI dbUri;
@@ -37,6 +38,7 @@ public abstract class RelacionesDAOImpl<T> implements RelacionesDAO<T>{
 			throw new RuntimeException(e);
 		}*/
 	}
+	
 	@Override
 	public void close() {
 		try {

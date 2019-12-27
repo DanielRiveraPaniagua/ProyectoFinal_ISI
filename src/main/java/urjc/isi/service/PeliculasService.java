@@ -16,10 +16,15 @@ import urjc.isi.entidades.*;
 
 public class PeliculasService {
 	
+	private PeliculasDAOImpl pelisDAO ;
+	
+	public PeliculasService() {
+		pelisDAO = new PeliculasDAOImpl();
+	}
+	
 	public String uploadTable(Request req){
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		try (InputStream input = req.raw().getPart("uploaded_films_file").getInputStream()) {
 		    pelisDAO.dropTable();
 		    pelisDAO.createTable();
@@ -34,13 +39,12 @@ public class PeliculasService {
 	}
 
 	public List<Peliculas> getAllPeliculas() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAll();
 		pelisDAO.close();
 		return result;
 	}
+	
 	public List<Peliculas> getAllPeliculasWithActor(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAllwhereActor(name);
 		pelisDAO.close();
 		return result;

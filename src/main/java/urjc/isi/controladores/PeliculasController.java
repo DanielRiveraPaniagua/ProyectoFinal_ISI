@@ -31,6 +31,7 @@ public class PeliculasController {
 			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
+	
 	public static String upload(Request request, Response response) {
 		return ps.uploadTable(request);
 	}

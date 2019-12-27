@@ -18,6 +18,7 @@ public class ActoresController {
 	public ActoresController() {
 		as = new ActoresService();
 	}
+	
 	public static String uploadTable(Request request, Response response) {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
@@ -26,6 +27,7 @@ public class ActoresController {
 			    + "    <input type='file' name='uploaded_actores_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
+	
 	public static String upload(Request request, Response response) {
 		return as.uploadTable(request);
 	}
@@ -38,7 +40,8 @@ public class ActoresController {
 		}
 		return result;
 	}
-	public void peliculasHandler() {
+	
+	public void actoresHandler() {
 		get("/selectAll", ActoresController::selectAllActores);
 		get("/uploadTable", ActoresController::uploadTable);
 		post("/upload", ActoresController::upload);

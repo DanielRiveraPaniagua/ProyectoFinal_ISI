@@ -13,11 +13,11 @@ import urjc.isi.controladores.*;
 
 public class Main {
 
-	public static String doWork(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
+	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
        String result = new String("Film application is in WIP. THANKS!");
-
        return result;
     }
+	
     public static void tables() {
     	path("peliculas",() -> {
         	PeliculasController Controller = new PeliculasController();
@@ -25,16 +25,16 @@ public class Main {
         });
     	path("actores",()->{
     		ActoresController Controller = new ActoresController();
-    		Controller.peliculasHandler();
+    		Controller.actoresHandler();
     	});
     	path("peliculasactores",()->{
     		PeliculasActoresController Controller = new PeliculasActoresController();
-    		Controller.peliculasHandler();
+    		Controller.peliculasActoresHandler();
     	});
     }
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
-        get("/welcome", Main::doWork);
+        get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
         redirect.get("*", "/welcome");
     }

@@ -26,7 +26,7 @@ public class PeliculasActoresController {
 		return pas.uploadTable(request);
 	}
 	
-	public void peliculasHandler() {
+	public void peliculasActoresHandler() {
 		get("/uploadTable", PeliculasActoresController::uploadTable);
 		post("/upload", PeliculasActoresController::upload);
 	}
