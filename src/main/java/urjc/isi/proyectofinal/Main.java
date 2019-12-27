@@ -31,6 +31,10 @@ public class Main {
     		PeliculasActoresController Controller = new PeliculasActoresController();
     		Controller.peliculasHandler();
     	});
+    	path("generos",()->{ //añadido nuevo 
+    		GenerosController Controller =new GenerosController();
+    		Controller.peliculasHandler();
+    	});
     }
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
