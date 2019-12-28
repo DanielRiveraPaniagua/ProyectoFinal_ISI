@@ -35,16 +35,9 @@ public class PeliculasGenerosController {
 		ps = new PeliculasService();
 	}
 	
-	/**
-	 * Maneja las peticiones que llegan al endpoint /generos/uploadTable
-	 * @param request
-	 * @param response
-	 * @return El formulario para subir el fichero con las pseudoqueries o una redireccion al endpoint /welcome
-	 * @throws SQLException 
-	 */
 
 	/**
-	 * Maneja las peticiones que llegan al endpoint /peliculas/uploadTable
+	 * Maneja las peticiones que llegan al endpoint /peliculasgeneros/uploadTable
 	 * @param request
 	 * @param response
 	 * @return El formulario para subir el fichero con las pseudoqueries o una redireccion al endpoint /welcome
@@ -59,13 +52,13 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Metodo que se encarga de manejar las peticiones a /peliculas/upload
+	 * Metodo que se encarga de manejar las peticiones a /peliculasgenero/uploadGenero
 	 * @param request
 	 * @param response
-	 * @return Mensaje de estado sobre la subida de los registros
+	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
 	 */	
 	
-	public static String selectGenero(Request request, Response response) throws SQLException {
+	public static String uploadGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
 		String result = "<form action='/peliculasgeneros/selectGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
 		{
@@ -81,7 +74,7 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Metodo que se encarga de manejar las peticiones a /generos/upload
+	 * Metodo que se encarga de manejar las peticiones a /peliculasgeneros/upload
 	 * @param request
 	 * @param response
 	 * @return Mensaje de estado sobre la subida de los registros
@@ -91,10 +84,10 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Maneja las peticiones al endpoint /generos/selectAll
+	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAllPeliculasGeneros
 	 * @param request
 	 * @param response
-	 * @return La lista de generos que hay en la tabla Generos de la base de datos en formato HTML
+	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
 	 * @throws SQLException
 	 */
 	public static String selectAllPeliculasGeneros(Request request, Response response) throws SQLException {
@@ -108,6 +101,13 @@ public class PeliculasGenerosController {
 		return result;
 	}
 	
+	/**
+	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAllGeneros
+	 * @param request
+	 * @param response
+	 * @return La lista de relaciones de id_pelicula y su género  que hay en la tabla PeliculasGeneros de la base de datos en formato HTML
+	 * @throws SQLException
+	 */	
 	public static String selectAllGeneros(Request request, Response response) throws SQLException {
 		List<RelacionesGeneros> output = pgs.getAllGeneros();
 		String result = "";
@@ -128,7 +128,7 @@ public class PeliculasGenerosController {
 		get("/selectAll", PeliculasGenerosController::selectAllGeneros);
 		get("/uploadTable", PeliculasGenerosController::uploadTable);
 		post("/upload", PeliculasGenerosController::upload);
-		get("/uploadGenero", PeliculasGenerosController::selectGenero);
+		get("/uploadGenero", PeliculasGenerosController::uploadGenero);
 	}
 	
 }
