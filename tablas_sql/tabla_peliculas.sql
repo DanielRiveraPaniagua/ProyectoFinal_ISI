@@ -7,8 +7,6 @@ CREATE TABLE Peliculas(
 	anyo INT,
 	duracion VARCHAR(100),
 	rating INT,
-	num_votos INT,
-	isadult INT,
 	PRIMARY KEY(id_pelicula)
 );
 
