@@ -3,6 +3,9 @@ package urjc.isi.dao.interfaces;
 import java.sql.*;
 
 import java.util.List;
+
+import urjc.isi.entidades.Peliculas;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 //Con esta interfaz obligamos a que se implmenten
@@ -76,4 +79,5 @@ public interface GenericDAO<T>{
 	 * @param id
 	 */
 	public void deleteByID(String id);
+
 }

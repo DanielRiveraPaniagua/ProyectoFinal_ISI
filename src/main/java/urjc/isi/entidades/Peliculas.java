@@ -16,17 +16,19 @@ public class Peliculas {
 	private String titulo;
 	private int año;
 	private double duracion;
+	private int calificacion;
 	private double rating;
 	private int nvotos;
 
 	public Peliculas(){}
 	
 	public Peliculas(String idpelicula, String titulo, int año,
-                    double duracion, double rating, int nvotos){
+                    double duracion,int calificacion, double rating, int nvotos){
 	    this.setIdPelicula(idpelicula);
 	    this.setTitulo(titulo);
 	    this.setAño(año);
 	    this.setDuracion(duracion);
+	    this.setDuracion(calificacion);
 	    this.setRating(rating);
 	    this.setNVotos(nvotos);
 	}
@@ -37,6 +39,7 @@ public class Peliculas {
 		this.setTitulo(tokenizer.nextToken());
 		this.setAño(Integer.valueOf(tokenizer.nextToken()));
 		this.setDuracion(Double.valueOf(tokenizer.nextToken()));
+		this.setCalificacion(Integer.valueOf(tokenizer.nextToken()));
 		this.setRating(Double.valueOf(tokenizer.nextToken()));
 		this.setNVotos(Integer.valueOf(tokenizer.nextToken()));
 	}
@@ -70,6 +73,13 @@ public class Peliculas {
 		this.duracion = duracion;
 	}
 	
+	public void setCalificacion(int calificacion){
+		if(calificacion < 0){
+			throw new InvalidParameter();
+		}
+		this.calificacion = calificacion;
+	}
+	
 	public void setRating(double rating){
 		if(rating < 0 || rating > 10.0){
 			throw new InvalidParameter();
@@ -101,6 +111,10 @@ public class Peliculas {
 		return duracion;
 	}
 	
+	public int getCalificacion(){
+		return calificacion;
+	}
+	
 	public double getRating(){
 		return rating;
 	}
@@ -122,26 +136,27 @@ public class Peliculas {
 	    		Objects.equals(this.titulo,otherP.titulo) &&
 	              (this.año == otherP.año) &&
 	              (this.duracion == otherP.duracion) &&
+	              (this.calificacion == otherP.calificacion) &&
 	              (this.rating == otherP.rating) &&
 	              (this.nvotos == otherP.nvotos);
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(idpelicula,titulo,año,duracion,rating,nvotos);
+		return Objects.hash(idpelicula,titulo,año,duracion, calificacion,rating,nvotos);
 	}
 	
 	@Override
 	public String toString(){
 		return "Id Película: "+getIdPelicula()+"\tTitulo: " + getTitulo() +
-				" (" + getAño() + ") " + "\tDuracion: "+getDuracion()+
+				" (" + getAño() + ") " + "\tDuracion: "+getDuracion()+ "\tCalificacion: "+getCalificacion()+
 				"\tRating: "+getRating()+"\tNumero de Votos: "+getNVotos();
 	}
 	
 	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
 		return "Id Película: "+getIdPelicula()+"&emsp; Titulo: " + getTitulo() +
-				" (" + getAño() + ") " + "&emsp; Duracion: "+getDuracion()+
-				"&emsp; Rating: "+getRating()+"&emsp; Numero de Votos: "+getNVotos();
+				" (" + getAño() + ") " + "&emsp; Duracion: "+getDuracion()+ "&emsp; Calificacion: "+ getCalificacion()+
+				"&emsp;  Rating: "+getRating()+"&emsp; Numero de Votos: "+getNVotos();
 	}
 	
 	public JsonObject toJSONObject () {
@@ -150,6 +165,7 @@ public class Peliculas {
 		peliculaJSON.addProperty("Titulo", getTitulo());
 		peliculaJSON.addProperty("Año", getAño());
 		peliculaJSON.addProperty("Duracion", getDuracion());
+		peliculaJSON.addProperty("Calificacion", getCalificacion());
 		peliculaJSON.addProperty("Rating", getRating());
 		peliculaJSON.addProperty("Numero de votos", getNVotos());
 		return peliculaJSON;
