@@ -15,6 +15,7 @@ import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.entidades.RelacionesGeneros;
 import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasGenerosService;
 import urjc.isi.service.PeliculasService;
@@ -66,7 +67,7 @@ public class PeliculasGenerosController {
 	
 	public static String selectGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
-		String result = "<form action='/peliculasgeneros/selectAll' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
+		String result = "<form action='/peliculasgeneros/selectGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
 		{
 			for(int i = 0; i < output.size(); i++) {
 				String[] tokens= output.get(i).toHTMLString().split("\\s");
@@ -107,11 +108,24 @@ public class PeliculasGenerosController {
 		return result;
 	}
 	
+	public static String selectAllGeneros(Request request, Response response) throws SQLException {
+		List<RelacionesGeneros> output = pgs.getAllGeneros();
+		String result = "";
+
+		for(int i = 0; i < output.size(); i++) {
+		    result = result + output.get(i).toHTMLString() +"</br>";
+		}
+		return result;
+	}
+	
+
+	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasgeneros
 	 */
 	public void peliculasHandler() {
-		get("/selectAll", PeliculasGenerosController::selectAllPeliculasGeneros);
+		get("/selectGenero", PeliculasGenerosController::selectAllPeliculasGeneros);
+		get("/selectAll", PeliculasGenerosController::selectAllGeneros);
 		get("/uploadTable", PeliculasGenerosController::uploadTable);
 		post("/upload", PeliculasGenerosController::upload);
 		get("/uploadGenero", PeliculasGenerosController::selectGenero);

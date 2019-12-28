@@ -134,11 +134,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 	
 	@Override
-	public List<Peliculas> selectAllWhereGenero(String genero) {
+	public List<Peliculas> selectAllByGenero(String genero) {
 	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " 
-			  +"Inner join peliculasgeneros on p.idpelicula=pg.idpelicula"
-			  +"where peliculasgeneros.genero=" +"'" +genero + "'";
+	  String sql = "SELECT p.idpelicula, p.titulo , p.año , p.duracion , p.calificacion ,p.rating, p.nvotos from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where pg.genero='" + genero + "'"; 
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();

@@ -77,7 +77,7 @@ public class PeliculasService {
 	 */
 	public List<Peliculas> getAllPeliculasByGenero(String genero){
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereGenero(genero);
+		List<Peliculas> result = pelisDAO.selectAllByGenero(genero);
 		pelisDAO.close();
 		return result;
 	}

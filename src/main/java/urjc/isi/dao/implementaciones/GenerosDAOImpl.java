@@ -72,6 +72,8 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	  }
 	  return generoList;
   }
+  
+  
   @Override
   public Generos selectByID (String idgenero){
 	  return null;

@@ -17,5 +17,5 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	 */
 	public List<Peliculas> selectAllWhereActor(String name);
   //Seleccionar peliculas del genero ...
-	public List<Peliculas> selectAllWhereGenero(String name);
+	public List<Peliculas> selectAllByGenero(String genero);
 }
