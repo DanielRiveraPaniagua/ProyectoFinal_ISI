@@ -1,12 +1,13 @@
---Creación la tabla Películas 
 .open sample.db
 
 CREATE TABLE Peliculas(
-	id_pelicula INT NOT NULL,
-	nombre VARCHAR(100) NOT NULL,
-	anyo INT,
-	duracion VARCHAR(100),
+	id_film INT NOT NULL,
+	titulo TEXT NOT NULL,
+	año INT,
+	duracion TEXT,
+	isAdult INT,
 	rating INT,
-	PRIMARY KEY(id_pelicula)
+	num_votos INT,
+	PRIMARY KEY(id_film)
 );
 
