@@ -85,7 +85,7 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAllPeliculasGeneros
+	 * Maneja las peticiones al endpoint /peliculasgeneros/selectGenero
 	 * @param request
 	 * @param response
 	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
@@ -104,7 +104,7 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAllGeneros
+	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAll
 	 * @param request
 	 * @param response
 	 * @return La lista de relaciones de id_pelicula y su género  que hay en la tabla PeliculasGeneros de la base de datos en formato HTML
