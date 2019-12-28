@@ -1,6 +1,5 @@
 language: java
 deploy:
-  matrix:
   - provider: heroku
     skip_cleanup: true
     app: develpeliculasurjc
