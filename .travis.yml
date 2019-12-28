@@ -1,18 +1,15 @@
 language: java
 deploy:
   skip_cleanup: true
-  provider: heroku
-  app: develpeliculasurjc
-  on:
-    all_branch: true
+  matrix:
+  - provider: heroku
+    app: develpeliculasurjc
+    on:
+      all_branch: true
+  - provider: heroku
+    app: peliculasurjc
+    on:
+      repo: DanielRiveraPaniagua/ProyectoFinal_ISI
+      branch: master
   api_key:
-    secure: sddHD1EpbH383eNNWdu4myii0srB3cgCSgil0vbemGlgfTdDuFdqmHGqlXZvWHVudXC8DbKVDJ3/9rebW3WbxYhKW528KzbIZPzzovglr1HPZk+/HgSuu3hZKv9tOZ7nSiHUnHoeGuVdb0WWhnq3LbKT2yQqqiNFIIpXty9Fm7f2lwM29oaFWGeC3PUdKRrHpVAw78xor9rTm85iA687Sj/dDsCcy63d9n6zlhRblqGDIC7E5BY8hZQRLHpsSqXXwsFVL5OYXkWNwwMAR9OQiEZP5PQWqQNkhNAQSHL0E6BPzO6Jka4KKAW6mGYWOr+52n34Fk6uZrDszp3BYExBkgl6Hyv6i760eC8Q3n6uMrFepKcda+ca7SFaBIhIC/aECJSujFUikyMGBqNgTjCul/2ZzdpfengYvdGmyE7gd+W9apVmMeA0isIL8VJ9ZjtIpWkNH9W2WK7vBr/4pgJ9IHtJzTz9IzcxZnUrAIO7aQ/Dva2ST1ZC6q3dJSfuKnCMer78xVlWMN+ydcReX7DOGQFOv2r+W8+RWVLA2ijhAgZIryCjaW4QFWxBMfz2Ah6LgGX+AwYx/7RpDx0AA1NKX8ucVFAMUvKNfHTnrtBhDtbhpFH/g4+NCyarwDt63DD2tYp53YtpDaiJEDol+OvaLYtyW+fg9wUQk8evN7iB+D8=
-deploy:
-  skip_cleanup: true
-  provider: heroku
-  app: peliculasurjc
-  on:
-    repo: DanielRiveraPaniagua/ProyectoFinal_ISI
-    branch: master
-  api_key:
-    secure: QVdsgUg3mdqy55NfrXg7r5W5A4kqzbfL6FsxwrSmNg3Jl5W6Eu9TSSqk6q4G+PZPtreIRIDMXnNSX+Z0qeR62ZpQ045gu7TX4HW9r7drrKEmcDIt17g7YFdixP3kMUbKQRmbCD6xyDE2udzMx5mFDjRy8rVC8lalpb+fTIB0R2mneNFSvrIbCOURtiZfN8wAPDbKH1Jo9EaC4IFFxSD3xc5oPdoVvBor9PnvlSfUByzJ/Qs5vNIT18OW01wSC5KXr8fBAw/YyXka1nMnlF4jQbeRc40GDj2S1BjcjXZyfj+y0hW2hoF2f9RQGYCIz7ks8PQj4Q57+bzoSxGQtMpM959uP1txcQbVgb2E3/8xyCssutJCR1qe+XcitjplSLP1z0J7rL36Y00IsdAufFPhllmSyKlbsYLtXeX7xgbTW+lRJiHh1LzvsAHXHsIx8TDnHSHbXDjuxz99cPOmVJ8ZNW3sQ4nzF/DCIzI23Dc/AMVe0ETGFzmE3dk8PcaU7ZlszlbhoKQiw4ZjTWQuUYAu0tCso+ftC/fgDi2GRq5+Xrn5k9Ev4ALcDJRAgTI5jNZSXqXheccWynwZQ3ZtNaZ4Scr7tsJL3YWQVsn8fQ9V7IU4wezDmLxXUYsGkzeYUaC/XMwOqOuSidfAOeSo0E6tzZoDfRGWwTLsCal4fCbyF6w=
+    secure: hD9YBPN8fivwR2z+eqd18OKwi9OaSZjakuevI+nuAwehQs6RhDfOMVfKbv5u/iPuGIbJhdtUsv+DgFw/WPH0QH0S3K9cUD0U1fTTjEQK/QGH0cYAy6hHAqCL4g4/yR8/BKX4M/q4vJ1hOWFnq/qV9O0Lz3+UsekNE6e0z3bA49FyvaXbcl6hSzfHZ1ctuIj76xBxTdUNA1rs8DP4puh+elGjGoVlK8N9AWUrpOatKw5peKkPSiPtnSWnyO7L+QdwPTJesHXWBT8MBbzBKkYrkSDlvKnC3xTGsuGvSxns6TX5l0CnKazIlU3fXRGOGVDxT08dqCZ2dYf8HGxqt819+xLNa2yv1ClfqmJY3jfhGIV4bUC3QGdcTdGLXD7geyxXEi6tKNATPZsYiO8ObmWPcry+mKm4C+nt5BXzufbYDejOeoBWCbyZ6KWvrSHsIEf4Ne8rZ273rSayF9XUGQ/4VscDGgx0BlYwPrMilnxUlgO7LqojrUKjWkUOlBlB45mk5rhb7faV1NhWpMCnxnmJ/Jqrn+n2vprAyuREvMVQCkpbHVFhCPC+G54AU0UXvU8L5vj+5wfu7fpVzLFbvPbr3OriSkGwc+VFkoL1oMlI68ESI8vwyCqssOBFV8d6ea7fHdtoPE815MEQBdnJKP5samEaIqJ6y1WPZ/xZ04WJlfk=
