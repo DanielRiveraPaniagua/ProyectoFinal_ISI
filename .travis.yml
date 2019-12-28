@@ -1,15 +1,9 @@
 language: java
 deploy:
-  - provider: heroku
-    skip_cleanup: true
-    app: develpeliculasurjc
-    on:
-      all_branch: true
-  - provider: heroku
-    skip_cleanup: true
-    app: peliculasurjc
-    on:
-      repo: DanielRiveraPaniagua/ProyectoFinal_ISI
-      branch: master
+  skip_cleanup: true
+  provider: heroku
+  app: develpeliculasurjc
+  on:
+    all_branch: true
   api_key:
-    secure: cUiitPNsMa7vegV6LB4u92ssNMSkOPvYqKhzt3u5ao/vXISP87I2yGT1i0ZoKe7oZ6PQNPHpYkJFjB0G2kvIYOzJdNw1QdBlmyywDydMxcWoTeWwajLF3P8EN6+qIye0V+yz7biXMn349GpxjVnnNkUIELCXEgAaUv4+1RxS9syFRkrvfhs4+jyG2yWfE+INxtA1xnXk/WbhKha/0r/OnhgwFVrvOSVdvMwYwSexFECCJ4BPsHteXGfnOLCbl0fPCSkSC5GPIDr8u5LgiQoUrfoSICD7ceWDywJeSCLfnvCVKM0TSoU3h4xQ2ygZcNV4Q/l2i45Tns7eR8kYlFQCwEasDzXo6WruD7X0rKuIbkHhwFZyr61pUaYCB+QhjesS4JCpzagJEYA81re0L1mUMRPg0ZrH6iC2GWwMNM17k9TjKLVLBo2HvBsUZ9qhy4bN4ThnfmDbc2zCktCEBeKGMflmgRPPNUI4cH3EWg9QtrEK47qSxla4E5KBlIdpquw1LjQuy2nX4r7QxweFB7cyZh5QMXtksbpCLg/61gSuCLr+YGfgkEhYGFnkliIOMF+oOyLynrbuTw+bkDtPu0sQP8NrUyYiaoz1Qcl9awtrTaKmYhW3uXRQwqXp3fc10Liajcz27yEtifIF1gPT+kYmTAR4k1F7y771Ie2Ndvrx6cA=
+    secure: sddHD1EpbH383eNNWdu4myii0srB3cgCSgil0vbemGlgfTdDuFdqmHGqlXZvWHVudXC8DbKVDJ3/9rebW3WbxYhKW528KzbIZPzzovglr1HPZk+/HgSuu3hZKv9tOZ7nSiHUnHoeGuVdb0WWhnq3LbKT2yQqqiNFIIpXty9Fm7f2lwM29oaFWGeC3PUdKRrHpVAw78xor9rTm85iA687Sj/dDsCcy63d9n6zlhRblqGDIC7E5BY8hZQRLHpsSqXXwsFVL5OYXkWNwwMAR9OQiEZP5PQWqQNkhNAQSHL0E6BPzO6Jka4KKAW6mGYWOr+52n34Fk6uZrDszp3BYExBkgl6Hyv6i760eC8Q3n6uMrFepKcda+ca7SFaBIhIC/aECJSujFUikyMGBqNgTjCul/2ZzdpfengYvdGmyE7gd+W9apVmMeA0isIL8VJ9ZjtIpWkNH9W2WK7vBr/4pgJ9IHtJzTz9IzcxZnUrAIO7aQ/Dva2ST1ZC6q3dJSfuKnCMer78xVlWMN+ydcReX7DOGQFOv2r+W8+RWVLA2ijhAgZIryCjaW4QFWxBMfz2Ah6LgGX+AwYx/7RpDx0AA1NKX8ucVFAMUvKNfHTnrtBhDtbhpFH/g4+NCyarwDt63DD2tYp53YtpDaiJEDol+OvaLYtyW+fg9wUQk8evN7iB+D8=
