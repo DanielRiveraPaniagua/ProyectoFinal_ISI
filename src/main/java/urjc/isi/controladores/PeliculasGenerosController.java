@@ -60,14 +60,15 @@ public class PeliculasGenerosController {
 	
 	public static String uploadGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
-		String result = "<form action='/peliculasgeneros/selectGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
+		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga un género</strong>";
+		String result = base + "<form action='/peliculasgeneros/selectGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
 		{
 			for(int i = 0; i < output.size(); i++) {
 				String[] tokens= output.get(i).toHTMLString().split("\\s");
 			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
 			}
 		    result = result + "  </select>\n" + 
-		    "  <input type=\"submit\" value=\"Submit\">"
+		    "  <input type=\"submit\" value=\"Aceptar\">"
 		    + "</form>";
 		}
 		return result;
@@ -93,12 +94,13 @@ public class PeliculasGenerosController {
 	public static String selectAllPeliculasGeneros(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
+		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
 		String genero = request.queryParams("item");
 		output = ps.getAllPeliculasByGenero(genero);
 		for(int i = 0; i < output.size(); i++) {
 		    result = result + output.get(i).toHTMLString() +"</br>";
 		}
-		return result;
+		return base + result;
 	}
 	
 	/**
