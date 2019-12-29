@@ -1,26 +1,25 @@
 package urjc.isi.dao.implementaciones;
 
 import java.sql.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import urjc.isi.dao.interfaces.GenerosDAO;
 import urjc.isi.dao.interfaces.RelacionesDAO;
-import urjc.isi.dao.interfaces.RelacionesGenerosDAO;
 import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.entidades.Relaciones;
-import urjc.isi.entidades.RelacionesGeneros;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<Relaciones>{
-	  public RelacionesGeneros fromResultSet(ResultSet rs) throws  SQLException{
-		  	RelacionesGeneros relacionesgene = new RelacionesGeneros();
+	  public Relaciones fromResultSet(ResultSet rs) throws  SQLException{
+		  	Relaciones relacionesgene = new Relaciones();
 			
-		  	relacionesgene.setIdPelicula(rs.getString("id_pelicula"));
-			relacionesgene.setGenero(rs.getString("genero"));
+		  	relacionesgene.setIdtabla1(rs.getString("id_pelicula"));
+			relacionesgene.setIdtabla2(rs.getString("genero"));
 			return relacionesgene;
 		}
 		@Override

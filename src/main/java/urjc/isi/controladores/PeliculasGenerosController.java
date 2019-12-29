@@ -2,6 +2,7 @@ package urjc.isi.controladores;
 
 import static spark.Spark.get;
 
+
 import static spark.Spark.post;
 
 import java.sql.SQLException;
@@ -15,7 +16,6 @@ import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
-import urjc.isi.entidades.RelacionesGeneros;
 import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasGenerosService;
 import urjc.isi.service.PeliculasService;
