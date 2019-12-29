@@ -52,7 +52,7 @@ public class PeliculasGenerosController {
 	}
 	
 	/**
-	 * Metodo que se encarga de manejar las peticiones a /peliculasgenero/uploadGenero
+	 * Metodo que se encarga de manejar las peticiones a /peliculasgeneros/uploadGenero
 	 * @param request
 	 * @param response
 	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
