@@ -72,21 +72,6 @@ public class PeliculasGenerosDAOImpl extends GenericDAOImpl<RelacionesGeneros> i
 		  return generoList;
 	  }
 
-	  @Override
-	  public List<RelacionesGeneros> selectAllByGenero(String genero){
-		  List<RelacionesGeneros> generoList = new ArrayList<>();
-		  String sql = "SELECT * from peliculasgeneros as pg where pg.genero='" + genero + "'";
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
-			  c.commit();
-			  while(rs.next()){
-				  generoList.add(fromResultSet(rs));
-			  }
-		  } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return generoList;
-	  }
 
 	  @Override
 	  public RelacionesGeneros selectByID(String id) {

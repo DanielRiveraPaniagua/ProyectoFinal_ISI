@@ -17,5 +17,4 @@ public interface RelacionesGenerosDAO extends GenericDAO<RelacionesGeneros>{
 	 */
 	public Generos selectByName(String nombre);
 
-	List<RelacionesGeneros> selectAllByGenero(String genero);
 }

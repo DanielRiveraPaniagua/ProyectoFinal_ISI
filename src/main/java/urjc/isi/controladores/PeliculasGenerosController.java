@@ -127,7 +127,6 @@ public class PeliculasGenerosController {
 	 */
 	public void peliculasHandler() {
 		get("/selectGenero", PeliculasGenerosController::selectAllPeliculasGeneros);
-		get("/selectAll", PeliculasGenerosController::selectAllGeneros);
 		get("/uploadTable", PeliculasGenerosController::uploadTable);
 		post("/upload", PeliculasGenerosController::upload);
 		get("/uploadGenero", PeliculasGenerosController::uploadGenero);
