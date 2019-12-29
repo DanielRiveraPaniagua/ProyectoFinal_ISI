@@ -21,18 +21,14 @@ import urjc.isi.service.PeliculasGenerosService;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasGenerosController {
-	private static GenerosService gs;
 	private static PeliculasGenerosService pgs;
-	private static PeliculasService ps;
 	private static String adminkey = "1234";
 	
 	/**
 	 * Constructor por defecto
 	 */
 	public PeliculasGenerosController() {
-		gs = new GenerosService();
 		pgs = new PeliculasGenerosService();
-		ps = new PeliculasService();
 	}
 	
 
@@ -51,28 +47,6 @@ public class PeliculasGenerosController {
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 	
-	/**
-	 * Metodo que se encarga de manejar las peticiones a /peliculasgeneros/uploadGenero
-	 * @param request
-	 * @param response
-	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
-	 */	
-	
-	public static String uploadGenero(Request request, Response response) throws SQLException {
-		List<Generos> output = gs.getAllGeneros();
-		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga un género</strong>";
-		String result = base + "<form action='/peliculasgeneros/selectGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
-		{
-			for(int i = 0; i < output.size(); i++) {
-				String[] tokens= output.get(i).toHTMLString().split("\\s");
-			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
-			}
-		    result = result + "  </select>\n" + 
-		    "  <input type=\"submit\" value=\"Aceptar\">"
-		    + "</form>";
-		}
-		return result;
-	}
 	
 	/**
 	 * Metodo que se encarga de manejar las peticiones a /peliculasgeneros/upload
@@ -84,52 +58,13 @@ public class PeliculasGenerosController {
 		return pgs.uploadTable(request);
 	}
 	
-	/**
-	 * Maneja las peticiones al endpoint /peliculasgeneros/selectGenero
-	 * @param request
-	 * @param response
-	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
-	 * @throws SQLException
-	 */
-	public static String selectAllPeliculasGeneros(Request request, Response response) throws SQLException {
-		List<Peliculas> output;
-		String result = "";
-		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
-		String genero = request.queryParams("item");
-		output = ps.getAllPeliculasByGenero(genero);
-		for(int i = 0; i < output.size(); i++) {
-		    result = result + output.get(i).toHTMLString() +"</br>";
-		}
-		return base + result;
-	}
-	
-	/**
-	 * Maneja las peticiones al endpoint /peliculasgeneros/selectAll
-	 * @param request
-	 * @param response
-	 * @return La lista de relaciones de id_pelicula y su género  que hay en la tabla PeliculasGeneros de la base de datos en formato HTML
-	 * @throws SQLException
-	 */	
-	public static String selectAllGeneros(Request request, Response response) throws SQLException {
-		List<RelacionesGeneros> output = pgs.getAllGeneros();
-		String result = "";
-
-		for(int i = 0; i < output.size(); i++) {
-		    result = result + output.get(i).toHTMLString() +"</br>";
-		}
-		return result;
-	}
-	
-
 	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasgeneros
 	 */
 	public void peliculasHandler() {
-		get("/selectGenero", PeliculasGenerosController::selectAllPeliculasGeneros);
 		get("/uploadTable", PeliculasGenerosController::uploadTable);
 		post("/upload", PeliculasGenerosController::upload);
-		get("/uploadGenero", PeliculasGenerosController::uploadGenero);
 	}
 	
 }

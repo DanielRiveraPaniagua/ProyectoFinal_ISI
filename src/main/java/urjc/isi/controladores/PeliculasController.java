@@ -10,13 +10,15 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-
+import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
 
 	private static PeliculasService ps;
+	private static GenerosService gs;
 	private static String adminkey = "1234";
 	
 	/**
@@ -24,6 +26,7 @@ public class PeliculasController {
 	 */
 	public PeliculasController() {
 		ps = new PeliculasService();
+		gs = new GenerosService();
 	}
 	
 	/**
@@ -85,6 +88,48 @@ public class PeliculasController {
 	}
 	
 	/**
+	 * Metodo que se encarga de manejar las peticiones a /peliculas/searchByGenero
+	 * @param request
+	 * @param response
+	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
+	 */	
+	
+	public static String searchByGenero(Request request, Response response) throws SQLException {
+		List<Generos> output = gs.getAllGeneros();
+		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga un género</strong>";
+		String result = base + "<form action='/peliculas/filmsByGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
+		{
+			for(int i = 0; i < output.size(); i++) {
+				String[] tokens= output.get(i).toHTMLString().split("\\s");
+			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
+			}
+		    result = result + "  </select>\n" + 
+		    "  <input type=\"submit\" value=\"Aceptar\">"
+		    + "</form>";
+		}
+		return result;
+	}
+	
+	/**
+	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
+	 * @param request
+	 * @param response
+	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
+	 * @throws SQLException
+	 */
+	public static String filmsByGenero(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
+		String genero = request.queryParams("item");
+		output = ps.getAllPeliculasByGenero(genero);
+		for(int i = 0; i < output.size(); i++) {
+		    result = result + output.get(i).toHTMLString() +"</br>";
+		}
+		return base + result;
+	}
+	
+	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
@@ -92,6 +137,10 @@ public class PeliculasController {
 		get("/selectAll", PeliculasController::selectAllPeliculas);
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
+		
+		//filtrado por género
+		get("/searchByGenero", PeliculasController::searchByGenero);
+		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 	
 }
