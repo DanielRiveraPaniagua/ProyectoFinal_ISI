@@ -14,7 +14,7 @@ import urjc.isi.entidades.RelacionesGeneros;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class PeliculasGenerosDAOImpl extends GenericDAOImpl<RelacionesGeneros> implements RelacionesGenerosDAO{
+public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<RelacionesGeneros> implements RelacionesGenerosDAO{
 	  public RelacionesGeneros fromResultSet(ResultSet rs) throws  SQLException{
 		  	RelacionesGeneros relacionesgene = new RelacionesGeneros();
 			
