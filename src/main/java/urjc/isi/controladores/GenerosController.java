@@ -85,7 +85,7 @@ public class GenerosController {
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
-		get("/selectAll", GenerosController::selectAllGeneros);
+		get("/selectAllGeneros", GenerosController::selectAllGeneros);
 		get("/uploadTable", GenerosController::uploadTable);
 		post("/upload", GenerosController::upload);
 	}
