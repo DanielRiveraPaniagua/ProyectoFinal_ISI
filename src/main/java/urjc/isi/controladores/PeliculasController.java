@@ -18,14 +18,14 @@ public class PeliculasController {
 
 	private static PeliculasService ps;
 	private static String adminkey = "1234";
-	
+
 	/**
 	 * Constructor por defecto
 	 */
 	public PeliculasController() {
 		ps = new PeliculasService();
 	}
-	
+
 	/**
 	 * Maneja las peticiones que llegan al endpoint /peliculas/uploadTable
 	 * @param request
@@ -36,11 +36,11 @@ public class PeliculasController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar las peticiones a /peliculas/upload
 	 * @param request
@@ -50,7 +50,7 @@ public class PeliculasController {
 	public static String upload(Request request, Response response) {
 		return ps.uploadTable(request);
 	}
-	
+
 	/**
 	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
 	 * @param request
@@ -61,9 +61,9 @@ public class PeliculasController {
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		if(request.queryParams("actor")!= null) 
+		if(request.queryParams("actor")!= null)
 			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
-		else 
+		else
 			output = ps.getAllPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -83,7 +83,7 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
@@ -93,5 +93,5 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 	}
-	
+
 }

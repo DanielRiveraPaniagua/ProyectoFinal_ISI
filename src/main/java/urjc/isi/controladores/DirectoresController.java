@@ -83,7 +83,7 @@ public class DirectoresController {
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /Directores
 	 */
-	public void DirectoresHandler() {
+	public void directoresHandler() {
 		get("/selectAll", DirectoresController::selectAllDirectores);
 		get("/uploadTable", DirectoresController::uploadTable);
 		post("/upload", DirectoresController::upload);
