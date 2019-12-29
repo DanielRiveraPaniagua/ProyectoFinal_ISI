@@ -9,12 +9,13 @@ import urjc.isi.dao.interfaces.RelacionesDAO;
 import urjc.isi.dao.interfaces.RelacionesGenerosDAO;
 import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.entidades.Relaciones;
 import urjc.isi.entidades.RelacionesGeneros;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<RelacionesGeneros> implements RelacionesGenerosDAO{
+public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<Relaciones>{
 	  public RelacionesGeneros fromResultSet(ResultSet rs) throws  SQLException{
 		  	RelacionesGeneros relacionesgene = new RelacionesGeneros();
 			
@@ -35,12 +36,12 @@ public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<RelacionesGeneros
 			c.commit();
 		}
 	  @Override
-	  public void insert(RelacionesGeneros entity) {
+	  public void insert(Relaciones entity) {
 	  	String sql = "INSERT INTO peliculasgeneros(id_pelicula,genero) VALUES(?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-	  		pstmt.setString(1, entity.getIdPelicula());
-	  		pstmt.setString(2, entity.getGenero());
+	  		pstmt.setString(1, entity.getIdtabla1());
+	  		pstmt.setString(2, entity.getIdtabla2());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
@@ -50,47 +51,11 @@ public class PeliculasGenerosDAOImpl extends RelacionesDAOImpl<RelacionesGeneros
 	  public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
 	    while ((s = br.readLine()) != null) {
-	    	RelacionesGeneros genero = new RelacionesGeneros(s);
+	    	Relaciones genero = new Relaciones(s);
 	      insert(genero);
 	      c.commit();
 	    }
 	  }
-	  
-	  @Override
-	  public List<RelacionesGeneros> selectAll(){
-		  List<RelacionesGeneros> generoList = new ArrayList<>();
-		  String sql = "SELECT * from peliculasgeneros";
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
-			  c.commit();
-			  while(rs.next()){
-				  generoList.add(fromResultSet(rs));
-			  }
-	    } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return generoList;
-	  }
-
-
-	  @Override
-	  public RelacionesGeneros selectByID(String id) {
-		  // TODO Auto-generated method stub
-		  return null;
-	  }
-	  @Override
-	  public void deleteByID(String id) {
-		  // TODO Auto-generated method stub
-
-	  }
-	  @Override
-	  public Generos selectByName(String nombre) {
-		  // TODO Auto-generated method stub
-		  return null;
-	  }
-
-
-
 
 
 	}
