@@ -23,20 +23,18 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>{
 	
 	@Override
 	public Connection connect() {
-		/*
-		 * URI dbUri; try { dbUri = new URI(System.getenv("DATABASE_URL")); String
-		 * username = dbUri.getUserInfo().split(":")[0]; String password =
-		 * dbUri.getUserInfo().split(":")[1]; String dbUrl = "jdbc:postgresql://" +
-		 * dbUri.getHost() + dbUri.getPath(); return
-		 * DriverManager.getConnection(dbUrl,username, password); } catch
-		 * (URISyntaxException | SQLException e) { throw new RuntimeException(e); }
-		 */
+		
+		  URI dbUri; try { dbUri = new URI(System.getenv("DATABASE_URL")); String
+		  username = dbUri.getUserInfo().split(":")[0]; String password =
+		  dbUri.getUserInfo().split(":")[1]; String dbUrl = "jdbc:postgresql://" +
+		  dbUri.getHost() + dbUri.getPath(); return
+		  DriverManager.getConnection(dbUrl,username, password); } catch
+		  (URISyntaxException | SQLException e) { throw new RuntimeException(e); }
 		 
-		 try {
-		 	return DriverManager.getConnection("jdbc:sqlite:sample.db");
-		 } catch (SQLException e){
-		 	throw new RuntimeException(e);
-		 }
+		/*
+		 * try { return DriverManager.getConnection("jdbc:sqlite:sample.db"); } catch
+		 * (SQLException e){ throw new RuntimeException(e); }
+		 */
 	}
 	
 	@Override
