@@ -51,4 +51,3 @@ public class PeliculasDirectoresController {
 		post("/upload", PeliculasDirectoresController::upload);
 	}
 }
-f

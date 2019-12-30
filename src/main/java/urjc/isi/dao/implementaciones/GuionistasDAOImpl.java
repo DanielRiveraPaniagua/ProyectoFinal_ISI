@@ -13,7 +13,7 @@ import urjc.isi.dao.interfaces.PersonasDAO;
 import urjc.isi.entidades.Personas;
 
 public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {
-	
+
 	public Personas fromResultSet(ResultSet rs) throws  SQLException{
 		Personas persona = new Personas();
 
@@ -23,7 +23,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		persona.setMuerte(rs.getString("fmuerte"));
 		return persona;
 	}
-	
+
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
@@ -51,16 +51,16 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
-		
+
 	}
-	
+
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
 	    while ((s = br.readLine()) != null) {
 	      Personas persona = new Personas(s);
 	      insert(persona);
-	      c.commit();	
+	      c.commit();
 	    }
 	}
 

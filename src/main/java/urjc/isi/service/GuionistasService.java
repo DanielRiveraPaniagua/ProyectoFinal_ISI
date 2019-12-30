@@ -1,4 +1,4 @@
-ackage urjc.isi.service;
+package urjc.isi.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,12 +15,12 @@ import urjc.isi.dao.implementaciones.GuionistasDAOImpl;
 import urjc.isi.entidades.Personas;
 
 public class GuionistasService {
-	
+
 	/**
 	 * Constructor por defecto
 	 */
 	public GuionistasService() {}
-	
+
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla guionistas
 	 * @return Lista de actores de la tabla Guionistas
@@ -32,7 +32,7 @@ public class GuionistasService {
 		guionistas.close();
 		return result;
 	}
-	
+
 	/**
 	 * Metodo encargado de procesar la subida de los registros de la tabla Guionistas
 	 * @param req
@@ -54,6 +54,6 @@ public class GuionistasService {
 		guionistas.close();
 		return result;
 	}
-	
-	
+
+
 }
