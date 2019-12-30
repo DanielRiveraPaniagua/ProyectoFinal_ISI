@@ -23,7 +23,7 @@ public class GuionistasService {
 
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla guionistas
-	 * @return Lista de actores de la tabla Guionistas
+	 * @return Lista de guionistas de la tabla Guionistas
 	 * @throws SQLException
 	 */
 	public List<Personas> getAllGuionistas() throws SQLException{
@@ -39,7 +39,7 @@ public class GuionistasService {
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
-		GuionistasDAOImpl actores = new GuionistasDAOImpl();
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
 		try (InputStream input = req.raw().getPart("uploaded_guionistas_file").getInputStream()) {

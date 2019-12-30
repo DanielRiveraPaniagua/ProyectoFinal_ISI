@@ -10,14 +10,14 @@ import urjc.isi.service.PeliculasGuionistasService;
 public class PeliculasGuionistasController {
 	private static PeliculasGuionistasService pas;
 	private static String adminkey = "1234";
-	
+
 	/**
 	 * Constructor por defecto
 	 */
 	public PeliculasGuionistasController() {
 		pas = new PeliculasGuionistasService();
 	}
-	
+
 	/**
 	 * Maneja las peticiones que llegan al endpoint /peliculasguionistas/uploadTable
 	 * @param request
@@ -28,11 +28,11 @@ public class PeliculasGuionistasController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/peliculasguionistas/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/peliculasguionistas/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_peliculasguionistas_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar las peticiones a /peliculasguionistas/upload
 	 * @param request
@@ -42,7 +42,7 @@ public class PeliculasGuionistasController {
 	public static String upload(Request request, Response response) {
 		return pas.uploadTable(request);
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasguionistas
 	 */

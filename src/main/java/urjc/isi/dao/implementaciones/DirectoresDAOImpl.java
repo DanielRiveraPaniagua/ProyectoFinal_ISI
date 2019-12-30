@@ -27,14 +27,14 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table Directores" + table);
+		statement.executeUpdate("create table directores" + table);
 		c.commit();
 	}
 
 	@Override
    public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.executeUpdate("drop table if exists Directores");
+		statement.executeUpdate("drop table if exists directores");
 		c.commit();
 	}
 

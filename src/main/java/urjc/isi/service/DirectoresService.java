@@ -23,7 +23,7 @@ public class DirectoresService {
 
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla directores
-	 * @return Lista de directores de la tabla directores
+	 * @return Lista de directores de la tabla Directores
 	 * @throws SQLException
 	 */
 	public List<Personas> getAllDirectores() throws SQLException{

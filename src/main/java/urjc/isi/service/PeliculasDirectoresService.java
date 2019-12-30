@@ -30,7 +30,7 @@ public class PeliculasDirectoresService {
 		PeliculasDirectoresDAOImpl peac = new PeliculasDirectoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_peliculasDirectores_file").getInputStream()) {
+		try (InputStream input = req.raw().getPart("uploaded_peliculasdirectores_file").getInputStream()) {
 		    peac.dropTable();
 		    peac.createTable();
 			InputStreamReader isr = new InputStreamReader(input);
