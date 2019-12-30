@@ -82,11 +82,6 @@ public class PeliculasController {
 			}
 		}
 		return result;
-
-		public static String selectAllRanking(Request request, Response response) throws SQLException{
-			List<Peliculas> output;
-			String result = ""
-		}
 	}
 
 	/**
