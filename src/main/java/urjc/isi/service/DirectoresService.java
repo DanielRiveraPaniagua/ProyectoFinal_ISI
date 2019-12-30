@@ -22,14 +22,14 @@ public class DirectoresService {
 	public DirectoresService() {}
 
 	/**
-	 * Metodo encargado de procesar un selectAll de la tabla Directores
-	 * @return Lista de Directores de la tabla Directores
+	 * Metodo encargado de procesar un selectAll de la tabla directores
+	 * @return Lista de directores de la tabla directores
 	 * @throws SQLException
 	 */
 	public List<Personas> getAllDirectores() throws SQLException{
-		DirectoresDAOImpl Directores = new DirectoresDAOImpl();
-		List<Personas> result = Directores.selectAll();
-		Directores.close();
+		DirectoresDAOImpl directores = new DirectoresDAOImpl();
+		List<Personas> result = directores.selectAll();
+		directores.close();
 		return result;
 	}
 
@@ -39,19 +39,19 @@ public class DirectoresService {
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
-		DirectoresDAOImpl Directores = new DirectoresDAOImpl();
+		DirectoresDAOImpl directores = new DirectoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_Directores_file").getInputStream()) {
-		    Directores.dropTable();
-		    Directores.createTable();
+		try (InputStream input = req.raw().getPart("uploaded_directores_file").getInputStream()) {
+		    directores.dropTable();
+		    directores.createTable();
 			InputStreamReader isr = new InputStreamReader(input);
 			BufferedReader br = new BufferedReader(isr);
-			Directores.uploadTable(br);
+			directores.uploadTable(br);
 		} catch (IOException | ServletException | SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		Directores.close();
+		directores.close();
 		return result;
 	}
 

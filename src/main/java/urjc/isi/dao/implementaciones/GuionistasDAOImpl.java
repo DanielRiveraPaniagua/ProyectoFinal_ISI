@@ -118,3 +118,4 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return persona;
 	}
+}
