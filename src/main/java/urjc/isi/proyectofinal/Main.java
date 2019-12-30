@@ -51,7 +51,7 @@ public class Main {
 				Controller.guionistasHandler();
 			});
 			path("peliculasdirectores", () ->{
-				PeliculasDirectoresController Controller = new DirectoresController();
+				PeliculasDirectoresController Controller = new PeliculasDirectoresController();
 				Controller.peliculasDirectoresHandler();
 			});
 			path("peliculasguionistas", () ->{
