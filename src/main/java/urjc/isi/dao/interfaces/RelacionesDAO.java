@@ -4,6 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+/*import java.util.List; */
+import java.util.List;
+
+import urjc.isi.entidades.Relaciones;
+
+/*import urjc.isi.entidades.Relaciones;*/
 
 public interface RelacionesDAO<T>{
 	 /**
@@ -21,4 +27,5 @@ public interface RelacionesDAO<T>{
 	public void dropTable() throws SQLException;
 	public void insert(T entity);
 	public void uploadTable(BufferedReader br) throws IOException, SQLException;
+
 }
