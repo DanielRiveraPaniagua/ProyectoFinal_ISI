@@ -72,7 +72,7 @@ public class PeliculasService {
 
 	/** Procesa todas las peliculas de un director **/
 	public List<Peliculas> getAllPeliculasbyDirector(String name){
-		PeliculasDAoImpl pelisDAO = new PeliculasDAOImpl();
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAllWhereDirector(name);
 		pelisDAO.close();
 		return result;
@@ -80,7 +80,7 @@ public class PeliculasService {
 
 	/** Procesa todas las peliculas de un guionista **/
 	public List<Peliculas> getAllPeliculasbyGuionista(String name){
-		PeliculasDAoImpl pelisDAO = new PeliculasDAOImpl();
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAllWhereGuionista(name);
 		pelisDAO.close();
 		return result;
