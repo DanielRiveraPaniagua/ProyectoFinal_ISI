@@ -12,7 +12,7 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
-import urjc.isi.service.GuionistaService;
+import urjc.isi.service.GuionistasService;
 
 public class GuionistasController {
 	private static GuionistasService as;
@@ -51,7 +51,7 @@ public class GuionistasController {
 	}
 	
 	/**
-	 * Maneja las peticiones al endpoint /actores/selectAll
+	 * Maneja las peticiones al endpoint /guionistas/selectAll
 	 * @param request
 	 * @param response
 	 * @return La lista de actores que hay en la tabla Guioistas de la base de datos en formato HTML o JSON
