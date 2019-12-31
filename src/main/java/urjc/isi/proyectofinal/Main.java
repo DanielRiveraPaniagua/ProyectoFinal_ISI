@@ -42,22 +42,22 @@ public class Main {
     		PeliculasActoresController Controller = new PeliculasActoresController();
     		Controller.peliculasActoresHandler();
     	});
-			path("directores", () ->{
-				DirectoresController Controller = new DirectoresController();
-				Controller.directoresHandler();
-			});
-			path("guionistas", () ->{
-				GuionistasController Controller = new GuionistasController();
-				Controller.guionistasHandler();
-			});
-			path("peliculasdirectores", () ->{
-				PeliculasDirectoresController Controller = new PeliculasDirectoresController();
-				Controller.peliculasDirectoresHandler();
-			});
-			path("peliculasguionistas", () ->{
-				PeliculasGuionistasController Controller = new PeliculasGuionistasController();
-				Controller.peliculasGuionistasHandler();
-			});
+	path("directores", () ->{
+		DirectoresController Controller = new DirectoresController();
+		Controller.directoresHandler();
+	});
+	path("guionistas", () ->{
+		GuionistasController Controller = new GuionistasController();
+		Controller.guionistasHandler();
+	});
+	path("peliculasdirectores", () ->{
+		PeliculasDirectoresController Controller = new PeliculasDirectoresController();
+		Controller.peliculasDirectoresHandler();
+	});
+	path("peliculasguionistas", () ->{
+		PeliculasGuionistasController Controller = new PeliculasGuionistasController();
+		Controller.peliculasGuionistasHandler();
+	});
     }
 
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
