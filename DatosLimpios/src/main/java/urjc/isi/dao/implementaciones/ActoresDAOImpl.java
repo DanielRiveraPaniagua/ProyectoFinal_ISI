@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import urjc.isi.dao.interfaces.PersonasDAO;
+import urjc.isi.entidades.Peliculas;
 import urjc.isi.entidades.Personas;
 
 public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {
@@ -117,5 +118,36 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
+	}
+	
+	@Override
+	public List<Personas> selectActByFechaNac(String fecha) {
+		 List<Personas> actFechaNac = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fNacimiento=" + fecha;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actFechaNac.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actFechaNac;
+	}	
+	
+	public List<Personas> selectActMuertos() {
+		 List<Personas> actMuertos = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fMuerte < 2020";
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actMuertos.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actMuertos;
 	}
 }

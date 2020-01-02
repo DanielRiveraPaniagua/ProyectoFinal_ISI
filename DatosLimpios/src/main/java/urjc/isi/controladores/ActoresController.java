@@ -79,6 +79,50 @@ public class ActoresController {
 		return result;
 	}
 	
+	public static String selectActFechaNac (Request request, Response response) throws SQLException {
+		String fecha = request.queryParams ("fecha_nac");
+		List<Personas> output = as.getActoresByFechaNac(fecha);
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
+	public static String selectActMuertos (Request request, Response response) throws SQLException {
+		List<Personas> output = as.getActoresMuertos();
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /actores
@@ -87,6 +131,8 @@ public class ActoresController {
 		get("/selectAll", ActoresController::selectAllActores);
 		get("/uploadTable", ActoresController::uploadTable);
 		post("/upload", ActoresController::upload);
+		get("/selectActFechaNac", ActoresController::selectActFechaNac);
+		get("selectActMuertos", ActoresController::selectActMuertos);
 	}
 	
 }
