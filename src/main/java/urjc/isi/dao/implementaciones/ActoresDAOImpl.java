@@ -136,6 +136,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		 return actFechaNac;
 	}	
 	
+	@Override
 	public List<Personas> selectActMuertos() {
 		 List<Personas> actMuertos = new ArrayList<>();
 		 String sql = "SELECT * from personas WHERE fMuerte < 2020";
@@ -149,5 +150,21 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			 System.out.println(e.getMessage());
 		 }
 		 return actMuertos;
+	}
+	
+	@Override
+	public List<Personas> selectActByInter(String fechaIn, String fechaFin) {
+		 List<Personas> actFechaInter = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fNacimiento>" + fechaIn + "AND fNacimiento<" + fechaFin ;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actFechaInter.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actFechaInter;
 	}
 }
