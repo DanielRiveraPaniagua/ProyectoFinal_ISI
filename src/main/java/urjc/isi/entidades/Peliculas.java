@@ -28,7 +28,7 @@ public class Peliculas {
 	    this.setTitulo(titulo);
 	    this.setAño(año);
 	    this.setDuracion(duracion);
-	    this.setDuracion(calificacion);
+	    this.setCalificacion(calificacion);
 	    this.setRating(rating);
 	    this.setNVotos(nvotos);
 	}
