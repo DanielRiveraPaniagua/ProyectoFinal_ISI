@@ -3,7 +3,10 @@ package urjc.isi.controladores;
 import static spark.Spark.*;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -96,15 +99,15 @@ public class PeliculasController {
 	
 	public static String searchByGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
-		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga un género</strong>";
-		String result = base + "<form action='/peliculas/filmsByGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\">\n";
+		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga uno o varios género</strong>";
+		String result = base + "<form action='/peliculas/filmsByGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\" size=\"20\"  multiple>\n";
 		{
 			for(int i = 0; i < output.size(); i++) {
 				String[] tokens= output.get(i).toHTMLString().split("\\s");
 			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
 			}
 		    result = result + "  </select>\n" + 
-		    "  <input type=\"submit\" value=\"Aceptar\">"
+		    "  <input type=\"submit\" value=\"Filtrar\">"
 		    + "</form>";
 		}
 		return result;
@@ -119,14 +122,28 @@ public class PeliculasController {
 	 */
 	public static String filmsByGenero(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
-		String result = "";
 		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
-		String genero = request.queryParams("item");
-		output = ps.getAllPeliculasByGenero(genero);
-		for(int i = 0; i < output.size(); i++) {
-		    result = result + output.get(i).toHTMLString() +"</br>";
+		String genero =request.queryString();
+		
+		String[] fields = genero.split("&");
+		String[] t1 = fields[0].split("=");
+		String generos =" pg.genero='" + t1[1] + "'";
+		for (int i = 1; i < fields.length; ++i)
+		{
+		    String[] t = fields[i].split("=");
+		    if (2 == t.length)
+		    {
+		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'"; 
+		    }
 		}
-		return base + result;
+		
+		
+		output = ps.getAllPeliculasByGenero(generos); 
+		for(int i = 0; i <output.size(); i++) { 
+			base = base + output.get(i).toHTMLString()+"</br>"; 
+		}
+		 
+		return base;
 	}
 	
 	/**
