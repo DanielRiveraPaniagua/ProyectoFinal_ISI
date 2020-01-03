@@ -86,6 +86,12 @@ public class PeliculasService {
 		return result;
 	}
 
+	public List<Peliculas> getBestPeliculas() throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectBest10();
+		pelisDAO.close();
+		return result;
+	}
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito

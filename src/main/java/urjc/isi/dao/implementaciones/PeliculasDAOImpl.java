@@ -29,25 +29,25 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
 		return peli;
 	}
-  
+
 	@Override
 	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
 		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, rating Decimal(4,2), nvotos INT, PRIMARY KEY (idpelicula))");
-		c.commit();	
+		c.commit();
 	}
-  
+
 	@Override
 	public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.executeUpdate("drop table if exists peliculas");
 		c.commit();
 	}
-  
+
 	@Override
 	public void insert(Peliculas entity) {
 	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
-	
+
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
@@ -60,7 +60,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  	    System.out.println(e.getMessage());
 	  	}
 	}
-  
+
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
@@ -70,7 +70,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	      c.commit();
 	    }
 	}
-  
+
 	@Override
 	public List<Peliculas> selectAll(){
 		List<Peliculas> filmList = new ArrayList<>();
@@ -86,7 +86,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
-	
+
 	@Override
 	public Peliculas selectByID (String idpelicula){
 		String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
@@ -100,7 +100,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return peli;
 	}
-  
+
 	@Override
 	public void deleteByID(String idpelicula){
 		String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
@@ -111,7 +111,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 	}
-  
+
 	@Override
 	public List<Peliculas> selectAllWhereActor(String name) {
 	  List<Peliculas> filmList = new ArrayList<>();
@@ -130,7 +130,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }
 	  return filmList;
 	}
-	
+
 	@Override
 	public List<Peliculas> selectAllWhereDirector(String name) {
 	  List<Peliculas> filmList = new ArrayList<>();
@@ -168,4 +168,22 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }
 	  return filmList;
 	}
+
+	@Override
+	public List<Peliculas> selectBest10(){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT from peliculas as p" +
+		"p.titulo + p.rating + p.nvotos" + "LIMIT 10" ;
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+
 }
