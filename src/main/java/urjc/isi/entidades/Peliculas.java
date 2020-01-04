@@ -36,19 +36,12 @@ public class Peliculas {
 	public Peliculas(String line){// Se tokeniza la linea
 		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
 		this.setIdPelicula(tokenizer.nextToken());
-		System.out.println("Nueva pelicula: ID: " + this.getIdPelicula().toString());
 		this.setTitulo(tokenizer.nextToken());
-		System.out.println("Nueva pelicula: ID: " + this.getTitulo().toString());
 		this.setAño(Integer.valueOf(tokenizer.nextToken()));
-		System.out.println("Nueva pelicula: ID: " + Integer.toString(this.getAño()));
 		this.setDuracion(Double.valueOf(tokenizer.nextToken()));
-		System.out.println("Nueva pelicula: ID: " + Double.toString(this.getDuracion()));
 		this.setCalificacion(Integer.valueOf(tokenizer.nextToken()));
-		System.out.println("Nueva pelicula: ID: " + Integer.toString(this.getCalificacion()));
 		this.setRating(Double.valueOf(tokenizer.nextToken()));
-		System.out.println("Nueva pelicula: ID: " + Double.toString(this.getRating()));
 		this.setNVotos(Integer.valueOf(tokenizer.nextToken()));
-		System.out.println("Nueva pelicula: ID: " + Integer.toString(this.getNVotos()));
 	}
 
 	// Setter Methods

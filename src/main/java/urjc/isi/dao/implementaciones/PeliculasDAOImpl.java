@@ -59,7 +59,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  		pstmt.setInt(7, entity.getNVotos());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
-	  	    System.out.println("Error en insert " + e.getMessage());
+	  	    System.out.println(e.getMessage());
 	  	}
 	}
 
@@ -67,7 +67,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
 	    while ((s = br.readLine()) != null) {
-	      System.out.println("Nueva pelicula: " + s);
 	      Peliculas pelicula = new Peliculas(s);
 	      insert(pelicula);
 	      c.commit();
