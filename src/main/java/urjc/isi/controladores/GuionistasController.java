@@ -1,6 +1,7 @@
 package urjc.isi.controladores;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
+import static spark.Spark.post;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,24 +11,22 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
+import urjc.isi.entidades.Personas;
+import urjc.isi.service.GuionistasService;
 
-import urjc.isi.entidades.Peliculas;
-import urjc.isi.service.PeliculasService;
-
-public class PeliculasController {
-
-	private static PeliculasService ps;
+public class GuionistasController {
+	private static GuionistasService as;
 	private static String adminkey = "1234";
-
+	
 	/**
 	 * Constructor por defecto
 	 */
-	public PeliculasController() {
-		ps = new PeliculasService();
+	public GuionistasController() {
+		as = new GuionistasService();
 	}
-
+	
 	/**
-	 * Maneja las peticiones que llegan al endpoint /peliculas/uploadTable
+	 * Maneja las peticiones que llegan al endpoint /guionistas/uploadTable
 	 * @param request
 	 * @param response
 	 * @return El formulario para subir el fichero con las pseudoqueries o una redireccion al endpoint /welcome
@@ -36,35 +35,31 @@ public class PeliculasController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>"
-			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
+		return "<form action='/guionistas/upload' method='post' enctype='multipart/form-data'>" 
+			    + "    <input type='file' name='uploaded_guionistas_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
-
+	
 	/**
-	 * Metodo que se encarga de manejar las peticiones a /peliculas/upload
+	 * Metodo que se encarga de manejar las peticiones a /guionistas/upload
 	 * @param request
 	 * @param response
 	 * @return Mensaje de estado sobre la subida de los registros
 	 */
 	public static String upload(Request request, Response response) {
-		return ps.uploadTable(request);
+		return as.uploadTable(request);
 	}
-
+	
 	/**
-	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
+	 * Maneja las peticiones al endpoint /guionistas/selectAll
 	 * @param request
 	 * @param response
-	 * @return Listado de peliculas que estan en la tabla Peliculas de la base de datos en formato HTML o JSON
+	 * @return La lista de actores que hay en la tabla Guioistas de la base de datos en formato HTML o JSON
 	 * @throws SQLException
 	 */
-	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
-		List<Peliculas> output;
+	public static String selectAllGuionistas(Request request, Response response) throws SQLException {
+		List<Personas> output = as.getAllGuionistas();
 		String result = "";
-		if(request.queryParams("actor")!= null)
-			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
-		else
-			output = ps.getAllPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -83,15 +78,15 @@ public class PeliculasController {
 		}
 		return result;
 	}
-
+	
+	
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /guionistas
 	 */
-	public void peliculasHandler() {
-		//get("/crearTabla", AdminController::crearTablaPeliculas);
-		get("/selectAll", PeliculasController::selectAllPeliculas);
-		get("/uploadTable", PeliculasController::uploadTable);
-		post("/upload", PeliculasController::upload);
+	public void guionistasHandler() {
+		get("/selectAll", GuionistasController::selectAllGuionistas);
+		get("/uploadTable", GuionistasController::uploadTable);
+		post("/upload", GuionistasController::upload);
 	}
-
+	
 }
