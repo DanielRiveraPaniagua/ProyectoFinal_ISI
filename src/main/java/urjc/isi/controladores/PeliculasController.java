@@ -93,10 +93,14 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		if(request.queryParams("actor")!= null)
-			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
+			output = ps.getRankingByActor(request.queryParams("actor"));
+		else if(request.queryParams("director")!= null)
+			output = ps.getRankingByDirector(request.queryParams("director"));
+		else if(request.queryParams("guionista")!= null)
+			output = ps.getRankingByGuionista(request.queryParams("guionista"));
 		else
 			output = ps.getBestPeliculas();
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+		/*if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
@@ -112,7 +116,12 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result;
+		return result;*/
+		return "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
+		+ "<button>Actor name=actor </button>"
+		+ "<button>Director name=director </button>"
+		+ "<button>Guionista name=guionista </button>"
+	    + " <button>Género name=genero </button>" + "</form>";
 	}
 
 	/**

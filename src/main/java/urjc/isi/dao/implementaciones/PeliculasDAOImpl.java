@@ -187,5 +187,22 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+	
+	@Override
+	public List<Peliculas> selectRankingWhereActor(String name) {
+		
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereDirector(String name) {
+		
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereGuionista(String name) {
+		
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereGenero(String name) {
+		
+	}
 
 }

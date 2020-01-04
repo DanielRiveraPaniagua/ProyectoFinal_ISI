@@ -92,6 +92,34 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
+	
+	public List<Peliculas> getRankingByActor(String name) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);
+		pelisDAO.close();
+		return result;
+	}
+	
+	public List<Peliculas> getRankingByDirector(String name) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectRankingWhereDirector(name);
+		pelisDAO.close();
+		return result;
+	}
+	
+	public List<Peliculas> getRankingByGuionista(String name) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectRankingWhereGuionista(name);
+		pelisDAO.close();
+		return result;
+	}
+	
+	public List<Peliculas> getRankingByGenero(String name) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(name);
+		pelisDAO.close();
+		return result;
+	}
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
