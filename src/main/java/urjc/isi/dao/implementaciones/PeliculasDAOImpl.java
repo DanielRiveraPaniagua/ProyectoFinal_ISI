@@ -47,7 +47,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public void insert(Peliculas entity) {
-	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año, caificacion, duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
+	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año, calificacion, duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
