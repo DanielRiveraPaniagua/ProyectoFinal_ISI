@@ -24,6 +24,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setIdPelicula(rs.getString("idpelicula"));
 		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
+		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
 		peli.setDuracion(Double.valueOf(rs.getString("duracion")));
 		peli.setRating(Double.valueOf(rs.getString("rating")));
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
@@ -33,7 +34,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, rating Decimal(4,2), nvotos INT, PRIMARY KEY (idpelicula))");
+		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, calificacion text, duracion text, rating Decimal(4,2), nvotos INT, PRIMARY KEY (idpelicula))");
 		c.commit();
 	}
 
@@ -46,15 +47,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public void insert(Peliculas entity) {
-	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
+	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año, caificacion, duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
-	      	pstmt.setDouble(4, entity.getDuracion());
-	      	pstmt.setDouble(5, entity.getRating());
-	      	pstmt.setInt(6, entity.getNVotos());
+	  		pstmt.setInt(4, entity.getCalificacion());
+	      	pstmt.setDouble(5, entity.getDuracion());
+	      	pstmt.setDouble(6, entity.getRating());
+	      	pstmt.setInt(7, entity.getNVotos());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
