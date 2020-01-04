@@ -16,7 +16,7 @@ import urjc.isi.entidades.*;
 
 public class PeliculasService {
 	
-	private PeliculasDAOImpl pelisDAO ;
+	//private PeliculasDAOImpl pelisDAO ;
 	
 	/**
 	 * Constructor por defecto
@@ -75,9 +75,9 @@ public class PeliculasService {
 	 * @return Lista de peliculas dada una duracion
 	 * @throws SQLException
 	 */
-	public List<Peliculas> getAllPeliculasByDuration(double t1, double t2){
+	public List<Peliculas> getAllPeliculasByDuration(double t1, double t2, String cadena){
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllDuration(t1, t2);
+		List<Peliculas> result = pelisDAO.selectAllDuration(t1, t2, cadena);
 		pelisDAO.close();
 		return (result);
 	}

@@ -74,7 +74,7 @@ public class PeliculasController {
 				double t1 = Double.parseDouble(time1);
 				double t2 = Double.parseDouble(time2);
 				result = t1 + "<br/>" + t2 + "<br/>" + result;
-				output = ps.getAllPeliculasByDuration(t1,t2);
+				output = ps.getAllPeliculasByDuration(t1,t2, "rango");
 			}else {
 				char FirstCaracteres = parts[0].charAt(0);
 				String mayor = ">";
@@ -86,13 +86,16 @@ public class PeliculasController {
 					String[] partsmayor = query.split(">");
 					String time1 = partsmayor[1];
 					double t1 = Double.parseDouble(time1);
-					output = ps.getAllPeliculasByDuration(t1,0);
+					output = ps.getAllPeliculasByDuration(t1,0, "mayor");
 				}else if(FirstCaracteres == signomenor) {
 					result = "entramos en menor:\n " + result; 
-					output = ps.getAllPeliculasByDuration(0,0);
+					String[] partsmenor = query.split("<");
+					String time1 = partsmenor[1];
+					double t1 = Double.parseDouble(time1);
+					output = ps.getAllPeliculasByDuration(t1,0, "menor");
 				}else {
 					result = "query erronea, pruebe a introducir ?time=num1-num2 ; donde num1 y num2 son números <br/>" + result;
-					output = ps.getAllPeliculasByDuration(0,0);
+					output = ps.getAllPeliculasByDuration(0,0, "error");
 				}
 			}
 		}else 
