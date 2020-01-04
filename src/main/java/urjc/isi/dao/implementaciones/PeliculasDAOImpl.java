@@ -47,16 +47,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public void insert(Peliculas entity) {
-	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?)";
+	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());;
-	      	pstmt.setDouble(4, entity.getDuracion());
+	  		pstmt.setDouble(4, entity.getDuracion());
 	  		pstmt.setInt(5, entity.getCalificacion());
-	      	pstmt.setDouble(6, entity.getRating());
-	      	pstmt.setInt(7, entity.getNVotos());
+	  		pstmt.setDouble(6, entity.getRating());
+	  		pstmt.setInt(7, entity.getNVotos());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println("Error en insert " + e.getMessage());
