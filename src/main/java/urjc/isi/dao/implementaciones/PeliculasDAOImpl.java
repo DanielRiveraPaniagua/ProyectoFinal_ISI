@@ -139,6 +139,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		  sql = "SELECT * from peliculas " + "where duracion>=" + t1 + "ORDER BY duracion ASC";
 	  }else if (cadena == "menor") {
 		  sql = "SELECT * from peliculas " + "where duracion<=" + t1 + "ORDER BY duracion ASC";
+	  }else if (cadena == "igual") {
+		  sql = "SELECT * from peliculas " + "where duracion=" + t1 + "ORDER BY duracion ASC";
 	  }else {
 		  sql = "SELECT * from peliculas " + "where duracion>=" + t1 + " and duracion<=" + t2 + "ORDER BY duracion ASC";
 	  }

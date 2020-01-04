@@ -94,8 +94,9 @@ public class PeliculasController {
 					double t1 = Double.parseDouble(time1);
 					output = ps.getAllPeliculasByDuration(t1,0, "menor");
 				}else {
-					result = "query erronea, pruebe a introducir ?time=num1-num2 ; donde num1 y num2 son números <br/>" + result;
-					output = ps.getAllPeliculasByDuration(0,0, "error");
+					//result = query + "query erronea, pruebe a introducir ?time=num1-num2 ; donde num1 y num2 son números <br/>" + result;
+					double t1 = Double.parseDouble(query);
+					output = ps.getAllPeliculasByDuration(t1,0, "igual");
 				}
 			}
 		}else 

@@ -22,7 +22,7 @@ public class Main {
 	 * @throws URISyntaxException
 	 */
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-       String result = new String("prueba 10, sacar duraciones de peliculas dado <valor");
+       String result = new String("prueba 11, sacar duraciones de peliculas =valor");
        return result;
     }
 	
