@@ -94,25 +94,19 @@ public class PeliculasController {
 	public static String selectAllDuration(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "Saca algo";
+		String cadena = "";
 		
-		output = ps.getAllPeliculasByDuration(139);
-		
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
+		output = ps.getAllPeliculasByDuration(139.0);
+	
+		for(int i = 0; i < output.size(); i++) {
+			cadena = output.get(i).toHTMLString();
+			//String[] parts = cadena.split("\t");
+			//cadena = parts[2];
+			//String[] partes = cadena.split(" ");
+			//cadena = partes[1];
+		    result = result + cadena +"</br>";
 		}
+		
 		return result;
 	}
 	
