@@ -66,7 +66,7 @@ public class Peliculas {
 		this.año = año;
 	}
 	
-	public voif setCalificacion(int calificacion){
+	public void setCalificacion(int calificacion){
 		if (calificacion != 0 || calificacion != 1){
 			throw new InvalidParamater();
 		}
