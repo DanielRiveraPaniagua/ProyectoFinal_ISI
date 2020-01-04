@@ -64,7 +64,7 @@ public class PeliculasController {
 		if(request.queryParams("actor")!= null) 
 			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
 		else if(request.queryParams("time")!= null)
-			output = ps.getAllPeliculasByDuration(139.0);
+			output = ps.getAllPeliculasByDuration(Double.parseDouble(request.queryParams("time")));
 		else 
 			output = ps.getAllPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {

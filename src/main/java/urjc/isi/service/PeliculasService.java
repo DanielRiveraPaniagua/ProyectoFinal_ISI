@@ -79,7 +79,7 @@ public class PeliculasService {
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectAllDuration(value);
 		pelisDAO.close();
-		return result;
+		return (result);
 	}
 	
 
