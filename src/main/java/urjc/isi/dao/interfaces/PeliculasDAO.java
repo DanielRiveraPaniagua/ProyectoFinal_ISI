@@ -21,4 +21,6 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	public List<Peliculas> selectAllWhereDirector(String name);
 
 	public List<Peliculas> selectAllWhereGuionista(String name);
+	
+	public List<Peliculas> selectBest10();
 }

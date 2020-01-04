@@ -88,7 +88,7 @@ public class PeliculasController {
 	Método que muestra las 10 mejores peliculas ordenadas por ranking
 	y da la posibilidad de elegir por qué filtro quieres ordenarlas
 	*/
-	public static String ranking(Request request, Response response)
+	public static String ranking(Request request, Response response) throws SQLException
 	{
 		List<Peliculas> output;
 		String result = "";
