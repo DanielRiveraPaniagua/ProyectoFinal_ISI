@@ -35,6 +35,7 @@ public class Peliculas {
 	
 	public Peliculas(String line){// Se tokeniza la linea
 		StringTokenizer tokenizer = new StringTokenizer(line,"\t");
+		System.out.println("Nueva pelicula: " + tokenizer);
 		this.setIdPelicula(tokenizer.nextToken());
 		this.setTitulo(tokenizer.nextToken());
 		this.setAño(Integer.valueOf(tokenizer.nextToken()));

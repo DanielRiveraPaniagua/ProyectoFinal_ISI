@@ -67,6 +67,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
 	    while ((s = br.readLine()) != null) {
+	      System.out.println("Nueva pelicula: " + s);
 	      Peliculas pelicula = new Peliculas(s);
 	      insert(pelicula);
 	      c.commit();
