@@ -4,9 +4,7 @@ deploy:
   provider: heroku
   app: peliculas-isi-dpoloa
   on:
-    branches:
-      only:
-      - devel-heroku
+    branch: devel-heroku
   api_key:
     secure: Uz6IJynlEusWazosKf2C87WHiKI40b5wn2iMJYYixWJfeE4RUqh7ODxm5Qbca0yfGttaf7vE0eCPNJNSExe0esotFfENGysiiIO9YpyOOuxf6YFzJP1Ma54KWnMwe8E9l6/EPiT/S4pS/IfYGu/eg1a3sE5wMwE222Iv3WlmsnKgQ8+CeTwP497ebt+ugrIuaXbCGTjsptUji1y8CGSsf5Lo49WTshVfJrtAAD1FLVJdjcm1iZNhbqSJuc2AY5XpsuuwdUtS5rKuStHsfR6xaiUE3W4lrJoWsM+wTIZXfWSiCSmcgxbA9DHO3w2zRFI72dXLO17oyS6jHDRwwqwhs1TSY0Qgap6PJbvKOpWgXHZ35dFrtGYbq8Yp42tbTWLipLvn2I9eFkge4FTqKjBwjjtNeT1mrxmF8MRiaD9JH9u9Y7T9nePUYYvmJzUJMkCCQORQuU0Wrxjb0/khIgZL/5UQYiclUSCwNGk/c+hh0omXU6Dp7537ePCSEZHxGY7I01KlBa8T0wdiO0g8z+ewIo8Q70BgyV8032sSGuj8V+uHMCgrq1Whf7pI99IJYxYuRMv4pQPruLPUlFok5gdeOXZ8z8ezZ7XYNg0Nrr/1IvBPGPLmXGNMve8uv5HkdHy6doJieY1czTgzP2SYlQ1gG6oVPF+BQAHY1sEr+byzZBU=
 
