@@ -33,27 +33,6 @@ public class ActoresService {
 		return result;
 	}
 	
-	public List<Personas> getActoresByFechaNac (String fecha) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectActByFechaNac (fecha);
-		actores.close();
-		return result;
-	}
-	
-	public List<Personas> getActoresMuertos () throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectActMuertos ();
-		actores.close();
-		return result;
-	}
-	
-	public List<Personas> getActoresByInter (String fechaIn, String fechaFin) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectActByInter (fechaIn, fechaFin);
-		actores.close();
-		return result;
-	}
-	
 	/**
 	 * Metodo encargado de procesar la subida de los registros de la tabla Actores
 	 * @param req
@@ -76,5 +55,25 @@ public class ActoresService {
 		return result;
 	}
 	
+	public List<Personas> getActoresByFechaNac (String fecha) throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerByFechaNac (fecha);
+		actores.close();
+		return result;
+	}
+	
+	public List<Personas> getActoresMuertos () throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerMuertas ();
+		actores.close();
+		return result;
+	}
+	
+	public List<Personas> getActoresByInter (String fechaIn, String fechaFin) throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerByInter (fechaIn, fechaFin);
+		actores.close();
+		return result;
+	}
 	
 }

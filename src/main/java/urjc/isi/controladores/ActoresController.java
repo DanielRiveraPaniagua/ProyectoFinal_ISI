@@ -124,9 +124,9 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectInterFecha (Request request, Response response) throws SQLException {
-		String fechaIn = request.queryParams ("fecha_nac");
-		String fechaFin = request.queryParams ("fecha_nac");
+	public static String selectActInter (Request request, Response response) throws SQLException {
+		String fechaIn = request.queryParams ("fecha_in");
+		String fechaFin = request.queryParams ("fecha_fin");
 		List<Personas> output = as.getActoresByInter(fechaIn, fechaFin);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -157,7 +157,7 @@ public class ActoresController {
 		post("/upload", ActoresController::upload);
 		get("/selectActFechaNac", ActoresController::selectActFechaNac);
 		get("/selectActMuertos", ActoresController::selectActMuertos);
-		get("/selectInterFecha", ActoresController::selectInterFecha);
+		get("/selectActInter", ActoresController::selectActInter);
 	}
 	
 }

@@ -11,6 +11,7 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
+import urjc.isi.dao.implementaciones.ActoresDAOImpl;
 import urjc.isi.dao.implementaciones.GuionistasDAOImpl;
 import urjc.isi.entidades.Personas;
 
@@ -54,6 +55,27 @@ public class GuionistasService {
 		guionistas.close();
 		return result;
 	}
+	
+	public List<Personas> getGuionistasByFechaNac (String fecha) throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerByFechaNac (fecha);
+		guionistas.close();
+		return result;
+	}
+	
+	public List<Personas> getGuionistasMuertos () throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerMuertas ();
+		guionistas.close();
+		return result;
+	}
+	
+	public List<Personas> getGuionistasByInter (String fechaIn, String fechaFin) throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerByInter (fechaIn, fechaFin);
+		guionistas.close();
+		return result;
+	}
 
-
+	
 }

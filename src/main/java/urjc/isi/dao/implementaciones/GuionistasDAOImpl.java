@@ -118,4 +118,52 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return persona;
 	}
+	
+	@Override
+	public List<Personas> selectPerByFechaNac(String fecha) {
+		 List<Personas> guioFechaNac = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fNacimiento=" + fecha;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 guioFechaNac.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return guioFechaNac;
+	}	
+	
+	@Override
+	public List<Personas> selectPerMuertas() {
+		 List<Personas> guioMuertos = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fMuerte < 2020";
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 guioMuertos.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return guioMuertos;
+	}
+	
+	@Override
+	public List<Personas> selectPerByInter(String fechaIn, String fechaFin) {
+		 List<Personas> guioFechaInter = new ArrayList<>();
+		 String sql = "SELECT * from personas WHERE fNacimiento>" + fechaIn + " AND fNacimiento<" + fechaFin ;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 guioFechaInter.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return guioFechaInter;
+	}
 }

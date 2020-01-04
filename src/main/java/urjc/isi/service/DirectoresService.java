@@ -11,6 +11,7 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
+import urjc.isi.dao.implementaciones.ActoresDAOImpl;
 import urjc.isi.dao.implementaciones.DirectoresDAOImpl;
 import urjc.isi.entidades.Personas;
 
@@ -55,5 +56,24 @@ public class DirectoresService {
 		return result;
 	}
 
-
+	public List<Personas> getDirectoresByFechaNac (String fecha) throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerByFechaNac (fecha);
+		directores.close();
+		return result;
+	}
+	
+	public List<Personas> getDirectoresMuertos () throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerMuertas ();
+		directores.close();
+		return result;
+	}
+	
+	public List<Personas> getDirectoresByInter (String fechaIn, String fechaFin) throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerByInter (fechaIn, fechaFin);
+		directores.close();
+		return result;
+	}
 }
