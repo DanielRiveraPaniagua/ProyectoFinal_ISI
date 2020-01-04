@@ -38,7 +38,7 @@ public class Peliculas {
 		this.setIdPelicula(tokenizer.nextToken());
 		this.setTitulo(tokenizer.nextToken());
 		this.setAño(Integer.valueOf(tokenizer.nextToken()));
-		this.setCalificacion(Integer.valuOf(tokenizer.nextToken()));
+		this.setCalificacion(Integer.valueOf(tokenizer.nextToken()));
 		this.setDuracion(Double.valueOf(tokenizer.nextToken()));
 		this.setRating(Double.valueOf(tokenizer.nextToken()));
 		this.setNVotos(Integer.valueOf(tokenizer.nextToken()));
@@ -66,9 +66,9 @@ public class Peliculas {
 		this.año = año;
 	}
 	
-	public void setCalificacion(int calificacion){
+	public void setCalificacion (int calificacion){
 		if (calificacion != 0 || calificacion != 1){
-			throw new InvalidParamater();
+			throw new InvalidParameter();
 		}
 		this.calificacion = calificacion;
 	}
