@@ -95,11 +95,16 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		
-		output = ps.getAllPeliculasByDuration(139.0);
-	
+		if(request.queryParams("time")!= null) {
+			output = ps.getAllPeliculasByDuration(139.0);
+			result = "pasa por la query\n" + result;
+		}else {
+			output = ps.getAllPeliculas();
+			result = "pasa por el else\n" + result;
+		}
+		
 		for(int i = 0; i < output.size(); i++) {
 		    result = result + output.get(i).toHTMLString()+"</br>";
-		    //result = result + " -> entrams";
 		}
 		
 		return result;
