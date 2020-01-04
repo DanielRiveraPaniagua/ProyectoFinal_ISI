@@ -89,7 +89,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>urjc.isi.ProyectoFinal.Main </mainClass>
+              <mainClass>urjc.isi.proyectofinal.Main </mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -100,7 +100,7 @@
         <version>0.4.4</version>
         <configuration>
           <jdkVersion>1.8</jdkVersion>
-          <appName>peliculasurjc-grupo4</appName>
+          <appName>peliculasurjc</appName>
           <processTypes>
             <!-- Tell Heroku how to launch your application -->
             <web>java -jar ./target/ProyectoFinal-SNAPSHOT-0.0.1-jar-with-dependencies.jar</web>
