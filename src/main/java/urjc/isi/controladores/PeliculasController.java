@@ -62,14 +62,13 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		String query = "";
-		double time;
+		
 		if(request.queryParams("actor")!= null) 
 			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
 		else if(request.queryParams("time")!= null) {
 			query = request.queryParams("time");
 			String[] parts = query.split("-");
-			int x = parts.length;
-			if(x == 2) {
+			if(parts.length == 2) {
 				String time1 = parts[0];
 				String time2 = parts[1];
 				double t1 = Double.parseDouble(time1);
@@ -77,13 +76,28 @@ public class PeliculasController {
 				result = t1 + "<br/>" + t2 + "<br/>" + result;
 				output = ps.getAllPeliculasByDuration(t1,t2);
 			}else {
-				result = "query erronea, pruebe a introducir ?time=num1-num2 ; donde num1 y num2 son números <br/>" + result;
-				output = ps.getAllPeliculasByDuration(0,0);
+				char FirstCaracteres = parts[0].charAt(0);
+				String mayor = ">";
+				String menor = "<";
+				char signomayor = mayor.charAt(0);
+				char signomenor = menor.charAt(0);
+				if (FirstCaracteres == signomayor) {
+					result = "entramos en mayor:\n " + result; 
+					String[] partsmayor = query.split(">");
+					String time1 = partsmayor[1];
+					double t1 = Double.parseDouble(time1);
+					output = ps.getAllPeliculasByDuration(t1,0);
+				}else if(FirstCaracteres == signomenor) {
+					result = "entramos en menor:\n " + result; 
+					output = ps.getAllPeliculasByDuration(0,0);
+				}else {
+					result = "query erronea, pruebe a introducir ?time=num1-num2 ; donde num1 y num2 son números <br/>" + result;
+					output = ps.getAllPeliculasByDuration(0,0);
+				}
 			}
-
-			
 		}else 
 			output = ps.getAllPeliculas();
+		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
