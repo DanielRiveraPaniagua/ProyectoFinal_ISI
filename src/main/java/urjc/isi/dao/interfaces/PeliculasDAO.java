@@ -18,5 +18,5 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	public List<Peliculas> selectAllWhereActor(String name);
 
 	// Selecciona las peliculas dada una duracion
-	public List<Peliculas> selectAllDuration(double value);
+	public List<Peliculas> selectAllDuration(double t1, double t2);
 }

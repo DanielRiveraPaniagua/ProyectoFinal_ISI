@@ -75,12 +75,13 @@ public class PeliculasService {
 	 * @return Lista de peliculas dada una duracion
 	 * @throws SQLException
 	 */
-	public List<Peliculas> getAllPeliculasByDuration(double value){
+	public List<Peliculas> getAllPeliculasByDuration(double t1, double t2){
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllDuration(value);
+		List<Peliculas> result = pelisDAO.selectAllDuration(t1, t2);
 		pelisDAO.close();
 		return (result);
 	}
+	
 	
 
 	/**
