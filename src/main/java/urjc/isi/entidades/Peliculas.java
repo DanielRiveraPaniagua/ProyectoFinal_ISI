@@ -15,8 +15,8 @@ public class Peliculas {
 	private String idpelicula;
 	private String titulo;
 	private int año;
-	private int calificacion;
 	private double duracion;
+	private int calificacion;
 	private double rating;
 	private int nvotos;
 

@@ -59,7 +59,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	      	pstmt.setInt(7, entity.getNVotos());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
-	  	    System.out.println(e.getMessage());
+	  	    System.out.println("Error en insert " + e.getMessage());
 	  	}
 	}
 
