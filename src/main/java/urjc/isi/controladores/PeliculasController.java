@@ -154,7 +154,7 @@ public class PeliculasController {
 	}
 
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
 	 */
 	public void peliculasHandler() {
 		//get("/crearTabla", AdminController::crearTablaPeliculas);

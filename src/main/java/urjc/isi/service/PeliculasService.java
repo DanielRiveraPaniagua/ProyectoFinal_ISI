@@ -88,7 +88,7 @@ public class PeliculasService {
 
 	public List<Peliculas> getBestPeliculas() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAll();
+		List<Peliculas> result = pelisDAO.selectBest10();
 		pelisDAO.close();
 		return result;
 	}
