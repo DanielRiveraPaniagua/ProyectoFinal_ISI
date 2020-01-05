@@ -81,12 +81,7 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result 
-				+ "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
-				+ "<button name=actor>Actor</button>"
-				+ "<button name=director>Director</button>"
-				+ "<button name=guionista>Guionista</button>"
-				+ "<button name=genero>Género</button>" + "</form>";
+		return result;
 	}
 
 	/**
