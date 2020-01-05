@@ -70,9 +70,9 @@ public class GuionistasService {
 		return result;
 	}
 	
-	public List<Personas> getGuionistasByInter (String fechaIn, String fechaFin) throws SQLException {
+	public List<Personas> getGuionistasByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
 		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
-		List<Personas> result = guionistas.selectPerByInter (fechaIn, fechaFin);
+		List<Personas> result = guionistas.selectPerByIntervaloNac (fechaIn, fechaFin);
 		guionistas.close();
 		return result;
 	}

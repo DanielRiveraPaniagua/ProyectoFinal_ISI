@@ -123,7 +123,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	@Override
 	public List<Personas> selectPerByFechaNac(String fecha) {
 		 List<Personas> actFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from personas WHERE fNacimiento=" + fecha;
+		 String sql = "SELECT * from personas WHERE fnacimiento=" + fecha;
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -139,7 +139,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	@Override
 	public List<Personas> selectPerMuertas() {
 		 List<Personas> actMuertos = new ArrayList<>();
-		 String sql = "SELECT * from personas WHERE fMuerte < 2020";
+		 String sql = "SELECT * from personas WHERE fmuerte < 2020";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -153,9 +153,9 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	}
 	
 	@Override
-	public List<Personas> selectPerByInter(String fechaIn, String fechaFin) {
+	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
 		 List<Personas> actFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from personas WHERE fNacimiento>" + fechaIn + " AND fNacimiento<" + fechaFin ;
+		 String sql = "SELECT * from personas WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();

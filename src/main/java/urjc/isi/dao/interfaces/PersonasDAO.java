@@ -16,5 +16,5 @@ public interface PersonasDAO extends GenericDAO<Personas>{
 	public Personas selectByName(String name);
 	public List<Personas> selectPerByFechaNac (String fecha);
 	public List<Personas> selectPerMuertas ();
-	public List<Personas> selectPerByInter (String fechaIn, String FehcaFin);
+	public List<Personas> selectPerByIntervaloNac (String fechaIn, String FehcaFin);
 }

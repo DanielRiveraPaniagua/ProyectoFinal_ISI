@@ -70,9 +70,9 @@ public class DirectoresService {
 		return result;
 	}
 	
-	public List<Personas> getDirectoresByInter (String fechaIn, String fechaFin) throws SQLException {
+	public List<Personas> getDirectoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
 		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerByInter (fechaIn, fechaFin);
+		List<Personas> result = directores.selectPerByIntervaloNac (fechaIn, fechaFin);
 		directores.close();
 		return result;
 	}

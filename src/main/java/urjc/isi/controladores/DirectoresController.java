@@ -79,7 +79,7 @@ public class DirectoresController {
 		return result;
 	}
 	
-	public static String selectDirFechaNac (Request request, Response response) throws SQLException {
+	public static String selectDirByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
 		List<Personas> output = as.getDirectoresByFechaNac(fecha);
 		String result = "";
@@ -124,10 +124,10 @@ public class DirectoresController {
 		return result;
 	}
 	
-	public static String selectDirInter (Request request, Response response) throws SQLException {
+	public static String selectDirByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getDirectoresByInter(fechaIn, fechaFin);
+		List<Personas> output = as.getDirectoresByIntervaloNac(fechaIn, fechaFin);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -156,9 +156,9 @@ public class DirectoresController {
 		get("/selectAll", DirectoresController::selectAllDirectores);
 		get("/uploadTable", DirectoresController::uploadTable);
 		post("/upload", DirectoresController::upload);
-		get("/selectDirFechaNac", DirectoresController::selectDirFechaNac);
+		get("/selectDirByFechaNac", DirectoresController::selectDirByFechaNac);
 		get("/selectDirMuertos", DirectoresController::selectDirMuertos);
-		get("/selectDirInter", DirectoresController::selectDirInter);
+		get("/selectDirByIntervaloNac", DirectoresController::selectDirByIntervaloNac);
 	}
 
 }

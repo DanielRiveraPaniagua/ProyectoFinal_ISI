@@ -69,9 +69,9 @@ public class ActoresService {
 		return result;
 	}
 	
-	public List<Personas> getActoresByInter (String fechaIn, String fechaFin) throws SQLException {
+	public List<Personas> getActoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
 		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerByInter (fechaIn, fechaFin);
+		List<Personas> result = actores.selectPerByIntervaloNac (fechaIn, fechaFin);
 		actores.close();
 		return result;
 	}

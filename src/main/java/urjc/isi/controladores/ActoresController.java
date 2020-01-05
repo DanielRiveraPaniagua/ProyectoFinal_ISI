@@ -79,7 +79,7 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectActFechaNac (Request request, Response response) throws SQLException {
+	public static String selectActByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
 		List<Personas> output = as.getActoresByFechaNac(fecha);
 		String result = "";
@@ -124,10 +124,10 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectActInter (Request request, Response response) throws SQLException {
+	public static String selectActByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getActoresByInter(fechaIn, fechaFin);
+		List<Personas> output = as.getActoresByIntervaloNac(fechaIn, fechaFin);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -155,9 +155,9 @@ public class ActoresController {
 		get("/selectAll", ActoresController::selectAllActores);
 		get("/uploadTable", ActoresController::uploadTable);
 		post("/upload", ActoresController::upload);
-		get("/selectActFechaNac", ActoresController::selectActFechaNac);
+		get("/selectActByFechaNac", ActoresController::selectActByFechaNac);
 		get("/selectActMuertos", ActoresController::selectActMuertos);
-		get("/selectActInter", ActoresController::selectActInter);
+		get("/selectActByIntervaloNac", ActoresController::selectActByIntervaloNac);
 	}
 	
 }

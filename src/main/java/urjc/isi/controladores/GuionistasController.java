@@ -79,7 +79,7 @@ public class GuionistasController {
 		return result;
 	}
 	
-	public static String selectGuioFechaNac (Request request, Response response) throws SQLException {
+	public static String selectGuioByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
 		List<Personas> output = as.getGuionistasByFechaNac(fecha);
 		String result = "";
@@ -124,10 +124,10 @@ public class GuionistasController {
 		return result;
 	}
 	
-	public static String selectGuioInter (Request request, Response response) throws SQLException {
+	public static String selectGuioByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getGuionistasByInter(fechaIn, fechaFin);
+		List<Personas> output = as.getGuionistasByIntervaloNac(fechaIn, fechaFin);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -156,9 +156,9 @@ public class GuionistasController {
 		get("/selectAll", GuionistasController::selectAllGuionistas);
 		get("/uploadTable", GuionistasController::uploadTable);
 		post("/upload", GuionistasController::upload);
-		get("/selectGuioFechaNac", GuionistasController::selectGuioFechaNac);
+		get("/selectGuioByFechaNac", GuionistasController::selectGuioByFechaNac);
 		get("/selectGuioMuertos", GuionistasController::selectGuioMuertos);
-		get("/selectGuioInter", GuionistasController::selectGuioInter);
+		get("/selectGuioByIntervaloNac", GuionistasController::selectGuioByIntervaloNac);
 	}
 	
 }
