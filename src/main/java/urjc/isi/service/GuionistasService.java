@@ -11,7 +11,6 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.ActoresDAOImpl;
 import urjc.isi.dao.implementaciones.GuionistasDAOImpl;
 import urjc.isi.entidades.Personas;
 
