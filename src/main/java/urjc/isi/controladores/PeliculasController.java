@@ -130,10 +130,10 @@ public class PeliculasController {
 	public static String pelisAdultos(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		if(request.queryParams("calificacion") != null)
+		/*if(request.queryParams("calificacion") != null)
 			output = ps.getAllPeliculasForAdultos();
-		else
-			output = ps.getAllPeliculas();
+		else*/
+			output = ps.getAllPeliculasForAdultos();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();

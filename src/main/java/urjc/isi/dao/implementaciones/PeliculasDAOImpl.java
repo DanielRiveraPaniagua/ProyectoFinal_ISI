@@ -174,7 +174,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectBest10(){
 		List<Peliculas> bestList = new ArrayList<>();
-		String sql = "SELECT * from peliculas ORDER BY rating LIMIT 10";
+		String sql = "SELECT * from peliculas ORDER BY rating DESC LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -189,18 +189,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	
 	@Override
 	public List<Peliculas> selectPeliculasForAdultos(){
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas  where peliculas.calificacion = 1";
+		List<Peliculas> adultList = new ArrayList<>();
+		String sql = "SELECT * from peliculas  where calificacion = 1";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
-				filmList.add(fromResultSet(rs));
+				adultList.add(fromResultSet(rs));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return filmList;
+		return adultList;
 	}
 	
 	
