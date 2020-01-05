@@ -161,7 +161,7 @@ public class PeliculasController {
 		get("/selectAll", PeliculasController::selectAllPeliculas);
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
-		//get("/ranking", PeliculasController::ranking);
+		get("/ranking", PeliculasController::ranking);
 		get("/calificacion", PeliculasController::pelisAdultos); //cambiar el /clificacion
 	}
 
