@@ -86,12 +86,12 @@ public class PeliculasService {
 		return result;
 	}
 
-	public List<Peliculas> getBestPeliculas() throws SQLException{
+/*	public List<Peliculas> getBestPeliculas() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectBest10();
 		pelisDAO.close();
 		return result;
-	}
+	}*/
 	
 	public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
