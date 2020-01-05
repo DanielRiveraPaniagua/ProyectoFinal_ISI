@@ -23,12 +23,12 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	public List<Peliculas> selectAllWhereGuionista(String name);
 	
 	//Ranking
-	/*public List<Peliculas> selectBest10();
+	public List<Peliculas> selectBest10();
 		
-	public List<Peliculas> selectRankingByActor(String name);
-	public List<Peliculas> selectRankingByDirector(String name);
-	public List<Peliculas> selectRankingByGuionista(String name);
-	public List<Peliculas> selectRankingByGenero(String name);*/
+	public List<Peliculas> selectRankingWhereActor(String name);
+	public List<Peliculas> selectRankingWhereDirector(String name);
+	public List<Peliculas> selectRankingWhereGuionista(String name);
+	public List<Peliculas> selectRankingWhereGenero(String name);
 
 	//selecciona peliculas para adultos
 	public List<Peliculas> selectPeliculasForAdultos();

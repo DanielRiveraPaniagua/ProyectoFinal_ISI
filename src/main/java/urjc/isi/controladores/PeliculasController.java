@@ -88,7 +88,7 @@ public class PeliculasController {
 	Método que muestra las 10 mejores peliculas ordenadas por ranking
 	y da la posibilidad de elegir por qué filtro quieres ordenarlas
 	*/
-/*	public static String ranking(Request request, Response response) throws SQLException
+	public static String ranking(Request request, Response response) throws SQLException
 	{
 		List<Peliculas> output;
 		String result = "";
@@ -116,14 +116,14 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		//return result;
+		return result;*/
 		return "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
 		+ "<button>Actor name=actor </button>"
 		+ "<button>Director name=director </button>"
 		+ "<button>Guionista name=guionista </button>"
 	    + " <button>Género name=genero </button>" + "</form>";
 	} 
-	*/
+	
 	 
 	
 	//Devuelve peliculas para adultos

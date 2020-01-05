@@ -171,7 +171,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  return filmList;
 	}
 
-/*	@Override
+	@Override
 	public List<Peliculas> selectBest10(){
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT from peliculas as p" +
@@ -186,7 +186,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 		return filmList;
-	}*/
+	}
 	
 	@Override
 	public List<Peliculas> selectPeliculasForAdultos(){
@@ -205,21 +205,29 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 	
 	
-/*	@Override
+	@Override
 	public List<Peliculas> selectRankingWhereActor(String name) {
-		
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
+	
 	}
 	@Override
 	public List<Peliculas> selectRankingWhereDirector(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
 		
 	}
 	@Override
 	public List<Peliculas> selectRankingWhereGuionista(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
 		
 	}
 	@Override
 	public List<Peliculas> selectRankingWhereGenero(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
 		
 	}
-*/
+
 }
