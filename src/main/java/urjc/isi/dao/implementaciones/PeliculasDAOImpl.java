@@ -203,6 +203,22 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return adultList;
 	}
 	
+	@Override
+	public List<Peliculas> selectPeliculasForNinos(){
+		List<Peliculas> ninosList = new ArrayList<>();
+		String sql = "SELECT * from peliculas  where calificacion = 0";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				ninosList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return ninosList;
+	}
+	
 	
 	@Override
 	public List<Peliculas> selectRankingWhereActor(String name) {

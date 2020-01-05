@@ -126,14 +126,17 @@ public class PeliculasController {
 	
 	 
 	
-	//Devuelve peliculas para adultos
-	public static String pelisAdultos(Request request, Response response) throws SQLException {
+	//Devuelve peliculas en funcion de la calificacion
+	public static String calificacion(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		/*if(request.queryParams("calificacion") != null)
+		if(request.queryParams("adultos") != null)
 			output = ps.getAllPeliculasForAdultos();
-		else*/
-			output = ps.getAllPeliculasForAdultos();
+		else if (request.queryParams("ninos") != null)
+			output = ps.getAllPeliculasForNinos();
+		else 
+			output = ps.getAllPeliculas();
+			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -150,7 +153,10 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result;
+		return result 
+		+ "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
+		+ "<button>Adultos</button>"
+		+ "<button>Niños</button>" + "</form>";
 	}
 
 	/**
@@ -162,7 +168,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
-		get("/calificacion", PeliculasController::pelisAdultos); //cambiar el /clificacion
+		get("/calificacion", PeliculasController::calificacion); //cambiar el /clificacion
 	}
 
 }
