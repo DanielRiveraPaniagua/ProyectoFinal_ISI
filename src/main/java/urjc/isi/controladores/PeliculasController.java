@@ -153,10 +153,9 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result 
-		+ "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
+		return  "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
 		+ "<button>Adultos</button>"
-		+ "<button>Niños</button>" + "</form>";
+		+ "<button>Niños</button>" + "</form>" + result;
 	}
 
 	/**
