@@ -92,13 +92,13 @@ public class PeliculasController {
 	{
 		List<Peliculas> output;
 		String result = "";
-		/*if(request.queryParams("actor")!= null)
+		if(request.queryParams("actor")!= null)
 			output = ps.getRankingByActor(request.queryParams("actor"));
 		else if(request.queryParams("director")!= null)
 			output = ps.getRankingByDirector(request.queryParams("director"));
 		else if(request.queryParams("guionista")!= null)
 			output = ps.getRankingByGuionista(request.queryParams("guionista"));
-		else*/
+		else
 			output = ps.getBestPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
