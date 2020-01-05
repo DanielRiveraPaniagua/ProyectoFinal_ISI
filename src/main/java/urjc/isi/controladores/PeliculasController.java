@@ -124,8 +124,7 @@ public class PeliculasController {
 	    + " <button>Género name=genero </button>" + "</form>";
 	} 
 	*/
-	 "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
-			
+	 
 	
 	//Devuelve peliculas para adultos
 	public static String pelisAdultos(Request request, Response response) throws SQLException {
