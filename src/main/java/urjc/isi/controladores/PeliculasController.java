@@ -130,7 +130,7 @@ public class PeliculasController {
 	public static String pelisAdultos(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		if(request.queryParams("calificacion")!= null)
+		if(request.queryParams("calificacion") = null)
 			output = ps.getAllPeliculasForAdultos();
 		else
 			output = ps.getAllPeliculas();
