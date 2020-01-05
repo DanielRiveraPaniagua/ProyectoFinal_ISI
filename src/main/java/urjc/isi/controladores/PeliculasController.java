@@ -132,8 +132,8 @@ public class PeliculasController {
 		String result = "";
 		if(request.queryParams("calificacion")!= null)
 			output = ps.getAllPeliculasForAdultos();
-		//else
-		//	output = ps.getAllPeliculas();
+		else
+			output = ps.getAllPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
