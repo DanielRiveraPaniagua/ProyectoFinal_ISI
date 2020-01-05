@@ -123,6 +123,33 @@ public class PeliculasController {
 		+ "<button>Guionista name=guionista </button>"
 	    + " <button>Género name=genero </button>" + "</form>";
 	}
+	
+	//Devuelve peliculas para adultos
+	public static String pelisAdultos(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		if(request.queryParams("calificacion")!= null)
+			output = ps.getAllPeliculasForAdultos();
+		else
+			output = ps.getAllPeliculas();
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
@@ -133,6 +160,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
+		get("/calificacion", PeliculasController::pelisAdultos); //cambiar el /clificacion
 	}
 
 }

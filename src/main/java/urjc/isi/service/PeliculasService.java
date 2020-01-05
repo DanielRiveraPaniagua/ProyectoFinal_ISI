@@ -93,7 +93,14 @@ public class PeliculasService {
 		return result;
 	}
 	
-	public List<Peliculas> getRankingByActor(String name) throws SQLException{
+	public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectPeliculasForAdultos();
+		pelisDAO.close();
+		return result;
+	}
+	
+/*	public List<Peliculas> getRankingByActor(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);
 		pelisDAO.close();
@@ -119,7 +126,7 @@ public class PeliculasService {
 		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(name);
 		pelisDAO.close();
 		return result;
-	}
+	}*/
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
