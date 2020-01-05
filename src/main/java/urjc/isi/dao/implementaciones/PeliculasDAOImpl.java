@@ -173,18 +173,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public List<Peliculas> selectBest10(){
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas" + "LIMIT 10";
+		List<Peliculas> bestList = new ArrayList<>();
+		String sql = "SELECT * from peliculas LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
-				filmList.add(fromResultSet(rs));
+				bestList.add(fromResultSet(rs));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return filmList;
+		return bestList;
 	}
 	
 	@Override
