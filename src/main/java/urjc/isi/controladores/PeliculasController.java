@@ -116,7 +116,7 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result;
+		//return result;
 		return "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
 		+ "<button>Actor name=actor </button>"
 		+ "<button>Director name=director </button>"
@@ -124,6 +124,8 @@ public class PeliculasController {
 	    + " <button>Género name=genero </button>" + "</form>";
 	} 
 	*/
+	 "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
+			
 	
 	//Devuelve peliculas para adultos
 	public static String pelisAdultos(Request request, Response response) throws SQLException {
@@ -131,8 +133,8 @@ public class PeliculasController {
 		String result = "";
 		if(request.queryParams("calificacion")!= null)
 			output = ps.getAllPeliculasForAdultos();
-		else
-			output = ps.getAllPeliculas();
+		//else
+		//	output = ps.getAllPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
