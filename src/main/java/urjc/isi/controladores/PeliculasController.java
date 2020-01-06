@@ -73,6 +73,9 @@ public class PeliculasController {
 				String time2 = parts[1];
 				double t1 = Double.parseDouble(time1);
 				double t2 = Double.parseDouble(time2);
+				if(t1 > t2) {
+					result = "El rango debe ser el primer número menor que el segundo, ejemplo: ?time=118-120" + "<br/>" + result;
+				}
 				//result = t1 + "<br/>" + t2 + "<br/>" + result;
 				output = ps.getAllPeliculasByDuration(t1,t2, "rango");
 			}else {
@@ -101,7 +104,7 @@ public class PeliculasController {
 			}
 		}else {
 			output = ps.getAllPeliculas();
-		    result = "Lista completa de películas -" + request.queryParams().size() + "<br/>" + result;
+		    //result = "Lista completa de películas -" + request.queryParams().size() + "<br/>" + result;
 		    if (request.queryParams().size() != 0) {
 		    	response.redirect("/peliculas/selectAll");
 		    } 
