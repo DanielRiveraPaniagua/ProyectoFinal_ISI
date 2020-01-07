@@ -101,9 +101,9 @@ public class PeliculasController {
 		}else  {
 			output = ps.getAllPeliculas();
 			//result = "Lista completa de películas -" + request.queryParams().size() + "<br/>" + result;
-		    if (request.queryParams().size() != 0) {
-		    	response.redirect("/peliculas/selectAll");
-		    } 
+      if (request.queryParams().size() != 0) {
+        response.redirect("/peliculas/selectAll");
+      } 
 		}
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -124,8 +124,6 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
-
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores

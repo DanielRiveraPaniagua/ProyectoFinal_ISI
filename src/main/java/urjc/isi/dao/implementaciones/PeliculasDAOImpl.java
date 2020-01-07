@@ -168,7 +168,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }
 	  return filmList;
 	}
-	
+
 	@Override
 	public List<Peliculas> selectAllDuration(double t1, double t2, String cadena) {
 	  List<Peliculas> filmList = new ArrayList<>();
