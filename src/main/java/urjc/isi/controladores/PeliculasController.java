@@ -83,12 +83,34 @@ public class PeliculasController {
 		}
 		return result;
 	}
+	
+	/**
+	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
+	 * @param request
+	 * @param response
+	 * @return Listado de peliculas que estan en la tabla Peliculas de la base de datos en formato HTML o JSON
+	 * @throws SQLException
+	 */
+	public static String selectAllDuration(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+
+		output = ps.getAllPeliculasByDuration(139.0);
+
+		for(int i = 0; i < output.size(); i++) {
+		    result = result + output.get(i).toHTMLString() +"</br>";
+
+		}
+		return result;
+	}
+
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
 		//get("/crearTabla", AdminController::crearTablaPeliculas);
+		get("/selectAllDuration", PeliculasController::selectAllDuration);
 		get("/selectAll", PeliculasController::selectAllPeliculas);
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
