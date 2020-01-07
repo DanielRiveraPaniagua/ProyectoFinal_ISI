@@ -15,14 +15,13 @@ import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
 import urjc.isi.entidades.*;
 
 public class PeliculasService {
-	
-	//private PeliculasDAOImpl pelisDAO ;
-	
+	private PeliculasDAOImpl pelisDAO ;
+
 	/**
 	 * Constructor por defecto
 	 */
 	public PeliculasService() {}
-	
+
 	/**
 	 * Metodo encargado de procesar la subida de los registros de la tabla Peliculas
 	 * @param req
@@ -45,7 +44,7 @@ public class PeliculasService {
 		return result;
 	}
 
-	
+
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla Peliculas
 	 * @return Lista de actores de la tabla Peliculas
@@ -57,7 +56,7 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	
+
 	/**
 	 * Metodo encargado de procesar un la salida de todas la lista con todas las peliculas de un actor
 	 * @return Lista de actores de la tabla Actores
@@ -82,7 +81,23 @@ public class PeliculasService {
 		return (result);
 	}
 	
-	
+
+	/** Procesa todas las peliculas de un director **/
+	public List<Peliculas> getAllPeliculasbyDirector(String name){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectAllWhereDirector(name);
+		pelisDAO.close();
+		return result;
+	}
+
+	/** Procesa todas las peliculas de un guionista **/
+	public List<Peliculas> getAllPeliculasbyGuionista(String name){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectAllWhereGuionista(name);
+		pelisDAO.close();
+		return result;
+	}
+
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito

@@ -9,7 +9,7 @@ import urjc.isi.entidades.Peliculas;
 //ciertos métodos exclusivos de Peliculas
 
 public interface PeliculasDAO extends GenericDAO<Peliculas>{
-	
+
 	/**
 	 * Obtiene todas las peliculas en las que ha trabajado un actor
 	 * @param Nombre del actor por el que se desea buscar
@@ -19,4 +19,8 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
 	// Selecciona las peliculas dada una duracion
 	public List<Peliculas> selectAllDuration(double t1, double t2, String cadena);
+
+	public List<Peliculas> selectAllWhereDirector(String name);
+
+	public List<Peliculas> selectAllWhereGuionista(String name);
 }

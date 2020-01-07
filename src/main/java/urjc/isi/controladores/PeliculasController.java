@@ -18,14 +18,14 @@ public class PeliculasController {
 
 	private static PeliculasService ps;
 	private static String adminkey = "1234";
-	
+
 	/**
 	 * Constructor por defecto
 	 */
 	public PeliculasController() {
 		ps = new PeliculasService();
 	}
-	
+
 	/**
 	 * Maneja las peticiones que llegan al endpoint /peliculas/uploadTable
 	 * @param request
@@ -36,11 +36,11 @@ public class PeliculasController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_films_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar las peticiones a /peliculas/upload
 	 * @param request
@@ -50,7 +50,7 @@ public class PeliculasController {
 	public static String upload(Request request, Response response) {
 		return ps.uploadTable(request);
 	}
-	
+
 	/**
 	 * Metodo encargado de manejar las peticiones a /peliculas/selectAll
 	 * @param request
@@ -103,7 +103,7 @@ public class PeliculasController {
 				}
 			}
 		}else {
-			output = ps.getAllPeliculas();
+			  output = ps.getAllPeliculas();
 		    //result = "Lista completa de películas -" + request.queryParams().size() + "<br/>" + result;
 		    if (request.queryParams().size() != 0) {
 		    	response.redirect("/peliculas/selectAll");
@@ -128,8 +128,7 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
-	
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
@@ -139,5 +138,5 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 	}
-	
+
 }

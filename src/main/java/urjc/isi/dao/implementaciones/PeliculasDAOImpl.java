@@ -144,6 +144,43 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }else {
 		  sql = "SELECT * from peliculas " + "where duracion>=" + t1 + " and duracion<=" + t2 + "ORDER BY duracion ASC";
 	  }
+    try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  filmList.add(fromResultSet(rs));
+		  }
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
+  }
+    
+	public List<Peliculas> selectAllWhereDirector(String name) {
+	  List<Peliculas> filmList = new ArrayList<>();
+	  String sql = "SELECT * from peliculas as p " +
+			  "Inner join peliculasdirectores as pa on p.idpelicula=pa.idpelicula " +
+			  "Inner join directores as a on pa.idpersona=a.idpersona "+
+			  "where a.fullnombre="+"'"+name+"'";
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  filmList.add(fromResultSet(rs));
+		  }
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
+	}
+
+	@Override
+	public List<Peliculas> selectAllWhereGuionista(String name) {
+	  List<Peliculas> filmList = new ArrayList<>();
+	  String sql = "SELECT * from guionistas as p " +
+			  "Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
+			  "Inner join guionistas as a on pa.idpersona=a.idpersona "+
+			  "where a.fullnombre="+"'"+name+"'";
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();
