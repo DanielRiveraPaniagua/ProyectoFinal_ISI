@@ -172,8 +172,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAllDuration(double value) {
 	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas " + 
-			  "where duracion= "+"'"+String.valueOf(value)+"'";
+	  String sql = "SELECT * from peliculas " + "where duracion=" + value;
 	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 		  ResultSet rs = pstmt.executeQuery();
 		  c.commit();
