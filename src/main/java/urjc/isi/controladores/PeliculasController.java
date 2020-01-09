@@ -118,10 +118,13 @@ public class PeliculasController {
 		}
 		return result
 		+ "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
-		+ "<button name=actor>Actor</button>"
-		+ "<button name=director>Director</button>"
-		+ "<button name=guionista>Guionista</button>"
-		+ "<button name=genero>Género</button>" + "</form>";
+		+ "<p> Filtrar por <p>"
+		+ "<p>Actor: <input type=text name=nactor size=40></p>"
+		+ "<button type=submit name=actor>Actor</button>"
+		+ "<p>Director: <input type=text name =ndirector size=40></p>"
+		+ "<button type=submit name=director>Director</button>"
+		+ "<button type=submit name=guionista>Guionista</button>"
+		+ "<button type=submit name=genero>Género</button>" + "</form>";
 	} 
 	
 	 
