@@ -138,9 +138,9 @@ public class PeliculasController {
 	public static String calificacion(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		//if(request.queryParams("adultos") != null)
-		//	output = ps.getAllPeliculasForAdultos();
-		//else 	
+		if(request.queryParams("adultos") != null)
+			output = ps.getAllPeliculasForAdultos();
+		else 	
 			output = ps.getAllPeliculasForNinos();
 			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -159,9 +159,9 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result; /*"<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
+		return "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
 		+ "<button>Adultos</button>"
-		+ "<button>Niños</button>" + "</form>" + result;*/
+		+ "<button>Niños</button>" + "</form>" + result;
 	}
 
 	/**
