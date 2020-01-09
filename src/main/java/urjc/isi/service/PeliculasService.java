@@ -61,18 +61,6 @@ public class PeliculasService {
 		return result;
 	}
 
-	/**
-	 * Metodo encargado de procesar un la salida de todas la lista con todas las peliculas de un actor
-	 * @return Lista de actores de la tabla Actores
-	 * @throws SQLException
-	 */
-	/*public List<Peliculas> getAllPeliculasByActor(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereActor(name);
-		pelisDAO.close();
-		return result;
-	}*/
-
 	/** Procesa todas las peliculas de un director **/
 	public List<Peliculas> getAllPeliculasbyDirector(String name){
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
