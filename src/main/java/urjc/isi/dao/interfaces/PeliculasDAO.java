@@ -1,6 +1,7 @@
 package urjc.isi.dao.interfaces;
 
 
+import java.util.Dictionary;
 import java.util.List;
 
 import urjc.isi.entidades.Peliculas;
@@ -10,13 +11,7 @@ import urjc.isi.entidades.Peliculas;
 
 public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
-	/**
-	 * Obtiene todas las peliculas en las que ha trabajado un actor
-	 * @param Nombre del actor por el que se desea buscar
-	 * @return
-	 */
-	public List<Peliculas> selectAllWhereActor(String name);
-  //Seleccionar peliculas del genero ...
+	public List<Peliculas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en genericDAO
 
 	public List<Peliculas> selectAllWhereDirector(String name);
 
