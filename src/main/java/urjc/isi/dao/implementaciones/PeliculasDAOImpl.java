@@ -155,7 +155,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAllWhereGuionista(String name) {
 	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from guionistas as p " +
+	  String sql = "SELECT * from peliculas as p " +
 			  "Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
 			  "Inner join guionistas as a on pa.idpersona=a.idpersona "+
 			  "where a.fullnombre="+"'"+name+"'";
@@ -174,7 +174,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectBest10(){
 		List<Peliculas> bestList = new ArrayList<>();
-		String sql = "SELECT * from peliculas ORDER BY rating DESC LIMIT 10";
+		String sql = "SELECT peliculas.titulo, peliculas.rating, peliculas.nvotos "
+				+ "from peliculas ORDER BY rating DESC LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -185,6 +186,46 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 		return bestList;
+	}
+	
+	
+	@Override
+	public List<Peliculas> selectRankingWhereActor(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				  "Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+				  "Inner join actores as a on pa.idpersona=a.idpersona "+
+				  "where a.fullnombre="+"'"+name+"'" + 
+				  "ORDER BY p.rating DESC";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereDirector(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
+		
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereGuionista(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
+		
+	}
+	@Override
+	public List<Peliculas> selectRankingWhereGenero(String genero) {
+		List<Peliculas> filmList = new ArrayList<>();
+		return filmList;
+		
 	}
 	
 	@Override
@@ -217,32 +258,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 		return ninosList;
-	}
-	
-	
-	@Override
-	public List<Peliculas> selectRankingWhereActor(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		return filmList;
-	
-	}
-	@Override
-	public List<Peliculas> selectRankingWhereDirector(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		return filmList;
-		
-	}
-	@Override
-	public List<Peliculas> selectRankingWhereGuionista(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		return filmList;
-		
-	}
-	@Override
-	public List<Peliculas> selectRankingWhereGenero(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		return filmList;
-		
 	}
 
 }

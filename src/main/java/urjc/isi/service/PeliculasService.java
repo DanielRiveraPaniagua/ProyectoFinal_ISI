@@ -128,9 +128,9 @@ public class PeliculasService {
 		return result;
 	}
 	
-	public List<Peliculas> getRankingByGenero(String name) throws SQLException{
+	public List<Peliculas> getRankingByGenero(String genero) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(name);
+		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(genero);
 		pelisDAO.close();
 		return result;
 	}

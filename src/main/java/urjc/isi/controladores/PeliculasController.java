@@ -98,6 +98,8 @@ public class PeliculasController {
 			output = ps.getRankingByDirector(request.queryParams("director"));
 		else if(request.queryParams("guionista")!= null)
 			output = ps.getRankingByGuionista(request.queryParams("guionista"));
+		else if(request.queryParams("genero")!= null)
+			output = ps.getRankingByGenero(request.queryParams("genero"));
 		else
 			output = ps.getBestPeliculas();
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -116,14 +118,16 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result
+		return "10 películas mejor valoradas <br/>" + result
 		+ "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
-		+ "<p> Filtrar por <p>"
-		+ "<p>Actor: <input type=text name=nactor size=40></p>"
-		+ "<button type=submit name=actor>Actor</button>"
-		+ "<p>Director: <input type=text name =ndirector size=40></p>"
-		+ "<button type=submit name=director>Director</button>"
-		+ "<button type=submit name=guionista>Guionista</button>"
+		+ "Filtrar por: <br/>"
+		+ "Actor: <input type=text name=nactor size=30>"
+		+ "<button type=submit name=actor>Actor</button> <br/>"
+		+ "Director: <input type=text name =ndirector size=30>"
+		+ "<button type=submit name=director>Director</button> <br/>"
+		+ "Guionista: <input type=text name=nguionista size=30>"
+		+ "<button type=submit name=guionista>Guionista</button> <br/>"
+		+ "Género: <input type=text name=genero size=30>"
 		+ "<button type=submit name=genero>Género</button>" + "</form>";
 	} 
 	
