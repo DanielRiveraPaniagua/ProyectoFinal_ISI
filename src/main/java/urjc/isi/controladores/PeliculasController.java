@@ -140,10 +140,10 @@ public class PeliculasController {
 		String result = "";
 		if(request.queryParams("adultos") != null)
 			output = ps.getAllPeliculasForAdultos();
-		else if (request.queryParams("ninos") != null)
+		else 	//(request.queryParams("ninos") != null)
 			output = ps.getAllPeliculasForNinos();
-		else 
-			output = ps.getAllPeliculas();
+		//else 
+			//output = ps.getAllPeliculas();
 			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -175,7 +175,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
-		get("/calificacion", PeliculasController::calificacion); //cambiar el /clificacion
+		get("/calificacion", PeliculasController::calificacion); 
 	}
 
 }
