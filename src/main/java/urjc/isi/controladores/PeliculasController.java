@@ -176,6 +176,7 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
 		get("/calificacion", PeliculasController::calificacion); 
+		get("/calificacion/adultos", PeliculasController::ps.getAllPeliculasForAdultos);
 	}
 
 }
