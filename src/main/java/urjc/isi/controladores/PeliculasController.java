@@ -140,10 +140,8 @@ public class PeliculasController {
 		String result = "";
 		if(request.queryParams("adultos") != null)
 			output = ps.getAllPeliculasForAdultos();
-		else 	//(request.queryParams("ninos") != null)
+		else 	
 			output = ps.getAllPeliculasForNinos();
-		//else 
-			//output = ps.getAllPeliculas();
 			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -161,7 +159,7 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return  "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
+		return "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
 		+ "<button>Adultos</button>"
 		+ "<button>Niños</button>" + "</form>" + result;
 	}
@@ -176,7 +174,7 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
 		get("/calificacion", PeliculasController::calificacion); 
-		get("/calificacion/adultos", PeliculasController::ps.getAllPeliculasForAdultos);
+		
 	}
 
 }
