@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 
 import spark.Request;
 import urjc.isi.dao.implementaciones.ActoresDAOImpl;
+import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
 import urjc.isi.entidades.Personas;
 
 public class ActoresService {
