@@ -139,7 +139,7 @@ public class PeliculasController {
 				+ "Guionista: <input type=text name=guionista size=30>"
 				+ "<button type=submit value=Guionista>Guionista </button> <br/>"
 				+ "Género: <input type=text name=genero size=30>"
-				+ "<button type=submit value=Género>Género <button>" + "</form>";
+				+ "<button type=submit value=Género>Género </button>" + "</form>";
 	} 
 	
 	 
