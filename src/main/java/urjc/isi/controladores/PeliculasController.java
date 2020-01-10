@@ -123,11 +123,12 @@ public class PeliculasController {
 		} else {	
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
-			}		
+			}
+			result = result + "<br/><br/>";
 		}
 		
 		return result 
-				+ "<br/><br/>Filtrar por: <br/><br/>"
+				+ "Filtrar por: <br/><br/>"
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Actor: <input type=text name=actor size=30>"
 				+ "<button type=submit value=Actor>Actor </button> <br/>"
