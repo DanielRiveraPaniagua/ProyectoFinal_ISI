@@ -92,22 +92,19 @@ public class PeliculasController {
 	{
 		List<Peliculas> output;
 		String result = "";
-		String backButton = "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>" 
-							+ "<button type=submit value=Volver atrás>Volver atrás </button> <br/>"
-							+ "<br/><br/>";
 		
 		if(request.queryParams("actor")!= null) {
 			output = ps.getRankingByActor(request.queryParams("actor"));
-			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/>" + backButton;
+			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/>";
 		} else if(request.queryParams("director")!= null) {
 			output = ps.getRankingByDirector(request.queryParams("director"));
-			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/>" + backButton;
+			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/>";
 		} else if(request.queryParams("guionista")!= null) {
 			output = ps.getRankingByGuionista(request.queryParams("guionista"));
-			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/>" + backButton;
+			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/>";
 		} else if(request.queryParams("genero")!= null) {
 			output = ps.getRankingByGenero(request.queryParams("genero"));
-			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/>" + backButton;
+			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/>";
 		} else {
 			output = ps.getBestPeliculas();
 		}
@@ -130,8 +127,8 @@ public class PeliculasController {
 		}
 		
 		return result 
-				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Filtrar por: <br/>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Actor: <input type=text name=actor size=30>"
 				+ "<button type=submit value=Actor>Actor </button> <br/>"
 				+ "Director: <input type=text name=director size=30>"
@@ -139,7 +136,9 @@ public class PeliculasController {
 				+ "Guionista: <input type=text name=guionista size=30>"
 				+ "<button type=submit value=Guionista>Guionista </button> <br/>"
 				+ "Género: <input type=text name=genero size=30>"
-				+ "<button type=submit value=Género>Género </button>" + "</form>";
+				+ "<button type=submit value=Género>Género </button>"
+				+ "<br/><br/><button type=submit value=Volver atrás>Volver atrás </button>"
+				+ "</form>";
 	} 
 	
 	 
