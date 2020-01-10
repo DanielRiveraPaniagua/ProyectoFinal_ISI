@@ -92,7 +92,6 @@ public class PeliculasController {
 	{
 		List<Peliculas> output;
 		String result = "";
-		String base_form = "";
 		if(request.queryParams("actor")!= null)
 			output = ps.getRankingByActor(request.queryParams("actor"));
 		else if(request.queryParams("director")!= null)
@@ -103,16 +102,6 @@ public class PeliculasController {
 			output = ps.getRankingByGenero(request.queryParams("genero"));
 		else
 			output = ps.getBestPeliculas();
-			base_form = "10 películas mejor valoradas <br/>" + "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
-					+ "Filtrar por: <br/>"
-					+ "Actor: <input type=text name=nactor size=30>"
-					+ "<button type=submit name=actor>Actor</button> <br/>"
-					+ "Director: <input type=text name =ndirector size=30>"
-					+ "<button type=submit name=director>Director</button> <br/>"
-					+ "Guionista: <input type=text name=nguionista size=30>"
-					+ "<button type=submit name=guionista>Guionista</button> <br/>"
-					+ "Género: <input type=text name=genero size=30>"
-					+ "<button type=submit name=genero>Género</button>" + "</form>";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -129,7 +118,16 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return base_form + result;
+		return result + "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
+				+ "Filtrar por: <br/>"
+				+ "Actor: <input type=text name=nactor size=30>"
+				+ "<button type=submit name=actor>Actor</button> <br/>"
+				+ "Director: <input type=text name =ndirector size=30>"
+				+ "<button type=submit name=director>Director</button> <br/>"
+				+ "Guionista: <input type=text name=nguionista size=30>"
+				+ "<button type=submit name=guionista>Guionista</button> <br/>"
+				+ "Género: <input type=text name=genero size=30>"
+				+ "<button type=submit name=genero>Género</button>" + "</form>";
 	} 
 	
 	 
