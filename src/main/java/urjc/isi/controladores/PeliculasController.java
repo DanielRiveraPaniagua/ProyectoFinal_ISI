@@ -118,7 +118,8 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result + "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
+		return result 
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Filtrar por: <br/>"
 				+ "Actor: <input type=text name=nactor size=30>"
 				+ "<button type=submit name=actor>Actor</button> <br/>"
