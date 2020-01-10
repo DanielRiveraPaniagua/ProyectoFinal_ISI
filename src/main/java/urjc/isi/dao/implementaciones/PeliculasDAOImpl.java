@@ -173,9 +173,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public List<Peliculas> selectBest10(){
+		System.out.println("Entramos en el método selectBest10");
 		List<Peliculas> bestList = new ArrayList<>();
 		String sql = "SELECT peliculas.titulo, peliculas.rating, peliculas.nvotos "
-				+ "from peliculas ORDER BY rating DESC LIMIT 10";
+				+ "from peliculas"
+				+ "ORDER BY peliculas.rating DESC" 
+				+ "LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();

@@ -91,7 +91,24 @@ public class PeliculasController {
 	public static String ranking(Request request, Response response) throws SQLException
 	{
 		List<Peliculas> output;
-		String result = "";
+		
+		String result = "Filtrar por: <br/><br/>"
+						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+						+ "Actor: <input type=text name=actor size=30>"
+						+ "<button type=submit value=Actor>Actor </button><br/></form>"
+						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+						+ "Director: <input type=text name=director size=30>"
+						+ "<button type=submit value=Director>Director </button><br/></form>"
+						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+						+ "Guionista: <input type=text name=guionista size=30>"
+						+ "<button type=submit value=Guionista>Guionista </button><br/></form>"
+						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+						+ "Género: <input type=text name=genero size=30>"
+						+ "<button type=submit value=Género>Género </button><br/></form>"
+						+ "<br/>"
+						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+						+ "<button type=submit value=Volver atrás>Volver atrás </button>"
+						+ "</form>";
 		
 		if(request.queryParams("actor")!= null) {
 			output = ps.getRankingByActor(request.queryParams("actor"));
@@ -124,24 +141,10 @@ public class PeliculasController {
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
-			result = result + "<br/><br/>";
 		}
 		
-		return result 
-				+ "Filtrar por: <br/><br/>"
-				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-				+ "Actor: <input type=text name=actor size=30>"
-				+ "<button type=submit value=Actor>Actor </button> <br/>"
-				+ "Director: <input type=text name=director size=30>"
-				+ "<button type=submit value=Director>Director </button> <br/>"
-				+ "Guionista: <input type=text name=guionista size=30>"
-				+ "<button type=submit value=Guionista>Guionista </button> <br/>"
-				+ "Género: <input type=text name=genero size=30>"
-				+ "<button type=submit value=Género>Género </button>" + "</form>"
-				+ "<br/><br/>"
-				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-				+ "<button type=submit value=Volver atrás>Volver atrás </button>"
-				+ "</form>";
+		return result;
+				
 	} 
 	
 	 
