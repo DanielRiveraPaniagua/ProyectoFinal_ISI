@@ -160,7 +160,8 @@ public class PeliculasController {
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit name=ninos value=ninos>Niños </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=VolverAtrás>Volver atrás </button>";
+						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
+						+ "<br/><br/>";
 		
 		if(request.queryParams("adultos") != null) {
 			output = ps.getAllPeliculasForAdultos();
