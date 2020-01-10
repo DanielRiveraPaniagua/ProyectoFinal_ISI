@@ -103,7 +103,7 @@ public class PeliculasController {
 			output = ps.getRankingByGenero(request.queryParams("genero"));
 		else
 			output = ps.getBestPeliculas();
-			base_form = "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
+			base_form = "10 películas mejor valoradas <br/>" + "<form action='/peliculas/ranking' method='post' enctype='multipart/form-data'>"
 					+ "Filtrar por: <br/>"
 					+ "Actor: <input type=text name=nactor size=30>"
 					+ "<button type=submit name=actor>Actor</button> <br/>"
@@ -129,7 +129,7 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return "10 películas mejor valoradas <br/>" + result + base_form;
+		return base_form + result;
 	} 
 	
 	 
