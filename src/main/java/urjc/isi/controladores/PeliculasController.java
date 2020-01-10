@@ -156,9 +156,9 @@ public class PeliculasController {
 		List<Peliculas> output;
 		
 		String result = "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit name=adultos>Adultos </button><br/></form>"
+						+ "<button type=submit name=adultos value=adultos>Adultos </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit name=ninos>Niños </button><br/></form>"
+						+ "<button type=submit name=ninos value=ninos>Niños </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit value=VolverAtrás>Volver atrás </button>";
 		
