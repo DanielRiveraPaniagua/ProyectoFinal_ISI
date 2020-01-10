@@ -186,7 +186,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				bestList.add(fromResultSet(rs));
 			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error en selectBest10" + e.getMessage());
 		}
 		return bestList;
 	}
