@@ -73,7 +73,7 @@ public class Peliculas {
 		this.duracion = duracion;
 	}
 	public void setCalificacion(int calificacion) {
-		if(calificacion < 0) {
+		if(calificacion < 0 || calificacion > 1) {
 			throw new InvalidParameter();
 		}
 		this.calificacion = calificacion;
