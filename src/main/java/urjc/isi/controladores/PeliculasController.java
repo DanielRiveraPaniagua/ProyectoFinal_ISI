@@ -92,16 +92,26 @@ public class PeliculasController {
 	{
 		List<Peliculas> output;
 		String result = "";
-		if(request.queryParams("actor")!= null)
+		String backButton = "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>" 
+							+ "<button type=submit value=Volver atrás>Volver atrás </button> <br/>"
+							+ "<br/><br/>";
+		
+		if(request.queryParams("actor")!= null) {
 			output = ps.getRankingByActor(request.queryParams("actor"));
-		else if(request.queryParams("director")!= null)
+			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/>" + backButton;
+		} else if(request.queryParams("director")!= null) {
 			output = ps.getRankingByDirector(request.queryParams("director"));
-		else if(request.queryParams("guionista")!= null)
+			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/>" + backButton;
+		} else if(request.queryParams("guionista")!= null) {
 			output = ps.getRankingByGuionista(request.queryParams("guionista"));
-		else if(request.queryParams("genero")!= null)
+			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/>" + backButton;
+		} else if(request.queryParams("genero")!= null) {
 			output = ps.getRankingByGenero(request.queryParams("genero"));
-		else
+			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/>" + backButton;
+		} else {
 			output = ps.getBestPeliculas();
+		}
+		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -113,16 +123,12 @@ public class PeliculasController {
 			}
 			json.add("output", array);
 			result = json.toString();
-		}else {
-			result = "Peliculas en las que participa" + request.queryParams("director") + "<br/>";
+		} else {	
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-			result = result 
-					+ "<br/><form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>" 
-					+ "<button type=submit value=Volver atrás>Volver atrás </button> <br/>"
-					+ "<br/><br/>";
+			}		
 		}
+		
 		return result 
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Filtrar por: <br/>"
