@@ -122,13 +122,13 @@ public class PeliculasController {
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Filtrar por: <br/>"
 				+ "Actor: <input type=text name=actor size=30>"
-				+ "<button type=submit value=Actor </button> <br/>"
+				+ "<button type=submit value=Actor>Actor </button> <br/>"
 				+ "Director: <input type=text name=director size=30>"
-				+ "<button type=submit value=Director </button> <br/>"
+				+ "<button type=submit value=Director>Director </button> <br/>"
 				+ "Guionista: <input type=text name=guionista size=30>"
-				+ "<button type=submit value=Guionista </button> <br/>"
+				+ "<button type=submit value=Guionista>Guionista </button> <br/>"
 				+ "Género: <input type=text name=genero size=30>"
-				+ "<button type=submit value=Género </button>" + "</form>";
+				+ "<button type=submit value=Género>Género <button>" + "</form>";
 	} 
 	
 	 
