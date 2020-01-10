@@ -156,16 +156,17 @@ public class PeliculasController {
 		List<Peliculas> output;
 		
 		String result = "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=Adultos>Adultos </button><br/></form>"
+						+ "<button type=submit name=adultos>Adultos </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=Ninos>Niños </button><br/></form>"
+						+ "<button type=submit name=ninos>Niños </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit value=VolverAtrás>Volver atrás </button>";
 		
-		if(request.queryParams("adultos") != null)
+		if(request.queryParams("adultos") != null) {
 			output = ps.getAllPeliculasForAdultos();
-		else 	
+		} else {
 			output = ps.getAllPeliculasForNinos();
+		}
 			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -178,12 +179,11 @@ public class PeliculasController {
 			}
 			json.add("output", array);
 			result = json.toString();
-		}else {
+		} else {
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		
 		return result;
 	}
 
