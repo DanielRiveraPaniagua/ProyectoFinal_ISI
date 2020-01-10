@@ -107,7 +107,7 @@ public class PeliculasController {
 						+ "<button type=submit value=Género>Género </button><br/></form>"
 						+ "<br/>"
 						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=Volver atrás>Volver atrás </button>"
+						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
 						+ "</form>";
 		
 		if(request.queryParams("actor")!= null) {
@@ -151,9 +151,17 @@ public class PeliculasController {
 	 
 	
 	//Devuelve peliculas en funcion de la calificacion
+	
 	public static String calificacion(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
-		String result = "";
+		
+		String result = "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "<button type=submit value=Adultos>Adultos </button><br/></form>"
+						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "<button type=submit value=Ninos>Niños </button><br/></form>"
+						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "<button type=submit value=VolverAtrás>Volver atrás </button>";
+		
 		if(request.queryParams("adultos") != null)
 			output = ps.getAllPeliculasForAdultos();
 		else 	
@@ -166,7 +174,7 @@ public class PeliculasController {
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
 			JsonArray array = new JsonArray();
 			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
+				array.add(output.get(i).toJSONObject());
 			}
 			json.add("output", array);
 			result = json.toString();
@@ -175,9 +183,8 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return "<form action='/peliculas/calificacion' method='post' enctype='multipart/form-data'>"
-		+ "<button>Adultos</button>"
-		+ "<button>Niños</button>" + "</form>" + result;
+		
+		return result;
 	}
 
 	/**
@@ -189,8 +196,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
-		get("/calificacion", PeliculasController::calificacion); 
-		
+		get("/calificacion", PeliculasController::calificacion);
 	}
 
 }

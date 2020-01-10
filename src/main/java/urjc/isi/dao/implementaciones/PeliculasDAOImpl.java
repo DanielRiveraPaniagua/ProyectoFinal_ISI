@@ -16,6 +16,7 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
+
 public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements PeliculasDAO{
 
 	public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
@@ -116,86 +117,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public List<Peliculas> selectAllWhereActor(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " +
-			  "Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join actores as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
-	}
-
-	@Override
-	public List<Peliculas> selectAllWhereDirector(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " +
-			  "Inner join peliculasdirectores as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join directores as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
-	}
-
-	@Override
-	public List<Peliculas> selectAllWhereGuionista(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " +
-			  "Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join guionistas as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
-	}
-
-	@Override
-	public List<Peliculas> selectBest10(){
-		List<Peliculas> bestList = new ArrayList<>();
-		String sql = "SELECT rating from peliculas ORDER BY rating DESC LIMIT 10";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				bestList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println("Error en selectBest10: " + e.getMessage());
-		}
-		return bestList;
-	}
-	
-	
-	@Override
-	public List<Peliculas> selectRankingWhereActor(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p " +
-				  "Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
-				  "Inner join actores as a on pa.idpersona=a.idpersona "+
-				  "where a.fullnombre="+"'"+name+"'" + 
-				  "ORDER BY p.rating DESC";
+				"Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+				"Inner join actores as a on pa.idpersona=a.idpersona "+
+				"where a.fullnombre="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -206,11 +132,100 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 		return filmList;
-	
 	}
+
+	@Override
+	public List<Peliculas> selectAllWhereDirector(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				"Inner join peliculasdirectores as pa on p.idpelicula=pa.idpelicula " +
+				"Inner join directores as a on pa.idpersona=a.idpersona "+
+				"where a.fullnombre="+"'"+name+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+
+	@Override
+	public List<Peliculas> selectAllWhereGuionista(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				"Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
+				"Inner join guionistas as a on pa.idpersona=a.idpersona "+
+				"where a.fullnombre="+"'"+name+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+
+	@Override
+	public List<Peliculas> selectBest10(){
+		List<Peliculas> bestList = new ArrayList<>();
+		String sql = "SELECT * from peliculas ORDER BY rating DESC LIMIT 10";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				bestList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return bestList;
+	}
+	
+	
+	@Override
+	public List<Peliculas> selectRankingWhereActor(String name) {
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				"Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+				"Inner join actores as a on pa.idpersona=a.idpersona "+
+				"where a.fullnombre="+"'"+name+"'" + 
+				"ORDER BY p.rating DESC";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+	
 	@Override
 	public List<Peliculas> selectRankingWhereDirector(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				  "Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+				  "Inner join directores as d on pd.idpersona=d.idpersona "+
+				  "where d.fullnombre="+"'"+name+"'" + 
+				  "ORDER BY p.rating DESC";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 		return filmList;
 		
 	}
@@ -258,5 +273,4 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return ninosList;
 	}
-
 }
