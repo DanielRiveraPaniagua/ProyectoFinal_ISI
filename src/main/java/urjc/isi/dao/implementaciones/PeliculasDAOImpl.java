@@ -175,15 +175,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public List<Peliculas> selectBest10(){
 		System.out.println("Entramos en el método selectBest10");
 		List<Peliculas> bestList = new ArrayList<>();
-		String sql = "SELECT peliculas.titulo, peliculas.rating, peliculas.nvotos "
-				+ "from peliculas"
-				+ "ORDER BY peliculas.rating DESC" 
+		String sql = "SELECT p.titulo, p.rating, p.nvotos "
+				+ "from peliculas as p"
+				+ "ORDER BY p.rating DESC" 
 				+ "LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
+			System.out.println("Problema en la ejecucion de la query");
 			c.commit();
+			System.out.println("Problema en el commit");
 			while(rs.next()){
 				bestList.add(fromResultSet(rs));
+				System.out.println("Añadimos una linea más al bestList");
 			}
 		} catch (SQLException e) {
 			System.out.println("Error en selectBest10: " + e.getMessage());
