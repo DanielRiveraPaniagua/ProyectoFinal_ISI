@@ -127,7 +127,7 @@ public class PeliculasController {
 		}
 		
 		return result 
-				+ "Filtrar por: <br/><br/>"
+				+ "<br/><br/>Filtrar por: <br/><br/>"
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Actor: <input type=text name=actor size=30>"
 				+ "<button type=submit value=Actor>Actor </button> <br/>"
@@ -136,8 +136,10 @@ public class PeliculasController {
 				+ "Guionista: <input type=text name=guionista size=30>"
 				+ "<button type=submit value=Guionista>Guionista </button> <br/>"
 				+ "Género: <input type=text name=genero size=30>"
-				+ "<button type=submit value=Género>Género </button>"
-				+ "<br/><br/><button type=submit value=Volver atrás>Volver atrás </button>"
+				+ "<button type=submit value=Género>Género </button>" + "</form>"
+				+ "<br/><br/>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "<button type=submit value=Volver atrás>Volver atrás </button>"
 				+ "</form>";
 	} 
 	
