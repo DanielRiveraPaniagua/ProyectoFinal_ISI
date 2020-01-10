@@ -124,6 +124,7 @@ public class PeliculasController {
 			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/><br/>";
 		} else {
 			output = ps.getBestPeliculas();
+			result = result + "10 peliculas mejor valoradas" + "<br/><br/>";
 		}
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
