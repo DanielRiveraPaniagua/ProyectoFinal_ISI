@@ -114,9 +114,14 @@ public class PeliculasController {
 			json.add("output", array);
 			result = json.toString();
 		}else {
+			result = "Peliculas en las que participa" + request.queryParams("director") + "<br/>";
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
+			result = result 
+					+ "<br/><form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>" 
+					+ "<button type=submit value=Volver atrás>Volver atrás </button> <br/>"
+					+ "<br/><br/>";
 		}
 		return result 
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
