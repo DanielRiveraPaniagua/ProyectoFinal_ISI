@@ -95,16 +95,16 @@ public class PeliculasController {
 		
 		if(request.queryParams("actor")!= null) {
 			output = ps.getRankingByActor(request.queryParams("actor"));
-			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/>";
+			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/><br/>";
 		} else if(request.queryParams("director")!= null) {
 			output = ps.getRankingByDirector(request.queryParams("director"));
-			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/>";
+			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/><br/>";
 		} else if(request.queryParams("guionista")!= null) {
 			output = ps.getRankingByGuionista(request.queryParams("guionista"));
-			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/>";
+			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/><br/>";
 		} else if(request.queryParams("genero")!= null) {
 			output = ps.getRankingByGenero(request.queryParams("genero"));
-			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/>";
+			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/><br/>";
 		} else {
 			output = ps.getBestPeliculas();
 		}
@@ -127,7 +127,7 @@ public class PeliculasController {
 		}
 		
 		return result 
-				+ "Filtrar por: <br/>"
+				+ "Filtrar por: <br/><br/>"
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Actor: <input type=text name=actor size=30>"
 				+ "<button type=submit value=Actor>Actor </button> <br/>"
