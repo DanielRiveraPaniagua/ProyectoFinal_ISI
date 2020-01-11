@@ -150,8 +150,6 @@ public class PeliculasController {
 		return result;		
 	} 
 	
-	 
-	
 	//Devuelve peliculas en funcion de la calificacion
 	
 	public static String calificacion(Request request, Response response) throws SQLException {
