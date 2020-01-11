@@ -183,20 +183,22 @@ public class PeliculasController {
 		} else {
 			output = null;
 		}
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());
-			}
-			json.add("output", array);
-			result = json.toString();
-		} else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
+		if (output != null) {
+			if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+				response.type("application/json");
+				JsonObject json = new JsonObject();
+				json.addProperty("status", "SUCCESS");
+				json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+				JsonArray array = new JsonArray();
+				for(int i = 0; i < output.size(); i++) {
+					array.add(output.get(i).toJSONObject());
+				}
+				json.add("output", array);
+				result = json.toString();
+			} else {
+				for(int i = 0; i < output.size(); i++) {
+				    result = result + output.get(i).toHTMLString() +"</br>";
+				}
 			}
 		}
 		return result;
