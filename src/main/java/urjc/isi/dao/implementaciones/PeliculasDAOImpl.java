@@ -259,7 +259,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectPeliculasForAdultos(){
 		List<Peliculas> adultList = new ArrayList<>();
-		String sql = "SELECT * from peliculas  where calificacion::INTEGER = 1";
+		String sql = "SELECT titulo from peliculas  where calificacion::INTEGER = 1";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -275,7 +275,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectPeliculasForNinos(){
 		List<Peliculas> ninosList = new ArrayList<>();
-		String sql = "SELECT * from peliculas where calificacion::INTEGER = 0";
+		String sql = "SELECT titulo from peliculas where calificacion::INTEGER = 0";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
