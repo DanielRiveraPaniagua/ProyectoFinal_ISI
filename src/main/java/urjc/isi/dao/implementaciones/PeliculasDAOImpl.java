@@ -53,14 +53,14 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
 	
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-	  			pstmt.setString(1, entity.getIdPelicula());
-	  			pstmt.setString(2, entity.getTitulo());
-	  			pstmt.setInt(3, entity.getAño());
-	      	pstmt.setDouble(4, entity.getDuracion());
-	      	pstmt.setInt(5, entity.getCalificacion());
-	      	pstmt.setDouble(6, entity.getRating());
-	      	pstmt.setInt(7, entity.getNVotos());
-	  			pstmt.executeUpdate();
+	  		pstmt.setString(1, entity.getIdPelicula());
+	  		pstmt.setString(2, entity.getTitulo());
+	  		pstmt.setInt(3, entity.getAño());
+	  		pstmt.setDouble(4, entity.getDuracion());
+	  		pstmt.setInt(5, entity.getCalificacion());
+	  		pstmt.setDouble(6, entity.getRating());
+	  		pstmt.setInt(7, entity.getNVotos());
+	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
@@ -129,6 +129,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					     "Inner join actores as a on pa.idpersona=a.idpersona ";
 					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
 					break;
+				case "director":
+					sql+="Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+						 "Inner join directores as d on pd.idpersona=d.idpersona ";
+					cond+= "d.fullnombre LIKE "+"'"+conditions.get("director")+"'";
+					break;
+				case "guionista":
+					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionistas")+"'";
+					break;
 				case "duracion":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
@@ -138,64 +148,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			}
 		}
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				filmList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return filmList;
-	}
-
-
-	@Override
-	public List<Peliculas> selectAllWhereDirector(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p " +
-				"Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
-				"Inner join directores as d on pd.idpersona=d.idpersona "+
-				"where d.fullnombre="+"'"+name+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				filmList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return filmList;
-	}
-
-	@Override
-	public List<Peliculas> selectAllWhereGuionista(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p " +
-				"Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
-				"Inner join guionistas as g on pg.idpersona=g.idpersona "+
-				"where g.fullnombre="+"'"+name+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				filmList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return filmList;
-	}
-
-	@Override
-	public List<Peliculas> selectAllWhereActor(String name) {
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p " +
-				"Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
-				"Inner join actores as a on pa.idpersona=a.idpersona "+
-				"where a.fullnombre="+"'"+name+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){

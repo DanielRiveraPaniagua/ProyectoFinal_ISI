@@ -43,7 +43,6 @@ public class PeliculasService {
 		return result;
 	}
 
-
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla Peliculas
 	 * @return Lista de actores de la tabla Peliculas
@@ -57,22 +56,6 @@ public class PeliculasService {
 		}else {
 			result = pelisDAO.selectAll();
 		}
-		pelisDAO.close();
-		return result;
-	}
-
-	/** Procesa todas las peliculas de un director **/
-	public List<Peliculas> getAllPeliculasbyDirector(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereDirector(name);
-		pelisDAO.close();
-		return result;
-	}
-
-	/** Procesa todas las peliculas de un guionista **/
-	public List<Peliculas> getAllPeliculasbyGuionista(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereGuionista(name);
 		pelisDAO.close();
 		return result;
 	}

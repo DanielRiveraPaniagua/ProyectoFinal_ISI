@@ -13,11 +13,6 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
 	
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en genericDAO
-
-	public List<Peliculas> selectAllWhereActor(String name);
-	public List<Peliculas> selectAllWhereDirector(String name);
-
-	public List<Peliculas> selectAllWhereGuionista(String name);
 	
 	//Ranking
 	public List<Peliculas> selectBest10();
