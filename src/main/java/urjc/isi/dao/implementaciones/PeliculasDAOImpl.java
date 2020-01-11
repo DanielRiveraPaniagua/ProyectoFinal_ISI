@@ -138,9 +138,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public List<Peliculas> selectAllWhereDirector(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p " +
-				"Inner join peliculasdirectores as pa on p.idpelicula=pa.idpelicula " +
-				"Inner join directores as a on pa.idpersona=a.idpersona "+
-				"where a.fullnombre="+"'"+name+"'";
+				"Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+				"Inner join directores as d on pd.idpersona=d.idpersona "+
+				"where d.fullnombre="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -157,9 +157,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public List<Peliculas> selectAllWhereGuionista(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p " +
-				"Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
-				"Inner join guionistas as a on pa.idpersona=a.idpersona "+
-				"where a.fullnombre="+"'"+name+"'";
+				"Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+				"Inner join guionistas as g on pg.idpersona=g.idpersona "+
+				"where g.fullnombre="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -232,6 +232,20 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectRankingWhereGuionista(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p " +
+				  "Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+				  "Inner join guionistas as g on pg.idpersona=g.idpersona "+
+				  "where g.fullnombre="+"'"+name+"'" + 
+				  "ORDER BY p.rating DESC";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 		return filmList;
 		
 	}
