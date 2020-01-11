@@ -159,6 +159,9 @@ public class PeliculasController {
 						+ "<button type=submit name=adultos value=adultos>Adultos </button><br/></form>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit name=ninos value=ninos>Niños </button><br/></form>"
+						+ "Introduce una pelicula: <br/><br/>"
+						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "Pelicula: <input type=text name=pelicula size=30>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
 						+ "<br/><br/>";
@@ -168,9 +171,10 @@ public class PeliculasController {
 			result = result + "Peliculas para adultos " + "<br/><br/>";
 		} else if(request.queryParams("ninos") != null){
 			output = ps.getAllPeliculasForNinos();
-			result = result + "Peliculas para adultos " + "<br/><br/>";
+			result = result + "Peliculas para niños " + "<br/><br/>";
 		}else {
-			output = null;
+			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
+			result = result + "La calificacion de la pelicula es:" + request.queryParams("pelicula") + "<br/><br/>";
 		}
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");

@@ -107,6 +107,13 @@ public class PeliculasService {
 		return result;
 	}
 	
+	public List<Peliculas> getCalificacionForPelicula(String name) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectCalificacionForPelicula();
+		pelisDAO.close();
+		return result;
+	}
+	
 	public List<Peliculas> getRankingByActor(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);

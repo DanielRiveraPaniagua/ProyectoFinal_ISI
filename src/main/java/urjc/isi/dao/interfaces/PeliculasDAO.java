@@ -33,5 +33,7 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	public List<Peliculas> selectPeliculasForAdultos();
 	//selecciona peliculas para ninos
 	public List<Peliculas> selectPeliculasForNinos();
+	//devuelve la calificacion dada una pelicula
+	public List<Peliculas> selectCalificacionForPelicula(String name);
 
 }
