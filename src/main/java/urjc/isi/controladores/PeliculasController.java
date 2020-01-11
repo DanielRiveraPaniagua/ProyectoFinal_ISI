@@ -162,7 +162,7 @@ public class PeliculasController {
 						+ "Introduce una pelicula: <br/><br/>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "Pelicula: <input type=text name=pelicula size=30>"
-						+ "<button type=submit value=Pelicula>Pelicula </button><br/></form>"
+						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
 						+ "<br/>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
