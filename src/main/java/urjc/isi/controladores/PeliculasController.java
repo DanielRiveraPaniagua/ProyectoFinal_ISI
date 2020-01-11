@@ -65,8 +65,13 @@ public class PeliculasController {
 		
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
+		if(request.queryParams("director")!= null)
+			filter.put("director",request.queryParams("director"));
+		if(request.queryParams("guionista")!= null)
+			filter.put("guionista",request.queryParams("guionista"));
 		if(request.queryParams("duracion")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
+		
 		output = ps.getAllPeliculas(filter);
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
