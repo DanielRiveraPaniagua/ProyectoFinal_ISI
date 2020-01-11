@@ -147,9 +147,7 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		
-		return result;
-				
+		return result;		
 	} 
 	
 	 
@@ -157,6 +155,7 @@ public class PeliculasController {
 	//Devuelve peliculas en funcion de la calificacion
 	
 	public static String calificacion(Request request, Response response) throws SQLException {
+		
 		List<Peliculas> output;
 		
 		String result = "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
@@ -175,12 +174,14 @@ public class PeliculasController {
 		if(request.queryParams("adultos") != null) {
 			output = ps.getAllPeliculasForAdultos();
 			result = result + "Peliculas para adultos " + "<br/><br/>";
-		} else if(request.queryParams("ninos") != null){
+		} else if(request.queryParams("ninos") != null) {
 			output = ps.getAllPeliculasForNinos();
 			result = result + "Peliculas para niños " + "<br/><br/>";
-		}else {
+		} else if(request.queryParams("peliculas") != null) {
 			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
 			result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
+		} else {
+			output = null;
 		}
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -199,7 +200,6 @@ public class PeliculasController {
 			}
 		}
 		return result;
-		
 	}
 
 	/**
