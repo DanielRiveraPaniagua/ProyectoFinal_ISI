@@ -3,7 +3,7 @@ package urjc.isi.controladores;
 import static spark.Spark.*;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -61,10 +61,14 @@ public class PeliculasController {
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		
 		if(request.queryParams("actor")!= null)
-			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
-		else
-			output = ps.getAllPeliculas();
+			filter.put("actor",request.queryParams("actor"));
+		if(request.queryParams("duracion")!=null)
+			filter.put("duracion", request.queryParams("duracion"));
+		output = ps.getAllPeliculas(filter);
+		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();

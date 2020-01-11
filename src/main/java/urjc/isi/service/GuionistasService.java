@@ -54,6 +54,27 @@ public class GuionistasService {
 		guionistas.close();
 		return result;
 	}
+	
+	public List<Personas> getGuionistasByFechaNac (String fecha) throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerByFechaNac (fecha);
+		guionistas.close();
+		return result;
+	}
+	
+	public List<Personas> getGuionistasMuertos () throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerMuertas ();
+		guionistas.close();
+		return result;
+	}
+	
+	public List<Personas> getGuionistasByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
+		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
+		List<Personas> result = guionistas.selectPerByIntervaloNac (fechaIn, fechaFin);
+		guionistas.close();
+		return result;
+	}
 
-
+	
 }

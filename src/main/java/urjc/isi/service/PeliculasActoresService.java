@@ -13,9 +13,7 @@ import spark.Request;
 import urjc.isi.dao.implementaciones.PeliculasActoresDAOImpl;
 
 public class PeliculasActoresService {
-	
-	private PeliculasActoresDAOImpl peac ;
-	
+
 	/**
 	 * Constructor por defecto
 	 */

@@ -56,5 +56,25 @@ public class ActoresService {
 		return result;
 	}
 	
+	public List<Personas> getActoresByFechaNac (String fecha) throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerByFechaNac (fecha);
+		actores.close();
+		return result;
+	}
+	
+	public List<Personas> getActoresMuertos () throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerMuertas ();
+		actores.close();
+		return result;
+	}
+	
+	public List<Personas> getActoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
+		ActoresDAOImpl actores = new ActoresDAOImpl ();
+		List<Personas> result = actores.selectPerByIntervaloNac (fechaIn, fechaFin);
+		actores.close();
+		return result;
+	}
 	
 }
