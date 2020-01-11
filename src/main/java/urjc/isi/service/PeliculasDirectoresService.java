@@ -14,8 +14,6 @@ import urjc.isi.dao.implementaciones.PeliculasDirectoresDAOImpl;
 
 public class PeliculasDirectoresService {
 
-	private PeliculasDirectoresDAOImpl peac ;
-
 	/**
 	 * Constructor por defecto
 	 */
