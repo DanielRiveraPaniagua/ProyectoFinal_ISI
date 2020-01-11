@@ -175,7 +175,7 @@ public class PeliculasController {
 			output = ps.getAllPeliculasForNinos();
 			result = result + "Peliculas para niños " + "<br/><br/>";
 		}else {
-			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
+			output = ps.getCalificacionForPelicula(request.queryParams("calificacion"));
 			result = result + "La calificacion de la pelicula es:" + request.queryParams("calificacion") + "<br/><br/>";
 		}
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
