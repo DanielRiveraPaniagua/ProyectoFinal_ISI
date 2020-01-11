@@ -165,10 +165,13 @@ public class PeliculasController {
 		
 		if(request.queryParams("adultos") != null) {
 			output = ps.getAllPeliculasForAdultos();
-		} else {
+			result = result + "Peliculas para adultos " + "<br/><br/>";
+		} else if(request.queryParams("ninos") != null){
 			output = ps.getAllPeliculasForNinos();
+			result = result + "Peliculas para adultos " + "<br/><br/>";
+		}else {
+			output = null;
 		}
-			
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -186,6 +189,7 @@ public class PeliculasController {
 			}
 		}
 		return result;
+		
 	}
 
 	/**
