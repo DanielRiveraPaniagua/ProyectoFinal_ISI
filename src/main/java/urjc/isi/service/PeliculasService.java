@@ -61,22 +61,6 @@ public class PeliculasService {
 		return result;
 	}
 
-	/** Procesa todas las peliculas de un director **/
-	public List<Peliculas> getAllPeliculasbyDirector(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereDirector(name);
-		pelisDAO.close();
-		return result;
-	}
-
-	/** Procesa todas las peliculas de un guionista **/
-	public List<Peliculas> getAllPeliculasbyGuionista(String name){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereGuionista(name);
-		pelisDAO.close();
-		return result;
-	}
-
 	public List<Peliculas> getBestPeliculas() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectBest10();
