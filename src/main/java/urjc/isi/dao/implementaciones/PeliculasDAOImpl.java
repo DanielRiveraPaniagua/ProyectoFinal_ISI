@@ -142,6 +142,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "duracion":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
+				case "adultos":
+					cond+= "WHERE calificacion::INTEGER = 1";
+					break;
+				case "ninos":
+					cond+= "WHERE calificacion::INTEGER = 0";
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
@@ -286,7 +292,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return filmList;
 		
 	}**/
-	
+/*	
 	@Override
 	public List<Peliculas> selectPeliculasForAdultos(){
 		List<Peliculas> adultList = new ArrayList<>();
@@ -318,20 +324,21 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return ninosList;
 	}
+	*/
+	
 	
 	@Override
 	public List<Peliculas> selectCalificacionForPelicula(String name){
 		List<Peliculas> calificacion = new ArrayList<>();
 		String sql = "SELECT calificacion from peliculas where titulo="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
+			//ResultSet rs = pstmt.executeQuery();
 			c.commit();
-		//	while(rs.next()){
-				//calificacionList.add(fromResultSet(rs));
-			//}
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		
 		return calificacion;
 	}
 }

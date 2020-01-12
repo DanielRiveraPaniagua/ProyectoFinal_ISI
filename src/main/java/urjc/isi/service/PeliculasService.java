@@ -79,7 +79,9 @@ public class PeliculasService {
 		return result;
 	}*/
 	
-	public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
+
+	
+	/*public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectPeliculasForAdultos();
 		pelisDAO.close();
@@ -91,7 +93,7 @@ public class PeliculasService {
 		List<Peliculas> result = pelisDAO.selectPeliculasForNinos();
 		pelisDAO.close();
 		return result;
-	}
+	}*/
 	
 	public List<Peliculas> getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();

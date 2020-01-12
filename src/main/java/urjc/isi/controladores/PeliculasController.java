@@ -71,6 +71,11 @@ public class PeliculasController {
 			filter.put("guionista",request.queryParams("guionista"));
 		if(request.queryParams("duracion")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
+		if(request.queryParams("adultos")!=null)
+			filter.put("adultos", request.queryParams("adultos"));
+		if(request.queryParams("ninos")!=null)
+			filter.put("ninos", request.queryParams("ninos"));
+		
 		
 		output = ps.getAllPeliculas(filter);
 		
@@ -215,7 +220,7 @@ public class PeliculasController {
 	
 	//Devuelve peliculas en funcion de la calificacion
 	
-	public static String calificacion(Request request, Response response) throws SQLException {
+/*	public static String calificacion(Request request, Response response) throws SQLException {
 		
 		List<Peliculas> output;
 		
@@ -234,13 +239,13 @@ public class PeliculasController {
 		
 		if(request.queryParams("adultos") != null) {
 			output = ps.getAllPeliculasForAdultos();
-			result = result + "Peliculas para adultos " + "<br/><br/>";
+			//result = result + "Peliculas para adultos " + "<br/><br/>";
 		} else if(request.queryParams("ninos") != null) {
 			output = ps.getAllPeliculasForNinos();
-			result = result + "Peliculas para niños " + "<br/><br/>";
+			//result = result + "Peliculas para niños " + "<br/><br/>";
 		} else if(request.queryParams("pelicula") != null) {
 			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
-			result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
+			//result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
 		} else {
 			output = null;
 		}
@@ -263,7 +268,7 @@ public class PeliculasController {
 			}
 		}
 		return result;
-	}
+	}*/
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
@@ -274,7 +279,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
-		get("/calificacion", PeliculasController::calificacion);
+		//get("/calificacion", PeliculasController::calificacion);
 	}
 
 }
