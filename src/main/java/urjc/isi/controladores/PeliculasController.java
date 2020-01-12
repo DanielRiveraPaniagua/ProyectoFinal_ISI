@@ -163,13 +163,13 @@ public class PeliculasController {
 		
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
-			result = result + "Peliculas en las que participa " + request.queryParams("actor") + " mejor valoradas" + "<br/><br/>";
+			result = "Peliculas en las que participa " + request.queryParams("actor") + " mejor valoradas" + "<br/><br/>";
 		if(request.queryParams("director")!= null)
 			filter.put("director",request.queryParams("director"));
-			result = result + "Peliculas en las que participa " + request.queryParams("director") + " mejor valoradas" + "<br/><br/>";
+			result = "Peliculas en las que participa " + request.queryParams("director") + " mejor valoradas" + "<br/><br/>";
 		if(request.queryParams("guionista")!= null)
 			filter.put("guionista",request.queryParams("guionista"));
-			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + " mejor valoradas" + "<br/><br/>";
+			result = "Peliculas en las que participa " + request.queryParams("guionista") + " mejor valoradas" + "<br/><br/>";
 		/**if(request.queryParams("genero")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
