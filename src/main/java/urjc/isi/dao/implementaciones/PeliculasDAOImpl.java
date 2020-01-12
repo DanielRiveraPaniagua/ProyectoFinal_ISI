@@ -175,8 +175,54 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return bestList;
 	}
 	
-	
+
 	@Override
+	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p ";
+		String cond = "WHERE ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "actor":
+					sql+="Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+						"Inner join actores as a on pa.idpersona=a.idpersona" +
+						"ORDER BY p.rating DESC";
+					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
+					break;
+				case "director":
+					sql+="Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+						"Inner join directores as d on pd.idpersona=d.idpersona "+
+						"ORDER BY p.rating DESC";
+					cond+= "d.fullnombre LIKE "+"'"+conditions.get("director")+"'";
+					break;
+				case "guionista":
+					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+						 "Inner join guionistas as g on pg.idpersona=g.idpersona " +
+							"ORDER BY p.rating DESC";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionistas")+"'";
+					break;
+				/**case "genero":
+					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+					break;**/
+			}
+			if(k.hasMoreElements()) {
+				cond+=" AND ";
+			}
+		}
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+	
+	
+	/**@Override
 	public List<Peliculas> selectRankingWhereActor(String name) {
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p " +
@@ -241,7 +287,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		return filmList;
 		
-	}
+	}**/
 	
 	@Override
 	public List<Peliculas> selectPeliculasForAdultos(){
@@ -278,7 +324,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectCalificacionForPelicula(String name){
 		List<Peliculas> calificacionList = new ArrayList<>();
-		String sql = "SELECT calificacion from peliculas where titulo="+"'"+name+"'";
+		String sql = "SELECT * from peliculas where titulo="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();

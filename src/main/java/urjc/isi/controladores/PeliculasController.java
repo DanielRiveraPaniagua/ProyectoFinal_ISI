@@ -98,7 +98,7 @@ public class PeliculasController {
 	y da la posibilidad de elegir por qué filtro quieres ordenarlas
 	*/
 	
-	public static String ranking(Request request, Response response) throws SQLException
+	/**public static String ranking(Request request, Response response) throws SQLException
 	{
 		List<Peliculas> output;
 		
@@ -154,7 +154,46 @@ public class PeliculasController {
 			}
 		}
 		return result;		
-	} 
+	} **/
+	
+	public static String ranking(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		
+		if(request.queryParams("actor")!= null)
+			filter.put("actor",request.queryParams("actor"));
+			result = result + "Peliculas en las que participa " + request.queryParams("actor") + " mejor valoradas" + "<br/><br/>";
+		if(request.queryParams("director")!= null)
+			filter.put("director",request.queryParams("director"));
+			result = result + "Peliculas en las que participa " + request.queryParams("director") + " mejor valoradas" + "<br/><br/>";
+		if(request.queryParams("guionista")!= null)
+			filter.put("guionista",request.queryParams("guionista"));
+			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + " mejor valoradas" + "<br/><br/>";
+		/**if(request.queryParams("genero")!=null)
+			filter.put("duracion", request.queryParams("duracion"));
+			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
+		
+		output = ps.getAllRanking(filter);
+		
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 	
 	//Devuelve peliculas en funcion de la calificacion
 	

@@ -60,6 +60,18 @@ public class PeliculasService {
 		return result;
 	}
 
+	public List<Peliculas> getAllRanking(Dictionary<String,String> conditions) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result;
+		if(!conditions.isEmpty()) {
+			result = pelisDAO.selectByRanking(conditions);
+		}else {
+			result = pelisDAO.selectBest10();
+		}
+		pelisDAO.close();
+		return result;
+	}
+	
 	public List<Peliculas> getBestPeliculas() throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectBest10();
@@ -88,7 +100,7 @@ public class PeliculasService {
 		return result;
 	}
 	
-	public List<Peliculas> getRankingByActor(String name) throws SQLException{
+	/**public List<Peliculas> getRankingByActor(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);
 		pelisDAO.close();
@@ -114,7 +126,7 @@ public class PeliculasService {
 		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(genero);
 		pelisDAO.close();
 		return result;
-	}
+	}**/
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
