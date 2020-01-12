@@ -173,6 +173,24 @@ public class PeliculasController {
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
 		
+		result = "Filtrar por: <br/><br/>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "Actor: <input type=text name=actor size=30>"
+				+ "<button type=submit value=Actor>Actor </button><br/></form>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "Director: <input type=text name=director size=30>"
+				+ "<button type=submit value=Director>Director </button><br/></form>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "Guionista: <input type=text name=guionista size=30>"
+				+ "<button type=submit value=Guionista>Guionista </button><br/></form>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "Género: <input type=text name=genero size=30>"
+				+ "<button type=submit value=Género>Género </button><br/></form>"
+				+ "<br/>"
+				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+				+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
+				+ "</form>";
+		
 		output = ps.getAllRanking(filter);
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
