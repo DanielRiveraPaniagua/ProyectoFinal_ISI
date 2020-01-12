@@ -334,9 +334,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		String cond = "WHERE";
 		cond += "titulo="+"'"+name+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
-			//ResultSet rs = pstmt.executeQuery();
+			ResultSet rs = pstmt.executeQuery();
 			c.commit();
-			
+			while(rs.next()){
+				calificacion.add(fromResultSet(rs));
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
