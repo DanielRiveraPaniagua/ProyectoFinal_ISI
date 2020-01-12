@@ -270,6 +270,44 @@ public class PeliculasController {
 		return result;
 	}*/
 
+		public static String calificacion(Request request, Response response) throws SQLException {
+		
+		List<Peliculas> output;
+		
+		String result = + "Pelicula: <input type=text name=pelicula size=30>"
+						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
+						+ "<br/>"
+						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
+						+ "<br/><br/>";
+		
+		
+		if(request.queryParams("peliculas") != null) {
+			output = ps.getCalificacionForPelicula(request.queryParams("peliculas"));
+			//result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
+		} else {
+			output = null;
+		}
+		if (output != null) {
+			if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+				response.type("application/json");
+				JsonObject json = new JsonObject();
+				json.addProperty("status", "SUCCESS");
+				json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+				JsonArray array = new JsonArray();
+				for(int i = 0; i < output.size(); i++) {
+					array.add(output.get(i).toJSONObject());
+				}
+				json.add("output", array);
+				result = json.toString();
+			} else {
+				for(int i = 0; i < output.size(); i++) {
+				    result = result + output.get(i).toHTMLString() +"</br>";
+				}
+			}
+		}
+		return result;
+	}
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
 	 */
@@ -279,7 +317,7 @@ public class PeliculasController {
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::ranking);
-		//get("/calificacion", PeliculasController::calificacion);
+		get("/calificacion", PeliculasController::calificacion);
 	}
 
 }
