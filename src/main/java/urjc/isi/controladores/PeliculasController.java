@@ -283,8 +283,8 @@ public class PeliculasController {
 						+ "<br/><br/>";
 		
 		
-		if(request.queryParams("peliculas") != null) {
-			output = ps.getCalificacionForPelicula(request.queryParams("peliculas"));
+		if(request.queryParams("pelicula") != null) {
+			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
 			//result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
 		} else {
 			output = null;
