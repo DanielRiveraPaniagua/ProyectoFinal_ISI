@@ -161,18 +161,6 @@ public class PeliculasController {
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
 		
-		if(request.queryParams("actor")!= null)
-			filter.put("actor",request.queryParams("actor"));
-		if(request.queryParams("director")!= null)
-			filter.put("director",request.queryParams("director"));
-			//result = "Peliculas en las que participa " + request.queryParams("director") + " mejor valoradas" + "<br/><br/>";
-		if(request.queryParams("guionista")!= null)
-			filter.put("guionista",request.queryParams("guionista"));
-			//result = "Peliculas en las que participa " + request.queryParams("guionista") + " mejor valoradas" + "<br/><br/>";
-		/**if(request.queryParams("genero")!=null)
-			filter.put("duracion", request.queryParams("duracion"));
-			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
-		
 		result = "Filtrar por: <br/><br/>"
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "Actor: <input type=text name=actor size=30>"
@@ -190,6 +178,19 @@ public class PeliculasController {
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 				+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
 				+ "</form>";
+		
+		if(request.queryParams("actor")!= null)
+			filter.put("actor",request.queryParams("actor"));
+		if(request.queryParams("director")!= null)
+			filter.put("director",request.queryParams("director"));
+			result = result + "Peliculas en las que participa " + request.queryParams("director") + " mejor valoradas" + "<br/><br/>";
+		if(request.queryParams("guionista")!= null)
+			filter.put("guionista",request.queryParams("guionista"));
+			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + " mejor valoradas" + "<br/><br/>";
+		/**if(request.queryParams("genero")!=null)
+			filter.put("duracion", request.queryParams("duracion"));
+			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
+		
 		
 		output = ps.getAllRanking(filter);
 		

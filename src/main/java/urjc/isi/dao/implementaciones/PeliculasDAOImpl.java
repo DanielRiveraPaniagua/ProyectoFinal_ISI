@@ -137,7 +137,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "guionista":
 					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
-					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionistas")+"'";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
 				case "duracion":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
@@ -197,7 +197,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "guionista":
 					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
-					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionistas")+"'";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
 				/**case "genero":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
