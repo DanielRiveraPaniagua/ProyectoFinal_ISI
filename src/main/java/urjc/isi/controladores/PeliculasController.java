@@ -274,7 +274,8 @@ public class PeliculasController {
 		
 		List<Peliculas> output;
 		
-		String result = + "Pelicula: <input type=text name=pelicula size=30>"
+		String result =	"<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
+						+ "Pelicula: <input type=text name=pelicula size=30>"
 						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
 						+ "<br/>"
 						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
