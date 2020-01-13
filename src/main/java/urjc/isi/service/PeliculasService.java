@@ -60,58 +60,22 @@ public class PeliculasService {
 		return result;
 	}
 
-	public List<Peliculas> getBestPeliculas() throws SQLException{
+	public List<Peliculas> getAllRanking(Dictionary<String,String> conditions) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectBest10();
+		List<Peliculas> result;
+		if(!conditions.isEmpty()) {
+			result = pelisDAO.selectByRanking(conditions);
+		}else {
+			result = pelisDAO.selectByRanking();
+		}
 		pelisDAO.close();
 		return result;
 	}
 	
-	public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectPeliculasForAdultos();
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getAllPeliculasForNinos() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectPeliculasForNinos();
-		pelisDAO.close();
-		return result;
-	}
 	
 	public List<Peliculas> getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectCalificacionForPelicula(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByActor(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByDirector(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereDirector(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByGuionista(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereGuionista(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByGenero(String genero) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(genero);
 		pelisDAO.close();
 		return result;
 	}
