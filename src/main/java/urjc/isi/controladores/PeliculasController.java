@@ -97,71 +97,8 @@ public class PeliculasController {
 		}
 		return result;
 	}
-
-	/**
-	Método que muestra las 10 mejores peliculas ordenadas por ranking
-	y da la posibilidad de elegir por qué filtro quieres ordenarlas
-	*/
 	
-	/**public static String ranking(Request request, Response response) throws SQLException
-	{
-		List<Peliculas> output;
-		
-		String result = "Filtrar por: <br/><br/>"
-						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "Actor: <input type=text name=actor size=30>"
-						+ "<button type=submit value=Actor>Actor </button><br/></form>"
-						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "Director: <input type=text name=director size=30>"
-						+ "<button type=submit value=Director>Director </button><br/></form>"
-						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "Guionista: <input type=text name=guionista size=30>"
-						+ "<button type=submit value=Guionista>Guionista </button><br/></form>"
-						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "Género: <input type=text name=genero size=30>"
-						+ "<button type=submit value=Género>Género </button><br/></form>"
-						+ "<br/>"
-						+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
-						+ "</form>";
-		
-		if(request.queryParams("actor")!= null) {
-			output = ps.getRankingByActor(request.queryParams("actor"));
-			result = result + "Peliculas en las que participa " + request.queryParams("actor") + "<br/><br/>";
-		} else if(request.queryParams("director")!= null) {
-			output = ps.getRankingByDirector(request.queryParams("director"));
-			result = result + "Peliculas en las que participa " + request.queryParams("director") + "<br/><br/>";
-		} else if(request.queryParams("guionista")!= null) {
-			output = ps.getRankingByGuionista(request.queryParams("guionista"));
-			result = result + "Peliculas en las que participa " + request.queryParams("guionista") + "<br/><br/>";
-		} else if(request.queryParams("genero")!= null) {
-			output = ps.getRankingByGenero(request.queryParams("genero"));
-			result = result + "Peliculas en las que participa " + request.queryParams("genero") + "<br/><br/>";
-		} else {
-			output = ps.getBestPeliculas();
-			result = result + "10 peliculas mejor valoradas" + "<br/><br/>";
-		}
-		
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		} else {	
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;		
-	} **/
-	
-	public static String ranking(Request request, Response response) throws SQLException {
+	public static String selectAllRanking(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
@@ -186,10 +123,13 @@ public class PeliculasController {
 		
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
+			result = "";
 		if(request.queryParams("director")!= null)
 			filter.put("director",request.queryParams("director"));
+			result = "";
 		if(request.queryParams("guionista")!= null)
 			filter.put("guionista",request.queryParams("guionista"));
+			result = "";
 		/**if(request.queryParams("genero")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
@@ -214,60 +154,8 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
-	//Devuelve peliculas en funcion de la calificacion
-	
-/*	public static String calificacion(Request request, Response response) throws SQLException {
-		
-		List<Peliculas> output;
-		
-		String result = "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit name=adultos value=adultos>Adultos </button><br/></form>"
-						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit name=ninos value=ninos>Niños </button><br/></form>"
-						+ "Introduce una pelicula: <br/><br/>"
-						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "Pelicula: <input type=text name=pelicula size=30>"
-						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
-						+ "<br/>"
-						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
-						+ "<br/><br/>";
-		
-		if(request.queryParams("adultos") != null) {
-			output = ps.getAllPeliculasForAdultos();
-			//result = result + "Peliculas para adultos " + "<br/><br/>";
-		} else if(request.queryParams("ninos") != null) {
-			output = ps.getAllPeliculasForNinos();
-			//result = result + "Peliculas para niños " + "<br/><br/>";
-		} else if(request.queryParams("pelicula") != null) {
-			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
-			//result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
-		} else {
-			output = null;
-		}
-		if (output != null) {
-			if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-				response.type("application/json");
-				JsonObject json = new JsonObject();
-				json.addProperty("status", "SUCCESS");
-				json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-				JsonArray array = new JsonArray();
-				for(int i = 0; i < output.size(); i++) {
-					array.add(output.get(i).toJSONObject());
-				}
-				json.add("output", array);
-				result = json.toString();
-			} else {
-				for(int i = 0; i < output.size(); i++) {
-				    result = result + output.get(i).toHTMLString() +"</br>";
-				}
-			}
-		}
-		return result;
-	}*/
 
-		public static String calificacion(Request request, Response response) throws SQLException {
+	public static String calificacion(Request request, Response response) throws SQLException {
 		
 		List<Peliculas> output;
 		
@@ -314,7 +202,7 @@ public class PeliculasController {
 		get("/selectAll", PeliculasController::selectAllPeliculas);
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
-		get("/ranking", PeliculasController::ranking);
+		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
 	}
 
