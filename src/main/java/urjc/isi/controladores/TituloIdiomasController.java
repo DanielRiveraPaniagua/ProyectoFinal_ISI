@@ -36,7 +36,7 @@ public class TituloIdiomasController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/peliculas/upload' method='post' enctype='multipart/form-data'>"
+		return "<form action='/tituloidiomas/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_tituloidiomas_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
