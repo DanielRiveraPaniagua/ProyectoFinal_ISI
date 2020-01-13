@@ -123,10 +123,12 @@ public class PeliculasController {
 		}
 		if(request.queryParams("director")!= null) {
 			filter.put("director",request.queryParams("director"));
+			System.out.println("Aqui no ha entrado: director");
 			result = "";
 		}
 		if(request.queryParams("guionista")!= null) {
 			filter.put("guionista",request.queryParams("guionista"));
+			System.out.println("Aqui no ha entrado: guionista");
 			result = "";
 		}
 		/**if(request.queryParams("genero")!=null)
