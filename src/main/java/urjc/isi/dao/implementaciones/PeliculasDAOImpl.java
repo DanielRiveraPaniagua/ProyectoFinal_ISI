@@ -187,35 +187,30 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
-		String cond2 = "ORDER BY ";
+		String cond2 = "ORDER BY p.rating DESC";
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
 					sql+="Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
 						     "Inner join actores as a on pa.idpersona=a.idpersona ";
 					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
-					cond2+="p.rating DESC";
 					break;
 				case "director":
 					sql+="Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
 						"Inner join directores as d on pd.idpersona=d.idpersona ";
 					cond+= "d.fullnombre LIKE "+"'"+conditions.get("director")+"'";
-					cond2+="p.rating DESC";
 					break;
 				case "guionista":
 					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
-					cond2+="p.rating DESC";
 					break;
 				/**case "genero":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;**/
 			}
-			
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
-				cond2+=" AND ";
 			}
 		}
 		
