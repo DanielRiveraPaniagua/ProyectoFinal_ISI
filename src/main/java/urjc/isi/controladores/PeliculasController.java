@@ -104,11 +104,10 @@ public class PeliculasController {
 		
 		result = "Filtrar por: <br/><br/>"
 				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-				+ "Actor: <input type=text name=actor size=30>"
-				+ "Director: <input type=text name=director size=30>"
-				+ "Guionista: <input type=text name=guionista size=30>"
-				+ "Género: <input type=text name=genero size=30>"
-				+ "<br/>"
+				+ "Actor: <input type=text name=actor size=30><br/><br/>"
+				+ "Director: <input type=text name=director size=30><br/><br/>"
+				+ "Guionista: <input type=text name=guionista size=30><br/><br/>"
+				+ "Género: <input type=text name=genero size=30><br/><br/>"
 				+ "<button type=submit>Enviar </button>"
 				+ "</form>";
 		
