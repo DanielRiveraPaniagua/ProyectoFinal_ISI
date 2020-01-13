@@ -31,7 +31,7 @@ public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas> implemen
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table tituloidiomas ( INT id, idpelicula text, titulo text, idioma text, isdefault INT, PRIMARY KEY (id))");
+		statement.executeUpdate("create table tituloidiomas ( id INT, idpelicula text, titulo text, idioma text, isdefault INT, PRIMARY KEY (id))");
 		c.commit();	
 	}
 	@Override
