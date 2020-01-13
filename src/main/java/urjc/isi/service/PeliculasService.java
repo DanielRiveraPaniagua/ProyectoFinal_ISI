@@ -72,28 +72,6 @@ public class PeliculasService {
 		return result;
 	}
 	
-	/**public List<Peliculas> getBestPeliculas() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectBest10();
-		pelisDAO.close();
-		return result;
-	}*/
-	
-
-	
-	/*public List<Peliculas> getAllPeliculasForAdultos() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectPeliculasForAdultos();
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getAllPeliculasForNinos() throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectPeliculasForNinos();
-		pelisDAO.close();
-		return result;
-	}*/
 	
 	public List<Peliculas> getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
@@ -101,34 +79,6 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	
-	/**public List<Peliculas> getRankingByActor(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereActor(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByDirector(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereDirector(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByGuionista(String name) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereGuionista(name);
-		pelisDAO.close();
-		return result;
-	}
-	
-	public List<Peliculas> getRankingByGenero(String genero) throws SQLException{
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectRankingWhereGenero(genero);
-		pelisDAO.close();
-		return result;
-	}**/
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
