@@ -133,8 +133,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					break;
 				case "titulo":
 					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					break;
 				case "year":
 					cond+= "p.año = "+"'"+conditions.get("year")+"'";
+					break;
+					
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
