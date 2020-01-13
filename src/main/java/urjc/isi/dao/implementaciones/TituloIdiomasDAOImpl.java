@@ -42,7 +42,7 @@ public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas> implemen
 	}
   @Override
   public void insert(TituloIdiomas entity) {
-  	String sql = "INSERT INTO tituloidiomas(id, idpeliculas, titulo, idioma, isdefault) VALUES(?)";
+  	String sql = "INSERT INTO tituloidiomas(id, idpeliculas, titulo, idioma, isdefault) VALUES(?, ?, ?, ?, ?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
   		pstmt.setInt(1, entity.getId());
