@@ -116,18 +116,16 @@ public class PeliculasController {
 				+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
 				+ "</form>";
 		
-		if(request.queryParams("actor")!= null) {
+		if(request.queryParams("actor")!= null && !request.queryParams("actor").equals("")) {
 			filter.put("actor",request.queryParams("actor"));
 			result = "";
 		}
-		if(request.queryParams("director")!= null) {
-			if(!request.queryParams("director").equals("")) {
-				filter.put("director",request.queryParams("director"));
-				System.out.println("Director: " + request.queryParams("director"));
-				result = "";
-			}	
+		if(request.queryParams("director")!= null && !request.queryParams("director").equals("")) {
+			filter.put("director",request.queryParams("director"));
+			System.out.println("Director: " + request.queryParams("director"));
+			result = "";
 		}
-		if(request.queryParams("guionista")!= null) {
+		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {	
 			filter.put("guionista",request.queryParams("guionista"));
 			System.out.println("Guionista: " + request.queryParams("guionista"));
 			result = "";

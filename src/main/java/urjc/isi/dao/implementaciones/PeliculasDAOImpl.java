@@ -212,11 +212,17 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;**/
 			}
+			
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
 				cond2+=" AND ";
 			}
 		}
+		
+		System.out.println("SQL:\n" + sql);
+		System.out.println("cond1:\n" + cond);
+		System.out.println("cond2:\n" + cond2);
+		
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond+cond2)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
