@@ -166,7 +166,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 	
 	@Override
-	public List<Peliculas> selectBest10(){
+	public List<Peliculas> selectByRanking(){
 		List<Peliculas> bestList = new ArrayList<>();
 		String sql = "SELECT * from peliculas ORDER BY rating DESC LIMIT 10";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {

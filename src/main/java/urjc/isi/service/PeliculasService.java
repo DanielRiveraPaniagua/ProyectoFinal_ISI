@@ -66,7 +66,7 @@ public class PeliculasService {
 		if(!conditions.isEmpty()) {
 			result = pelisDAO.selectByRanking(conditions);
 		}else {
-			result = pelisDAO.selectBest10();
+			result = pelisDAO.selectByRanking();
 		}
 		pelisDAO.close();
 		return result;

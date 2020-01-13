@@ -16,7 +16,7 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	
 	//Ranking
 	public List<Peliculas>selectByRanking(Dictionary<String,String> conditions);
-	public List<Peliculas> selectBest10();
+	public List<Peliculas> selectByRanking();
 		
 	/**public List<Peliculas> selectRankingWhereActor(String name);
 	public List<Peliculas> selectRankingWhereDirector(String name);
