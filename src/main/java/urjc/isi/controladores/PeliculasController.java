@@ -121,9 +121,11 @@ public class PeliculasController {
 			result = "";
 		}
 		if(request.queryParams("director")!= null) {
-			filter.put("director",request.queryParams("director"));
-			System.out.println("Director: " + request.queryParams("director"));
-			result = "";
+			if(!request.queryParams("director").equals("")) {
+				filter.put("director",request.queryParams("director"));
+				System.out.println("Director: " + request.queryParams("director"));
+				result = "";
+			}	
 		}
 		if(request.queryParams("guionista")!= null) {
 			filter.put("guionista",request.queryParams("guionista"));
