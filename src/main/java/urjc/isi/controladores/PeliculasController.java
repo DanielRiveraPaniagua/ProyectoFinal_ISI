@@ -75,8 +75,7 @@ public class PeliculasController {
 			filter.put("adultos", request.queryParams("adultos"));
 		if(request.queryParams("ninos")!=null)
 			filter.put("ninos", request.queryParams("ninos"));
-		
-		
+			
 		output = ps.getAllPeliculas(filter);
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -123,12 +122,12 @@ public class PeliculasController {
 		}
 		if(request.queryParams("director")!= null) {
 			filter.put("director",request.queryParams("director"));
-			System.out.println("Aqui no ha entrado: director");
+			System.out.println("Director: " + request.queryParams("director"));
 			result = "";
 		}
 		if(request.queryParams("guionista")!= null) {
 			filter.put("guionista",request.queryParams("guionista"));
-			System.out.println("Aqui no ha entrado: guionista");
+			System.out.println("Guionista: " + request.queryParams("guionista"));
 			result = "";
 		}
 		/**if(request.queryParams("genero")!=null)
