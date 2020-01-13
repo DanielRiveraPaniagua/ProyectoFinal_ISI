@@ -192,7 +192,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			switch(k.nextElement()) {
 				case "actor":
 					sql+="Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
-						"Inner join actores as a on pa.idpersona=a.idpersona";
+						     "Inner join actores as a on pa.idpersona=a.idpersona ";
 					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
 					cond2+="p.rating DESC";
 					break;
