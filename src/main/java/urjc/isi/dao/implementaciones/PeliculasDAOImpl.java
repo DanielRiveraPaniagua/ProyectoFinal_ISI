@@ -131,6 +131,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "duracion":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
+				case "titulo":
+					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
