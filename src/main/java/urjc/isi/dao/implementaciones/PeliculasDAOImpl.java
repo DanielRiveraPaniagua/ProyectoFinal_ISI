@@ -143,7 +143,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
 				case "adultos":
-					cond+= "calificacion::INTEGER = 1";
+					if("=no" != null){
+						cond+= "calificacion::INTEGER = 0";
+					}
 					break;
 				/*case "ninos":
 					cond+= "calificacion::INTEGER = 0";
