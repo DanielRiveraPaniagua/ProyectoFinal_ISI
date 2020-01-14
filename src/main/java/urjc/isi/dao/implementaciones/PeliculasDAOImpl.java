@@ -143,11 +143,14 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
 				case "adultos":
-					cond+= "calificacion::INTEGER = 1";
+					if(conditions.get("adultos").equals("si"))
+						cond+= "calificacion::INTEGER = 1";
+					if(conditions.get("adultos").equals("no"))
+						cond+= "calificacion::INTEGER = 0";
 					break;
-				case "ninos":
+				/*case "ninos":
 					cond+= "calificacion::INTEGER = 0";
-					break;
+					break;*/
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
@@ -213,11 +216,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				cond+=" AND ";
 			}
 		}
-		
-		System.out.println("SQL:\n" + sql);
-		System.out.println("cond1:\n" + cond);
-		System.out.println("cond2:\n" + cond2);
-		
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond+cond2)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
@@ -231,19 +229,21 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 	
 	@Override
-	public List<Peliculas> selectCalificacionForPelicula(String name){
-		List<Peliculas> calificacion = new ArrayList<>();
-		String sql = "SELECT calificacion from peliculas";
-		String cond = "WHERE";
-		cond += "titulo="+"'"+name+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+	public String selectCalificacionForPelicula(String name){
+		String calificacion = "";
+		List<Peliculas> calificacionList = new ArrayList<>();
+		String sql = "SELECT * from peliculas WHERE titulo = '" + name + "'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
-				calificacion.add(fromResultSet(rs));
+				calificacionList.add(fromResultSet(rs));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
+		}
+		if (!calificacionList.isEmpty()) {
+			calificacion = Integer.toString(calificacionList.get(0).getCalificacion());
 		}
 		
 		return calificacion;

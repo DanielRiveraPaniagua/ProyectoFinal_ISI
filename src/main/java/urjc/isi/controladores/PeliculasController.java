@@ -71,10 +71,11 @@ public class PeliculasController {
 			filter.put("guionista",request.queryParams("guionista"));
 		if(request.queryParams("duracion")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
-		if(request.queryParams("adultos")!=null)
-			filter.put("adultos", request.queryParams("adultos"));
-		if(request.queryParams("ninos")!=null)
-			filter.put("ninos", request.queryParams("ninos"));
+		if(request.queryParams("adultos")!=null && request.queryParams("adultos").equals("si"))
+			if(request.queryParams("adultos").equals("si") || request.queryParams("adultos").equals("no"))
+				filter.put("adultos", request.queryParams("adultos"));
+	//	if(request.queryParams("ninos")!=null)
+		//	filter.put("ninos", request.queryParams("ninos"));
 			
 		output = ps.getAllPeliculas(filter);
 		
@@ -117,12 +118,10 @@ public class PeliculasController {
 		}
 		if(request.queryParams("director")!= null && !request.queryParams("director").equals("")) {
 			filter.put("director",request.queryParams("director"));
-			System.out.println("Director: " + request.queryParams("director"));
 			result = "";
 		}
 		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {	
 			filter.put("guionista",request.queryParams("guionista"));
-			System.out.println("Guionista: " + request.queryParams("guionista"));
 			result = "";
 		}
 		/**if(request.queryParams("genero")!=null)
@@ -152,39 +151,29 @@ public class PeliculasController {
 
 	public static String calificacion(Request request, Response response) throws SQLException {
 		
-		List<Peliculas> output;
-		
+		String output;
 		String result =	"<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "Pelicula: <input type=text name=pelicula size=30>"
-						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
-						+ "<br/>"
-						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
-						+ "<br/><br/>";
-		
-		
+						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
+
 		if(request.queryParams("pelicula") != null) {
 			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
-			//result = result + "La calificacion de la pelicula es:" + "<br/><br/>";
+			result = "";
 		} else {
-			output = null;
+			output = "";
 		}
-		if (output != null) {
+		if (!output.equals("")) {
 			if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 				response.type("application/json");
 				JsonObject json = new JsonObject();
 				json.addProperty("status", "SUCCESS");
 				json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-				JsonArray array = new JsonArray();
-				for(int i = 0; i < output.size(); i++) {
-					array.add(output.get(i).toJSONObject());
-				}
-				json.add("output", array);
+				json.addProperty("Titulo", request.queryParams("pelicula"));
+				json.addProperty("Calificacion", output);
+				json.add("output", json);
 				result = json.toString();
 			} else {
-				for(int i = 0; i < output.size(); i++) {
-				    result = result + output.get(i).toHTMLString() +"</br>";
-				}
+				result = result + request.queryParams("pelicula") + ": " +  output +"</br>";
 			}
 		}
 		return result;
