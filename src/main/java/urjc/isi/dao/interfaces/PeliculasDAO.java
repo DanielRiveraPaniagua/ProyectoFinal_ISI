@@ -14,12 +14,10 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en genericDAO
 	
-	//Ranking
-	public List<Peliculas>selectByRanking(Dictionary<String,String> conditions);
+	// Ranking
+	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions);
 	public List<Peliculas> selectByRanking();
-		
-	//devuelve la calificacion dada una pelicula
-	public List<Peliculas> selectCalificacionForPelicula(String name);
-
+	// Calificacion
+	public String selectCalificacionForPelicula(String name);
 
 }

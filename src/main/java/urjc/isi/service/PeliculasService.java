@@ -73,9 +73,9 @@ public class PeliculasService {
 	}
 	
 	
-	public List<Peliculas> getCalificacionForPelicula(String name) throws SQLException{
+	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectCalificacionForPelicula(name);
+		String result = pelisDAO.selectCalificacionForPelicula(name);
 		pelisDAO.close();
 		return result;
 	}
