@@ -148,9 +148,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					if(conditions.get("adultos").equals("no"))
 						cond+= "calificacion::INTEGER = 0";
 					break;
-				/*case "ninos":
-					cond+= "calificacion::INTEGER = 0";
-					break;*/
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
@@ -184,7 +181,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return bestList;
 	}
 	
-
 	@Override
 	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();

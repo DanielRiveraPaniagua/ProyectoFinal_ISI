@@ -71,11 +71,9 @@ public class PeliculasController {
 			filter.put("guionista",request.queryParams("guionista"));
 		if(request.queryParams("duracion")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
-		if(request.queryParams("adultos")!=null && request.queryParams("adultos").equals("si"))
+		if(request.queryParams("adultos")!=null)
 			if(request.queryParams("adultos").equals("si") || request.queryParams("adultos").equals("no"))
 				filter.put("adultos", request.queryParams("adultos"));
-	//	if(request.queryParams("ninos")!=null)
-		//	filter.put("ninos", request.queryParams("ninos"));
 			
 		output = ps.getAllPeliculas(filter);
 		
@@ -103,32 +101,33 @@ public class PeliculasController {
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
 		
-		result = "Filtrar por: <br/><br/>"
-				+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
-				+ "Actor: <input type=text name=actor size=30><br/><br/>"
-				+ "Director: <input type=text name=director size=30><br/><br/>"
-				+ "Guionista: <input type=text name=guionista size=30><br/><br/>"
-				+ "Género: <input type=text name=genero size=30><br/><br/>"
-				+ "<button type=submit>Enviar </button>"
-				+ "</form>";
+		String form = "Filtrar por: <br/><br/>"
+					+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
+					+ "Actor: <input type=text name=actor size=30><br/><br/>"
+					+ "Director: <input type=text name=director size=30><br/><br/>"
+					+ "Guionista: <input type=text name=guionista size=30><br/><br/>"
+					+ "Género: <input type=text name=genero size=30><br/><br/>"
+					+ "<button type=submit>Enviar </button>"
+					+ "</form>";
 		
 		if(request.queryParams("actor")!= null && !request.queryParams("actor").equals("")) {
 			filter.put("actor",request.queryParams("actor"));
-			result = "";
 		}
 		if(request.queryParams("director")!= null && !request.queryParams("director").equals("")) {
 			filter.put("director",request.queryParams("director"));
-			result = "";
 		}
 		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {	
 			filter.put("guionista",request.queryParams("guionista"));
-			result = "";
 		}
-		/**if(request.queryParams("genero")!=null)
+		/*if(request.queryParams("genero")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
 			
 		output = ps.getAllRanking(filter);
+		
+		if(filter.isEmpty()) {
+			result = result + form;
+		}
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
