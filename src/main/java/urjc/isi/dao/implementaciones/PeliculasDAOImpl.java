@@ -145,9 +145,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "adultos":
 					cond+= "calificacion::INTEGER = 1";
 					break;
-				case "ninos":
+				/*case "ninos":
 					cond+= "calificacion::INTEGER = 0";
-					break;
+					break;*/
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
