@@ -74,7 +74,11 @@ public class PeliculasController {
 		if(request.queryParams("adultos")!=null)
 			if(request.queryParams("adultos").equals("si") || request.queryParams("adultos").equals("no"))
 				filter.put("adultos", request.queryParams("adultos"));
-			
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
+		if(request.queryParams("year")!=null)
+			filter.put("year", request.queryParams("year"));
+
 		output = ps.getAllPeliculas(filter);
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
