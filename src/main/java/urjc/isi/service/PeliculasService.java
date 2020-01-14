@@ -76,18 +76,6 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	
-	/**
-	 * Metodo encargado de procesar peliculas dada una duracion
-	 * @return Lista de peliculas dada una duracion
-	 * @throws SQLException
-	 */
-	public List<Peliculas> getAllPeliculasByDuration(double t1, double t2, String cadena){
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllDuration(t1, t2, cadena);
-		pelisDAO.close();
-		return (result);
-	}
 
 
 	/**

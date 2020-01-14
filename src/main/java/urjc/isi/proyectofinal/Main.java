@@ -22,8 +22,8 @@ public class Main {
 	 * @throws URISyntaxException
 	 */
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-		String result = new String("Film application is in WIP. THANKS!");
-		return result;
+       String result = new String("Film application is in WIP. THANKS!");
+       return result;
     }
 
 	/**

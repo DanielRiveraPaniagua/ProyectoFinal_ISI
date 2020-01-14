@@ -185,29 +185,4 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  }
 	  return filmList;
 	}
-
-	@Override
-	public List<Peliculas> selectAllDuration(double t1, double t2, String cadena) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "";
-	  if (cadena == "mayor") {
-		  sql = "SELECT * from peliculas " + "where duracion>=" + t1 + "ORDER BY duracion ASC";
-	  }else if (cadena == "menor") {
-		  sql = "SELECT * from peliculas " + "where duracion<=" + t1 + "ORDER BY duracion ASC";
-	  }else if (cadena == "igual") {
-		  sql = "SELECT * from peliculas " + "where duracion=" + t1 + "ORDER BY duracion ASC";
-	  }else {
-		  sql = "SELECT * from peliculas " + "where duracion>=" + t1 + " and duracion<=" + t2 + "ORDER BY duracion ASC";
-	  }
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
-	}
 }
