@@ -231,7 +231,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public String selectCalificacionForPelicula(String name){
 		String calificacion = "";
 		List<Peliculas> calificacionList = new ArrayList<>();
-		String sql = "SELECT peliculas.calificacion from peliculas WHERE titulo = '" + name + "'";
+		String sql = "SELECT * from peliculas WHERE titulo = '" + name + "'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
