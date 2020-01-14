@@ -152,15 +152,10 @@ public class PeliculasController {
 	public static String calificacion(Request request, Response response) throws SQLException {
 		
 		String output;
-		
 		String result =	"<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "Pelicula: <input type=text name=pelicula size=30>"
-						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>"
-						+ "<br/>"
-						+ "<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
-						+ "<button type=submit value=VolverAtrás>Volver atrás </button>"
-						+ "<br/><br/>";
-		
+						+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
+
 		if(request.queryParams("pelicula") != null) {
 			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
 			result = "";
@@ -178,7 +173,7 @@ public class PeliculasController {
 				json.add("output", json);
 				result = json.toString();
 			} else {
-				result = result + request.queryParams("pelicula") + output +"</br>";
+				result = result + request.queryParams("pelicula") + ": " +  output +"</br>";
 			}
 		}
 		return result;

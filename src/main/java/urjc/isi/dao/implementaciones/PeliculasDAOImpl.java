@@ -216,8 +216,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				cond+=" AND ";
 			}
 		}
-	
-		
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond+cond2)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
