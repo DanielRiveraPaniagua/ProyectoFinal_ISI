@@ -165,19 +165,20 @@ public class PeliculasController {
 			output = ps.getCalificacionForPelicula(request.queryParams("pelicula"));
 			result = "";
 		} else {
-			output = null;
+			output = "";
 		}
-		if (output != null) {
+		if (!output.equals("")) {
 			if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 				response.type("application/json");
 				JsonObject json = new JsonObject();
 				json.addProperty("status", "SUCCESS");
 				json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+				json.addProperty("Titulo", request.queryParams("pelicula"));
 				json.addProperty("Calificacion", output);
 				json.add("output", json);
 				result = json.toString();
 			} else {
-				result = result + output +"</br>";
+				result = result + request.queryParams("pelicula") + output +"</br>";
 			}
 		}
 		return result;
