@@ -3,7 +3,7 @@ package urjc.isi.controladores;
 import static spark.Spark.*;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -61,50 +61,13 @@ public class PeliculasController {
 	public static String selectAllPeliculas(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
-		String query = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
 		
 		if(request.queryParams("actor")!= null)
-			output = ps.getAllPeliculasByActor(request.queryParams("actor"));
-		else if(request.queryParams("time")!= null) {
-			query = request.queryParams("time");
-			String[] parts = query.split("-");
-			if(parts.length == 2) {
-				String time1 = parts[0];
-				String time2 = parts[1];
-				double t1 = Double.parseDouble(time1);
-				double t2 = Double.parseDouble(time2);
-				if(t1 > t2) {
-					result = "El rango debe ser el primer número menor que el segundo, ejemplo: ?time=118-120" + "<br/>" + result;
-				}
-				output = ps.getAllPeliculasByDuration(t1,t2, "rango");
-			}else {
-				char FirstCaracteres = parts[0].charAt(0);
-				String mayor = ">";
-				String menor = "<";
-				char signomayor = mayor.charAt(0);
-				char signomenor = menor.charAt(0);
-				if (FirstCaracteres == signomayor) {
-					String[] partsmayor = query.split(">");
-					String time1 = partsmayor[1];
-					double t1 = Double.parseDouble(time1);
-					output = ps.getAllPeliculasByDuration(t1,0, "mayor");
-				}else if(FirstCaracteres == signomenor) {
-					String[] partsmenor = query.split("<");
-					String time1 = partsmenor[1];
-					double t1 = Double.parseDouble(time1);
-					output = ps.getAllPeliculasByDuration(t1,0, "menor");
-				}else {
-					double t1 = Double.parseDouble(query);
-					output = ps.getAllPeliculasByDuration(t1,0, "igual");
-				}
-			}
-		}else  {
-			output = ps.getAllPeliculas();
-			//result = "Lista completa de películas -" + request.queryParams().size() + "<br/>" + result;
-      if (request.queryParams().size() != 0) {
-        response.redirect("/peliculas/selectAll");
-      } 
-		}
+			filter.put("actor",request.queryParams("actor"));
+		if(request.queryParams("duracion")!=null)
+			filter.put("duracion", request.queryParams("duracion"));
+		output = ps.getAllPeliculas(filter);
 		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");

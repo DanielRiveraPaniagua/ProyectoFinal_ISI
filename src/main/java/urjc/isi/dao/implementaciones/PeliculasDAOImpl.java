@@ -25,6 +25,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
 		peli.setDuracion(Double.valueOf(rs.getString("duracion")));
+		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
 		peli.setRating(Double.valueOf(rs.getString("rating")));
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
 		return peli;
@@ -33,7 +34,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, rating Decimal(4,2), nvotos INT, PRIMARY KEY (idpelicula))");
+		statement.executeUpdate("create table peliculas (idpelicula text, titulo text,"
+				+ " año text, duracion text, calificacion INT, rating Decimal(4,2),"
+				+ " nvotos INT, PRIMARY KEY (idpelicula))");
 		c.commit();	
 	}
   
@@ -46,15 +49,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
   
 	@Override
 	public void insert(Peliculas entity) {
-	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,rating,nvotos) VALUES(?,?,?,?,?,?)";
+	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
 	
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
 	      	pstmt.setDouble(4, entity.getDuracion());
-	      	pstmt.setDouble(5, entity.getRating());
-	      	pstmt.setInt(6, entity.getNVotos());
+	      	pstmt.setInt(5, entity.getCalificacion());
+	      	pstmt.setDouble(6, entity.getRating());
+	      	pstmt.setInt(7, entity.getNVotos());
 	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
@@ -71,22 +75,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	    }
 	}
   
-	@Override
-	public List<Peliculas> selectAll(){
-		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				filmList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return filmList;
-	}
-	
 	@Override
 	public Peliculas selectByID (String idpelicula){
 		String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
@@ -111,24 +99,53 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 	}
-  
+	
 	@Override
-	public List<Peliculas> selectAllWhereActor(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " +
-			  "Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join actores as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
+	public List<Peliculas> selectAll(){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+	
+	@Override
+	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p ";
+		String cond = "WHERE ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "actor":
+					sql+="Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+					     "Inner join actores as a on pa.idpersona=a.idpersona ";
+					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
+					break;
+				case "duracion":
+					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+					break;
+			}
+			if(k.hasMoreElements()) {
+				cond+=" AND ";
+			}
+		}
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
 	}
 	
 	@Override
