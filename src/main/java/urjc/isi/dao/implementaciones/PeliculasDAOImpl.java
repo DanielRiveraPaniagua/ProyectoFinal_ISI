@@ -24,38 +24,38 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		peli.setIdPelicula(rs.getString("idpelicula"));
 		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
-		peli.setDuracion(Double.valueOf(rs.getString("duracion")));
+		peli.setDuracion(Integer.valueOf(rs.getString("duracion")));
 		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
 		peli.setRating(Double.valueOf(rs.getString("rating")));
 		peli.setNVotos(Integer.valueOf(rs.getString("nvotos")));
 		return peli;
 	}
-  
+
 	@Override
 	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
 		statement.executeUpdate("create table peliculas (idpelicula text, titulo text,"
-				+ " año text, duracion text, calificacion INT, rating Decimal(4,2),"
+				+ " año INT, duracion INT, calificacion INT, rating Decimal(4,2),"
 				+ " nvotos INT, PRIMARY KEY (idpelicula))");
-		c.commit();	
+		c.commit();
 	}
-  
+
 	@Override
 	public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.executeUpdate("drop table if exists peliculas");
 		c.commit();
 	}
-  
+
 	@Override
 	public void insert(Peliculas entity) {
 	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
-	
+
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
-	      	pstmt.setDouble(4, entity.getDuracion());
+	      	pstmt.setInt(4, entity.getDuracion());
 	      	pstmt.setInt(5, entity.getCalificacion());
 	      	pstmt.setDouble(6, entity.getRating());
 	      	pstmt.setInt(7, entity.getNVotos());
@@ -64,7 +64,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  	    System.out.println(e.getMessage());
 	  	}
 	}
-  
+
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
@@ -74,7 +74,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	      c.commit();
 	    }
 	}
-  
+
 	@Override
 	public Peliculas selectByID (String idpelicula){
 		String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
@@ -88,7 +88,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return peli;
 	}
-  
+
 	@Override
 	public void deleteByID(String idpelicula){
 		String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
@@ -99,7 +99,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	@Override
 	public List<Peliculas> selectAll(){
 		List<Peliculas> filmList = new ArrayList<>();
@@ -115,7 +115,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
-	
+
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
@@ -147,7 +147,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
-	
+
 	@Override
 	public List<Peliculas> selectAllWhereDirector(String name) {
 	  List<Peliculas> filmList = new ArrayList<>();
