@@ -58,9 +58,11 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
 	    while ((s = br.readLine()) != null) {
-	      Personas persona = new Personas(s);
-	      insert(persona);
-	      c.commit();	
+	    	if(s.length()>0) {
+		      Personas persona = new Personas(s);
+		      insert(persona);
+		      c.commit();	
+	    	}
 	    }
 	}
 
