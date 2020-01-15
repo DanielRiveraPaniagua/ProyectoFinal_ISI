@@ -216,7 +216,7 @@ public class PeliculasController {
 			result = result+"Lista de actores:</br>";
 			for(int i = 0; i < actores.size(); i++) {
 				result = result + actores.get(i).toHTMLString() +"</br>";
-			//}
+			}
 		return result;
 	}
 
