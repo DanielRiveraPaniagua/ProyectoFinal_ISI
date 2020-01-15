@@ -182,9 +182,15 @@ public class PeliculasController {
 		}
 		return result;
 	}
+	
+	@SuppressWarnings("unchecked")
 	public static String infoPeliculas(Request request, Response response) throws SQLException {
 		Dictionary<String,Object> output;
 		String result = "";
+		
+		if(request.queryParams("titulo")== null){
+			return result;
+		}
 
 		output = ps.fullPeliculasInfo(request.queryParams("titulo"));
 		Peliculas pelicula = (Peliculas)output.get("pelicula");
@@ -192,31 +198,43 @@ public class PeliculasController {
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
 		List<Personas> directores = (List<Personas>)output.get("directores");
 
-		/*if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {*/
-			result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") </br>";
-			result = result + "Dirigida por:</br>";
+			json.add("filmdata", pelicula.toJSONObject());
+			JsonArray jdirectores = new JsonArray();
+			JsonArray jguionistas = new JsonArray();
+			JsonArray jactores = new JsonArray();
 			for(int i = 0; i < directores.size(); i++) {
-				result = result + directores.get(i).toHTMLString() +"</br>";
+				jdirectores.add(directores.get(i).toJSONObject());;
 			}
-			result = result + "Escrita por:</br>";
 			for(int i = 0; i < guionistas.size(); i++) {
-				result = result + guionistas.get(i).toHTMLString() +"</br>";
+				jguionistas.add(guionistas.get(i).toJSONObject());;
 			}
-			result = result+"Lista de actores:</br>";
 			for(int i = 0; i < actores.size(); i++) {
-				result = result + actores.get(i).toHTMLString() +"</br>";
+				jactores.add(actores.get(i).toJSONObject());;
 			}
+			json.add("directores", jdirectores);
+			json.add("guionistas",jguionistas);
+			json.add("actores",jactores);
+			result = json.toString();
+		}else {
+			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
+			result = result + "<b>Dirigida por:</b></br>";
+			for(int i = 0; i < directores.size(); i++) {
+				result = result + "&emsp;" + directores.get(i).toHTMLString() +"</br>";
+			}
+			result = result + "<b>Escrita por:</b></br>";
+			for(int i = 0; i < guionistas.size(); i++) {
+				result = result + "&emsp;" + guionistas.get(i).toHTMLString() +"</br>";
+			}
+			result = result+"<b>Lista de actores:</b></br>";
+			for(int i = 0; i < actores.size(); i++) {
+				result = result + "&emsp;" + actores.get(i).toHTMLString() +"</br>";
+			}
+		}
 		return result;
 	}
 

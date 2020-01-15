@@ -86,40 +86,15 @@ public class PeliculasService {
 		PersonasDAO guioDAO = new GuionistasDAOImpl();
 		PersonasDAO actorDAO = new ActoresDAOImpl();
 		String id = pelisDAO.selectIDByTitle(titulo);
-
-
-		/*Peliculas pelicula;
-		List<Personas> actores;
-		List<Personas> guionistas;
-		List<Personas> directores;*/
-
-		System.out.println(id);
+		
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
-	//	String result ="";
 		if(id.length()>0){
 			result.put("pelicula",(Object)pelisDAO.selectByID(id));
-			//pelicula = pelisDAO.selectByID(id);
 			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
-			//actores = actorDAO.selectByPeliculaID(id);
 			result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
-			//guionistas = guioDAO.selectByPeliculaID(id);
 			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
-			//directores = direcDAO.selectByPeliculaID(id);
-
-			/*result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") </br>";
-			result = result + "Dirigida por:</br>";
-			for(int i = 0; i < directores.size(); i++) {
-				result = result + directores.get(i).toHTMLString() +"</br>";
-			}
-			result = result + "Escrita por:</br>";
-			for(int i = 0; i < guionistas.size(); i++) {
-				result = result + guionistas.get(i).toHTMLString() +"</br>";
-			}
-			result = result+"Lista de actores:</br>";
-			for(int i = 0; i < actores.size(); i++) {
-				result = result + actores.get(i).toHTMLString() +"</br>";
-			}*/
 		}
+		pelisDAO.close();
 		return result;
 	}
 }
