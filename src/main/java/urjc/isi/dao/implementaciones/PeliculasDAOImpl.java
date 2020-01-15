@@ -85,7 +85,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
-			peli = fromResultSet(rs);
+			if(rs.next()){
+				peli = fromResultSet(rs);
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
