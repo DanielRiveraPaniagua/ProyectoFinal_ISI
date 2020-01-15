@@ -35,6 +35,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
+		statement.executeUpdate("create table peliculas (idpelicula text, titulo text, año text, duracion text, calificacion INT,rating double precision, nvotos INT, PRIMARY KEY (idpelicula))");
+		c.commit();	
 		statement.executeUpdate("create table peliculas (idpelicula text, titulo text,"
 				+ " año INT, duracion INT, calificacion INT, rating Decimal(4,2),"
 				+ " nvotos INT, PRIMARY KEY (idpelicula))");
@@ -51,11 +53,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public void insert(Peliculas entity) {
 	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
+	
+	  	String sql = "INSERT INTO peliculas(idpelicula,titulo,año,duracion,calificacion,rating,nvotos) VALUES(?,?,?,?,?,?,?)";
 
 	  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
+	      	pstmt.setDouble(4, entity.getDuracion());
+	      	pstmt.setDouble(5, entity.getCalificacion());
+	      	pstmt.setDouble(6, entity.getRating());
+	      	pstmt.setInt(7, entity.getNVotos());
+	  		pstmt.executeUpdate();
 	      pstmt.setInt(4, entity.getDuracion());
 	      pstmt.setInt(5, entity.getCalificacion());
 	      pstmt.setDouble(6, entity.getRating());
@@ -254,5 +263,21 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 
 		return calificacion;
+	}
+	
+	@Override
+	public List<Peliculas> selectAllByGenero(String genero) {
+	  List<Peliculas> filmList = new ArrayList<>();
+	  String sql = "SELECT p.idpelicula, p.titulo , p.año , p.duracion , p.calificacion ,p.rating, p.nvotos from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where"  + genero; 
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  filmList.add(fromResultSet(rs));
+		  }
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
 	}
 }
