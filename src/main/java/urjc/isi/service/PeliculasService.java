@@ -84,8 +84,8 @@ public class PeliculasService {
 	public String fullPeliculasInfo(String titulo) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		PersonasDAO direcDAO = new DirectoresDAOImpl();
-		PersonasDAO guioDAO = new DirectoresDAOImpl();
-		PersonasDAO actorDAO = new DirectoresDAOImpl();
+		PersonasDAO guioDAO = new GuionistasDAOImpl();
+		PersonasDAO actorDAO = new ActoresDAOImpl();
 		String id = pelisDAO.selectIDByTitle(titulo);
 
 
@@ -111,16 +111,16 @@ public class PeliculasService {
 			directores = direcDAO.selectByPeliculaID(id);
 			System.out.println("guionistas termina");
 
-			result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
-			result = result + "Dirigida por:\n";
+			result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") </br>";
+			result = result + "Dirigida por:</br>";
 			for(int i = 0; i < directores.size(); i++) {
 				result = result + directores.get(i).toHTMLString() +"</br>";
 			}
-			result = result + "Escrita por:\n";
+			result = result + "Escrita por:</br>";
 			for(int i = 0; i < guionistas.size(); i++) {
 				result = result + guionistas.get(i).toHTMLString() +"</br>";
 			}
-			result = result+"Lista de actores:\n";
+			result = result+"Lista de actores:</br>";
 			for(int i = 0; i < actores.size(); i++) {
 				result = result + actores.get(i).toHTMLString() +"</br>";
 			}
