@@ -4,19 +4,25 @@ import static spark.Spark.*;
 
 import java.sql.SQLException;
 import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-
+import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
 
 	private static PeliculasService ps;
+	private static GenerosService gs;
 	private static String adminkey = "1234";
 
 	/**
@@ -24,6 +30,7 @@ public class PeliculasController {
 	 */
 	public PeliculasController() {
 		ps = new PeliculasService();
+		gs = new GenerosService();
 	}
 
 	/**

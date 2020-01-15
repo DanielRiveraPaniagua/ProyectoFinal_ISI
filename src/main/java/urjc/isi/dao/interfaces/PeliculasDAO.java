@@ -20,4 +20,6 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	// Calificacion
 	public String selectCalificacionForPelicula(String name);
 
+	public List<Peliculas> selectAllByGenero(String genero);
+  //Seleccionar peliculas del genero ...
 }
