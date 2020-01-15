@@ -95,6 +95,9 @@ public class PeliculasService {
 			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
 		}
 		pelisDAO.close();
+		direcDAO.close();
+		actorDAO.close();
+		guioDAO.close();
 		return result;
 	}
 }
