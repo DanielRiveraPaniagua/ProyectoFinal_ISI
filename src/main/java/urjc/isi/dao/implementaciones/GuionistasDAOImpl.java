@@ -170,8 +170,8 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	}
 	public List<Personas> selectByPeliculaID(String id){
 		List<Personas> actores = new ArrayList<>();
-		String sql = "SELECT * from guionistas as g"+
-					"Inner join peliculasguionistas as pg on pg.idpersona=g.idpersona"+
+		String sql = "SELECT * from guionistas as g "+
+					"Inner join peliculasguionistas as pg on pg.idpersona=g.idpersona "+
 					"WHERE pg.idpelicula='"+id+"'";
 					System.out.println(sql);
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
