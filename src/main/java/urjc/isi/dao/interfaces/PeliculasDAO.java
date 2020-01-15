@@ -11,9 +11,13 @@ import urjc.isi.entidades.Peliculas;
 
 public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
+	
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en genericDAO
+	
+	// Ranking
+	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions);
+	public List<Peliculas> selectByRanking();
+	// Calificacion
+	public String selectCalificacionForPelicula(String name);
 
-	public List<Peliculas> selectAllWhereDirector(String name);
-
-	public List<Peliculas> selectAllWhereGuionista(String name);
 }

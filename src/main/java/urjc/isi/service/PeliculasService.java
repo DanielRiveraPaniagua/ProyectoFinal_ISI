@@ -43,7 +43,6 @@ public class PeliculasService {
 		return result;
 	}
 
-
 	/**
 	 * Metodo encargado de procesar un selectAll de la tabla Peliculas
 	 * @return Lista de actores de la tabla Peliculas
@@ -61,22 +60,24 @@ public class PeliculasService {
 		return result;
 	}
 
-	/** Procesa todas las peliculas de un director **/
-	public List<Peliculas> getAllPeliculasbyDirector(String name){
+	public List<Peliculas> getAllRanking(Dictionary<String,String> conditions) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereDirector(name);
+		List<Peliculas> result;
+		if(!conditions.isEmpty()) {
+			result = pelisDAO.selectByRanking(conditions);
+		}else {
+			result = pelisDAO.selectByRanking();
+		}
 		pelisDAO.close();
 		return result;
 	}
-
-	/** Procesa todas las peliculas de un guionista **/
-	public List<Peliculas> getAllPeliculasbyGuionista(String name){
+	
+	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result = pelisDAO.selectAllWhereGuionista(name);
+		String result = pelisDAO.selectCalificacionForPelicula(name);
 		pelisDAO.close();
 		return result;
 	}
-
 
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
