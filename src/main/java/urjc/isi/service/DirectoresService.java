@@ -55,5 +55,24 @@ public class DirectoresService {
 		return result;
 	}
 
-
+	public List<Personas> getDirectoresByFechaNac (String fecha) throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerByFechaNac (fecha);
+		directores.close();
+		return result;
+	}
+	
+	public List<Personas> getDirectoresMuertos () throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerMuertas ();
+		directores.close();
+		return result;
+	}
+	
+	public List<Personas> getDirectoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
+		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
+		List<Personas> result = directores.selectPerByIntervaloNac (fechaIn, fechaFin);
+		directores.close();
+		return result;
+	}
 }

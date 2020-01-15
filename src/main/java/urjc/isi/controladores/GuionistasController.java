@@ -79,6 +79,75 @@ public class GuionistasController {
 		return result;
 	}
 	
+	public static String selectGuioByFechaNac (Request request, Response response) throws SQLException {
+		String fecha = request.queryParams ("fecha_nac");
+		List<Personas> output = as.getGuionistasByFechaNac(fecha);
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
+	public static String selectGuioMuertos (Request request, Response response) throws SQLException {
+		List<Personas> output = as.getGuionistasMuertos();
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
+	public static String selectGuioByIntervaloNac (Request request, Response response) throws SQLException {
+		String fechaIn = request.queryParams ("fecha_in");
+		String fechaFin = request.queryParams ("fecha_fin");
+		List<Personas> output = as.getGuionistasByIntervaloNac(fechaIn, fechaFin);
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
 	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /guionistas
@@ -87,6 +156,9 @@ public class GuionistasController {
 		get("/selectAll", GuionistasController::selectAllGuionistas);
 		get("/uploadTable", GuionistasController::uploadTable);
 		post("/upload", GuionistasController::upload);
+		get("/selectGuioByFechaNac", GuionistasController::selectGuioByFechaNac);
+		get("/selectGuioMuertos", GuionistasController::selectGuioMuertos);
+		get("/selectGuioByIntervaloNac", GuionistasController::selectGuioByIntervaloNac);
 	}
 	
 }

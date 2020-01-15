@@ -35,8 +35,8 @@ public class DirectoresController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/Directores/upload' method='post' enctype='multipart/form-data'>"
-			    + "    <input type='file' name='uploaded_Directores_file' accept='.txt'>"
+		return "<form action='/directores/upload' method='post' enctype='multipart/form-data'>" 
+			    + "    <input type='file' name='uploaded_directores_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 
@@ -78,6 +78,75 @@ public class DirectoresController {
 		}
 		return result;
 	}
+	
+	public static String selectDirByFechaNac (Request request, Response response) throws SQLException {
+		String fecha = request.queryParams ("fecha_nac");
+		List<Personas> output = as.getDirectoresByFechaNac(fecha);
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
+	public static String selectDirMuertos (Request request, Response response) throws SQLException {
+		List<Personas> output = as.getDirectoresMuertos();
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+	
+	public static String selectDirByIntervaloNac (Request request, Response response) throws SQLException {
+		String fechaIn = request.queryParams ("fecha_in");
+		String fechaFin = request.queryParams ("fecha_fin");
+		List<Personas> output = as.getDirectoresByIntervaloNac(fechaIn, fechaFin);
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 
 	/**
@@ -87,6 +156,9 @@ public class DirectoresController {
 		get("/selectAll", DirectoresController::selectAllDirectores);
 		get("/uploadTable", DirectoresController::uploadTable);
 		post("/upload", DirectoresController::upload);
+		get("/selectDirByFechaNac", DirectoresController::selectDirByFechaNac);
+		get("/selectDirMuertos", DirectoresController::selectDirMuertos);
+		get("/selectDirByIntervaloNac", DirectoresController::selectDirByIntervaloNac);
 	}
 
 }

@@ -14,8 +14,6 @@ import urjc.isi.dao.implementaciones.PeliculasGuionistasDAOImpl;
 
 public class PeliculasGuionistasService {
 
-	private PeliculasGuionistasDAOImpl peac ;
-
 	/**
 	 * Constructor por defecto
 	 */

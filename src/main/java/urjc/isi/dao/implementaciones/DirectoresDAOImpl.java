@@ -58,9 +58,11 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
 	    while ((s = br.readLine()) != null) {
-	      Personas persona = new Personas(s);
-	      insert(persona);
-	      c.commit();
+	    	if(s.length()>0) {
+		      Personas persona = new Personas(s);
+		      insert(persona);
+		      c.commit();
+	    	}
 	    }
 	}
 
@@ -82,7 +84,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public Personas selectByID(String idpersona) {
-		  String sql = "SELECT * from personas WHERE idpersona=" + idpersona;
+		  String sql = "SELECT * from directores WHERE idpersona=" + idpersona;
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
@@ -96,7 +98,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public void deleteByID(String idpersona) {
-		  String sql = "DELETE from personas WHERE idpersona=" + idpersona;
+		  String sql = "DELETE from directores WHERE idpersona=" + idpersona;
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
 			  c.commit();
@@ -107,7 +109,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public Personas selectByName(String name) {
-		 String sql = "SELECT * from personas WHERE fullnombre=" + name;
+		 String sql = "SELECT * from directores WHERE fullnombre=" + name;
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
@@ -117,5 +119,53 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
+	}
+	
+	@Override
+	public List<Personas> selectPerByFechaNac(String fecha) {
+		 List<Personas> actFechaNac = new ArrayList<>();
+		 String sql = "SELECT * from directores WHERE fnacimiento=" + fecha;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actFechaNac.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actFechaNac;
+	}	
+	
+	@Override
+	public List<Personas> selectPerMuertas() {
+		 List<Personas> dirMuertos = new ArrayList<>();
+		 String sql = "SELECT * from directores WHERE fmuerte < 2020";
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 dirMuertos.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return dirMuertos;
+	}
+	
+	@Override
+	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
+		 List<Personas> dirFechaInter = new ArrayList<>();
+		 String sql = "SELECT * from directores WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
+		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 dirFechaInter.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return dirFechaInter;
 	}
 }
