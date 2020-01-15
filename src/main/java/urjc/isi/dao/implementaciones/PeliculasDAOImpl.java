@@ -16,6 +16,7 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
+
 public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements PeliculasDAO{
 
 	public Peliculas fromResultSet(ResultSet rs) throws  SQLException{
@@ -55,11 +56,10 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
-	      	pstmt.setInt(4, entity.getDuracion());
-	      	pstmt.setInt(5, entity.getCalificacion());
-	      	pstmt.setDouble(6, entity.getRating());
-	      	pstmt.setInt(7, entity.getNVotos());
-	  		pstmt.executeUpdate();
+	      pstmt.setInt(4, entity.getDuracion());
+	      pstmt.setInt(5, entity.getCalificacion());
+	      pstmt.setDouble(6, entity.getRating());
+	      pstmt.setInt(7, entity.getNVotos());	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
@@ -130,8 +130,34 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					     "Inner join actores as a on pa.idpersona=a.idpersona ";
 					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
 					break;
+				case "director":
+					sql+="Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+						 "Inner join directores as d on pd.idpersona=d.idpersona ";
+					cond+= "d.fullnombre LIKE "+"'"+conditions.get("director")+"'";
+					break;
+				case "guionista":
+					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
+					break;
 				case "duracion":
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+					break;
+				case "adultos":
+					if(conditions.get("adultos").equals("si"))
+						cond+= "calificacion::INTEGER = 1";
+					if(conditions.get("adultos").equals("no"))
+						cond+= "calificacion::INTEGER = 0";
+				case "titulo":
+					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					break;
+				case "year":
+					if(conditions.get("year").indexOf("-") == -1) {
+						cond+= "p.año = "+"'"+conditions.get("year")+"'";
+					} else {
+						String[] years = conditions.get("year").split("-");
+						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
+					}
 					break;
 			}
 			if(k.hasMoreElements()) {
@@ -151,40 +177,82 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 
 	@Override
-	public List<Peliculas> selectAllWhereDirector(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from peliculas as p " +
-			  "Inner join peliculasdirectores as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join directores as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
+	public List<Peliculas> selectByRanking(){
+		List<Peliculas> bestList = new ArrayList<>();
+		String sql = "SELECT * from peliculas ORDER BY rating DESC LIMIT 10";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				bestList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return bestList;
 	}
 
 	@Override
-	public List<Peliculas> selectAllWhereGuionista(String name) {
-	  List<Peliculas> filmList = new ArrayList<>();
-	  String sql = "SELECT * from guionistas as p " +
-			  "Inner join peliculasguionistas as pa on p.idpelicula=pa.idpelicula " +
-			  "Inner join guionistas as a on pa.idpersona=a.idpersona "+
-			  "where a.fullnombre="+"'"+name+"'";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  filmList.add(fromResultSet(rs));
-		  }
-	  } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return filmList;
+	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p ";
+		String cond = "WHERE ";
+		String cond2 = "ORDER BY p.rating DESC";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "actor":
+					sql+="Inner join peliculasactores as pa on p.idpelicula=pa.idpelicula " +
+						     "Inner join actores as a on pa.idpersona=a.idpersona ";
+					cond+= "a.fullnombre LIKE "+"'"+conditions.get("actor")+"'";
+					break;
+				case "director":
+					sql+="Inner join peliculasdirectores as pd on p.idpelicula=pd.idpelicula " +
+						"Inner join directores as d on pd.idpersona=d.idpersona ";
+					cond+= "d.fullnombre LIKE "+"'"+conditions.get("director")+"'";
+					break;
+				case "guionista":
+					sql+="Inner join peliculasguionistas as pg on p.idpelicula=pg.idpelicula " +
+						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
+					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
+					break;
+				/**case "genero":
+					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+					break;**/
+			}
+			if(k.hasMoreElements()) {
+				cond+=" AND ";
+			}
+		}
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond+cond2)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+
+	@Override
+	public String selectCalificacionForPelicula(String name){
+		String calificacion = "";
+		List<Peliculas> calificacionList = new ArrayList<>();
+		String sql = "SELECT * from peliculas WHERE titulo = '" + name + "'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				calificacionList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		if (!calificacionList.isEmpty()) {
+			calificacion = Integer.toString(calificacionList.get(0).getCalificacion());
+		}
+
+		return calificacion;
 	}
 }

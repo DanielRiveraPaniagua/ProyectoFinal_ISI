@@ -72,9 +72,10 @@ public class Peliculas {
 		}
 		this.duracion = duracion;
 	}
+
 	public void setCalificacion(int calificacion) {
 		if(calificacion < 0 || calificacion > 1) {
-			throw new InvalidParameter();
+				throw new InvalidParameter();
 		}
 		this.calificacion = calificacion;
 	}
@@ -145,8 +146,8 @@ public class Peliculas {
 	@Override
 	public String toString(){
 		return "Id Película: "+getIdPelicula()+"\tTitulo: " + getTitulo() +
-				" (" + getAño() + ") " + "\tDuracion: "+getDuracion()+ "\tCalificacion: "+
-				getCalificacion()+"\tRating: "+getRating()+"\tNumero de Votos: "+getNVotos();
+				" (" + getAño() + ") " + "\tDuracion: "+getDuracion() + "\tCalificacion: " + getCalificacion() +
+				"\tRating: "+getRating()+"\tNumero de Votos: "+getNVotos();
 	}
 
 	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
