@@ -111,7 +111,7 @@ public class PeliculasService {
 			directores = direcDAO.selectByPeliculaID(id);
 			System.out.println("guionistas termina");
 		}
-		/*result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
+		result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
 		result = result + "Dirigida por:\n";
 		for(int i = 0; i < directores.size(); i++) {
 			result = result + directores.get(i).toHTMLString() +"</br>";
@@ -123,7 +123,7 @@ public class PeliculasService {
 		result = result+"Lista de actores:\n";
 		for(int i = 0; i < actores.size(); i++) {
 			result = result + actores.get(i).toHTMLString() +"</br>";
-		}*/
+		}
 		return result;
 	}
 }
