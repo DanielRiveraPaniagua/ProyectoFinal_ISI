@@ -173,7 +173,6 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		String sql = "SELECT * from actores as a "+
 					"Inner join peliculasactores as pa on pa.idpersona=a.idpersona "+
 					"WHERE pa.idpelicula='"+id+"'";
-					System.out.println(sql);
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();

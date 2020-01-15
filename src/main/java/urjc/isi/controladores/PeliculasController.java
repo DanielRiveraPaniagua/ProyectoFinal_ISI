@@ -187,12 +187,12 @@ public class PeliculasController {
 		String result = "";
 
 		result = ps.fullPeliculasInfo(request.queryParams("titulo"));
-		/*Peliculas pelicula = (Peliculas)output.get("pelicula");
+		Peliculas pelicula = (Peliculas)output.get("pelicula");
 		List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
 		List<Personas> directores = (List<Personas>)output.get("directores");
 
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+		/*if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
@@ -203,20 +203,20 @@ public class PeliculasController {
 			}
 			json.add("output", array);
 			result = json.toString();
-		}else {
-		result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
-		result = result + "Dirigida por:\n";
-		for(int i = 0; i < directores.size(); i++) {
-			result = result + directores.get(i).toHTMLString() +"</br>";
-		}
-		result = result + "Escrita por:\n";
-		for(int i = 0; i < guionistas.size(); i++) {
-			result = result + guionistas.get(i).toHTMLString() +"</br>";
-		}
-		result = result+"Lista de actores:\n";
-		for(int i = 0; i < actores.size(); i++) {
-			result = result + actores.get(i).toHTMLString() +"</br>";
-		}*/
+		}else {*/
+			result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") </br>";
+			result = result + "Dirigida por:</br>";
+			for(int i = 0; i < directores.size(); i++) {
+				result = result + directores.get(i).toHTMLString() +"</br>";
+			}
+			result = result + "Escrita por:</br>";
+			for(int i = 0; i < guionistas.size(); i++) {
+				result = result + guionistas.get(i).toHTMLString() +"</br>";
+			}
+			result = result+"Lista de actores:</br>";
+			for(int i = 0; i < actores.size(); i++) {
+				result = result + actores.get(i).toHTMLString() +"</br>";
+			//}
 		return result;
 	}
 
