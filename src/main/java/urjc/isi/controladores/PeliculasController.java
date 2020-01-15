@@ -230,6 +230,7 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
+		get("/info", PeliculasController::infoPeliculas);
 	}
 
 }
