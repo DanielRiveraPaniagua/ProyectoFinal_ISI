@@ -171,7 +171,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	public List<Personas> selectByPeliculaID(String id){
 		List<Personas> actores = new ArrayList<>();
 		String sql = "SELECT * from actores as a"+
-					"join peliculasactores as pa on pa.idpersona=a.idpersona"+
+					"Inner join peliculasactores as pa on pa.idpersona=a.idpersona"+
 					"WHERE pa.idpelicula='"+id+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();

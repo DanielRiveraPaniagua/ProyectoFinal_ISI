@@ -104,7 +104,7 @@ public class PeliculasService {
 			actores = actorDAO.selectByPeliculaID(id);
 			System.out.println("actores termina");
 			//result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
-			guionistas = direcDAO.selectByPeliculaID(id);
+			guionistas = guioDAO.selectByPeliculaID(id);
 			System.out.println("directores termina");
 			//result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
 			directores = direcDAO.selectByPeliculaID(id);
