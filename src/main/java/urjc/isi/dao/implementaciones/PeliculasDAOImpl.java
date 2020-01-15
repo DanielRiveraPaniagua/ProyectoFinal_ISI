@@ -215,9 +215,10 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-				/**case "genero":
-					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
-					break;**/
+				case "genero":
+					sql+="Inner join peliculasgeneros as pge on p.idpelicula = pge.idpelicula ";
+					cond+= "pge.nombre LIKE "+"'"+conditions.get("genero")+"'";
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
