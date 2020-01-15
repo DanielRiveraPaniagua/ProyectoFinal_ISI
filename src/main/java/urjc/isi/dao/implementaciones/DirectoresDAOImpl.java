@@ -120,7 +120,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return persona;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByFechaNac(String fecha) {
 		 List<Personas> actFechaNac = new ArrayList<>();
@@ -135,8 +135,8 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			 System.out.println(e.getMessage());
 		 }
 		 return actFechaNac;
-	}	
-	
+	}
+
 	@Override
 	public List<Personas> selectPerMuertas() {
 		 List<Personas> dirMuertos = new ArrayList<>();
@@ -152,7 +152,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		 }
 		 return dirMuertos;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
 		 List<Personas> dirFechaInter = new ArrayList<>();
@@ -173,7 +173,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		String sql = "SELECT * from directores as d"+
 					"join peliculasdirectores as pd on pd.idpersona=d.idpersona"+
 				    "join peliculas as p on p.idpelicula=pd.idpelicula"+
-					"WHERE idpelicua="+id;
+					"WHERE idpelicua='"+id+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();

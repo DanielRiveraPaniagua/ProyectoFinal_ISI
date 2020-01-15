@@ -94,7 +94,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public void deleteByID(String idpelicula){
-		String sql = "DELETE from peliculas WHERE idpelicula=" + idpelicula;
+		String sql = "DELETE from peliculas WHERE idpelicula='" + idpelicula+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			pstmt.executeUpdate();
 			c.commit();
