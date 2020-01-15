@@ -168,4 +168,21 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		 }
 		 return dirFechaInter;
 	}
+	public List<Personas> selectByPeliculaID(String id){
+		List<Personas> actores = new ArrayList<>();
+		String sql = "SELECT * from directores as d"+
+					"join peliculasdirectores as pd on pd.idpersona=d.idpersona"+
+				    "join peliculas as p on p.idpelicula=pd.idpelicula"+
+					"WHERE idpelicua="+id;
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actores.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actores;
+	}
 }

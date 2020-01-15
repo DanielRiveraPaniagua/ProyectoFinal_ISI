@@ -168,4 +168,21 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		 }
 		 return actFechaInter;
 	}
+	public List<Personas> selectByPeliculaID(String id){
+		List<Personas> actores = new ArrayList<>();
+		String sql = "SELECT * from actores as a"+
+					"join peliculasactores as pa on pa.idpersona=a.idpersona"+
+				    "join peliculas as p on p.idpelicula=pa.idpelicula"+
+					"WHERE idpelicua="+id;
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actores.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actores;
+	}
 }

@@ -12,6 +12,7 @@ import spark.Request;
 import spark.Response;
 
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.entidades.Personas;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -181,6 +182,44 @@ public class PeliculasController {
 		}
 		return result;
 	}
+	public static String infoPeliculas(Request request, Response response) throws SQLException {
+		Dictionary<String,Object> output;
+		String result = "";
+
+		output = ps.fullPeliculasInfo(request.queryParams("titulo"));
+		Peliculas pelicula = (Peliculas)output.get("pelicula");
+		List<Personas> actores = (List<Personas>)output.get("actores");
+		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
+		List<Personas> directores = (List<Personas>)output.get("directores");
+		
+		/*if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {*/
+		result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
+		result = result + "Dirigida por:\n";
+		for(int i = 0; i < directores.size(); i++) {
+			result = result + directores.get(i).toHTMLString() +"</br>";
+		}
+		result = result + "Escrita por:\n";
+		for(int i = 0; i < guionistas.size(); i++) {
+			result = result + guionistas.get(i).toHTMLString() +"</br>";
+		}
+		result = result+"Lista de actores:\n";
+		for(int i = 0; i < actores.size(); i++) {
+			result = result + actores.get(i).toHTMLString() +"</br>";
+		}
+		return result;
+	}
+	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
 	 */

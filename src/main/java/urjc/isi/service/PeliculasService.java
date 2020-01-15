@@ -11,7 +11,9 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
+import urjc.isi.dao.implementaciones.DirectoresDAOImpl;
 import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
+import urjc.isi.dao.interfaces.PersonasDAO;
 import urjc.isi.entidades.*;
 
 public class PeliculasService {
@@ -79,12 +81,19 @@ public class PeliculasService {
 		return result;
 	}
 
-	/**
-	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
-	 * @return Estado de salida
-	 */
-	/*public String crearTablaPeliculas()  throws SQLException{
-			pelisDAO.createTable();
-			return "Tabla creada con exito";
-	}*/
+	public Dictionary<String,Object> fullPeliculasInfo(String titulo) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		PersonasDAO direcDAO = new DirectoresDAOImpl();
+		PersonasDAO guioDAO = new DirectoresDAOImpl();
+		PersonasDAO actorDAO = new DirectoresDAOImpl();
+		String id = pelisDAO.selectIDByTitle(titulo);
+		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		if(id.length()>0){
+			result.put("pelicula",(Object)pelisDAO.selectByID(id));
+			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
+			result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
+			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
+		}
+		return result;
+	}
 }

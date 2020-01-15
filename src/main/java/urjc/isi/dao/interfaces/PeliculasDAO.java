@@ -13,7 +13,7 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
 	
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en genericDAO
-	
+	public String selectIDByTitle (String titulo);
 	// Ranking
 	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions);
 	public List<Peliculas> selectByRanking();

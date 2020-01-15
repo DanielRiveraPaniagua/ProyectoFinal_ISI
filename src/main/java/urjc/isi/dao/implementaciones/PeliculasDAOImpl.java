@@ -56,10 +56,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	  		pstmt.setString(1, entity.getIdPelicula());
 	  		pstmt.setString(2, entity.getTitulo());
 	  		pstmt.setInt(3, entity.getAño());
-	      pstmt.setInt(4, entity.getDuracion());
-	      pstmt.setInt(5, entity.getCalificacion());
-	      pstmt.setDouble(6, entity.getRating());
-	      pstmt.setInt(7, entity.getNVotos());	  		pstmt.executeUpdate();
+	  		pstmt.setInt(4, entity.getDuracion());
+	  		pstmt.setInt(5, entity.getCalificacion());
+	  		pstmt.setDouble(6, entity.getRating());
+	  		pstmt.setInt(7, entity.getNVotos());	  		
+	  		pstmt.executeUpdate();
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
@@ -255,4 +256,19 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
+	
+	@Override
+	public String selectIDByTitle (String titulo){
+		String sql = "SELECT idpelicula from peliculas WHERE titulo=" + titulo;
+		String id="";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			id = rs.getString("idpelicula");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return id;
+	}
+
 }
