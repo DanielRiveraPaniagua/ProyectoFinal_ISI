@@ -80,7 +80,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public Peliculas selectByID (String idpelicula){
-		String sql = "SELECT * from peliculas WHERE idpelicula=" + idpelicula;
+		String sql = "SELECT * from peliculas WHERE idpelicula='" + idpelicula+"'";
 		Peliculas peli = new Peliculas();
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();

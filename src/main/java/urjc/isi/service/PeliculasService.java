@@ -81,20 +81,49 @@ public class PeliculasService {
 		return result;
 	}
 
-	public Dictionary<String,Object> fullPeliculasInfo(String titulo) throws SQLException{
+	public String fullPeliculasInfo(String titulo) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		PersonasDAO direcDAO = new DirectoresDAOImpl();
 		PersonasDAO guioDAO = new DirectoresDAOImpl();
 		PersonasDAO actorDAO = new DirectoresDAOImpl();
 		String id = pelisDAO.selectIDByTitle(titulo);
+
+
+		Peliculas pelicula;
+		List<Personas> actores;
+		List<Personas> guionistas;
+		List<Personas> directores;
+
 		System.out.println(id);
-		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		//Dictionary<String,Object> result = new Hashtable<String,Object>();
+		String result ="";
 		if(id.length()>0){
-			result.put("pelicula",(Object)pelisDAO.selectByID(id));
-			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
-			result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
-			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
+			//result.put("pelicula",(Object)pelisDAO.selectByID(id));
+			pelicula = pelisDAO.selectByID(id);
+			System.out.println("peliculas llega");
+			//result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
+			actores = actorDAO.selectByPeliculaID(id);
+			System.out.println("actores termina");
+			//result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
+			guionistas = direcDAO.selectByPeliculaID(id);
+			System.out.println("directores termina");
+			//result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
+			directores = direcDAO.selectByPeliculaID(id);
+			System.out.println("guionistas termina");
 		}
+		/*result = "Información de:" + pelicula.getTitulo() + " (" + pelicula.getAño()+") \n";
+		result = result + "Dirigida por:\n";
+		for(int i = 0; i < directores.size(); i++) {
+			result = result + directores.get(i).toHTMLString() +"</br>";
+		}
+		result = result + "Escrita por:\n";
+		for(int i = 0; i < guionistas.size(); i++) {
+			result = result + guionistas.get(i).toHTMLString() +"</br>";
+		}
+		result = result+"Lista de actores:\n";
+		for(int i = 0; i < actores.size(); i++) {
+			result = result + actores.get(i).toHTMLString() +"</br>";
+		}*/
 		return result;
 	}
 }
