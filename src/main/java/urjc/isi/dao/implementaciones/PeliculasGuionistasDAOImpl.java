@@ -37,9 +37,11 @@ public class PeliculasGuionistasDAOImpl extends RelacionesDAOImpl<Relaciones>{
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
 		while ((s = br.readLine()) != null) {
-			Relaciones pp = new Relaciones(s);
-			insert(pp);
-			c.commit();
+			if(s.length()>0) {
+				Relaciones pp = new Relaciones(s);
+				insert(pp);
+				c.commit();
+			}
 		}
 	}
 }
