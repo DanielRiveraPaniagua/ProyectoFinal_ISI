@@ -187,12 +187,12 @@ public class PeliculasController {
 		String result = "";
 
 		String result = ps.fullPeliculasInfo(request.queryParams("titulo"));
-		Peliculas pelicula = (Peliculas)output.get("pelicula");
+		/*Peliculas pelicula = (Peliculas)output.get("pelicula");
 		List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
 		List<Personas> directores = (List<Personas>)output.get("directores");
 
-		/*if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
