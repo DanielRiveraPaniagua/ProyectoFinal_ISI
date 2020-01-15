@@ -11,9 +11,8 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.DirectoresDAOImpl;
-import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
-import urjc.isi.dao.interfaces.PersonasDAO;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.dao.interfaces.*;
 import urjc.isi.entidades.*;
 
 public class PeliculasService {
