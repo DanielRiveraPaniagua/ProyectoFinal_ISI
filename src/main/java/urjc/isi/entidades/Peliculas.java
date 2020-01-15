@@ -68,9 +68,11 @@ public class Peliculas {
 
 	public void setDuracion(int duracion){
 		if(duracion > 0){
+			this.duracion = duracion;
+		}else{
 			throw new InvalidParameter();
 		}
-		this.duracion = duracion;
+
 	}
 
 	public void setCalificacion(int calificacion) {
