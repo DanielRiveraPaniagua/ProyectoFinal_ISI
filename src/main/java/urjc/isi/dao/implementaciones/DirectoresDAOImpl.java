@@ -172,8 +172,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		List<Personas> actores = new ArrayList<>();
 		String sql = "SELECT * from directores as d"+
 					"join peliculasdirectores as pd on pd.idpersona=d.idpersona"+
-				    "join peliculas as p on p.idpelicula=pd.idpelicula"+
-					"WHERE idpelicua='"+id+"'";
+					"WHERE pd.idpelicula='"+id+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
