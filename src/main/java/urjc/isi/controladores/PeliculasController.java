@@ -186,7 +186,7 @@ public class PeliculasController {
 		Dictionary<String,Object> output;
 		String result = "";
 
-		result = ps.fullPeliculasInfo(request.queryParams("titulo"));
+		output = ps.fullPeliculasInfo(request.queryParams("titulo"));
 		Peliculas pelicula = (Peliculas)output.get("pelicula");
 		List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
