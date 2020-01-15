@@ -87,6 +87,7 @@ public class PeliculasService {
 		PersonasDAO guioDAO = new DirectoresDAOImpl();
 		PersonasDAO actorDAO = new DirectoresDAOImpl();
 		String id = pelisDAO.selectIDByTitle(titulo);
+		System.out.println(id);
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
 			result.put("pelicula",(Object)pelisDAO.selectByID(id));
