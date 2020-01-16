@@ -76,24 +76,26 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   }
   @Override
   public Generos selectByID (String idgenero){
-	  return null;
+	  String sql = "SELECT * from generos WHERE nombre='" + idgenero +"'";
+	  Generos genero = new Generos();
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  if(rs.next())
+			  genero = fromResultSet(rs);
+      } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return genero;
   }
   @Override
   public void deleteByID(String idgenero){
-	  ;
+	  String sql = "DELETE from generos WHERE nombre='" + idgenero +"'";
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
+		  pstmt.executeUpdate();
+		  c.commit();
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
   }
-  
-  @Override
-	public Generos selectByName(String nombre) {
-		 String sql = "SELECT * from generos WHERE nombre=" + nombre;
-		  Generos genero = new Generos();
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
-			  c.commit();
-			  genero = fromResultSet(rs);
-	      } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return genero;
-	}
 }

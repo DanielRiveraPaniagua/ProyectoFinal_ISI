@@ -84,12 +84,13 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public Personas selectByID(String idpersona) {
-		  String sql = "SELECT * from guionistas WHERE idpersona=" + idpersona;
+		  String sql = "SELECT * from guionistas WHERE idpersona='" + idpersona+"'";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
+			  if(rs.next())
+				  persona = fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
@@ -98,7 +99,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public void deleteByID(String idpersona) {
-		  String sql = "DELETE from guionistas WHERE idpersona=" + idpersona;
+		  String sql = "DELETE from guionistas WHERE idpersona='" + idpersona+"'";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
 			  c.commit();
@@ -109,12 +110,13 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public Personas selectByName(String name) {
-		 String sql = "SELECT * from guionistas WHERE fullnombre=" + name;
+		 String sql = "SELECT * from guionistas WHERE fullnombre='" + name+"'";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
+			  if(rs.next())
+				  persona = fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
