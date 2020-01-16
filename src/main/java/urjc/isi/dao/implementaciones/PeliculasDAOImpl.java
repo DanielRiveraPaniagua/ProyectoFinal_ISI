@@ -152,7 +152,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "idioma":
-					sql+="left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = \"" + conditions.get("idioma") + "\" ";
+					sql+="left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = '" + conditions.get("idioma") + "' ";
 					cond+= "1 = 1";
 					break;
 			}
