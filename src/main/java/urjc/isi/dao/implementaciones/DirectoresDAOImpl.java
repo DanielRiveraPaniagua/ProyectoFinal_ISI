@@ -140,7 +140,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	@Override
 	public List<Personas> selectPerMuertas() {
 		 List<Personas> dirMuertos = new ArrayList<>();
-		 String sql = "SELECT * from directores WHERE fmuerte < "2020"";
+		 String sql = "SELECT * from directores WHERE fmuerte < '2020'";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
