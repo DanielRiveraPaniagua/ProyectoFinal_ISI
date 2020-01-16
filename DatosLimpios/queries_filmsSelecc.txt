@@ -1,11 +1,11 @@
 * Obtengo directores.txt *
-select DISTINCT d.* from peliculas p
-inner join relacion_directores_peliculas r on r.field1 = p.field1
-inner join directores d on r.field2 = d.field1
+select DISTINCT g.nconst, g.primaryName, g.birthYear, g.deathYear from peliculas p
+inner join title t on t.tconst = p.field1
+inner join name g on t.directors = g.nconst
 
 * Obtengo relacion_directores_peliculas.txt *
-select DISTINCT r.* from peliculas p
-inner join relacion_directores_peliculas r on r.field1 = p.field1
+select DISTINCT t.tconst, t.directors from peliculas p
+inner join title t on t.tconst = p.field1
 
 * Obtengo guionistas.txt * 
 select DISTINCT g.nconst, g.primaryName, g.birthYear, g.deathYear from peliculas p
