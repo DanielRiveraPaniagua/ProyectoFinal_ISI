@@ -134,7 +134,8 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
+			  if(rs.next())
+				  persona = fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
