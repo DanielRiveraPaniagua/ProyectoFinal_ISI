@@ -4,7 +4,7 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -12,6 +12,7 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
+import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.ActoresService;
 
 public class ActoresController {
@@ -154,7 +155,7 @@ public class ActoresController {
 		String result = "";
 
 		if(request.queryParams("fullnombre")== null){
-			return result;
+			return "";
 		}
 
 		output = as.fullActoresInfo(request.queryParams("fullnombre"));

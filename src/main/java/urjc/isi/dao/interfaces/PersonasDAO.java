@@ -1,7 +1,7 @@
 package urjc.isi.dao.interfaces;
 
 import urjc.isi.entidades.Personas;
-import java.util.List;
+import java.util.*;
 //Con esta interfaz obligamos a que se implmenten
 //ciertos métodos exclusivos de Personas
 public interface PersonasDAO extends GenericDAO<Personas>{

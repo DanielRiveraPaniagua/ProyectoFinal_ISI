@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.ActoresDAOImpl;
-import urjc.isi.entidades.Personas;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.dao.interfaces.*;
+import urjc.isi.entidades.*;
 
 public class ActoresService {
 
@@ -77,17 +78,13 @@ public class ActoresService {
 	}
 
 	public 	Dictionary<String,Object> fullActoresInfo(String name) throws SQLException{
-		// PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
-		// PersonasDAO direcDAO = new DirectoresDAOImpl();
-		PeliculasDAO peliDAO = new PeliculasDAOImpl();
+		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
 		String id = actoresDAO.selectIDByName(name);
 
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
-			//result.put("pelicula",(Object)pelisDAO.selectByID(id));
 			result.put("actor", (Object)actoresDAO.selectByID(id));
-			//result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
 			result.put("peliculas", (Object)peliDAO.selectByActorID(id));
 		}
 		actoresDAO.close();
