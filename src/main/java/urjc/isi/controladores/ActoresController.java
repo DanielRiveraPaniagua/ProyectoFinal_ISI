@@ -170,13 +170,13 @@ public class ActoresController {
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
 			json.add("actordata", actor.toJSONObject());
 			JsonArray jpelis = new JsonArray();
-			for(int i = 0; i < actores.size(); i++) {
+			for(int i = 0; i < pelis.size(); i++) {
 				jpelis.add(pelis.get(i).toJSONObject());;
 			}
 			json.add("peliculas",jpelis);
 			result = json.toString();
 		}else {
-			result = "<b>Información de: " + actor.getFullNombre() + " (" + pelicula.getNacimiento() +"-" + actor.getMuerte() +")</b> </br>";
+			result = "<b>Información de: " + actor.getFullNombre() + " (" + actor.getNacimiento() +"-" + actor.getMuerte() +")</b> </br>";
 			result = result + "<b>Participa en las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
