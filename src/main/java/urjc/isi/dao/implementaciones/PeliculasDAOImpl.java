@@ -23,7 +23,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		Peliculas peli = new Peliculas();
 
 		peli.setIdPelicula(rs.getString("idpelicula"));
-		peli.setTitulo(rs.getString("titulo"));
+		try {
+			peli.setTitulo(rs.getString("titulobueno"));
+		}catch(Exception e) {
+			peli.setTitulo(rs.getString("titulo"));
+		}
 		peli.setAño(Integer.valueOf(rs.getString("año")));
 		peli.setDuracion(Integer.valueOf(rs.getString("duracion")));
 		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
@@ -121,7 +125,13 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p ";
+		String sql = "";
+		if(conditions.get("idioma") != null) {
+			sql = "SELECT * FROM (SELECT p.*, COALESCE(ti.tituloenidioma, p.titulo) as titulobueno from peliculas as p left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = '" + conditions.get("idioma") + "') as p ";
+		}else {
+			sql = "SELECT * from peliculas as p ";
+		}
+		
 		String cond = "WHERE ";
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
@@ -149,7 +159,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					if(conditions.get("adultos").equals("no"))
 						cond+= "calificacion::INTEGER = 0";
 				case "titulo":
-					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					if(conditions.get("idioma") != null) {
+						cond+= "titulobueno like "+"'"+conditions.get("titulo")+"%'";
+					}else {
+						cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					}
+						
 					break;
 				case "year":
 					if(conditions.get("year").indexOf("-") == -1) {
@@ -159,11 +174,15 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
 					break;
+				case "idioma":
+					cond+= "1 = 1";
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
 			}
 		}
+		System.out.println(sql+cond);
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
