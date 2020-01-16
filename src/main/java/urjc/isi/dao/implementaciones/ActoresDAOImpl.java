@@ -154,7 +154,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 
 	@Override
 	public Personas selectByName(String name) {
-		 String sql = "SELECT * from actores WHERE fullnombre=" + name;
+		 String sql = "SELECT * from actores WHERE fullnombre=" + "'" + name + "''";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
