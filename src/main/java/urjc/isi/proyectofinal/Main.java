@@ -25,7 +25,7 @@ public class Main {
        String result = new String("Film application is in WIP. THANKS!");
        return result;
     }
-	
+
 	/**
 	 * Este metodo es un gestor de los endpoints asociados a cada una de las tablas de la base de datos
 	 */
@@ -42,8 +42,24 @@ public class Main {
     		PeliculasActoresController Controller = new PeliculasActoresController();
     		Controller.peliculasActoresHandler();
     	});
+		path("directores", () ->{
+			DirectoresController Controller = new DirectoresController();
+			Controller.directoresHandler();
+		});
+		path("guionistas", () ->{
+			GuionistasController Controller = new GuionistasController();
+			Controller.guionistasHandler();
+		});
+		path("peliculasdirectores", () ->{
+			PeliculasDirectoresController Controller = new PeliculasDirectoresController();
+			Controller.peliculasDirectoresHandler();
+		});
+		path("peliculasguionistas", () ->{
+			PeliculasGuionistasController Controller = new PeliculasGuionistasController();
+			Controller.peliculasGuionistasHandler();
+		});
     }
-    
+
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);

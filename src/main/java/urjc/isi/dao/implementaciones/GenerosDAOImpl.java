@@ -51,9 +51,11 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   public void uploadTable(BufferedReader br) throws IOException, SQLException {
     String s;
     while ((s = br.readLine()) != null) {
-      Generos genero = new Generos(s);
-      insert(genero);
-      c.commit();
+    	if(s.length()>0) {
+	      Generos genero = new Generos(s);
+	      insert(genero);
+	      c.commit();
+    	}
     }
   }
   

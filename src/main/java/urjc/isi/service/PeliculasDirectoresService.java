@@ -10,25 +10,25 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.PeliculasActoresDAOImpl;
+import urjc.isi.dao.implementaciones.PeliculasDirectoresDAOImpl;
 
-public class PeliculasActoresService {
+public class PeliculasDirectoresService {
 
 	/**
 	 * Constructor por defecto
 	 */
-	public PeliculasActoresService() {}
-	
+	public PeliculasDirectoresService() {}
+
 	/**
-	 * Metodo encargado de procesar la subida de los registros de la tabla PeliculasActores
+	 * Metodo encargado de procesar la subida de los registros de la tabla PeliculasDirectores
 	 * @param req
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
-		PeliculasActoresDAOImpl peac = new PeliculasActoresDAOImpl();
+		PeliculasDirectoresDAOImpl peac = new PeliculasDirectoresDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_peliculasactores_file").getInputStream()) {
+		try (InputStream input = req.raw().getPart("uploaded_peliculasdirectores_file").getInputStream()) {
 		    peac.dropTable();
 		    peac.createTable();
 			InputStreamReader isr = new InputStreamReader(input);

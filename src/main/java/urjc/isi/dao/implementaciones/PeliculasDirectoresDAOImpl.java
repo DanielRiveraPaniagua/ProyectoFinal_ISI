@@ -7,23 +7,23 @@ import urjc.isi.entidades.Relaciones;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class PeliculasActoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
+public class PeliculasDirectoresDAOImpl extends RelacionesDAOImpl<Relaciones>{
 
   	@Override
   	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table peliculasactores (idpelicula text, idpersona text, PRIMARY KEY (idpelicula,idpersona))");
+		statement.executeUpdate("create table peliculasdirectores (idpelicula text, idpersona text, PRIMARY KEY (idpelicula,idpersona))");
 		c.commit();
   	}
   	@Override
   	public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
-		statement.executeUpdate("drop table if exists peliculasactores");
+		statement.executeUpdate("drop table if exists peliculasdirectores");
 		c.commit();
   	}
   	@Override
   	public void insert(Relaciones entity) {
-	  String sql = "INSERT INTO peliculasactores(idpelicula,idpersona) VALUES(?,?)";
+	  String sql = "INSERT INTO peliculasdirectores(idpelicula,idpersona) VALUES(?,?)";
 
   		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
   			pstmt.setString(1, entity.getIdtabla1()); //Peliculas
