@@ -217,19 +217,7 @@ public class PeliculasController {
 	public static String filmsByGenero(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
-		String genero =request.queryString();
-
-		String[] fields = genero.split("&");
-		String[] t1 = fields[0].split("=");
-		String generos =" pg.genero='" + t1[1] + "'";
-		for (int i = 1; i < fields.length; ++i)
-		{
-		    String[] t = fields[i].split("=");
-		    if (2 == t.length)
-		    {
-		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
-		    }
-		}
+		String generos =request.queryString();
 
 
 		output = ps.getAllPeliculasByGenero(generos);
