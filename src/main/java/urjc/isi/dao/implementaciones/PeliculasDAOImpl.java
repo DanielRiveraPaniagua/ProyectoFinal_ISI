@@ -23,12 +23,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		peli.setIdPelicula(rs.getString("idpelicula"));
 		try {
-			String tituloenidioma = rs.getString("tituloenidioma");
-			if(tituloenidioma != null) {
-				peli.setTitulo(rs.getString("tituloenidioma")); 
-			}else{
-				peli.setTitulo(rs.getString("titulo"));
-			}
+			peli.setTitulo(rs.getString("titulobueno"));
 		}catch(Exception e) {
 			peli.setTitulo(rs.getString("titulo"));
 		}
@@ -128,7 +123,13 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p ";
+		String sql = "";
+		if(conditions.get("idioma") != null) {
+			sql = "SELECT *, IFNULL(ti.tituloenidioma, p.titulo) as titulobueno from peliculas as p ";
+		}else {
+			sql = "SELECT * from peliculas as p ";
+		}
+		
 		String cond = "WHERE ";
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
@@ -141,7 +142,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
 					break;
 				case "titulo":
-					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					if(conditions.get("idioma") != null) {
+						cond+= "titulobueno like "+"'"+conditions.get("titulo")+"%'";
+					}else {
+						cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					}
+						
 					break;
 				case "year":
 					if(conditions.get("year").indexOf("-") == -1) {
