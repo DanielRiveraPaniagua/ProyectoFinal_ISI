@@ -125,7 +125,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "";
 		if(conditions.get("idioma") != null) {
-			sql = "SELECT *, COALESCE(ti.tituloenidioma, p.titulo) as titulobueno from peliculas as p ";
+			sql = "SELECT *, COALESCE(ti.tituloenidioma, p.titulo) as 'titulobueno' from peliculas as p ";
 		}else {
 			sql = "SELECT * from peliculas as p ";
 		}
