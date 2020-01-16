@@ -94,6 +94,24 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return peli;
 	}
 
+	// Este método podria ser un generico para personas
+	public List<Peliculas> selectByActorID(String id){
+		List<Peliculas> pelis = new ArrayList<>();
+		String sql = "SELECT * from peliculas as a "+
+					"Inner join peliculasactores as pa on pa.idpelicula=a.idpelicula "+
+					"WHERE pa.idpersona='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 pelis.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return pelis;
+	}
+
 	@Override
 	public void deleteByID(String idpelicula){
 		String sql = "DELETE from peliculas WHERE idpelicula='" + idpelicula+"'";

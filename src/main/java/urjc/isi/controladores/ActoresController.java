@@ -17,14 +17,14 @@ import urjc.isi.service.ActoresService;
 public class ActoresController {
 	private static ActoresService as;
 	private static String adminkey = "1234";
-	
+
 	/**
 	 * Constructor por defecto
 	 */
 	public ActoresController() {
 		as = new ActoresService();
 	}
-	
+
 	/**
 	 * Maneja las peticiones que llegan al endpoint /actores/uploadTable
 	 * @param request
@@ -35,11 +35,11 @@ public class ActoresController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/actores/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/actores/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_actores_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar las peticiones a /actores/upload
 	 * @param request
@@ -49,7 +49,7 @@ public class ActoresController {
 	public static String upload(Request request, Response response) {
 		return as.uploadTable(request);
 	}
-	
+
 	/**
 	 * Maneja las peticiones al endpoint /actores/selectAll
 	 * @param request
@@ -78,7 +78,7 @@ public class ActoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectActByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
 		List<Personas> output = as.getActoresByFechaNac(fecha);
@@ -101,7 +101,7 @@ public class ActoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectActMuertos (Request request, Response response) throws SQLException {
 		List<Personas> output = as.getActoresMuertos();
 		String result = "";
@@ -123,7 +123,7 @@ public class ActoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectActByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
@@ -147,7 +147,44 @@ public class ActoresController {
 		}
 		return result;
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	public static String infoActores(Request request, Response response) throws SQLException {
+		Dictionary<String,Object> output;
+		String result = "";
+
+		if(request.queryParams("fullnombre")== null){
+			return result;
+		}
+
+		output = as.fullActoresInfo(request.queryParams("fullnombre"));
+		//Peliculas pelicula = (Peliculas)output.get("pelicula");
+		Personas actor = (Personas)output.get("actor");
+		//List<Personas> actores = (List<Personas>)output.get("actores");
+		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			json.add("actordata", actor.toJSONObject());
+			JsonArray jpelis = new JsonArray();
+			for(int i = 0; i < actores.size(); i++) {
+				jpelis.add(pelis.get(i).toJSONObject());;
+			}
+			json.add("peliculas",jpelis);
+			result = json.toString();
+		}else {
+			result = "<b>Información de: " + actor.getFullNombre() + " (" + pelicula.getNacimiento() +"-" + actor.getMuerte() +")</b> </br>";
+			result = result + "<b>Participa en las películas:</b></br>";
+			for(int i = 0; i < pelis.size(); i++) {
+				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /actores
 	 */
@@ -158,6 +195,7 @@ public class ActoresController {
 		get("/selectActByFechaNac", ActoresController::selectActByFechaNac);
 		get("/selectActMuertos", ActoresController::selectActMuertos);
 		get("/selectActByIntervaloNac", ActoresController::selectActByIntervaloNac);
+		get("/info", ActoresController::infoActores);
 	}
-	
+
 }

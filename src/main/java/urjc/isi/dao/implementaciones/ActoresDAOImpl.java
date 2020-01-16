@@ -66,7 +66,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    }
 	}
 
-	@Override
+	/*@Override
 	public List<Personas> selectAll() {
 		List<Personas> personaslist = new ArrayList<>();
 		  String sql = "SELECT * from actores";
@@ -80,6 +80,52 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 		  return personaslist;
+	}*/
+
+	@Override
+	public List<Actores> selectAll(Dictionary<String,String> conditions){
+		List<Actores> actorList = new ArrayList<>();
+		String sql = "SELECT * from actores as a ";
+		String cond = "WHERE ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "pelicula":
+					sql+="Inner join peliculasactores as pa on a.idpersona=pa.idpersona " +
+					     "Inner join peliculas as p on pa.idpelicula=p.idpelicula ";
+					cond+= "p.titulo LIKE "+"'"+conditions.get("pelicula")+"'";
+					break;
+				case "fNacimiento": //"duracion":
+					cond+= "a.fNacimiento>"+"'"+conditions.get("fnacimiento")+"'";
+					break;
+				case "fMuerte": //"duracion":
+					cond+= "a.fMuerte>"+"'"+conditions.get("fmuerte")+"'";
+					break;
+				/*case "titulo":
+					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					break;
+				case "year":
+					if(conditions.get("year").indexOf("-") == -1) {
+						cond+= "p.año = "+"'"+conditions.get("year")+"'";
+					} else {
+						String[] years = conditions.get("year").split("-");
+						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
+					}
+					break;*/
+			}
+			if(k.hasMoreElements()) {
+				cond+=" AND ";
+			}
+		}
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				actorList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
 	}
 
 	@Override
@@ -183,5 +229,21 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			 System.out.println(e.getMessage());
 		 }
 		 return actores;
+	}
+
+	@Override
+	public String selectIDByName (String name){
+		String sql = "SELECT idpersona from actores WHERE fullnombre= '" + name+"'";
+		String id="";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			if(rs.next()){
+				id = rs.getString("idpersona");
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return id;
 	}
 }
