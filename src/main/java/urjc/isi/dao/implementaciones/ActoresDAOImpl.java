@@ -13,7 +13,7 @@ import urjc.isi.dao.interfaces.PersonasDAO;
 import urjc.isi.entidades.Personas;
 
 public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {
-	
+
 	public Personas fromResultSet(ResultSet rs) throws  SQLException{
 		Personas persona = new Personas();
 
@@ -23,7 +23,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		persona.setMuerte(rs.getString("fmuerte"));
 		return persona;
 	}
-	
+
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
@@ -51,9 +51,9 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
-		
+
 	}
-	
+
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
@@ -61,7 +61,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    	if(s.length()>0) {
 		      Personas persona = new Personas(s);
 		      insert(persona);
-		      c.commit();	
+		      c.commit();
 	    	}
 	    }
 	}
@@ -120,11 +120,11 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  }
 		  return persona;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByFechaNac(String fecha) {
 		 List<Personas> actFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento=" + fecha;
+		 String sql = "SELECT * from actores WHERE fnacimiento=" + "'" + "fecha" + "'";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -135,12 +135,12 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			 System.out.println(e.getMessage());
 		 }
 		 return actFechaNac;
-	}	
-	
+	}
+
 	@Override
 	public List<Personas> selectPerMuertas() {
 		 List<Personas> actMuertos = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fmuerte < 2020";
+		 String sql = "SELECT * from actores WHERE fmuerte < "2020"";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -152,11 +152,11 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		 }
 		 return actMuertos;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
 		 List<Personas> actFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
+		 String sql = "SELECT * from actores WHERE fnacimiento>" + "'" + "fechaIn" + "'"+ " AND fnacimiento<" + "'" + "fechaFin" + "'" ;
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
