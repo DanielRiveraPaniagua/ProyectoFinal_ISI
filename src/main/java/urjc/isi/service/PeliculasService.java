@@ -50,11 +50,9 @@ public class PeliculasService {
 	 */
 	public List<Peliculas> getAllPeliculas(Dictionary<String,String> conditions) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		List<Peliculas> result;
+		List<Peliculas> result = null;
 		if(!conditions.isEmpty()) {
 			result = pelisDAO.selectAll(conditions);
-		}else {
-			result = pelisDAO.selectAll();
 		}
 		pelisDAO.close();
 		return result;
