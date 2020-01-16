@@ -22,9 +22,14 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		Peliculas peli = new Peliculas();
 
 		peli.setIdPelicula(rs.getString("idpelicula"));
-		if(rs.getString("tituloenidioma") != null) {
-			peli.setTitulo(rs.getString("tituloenidioma")); 
-		}else{
+		try {
+			String tituloenidioma = rs.getString("tituloenidioma");
+			if(tituloenidioma != null) {
+				peli.setTitulo(rs.getString("tituloenidioma")); 
+			}else{
+				peli.setTitulo(rs.getString("titulo"));
+			}
+		}catch(Exception e) {
 			peli.setTitulo(rs.getString("titulo"));
 		}
 		peli.setAño(Integer.valueOf(rs.getString("año")));
@@ -147,7 +152,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "idioma":
-					sql+="left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = '" + conditions.get("idioma") + "'";
+					sql+="left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = \"" + conditions.get("idioma") + "\"";
+					cond+= "1 = 1";
 					break;
 			}
 			if(k.hasMoreElements()) {
