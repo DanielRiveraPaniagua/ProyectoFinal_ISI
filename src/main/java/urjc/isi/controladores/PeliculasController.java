@@ -25,7 +25,6 @@ public class PeliculasController {
 	 */
 	public PeliculasController() {
 		ps = new PeliculasService();
-		gs = new GenerosService();
 	}
 
 	/**
@@ -183,29 +182,6 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
-	 * Metodo que se encarga de manejar las peticiones a /peliculas/searchByGenero
-	 * @param request
-	 * @param response
-	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
-	 */
-
-	public static String searchByGenero(Request request, Response response) throws SQLException {
-		List<Generos> output = gs.getAllGeneros();
-		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga uno o varios género</strong>";
-		String result = base + "<form action='/peliculas/filmsByGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\" size=\"20\"  multiple>\n";
-		{
-			for(int i = 0; i < output.size(); i++) {
-				String[] tokens= output.get(i).toHTMLString().split("\\s");
-			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
-			}
-		    result = result + "  </select>\n" +
-		    "  <input type=\"submit\" value=\"Filtrar\">"
-		    + "</form>";
-		}
-		return result;
-	}
 
 	/**
 	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
@@ -240,7 +216,6 @@ public class PeliculasController {
 		get("/calificacion", PeliculasController::calificacion);
 
 		//filtrado por género
-		get("/searchByGenero", PeliculasController::searchByGenero);
 		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
