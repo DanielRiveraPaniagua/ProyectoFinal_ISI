@@ -80,7 +80,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  }
 		  return personaslist;
 	}
-
+	/*
 	@Override
 	public List<Personas> selectAll(Dictionary<String,String> conditions){
 		List<Personas> actorList = new ArrayList<>();
@@ -99,7 +99,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 				case "fMuerte": //"duracion":
 					cond+= "a.fMuerte>"+"'"+conditions.get("fmuerte")+"'";
 					break;
-				/*case "titulo":
+				case "titulo":
 					cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
 					break;
 				case "year":
@@ -109,7 +109,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						String[] years = conditions.get("year").split("-");
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
-					break;*/
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
@@ -125,7 +125,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			System.out.println(e.getMessage());
 		}
 		return actorList;
-	}
+	}*/
 
 	@Override
 	public Personas selectByID(String idpersona) {
@@ -228,21 +228,5 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			 System.out.println(e.getMessage());
 		 }
 		 return actores;
-	}
-
-	@Override
-	public String selectIDByName (String name){
-		String sql = "SELECT idpersona from actores WHERE fullnombre= '" + name+"'";
-		String id="";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			if(rs.next()){
-				id = rs.getString("idpersona");
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return id;
 	}
 }

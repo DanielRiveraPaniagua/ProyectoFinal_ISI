@@ -80,7 +80,9 @@ public class ActoresService {
 	public 	Dictionary<String,Object> fullActoresInfo(String name) throws SQLException{
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
 		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
-		String id = actoresDAO.selectIDByName(name);
+		Personas persona = new Personas();
+		persona = actoresDAO.selectByName(name);
+		String id = persona.getId();
 
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
