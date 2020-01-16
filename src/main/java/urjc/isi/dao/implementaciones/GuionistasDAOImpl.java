@@ -120,11 +120,11 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return persona;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByFechaNac(String fecha) {
 		 List<Personas> guioFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from guionistas WHERE fnacimiento=" + fecha;
+		 String sql = "SELECT * from guionistas WHERE fnacimiento=" + "'" + "fecha" + "'";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -135,12 +135,12 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			 System.out.println(e.getMessage());
 		 }
 		 return guioFechaNac;
-	}	
-	
+	}
+
 	@Override
 	public List<Personas> selectPerMuertas() {
 		 List<Personas> guioMuertos = new ArrayList<>();
-		 String sql = "SELECT * from guionistas WHERE fmuerte < 2020";
+		 String sql = "SELECT * from guionistas WHERE fmuerte < "2020"";
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -152,11 +152,11 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		 }
 		 return guioMuertos;
 	}
-	
+
 	@Override
 	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
 		 List<Personas> guioFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from guionistas WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
+		 String sql = "SELECT * from guionistas WHERE fnacimiento>" + "'" + "fechaIn" + "'" + " AND fnacimiento<" + "'" + "fechaFin" + "'" ;
 		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
