@@ -162,7 +162,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
 				case "duracion":
-					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+					if(conditions.get("duracion").indexOf(">")==0) {
+						System.out.println("entra en el if");
+						cond+= "p.duracion>="+"'"+189+"'";
+					}
+					
 					break;
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
@@ -185,6 +189,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				cond+=" AND ";
 			}
 		}
+		System.out.println(sql+cond);
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
