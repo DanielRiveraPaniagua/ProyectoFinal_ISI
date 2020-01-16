@@ -129,13 +129,14 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 
 	@Override
 	public Personas selectByID(String idpersona) {
-		  String sql = "SELECT * from actores WHERE idpersona=" + idpersona;
+		  String sql = "SELECT * from actores WHERE idpersona='" + idpersona+"'";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  if(rs.next())
+			  if(rs.next()) {
 				  persona = fromResultSet(rs);
+			  }
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
@@ -144,7 +145,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 
 	@Override
 	public void deleteByID(String idpersona) {
-		  String sql = "DELETE from actores WHERE idpersona=" + idpersona;
+		  String sql = "DELETE from actores WHERE idpersona='" + idpersona+"'";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
 			  c.commit();
