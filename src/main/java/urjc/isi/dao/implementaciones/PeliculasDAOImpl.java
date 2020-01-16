@@ -171,7 +171,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
 				    }
 				}
-			  String cond = "SELECT p.idpelicula, p.titulo , p.año , p.duracion , p.calificacion ,p.rating, p.nvotos from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where"  + generos;
+			  String cond = "Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where"  + generos;
 					break;
 			}
 			if(k.hasMoreElements()) {
