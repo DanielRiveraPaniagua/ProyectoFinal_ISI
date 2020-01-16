@@ -71,6 +71,18 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
+
+	/**
+	 * Metodo encargado de procesar un la salida de todas la lista con todas las peliculas de un genero
+	 * @return Lista de peliculas con ese genero
+	 * @throws SQLException
+	 */
+	public List<Peliculas> getAllPeliculasByGenero(String genero){
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectAllByGenero(genero);
+		pelisDAO.close();
+		return result;
+	}
 	
 	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();

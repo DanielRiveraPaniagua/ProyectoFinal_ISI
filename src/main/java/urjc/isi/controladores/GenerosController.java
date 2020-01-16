@@ -61,6 +61,7 @@ public class GenerosController {
 	public static String selectAllGeneros(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
 		String result = "";
+		String titulo = "<h1> <em>Todos los géneros existentes</em></h1> <br>";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -77,14 +78,14 @@ public class GenerosController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		return result;
+		return titulo + result;
 	}
 	
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
-		get("/selectAll", GenerosController::selectAllGeneros);
+		get("/selectAllGeneros", GenerosController::selectAllGeneros);
 		get("/uploadTable", GenerosController::uploadTable);
 		post("/upload", GenerosController::upload);
 	}
