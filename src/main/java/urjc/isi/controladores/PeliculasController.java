@@ -18,7 +18,6 @@ import urjc.isi.service.PeliculasService;
 public class PeliculasController {
 
 	private static PeliculasService ps;
-	private static GenerosService gs;
 	private static String adminkey = "1234";
 
 	/**
@@ -65,7 +64,7 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-		
+
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
@@ -83,7 +82,7 @@ public class PeliculasController {
 			filter.put("year", request.queryParams("year"));
 
 		output = ps.getAllPeliculas(filter);
-		
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -102,12 +101,12 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
+
 	public static String selectAllRanking(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-		
+
 		String form = "Filtrar por: <br/><br/>"
 					+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 					+ "Actor: <input type=text name=actor size=30><br/><br/>"
@@ -116,26 +115,26 @@ public class PeliculasController {
 					+ "Género: <input type=text name=genero size=30><br/><br/>"
 					+ "<button type=submit>Enviar </button>"
 					+ "</form>";
-		
+
 		if(request.queryParams("actor")!= null && !request.queryParams("actor").equals("")) {
 			filter.put("actor",request.queryParams("actor"));
 		}
 		if(request.queryParams("director")!= null && !request.queryParams("director").equals("")) {
 			filter.put("director",request.queryParams("director"));
 		}
-		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {	
+		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {
 			filter.put("guionista",request.queryParams("guionista"));
 		}
 		/*if(request.queryParams("genero")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
-			
+
 		output = ps.getAllRanking(filter);
-		
+
 		if(filter.isEmpty()) {
 			result = result + form;
 		}
-		
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -156,7 +155,7 @@ public class PeliculasController {
 	}
 
 	public static String calificacion(Request request, Response response) throws SQLException {
-		
+
 		String output;
 		String result =	"<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "Pelicula: <input type=text name=pelicula size=30>"
@@ -190,8 +189,8 @@ public class PeliculasController {
 	 * @param request
 	 * @param response
 	 * @return Muestra los distintos generos obtenidos en base de datos y envia un formulario con la opcion correcta
-	 */	
-	
+	 */
+
 	public static String searchByGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
 		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga uno o varios género</strong>";
@@ -201,13 +200,13 @@ public class PeliculasController {
 				String[] tokens= output.get(i).toHTMLString().split("\\s");
 			    result = result + "<option value=\"" + tokens[1] + "\">" + tokens[1] + "</option>\n";
 			}
-		    result = result + "  </select>\n" + 
+		    result = result + "  </select>\n" +
 		    "  <input type=\"submit\" value=\"Filtrar\">"
 		    + "</form>";
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
 	 * @param request
@@ -219,7 +218,7 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
 		String genero =request.queryString();
-		
+
 		String[] fields = genero.split("&");
 		String[] t1 = fields[0].split("=");
 		String generos =" pg.genero='" + t1[1] + "'";
@@ -228,19 +227,19 @@ public class PeliculasController {
 		    String[] t = fields[i].split("=");
 		    if (2 == t.length)
 		    {
-		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'"; 
+		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
 		    }
 		}
-		
-		
-		output = ps.getAllPeliculasByGenero(generos); 
-		for(int i = 0; i <output.size(); i++) { 
-			base = base + output.get(i).toHTMLString()+"</br>"; 
+
+
+		output = ps.getAllPeliculasByGenero(generos);
+		for(int i = 0; i <output.size(); i++) {
+			base = base + output.get(i).toHTMLString()+"</br>";
 		}
-		 
+
 		return base;
 	}
-	
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
@@ -251,7 +250,7 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
-		
+
 		//filtrado por género
 		get("/searchByGenero", PeliculasController::searchByGenero);
 		get("/filmsByGenero", PeliculasController::filmsByGenero);
