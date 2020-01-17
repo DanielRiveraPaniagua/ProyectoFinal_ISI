@@ -123,6 +123,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
+		String order = "ORDER BY ";
+		boolean add_order = false;
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
@@ -174,10 +176,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.rating >= " + "'" + rating[0] + "'" + " and " + "p.rating <= "+ "'"+ rating[1] + "'" ;
 					}
 					break;
+				case "mejorpelicula":
+					cond += "p.año = "+"'"+conditions.get("mejorpelicula")+"' ";
+					order += "p.rating DESC LIMIT 1";
+					add_order = true;
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
 			}
+		}
+		if(add_order) {
+			cond += order;
 		}
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
