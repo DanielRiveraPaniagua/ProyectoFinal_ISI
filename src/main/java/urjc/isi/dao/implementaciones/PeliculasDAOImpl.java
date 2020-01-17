@@ -176,8 +176,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "order":
-					ordenar = "order by " + conditions.get("order");
-					cond += "1 = 1";
+					ordenar = " order by " + conditions.get("order");
+					cond += " 1 = 1";
 					break;
 			}
 			if(k.hasMoreElements()) {
