@@ -178,21 +178,33 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
 						cond+= "pg.genero= "+"'"+genero[1]+"'";
 					} else {
-						String[] fields = conditions.get("genero").split("&");
-						for (int i = 1; i < fields.length; ++i)
-						{
-							String[] t1 = fields[i].split("=");
-							generos =" pg.genero='" + t1[1] + "'";
-							if(t1[0] == "genero") {
-							    String[] t = fields[i].split("=");
-							    if (2 == t.length)
-							    {
-							        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
-							    }	
-							}else {
-								continue;
+						String[] fields = conditions.get("genero").split("genero");
+						if(fields.length ==2) {
+							String[] t1 = fields[1].split("=");
+							String[] t2 = t1[1].split("&");
+							generos =" pg.genero='" + t2[0] + "'";
+							
+						}else {
+							for (int i = 1; i < fields.length; ++i) {
+								String[] t1 = fields[i].split("=");
+								if(t1.length == 2) {
+									String[] t2 = t1[1].split("&");
+									if(generos == "") {
+										generos =" pg.genero='" + t2[0] + "'";
+									}else {
+										generos += " AND " + "pg.genero='" + t2[0] + "'";
+									}
+								}else {
+									String[] t2 = t1[1].split("&");
+									if(generos == "") {
+										generos =" pg.genero='" + t2[0] + "'";
+									}else {
+										generos += " AND " + "pg.genero='" + t2[0] + "'";
+									}
+								}
 							}
 						}
+					 
 						sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
 						cond+= generos;
 					}
