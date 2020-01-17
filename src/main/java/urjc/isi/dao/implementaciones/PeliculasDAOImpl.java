@@ -181,6 +181,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					order += "p.rating DESC LIMIT 1";
 					add_order = true;
 					break;
+				case "peorpelicula":
+					cond += "p.año = "+"'"+conditions.get("peorpelicula")+"' ";
+					order += "p.rating ASC LIMIT 1";
+					add_order = true;
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";

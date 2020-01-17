@@ -82,6 +82,8 @@ public class PeliculasController {
 			filter.put("rating", request.queryParams("rating"));
 		if(request.queryParams("mejorpelicula")!=null)
 			filter.put("mejorpelicula", request.queryParams("mejorpelicula"));
+		if(request.queryParams("peorpelicula")!=null)
+			filter.put("peorpelicula", request.queryParams("peorpelicula"));
 
 		output = ps.getAllPeliculas(filter);
 		
