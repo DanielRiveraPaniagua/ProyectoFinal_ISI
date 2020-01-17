@@ -91,7 +91,7 @@ public class GenerosController {
 	public static String searchByGenero(Request request, Response response) throws SQLException {
 		List<Generos> output = gs.getAllGeneros();
 		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br> <strong>Eliga uno o varios género</strong>";
-		String result = base + "<form action='/peliculas/filmsByGenero' method='get' enctype='multipart/form-data'>" + "  <select name=\"item\" size=\"20\"  multiple>\n";
+		String result = base + "<form action='/peliculas/selectAll' method='get' enctype='multipart/form-data'>" + "  <select name=\"genero\" size=\"20\"  multiple>\n";
 		{
 			for(int i = 0; i < output.size(); i++) {
 				String[] tokens= output.get(i).toHTMLString().split("\\s");

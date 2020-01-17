@@ -83,7 +83,7 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	
+
 	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		String result = pelisDAO.selectCalificacionForPelicula(name);

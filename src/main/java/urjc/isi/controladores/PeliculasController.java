@@ -63,7 +63,7 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-
+		System.out.println("muestra");
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
@@ -79,9 +79,9 @@ public class PeliculasController {
 			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
-		if(request.queryParams("genero")!=null)
-			filter.put("genero", request.queryParams("genero"));
-
+		if(request.queryParams("genero")!=null) {
+			return filmsByGenero(request, response);
+		}
 		output = ps.getAllPeliculas(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -192,18 +192,33 @@ public class PeliculasController {
 	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
 	 * @throws SQLException
 	 */
+	
 	public static String filmsByGenero(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
-		String base = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
+		String result = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
 		String generos =request.queryString();
 
 
 		output = ps.getAllPeliculasByGenero(generos);
-		for(int i = 0; i <output.size(); i++) {
-			base = base + output.get(i).toHTMLString()+"</br>";
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+				result = result + output.get(i).toHTMLString() +"</br>";
+			}
 		}
 
-		return base;
+		return result;
 	}
 
 	/**
@@ -217,7 +232,7 @@ public class PeliculasController {
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
 
-		//filtrado por género
+		//filtrado por género se podría prescindir 
 		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
