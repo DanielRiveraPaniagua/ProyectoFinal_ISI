@@ -1,3 +1,5 @@
+package urjc.isi.grafos;
+
 /******************************************************************************
  *  Compilation:  javac ST.java
  *  Execution:    java ST
