@@ -79,6 +79,15 @@ public class PeliculasService {
 		return result;
 	}
 
+	public List<Peliculas> getEsaAdulto(int edad) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		List<Peliculas> result = pelisDAO.selectEsAdulto(edad);
+		pelisDAO.close();
+
+		return result;
+	}
+
+
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
 	 * @return Estado de salida
