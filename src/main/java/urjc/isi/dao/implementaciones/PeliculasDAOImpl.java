@@ -161,7 +161,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					break;
 				case "rating":
 					if(conditions.get("rating").indexOf("<") == 0) {
-						cond+= "p.duracion <= "+"'"+conditions.get("rating").split("<")[1]+"'";
+						cond+= "p.rating <= "+"'"+conditions.get("rating").split("<")[1]+"'";
 						break;
 					}else if(conditions.get("rating").indexOf(">") == 0){
 						cond+= "p.rating >= "+"'"+conditions.get("rating").split(">")[1]+"'";
