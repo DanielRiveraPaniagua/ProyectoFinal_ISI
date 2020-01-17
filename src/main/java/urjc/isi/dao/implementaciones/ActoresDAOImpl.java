@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.*;
 
 import urjc.isi.dao.interfaces.PersonasDAO;
+import urjc.isi.entidades.Generos;
+import urjc.isi.entidades.Peliculas;
 import urjc.isi.entidades.Personas;
 
 public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {
@@ -98,17 +100,26 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						break;
 					case "intervalo_fecha_nac":
-						String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-						cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "a.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
 						break;
 					case "fecha_muer":
 						cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						break;
 					case "intervalo_fecha_muer":
-						String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-						cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "a.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
 						break;
 				}
+				
 				if(k.hasMoreElements()) {
 					cond+=" AND ";
 				}
@@ -150,5 +161,19 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 	}
-
+	
+	@Override
+	public Personas selectByName(String nombre) {
+		 String sql = "SELECT * from actores WHERE nombre=" + nombre;
+		  Personas actor = new Personas();
+		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			  ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  actor = fromResultSet(rs);
+	      } catch (SQLException e) {
+			  System.out.println(e.getMessage());
+		  }
+		  return actor;
+	}
+	
 }
