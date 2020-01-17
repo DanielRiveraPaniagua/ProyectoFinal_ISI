@@ -21,4 +21,5 @@ public interface RelacionesDAO<T>{
 	public void dropTable() throws SQLException;
 	public void insert(T entity);
 	public void uploadTable(BufferedReader br) throws IOException, SQLException;
+
 }

@@ -267,4 +267,32 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
+
+	@Override
+	public List<Peliculas> selectAllByGenero(String genero) {
+	  List<Peliculas> filmList = new ArrayList<>();
+
+		String[] fields = genero.split("&");
+		String[] t1 = fields[0].split("=");
+		String generos =" pg.genero='" + t1[1] + "'";
+		for (int i = 1; i < fields.length; ++i)
+		{
+		    String[] t = fields[i].split("=");
+		    if (2 == t.length)
+		    {
+		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
+		    }
+		}
+	  String sql = "SELECT p.idpelicula, p.titulo , p.año , p.duracion , p.calificacion ,p.rating, p.nvotos from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where"  + generos;
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  filmList.add(fromResultSet(rs));
+		  }
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
+	}
 }
