@@ -82,6 +82,13 @@ public class PeliculasController {
 		if(request.queryParams("genero")!=null) {
 			return filmsByGenero(request, response);
 		}
+		if(request.queryParams("rating")!=null)
+			filter.put("rating", request.queryParams("rating"));
+		if(request.queryParams("mejorpelicula")!=null)
+			filter.put("mejorpelicula", request.queryParams("mejorpelicula"));
+		if(request.queryParams("peorpelicula")!=null)
+			filter.put("peorpelicula", request.queryParams("peorpelicula"));
+
 		output = ps.getAllPeliculas(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {

@@ -123,6 +123,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
+		String order = "ORDER BY ";
+		boolean add_order = false;
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
@@ -171,10 +173,38 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
 					break;
+				case "rating":
+					if(conditions.get("rating").indexOf("<") == 0) {
+						cond+= "p.rating <= "+"'"+conditions.get("rating").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("rating").indexOf(">") == 0){
+						cond+= "p.rating >= "+"'"+conditions.get("rating").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("rating").indexOf("-") == -1) {
+						cond+= "p.rating = "+"'"+conditions.get("rating")+"'";
+					}else {
+						String[] rating = conditions.get("rating").split("-");
+						cond+= "p.rating >= " + "'" + rating[0] + "'" + " and " + "p.rating <= "+ "'"+ rating[1] + "'" ;
+					}
+					break;
+				case "mejorpelicula":
+					cond += "p.año = "+"'"+conditions.get("mejorpelicula")+"' ";
+					order += "p.rating DESC LIMIT 1";
+					add_order = true;
+					break;
+				case "peorpelicula":
+					cond += "p.año = "+"'"+conditions.get("peorpelicula")+"' ";
+					order += "p.rating ASC LIMIT 1";
+					add_order = true;
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
 			}
+		}
+		if(add_order) {
+			cond += order;
 		}
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
