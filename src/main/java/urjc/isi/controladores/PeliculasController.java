@@ -97,7 +97,6 @@ public class PeliculasController {
 			    result = result + output.get(i).toHTMLString() +"</br>";
 			}
 		}
-		//return request.queryParams("duracion") + "<br/>" + filter.get("duracion").indexOf("<") + "<br/>" + result;
 		return result;
 	}
 	
