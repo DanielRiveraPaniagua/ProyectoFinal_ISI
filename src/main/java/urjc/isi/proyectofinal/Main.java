@@ -58,6 +58,11 @@ public class Main {
 			PeliculasGuionistasController Controller = new PeliculasGuionistasController();
 			Controller.peliculasGuionistasHandler();
 		});
+
+		path("tituloidiomas",() -> {
+	    	TituloIdiomasController Controller = new TituloIdiomasController();
+	    	Controller.tituloIdiomasHandler();
+	    });
     }
 
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
