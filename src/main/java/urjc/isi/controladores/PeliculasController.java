@@ -10,8 +10,9 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-
+import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -62,7 +63,7 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-		
+		System.out.println("muestra");
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
@@ -80,9 +81,11 @@ public class PeliculasController {
 			filter.put("year", request.queryParams("year"));
 		if(request.queryParams("idioma")!=null)
 			filter.put("idioma", request.queryParams("idioma"));
-
+		if(request.queryParams("genero")!=null) {
+			return filmsByGenero(request, response);
+		}
 		output = ps.getAllPeliculas(filter);
-		
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -101,12 +104,12 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
+
 	public static String selectAllRanking(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-		
+
 		String form = "Filtrar por: <br/><br/>"
 					+ "<form action='/peliculas/ranking' method='get' enctype='multipart/form-data'>"
 					+ "Actor: <input type=text name=actor size=30><br/><br/>"
@@ -115,26 +118,26 @@ public class PeliculasController {
 					+ "Género: <input type=text name=genero size=30><br/><br/>"
 					+ "<button type=submit>Enviar </button>"
 					+ "</form>";
-		
+
 		if(request.queryParams("actor")!= null && !request.queryParams("actor").equals("")) {
 			filter.put("actor",request.queryParams("actor"));
 		}
 		if(request.queryParams("director")!= null && !request.queryParams("director").equals("")) {
 			filter.put("director",request.queryParams("director"));
 		}
-		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {	
+		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {
 			filter.put("guionista",request.queryParams("guionista"));
 		}
 		/*if(request.queryParams("genero")!=null)
 			filter.put("duracion", request.queryParams("duracion"));
 			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
-			
+
 		output = ps.getAllRanking(filter);
-		
+
 		if(filter.isEmpty()) {
 			result = result + form;
 		}
-		
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -155,7 +158,7 @@ public class PeliculasController {
 	}
 
 	public static String calificacion(Request request, Response response) throws SQLException {
-		
+
 		String output;
 		String result =	"<form action='/peliculas/calificacion' method='get' enctype='multipart/form-data'>"
 						+ "Pelicula: <input type=text name=pelicula size=30>"
@@ -183,8 +186,45 @@ public class PeliculasController {
 		}
 		return result;
 	}
+
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
+	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
+	 * @param request
+	 * @param response
+	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
+	 * @throws SQLException
+	 */
+	
+	public static String filmsByGenero(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		String generos =request.queryString();
+
+
+		output = ps.getAllPeliculasByGenero(generos);
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+				result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
 		//get("/crearTabla", AdminController::crearTablaPeliculas);
@@ -193,6 +233,9 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
+
+		//filtrado por género se podría prescindir 
+		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
 }
