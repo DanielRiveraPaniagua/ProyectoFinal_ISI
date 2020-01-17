@@ -181,6 +181,8 @@ public class PeliculasController {
 		}
 		return result;
 	}
+
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
 	 */
