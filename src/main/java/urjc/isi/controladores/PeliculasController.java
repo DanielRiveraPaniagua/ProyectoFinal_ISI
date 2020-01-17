@@ -79,15 +79,10 @@ public class PeliculasController {
 			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
-		if(request.queryParams("genero")!=null) {
+		if(request.queryParams("genero")!=null) 
 			return filmsByGenero(request, response);
-		}
 		if(request.queryParams("rating")!=null)
 			filter.put("rating", request.queryParams("rating"));
-		if(request.queryParams("mejorpelicula")!=null)
-			filter.put("mejorpelicula", request.queryParams("mejorpelicula"));
-		if(request.queryParams("peorpelicula")!=null)
-			filter.put("peorpelicula", request.queryParams("peorpelicula"));
 
 		output = ps.getAllPeliculas(filter);
 
