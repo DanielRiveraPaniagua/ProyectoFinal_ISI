@@ -1,0 +1,2097 @@
+1	tt0017136	Metropolis	DE
+2	tt0017136	Metropolis	IT
+3	tt0017136	Metropolis	FR
+4	tt0017136	Metrópolis	ES
+5	tt0021749	Les lumières de la ville	FR
+6	tt0021749	Lichter der Großstadt	DE
+7	tt0021749	Luces de la ciudad	ES
+8	tt0021749	Lichter der Großstadt - Eine Komödien-Romance als Pantomime	DE
+9	tt0021749	Luci della città	IT
+10	tt0027977	Les temps modernes	FR
+11	tt0027977	Tempi moderni	IT
+12	tt0027977	Moderne Zeiten	DE
+13	tt0027977	Tiempos modernos	ES
+14	tt0027977	Temps moderns	ES-ca
+15	tt0029583	Schneewittchen und die sieben Zwerge	DE
+16	tt0029583	Blancanieves y los siete enanitos	ES
+17	tt0029583	Blanche Neige et les sept nains	FR
+18	tt0029583	Blanca Neus i els set nans	ES-ca
+19	tt0029583	Biancaneve e i sette nani	IT
+20	tt0031381	Autant en emporte le vent	FR
+21	tt0031381	Vom Winde verweht	DE
+22	tt0031381	Foise co vento	ES-gl
+23	tt0031381	Lo que el viento se llevó	ES
+24	tt0031381	Via col vento	IT
+25	tt0031381	Allò que el vent s'endugué	ES-ca
+26	tt0033467	Citizen Kane	FR
+27	tt0033467	Ciutadà Kane	ES-ca
+28	tt0033467	Citizen Kane	DE
+29	tt0033467	Ciudadano Kane	ES
+30	tt0033467	Quarto potere	IT
+31	tt0034583	Casablanca	ES
+32	tt0034583	Casablanca	ES-ca
+33	tt0034583	Casablanca	FR
+34	tt0034583	Casablanca	IT
+35	tt0038650	Que bonic és viure!	ES-ca
+36	tt0038650	Ist das Leben nicht schön?	DE
+37	tt0038650	La vita è meravigliosa	IT
+38	tt0038650	¡Qué bello es vivir!	ES
+39	tt0038650	La vie est belle	FR
+40	tt0043014	Boulevard du Crépuscule	FR
+41	tt0043014	Boulevard der Dämmerung	DE
+42	tt0043014	El crepúsculo de los dioses	ES
+43	tt0043014	Viale del tramonto	IT
+44	tt0045152	Cantando sotto la pioggia	IT
+45	tt0045152	Tot cantant sota la pluja	ES-ca
+46	tt0045152	Du sollst mein Glücksstern sein	DE
+47	tt0045152	Chantons sous la pluie	FR
+48	tt0045152	Cantando bajo la lluvia	ES
+49	tt0047396	La finestra indiscreta	ES-ca
+50	tt0047396	La finestra sul cortile	IT
+51	tt0047396	Fenêtre sur cour	FR
+52	tt0047396	Das Fenster zum Hof	DE
+53	tt0047396	La ventana indiscreta	ES
+54	tt0047478	Los siete samuráis	ES
+55	tt0047478	Die sieben Samurai	DE
+56	tt0047478	I sette samurai	IT
+57	tt0047478	Les sept samouraïs	FR
+58	tt0050083	Douze hommes en colère	FR
+59	tt0050083	12 hombres sin piedad	ES
+60	tt0050083	Dotze homes sense pietat	ES-ca
+61	tt0050083	Die zwölf Geschworenen	DE
+62	tt0050083	La parola ai giurati	IT
+63	tt0050083	12 hommes en colère	FR
+64	tt0050825	Orizzonti di gloria	IT
+65	tt0050825	Senderos de gloria	ES
+66	tt0050825	Wege zum Ruhm	DE
+67	tt0050825	Les sentiers de la gloire	FR
+68	tt0050825	Camins de glòria	ES-ca
+69	tt0052357	Vertigo - Aus dem Reich der Toten	DE
+70	tt0052357	Sueurs froides	FR
+71	tt0052357	Vértigo (De entre los muertos)	ES
+72	tt0052357	Vertigen	ES-ca
+73	tt0052357	La donna che visse due volte	IT
+74	tt0052618	Ben-Hur	IT
+75	tt0052618	Ben-Hur	FR
+76	tt0052618	Ben-Hur	ES
+77	tt0052618	Ben Hur	DE
+78	tt0053125	Intrigo internazionale	IT
+79	tt0053125	Der unsichtbare Dritte	DE
+80	tt0053125	Con la muerte en los talones	ES
+81	tt0053125	Perseguit per la mort	ES-ca
+82	tt0053125	La mort aux trousses	FR
+83	tt0053291	Ningú no és perfecte	ES-ca
+84	tt0053291	Certains l'aiment chaud	FR
+85	tt0053291	Manche mögen's heiß	DE
+86	tt0053291	Con faldas y a lo loco	ES
+87	tt0053291	A qualcuno piace caldo	IT
+88	tt0054215	Psicosi	ES-ca
+89	tt0054215	Psychose	FR
+90	tt0054215	Psyco	IT
+91	tt0054215	Psicosis	ES
+92	tt0054698	Diamants sur canapé	FR
+93	tt0054698	Colazione da Tiffany	IT
+94	tt0054698	Desayuno con diamantes	ES
+95	tt0054698	Frühstück bei Tiffany	DE
+96	tt0056172	Lawrence d'Arabia	IT
+97	tt0056172	Lawrence de Arabia	ES
+98	tt0056172	Lawrence von Arabien	DE
+99	tt0056172	Lawrence d'Arabie	FR
+100	tt0056172	Lawrence d'Aràbia	ES-ca
+101	tt0056592	Il buio oltre la siepe	IT
+102	tt0056592	Matar a un ruiseñor	ES
+103	tt0056592	Du silence et des ombres...	FR
+104	tt0056592	Wer die Nachtigall stört	DE
+105	tt0057012	Doctor Strangelove	ES-ca
+106	tt0057012	Docteur Folamour, ou: Comment j'ai appris à ne plus m'en faire et à aimer la bombe	FR
+107	tt0057012	Il dottor Stranamore - Ovvero: come ho imparato a non preoccuparmi e ad amare la bomba	IT
+108	tt0057012	Docteur Folamour	FR
+109	tt0057012	Il Dottor Stranamore	IT
+110	tt0057012	¿Teléfono rojo? Volamos hacia Moscú	ES
+111	tt0057012	Il Dottor Stranamore ovvero: come imparai a non preoccuparmi e ad amare la bomba	IT
+112	tt0057012	Dr. Folamour	FR
+113	tt0057012	Dr. Seltsam oder: Wie ich lernte, die Bombe zu lieben	DE
+114	tt0058150	James Bond contra Goldfinger	ES
+115	tt0058150	James Bond 007 - Goldfinger	DE
+116	tt0058150	Goldfinger	FR
+117	tt0058150	Agente 007 - Missione Goldfinger	IT
+118	tt0058150	Goldfinger	ES-ca
+119	tt0058150	007 - Missione Goldfinger	IT
+120	tt0058331	Mary Poppins	ES-ca
+121	tt0058331	Mary Poppins	ES
+122	tt0058331	Mary Poppins	FR
+123	tt0058331	Mary Poppins	IT
+124	tt0058461	Il magnifico straniero	IT
+125	tt0058461	Per un pugno di dollari	IT
+126	tt0058461	Por un puñado de dólares	ES
+127	tt0058461	Für eine Handvoll Dollar	DE
+128	tt0058461	Per un grapat de dòlars	ES-ca
+129	tt0058461	Pour une poignée de dollars	FR
+130	tt0059578	Per qualche dollaro in più	IT
+131	tt0059578	Due stranieri magnifici	IT
+132	tt0059578	La muerte tenía un precio	ES
+133	tt0059578	Für ein paar Dollar mehr	DE
+134	tt0059578	Et pour quelques dollars de plus	FR
+135	tt0061512	Nick mano fredda	IT
+136	tt0061512	Luke la main froide	FR
+137	tt0061512	La leyenda del indomable	ES
+138	tt0061512	Der Unbeugsame	DE
+139	tt0061512	La llegenda de l'indomable	ES-ca
+140	tt0062622	2001, l'odyssée de l'espace	FR
+141	tt0062622	2001: Una odissea de l'espai	ES-ca
+142	tt0062622	2001: Odyssee im Weltraum	DE
+143	tt0062622	2001: Una odisea del espacio	ES
+144	tt0062622	2001: Odissea nello spazio	IT
+145	tt0063442	Il pianeta delle scimmie	IT
+146	tt0063442	El planeta de los simios	ES
+147	tt0063442	La planète des singes	FR
+148	tt0063442	El planeta dels simis	ES-ca
+149	tt0063442	Planet der Affen	DE
+150	tt0063522	La semilla del diablo	ES
+151	tt0063522	Rosemary's Baby - Nastro rosso a New York	IT
+152	tt0063522	Rosemary's Baby	FR
+153	tt0063522	Rosemaries Baby	DE
+154	tt0063522	La llavor del diable	ES-ca
+155	tt0064115	Butch Cassidy und Sundance Kid	DE
+156	tt0064115	Dos hombres y un destino	ES
+157	tt0064115	Butch Cassidy et le Kid	FR
+158	tt0064115	Butch Cassidy	IT
+159	tt0064116	Fins que li va arribar l'hora	ES-ca
+160	tt0064116	C'era una volta il West	IT
+161	tt0064116	Il était une fois dans l'Ouest	FR
+162	tt0064116	Hasta que llegó su hora	ES
+163	tt0064116	Spiel mir das Lied vom Tod	DE
+164	tt0067992	Charlie und die Schokoladenfabrik	DE
+165	tt0067992	Un mundo de fantasía	ES
+166	tt0067992	Willy Wonka & die Schokoladenfabrik	DE
+167	tt0067992	Charlie et la chocolaterie	FR
+168	tt0067992	Willy Wonka e la fabbrica di cioccolato	IT
+169	tt0067992	Willy Wonka au pays enchanté	FR
+170	tt0071315	Chinatown	IT
+171	tt0071315	Chinatown	ES
+172	tt0071315	Chinatown	FR
+173	tt0071853	Die Ritter der Kokosnuß	DE
+174	tt0071853	Monty Python, sacré Graal	FR
+175	tt0071853	Los caballeros de la mesa cuadrada y sus locos seguidores	ES
+176	tt0071853	Monty Python sacré graal!	FR
+177	tt0071853	Monty Python e il Sacro Graal	IT
+178	tt0072890	Un après-midi de chien	FR
+179	tt0072890	Hundstage	DE
+180	tt0072890	Tarda negra	ES-ca
+181	tt0072890	Quel pomeriggio di un giorno da cani	IT
+182	tt0072890	Tarde de perros	ES
+183	tt0073195	Tiburón	ES
+184	tt0073195	Lo squalo	IT
+185	tt0073195	Der weiße Hai	DE
+186	tt0073195	Les dents de la mer	FR
+187	tt0073486	Alguien voló sobre el nido del cuco	ES
+188	tt0073486	Algú va volar sobre el niu del cucut	ES-ca
+189	tt0073486	Qualcuno volò sul nido del cuculo	IT
+190	tt0073486	Einer flog über das Kuckucksnest	DE
+191	tt0073486	Vol au-dessus d'un nid de coucou	FR
+192	tt0074285	Carrie	ES
+193	tt0074285	Carrie au bal du diable	FR
+194	tt0074285	Carrie	FR
+195	tt0074285	Carrie - Lo sguardo di Satana	IT
+196	tt0074285	Carrie: Des Satans jüngste Tochter	DE
+197	tt0075148	Rocky	ES
+198	tt0075148	Rocky	IT
+199	tt0075148	Rocky	FR
+200	tt0075314	Taxi Driver	ES
+201	tt0075314	Taxi Driver	FR
+202	tt0075314	Taxi Driver	IT
+203	tt0075314	Taxi Driver	ES-ca
+204	tt0075686	Der Stadtneurotiker	DE
+205	tt0075686	Annie Hall	FR
+206	tt0075686	Annie Hall	ES
+207	tt0075686	Io e Annie	IT
+208	tt0075686	Io e le donne	IT
+209	tt0075860	Unheimliche Begegnung der dritten Art	DE
+210	tt0075860	Rencontres du troisième type	FR
+211	tt0075860	Incontri ravvicinati del terzo tipo	IT
+212	tt0075860	Encontres a la tercera fase	ES-ca
+213	tt0075860	Encuentros en la tercera fase	ES
+214	tt0076759	La guerra de las galaxias	ES
+215	tt0076759	Star wars: Épisode IV, la guerre des étoiles	FR
+216	tt0076759	La guerre des étoiles	FR
+217	tt0076759	Guerre stellari	IT
+218	tt0076759	Star Wars: Episodio IV - Una nueva esperanza	ES
+219	tt0077631	Grease - Brillantina	IT
+220	tt0077631	Grease	FR
+221	tt0077631	Grease	DE
+222	tt0077651	Halloween - La notte delle streghe	IT
+223	tt0077651	La nuit des masques	FR
+224	tt0077651	Halloween, la nuit des masques	FR
+225	tt0077651	La noche de Halloween	ES
+226	tt0077651	Halloween - Die Nacht des Grauens	DE
+227	tt0078346	Superman: Der Film	DE
+228	tt0078346	Superman	ES
+229	tt0078346	Superman	ES-ca
+230	tt0078346	Superman	FR
+231	tt0078748	Alien, el octavo pasajero	ES
+232	tt0078748	Alien	IT
+233	tt0078748	Alien: Das unheimliche Wesen aus einer fremden Welt	DE
+234	tt0078748	Alien - Le 8ème passager	FR
+235	tt0078748	Alien	ES-ca
+236	tt0078788	Apocalypse Now	FR
+237	tt0078788	Apocalypse Now	IT
+238	tt0078788	Apocalypse Now	DE
+239	tt0078788	Apocalypse Now	ES
+240	tt0079470	Das Leben des Brian	DE
+241	tt0079470	Monty Python: La Vie de Brian	FR
+242	tt0079470	La vida de Brian	ES
+243	tt0079470	Brian di Nazareth	IT
+244	tt0079501	Interceptor	IT
+245	tt0079501	Mad Max - Salvajes de autopista	ES
+246	tt0079501	Mad Max	FR
+247	tt0079817	Rocky II	FR
+248	tt0079817	Rocky II	IT
+249	tt0079817	Rocky II	ES
+250	tt0080339	Y a-t-il un pilote dans l'avion?	FR
+251	tt0080339	¡Aterriza como puedas!	ES
+252	tt0080339	Aterriza como puedas	ES
+253	tt0080339	Die unglaubliche Reise in einem verrückten Flugzeug	DE
+254	tt0080339	L'aereo più pazzo del mondo	IT
+255	tt0080684	Star Wars: Episode V - Das Imperium schlägt zurück	DE
+256	tt0080684	El imperio contraataca	ES
+257	tt0080684	L'empire contre-attaque	FR
+258	tt0080684	L'Impero colpisce ancora	IT
+259	tt0080684	Star Wars: Episodio V - El Imperio contraataca	ES
+260	tt0081398	Toro salvaje	ES
+261	tt0081398	Wie ein wilder Stier	DE
+262	tt0081398	Raging Bull	FR
+263	tt0081398	Toro scatenato	IT
+264	tt0081398	Toro salvatge	ES-ca
+265	tt0082694	Mad Max 2: le défi	FR
+266	tt0082694	Mad Max 2, el guerrero de la carretera	ES
+267	tt0082694	Mad Max 2: Der Vollstrecker	DE
+268	tt0082694	Interceptor - Il guerriero della strada	IT
+269	tt0082971	En busca del arca perdida	ES
+270	tt0082971	Indiana Jones e i predatori dell'arca perduta	IT
+271	tt0082971	Indiana Jones en busca del arca perdida	ES
+272	tt0082971	Arka galduaren bila	ES-eu
+273	tt0082971	Les aventuriers de l'arche perdue	FR
+274	tt0082971	I predatori dell'arca perduta	IT
+275	tt0082971	Jäger des verlorenen Schatzes	DE
+276	tt0082971	A la recerca de l'arca perduda	ES-ca
+277	tt0083658	Blade Runner	ES
+278	tt0083658	Blade Runner	DE
+279	tt0083658	Blade Runner	FR
+280	tt0083658	Blade Runner	IT
+281	tt0083658	Der Blade Runner	DE
+282	tt0083866	E.T. l'extraterrestre	ES-ca
+283	tt0083866	E.T. El extraterrestre	ES
+284	tt0083866	E.T. - L'extra-terrestre	IT
+285	tt0083866	E.T., l'extra-terrestre	FR
+286	tt0083866	E.T. - Der Außerirdische	DE
+287	tt0083944	Acorralado	ES
+288	tt0083944	Rambo	IT
+289	tt0083944	Rambo	FR
+290	tt0083944	Rambo	DE
+291	tt0083944	Rambo I	FR
+292	tt0083944	Rambo: Acorralado	ES
+293	tt0083987	Gandhi	ES
+294	tt0083987	Gandhi	FR
+295	tt0084602	Rocky III: Das Auge des Tigers	DE
+296	tt0084602	Rocky III	ES
+297	tt0084602	Rocky III, l'oeil du tigre	FR
+298	tt0084602	Rocky III	IT
+299	tt0086190	Il ritorno dello Jedi	IT
+300	tt0086190	Star Wars: Episode VI - Die Rückkehr der Jedi-Ritter	DE
+301	tt0086190	Star Wars: Episodio VI - El retorno del Jedi	ES
+302	tt0086190	El retorno del Jedi	ES
+303	tt0086190	Le retour du Jedi	FR
+304	tt0086250	El precio del poder	ES
+305	tt0086250	Scarface - Toni, das Narbengesicht	DE
+306	tt0086250	Scarface	FR
+307	tt0086250	Scarface	IT
+308	tt0086879	Amadeus	DE
+309	tt0086879	Amadeus	ES
+310	tt0086879	Amadeus	FR
+311	tt0086960	Le flic de Beverly Hills	FR
+312	tt0086960	Beverly Hills Cop - Ich lös' den Fall auf jeden Fall	DE
+313	tt0086960	Superdetective en Hollywood	ES
+314	tt0086960	Beverly Hills Cop - Un piedipiatti a Beverly Hills	IT
+315	tt0087363	Gremlins	ES
+316	tt0087363	Gremlins: Kleine Monster	DE
+317	tt0087363	Gremlins	FR
+318	tt0087469	Indiana Jones i el temple maleït	ES-ca
+319	tt0087469	Indiana Jones und der Tempel des Todes	DE
+320	tt0087469	Indiana Jones y el templo maldito	ES
+321	tt0087469	Indiana Jones et le temple maudit	FR
+322	tt0087469	Indiana Jones e il tempio maledetto	IT
+323	tt0087843	C'era una volta in America	IT
+324	tt0087843	Érase una vez en América	ES
+325	tt0087843	Hi havia una vegada a Amèrica	ES-ca
+326	tt0087843	Il était une fois en Amérique	FR
+327	tt0087843	Es war einmal in Amerika	DE
+328	tt0088763	Regreso al futuro	ES
+329	tt0088763	Retorn al futur	ES-ca
+330	tt0088763	Zurück in die Zukunft	DE
+331	tt0088763	Ritorno al futuro	IT
+332	tt0088763	Retour vers le futur	FR
+333	tt0088846	Brazil	FR
+334	tt0088846	Brazil	IT
+335	tt0088846	Brazil	ES
+336	tt0089927	Rocky IV - Der Kampf des Jahrhunderts	DE
+337	tt0089927	Rocky IV	FR
+338	tt0089927	Rocky IV	IT
+339	tt0089927	Rocky IV	ES
+340	tt0090605	Aliens - Le retour	FR
+341	tt0090605	Aliens - Scontro finale	IT
+342	tt0090605	Aliens	ES-ca
+343	tt0090605	Aliens: El regreso	ES
+344	tt0090605	Aliens: Die Rückkehr	DE
+345	tt0090756	Velluto blu	IT
+346	tt0090756	Terciopelo azul	ES
+347	tt0090756	Blue Velvet: Verbotene Blicke	DE
+348	tt0090756	Blue Velvet	FR
+349	tt0091042	Ferris macht blau	DE
+350	tt0091042	La folle journée de Ferris Bueller	FR
+351	tt0091042	Una pazza giornata di vacanza	IT
+352	tt0091042	Todo en un día	ES
+353	tt0091763	Platoon	FR
+354	tt0091763	Platoon	IT
+355	tt0091763	Platoon	ES
+356	tt0092005	Stand by me - Compte sur moi	FR
+357	tt0092005	Stand by Me - Ricordo di un'estate	IT
+358	tt0092005	Stand by Me: Das Geheimnis eines Sommers	DE
+359	tt0092005	Cuenta conmigo	ES
+360	tt0092099	Top Gun: Sie fürchten weder Tod noch Teufel	DE
+361	tt0092099	Top Gun	FR
+362	tt0092099	Top Gun	IT
+363	tt0092099	Top Gun (Ídolos del aire)	ES
+364	tt0092890	Dirty Dancing - Balli proibiti	IT
+365	tt0092890	Dirty Dancing	ES
+366	tt0092890	Dirty Dancing	FR
+367	tt0093058	Full Metal Jacket	DE
+368	tt0093058	Full Metal Jacket	FR
+369	tt0093058	La chaqueta metálica	ES
+370	tt0093058	Full Metal Jacket	IT
+371	tt0093409	Lethal Weapon - Zwei stahlharte Profis	DE
+372	tt0093409	Arma letal	ES
+373	tt0093409	L'arme fatale	FR
+374	tt0093409	Arma letale	IT
+375	tt0093773	Depredador	ES
+376	tt0093773	Predator	IT
+377	tt0093773	Predator	FR
+378	tt0093870	RoboCop	ES
+379	tt0093870	RoboCop - Il futuro della legge	IT
+380	tt0093870	RoboCop	IT
+381	tt0093870	RoboCop	FR
+382	tt0094012	Spaceballs - Mel Brooks' verrückte Raumfahrt	DE
+383	tt0094012	La folle histoire de l'espace	FR
+384	tt0094012	Balle spaziali	IT
+385	tt0094012	La loca historia de las galaxias	ES
+386	tt0094625	Akira	ES
+387	tt0094625	Akira	DE
+388	tt0094625	Akira	FR
+389	tt0094625	Akira	IT
+390	tt0094737	Big	FR
+391	tt0094737	Big	ES
+392	tt0094898	El príncipe de Zamunda: buscando a la mujer ideal	ES
+393	tt0094898	Il principe cerca moglie	IT
+394	tt0094898	Der Prinz aus Zamunda	DE
+395	tt0094898	El príncipe de Zamunda	ES
+396	tt0094898	Un prince à New York	FR
+397	tt0095016	Trappola di cristallo	IT
+398	tt0095016	Stirb langsam	DE
+399	tt0095016	Piège de cristal	FR
+400	tt0095016	Die Hard - Trappola di cristallo	IT
+401	tt0095016	Jungla de cristal	ES
+402	tt0095327	Die letzten Glühwürmchen	DE
+403	tt0095327	La tumba de las luciérnagas	ES
+404	tt0095327	Le tombeau des lucioles	FR
+405	tt0095327	Una tomba per le lucciole	IT
+406	tt0095953	Rain Man	FR
+407	tt0095953	Rain Man - L'uomo della pioggia	IT
+408	tt0095953	Rain Man	ES
+409	tt0096283	Mein Nachbar Totoro	DE
+410	tt0096283	Il mio vicino Totoro	IT
+411	tt0096283	El meu veí Totoro	ES-ca
+412	tt0096283	Mon voisin Totoro	FR
+413	tt0096283	Mi vecino Totoro	ES
+414	tt0096438	Chi ha incastrato Roger Rabbit	IT
+415	tt0096438	Falsches Spiel mit Roger Rabbit	DE
+416	tt0096438	¿Quién engañó a Roger Rabbit?	ES
+417	tt0096438	Qui veut la peau de Roger Rabbit?	FR
+418	tt0096438	Qui ha enredat en Roger Rabbit?	ES-ca
+419	tt0096874	Ritorno al futuro - Parte II	IT
+420	tt0096874	Zurück in die Zukunft II	DE
+421	tt0096874	Retorn al futur 2	ES-ca
+422	tt0096874	Regreso al futuro II	ES
+423	tt0096874	Retour vers le futur 2	FR
+424	tt0096874	Regreso al futuro. Parte II	ES
+425	tt0096895	Batman	ES
+426	tt0096895	Batman	IT
+427	tt0096895	Batman	FR
+428	tt0096895	Batman	ES-ca
+429	tt0097165	Der Club der toten Dichter	DE
+430	tt0097165	El club de los poetas muertos	ES
+431	tt0097165	Le cercle des poètes disparus	FR
+432	tt0097165	L'attimo fuggente	IT
+433	tt0097428	Els caçafantasmes II	ES-ca
+434	tt0097428	Los Cazafantasmas II	ES
+435	tt0097428	Ghostbusters II (Acchiappafantasmi II)	IT
+436	tt0097428	S.O.S. fantômes II	FR
+437	tt0097428	Cazafantasmas II	ES
+438	tt0097576	Indiana Jones et la dernière croisade	FR
+439	tt0097576	Indiana Jones i l'última croada	ES-ca
+440	tt0097576	Indiana Jones e l'ultima crociata	IT
+441	tt0097576	Indiana Jones und der letzte Kreuzzug	DE
+442	tt0097576	Indiana Jones y la última cruzada	ES
+443	tt0097733	Arma letal 2	ES
+444	tt0097733	L'arme fatale 2	FR
+445	tt0097733	Lethal Weapon 2 - Brennpunkt L.A.	DE
+446	tt0097733	Arma letale 2	IT
+447	tt0098635	Harry und Sally	DE
+448	tt0098635	Cuando Harry encontró a Sally...	ES
+449	tt0098635	Quand Harry rencontre Sally...	FR
+450	tt0098635	Quan en Harry va trobar la Sally	ES-ca
+451	tt0098635	Harry, ti presento Sally...	IT
+452	tt0099088	Regreso al futuro III	ES
+453	tt0099088	Zurück in die Zukunft III	DE
+454	tt0099088	Retorn al futur 3	ES-ca
+455	tt0099088	Ritorno al futuro - Parte III	IT
+456	tt0099088	Regreso al futuro. Parte III	ES
+457	tt0099088	Retour vers le futur 3	FR
+458	tt0099348	Der mit dem Wolf tanzt	DE
+459	tt0099348	Bailando con lobos	ES
+460	tt0099348	Balla coi lupi	IT
+461	tt0099348	Danse avec les loups	FR
+462	tt0099348	Ballant amb llops	ES-ca
+463	tt0099423	Stirb Langsam 2	DE
+464	tt0099423	58 minutes pour vivre	FR
+465	tt0099423	58 minuti per morire - Die Harder	IT
+466	tt0099423	La jungla 2 (Alerta roja)	ES
+467	tt0099423	Die Hard 2 - 58 minuti per morire	IT
+468	tt0099487	Eduardo Manostijeras	ES
+469	tt0099487	Edward mit den Scherenhänden	DE
+470	tt0099487	Edward mani di forbice	IT
+471	tt0099487	Edward aux mains d'argent	FR
+472	tt0099653	Ghost - Fantasma	IT
+473	tt0099653	Ghost - Nachricht von Sam	DE
+474	tt0099653	Ghost	FR
+475	tt0099653	Ghost (Más allá del amor)	ES
+476	tt0099685	Les affranchis	FR
+477	tt0099685	Un dels nostres	ES-ca
+478	tt0099685	Uno de los nuestros	ES
+479	tt0099685	GoodFellas - Drei Jahrzehnte in der Mafia	DE
+480	tt0099685	Quei bravi ragazzi	IT
+481	tt0099785	Kevin - Allein zu Haus	DE
+482	tt0099785	Maman, j'ai raté l'avion!	FR
+483	tt0099785	Solo en casa	ES
+484	tt0099785	Sol a casa	ES-ca
+485	tt0099785	Mamma, ho perso l'aereo	IT
+486	tt0100157	Misery	ES
+487	tt0100157	Misery non deve morire	IT
+488	tt0100157	Misery	FR
+489	tt0100405	Pretty Woman	FR
+490	tt0100405	Pretty Woman	ES
+491	tt0100802	Desafío total	ES
+492	tt0100802	Total Recall: Die totale Erinnerung	DE
+493	tt0100802	Total Recall	FR
+494	tt0100802	Atto di forza	IT
+495	tt0101414	La bella e la bestia	IT
+496	tt0101414	Die Schöne und das Biest	DE
+497	tt0101414	La bella y la bestia	ES
+498	tt0101414	La Belle et la Bête	FR
+499	tt0101540	El cap de la por	ES-ca
+500	tt0101540	El cabo del miedo	ES
+501	tt0101540	Les nerfs à vif	FR
+502	tt0101540	Kap der Angst	DE
+503	tt0101540	Cape Fear - Il promontorio della paura	IT
+504	tt0102057	Hook	ES-ca
+505	tt0102057	Hook - Capitan Uncino	IT
+506	tt0102057	Hook ou la revanche du Capitaine Crochet	FR
+507	tt0102057	Hook (El capitán Garfio)	ES
+508	tt0102057	Hook	DE
+509	tt0102798	Robin des bois: Prince des voleurs	FR
+510	tt0102798	Robin Hood - König der Diebe	DE
+511	tt0102798	Robin Hood - Principe dei ladri	IT
+512	tt0102798	Robin Hood: Príncipe de los ladrones	ES
+513	tt0103064	Terminator 2: El juicio final	ES
+514	tt0103064	Terminator 2: Tag der Abrechnung	DE
+515	tt0103064	Terminator 2	ES-ca
+516	tt0103064	Terminator 2 - Le jugement dernier	FR
+517	tt0103064	Terminator 2 - Il giorno del giudizio	IT
+518	tt0103639	Aladdin	FR
+519	tt0103639	Aladdin	IT
+520	tt0103639	Aladdín	ES
+521	tt0103639	Aladdin	DE
+522	tt0103644	Alien³	ES
+523	tt0103644	Alien 3	DE
+524	tt0103644	Alien 3	FR
+525	tt0103644	Alien³	IT
+526	tt0103772	Basic Instinct	IT
+527	tt0103772	Basic Instinct	FR
+528	tt0103772	Basic Instinct - Istinto di base	IT
+529	tt0103772	Instinto básico	ES
+530	tt0103772	Instint bàsic	ES-ca
+531	tt0103772	Basic Instinct	DE
+532	tt0103776	Batman, le défi	FR
+533	tt0103776	Batman - Il ritorno	IT
+534	tt0103776	Batman vuelve	ES
+535	tt0103776	Batmans Rückkehr	DE
+536	tt0103776	Batman: le défi	FR
+537	tt0103874	Bram Stokers Dracula	DE
+538	tt0103874	Dracula	FR
+539	tt0103874	Drácula de Bram Stoker	ES
+540	tt0103874	Dracula di Bram Stoker	IT
+541	tt0104431	Mamma, ho riperso l'aereo: Mi sono smarrito a New York	IT
+542	tt0104431	Kevin - Allein in New York	DE
+543	tt0104431	Maman, j'ai encore raté l'avion	FR
+544	tt0104431	Solo en casa 2: Perdido en Nueva York	ES
+545	tt0104431	Sol a casa 2: Perdut a Nova York	ES-ca
+546	tt0104714	Arma letal 3	ES
+547	tt0104714	Brennpunkt L.A. - Die Profis sind zurück	DE
+548	tt0104714	L'arme fatale 3	FR
+549	tt0104714	Lethal Weapon 3: Die Profis sind zurück	DE
+550	tt0104714	Arma letale 3	IT
+551	tt0105236	Reservoir Dogs	ES
+552	tt0105236	Reservoir Dogs - Wilde Hunde	DE
+553	tt0105236	Reservoir Dogs	FR
+554	tt0105236	Cani da rapina	IT
+555	tt0105236	Le iene	IT
+556	tt0105323	Le temps d'un week-end	FR
+557	tt0105323	Scent of a Woman - Profumo di donna	IT
+558	tt0105323	Der Duft der Frauen	DE
+559	tt0105323	Esencia de mujer	ES
+560	tt0105695	Sin perdón	ES
+561	tt0105695	Erbarmungslos	DE
+562	tt0105695	Sense perdó	ES-ca
+563	tt0105695	Gli spietati	IT
+564	tt0105695	Impitoyable	FR
+565	tt0106308	L'armata delle tenebre	IT
+566	tt0106308	Tanz der Teufel III: Armee der Finsternis	DE
+567	tt0106308	El ejército de las tinieblas	ES
+568	tt0106308	L'armée des ténèbres	FR
+569	tt0106308	Armee der Finsternis	DE
+570	tt0106308	L'armée des ténèbres - Evil dead III	FR
+571	tt0106519	Atrapado por su pasado	ES
+572	tt0106519	L'impasse	FR
+573	tt0106519	Carlito's Way	DE
+574	tt0106519	Carlito's Way	IT
+575	tt0106677	La vita è un sogno	IT
+576	tt0106677	Jóvenes desorientados	ES
+577	tt0106677	Movida del 76	ES
+578	tt0106677	Confusion - Sommer der Ausgeflippten	DE
+579	tt0106677	Génération rebelle	FR
+580	tt0106697	Demolition Man	FR
+581	tt0106697	Demolition Man	DE
+582	tt0106697	Demolition Man	ES
+583	tt0106856	Chute libre	FR
+584	tt0106856	Un día de furia	ES
+585	tt0106856	Un giorno di ordinaria follia	IT
+586	tt0106856	Falling Down - Ein ganz normaler Tag	DE
+587	tt0107048	... und täglich grüßt das Murmeltier	DE
+588	tt0107048	Atrapat en el temps	ES-ca
+589	tt0107048	Atrapado en el tiempo	ES
+590	tt0107048	Un jour sans fin	FR
+591	tt0107048	Ricomincio da capo	IT
+592	tt0107290	Jurassic Park	DE
+593	tt0107290	Parc Juràssic	ES-ca
+594	tt0107290	Jurassic Park	IT
+595	tt0107290	Jurassic Park	FR
+596	tt0107290	Jurassic Park (Parque Jurásico)	ES
+597	tt0107614	Señora Doubtfire, papá de por vida	ES
+598	tt0107614	Mrs. Doubtfire - Das stachelige Hausmädchen	DE
+599	tt0107614	Mrs. Doubtfire - Mammo per sempre	IT
+600	tt0107614	Madame Doubtfire	FR
+601	tt0107614	Mrs. Doubtfire - Das stachelige Kindermädchen	DE
+602	tt0107818	Philadelphia	ES
+603	tt0107818	Filadèlfia	ES-ca
+604	tt0107818	Philadelphia	IT
+605	tt0107818	Philadelphia	FR
+606	tt0107818	Philadelphia	DE
+607	tt0108052	La llista de Schindler	ES-ca
+608	tt0108052	Schindlers Liste	DE
+609	tt0108052	La lista de Schindler	ES
+610	tt0108052	Schindler's List	IT
+611	tt0108052	La liste de Schindler	FR
+612	tt0108160	Nuits blanches à Seattle	FR
+613	tt0108160	Schlaflos in Seattle	DE
+614	tt0108160	Alguna cosa per recordar	ES-ca
+615	tt0108160	Algo para recordar	ES
+616	tt0108160	Insonnia d'amore	IT
+617	tt0108399	Amor a quemarropa	ES
+618	tt0108399	Una vita al massimo	IT
+619	tt0108399	True Romance	FR
+620	tt0108399	True Romance	DE
+621	tt0108550	Gilbert Grape	FR
+622	tt0108550	Buon compleanno Mr. Grape	IT
+623	tt0108550	¿A quién ama Gilbert Grape?	ES
+624	tt0108550	Gilbert Grape - Irgendwo in Iowa	DE
+625	tt0109040	Ace Ventura, un detective diferente	ES
+626	tt0109040	Ace Ventura - L'acchiappanimali	IT
+627	tt0109040	Ace Ventura - Ein tierischer Detektiv	DE
+628	tt0109040	Ace Ventura, détective chiens et chats	FR
+629	tt0109707	Ed Wood	FR
+630	tt0109707	Ed Wood	ES
+631	tt0109707	Ed Wood	DE
+632	tt0109830	Forrest Gump	ES
+633	tt0109830	Forrest Gump	DE
+634	tt0109830	Forrest Gump	FR
+635	tt0109830	Forrest Gump	IT
+636	tt0110148	Interview mit einem Vampir - Aus der Chronik der Vampire	DE
+637	tt0110148	Entrevista con el vampiro	ES
+638	tt0110148	Interview mit einem Vampir	DE
+639	tt0110148	Intervista col vampiro	IT
+640	tt0110148	Entretien avec un vampire	FR
+641	tt0110413	Léon: Der Profi	DE
+642	tt0110413	El professional	ES-ca
+643	tt0110413	El profesional (Léon)	ES
+644	tt0110413	Léon	IT
+645	tt0110632	Tueurs nés	FR
+646	tt0110632	Nascuts per matar	ES-ca
+647	tt0110632	Asesinos natos	ES
+648	tt0110632	Natural Born Killers	DE
+649	tt0110632	Assassini nati - Natural Born Killers	IT
+650	tt0110912	Pulp Fiction	IT
+651	tt0110912	Pulp Fiction	FR
+652	tt0110912	Pulp Fiction	DE
+653	tt0110912	Pulp Fiction	ES
+654	tt0111282	Stargate	IT
+655	tt0111282	Stargate	DE
+656	tt0111282	Stargate - La porte des étoiles	FR
+657	tt0111282	Stargate	ES
+658	tt0111503	True Lies - Le caméléon	FR
+659	tt0111503	True Lies - Wahre Lügen	DE
+660	tt0111503	Mentiras arriesgadas	ES
+661	tt0112281	Ace Ventura - Missione Africa	IT
+662	tt0112281	Ace Ventura en Afrique	FR
+663	tt0112281	Ace Ventura: Operación África	ES
+664	tt0112281	Ace Ventura - Jetzt wird's wild	DE
+665	tt0112384	Apollo 13	FR
+666	tt0112384	Apollo 13	IT
+667	tt0112384	Apollo 13	DE
+668	tt0112384	Apol·lo 13	ES-ca
+669	tt0112384	Apolo 13	ES
+670	tt0112442	Dos policías rebeldes	ES
+671	tt0112442	Bad Boys - Harte Jungs	DE
+672	tt0112442	Bad Boys	IT
+673	tt0112442	Bad Boys	FR
+674	tt0112462	Batman Forever	ES
+675	tt0112462	Batman Forever	IT
+676	tt0112462	Batman Forever	DE
+677	tt0112462	Batman Forever	FR
+678	tt0112471	Antes de amanecer	ES
+679	tt0112471	Prima dell'alba	IT
+680	tt0112471	Before Sunrise - Zwischenstopp in Wien	DE
+681	tt0112471	Abans de l'alba	ES-ca
+682	tt0112471	Before Sunrise	FR
+683	tt0112573	Braveheart	DE
+684	tt0112573	Braveheart - Cuore impavido	IT
+685	tt0112573	Braveheart	ES
+686	tt0112573	Braveheart	FR
+687	tt0112641	Casino, de Scorsese	ES
+688	tt0112641	Casino	DE
+689	tt0112641	Casino	FR
+690	tt0112641	Casinò	IT
+691	tt0112641	Casino	ES
+692	tt0112697	Clueless - Was sonst!	DE
+693	tt0112697	Ragazze a Beverly Hills	IT
+694	tt0112697	Clueless	FR
+695	tt0112697	Clueless (Fuera de onda)	ES
+696	tt0112851	Robert Rodríguez: Desperado	ES
+697	tt0112851	Desperado	ES
+698	tt0112851	Desperado	IT
+699	tt0112851	La balada del pistolero	ES
+700	tt0112851	Desperado	FR
+701	tt0112864	Une journée en enfer - Die Hard 3	FR
+702	tt0112864	Jungla de cristal: La venganza	ES
+703	tt0112864	Stirb langsam - Jetzt erst recht	DE
+704	tt0112864	Die Hard - Duri a morire	IT
+705	tt0113189	James Bond 007 - GoldenEye	DE
+706	tt0113189	GoldenEye	IT
+707	tt0113189	GoldenEye	FR
+708	tt0113189	GoldenEye	ES-ca
+709	tt0113189	007 - GoldenEye	IT
+710	tt0113189	GoldenEye	ES
+711	tt0113277	Heat - La sfida	IT
+712	tt0113277	Heat	DE
+713	tt0113277	Heat	FR
+714	tt0113277	Heat	ES-ca
+715	tt0113277	Heat	ES
+716	tt0113497	Jumanji	IT
+717	tt0113497	Jumanji	FR
+718	tt0113497	Jumanji	ES-ca
+719	tt0113497	Jumanji	ES
+720	tt0113497	Jumanji	DE
+721	tt0114148	Pocahontas	FR
+722	tt0114148	Pocahontas	ES
+723	tt0114148	Pocahontas, une légende indienne	FR
+724	tt0114148	Pocahontas	IT
+725	tt0114369	Sieben	DE
+726	tt0114369	Seven	ES
+727	tt0114369	Seven	FR
+728	tt0114369	Seven	IT
+729	tt0114709	Toy Story	DE
+730	tt0114709	Toy Story - Il mondo dei giocattoli	IT
+731	tt0114709	Toy Story	ES
+732	tt0114709	Toy Story	FR
+733	tt0114746	Doce monos	ES
+734	tt0114746	L'armée des 12 singes	FR
+735	tt0114746	L'esercito delle 12 scimmie	IT
+736	tt0114746	12 Monkeys	DE
+737	tt0114898	Waterworld	ES
+738	tt0114898	Waterworld	DE
+739	tt0114898	Waterworld	FR
+740	tt0114898	Waterworld	IT
+741	tt0116282	Fargo	IT
+742	tt0116282	Fargo	FR
+743	tt0116282	Fargo	ES
+744	tt0116282	Fargo - Blutiger Schnee	DE
+745	tt0116367	Dal tramonto all'alba	IT
+746	tt0116367	From Dusk Till Dawn	DE
+747	tt0116367	Obert fins a la matinada	ES-ca
+748	tt0116367	Une nuit en enfer	FR
+749	tt0116367	Abierto hasta el amanecer	ES
+750	tt0116483	Happy Gilmore	FR
+751	tt0116483	Happy Gilmore - Ein Champ zum Verlieben	DE
+752	tt0116483	Un tipo imprevedibile	IT
+753	tt0116483	Terminagolf	ES
+754	tt0116629	Independence Day	IT
+755	tt0116629	Independence Day	ES
+756	tt0116629	Independence Day	DE
+757	tt0116695	Jerry Maguire	ES
+758	tt0116695	Jerry Maguire: Spiel des Lebens	DE
+759	tt0116695	Jerry Maguire	FR
+760	tt0116695	Jerry Maguire	IT
+761	tt0116996	Mars Attacks!	FR
+762	tt0116996	Mars Attacks!	DE
+763	tt0116996	Mars Attacks!	ES
+764	tt0117060	Mission: Impossible	DE
+765	tt0117060	Mission: Impossible	IT
+766	tt0117060	Mission: Impossible	FR
+767	tt0117060	Misión: Imposible	ES
+768	tt0117060	Mission: Impossible	ES
+769	tt0117060	Misión imposible	ES
+770	tt0117381	Peur primale	FR
+771	tt0117381	Zwielicht	DE
+772	tt0117381	Las dos caras de la verdad	ES
+773	tt0117381	Les dues cares de la veritat	ES-ca
+774	tt0117381	Schegge di paura	IT
+775	tt0117509	Roméo + Juliette	FR
+776	tt0117509	William Shakespeares Romeo + Julia	DE
+777	tt0117509	William Shakespeares Romeo & Julia	DE
+778	tt0117509	Romeo + Giulietta di William Shakespeare	IT
+779	tt0117509	Romeo y Julieta de William Shakespeare	ES
+780	tt0117665	Sleepers	ES-ca
+781	tt0117665	Sleepers	ES
+782	tt0117665	Sleepers	DE
+783	tt0117665	Sleepers	FR
+784	tt0117665	Sleepers	IT
+785	tt0117951	Trainspotting	ES
+786	tt0117951	Trainspotting - Neue Helden	DE
+787	tt0117951	Trainspotting	FR
+788	tt0117951	Trainspotting	IT
+789	tt0117998	Twister	FR
+790	tt0117998	Twister	DE
+791	tt0117998	Twister	ES
+792	tt0118571	Air Force One (El avión del presidente)	ES
+793	tt0118571	Air Force One	IT
+794	tt0118571	Air Force One	FR
+795	tt0118571	Air Force One	DE
+796	tt0118655	Austin Powers: Misterioso agente internacional	ES
+797	tt0118655	Austin Powers	FR
+798	tt0118655	Austin Powers - Il controspione	IT
+799	tt0118655	Austin Powers - Das Schärfste, was Ihre Majestät zu bieten hat	DE
+800	tt0118688	Batman y Robin	ES
+801	tt0118688	Batman & Robin	FR
+802	tt0118688	Batman & Robin	DE
+803	tt0118749	Boogie Nights	FR
+804	tt0118749	Boogie Nights	ES
+805	tt0118749	Boogie Nights - L'altra Hollywood	IT
+806	tt0118880	Con Air (Convictos en el aire)	ES
+807	tt0118880	Les ailes de l'enfer	FR
+808	tt0118880	Con Air	DE
+809	tt0118880	Con Air	IT
+810	tt0118884	Contact	DE
+811	tt0118884	Contact	ES
+812	tt0118884	Contact	FR
+813	tt0118929	Dark City	FR
+814	tt0118929	Dark City	ES
+815	tt0118929	Dark City	DE
+816	tt0119008	Donnie Brasco	DE
+817	tt0119008	Donnie Brasco	FR
+818	tt0119008	Donnie Brasco	IT
+819	tt0119008	Donnie Brasco	ES
+820	tt0119081	Punto di non ritorno	IT
+821	tt0119081	Horizonte Final	ES
+822	tt0119081	Event Horizon - Le vaisseau de l'au-delà	FR
+823	tt0119081	Event Horizon - Am Rande des Universums	DE
+824	tt0119177	Gattaca	ES
+825	tt0119177	Gattaca - La porta dell'universo	IT
+826	tt0119177	Bienvenue à Gattaca	FR
+827	tt0119177	Gattaca	DE
+828	tt0119217	Good Will Hunting - Der gute Will Hunting	DE
+829	tt0119217	Will Hunting - Genio ribelle	IT
+830	tt0119217	El indomable Will Hunting	ES
+831	tt0119217	Will Hunting	FR
+832	tt0119282	Hercule	FR
+833	tt0119282	Hércules	ES
+834	tt0119396	Jackie Brown	DE
+835	tt0119396	Jackie Brown	FR
+836	tt0119396	Jackie Brown	IT
+837	tt0119396	Jackie Brown	ES-ca
+838	tt0119488	L.A. Confidential	DE
+839	tt0119488	L.A. Confidential	IT
+840	tt0119488	L.A. Confidential	ES
+841	tt0119488	L.A. Confidential	FR
+842	tt0119528	Mentiroso compulsivo	ES
+843	tt0119528	Menteur menteur	FR
+844	tt0119528	Bugiardo bugiardo	IT
+845	tt0119528	Der Dummschwätzer	DE
+846	tt0119643	Rencontre avec Joe Black	FR
+847	tt0119643	Rendezvous mit Joe Black	DE
+848	tt0119643	¿Conoces a Joe Black?	ES
+849	tt0119643	Vi presento Joe Black	IT
+850	tt0119654	Homes de negre	ES-ca
+851	tt0119654	Men in Black (Hombres de negro)	ES
+852	tt0119654	Men in Black	DE
+853	tt0119654	Men in Black	FR
+854	tt0119654	Men in Black	IT
+855	tt0119698	Prinzessin Mononoke	DE
+856	tt0119698	Principessa Mononoke	IT
+857	tt0119698	Princess Mononoke	IT
+858	tt0119698	Princesse Mononoké	FR
+859	tt0119698	La princesa Mononoke	ES
+860	tt0119822	Qualcosa è cambiato	IT
+861	tt0119822	Millor, impossible	ES-ca
+862	tt0119822	Pour le pire et pour le meilleur	FR
+863	tt0119822	Mejor... imposible	ES
+864	tt0119822	Besser geht's nicht	DE
+865	tt0120082	Scream 2	DE
+866	tt0120082	Scream 2	ES
+867	tt0120082	Scream 2	IT
+868	tt0120082	Scream 2	FR
+869	tt0120188	Three Kings - Es ist schön König zu sein	DE
+870	tt0120188	Tres reyes	ES
+871	tt0120188	Three Kings	IT
+872	tt0120188	Les rois du désert	FR
+873	tt0120201	Starship Troopers	FR
+874	tt0120201	Starship Troopers (Las brigadas del espacio)	ES
+875	tt0120201	Starship Troopers - Fanteria dello spazio	IT
+876	tt0120201	Starship Troopers	DE
+877	tt0120201	Starship Troopers	ES
+878	tt0120338	Titanic	DE
+879	tt0120338	Titanic	ES
+880	tt0120338	Titanic	FR
+881	tt0120338	Titanic	IT
+882	tt0120347	007 - Il domani non muore mai	IT
+883	tt0120347	Demain ne meurt jamais	FR
+884	tt0120347	El demà no mor mai	ES-ca
+885	tt0120347	James Bond 007 - Der Morgen stirbt nie	DE
+886	tt0120347	Il domani non muore mai	IT
+887	tt0120347	El mañana nunca muere	ES
+888	tt0120363	Toy Story 2	ES
+889	tt0120363	Toy story 2: Los juguetes vuelven a la carga	ES
+890	tt0120363	Toy Story 2	FR
+891	tt0120363	Toy Story 2 - Woody & Buzz alla riscossa	IT
+892	tt0120586	American History X	FR
+893	tt0120586	American History X	IT
+894	tt0120586	American History X	DE
+895	tt0120586	American History X	ES
+896	tt0120591	Armageddon	FR
+897	tt0120591	Armageddon	ES
+898	tt0120591	Armageddon - Giudizio finale	IT
+899	tt0120591	Armageddon - Das jüngste Gericht	DE
+900	tt0120601	Dans la peau de John Malkovich	FR
+901	tt0120601	Being John Malkovich	DE
+902	tt0120601	Cómo ser John Malkovich	ES
+903	tt0120601	Essere John Malkovich	IT
+904	tt0120611	Blade	ES-ca
+905	tt0120611	Blade	FR
+906	tt0120611	Blade	IT
+907	tt0120611	Blade	DE
+908	tt0120611	Blade	ES
+909	tt0120630	Chicken Run	FR
+910	tt0120630	Chicken Run - Hennen rennen	DE
+911	tt0120630	Chicken Run: Evasión en la granja	ES
+912	tt0120630	Hennen rennen	DE
+913	tt0120630	Galline in fuga	IT
+914	tt0120647	Deep Impact	ES
+915	tt0120647	Deep Impact	DE
+916	tt0120647	Deep Impact	FR
+917	tt0120655	Dogma	ES
+918	tt0120655	Dogma	FR
+919	tt0120655	Dogma	IT
+920	tt0120655	Dogma	DE
+921	tt0120660	Ennemi d'état	FR
+922	tt0120660	Enemigo público	ES
+923	tt0120660	Nemico pubblico	IT
+924	tt0120660	Der Staatsfeind Nr. 1	DE
+925	tt0120663	Eyes Wide Shut	ES
+926	tt0120663	Eyes Wide Shut	DE
+927	tt0120663	Eyes Wide Shut	IT
+928	tt0120663	Eyes Wide Shut	FR
+929	tt0120667	Les 4 Fantastiques	FR
+930	tt0120667	I Fantastici 4	IT
+931	tt0120667	Los 4 Fantásticos	ES
+932	tt0120667	Fantastic Four	DE
+933	tt0120669	Paura e delirio a Las Vegas	IT
+934	tt0120669	Miedo y asco en Las Vegas	ES
+935	tt0120669	Las Vegas parano	FR
+936	tt0120669	Fear and Loathing in Las Vegas	DE
+937	tt0120669	Angst und Schrecken in Las Vegas	DE
+938	tt0120685	Godzilla	FR
+939	tt0120685	Godzilla	IT
+940	tt0120685	Godzilla	ES
+941	tt0120685	Godzilla	DE
+942	tt0120735	Lock & Stock	ES
+943	tt0120735	Bube Dame König grAS	DE
+944	tt0120735	Arnaques, crimes et botanique	FR
+945	tt0120735	Lock & Stock - Pazzi scatenati	IT
+946	tt0120755	Mission: Impossible II	DE
+947	tt0120755	M:I-2	FR
+948	tt0120755	M-I:2 Mission: Impossible 2	FR
+949	tt0120755	Misión: Imposible 2	ES
+950	tt0120755	Mission: Impossible II	IT
+951	tt0120755	M:I-2: Misión: Imposible 2	ES
+952	tt0120755	Mission Impossible II	FR
+953	tt0120762	Mulan	ES
+954	tt0120762	Mulan	IT
+955	tt0120762	Mulan	FR
+956	tt0120762	Mulan	DE
+957	tt0120804	Resident Evil	DE
+958	tt0120804	Resident Evil	ES
+959	tt0120804	Resident Evil	FR
+960	tt0120812	Rush Hour - Due mine vaganti	IT
+961	tt0120812	Hora punta	ES
+962	tt0120812	Rush Hour	DE
+963	tt0120812	Hora punta	ES-ca
+964	tt0120812	Rush Hour	FR
+965	tt0120815	Salvate il soldato Ryan	IT
+966	tt0120815	Il faut sauver le soldat Ryan	FR
+967	tt0120815	Salvar al soldado Ryan	ES
+968	tt0120815	Der Soldat James Ryan	DE
+969	tt0120855	Tarzan	FR
+970	tt0120855	Tarzán	ES
+971	tt0120903	X-Men	FR
+972	tt0120903	X-Men	IT
+973	tt0120903	X-Men	ES
+974	tt0120903	X-Men	DE
+975	tt0120912	Men in Black II	DE
+976	tt0120912	Men in Black 2	DE
+977	tt0120912	Men in Black II: Hombres de negro II	ES
+978	tt0120912	Men in Black II	IT
+979	tt0120912	Hombres de negro II	ES
+980	tt0120915	Star Wars: Episodio I - La amenaza fantasma	ES
+981	tt0120915	Star Wars: Épisode I - La menace fantôme	FR
+982	tt0120915	Star Wars: Episodio I - La minaccia fantasma	IT
+983	tt0120915	Star Wars: Episode I - Die dunkle Bedrohung	DE
+984	tt0121164	Corpse Bride - Hochzeit mit einer Leiche	DE
+985	tt0121164	Les noces funèbres	FR
+986	tt0121164	La núvia cadàver	ES-ca
+987	tt0121164	La sposa cadavere	IT
+988	tt0121164	La novia cadáver de Tim Burton	ES
+989	tt0121765	Star Wars: Episode II - Angriff der Klonkrieger	DE
+990	tt0121765	Star Wars: Episodio II - L'attacco dei cloni	IT
+991	tt0121765	Star Wars: Épisode II - L'attaque des clones	FR
+992	tt0121765	Star wars: Episodi II - L'atac dels clons	ES-ca
+993	tt0121765	La guerra de les galàxies: L'atac dels clons	ES-ca
+994	tt0121765	Star Wars: Episodio II - El ataque de los clones	ES
+995	tt0121766	Star Wars: Episode III - Die Rache der Sith	DE
+996	tt0121766	Star Wars: Episodio III - La vendetta dei Sith	IT
+997	tt0121766	Star Wars: Episodi III - La venjança dels sith	ES-ca
+998	tt0121766	Star Wars: Episodio III - La venganza de los Sith	ES
+999	tt0121766	Star Wars: Épisode III - La revanche des Sith	FR
+1000	tt0122690	Ronin	FR
+1001	tt0122690	Ronin	DE
+1002	tt0122690	Ronin	ES
+1003	tt0123755	Cube - Il cubo	IT
+1004	tt0123755	Cube	DE
+1005	tt0123755	Cube	FR
+1006	tt0123755	Cube	ES
+1007	tt0125439	Notting Hill	ES
+1008	tt0125439	Notting Hill	DE
+1009	tt0125439	Notting Hill	IT
+1010	tt0125439	Coup de foudre à Notting Hill	FR
+1011	tt0126029	Shrek	ES
+1012	tt0126029	Shrek - Der tollkühne Held	DE
+1013	tt0126029	Shrek	ES-ca
+1014	tt0126029	Shrek	FR
+1015	tt0126029	Shrek	IT
+1016	tt0128445	Rushmore	FR
+1017	tt0128445	Academia Rushmore	ES
+1018	tt0128445	Rushmore	IT
+1019	tt0128853	C'è post@ per te	IT
+1020	tt0128853	Vous avez un mess@ge	FR
+1021	tt0128853	Tienes un e-mail	ES
+1022	tt0128853	e-m@il für Dich	DE
+1023	tt0129387	Algo pasa con Mary	ES
+1024	tt0129387	Mary à tout prix	FR
+1025	tt0129387	Tutti pazzi per Mary	IT
+1026	tt0129387	Algo más pasa con Mary	ES
+1027	tt0129387	Verrückt nach Mary	DE
+1028	tt0130827	Corre Lola, corre	ES
+1029	tt0130827	Lola corre	IT
+1030	tt0130827	Cours, Lola, cours	FR
+1031	tt0130827	Lola rennt	DE
+1032	tt0133152	Planet of the Apes - Il pianeta delle scimmie	IT
+1033	tt0133152	El planeta de los simios	ES
+1034	tt0133152	La planète des singes	FR
+1035	tt0133152	Planet der Affen	DE
+1036	tt0134847	Pitch Black - Planet der Finsternis	DE
+1037	tt0134847	Pitch Black	ES
+1038	tt0134847	Pitch Black	IT
+1039	tt0134847	Pitch Black	FR
+1040	tt0137523	Fight Club	FR
+1041	tt0137523	Fight Club	IT
+1042	tt0137523	Fight Club	DE
+1043	tt0137523	El club de la lucha	ES
+1044	tt0138097	Shakespeare in Love (Shakespeare enamorado)	ES
+1045	tt0138097	Shakespeare in Love	IT
+1046	tt0138097	Shakespeare in Love	FR
+1047	tt0138097	Shakespeare in Love	DE
+1048	tt0138704	Pi - System im Chaos	DE
+1049	tt0138704	Pi	FR
+1050	tt0138704	Pi, fe en el caos	ES
+1051	tt0138704	Pi greco - Il teorema del delirio	IT
+1052	tt0139134	Cruel Intentions - Prima regola non innamorarsi	IT
+1053	tt0139134	Eiskalte Engel	DE
+1054	tt0139134	Crueles intenciones	ES
+1055	tt0139134	Sexe intentions	FR
+1056	tt0139654	Training Day	DE
+1057	tt0139654	Training Day (Día de entrenamiento)	ES
+1058	tt0139654	Training Day	FR
+1059	tt0139654	Training Day	IT
+1060	tt0144084	American Psycho	ES
+1061	tt0144084	American Psycho	IT
+1062	tt0144084	American Psycho	FR
+1063	tt0144084	American Psycho	DE
+1064	tt0145487	Spider-Man	DE
+1065	tt0145487	Spider-Man	FR
+1066	tt0145487	Spider-Man	IT
+1067	tt0145487	Spider-Man	ES-ca
+1068	tt0145487	Spider-Man	ES
+1069	tt0145660	Austin Powers - Spion in geheimer Missionarsstellung	DE
+1070	tt0145660	Austin Powers: La espía que me achuchó	ES
+1071	tt0145660	Austin Powers - L'espion qui m'a tirée	FR
+1072	tt0145660	Austin Powers - La spia che ci provava	IT
+1073	tt0146316	Tomb Raider	ES
+1074	tt0146316	Lara Croft: Tomb Raider	IT
+1075	tt0146316	Lara Croft: Tomb Raider	FR
+1076	tt0146316	Lara Croft: Tomb Raider	ES
+1077	tt0146882	Alta fedeltà	IT
+1078	tt0146882	Alta fidelidad	ES
+1079	tt0146882	High Fidelity	DE
+1080	tt0146882	Haute fidélité	FR
+1081	tt0146882	High Fidelity	FR
+1082	tt0147800	10 Dinge, die ich an Dir hasse	DE
+1083	tt0147800	10 bonnes raisons de te larguer	FR
+1084	tt0147800	10 razones para odiarte	ES
+1085	tt0147800	10 cose che odio di te	IT
+1086	tt0151804	Impiegati... male!	IT
+1087	tt0151804	Alles Routine	DE
+1088	tt0151804	Trabajo basura	ES
+1089	tt0151804	35 heures, c'est déjà trop	FR
+1090	tt0160127	Charlie's Angels	IT
+1091	tt0160127	Los ángeles de Charlie	ES
+1092	tt0160127	3 Engel für Charlie	DE
+1093	tt0160127	Charlie et ses drôles de dames	FR
+1094	tt0162222	Cast Away	IT
+1095	tt0162222	Nàufrag	ES-ca
+1096	tt0162222	Náufrago	ES
+1097	tt0162222	Cast Away - Verschollen	DE
+1098	tt0162222	Seul au monde	FR
+1099	tt0162661	Sleepy Hollow - Köpfe werden rollen	DE
+1100	tt0162661	Sleepy Hollow	ES
+1101	tt0162661	Sleepy Hollow	DE
+1102	tt0162661	Sleepy Hollow, La légende du cavalier sans tête	FR
+1103	tt0162661	Il mistero di Sleepy Hollow	IT
+1104	tt0162661	Sleepy Hollow	FR
+1105	tt0163025	Jurassic Park III	DE
+1106	tt0163025	Jurassic Park III	IT
+1107	tt0163025	Jurassic Park III	FR
+1108	tt0163025	Jurassic Park III (Parque Jurásico III)	ES
+1109	tt0163025	Parc Juràssic III	ES-ca
+1110	tt0163651	American Pie: Wie ein Heisser Apfelkuchen	DE
+1111	tt0163651	American Pie	FR
+1112	tt0163651	American Pie	ES
+1113	tt0166924	Mulholland Drive	DE
+1114	tt0166924	Mulholland Drive	ES
+1115	tt0166924	Straße der Finsternis	DE
+1116	tt0166924	Mulholland Drive	IT
+1117	tt0166924	Mulholland Drive	FR
+1118	tt0167190	Hellboy	IT
+1119	tt0167190	Hellboy	ES
+1120	tt0167190	Hellboy	DE
+1121	tt0167190	Hellboy	FR
+1122	tt0169547	American Beauty	DE
+1123	tt0169547	American Beauty	ES
+1124	tt0169547	American Beauty	IT
+1125	tt0169547	American Beauty	FR
+1126	tt0169547	American Beauty	ES-ca
+1127	tt0170016	Le Grinch	FR
+1128	tt0170016	El Grinch	ES
+1129	tt0170016	Il Grinch	IT
+1130	tt0170016	Der Grinch	DE
+1131	tt0172156	Dos policías rebeldes II	ES
+1132	tt0172156	Bad Boys II	DE
+1133	tt0172156	Bad Boys II	FR
+1134	tt0172493	Inocencia interrumpida	ES
+1135	tt0172493	Une vie volée	FR
+1136	tt0172493	Durchgeknallt	DE
+1137	tt0172493	Ragazze interrotte	IT
+1138	tt0172493	Durchgeknallt - Girl, interrupted	DE
+1139	tt0172495	Gladiator (El gladiador)	ES
+1140	tt0172495	Gladiator	FR
+1141	tt0172495	Il gladiatore	IT
+1142	tt0172495	Gladiator	DE
+1143	tt0175142	Scary Movie - Senza paura, senza vergogna... senza cervello!	IT
+1144	tt0175142	Scary Movie	ES
+1145	tt0175142	Scary Movie	DE
+1146	tt0175142	Scary Movie	FR
+1147	tt0175880	Magnolia	ES
+1148	tt0175880	Magnolia	FR
+1149	tt0175880	Magnolia	DE
+1150	tt0180093	Requiem for a Dream	IT
+1151	tt0180093	Rèquiem per un somni	ES-ca
+1152	tt0180093	Requiem for a Dream	FR
+1153	tt0180093	Requiem for a Dream	DE
+1154	tt0180093	Réquiem por un sueño	ES
+1155	tt0181689	Minority Report	ES
+1156	tt0181689	Minority Report	DE
+1157	tt0181689	Minority Report	FR
+1158	tt0181689	Minority Report	IT
+1159	tt0181852	Terminator 3: La rebelión de las máquinas	ES
+1160	tt0181852	Terminator 3: La rebel·lió de les màquines	ES-ca
+1161	tt0181852	Terminator 3 - Le soulèvement des machines	FR
+1162	tt0181852	Terminator 3: Rebellion der Maschinen	DE
+1163	tt0181852	Terminator 3 - Le macchine ribelli	IT
+1164	tt0181865	Traffic	ES
+1165	tt0181865	Traffic	IT
+1166	tt0181865	Traffic - Die Macht des Kartells	DE
+1167	tt0181865	Traffic	FR
+1168	tt0181875	Almost Famous - Fast berühmt	DE
+1169	tt0181875	Quasi famosi	IT
+1170	tt0181875	Casi famosos	ES
+1171	tt0181875	Presque célèbre	FR
+1172	tt0183505	Yo, yo mismo e Irene	ES
+1173	tt0183505	Ich, beide & sie	DE
+1174	tt0183505	Io, me & Irene	IT
+1175	tt0183505	Fou(s) d'Irène	FR
+1176	tt0183649	Nicht auflegen!	DE
+1177	tt0183649	Phone Game	FR
+1178	tt0183649	In linea con l'assassino	IT
+1179	tt0183649	Última llamada	ES
+1180	tt0187078	60 secondes chrono	FR
+1181	tt0187078	60 segundos	ES
+1182	tt0187078	Nur noch 60 Sekunden	DE
+1183	tt0187078	Fuori in 60 secondi	IT
+1184	tt0187738	Blade II	DE
+1185	tt0187738	Blade II	FR
+1186	tt0187738	Blade II	IT
+1187	tt0187738	Blade II	ES
+1188	tt0190332	Tigre i drac	ES-ca
+1189	tt0190332	Tigre et dragon	FR
+1190	tt0190332	Tiger & Dragon	DE
+1191	tt0190332	Tigre y dragón	ES
+1192	tt0190332	La tigre e il dragone	IT
+1193	tt0190590	Fratello, dove sei?	IT
+1194	tt0190590	O' Brother	FR
+1195	tt0190590	O Brother, Where Art Thou? - Eine Mississippi-Odyssee	DE
+1196	tt0190590	O Brother!	ES
+1197	tt0195685	Erin Brockovich	ES
+1198	tt0195685	Erin Brockovich, seule contre tous	FR
+1199	tt0195685	Erin Brockovich - Forte come la verità	IT
+1200	tt0195685	Erin Brockovich	DE
+1201	tt0195714	Destination finale	FR
+1202	tt0195714	Destino final	ES
+1203	tt0195714	Final Destination	IT
+1204	tt0195714	Final Destination	DE
+1205	tt0196229	Zoolander (Un descerebrado de moda)	ES
+1206	tt0196229	Zoolander	DE
+1207	tt0196229	Zoolander	FR
+1208	tt0196229	Zoolander	IT
+1209	tt0198781	Die Monster AG	DE
+1210	tt0198781	Monsters & Co.	IT
+1211	tt0198781	Monstruos, S.A.	ES
+1212	tt0198781	Monstres & Cie	FR
+1213	tt0203009	Moulin Rouge	FR
+1214	tt0203009	Moulin Rouge!	DE
+1215	tt0203009	Moulin Rouge	ES
+1216	tt0206634	I figli degli uomini	IT
+1217	tt0206634	Hijos de los hombres	ES
+1218	tt0206634	Les fils de l'homme	FR
+1219	tt0206634	Children of Men	DE
+1220	tt0207201	Was Frauen wollen	DE
+1221	tt0207201	Ce que veulent les femmes	FR
+1222	tt0207201	¿En qué piensan las mujeres?	ES
+1223	tt0207201	What Women Want - Quello che le donne vogliono	IT
+1224	tt0209144	Memento	IT
+1225	tt0209144	Memento	FR
+1226	tt0209144	Memento	ES
+1227	tt0209144	Memento	DE
+1228	tt0210945	Il sapore della vittoria - Uniti si vince	IT
+1229	tt0210945	Le plus beau des combats	FR
+1230	tt0210945	Gegen jede Regel	DE
+1231	tt0210945	Titanes: Hicieron historia	ES
+1232	tt0212338	Mon beau-père et moi	FR
+1233	tt0212338	Los padres de ella	ES
+1234	tt0212338	Ti presento i miei	IT
+1235	tt0212338	Meine Braut, ihr Vater und ich	DE
+1236	tt0212346	Miss Undercover	DE
+1237	tt0212346	Miss Agente Especial	ES
+1238	tt0212346	Miss Detective	IT
+1239	tt0212346	Miss Détective	FR
+1240	tt0212720	A.I.: Künstliche Intelligenz	DE
+1241	tt0212720	A.I. Inteligencia Artificial	ES
+1242	tt0212720	A.I. intelligence artificielle	FR
+1243	tt0212720	A.I. - Intelligenza artificiale	IT
+1244	tt0212985	Hannibal	FR
+1245	tt0212985	Hannibal	DE
+1246	tt0212985	Hannibal	ES
+1247	tt0213149	Pearl Harbor	IT
+1248	tt0213149	Pearl Harbor	DE
+1249	tt0213149	Pearl Harbor	ES
+1250	tt0213149	Pearl Harbor	FR
+1251	tt0215129	Road Trip	FR
+1252	tt0215129	Road Trip (Viaje de pirados)	ES
+1253	tt0215129	Heißer Trip nach Texas	DE
+1254	tt0215750	Il nemico alle porte	IT
+1255	tt0215750	Enemigo a las puertas	ES
+1256	tt0215750	Stalingrad - Enemy at the Gates	FR
+1257	tt0215750	Stalingrad	FR
+1258	tt0215750	Enemic a les portes	ES-ca
+1259	tt0215750	Duell - Enemy at the Gates	DE
+1260	tt0217505	Gangs of New York	IT
+1261	tt0217505	Gangs of New York	FR
+1262	tt0217505	Gangs of New York	DE
+1263	tt0217505	Gangs de Nueva York	ES
+1264	tt0217505	Gangs of New York	ES
+1265	tt0217869	Unbreakable - Il predestinato	IT
+1266	tt0217869	Incassable	FR
+1267	tt0217869	Unbreakable - Unzerbrechlich	DE
+1268	tt0217869	El protegido	ES
+1269	tt0221027	Blow	DE
+1270	tt0221027	Blow	IT
+1271	tt0221027	Blow	FR
+1272	tt0221027	Blow	ES
+1273	tt0238380	Equilibrium	FR
+1274	tt0238380	Equilibrium	ES
+1275	tt0240772	Ocean's Eleven	FR
+1276	tt0240772	Ocean's Eleven: Hagan juego	ES
+1277	tt0240772	Ocean's eleven - Faites vos jeux!	FR
+1278	tt0240772	Ocean's Eleven - Fate il vostro gioco	IT
+1279	tt0240772	Ocean's Eleven	DE
+1280	tt0241303	Chocolat... ein kleiner Biss genügt	DE
+1281	tt0241303	Le chocolat	FR
+1282	tt0241303	Chocolat	ES
+1283	tt0241527	Harry Potter und der Stein der Weisen	DE
+1284	tt0241527	Harry Potter à l'école des sorciers	FR
+1285	tt0241527	Harry Potter i la pedra filosofal	ES-ca
+1286	tt0241527	Harry Potter e la pietra filosofale	IT
+1287	tt0241527	Harry Potter y la piedra filosofal	ES
+1288	tt0243155	Le journal de Bridget Jones	FR
+1289	tt0243155	Il diario di Bridget Jones	IT
+1290	tt0243155	Bridget Jones - Schokolade zum Frühstück	DE
+1291	tt0243155	El diario de Bridget Jones	ES
+1292	tt0244244	Operación Swordfish	ES
+1293	tt0244244	Codice: Swordfish	IT
+1294	tt0244244	Opération Espadon	FR
+1295	tt0244244	Passwort: Swordfish	DE
+1296	tt0245429	Chihiroren bidaia	ES-eu
+1297	tt0245429	El viaje de Chihiro	ES
+1298	tt0245429	El viatge de Chihiro	ES-ca
+1299	tt0245429	Chihiros Reise ins Zauberland	DE
+1300	tt0245429	Le voyage de Chihiro	FR
+1301	tt0245429	La città incantata	IT
+1302	tt0245712	Amores perros - Von Hunden und Menschen	DE
+1303	tt0245712	Amores perros	ES
+1304	tt0245712	Amores perros	IT
+1305	tt0245712	Amours chiennes	FR
+1306	tt0245712	Amores perros	DE
+1307	tt0246460	007 - La morte può attendere	IT
+1308	tt0246460	Mor un altre dia	ES-ca
+1309	tt0246460	James Bond 007 - Stirb an einem anderen Tag	DE
+1310	tt0246460	Muere otro día	ES
+1311	tt0246460	La morte può attendere	IT
+1312	tt0246460	Meurs un autre jour	FR
+1313	tt0246578	Donnie Darko	IT
+1314	tt0246578	Donnie Darko	FR
+1315	tt0246578	Donnie Darko	ES
+1316	tt0246578	Donnie Darko	DE
+1317	tt0250494	Natürlich blond!	DE
+1318	tt0250494	La rivincita delle bionde	IT
+1319	tt0250494	Una rubia muy legal	ES
+1320	tt0250494	La revanche d'une blonde	FR
+1321	tt0251127	Comment se faire larguer en 10 leçons	FR
+1322	tt0251127	Come farsi lasciare in 10 giorni	IT
+1323	tt0251127	Cómo perder a un chico en 10 días	ES
+1324	tt0251127	Wie werde ich ihn los in 10 Tagen	DE
+1325	tt0252866	American Pie 2	ES
+1326	tt0252866	American Pie 2	FR
+1327	tt0252866	American Pie 2	DE
+1328	tt0257044	Camino a la perdición	ES
+1329	tt0257044	Les sentiers de la perdition	FR
+1330	tt0257044	Road to Perdition	DE
+1331	tt0257044	Era mio padre	IT
+1332	tt0258000	Panic Room	DE
+1333	tt0258000	Panic Room	FR
+1334	tt0258000	Panic Room	IT
+1335	tt0258000	La habitación del pánico	ES
+1336	tt0259324	Ghost Rider	IT
+1337	tt0259324	Ghost Rider: El motorista fantasma	ES
+1338	tt0259324	Ghost Rider	FR
+1339	tt0259324	Ghost Rider	DE
+1340	tt0259711	Vanilla Sky	DE
+1341	tt0259711	Vanilla Sky	ES
+1342	tt0259711	Vanilla Sky	FR
+1343	tt0264464	Catch me if you can - Mein Leben auf der Flucht	DE
+1344	tt0264464	Arrête-moi si tu peux	FR
+1345	tt0264464	Prova a prendermi	IT
+1346	tt0264464	Catch Me If You Can	DE
+1347	tt0264464	Atrápame si puedes	ES
+1348	tt0265086	La chute du faucon noir	FR
+1349	tt0265086	Black Hawk Down	DE
+1350	tt0265086	Black Hawk derribado	ES
+1351	tt0265086	Black Hawk Down - Black Hawk abbattuto	IT
+1352	tt0266308	Battle Royale	ES
+1353	tt0266308	Battle Royale	FR
+1354	tt0266308	Battle Royale	IT
+1355	tt0266308	Battle Royale	DE
+1356	tt0266543	Alla ricerca di Nemo	IT
+1357	tt0266543	Buscando a Nemo	ES
+1358	tt0266543	Findet Nemo	DE
+1359	tt0266543	Le monde de Nemo	FR
+1360	tt0266543	Buscant en Nemo	ES-ca
+1361	tt0266697	Kill Bill - Volume 1	IT
+1362	tt0266697	Kill Bill: Vol. 1	DE
+1363	tt0266697	Kill Bill: Volumen 1	ES
+1364	tt0266697	Kill Bill: Volume I	FR
+1365	tt0266915	Hora punta 2	ES
+1366	tt0266915	Colpo grosso al drago rosso - Rush Hour 2	IT
+1367	tt0266915	Rush Hour 2	DE
+1368	tt0266915	Rush Hour 2	FR
+1369	tt0268126	Adaption: Der Orchideen-Dieb	DE
+1370	tt0268126	Il ladro di orchidee	IT
+1371	tt0268126	Adaptation (El ladrón de orquídeas)	ES
+1372	tt0268126	Adaptation.	FR
+1373	tt0268126	Il ladro di orchidee - Adaptation.	IT
+1374	tt0268380	Ice Age	DE
+1375	tt0268380	L'âge de glace	FR
+1376	tt0268380	Ice Age: La edad de hielo	ES
+1377	tt0268380	L'era glaciale	IT
+1378	tt0268380	Ice age: L'edat del gel	ES-ca
+1379	tt0272152	K-Pax - Un universo aparte	ES
+1380	tt0272152	K-PAX - Alles ist möglich	DE
+1381	tt0272152	K-PAX - L'homme qui vient de loin	FR
+1382	tt0272152	K-PAX - Da un altro mondo	IT
+1383	tt0275847	Lilo & Stitch	FR
+1384	tt0275847	Lilo & Stitch	IT
+1385	tt0275847	Lilo & Stitch	ES
+1386	tt0276751	Pour un garçon	FR
+1387	tt0276751	About a Boy oder: Der Tag der toten Ente	DE
+1388	tt0276751	Un niño grande	ES
+1389	tt0276751	About a Boy - Un ragazzo	IT
+1390	tt0285331	24	ES
+1391	tt0285331	24	DE
+1392	tt0285331	24	IT
+1393	tt0285331	24 heures chrono	FR
+1394	tt0285331	24: Twenty Four	DE
+1395	tt0285823	C'era una volta in Messico	IT
+1396	tt0285823	El mexicano	ES
+1397	tt0285823	Il était une fois au Mexique - Desperado 2	FR
+1398	tt0285823	Desperado 2 - Il était une fois au Mexique	FR
+1399	tt0285823	Irgendwann in Mexico	DE
+1400	tt0286106	Signs - Zeichen	DE
+1401	tt0286106	Signs	IT
+1402	tt0286106	Señales	ES
+1403	tt0286106	Signes	FR
+1404	tt0286716	Hulk	IT
+1405	tt0286716	Hulk	ES
+1406	tt0286716	Hulk	DE
+1407	tt0286716	Hulk	FR
+1408	tt0287978	Daredevil	ES
+1409	tt0287978	Daredevil	DE
+1410	tt0287978	Daredevil	FR
+1411	tt0287978	Daredevil	IT
+1412	tt0289043	28 jours plus tard	FR
+1413	tt0289043	28 giorni dopo	IT
+1414	tt0289043	28 Tage später	DE
+1415	tt0289043	28 días después	ES
+1416	tt0289765	Roter Drache	DE
+1417	tt0289765	El dragón rojo	ES
+1418	tt0289765	Dragon rouge	FR
+1419	tt0290002	Meine Frau, ihre Schwiegereltern und ich	DE
+1420	tt0290002	Mi presenti i tuoi?	IT
+1421	tt0290002	Los padres de él	ES
+1422	tt0290002	Mon beau-père, mes parents et moi	FR
+1423	tt0290334	X-Men 2	DE
+1424	tt0290334	X-Men 2	ES
+1425	tt0290334	X-Men 2	FR
+1426	tt0290334	X-Men 2	IT
+1427	tt0295178	Austin Powers in Goldmember	IT
+1428	tt0295178	Goldmember	FR
+1429	tt0295178	Austin Powers dans Goldmember	FR
+1430	tt0295178	Austin Powers in Goldständer	DE
+1431	tt0295178	Austin Powers en Miembro de Oro	ES
+1432	tt0295297	Harry Potter et la chambre des secrets	FR
+1433	tt0295297	Harry Potter y la cámara secreta	ES
+1434	tt0295297	Harry Potter i la cambra secreta	ES-ca
+1435	tt0295297	Harry Potter und die Kammer des Schreckens	DE
+1436	tt0295297	Harry Potter e la camera dei segreti	IT
+1437	tt0295701	xXx	FR
+1438	tt0295701	xXx	ES
+1439	tt0295701	xXx - Triple X	DE
+1440	tt0298148	Shrek 2	IT
+1441	tt0298148	Shrek 2	ES
+1442	tt0298148	Shrek 2 - Der tollkühne Held kehrt zurück	DE
+1443	tt0298148	Shrek 2	FR
+1444	tt0298203	8 Mile	FR
+1445	tt0298203	8 Mile	DE
+1446	tt0298203	8 millas	ES
+1447	tt0299658	Chicago	ES
+1448	tt0299658	Chicago	IT
+1449	tt0299658	Chicago	FR
+1450	tt0299658	Chicago	DE
+1451	tt0299977	Hero	ES
+1452	tt0299977	Hero	DE
+1453	tt0299977	Hero	FR
+1454	tt0299977	Hero	IT
+1455	tt0302886	Old School - Wir lassen absolut nichts anbrennen	DE
+1456	tt0302886	Retour à la fac	FR
+1457	tt0302886	Aquellas juergas universitarias	ES
+1458	tt0304141	Harry Potter und der Gefangene von Askaban	DE
+1459	tt0304141	Harry Potter y el prisionero de Azkaban	ES
+1460	tt0304141	Harry Potter e il prigioniero di Azkaban	IT
+1461	tt0304141	Harry Potter et le prisonnier d'Azkaban	FR
+1462	tt0304141	Harry Potter i el pres d'Azkaban	ES-ca
+1463	tt0305224	Executivo agresivo	ES-gl
+1464	tt0305224	Self Control	FR
+1465	tt0305224	Die Wutprobe	DE
+1466	tt0305224	Terapia d'urto	IT
+1467	tt0305224	Ejecutivo agresivo	ES
+1468	tt0307453	Große Haie - Kleine Fische	DE
+1469	tt0307453	El espantatiburones	ES
+1470	tt0307453	Gang de requins	FR
+1471	tt0307453	L'espantataurons	ES-ca
+1472	tt0307901	25 Stunden	DE
+1473	tt0307901	La 25ème heure	FR
+1474	tt0307901	24 heures avant la nuit	FR
+1475	tt0307901	La última noche	ES
+1476	tt0307901	La 25ª ora	IT
+1477	tt0308644	Descubriendo Nunca Jamás	ES
+1478	tt0308644	Neverland	FR
+1479	tt0308644	Wenn Träume fliegen lernen	DE
+1480	tt0308644	Neverland - Un sogno per la vita	IT
+1481	tt0309698	Identität - Identity	DE
+1482	tt0309698	Identity	FR
+1483	tt0309698	Identidad	ES
+1484	tt0309698	Identità	IT
+1485	tt0311113	Master and Commander: Al otro lado del mundo	ES
+1486	tt0311113	Master & Commander - Bis ans Ende der Welt	DE
+1487	tt0311113	Master & Commander - Sfida ai confini del mare	IT
+1488	tt0311113	Master and commander: De l'autre côté du monde	FR
+1489	tt0314331	Tatsächlich... Liebe	DE
+1490	tt0314331	Love Actually	FR
+1491	tt0314331	Love Actually	ES
+1492	tt0314331	Love Actually - L'amore davvero	IT
+1493	tt0315327	Una settimana da Dio	IT
+1494	tt0315327	Bruce Allmächtig	DE
+1495	tt0315327	Bruce tout-puissant	FR
+1496	tt0315327	Como Dios	ES
+1497	tt0315733	21 Gramm	DE
+1498	tt0315733	21 gramos	ES
+1499	tt0315733	21 grammes	FR
+1500	tt0315733	21 grammi - Il peso dell'anima	IT
+1501	tt0316654	Spider-Man 2	FR
+1502	tt0316654	Spider-Man 2	ES
+1503	tt0316654	Spider-Man 2	DE
+1504	tt0316654	Spider-Man 2	IT
+1505	tt0317219	Cars - Motori ruggenti	IT
+1506	tt0317219	Cars - Quatre roues	FR
+1507	tt0317219	Cars	ES
+1508	tt0317248	La Cité de Dieu	FR
+1509	tt0317248	City of God	DE
+1510	tt0317248	La cité de Dieu	FR
+1511	tt0317248	City of God	IT
+1512	tt0317248	Ciudad de Dios	ES
+1513	tt0317919	Misión imposible 3	ES
+1514	tt0317919	Mission: Impossible III	IT
+1515	tt0317919	Mission: Impossible III	DE
+1516	tt0318627	Resident Evil: Apocalypse	FR
+1517	tt0318627	Resident Evil 2: Apocalipsis	ES
+1518	tt0318627	Resident Evil: Apocalypse	DE
+1519	tt0319061	Big Fish	FR
+1520	tt0319061	Big Fish - Der Zauber, der ein Leben zur Legende macht	DE
+1521	tt0319061	Big Fish	ES
+1522	tt0319061	Big Fish - Le storie di una vita incredibile	IT
+1523	tt0319343	Elf	ES
+1524	tt0319343	Elf - Un elfo di nome Buddy	IT
+1525	tt0319343	Buddy - Der Weihnachtself	DE
+1526	tt0319343	Elfe	FR
+1527	tt0320661	Kingdom of Heaven	FR
+1528	tt0320661	Le crociate - Kingdom of Heaven	IT
+1529	tt0320661	Königreich der Himmel	DE
+1530	tt0320661	El reino de los cielos	ES
+1531	tt0320691	Underworld	ES
+1532	tt0320691	Underworld	DE
+1533	tt0320691	Underworld	FR
+1534	tt0322259	A todo gas 2	ES
+1535	tt0322259	2 Fast 2 Furious: A todo gas 2	ES
+1536	tt0322259	2 Fast 2 Furious	FR
+1537	tt0322259	2 Fast 2 Furious	ES
+1538	tt0322259	2 Fast 2 Furious	DE
+1539	tt0325980	La maledizione della prima luna	IT
+1540	tt0325980	Pirates des Caraïbes - La malédiction du Black Pearl	FR
+1541	tt0325980	Pirati dei Caraibi: La maledizione della prima luna	IT
+1542	tt0325980	La maledizione della prima luna - Pirates of the Caribbean	IT
+1543	tt0325980	Fluch der Karibik	DE
+1544	tt0325980	Piratas del Caribe: La maldición de la Perla Negra	ES
+1545	tt0327056	Mystic River	ES
+1546	tt0327056	Mystic River	DE
+1547	tt0327056	Mystic River	FR
+1548	tt0327056	Mystic River	IT
+1549	tt0327084	La gang del bosco	IT
+1550	tt0327084	Ab durch die Hecke	DE
+1551	tt0327084	Nos voisins, les hommes	FR
+1552	tt0327084	Vecinos invasores	ES
+1553	tt0328107	El fuego de la venganza	ES
+1554	tt0328107	Man on Fire	FR
+1555	tt0328107	Man on Fire - Il fuoco della vendetta	IT
+1556	tt0328107	Mann unter Feuer	DE
+1557	tt0328828	American pie: marions-les!	FR
+1558	tt0328828	American Pie: Jetzt wird geheiratet	DE
+1559	tt0328828	American Pie: ¡Menuda boda!	ES
+1560	tt0328828	American Pie - Il matrimonio	IT
+1561	tt0330373	Harry Potter y el cáliz de fuego	ES
+1562	tt0330373	Harry Potter e il calice di fuoco	IT
+1563	tt0330373	Harry Potter et la coupe de feu	FR
+1564	tt0330373	Harry Potter und der Feuerkelch	DE
+1565	tt0330373	Harry Potter i el calze de foc	ES-ca
+1566	tt0332452	Troya	ES
+1567	tt0332452	Troja	DE
+1568	tt0332452	Troie	FR
+1569	tt0333766	Garden State	FR
+1570	tt0333766	La mia vita a Garden State	IT
+1571	tt0333766	Algo en común	ES
+1572	tt0335266	Lost in Translation	ES
+1573	tt0335266	Lost in Translation	FR
+1574	tt0335266	Lost in Translation - L'amore tradotto	IT
+1575	tt0335266	Lost in Translation: Zwischen den Welten	DE
+1576	tt0337563	30 über Nacht	DE
+1577	tt0337563	30 ans sinon rien	FR
+1578	tt0337563	El sueño de mi vida	ES
+1579	tt0337563	30 anni in un secondo	IT
+1580	tt0337978	Die Hard 4: Retour en enfer	FR
+1581	tt0337978	Die Hard - Vivere o morire	IT
+1582	tt0337978	Stirb langsam 4.0	DE
+1583	tt0337978	La jungla 4.0	ES
+1584	tt0338013	¡Olvídate de mí!	ES
+1585	tt0338013	Eternal Sunshine of the Spotless Mind	IT
+1586	tt0338013	Eternal Sunshine of the Spotless Mind	FR
+1587	tt0338013	Vergiss mein nicht	DE
+1588	tt0338013	Se mi lasci ti cancello	IT
+1589	tt0338526	Van Helsing	FR
+1590	tt0338526	Van Helsing	ES
+1591	tt0338526	Van Helsing	DE
+1592	tt0343660	Amour & amnésie	FR
+1593	tt0343660	50 primeras citas	ES
+1594	tt0343660	50 volte il primo bacio	IT
+1595	tt0343660	50 erste Dates	DE
+1596	tt0343818	Yo, robot	ES
+1597	tt0343818	Io, robot	IT
+1598	tt0343818	I, Robot	FR
+1599	tt0343818	Jo, robot	ES-ca
+1600	tt0343818	I, Robot	DE
+1601	tt0346491	Alexandre	FR
+1602	tt0346491	Alejandro Magno	ES
+1603	tt0346491	Alexander	IT
+1604	tt0346491	Alexander	DE
+1605	tt0347149	Le château ambulant	FR
+1606	tt0347149	Das wandelnde Schloss	DE
+1607	tt0347149	El castell ambulant	ES-ca
+1608	tt0347149	Il castello errante di Howl	IT
+1609	tt0347149	El castillo ambulante	ES
+1610	tt0348150	Superman Returns	DE
+1611	tt0348150	Superman Returns: El regreso	ES
+1612	tt0348150	Superman, o regreso	ES-gl
+1613	tt0348150	Superman Returns	FR
+1614	tt0349683	Le roi Arthur	FR
+1615	tt0349683	El rey Arturo	ES
+1616	tt0349683	King Arthur	IT
+1617	tt0349683	King Arthur	DE
+1618	tt0349903	Ocean's Twelve	FR
+1619	tt0349903	Ocean's Twelve	DE
+1620	tt0349903	Ocean's Twelve: Uno más entra en juego	ES
+1621	tt0349903	Ocean's Twelve	IT
+1622	tt0351283	Madagascar	ES
+1623	tt0351283	Madagascar	FR
+1624	tt0351283	Madagascar	DE
+1625	tt0351283	Madagascar	IT
+1626	tt0352248	Cinderella Man - Una ragione per lottare	IT
+1627	tt0352248	Cinderella Man. El hombre que no se dejó tumbar	ES
+1628	tt0352248	Das Comeback	DE
+1629	tt0352248	De l'ombre à la lumière	FR
+1630	tt0356150	Sex Trip	FR
+1631	tt0356150	Eurotrip	DE
+1632	tt0356150	Eurotrip	ES
+1633	tt0356910	Sr. y Sra. Smith	ES
+1634	tt0356910	Mr. & Mrs. Smith	DE
+1635	tt0356910	Mr. & Mrs. Smith	IT
+1636	tt0357413	Présentateur vedette: La légende de Ron Burgundy	FR
+1637	tt0357413	Der Anchorman	DE
+1638	tt0357413	Anchorman - Die Legende von Ron Burgundy	DE
+1639	tt0357413	El reportero: La leyenda de Ron Burgundy	ES
+1640	tt0357413	Anchorman - La leggenda di Ron Burgundy	IT
+1641	tt0358273	Quando l'amore brucia l'anima	IT
+1642	tt0358273	Walk the Line	FR
+1643	tt0358273	En la cuerda floja	ES
+1644	tt0358273	Walk the Line	DE
+1645	tt0359013	Blade: Trinity	DE
+1646	tt0359013	Blade: Trinity	FR
+1647	tt0359013	Blade: Trinity	ES
+1648	tt0360486	Constantine	ES
+1649	tt0360486	Constantine	DE
+1650	tt0360486	Constantine	FR
+1651	tt0360486	Constantine	IT
+1652	tt0360717	King Kong	ES
+1653	tt0360717	King Kong	DE
+1654	tt0360717	King Kong	IT
+1655	tt0360717	King Kong	FR
+1656	tt0363547	L'armée des morts	FR
+1657	tt0363547	Amanecer de los muertos	ES
+1658	tt0363547	Dawn of the Dead	DE
+1659	tt0363547	L'alba dei morti viventi	IT
+1660	tt0363988	La finestra secreta	ES-ca
+1661	tt0363988	Fenêtre secrète	FR
+1662	tt0363988	Secret Window	IT
+1663	tt0363988	La ventana secreta	ES
+1664	tt0363988	Das geheime Fenster	DE
+1665	tt0364725	Cuestión de pelotas	ES
+1666	tt0364725	Dodgeball - Même pas mal!	FR
+1667	tt0364725	Voll auf die Nüsse	DE
+1668	tt0364725	Palle al balzo - Dodgeball	IT
+1669	tt0365748	Shaun of the Dead	FR
+1670	tt0365748	L'alba dei morti dementi	IT
+1671	tt0365748	Zombies Party (Una noche... de muerte)	ES
+1672	tt0366548	Happy Feet	FR
+1673	tt0366548	Happy Feet: Rompiendo el hielo	ES
+1674	tt0366548	Happy feet - Trencant el gel	ES-ca
+1675	tt0366551	American Trip - Il primo viaggio non si scorda mai	IT
+1676	tt0366551	2 colgaos muy fumaos	ES
+1677	tt0366551	Harold & Kumar chassent le burger	FR
+1678	tt0366551	American Trip - il primo viaggio non si scorda mai	IT
+1679	tt0366551	Harold & Kumar	DE
+1680	tt0367279	Arrested Development	ES
+1681	tt0367279	Arrested Development - Ti presento i miei	IT
+1682	tt0367279	Arrested Development	DE
+1683	tt0367279	Arrested development - Les nouveaux pauvres	FR
+1684	tt0367594	La fabbrica di cioccolato	IT
+1685	tt0367594	Charlie i la fàbrica de xocolata	ES-ca
+1686	tt0367594	Charlie et la chocolaterie	FR
+1687	tt0367594	Charlie y la fábrica de chocolate	ES
+1688	tt0367594	Charlie und die Schokoladenfabrik	DE
+1689	tt0368891	Benjamin Gates et le trésor des Templiers	FR
+1690	tt0368891	Das Vermächtnis der Tempelritter	DE
+1691	tt0368891	Il mistero dei Templari	IT
+1692	tt0368891	La búsqueda (National Treasure)	ES
+1693	tt0369339	Collatéral	FR
+1694	tt0369339	Collateral	DE
+1695	tt0369339	Collateral	ES
+1696	tt0370263	Alien vs. Predator	IT
+1697	tt0370263	Alien vs. Predator	FR
+1698	tt0370263	Alien vs. Predator	DE
+1699	tt0370263	Alien vs. Predator	ES
+1700	tt0371746	Iron Man	ES
+1701	tt0371746	Iron Man	DE
+1702	tt0371746	Iron Man	IT
+1703	tt0371746	Iron Man	FR
+1704	tt0372588	Team America	IT
+1705	tt0372588	Team America	DE
+1706	tt0372588	Team america, police du monde	FR
+1707	tt0372588	Team America: La policia del món	ES-ca
+1708	tt0372588	Team America: La policía del mundo	ES
+1709	tt0372784	Batman Begins	FR
+1710	tt0372784	Batman Begins	ES
+1711	tt0372784	Batman Begins	DE
+1712	tt0372784	Batman Begins	IT
+1713	tt0373469	Kiss Kiss Bang Bang	FR
+1714	tt0373469	Kiss Kiss, Bang Bang	ES
+1715	tt0373889	Harry Potter und der Orden des Phönix	DE
+1716	tt0373889	Harry Potter et l'ordre du Phénix	FR
+1717	tt0373889	Harry Potter e l'Ordine della Fenice	IT
+1718	tt0373889	Harry Potter y la Orden del Fénix	ES
+1719	tt0373889	Harry Potter i l'orde del Fènix	ES-ca
+1720	tt0375063	Sideways - In viaggio con Jack	IT
+1721	tt0375063	Entre copas	ES
+1722	tt0375063	Sideways	FR
+1723	tt0375912	Crimen organizado	ES
+1724	tt0375912	The Pusher	IT
+1725	tt0375912	Layer Cake	DE
+1726	tt0375912	Layer Cake	FR
+1727	tt0376994	X-Men: L'affrontement final	FR
+1728	tt0376994	X-Men: Conflitto finale	IT
+1729	tt0376994	X-Men: La decisión final	ES
+1730	tt0376994	X-Men: la decisió final	ES-ca
+1731	tt0376994	X-Men: Der letzte Widerstand	DE
+1732	tt0377092	Chicas malas	ES
+1733	tt0377092	Girls Club - Vorsicht bissig!	DE
+1734	tt0377092	Lolita malgré moi	FR
+1735	tt0378194	Kill Bill - Volume 2	IT
+1736	tt0378194	Kill Bill: Volume II	FR
+1737	tt0378194	Kill Bill: Vol. 2	DE
+1738	tt0378194	Kill Bill: Volumen 2	ES
+1739	tt0379786	Serenity	ES
+1740	tt0379786	Serenity - L'ultime rébellion	FR
+1741	tt0379786	Serenity	IT
+1742	tt0379786	Serenity: Flucht in neue Welten	DE
+1743	tt0381061	James Bond 007 - Casino Royale	DE
+1744	tt0381061	007: Casino Royale	ES
+1745	tt0381061	Casino Royale	ES
+1746	tt0381061	007 - Casino Royale	IT
+1747	tt0381061	Casino Royale	IT
+1748	tt0381061	Casino Royale	FR
+1749	tt0381681	Before Sunset	FR
+1750	tt0381681	Abans de la posta	ES-ca
+1751	tt0381681	Antes del atardecer	ES
+1752	tt0381681	Prima del tramonto	IT
+1753	tt0381849	El tren de las 3:10	ES
+1754	tt0381849	Todeszug nach Yuma	DE
+1755	tt0381849	3h10 pour Yuma	FR
+1756	tt0381849	Quel treno per Yuma	IT
+1757	tt0382932	Ratatouille	DE
+1758	tt0382932	Ratatouille	FR
+1759	tt0382932	Ratatouille	IT
+1760	tt0382932	Ratatouille	ES
+1761	tt0383574	Piratas del Caribe: El cofre del hombre muerto	ES
+1762	tt0383574	Pirati dei Caraibi - La maledizione del forziere fantasma	IT
+1763	tt0383574	Pirates of the Caribbean - Fluch der Karibik 2	DE
+1764	tt0383574	Pirates des Caraïbes - Le secret du coffre maudit	FR
+1765	tt0383574	Fluch der Karibik 2	DE
+1766	tt0384537	Silent Hill	IT
+1767	tt0384537	Silent Hill	FR
+1768	tt0384537	Silent Hill	ES
+1769	tt0387564	Saw - Wessen Blut wird fließen?	DE
+1770	tt0387564	Saw	ES
+1771	tt0387564	Saw	DE
+1772	tt0387564	Saw	FR
+1773	tt0387564	Saw - L'enigmista	IT
+1774	tt0388795	I segreti di Brokeback Mountain	IT
+1775	tt0388795	Brokeback Mountain	DE
+1776	tt0388795	Le secret de Brokeback Mountain	FR
+1777	tt0389722	30 días de oscuridad	ES
+1778	tt0389722	30 Days of Night	DE
+1779	tt0389722	30 giorni di buio	IT
+1780	tt0389722	30 jours de nuit	FR
+1781	tt0389860	Click	ES
+1782	tt0389860	Cambia la tua vita con un click	IT
+1783	tt0389860	Click	FR
+1784	tt0389860	Klick	DE
+1785	tt0395169	Hotel Rwanda	ES
+1786	tt0395169	Hôtel Rwanda	FR
+1787	tt0395169	Hotel Ruanda	DE
+1788	tt0396171	Das Parfum - Die Geschichte eines Mörders	DE
+1789	tt0396171	Profumo - Storia di un assassino	IT
+1790	tt0396171	Le parfum - Histoire d'un meurtrier	FR
+1791	tt0396171	El perfume: Historia de un asesino	ES
+1792	tt0396269	De boda en boda	ES
+1793	tt0396269	Die Hochzeits-Crasher	DE
+1794	tt0396269	2 single a nozze	IT
+1795	tt0396269	Serial noceurs	FR
+1796	tt0399295	Lord of War	FR
+1797	tt0399295	Lord of War	IT
+1798	tt0399295	O señor da guerra	ES-gl
+1799	tt0399295	El señor de la guerra	ES
+1800	tt0399295	Lord of War - Händler des Todes	DE
+1801	tt0401792	Sin City	DE
+1802	tt0401792	Sin City: Ciudad del pecado	ES
+1803	tt0401792	Sin City	IT
+1804	tt0401855	Underworld: Evolution	ES
+1805	tt0401855	Underworld 2: Evolution	FR
+1806	tt0401855	Underworld: Evolution	DE
+1807	tt0405159	Million Dollar Baby	ES
+1808	tt0405159	Million Dollar Baby	DE
+1809	tt0405159	Million Dollar Baby	FR
+1810	tt0405159	Million Dollar Baby	ES-ca
+1811	tt0407304	Krieg der Welten	DE
+1812	tt0407304	La guerra dels mons	ES-ca
+1813	tt0407304	La guerra de los mundos	ES
+1814	tt0407304	La guerra dei mondi	IT
+1815	tt0407304	La guerre des mondes	FR
+1816	tt0408306	Munich	ES
+1817	tt0408306	Munich	IT
+1818	tt0408306	Munich	FR
+1819	tt0408306	München	DE
+1820	tt0411008	Perdidos	ES
+1821	tt0411008	Lost	IT
+1822	tt0411008	Lost - Les disparus	FR
+1823	tt0411008	Lost	DE
+1824	tt0413267	Shrek le Troisième	FR
+1825	tt0413267	Shrek der Dritte	DE
+1826	tt0413267	Shrek tercero	ES
+1827	tt0413267	Shrek Terzo	IT
+1828	tt0413300	Spider-Man 3	FR
+1829	tt0413300	Spider-Man 3	ES
+1830	tt0413300	Spider-Man 3	DE
+1831	tt0413300	Spider-Man 3	IT
+1832	tt0414387	Orgueil et préjugés	FR
+1833	tt0414387	Stolz & Vorurteil	DE
+1834	tt0414387	Orgueil & préjugés	FR
+1835	tt0414387	Pride & Prejudice (Orgullo y prejuicio)	ES
+1836	tt0414387	Orgoglio e pregiudizio	IT
+1837	tt0415306	Ricky Bobby, roi du circuit	FR
+1838	tt0415306	Pasado de vueltas	ES
+1839	tt0415306	Ricky Bobby - König der Rennfahrer	DE
+1840	tt0415306	Passat de voltes	ES-ca
+1841	tt0415306	Ricky Bobby - La storia di un uomo che sapeva contare fino a uno	IT
+1842	tt0416320	Match Point	ES
+1843	tt0416320	Match Point	DE
+1844	tt0416320	Match Point	IT
+1845	tt0416320	Match Point	FR
+1846	tt0416449	300	DE
+1847	tt0416449	300	IT
+1848	tt0416449	300	FR
+1849	tt0416449	300	ES
+1850	tt0418279	Transformers	ES
+1851	tt0418279	Transformers	DE
+1852	tt0418279	Transformers	IT
+1853	tt0418763	Jarhead - El infierno espera	ES
+1854	tt0418763	Jarhead	IT
+1855	tt0418763	Jarhead - Willkommen im Dreck	DE
+1856	tt0418763	Jarhead - La fin de l'innocence	FR
+1857	tt0420223	Más extraño que la ficción	ES
+1858	tt0420223	L'incroyable destin de Harold Crick	FR
+1859	tt0420223	Vero come la finzione	IT
+1860	tt0420223	Schräger als Fiktion	DE
+1861	tt0424136	Hard Candy	IT
+1862	tt0424136	Hard Candy	FR
+1863	tt0424136	Hard Candy	ES
+1864	tt0425061	Agente Smart - Casino totale	IT
+1865	tt0425061	Get Smart - Wir lieben es, die Welt zu retten!	DE
+1866	tt0425061	Superagente 86 de película	ES
+1867	tt0425061	Get Smart	DE
+1868	tt0425061	Max la menace	FR
+1869	tt0425112	Hot Fuzz - Verbrechen verboten	DE
+1870	tt0425112	Hot Fuzz	FR
+1871	tt0425112	Hot Fuzz - Zwei abgewichste Profis	DE
+1872	tt0425112	Arma fatal	ES
+1873	tt0425210	Slevin - Patto criminale	IT
+1874	tt0425210	Lucky Number Slevin	DE
+1875	tt0425210	Slevin	FR
+1876	tt0425210	El caso Slevin	ES
+1877	tt0427944	Gracias por fumar	ES
+1878	tt0427944	Thank You for Smoking	DE
+1879	tt0427944	Thank You for Smoking	FR
+1880	tt0432021	Resident Evil: Extinction	DE
+1881	tt0432021	Resident Evil: Extinction	FR
+1882	tt0432021	Resident Evil: Extinción	ES
+1883	tt0432348	Saw 2	FR
+1884	tt0432348	Saw II - Das Spiel geht weiter...	DE
+1885	tt0432348	Saw II - La soluzione dell'enigma	IT
+1886	tt0432348	Saw 2	DE
+1887	tt0434409	V pour vendetta	FR
+1888	tt0434409	V wie Vendetta	DE
+1889	tt0434409	V per Vendetta	IT
+1890	tt0434409	V de Vendetta	ES
+1891	tt0438097	L'âge de glace 2	FR
+1892	tt0438097	Ice Age 2 - Jetzt taut's	DE
+1893	tt0438097	L'era glaciale 2 - Il disgelo	IT
+1894	tt0438097	Ice Age 2: El deshielo	ES
+1895	tt0441773	Kung Fu Panda	ES
+1896	tt0441773	Kung Fu Panda	DE
+1897	tt0441773	Kung Fu Panda	FR
+1898	tt0441773	Kung Fu Panda	IT
+1899	tt0442933	Die Legende von Beowulf	DE
+1900	tt0442933	La leggenda di Beowulf	IT
+1901	tt0442933	Beowulf	ES
+1902	tt0442933	La légende de Beowulf	FR
+1903	tt0443453	Borat: Kulturelle Lernung von Amerika um Benefiz für glorreiche Nation von Kasachstan zu machen	DE
+1904	tt0443453	Borat: Studio culturale sull'America a beneficio della gloriosa nazione del Kazakistan	IT
+1905	tt0443453	Borat	ES
+1906	tt0443453	Borat: Leçons culturelles sur l'Amérique au profit glorieuse nation Kazakhstan	FR
+1907	tt0443706	Zodiac	IT
+1908	tt0443706	Zodiac	FR
+1909	tt0443706	Zodiac: Die Spur des Killers	DE
+1910	tt0443706	Zodiac	ES
+1911	tt0445934	Die Eisprinzen	DE
+1912	tt0445934	Blades of Glory - Due pattini per la gloria	IT
+1913	tt0445934	Patinazo a la gloria	ES
+1914	tt0445934	Les rois du patin	FR
+1915	tt0448134	Sunshine	DE
+1916	tt0448134	Sunshine	ES
+1917	tt0448134	Sunshine	IT
+1918	tt0448134	Sunshine	FR
+1919	tt0449059	Little Miss Sunshine	IT
+1920	tt0449059	Pequeña Miss Sunshine	ES
+1921	tt0449059	Little Miss Sunshine	FR
+1922	tt0449088	Piratas del Caribe: En el fin del mundo	ES
+1923	tt0449088	Pirates of the Caribbean - Am Ende der Welt	DE
+1924	tt0449088	Pirati dei Caraibi - Ai confini del mondo	IT
+1925	tt0449088	Pirates des Caraïbes - Jusqu'au bout du monde	FR
+1926	tt0449088	Fluch der Karibik - Am Ende der Welt	DE
+1927	tt0449467	Babel	FR
+1928	tt0449467	Babel	DE
+1929	tt0449467	Babel	ES
+1930	tt0450259	Blood Diamond	FR
+1931	tt0450259	Diamante de sangre	ES
+1932	tt0450259	Blood Diamond	DE
+1933	tt0450259	Blood Diamond - Diamanti di sangue	IT
+1934	tt0450278	Hostel	ES
+1935	tt0450278	Hostel	FR
+1936	tt0450278	Hostel	DE
+1937	tt0450385	Zimmer 1408	DE
+1938	tt0450385	1408	ES
+1939	tt0450385	1408	IT
+1940	tt0450385	Chambre 1408	FR
+1941	tt0453467	Déjà vu	FR
+1942	tt0453467	Déjà vu - Corsa contro il tempo	IT
+1943	tt0453467	Déjà vu (Cambiando el pasado)	ES
+1944	tt0453467	Déjà Vu - Wettlauf gegen die Zeit	DE
+1945	tt0454848	Inside Man - L'homme de l'intérieur	FR
+1946	tt0454848	Inside Man	DE
+1947	tt0454848	Inside Man	IT
+1948	tt0454848	Plan oculto	ES
+1949	tt0461770	Verwünscht	DE
+1950	tt0461770	Come d'incanto	IT
+1951	tt0461770	Il était une fois...	FR
+1952	tt0461770	Encantada: La historia de Giselle	ES
+1953	tt0462322	Boulevard de la mort: un film Grindhouse/la critique Critique CINÉMA Boulevard de la mort - un film Grindhouse	FR
+1954	tt0462322	Grindhouse	IT
+1955	tt0465234	Das Vermächtnis des geheimen Buches	DE
+1956	tt0465234	La búsqueda: El diario secreto	ES
+1957	tt0465234	Benjamin Gates et le livre des secrets	FR
+1958	tt0465234	Il mistero delle pagine perdute	IT
+1959	tt0465494	Hitman	FR
+1960	tt0465494	Hitman - Jeder stirbt alleine	DE
+1961	tt0465494	Hitman	ES
+1962	tt0465494	Hitman - L'assassino	IT
+1963	tt0465538	Michael Clayton	ES
+1964	tt0465538	Michael Clayton	IT
+1965	tt0465538	Michael Clayton	DE
+1966	tt0467406	Juno	FR
+1967	tt0467406	Juno	ES
+1968	tt0467406	Juno	DE
+1969	tt0467406	Juno	IT
+1970	tt0469494	There Will Be Blood	FR
+1971	tt0469494	There Will Be Blood	DE
+1972	tt0469494	Il petroliere	IT
+1973	tt0469494	Pozos de ambición	ES
+1974	tt0472043	Apocalypto	FR
+1975	tt0472043	Apocalypto	IT
+1976	tt0472043	Apocalypto	DE
+1977	tt0472043	Apocalypto	ES
+1978	tt0477347	Noche en el museo	ES
+1979	tt0477347	Una notte al museo	IT
+1980	tt0477347	Nachts im Museum	DE
+1981	tt0477347	La nuit au musée	FR
+1982	tt0477348	No es país para viejos	ES
+1983	tt0477348	No Country for Old Men	DE
+1984	tt0477348	Non è un paese per vecchi	IT
+1985	tt0477348	No Country for Old Men - Non, ce pays n'est pas pour le vieil homme	FR
+1986	tt0478087	21: Black Jack	ES
+1987	tt0478087	21	DE
+1988	tt0478087	Las Vegas 21	FR
+1989	tt0478087	21	IT
+1990	tt0479143	Rocky Balboa	DE
+1991	tt0479143	Rocky Balboa	IT
+1992	tt0479143	Rocky Balboa	ES
+1993	tt0479143	Rocky Balboa	FR
+1994	tt0479884	Hyper tension	FR
+1995	tt0479884	Crank: Veneno en la sangre	ES
+1996	tt0479884	Crank	IT
+1997	tt0480249	I Am Legend	DE
+1998	tt0480249	Soy leyenda	ES
+1999	tt0480249	Io sono leggenda	IT
+2000	tt0480249	Je suis une légende	FR
+2001	tt0486655	Stardust	ES
+2002	tt0486655	Stardust, le mystère de l'étoile	FR
+2003	tt0486655	Der Sternwanderer	DE
+2004	tt0486655	Stardust	IT
+2005	tt0486822	Disturbia	ES
+2006	tt0486822	Disturbia - Auch Killer haben Nachbarn	DE
+2007	tt0486822	Paranoïak	FR
+2008	tt0486822	Disturbia	IT
+2009	tt0488120	Fracture	ES
+2010	tt0488120	Il caso Thomas Crawford	IT
+2011	tt0488120	La faille	FR
+2012	tt0488120	Das perfekte Verbrechen	DE
+2013	tt0489099	Jumper	IT
+2014	tt0489099	Jumper	ES
+2015	tt0489099	Jumper	DE
+2016	tt0489099	Jumper	FR
+2017	tt0489270	Saw III - Hast du das Leben verdient?	DE
+2018	tt0489270	Saw 3	FR
+2019	tt0489270	Saw III - L'enigma senza fine	IT
+2020	tt0489270	Saw III	ES
+2021	tt0489270	Saw 3	DE
+2022	tt0493464	Wanted - Scegli il tuo destino	IT
+2023	tt0493464	Wanted: Choisis ton destin	FR
+2024	tt0493464	Wanted (Se busca)	ES
+2025	tt0493464	Wanted	DE
+2026	tt0496806	Ocean's 13	ES
+2027	tt0496806	Ocean's 13	DE
+2028	tt0496806	Ocean's 13	FR
+2029	tt0496806	Ocean's Thirteen	IT
+2030	tt0498380	Letters from Iwo Jima	DE
+2031	tt0498380	Lettere da Iwo Jima	IT
+2032	tt0498380	Lettres d'Iwo Jima	FR
+2033	tt0498380	Cartas desde Iwo Jima	ES
+2034	tt0499549	Avatar	IT
+2035	tt0499549	Avatar	FR
+2036	tt0499549	Avatar - Aufbruch nach Pandora	DE
+2037	tt0499549	Avatar	ES
+2038	tt0758758	Into the Wild	DE
+2039	tt0758758	Enmig de la natura	ES-ca
+2040	tt0758758	Into the Wild - Die Geschichte eines Aussteigers	DE
+2041	tt0758758	Into the Wild - Nelle terre selvagge	IT
+2042	tt0758758	Into the Wild	FR
+2043	tt0758758	Hacia rutas salvajes	ES
+2044	tt0765429	American Gangster	FR
+2045	tt0765429	American Gangster	IT
+2046	tt0765429	American Gangster	ES
+2047	tt0765429	American Gangster	DE
+2048	tt0765443	Promeses de l'est	ES-ca
+2049	tt0765443	Tödliche Versprechen - Eastern Promises	DE
+2050	tt0765443	Promesas del este	ES
+2051	tt0765443	Les promesses de l'ombre	FR
+2052	tt0765443	La promessa dell'assassino	IT
+2053	tt0780536	Escondidos en Brujas	ES
+2054	tt0780536	Bons baisers de Bruges	FR
+2055	tt0780536	In Bruges - La coscienza dell'assassino	IT
+2056	tt0780536	Brügge sehen... und sterben?	DE
+2057	tt0783233	Abbitte	DE
+2058	tt0783233	Expiación. Más allá de la pasión	ES
+2059	tt0783233	Espiazione	IT
+2060	tt0783233	Reviens-moi	FR
+2061	tt0795421	Mamma Mia!	FR
+2062	tt0795421	Mamma Mia! La película	ES
+2063	tt0795421	Mamma Mia!	DE
+2064	tt0800039	Non mi scaricare	IT
+2065	tt0800039	Nie wieder Sex mit der Ex	DE
+2066	tt0800039	Sans Sarah, rien ne va!	FR
+2067	tt0800039	Paso de ti	ES
+2068	tt0822854	Shooter, tireur d'élite	FR
+2069	tt0822854	Shooter: El tirador	ES
+2070	tt0822854	Shooter	IT
+2071	tt0838283	Fratellastri a 40 anni	IT
+2072	tt0838283	Stiefbrüder	DE
+2073	tt0838283	Frangins malgré eux	FR
+2074	tt0838283	Hermanos por pelotas	ES
+2075	tt0887883	Quemar después de leer	ES
+2076	tt0887883	Burn After Reading - A prova di spia	IT
+2077	tt0887883	Burn After Reading - Wer verbrennt sich hier die Finger?	DE
+2078	tt0887883	Burn After Reading	FR
+2079	tt0936501	Taken	FR
+2080	tt0936501	96 Hours	DE
+2081	tt0936501	Venganza	ES
+2082	tt0936501	Io vi troverò	IT
+2083	tt0942385	Tonnerre sous les tropiques	FR
+2084	tt0942385	Tropic Thunder: ¡Una guerra muy perra!	ES
+2085	tt0942385	Tropic Thunder	IT
+2086	tt0942385	Tropic Thunder - Hol Dir die volle Dröhnung!	DE
+2087	tt0960144	Zohan: Licencia para peinar	ES
+2088	tt0960144	Zohan - Tutte le donne vengono al pettine	IT
+2089	tt0960144	Rien que pour vos cheveux	FR
+2090	tt0960144	Leg dich nicht mit Zohan an	DE
+2091	tt0986264	Stelle sulla Terra	IT
+2092	tt0986264	Taare Zameen Par - Ein Stern auf Erden	DE
+2093	tt0988595	27 vestidos	ES
+2094	tt0988595	27 robes	FR
+2095	tt0988595	27 volte in bianco	IT
+2096	tt0988595	27 Dresses	DE
+2097	tt0988595	27 Dresses Kleider machen Bräute	DE
