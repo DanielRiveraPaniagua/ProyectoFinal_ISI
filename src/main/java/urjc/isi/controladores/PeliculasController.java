@@ -63,7 +63,6 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-		System.out.println("muestra");
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
@@ -80,7 +79,7 @@ public class PeliculasController {
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
 		if(request.queryParams("genero")!=null) {
-			return filmsByGenero(request, response);
+			filter.put("genero", request.queryString());
 		}
 		output = ps.getAllPeliculas(filter);
 
@@ -231,9 +230,6 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
-
-		//filtrado por género se podría prescindir 
-		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
 }
