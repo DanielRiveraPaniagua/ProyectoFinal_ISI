@@ -142,7 +142,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-				case "duracion":					
+				case "duracion":	
+					add_order = true;
+					order += "p.duracion DESC";
 					if(conditions.get("duracion").indexOf("<") == 0) {
 						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
 						break;
@@ -275,27 +277,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			System.out.println(e.getMessage());
 		}
 		return filmList;
-	}
-
-	@Override
-	public String selectCalificacionForPelicula(String name){
-		String calificacion = "";
-		List<Peliculas> calificacionList = new ArrayList<>();
-		String sql = "SELECT * from peliculas WHERE titulo = '" + name + "'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			ResultSet rs = pstmt.executeQuery();
-			c.commit();
-			while(rs.next()){
-				calificacionList.add(fromResultSet(rs));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		if (!calificacionList.isEmpty()) {
-			calificacion = Integer.toString(calificacionList.get(0).getCalificacion());
-		}
-
-		return calificacion;
 	}
 
 	@Override
