@@ -48,7 +48,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	  		pstmt.setString(3, entity.getNacimiento());
 	      	pstmt.setString(4, entity.getMuerte());
 	  		pstmt.executeUpdate();
-	    } catch (SQLException e) {
+	    	} catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
 
@@ -76,7 +76,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  while(rs.next()){
 				  personaslist.add(fromResultSet(rs));
 			  }
-	    } catch (SQLException e) {
+	    	  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return personaslist;
@@ -90,7 +90,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
 			  persona = fromResultSet(rs);
-	      } catch (SQLException e) {
+	      	  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
@@ -115,7 +115,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
 			  persona = fromResultSet(rs);
-	      } catch (SQLException e) {
+	      	  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
