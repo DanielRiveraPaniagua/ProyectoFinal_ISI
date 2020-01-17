@@ -25,13 +25,12 @@ public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas> implemen
 		ti.setIdPelicula(rs.getString("idpelicula"));
 		ti.setTitulo(rs.getString("tituloenidioma"));
 		ti.setIdioma(rs.getString("idioma"));
-		ti.setIsDefault(Integer.valueOf(rs.getString("isdefault")));
 		return ti;
 	}
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table tituloidiomas ( id INT, idpelicula text, tituloenidioma text, idioma text, isdefault INT, PRIMARY KEY (id))");
+		statement.executeUpdate("create table tituloidiomas ( id INT, idpelicula text, tituloenidioma text, idioma text, PRIMARY KEY (id))");
 		c.commit();	
 	}
 	@Override
@@ -42,14 +41,13 @@ public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas> implemen
 	}
   @Override
   public void insert(TituloIdiomas entity) {
-  	String sql = "INSERT INTO tituloidiomas(id, idpelicula, tituloenidioma, idioma, isdefault) VALUES(?, ?, ?, ?, ?)";
+  	String sql = "INSERT INTO tituloidiomas(id, idpelicula, tituloenidioma, idioma) VALUES(?, ?, ?, ?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
   		pstmt.setInt(1, entity.getId());
   		pstmt.setString(2, entity.getIdPelicula());
   		pstmt.setString(3, entity.getTitulo());
   		pstmt.setString(4, entity.getIdioma());
-  		pstmt.setInt(5, entity.getIsDefault());
   		pstmt.executeUpdate();
     } catch (SQLException e) {
   	    System.out.println(e.getMessage());
