@@ -79,7 +79,7 @@ public class PeliculasService {
 		return result;
 	}
 
-	public List<Peliculas> getEsaAdulto(int edad) throws SQLException{
+	public List<Peliculas> getEsAdulto(int edad) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		List<Peliculas> result = pelisDAO.selectEsAdulto(edad);
 		pelisDAO.close();
