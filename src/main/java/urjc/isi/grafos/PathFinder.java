@@ -1,3 +1,5 @@
+package urjc.isi.grafos;
+
 /******************************************************************************
  *  Compilation:  javac PathFinder.java
  *  Execution:    java Pathfinder input.txt delimiter source
