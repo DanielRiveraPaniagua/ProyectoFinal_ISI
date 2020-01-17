@@ -140,8 +140,20 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-				case "duracion":
-					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+				case "duracion":					
+					if(conditions.get("duracion").indexOf("<") == 0) {
+						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("duracion").indexOf(">") == 0){
+						cond+= "p.duracion >= "+"'"+conditions.get("duracion").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("duracion").indexOf("-") == -1) {
+						cond+= "p.duracion = "+"'"+conditions.get("duracion")+"'";
+					}else {
+						String[] duracion = conditions.get("duracion").split("-");
+						cond+= "p.duracion >= " + "'" + duracion[0] + "'" + " and " + "p.duracion <= "+ "'"+ duracion[1] + "'" ;
+					}
 					break;
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
