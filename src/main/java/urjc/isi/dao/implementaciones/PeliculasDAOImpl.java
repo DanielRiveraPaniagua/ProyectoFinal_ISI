@@ -255,4 +255,30 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
+
+	@Override
+	public List<Peliculas> selectEsAdulto(int edad){
+
+		List<Peliculas> adultosList = new ArrayList<>();
+		String sql = "SELECT * from peliculas WHERE ";
+
+		if(edad>=18){
+			sql+="adultos='si'";
+		}else{
+			sql+="adultos='no'";
+		}
+
+		try(PreparedStatement pstmt = c.prepareStatement(sql)){
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				adultosList.add(fromResultSet(rs));
+			}
+		}catch(SQLException e){
+			System.out.println(e.getMessage());
+		}
+
+		return adultosList;
+	}
+
 }
