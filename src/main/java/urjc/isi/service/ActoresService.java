@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
@@ -26,9 +26,14 @@ public class ActoresService {
 	 * @return Lista de actores de la tabla Actores
 	 * @throws SQLException
 	 */
-	public List<Personas> getAllActores() throws SQLException{
+	public List<Personas> getAllActores(Dictionary<String,String> conditions) throws SQLException{
 		ActoresDAOImpl actores = new ActoresDAOImpl();
-		List<Personas> result = actores.selectAll();
+		List<Personas> result;
+		if(!conditions.isEmpty()) {
+			result = actores.selectAll(conditions);
+		}else {
+			result = actores.selectAll();
+		}
 		actores.close();
 		return result;
 	}
@@ -53,27 +58,5 @@ public class ActoresService {
 		}
 		actores.close();
 		return result;
-	}
-	
-	public List<Personas> getActoresByFechaNac (String fecha) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerByFechaNac (fecha);
-		actores.close();
-		return result;
-	}
-	
-	public List<Personas> getActoresMuertos () throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerMuertas ();
-		actores.close();
-		return result;
-	}
-	
-	public List<Personas> getActoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerByIntervaloNac (fechaIn, fechaFin);
-		actores.close();
-		return result;
-	}
-	
+	}	
 }
