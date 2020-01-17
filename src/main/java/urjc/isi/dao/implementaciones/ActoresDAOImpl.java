@@ -89,10 +89,10 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
 					case "id_act":
-						cond+= "a.idpersona = " + conditions.get("id_act");
+						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
 						break;
 					case "name":
-						cond+= "a.fullnombre = " + conditions.get("name");
+						cond+= "a.fullnombre LIKE '" + conditions.get("name") + "'";
 						break;
 					case "fecha_nac":
 						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
