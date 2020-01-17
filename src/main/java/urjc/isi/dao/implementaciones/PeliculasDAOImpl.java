@@ -299,6 +299,27 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	}
 
 	@Override
+	public String selectCalificacionForPelicula(String name){
+		String calificacion = "";
+		List<Peliculas> calificacionList = new ArrayList<>();
+		String sql = "SELECT * from peliculas WHERE titulo = '" + name + "'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				calificacionList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		if (!calificacionList.isEmpty()) {
+			calificacion = Integer.toString(calificacionList.get(0).getCalificacion());
+		}
+
+		return calificacion;
+	}
+
+	@Override
 	public List<Peliculas> selectAllByGenero(String genero) {
 	  List<Peliculas> filmList = new ArrayList<>();
 
