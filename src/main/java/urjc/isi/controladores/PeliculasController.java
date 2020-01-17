@@ -195,7 +195,7 @@ public class PeliculasController {
 	
 	public static String filmsByGenero(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
-		String result = "<h1> <em>Listado de peliculas por género </em></h1> <br>";
+		String result = "";
 		String generos =request.queryString();
 
 
