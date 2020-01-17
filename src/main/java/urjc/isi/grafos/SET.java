@@ -1,3 +1,5 @@
+package urjc.isi.grafos;
+
 /******************************************************************************
  *  Compilation:  javac SET.java
  *  Execution:    java SET
