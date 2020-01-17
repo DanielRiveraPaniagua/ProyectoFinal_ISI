@@ -182,36 +182,6 @@ public class PeliculasController {
 		return result;
 	}
 
-	public static String esAdulto(Request request, Response response) throws SQLException{
-
-		String output;
-		String result="<form action='/peliculas/adult' method='get' enctype='multipart/form-data'>"
-						+ "Tu edad: <input type=number name=edad size=3>"
-						+ "<button type=submit value=Tu edad>Buscar </button></br></form>";
-
-	if(request.queryParams("edad") != null){
-		output=ps.getEsAdulto(request.queryParams("edad"));
-		result="";
-	}else{
-		output="";
-	}
-
-	if(!output.equals("")){
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")){
-			response.type("application/json");
-			JsonObject json=new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			json.addProperty("Edad", request.queryParams("edad"));
-			json.addProperty("Es Adulto", output);
-			json.add("output", json);
-			result=json.toString();
-		}else{
-			result=result + request.queryParams("edad") + ": " + output + "</br>";
-		}
-	}
-	return result;
-	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
@@ -223,7 +193,6 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
-		get("/adulto", PeliculasController::esAdulto);
 	}
 
 }
