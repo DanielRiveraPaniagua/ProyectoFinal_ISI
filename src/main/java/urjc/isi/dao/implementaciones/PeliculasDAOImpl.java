@@ -23,11 +23,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		Peliculas peli = new Peliculas();
 
 		peli.setIdPelicula(rs.getString("idpelicula"));
-		try {
-			peli.setTitulo(rs.getString("titulobueno"));
-		}catch(Exception e) {
-			peli.setTitulo(rs.getString("titulo"));
-		}
+		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
 		peli.setDuracion(Integer.valueOf(rs.getString("duracion")));
 		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
@@ -199,7 +195,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
-				filmList.add(fromResultSet(rs));
+				Peliculas peli = fromResultSet(rs);
+				if(conditions.get("idioma") != null) {
+					peli.setTitulo(rs.getString("titulobueno"));
+				}
+				filmList.add(peli);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
