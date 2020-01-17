@@ -23,11 +23,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		Peliculas peli = new Peliculas();
 
 		peli.setIdPelicula(rs.getString("idpelicula"));
-		try {
-			peli.setTitulo(rs.getString("titulobueno"));
-		}catch(Exception e) {
-			peli.setTitulo(rs.getString("titulo"));
-		}
+		peli.setTitulo(rs.getString("titulo"));
 		peli.setAño(Integer.valueOf(rs.getString("año")));
 		peli.setDuracion(Integer.valueOf(rs.getString("duracion")));
 		peli.setCalificacion(Integer.valueOf(rs.getString("calificacion")));
@@ -151,8 +147,20 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-				case "duracion":
-					cond+= "p.duracion>"+"'"+conditions.get("duracion")+"'";
+				case "duracion":					
+					if(conditions.get("duracion").indexOf("<") == 0) {
+						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("duracion").indexOf(">") == 0){
+						cond+= "p.duracion >= "+"'"+conditions.get("duracion").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("duracion").indexOf("-") == -1) {
+						cond+= "p.duracion = "+"'"+conditions.get("duracion")+"'";
+					}else {
+						String[] duracion = conditions.get("duracion").split("-");
+						cond+= "p.duracion >= " + "'" + duracion[0] + "'" + " and " + "p.duracion <= "+ "'"+ duracion[1] + "'" ;
+					}
 					break;
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
@@ -183,6 +191,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					cond += " 1 = 1";
 					break;
+				case "idioma":
+					cond += " 1 = 1 ";
+					break;
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
@@ -193,7 +204,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
-				filmList.add(fromResultSet(rs));
+				Peliculas peli = fromResultSet(rs);
+				if(conditions.get("idioma") != null) {
+					peli.setTitulo(rs.getString("titulobueno"));
+				}
+				filmList.add(peli);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -279,5 +294,33 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 
 		return calificacion;
+	}
+
+	@Override
+	public List<Peliculas> selectAllByGenero(String genero) {
+	  List<Peliculas> filmList = new ArrayList<>();
+
+		String[] fields = genero.split("&");
+		String[] t1 = fields[0].split("=");
+		String generos =" pg.genero='" + t1[1] + "'";
+		for (int i = 1; i < fields.length; ++i)
+		{
+		    String[] t = fields[i].split("=");
+		    if (2 == t.length)
+		    {
+		        generos =  generos + " OR " + "pg.genero='" + t[1] + "'";
+		    }
+		}
+	  String sql = "SELECT p.idpelicula, p.titulo , p.año , p.duracion , p.calificacion ,p.rating, p.nvotos from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula where"  + generos;
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  while(rs.next()){
+			  filmList.add(fromResultSet(rs));
+		  }
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return filmList;
 	}
 }

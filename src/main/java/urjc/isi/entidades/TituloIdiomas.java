@@ -16,7 +16,6 @@ public class TituloIdiomas {
 	private String idpelicula;
 	private String titulo;
 	private String idioma;
-	private int isDefault;
 	
 
 	// Constructor
@@ -28,7 +27,6 @@ public class TituloIdiomas {
 		this.setIdPelicula(tokenizer.nextToken());
 		this.setTitulo(tokenizer.nextToken());
 		this.setIdioma(tokenizer.nextToken());
-		this.setIsDefault(Integer.valueOf(tokenizer.nextToken()));
 	}
 
 	//Getters & Setters
@@ -77,17 +75,6 @@ public class TituloIdiomas {
 		this.idioma = idioma;
 	}
 
-	public int getIsDefault() {
-		return isDefault;
-	}
-
-	public void setIsDefault(int isDefault) {
-		if(isDefault != 0 && isDefault != 1){
-			throw new InvalidParameter();
-		}
-		this.isDefault = isDefault;
-	}
-
 	@Override
 	public boolean equals(Object other) {
 	    if (other == null) return false;
@@ -99,24 +86,23 @@ public class TituloIdiomas {
 	    return (this.id == otherTI.id) && 
 	    		Objects.equals(this.idpelicula, otherTI.idpelicula) &&
 	    		Objects.equals(this.titulo,otherTI.titulo) &&
-	    		Objects.equals(this.idioma,otherTI.idioma) &&
-	              (this.isDefault == otherTI.isDefault);
+	    		Objects.equals(this.idioma,otherTI.idioma);
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(id,idpelicula,titulo,idioma,isDefault);
+		return Objects.hash(id,idpelicula,titulo,idioma);
 	}
   
 	@Override
 	public String toString() {
 		return "Id: " + getId() + "\tId Película: " + getIdPelicula() + "\tTítulo: " + getTitulo() + "\tIdioma: "
-				+ getIdioma() + "\tNombre por defecto: " + getIsDefault();
+				+ getIdioma();
 	}
 	
 	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
 		return "Id: " + getId() + "&emsp; Id Película: " + getIdPelicula() + "&emsp; Título: " + getTitulo() + "&emsp; Idioma: "
-		+ getIdioma() + ",&emsp;  Nombre por defecto: " + getIsDefault();
+		+ getIdioma();
 	}
 	
 	public JsonObject toJSONObject () {
@@ -125,7 +111,6 @@ public class TituloIdiomas {
 		tituloIdiomaJSON.addProperty("IdPelicula", getIdPelicula());
 		tituloIdiomaJSON.addProperty("Titulo", getTitulo());
 		tituloIdiomaJSON.addProperty("Idioma", getIdioma());
-		tituloIdiomaJSON.addProperty("IsDefault", getIsDefault());
 		return tituloIdiomaJSON;
 	}
 	
