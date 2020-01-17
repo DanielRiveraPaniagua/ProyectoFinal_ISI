@@ -255,4 +255,5 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
+
 }
