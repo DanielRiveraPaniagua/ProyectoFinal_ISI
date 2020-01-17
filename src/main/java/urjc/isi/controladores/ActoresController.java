@@ -185,6 +185,33 @@ public class ActoresController {
 		}
 		return result;
 	}
+	
+	public static String selectActByCercania (Request request, Response response) throws SQLException {
+		String actor = request.queryParams ("actor");
+		String dist_max = (request.queryParams("dist_max")!= null)?request.queryParams("dist_max"):"None";
+		String factor = (request.queryParams("factor")!= null)?request.queryParams("factor"):"None";
+		
+		List<Personas> output = as.getActoresByCercania(actor, dist_max, factor);
+		
+		String result = "";
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /actores
@@ -197,6 +224,7 @@ public class ActoresController {
 		get("/selectActMuertos", ActoresController::selectActMuertos);
 		get("/selectActByIntervaloNac", ActoresController::selectActByIntervaloNac);
 		get("/info", ActoresController::infoActores);
+		get("/selectActByCercania", ActoresController::selectActByCercania);
 	}
 
 }
