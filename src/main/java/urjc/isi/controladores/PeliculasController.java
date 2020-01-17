@@ -80,6 +80,8 @@ public class PeliculasController {
 			filter.put("year", request.queryParams("year"));
 		if(request.queryParams("idioma")!=null)
 			filter.put("idioma", request.queryParams("idioma"));
+		if(request.queryParams("order")!=null)
+			filter.put("order", request.queryParams("order"));
 
 		output = ps.getAllPeliculas(filter);
 		
