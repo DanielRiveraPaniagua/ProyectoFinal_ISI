@@ -3,7 +3,6 @@ package urjc.isi.dao.implementaciones;
 import java.sql.*;
 
 import urjc.isi.entidades.TituloIdiomas;
-import urjc.isi.dao.interfaces.TituloIdiomasDAO;
 
 import java.util.*;
 import java.io.BufferedReader;
@@ -16,7 +15,7 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
-public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas> implements TituloIdiomasDAO{
+public class TituloIdiomasDAOImpl extends GenericDAOImpl<TituloIdiomas>{
 
   public TituloIdiomas fromResultSet(ResultSet rs) throws  SQLException{
 	  TituloIdiomas ti = new TituloIdiomas();
