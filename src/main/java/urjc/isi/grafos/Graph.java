@@ -1,3 +1,5 @@
+package urjc.isi.grafos;
+
 /******************************************************************************
  *  Compilation:  javac Graph.java
  *  Execution:    java Graph < input.txt
