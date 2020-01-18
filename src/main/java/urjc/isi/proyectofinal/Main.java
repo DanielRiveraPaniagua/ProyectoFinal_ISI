@@ -22,18 +22,28 @@ public class Main {
 	 * @throws URISyntaxException
 	 */
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-       String result = "";
-       result = "<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de pel&iacute;culas ISI 2019/2020</h1>\n" + 
-       		"<h2 style=\"color: #2e6c80;\">Como usar nuestra p&aacute;gina:</h2>\n" + 
-       		"<ul>\n" + 
-       		"<li>/selectAll</li>\n" + 
-       		"<li><strong>&nbsp;</strong></li>\n" + 
-       		"</ul>\n" + 
-       		"<p><strong>Enjoy!</strong></p>\n" + 
-       		"<p><strong>&nbsp;</strong></p>";
-       return result;
-       
-    }
+		String result = "";
+		/*result = "<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de pel&iacute;culas ISI 2019/2020</h1>\n" + 
+			"<h2 style=\"color: #2e6c80;\">Como usar nuestra p&aacute;gina:</h2>\n" + 
+			"<ul>\n" + 
+			"<li>/selectAll</li>\n" + 
+			"<li><strong>&nbsp;</strong></li>\n" + 
+			"</ul>\n" + 
+			"<p><strong>Enjoy!</strong></p>\n" + 
+			"<p><strong>&nbsp;</strong></p>";*/
+   
+		result = "<html><body><meta charset=&quot;UTF-8&quot;>" + 
+					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
+					"<ul>\n" + 
+					"<li>/selectAll</li>\n" + 
+					"<li><strong>&nbsp;</strong></li>\n" + 
+					"</ul>\n" + 
+					"<p><strong>Enjoy!</strong></p>\n" + 
+					"<p><strong>&nbsp;</strong></p>";
+   
+		return result;
+		
+	}
 
 	/**
 	 * Este metodo es un gestor de los endpoints asociados a cada una de las tablas de la base de datos
@@ -81,7 +91,7 @@ public class Main {
 	  	});
 	  	notFound((req, res) -> {
 	  		return "<htlm><body>" + 
-	  				"<h1>Error 404</h1><br/><br/>" + 
+	  				"<h1>Error 404</h1><br/>" + 
 	  				"El recurso que has buscado no se encuentra en nuestra app<br/><br/>" +
 	  				"Pulsa <a href=/welcome>aquí</a> para volver a la página principal " + 
 	  				"</body><html>";
