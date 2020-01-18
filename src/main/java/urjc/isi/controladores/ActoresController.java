@@ -187,6 +187,11 @@ public class ActoresController {
 	}
 	
 	public static String selectActByCercania (Request request, Response response) throws SQLException {
+		
+		if(request.queryParams("actor")== null){
+			return "";
+		}
+		
 		String actor = request.queryParams ("actor");
 		String dist_max = (request.queryParams("dist_max")!= null)?request.queryParams("dist_max"):"None";
 		String factor = (request.queryParams("factor")!= null)?request.queryParams("factor"):"None";
