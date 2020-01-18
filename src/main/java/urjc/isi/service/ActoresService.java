@@ -114,9 +114,6 @@ public class ActoresService {
 		Integer dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
 		Integer factor = (factor_p.equals("None"))?FACTOR:Integer.valueOf(factor_p);
 		
-		System.out.println("La distancia máxima es: " + dist_max);
-		System.out.println("El factor es: " + factor);
-		
 		// Create Graph
 		String str_graph = "";
 		for (int i = 0; i < peliculas.size(); i++) {
