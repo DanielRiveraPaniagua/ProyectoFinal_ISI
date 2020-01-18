@@ -99,12 +99,12 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 								"join peliculasguionistas as pg	on pa2.idpelicula=pg.idpelicula "+
 								"join guionistas as g on g.idpersona=pg.idpersona ";
 						cond+= "g.fullnombre ='" + conditions.get("director")+"'";
-
+						break;
  					case "id_act":
 						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
 						break;
 					case "name":
-						cond+= "a.fullnombre LIKE$$" + conditions.get("name") + "%$$";
+						cond+= "a.fullnombre LIKE $$" + conditions.get("name") + "%$$";
 						break;
 					case "fecha_nac":
 						if(conditions.get("fecha_nac").indexOf("-") == -1) {
