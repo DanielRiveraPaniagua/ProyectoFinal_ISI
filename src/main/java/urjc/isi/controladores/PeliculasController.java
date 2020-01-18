@@ -199,15 +199,16 @@ public class PeliculasController {
 		}
 
 		Dictionary<String,Object> output = ps.fullPeliculasInfo(request.queryParams("titulo"));
+		
 		if(output.isEmpty()) {
 			response.redirect("/peliculas/info");
 		}
+		
 		Peliculas pelicula = (Peliculas)output.get("pelicula");
 		List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
 		List<Personas> directores = (List<Personas>)output.get("directores");
 		List<Generos> generos = (List<Generos>)output.get("generos");
-		
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -215,26 +216,26 @@ public class PeliculasController {
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
 			json.add("filmdata", pelicula.toJSONObject());
-			JsonArray jdirectores = new JsonArray();
-			JsonArray jguionistas = new JsonArray();
-			JsonArray jactores = new JsonArray();
-			JsonArray jgeneros = new JsonArray();
+			JsonArray jarray = new JsonArray();
 			for(int i = 0; i < directores.size(); i++) {
-				jdirectores.add(directores.get(i).toJSONObject());;
+				jarray.add(directores.get(i).toJSONObject());;
 			}
+			json.add("directores", jarray);
+			jarray = new JsonArray();
 			for(int i = 0; i < guionistas.size(); i++) {
-				jguionistas.add(guionistas.get(i).toJSONObject());;
+				jarray.add(guionistas.get(i).toJSONObject());;
 			}
+			json.add("guionistas",jarray);
+			jarray = new JsonArray();
 			for(int i = 0; i < actores.size(); i++) {
-				jactores.add(actores.get(i).toJSONObject());;
+				jarray.add(actores.get(i).toJSONObject());;
 			}
+			json.add("actores",jarray);
+			jarray = new JsonArray();
 			for(int i = 0; i < generos.size(); i++) {
-				jgeneros.add(generos.get(i).toJSONObject());;
+				jarray.add(generos.get(i).toJSONObject());;
 			}
-			json.add("directores", jdirectores);
-			json.add("guionistas",jguionistas);
-			json.add("actores",jactores);
-			json.add("generos",jgeneros);
+			json.add("generos",jarray);
 			result = json.toString();
 		}else{
 			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
@@ -245,7 +246,7 @@ public class PeliculasController {
 			result += "<b>Generos: </b>";
 			for(int i = 0; i < generos.size(); i++) {
 				result +=  generos.get(i).getNombre();
-				result+= i<generos.size()-1?",":"</br>";
+				result+= i<generos.size()-1?", ":"</br>";
 			}
 			result += "<b>Dirigida por:</b></br>";
 			for(int i = 0; i < directores.size(); i++) {
