@@ -10,13 +10,7 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-import urjc.isi.entidades.Generos;
-import urjc.isi.entidades.Peliculas;
-<<<<<<< HEAD
-import urjc.isi.entidades.Personas;
-=======
-import urjc.isi.service.GenerosService;
->>>>>>> devel
+import urjc.isi.entidades.*;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -67,11 +61,6 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
-<<<<<<< HEAD
-
-=======
-		System.out.println("muestra");
->>>>>>> devel
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
