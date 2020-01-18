@@ -371,24 +371,34 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return filmList;
 	}
 	
+	
+	//Estado posibles feliz, triste, atrevido, indiferente y chill by el jefe
 	@Override
 	public List<Peliculas> selectMood(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
-		String order = "ORDER BY ";
+		String order = "DESC LIMIT 20";
 		
-		order += "p.rating DESC LIMIT 1";
+		sql+="Inner join peliculasgeneros as pg on p.idpelicula = pg.id_pelicula " +
+			 "Inner join generos as g on pg.genero = g.nombre ";
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
-				case "year":
-					cond += "p.año = "+"'"+conditions.get("year")+"' ";
+				case "feliz":
+					cond+= "g.nombre = 'Drama'";
 					break;
-				case "score":
-					if(conditions.get("score").equals("worst")) {			
-						order = "ORDER BY p.rating ASC LIMIT 1";
-						break;
-					}
+				case "triste":
+					cond+= "g.nombre IN ('Comedy', 'Musical', 'Animation')";
+					break;
+				case "atrevido":
+					cond+= "g.nombre IN ('Comedy', 'Musical', 'Animation')";
+					break;
+				case "indiferente":
+					cond+= "g.nombre IN ('Comedy', 'Musical', 'Animation')";
+					break;
+				case "chill":
+					cond+= "g.nombre IN ('Comedy', 'Musical', 'Animation')";
+					break;
 			}
 		}
 		cond += order;
