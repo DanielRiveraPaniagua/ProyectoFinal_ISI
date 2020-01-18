@@ -178,7 +178,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
-		String order = "ORDER BY ";
+		String order = " ORDER BY ";
 		boolean add_order = false;
 
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
@@ -200,7 +200,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					break;
 				case "duracion":
 					add_order = true;
-					order += "p.duracion DESC";
+					order += add_order?" AND p.duracion DESC":"p.duracion DESC";
 					if(conditions.get("duracion").indexOf("<") == 0) {
 						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
 						break;
@@ -238,6 +238,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					break;
 				case "order":
 					add_order = true;
+					order += add_order?" AND ":"";
 					if(conditions.get("order").contains("-desc")) {
 						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
 					}else {
@@ -246,11 +247,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond += "true";
 					break;
 				case "idioma":
+					String titulo = conditions.get("titulo")!=null?conditions.get("titulo"):"";
 					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula "+
 				            "and idioma='"+conditions.get("idioma")+"' ";
-					cond+="(tituloenidioma like '"+conditions.get("titulo")+"%' or "+
+					cond+="(tituloenidioma like '"+titulo+"%' or "+
 							"case when tituloenidioma is null "+
-							"then titulo like '"+conditions.get("titulo")+"%' end)";
+							"then titulo like '"+titulo+"%' end)";
 
 					break;
 				case "rating":
