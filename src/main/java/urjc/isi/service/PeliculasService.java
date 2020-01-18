@@ -91,6 +91,13 @@ public class PeliculasService {
 		return result;
 	}
 
+	public List<Peliculas> getWorstORBestFilmBy(Dictionary<String,String> conditions) throws SQLException{
+		List<Peliculas> result;
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		result = pelisDAO.selectAllBestorWorstFilmByYear(conditions);
+		pelisDAO.close();
+		return result;
+	}
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
 	 * @return Estado de salida
