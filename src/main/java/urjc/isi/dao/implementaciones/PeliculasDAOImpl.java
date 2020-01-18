@@ -243,7 +243,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}else {
 						order += " p." + conditions.get("order");
 					}
-					cond += " 1 = 1";
+					cond += "true";
 					break;
 				case "idioma":
 					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula "+
