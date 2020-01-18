@@ -176,13 +176,11 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "";
-		
-		sql = "SELECT * from peliculas as p ";
-
+		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
 		String order = "ORDER BY ";
 		boolean add_order = false;
+		
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
@@ -269,8 +267,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		if(add_order) {
 			cond += order;
 		}
-
-		System.out.println(sql+cond+order);
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();

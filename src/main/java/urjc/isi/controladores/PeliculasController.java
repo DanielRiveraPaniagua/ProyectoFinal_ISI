@@ -193,7 +193,10 @@ public class PeliculasController {
 		String result = "";
 
 		if(request.queryParams("titulo")== null){
-			return result;
+			return "Por favor introduce un título o un id para buscar la película que deseas"+
+					"<form action='/peliculas/info' method='get' enctype='multipart/form-data'>"
+					+ "Título Pelicula: <input type=text name=titulo size=30>"
+					+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
 		}
 
 		output = ps.fullPeliculasInfo(request.queryParams("titulo"));
@@ -207,36 +210,42 @@ public class PeliculasController {
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			json.add("filmdata", pelicula.toJSONObject());
-			JsonArray jdirectores = new JsonArray();
-			JsonArray jguionistas = new JsonArray();
-			JsonArray jactores = new JsonArray();
-			for(int i = 0; i < directores.size(); i++) {
-				jdirectores.add(directores.get(i).toJSONObject());;
+			if(pelicula != null){
+				json.add("filmdata", pelicula.toJSONObject());
+				JsonArray jdirectores = new JsonArray();
+				JsonArray jguionistas = new JsonArray();
+				JsonArray jactores = new JsonArray();
+				for(int i = 0; i < directores.size(); i++) {
+					jdirectores.add(directores.get(i).toJSONObject());;
+				}
+				for(int i = 0; i < guionistas.size(); i++) {
+					jguionistas.add(guionistas.get(i).toJSONObject());;
+				}
+				for(int i = 0; i < actores.size(); i++) {
+					jactores.add(actores.get(i).toJSONObject());;
+				}
+				json.add("directores", jdirectores);
+				json.add("guionistas",jguionistas);
+				json.add("actores",jactores);
 			}
-			for(int i = 0; i < guionistas.size(); i++) {
-				jguionistas.add(guionistas.get(i).toJSONObject());;
-			}
-			for(int i = 0; i < actores.size(); i++) {
-				jactores.add(actores.get(i).toJSONObject());;
-			}
-			json.add("directores", jdirectores);
-			json.add("guionistas",jguionistas);
-			json.add("actores",jactores);
 			result = json.toString();
-		}else {
+		}else if (pelicula!=null){
 			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
-			result = result + "<b>Dirigida por:</b></br>";
+			result += "<b>PeliculaID: </b>"+ pelicula.getIdPelicula() + "<b>Calificacion: </b>";
+			result+=(pelicula.getCalificacion()==0)?"Adulta":"No adulta" + "</br>";
+			result += "<b>Duración: </b>"+pelicula.getDuracion() + "</br>";
+			result += "<b>Rating: </b>"+ pelicula.getRating() + "<b>Numero de votos: </b>" + pelicula.getNVotos();
+			result += "<b>Dirigida por:</b></br>";
 			for(int i = 0; i < directores.size(); i++) {
-				result = result + "&emsp;" + directores.get(i).toHTMLString() +"</br>";
+				result += "&emsp;" + directores.get(i).toHTMLString() +"</br>";
 			}
-			result = result + "<b>Escrita por:</b></br>";
+			result += "<b>Escrita por:</b></br>";
 			for(int i = 0; i < guionistas.size(); i++) {
-				result = result + "&emsp;" + guionistas.get(i).toHTMLString() +"</br>";
+				result += "&emsp;" + guionistas.get(i).toHTMLString() +"</br>";
 			}
-			result = result+"<b>Lista de actores:</b></br>";
+			result += "<b>Lista de actores:</b></br>";
 			for(int i = 0; i < actores.size(); i++) {
-				result = result + "&emsp;" + actores.get(i).toHTMLString() +"</br>";
+				result += "&emsp;" + actores.get(i).toHTMLString() +"</br>";
 			}
 		}
 		return result;
