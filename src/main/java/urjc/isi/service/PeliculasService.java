@@ -105,7 +105,8 @@ public class PeliculasService {
 			Peliculas pelicula = pelisDAO.selectFilmByTitle(engine);
 			id = pelicula!=null?pelicula.getIdPelicula():"";
 		}else {
-			id=engine;
+			Peliculas pelicula = pelisDAO.selectByID(engine);
+			id = pelicula.getIdPelicula()!=null?pelicula.getIdPelicula():"";
 		}
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		
