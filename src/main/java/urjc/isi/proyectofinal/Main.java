@@ -74,7 +74,7 @@ public class Main {
      		+ "<br>" + "<h2 style=color:#5B72EB;>GUIONISTAS</h2>" + "<br>"
      		+ "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll>Imprimir todos los guionistas</a>"
 			+ "<p>Tambien puedes filtrar los guionistas por:</p>"
-			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll?id_gui=x>id</a>" + "<br>"
+			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll?id_guio=x>id</a>" + "<br>"
 			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll?name=x>nombre</a>" + "<br>"
 			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll?fecha_nac=x>fecha de nacimiento</a>" + "<br>"
 			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/guionistas/selectAll?fecha_nac=x-x>intervalo fecha de nacimiento</a>" + "<br>"
