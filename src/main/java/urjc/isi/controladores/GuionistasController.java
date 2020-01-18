@@ -104,7 +104,7 @@ public class GuionistasController {
 		String result = "";
 		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
 			return "Por favor introduce un nombre para buscar el guionista que deseas"+
-					"<form action='/actores/info' method='get' enctype='multipart/form-data'>"
+					"<form action='/guionistas/info' method='get' enctype='multipart/form-data'>"
 					+ "Nombre de Guionista: <input type=text name=nombre size=30>"
 					+ "<button type=submit value=Guionista>Buscar </button><br/></form>";
 		}
@@ -135,7 +135,7 @@ public class GuionistasController {
 			result = json.toString();
 		}else {
 			result = "<b>Información de: " + guionista.getFullNombre() + " (" + guionista.getNacimiento() +"-" + guionista.getMuerte() +")</b>";
-			result +="<b>&emsp;IDGuionista: </b>"+guionista.getFullNombre()+"</br>";
+			result +="<b>&emsp;IDGuionista: </b>"+guionista.getId()+"</br>";
 			result = result + "<b>Guionista en las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";

@@ -135,7 +135,7 @@ public class DirectoresController {
 			result = json.toString();
 		}else {
 			result = "<b>Información de: " + director.getFullNombre() + " (" + director.getNacimiento() +"-" + director.getMuerte() +")</b>";
-			result +="&emsp;<b>IDirector: </b>"+director.getFullNombre()+"</br>";
+			result +="&emsp;<b>IDirector: </b>"+director.getId()+"</br>";
 			result = result + "<b>Dirigió las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";

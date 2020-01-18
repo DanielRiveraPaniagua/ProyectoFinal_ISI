@@ -133,7 +133,7 @@ public class ActoresController {
 			result = json.toString();
 		}else {
 			result = "<b>Información de: " + actor.getFullNombre() + " (" + actor.getNacimiento() +"-" + actor.getMuerte() +")</b>";
-			result +="<b>&emsp;IDActor: </b>"+actor.getFullNombre()+"</br>";
+			result +="<b>&emsp;IDActor: </b>"+actor.getId()+"</br>";
 			result = result + "<b>Participa en las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
