@@ -64,7 +64,7 @@ public class Main {
 	    });
   	path("generos",()->{
   		GenerosController Controller = new GenerosController();
-  		Controller.peliculasHandler();
+  		Controller.generosHandler();
   	});
   	path("peliculasgeneros",()->{
   		PeliculasGenerosController Controller = new PeliculasGenerosController();
