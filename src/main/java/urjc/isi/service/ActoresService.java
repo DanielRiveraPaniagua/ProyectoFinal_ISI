@@ -132,14 +132,6 @@ public class ActoresService {
 		}
 		Graph G = new Graph(str_graph, DELIMITER, EOL);
 		
-		for (String v : G.vertices()) {
-            		System.out.print(v + ": ");
-            		for (String w : G.adjacentTo(v)) {
-            			System.out.print(w + " ");
-            		}
-            		System.out.println();
-        	}
-		
         // create popularity data structure
         ST<String, Double> act_popularity = new ST<String, Double>();
         // create distances data structure
