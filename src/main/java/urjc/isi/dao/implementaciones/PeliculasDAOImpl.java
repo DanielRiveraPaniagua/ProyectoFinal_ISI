@@ -172,9 +172,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "calificacion::INTEGER = 0";
 				case "titulo":
 					if(conditions.get("idioma") != null) {
-						cond+= "titulobueno like "+"'"+conditions.get("titulo")+"%'";
+						cond+= "titulobueno like "+"$$"+conditions.get("titulo")+"%$$";
 					}else {
-						cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+						cond+= "p.titulo like "+"$$"+conditions.get("titulo")+"%$$";
 					}
 						
 					break;
