@@ -386,10 +386,21 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "mood":
 					switch(conditions.get("mood")) {
 						case "feliz":
-							cond+= "g.nombre IN ('Comedy','Drama')";
+							cond+= "g.nombre IN ('Comedy', 'Animation', 'Musical', 'Music')";
+							break;
+						case "triste":
+							cond+= "g.nombre IN ('Romance','Drama')";
+							break;
+						case "indiferente":
+							cond+= "g.nombre IN ('Fantasy','Biography', 'History', 'Sport', 'Family')";
+							break;
+						case "chill":
+							cond+= "g.nombre IN ('Comedy','Action', 'Adeventure', 'Sci-Fi')";
+							break;
+						case "atrevido":
+							cond+= "g.nombre IN ('Crime','Mystery', 'War', 'Thriller', 'Horror', 'Western')";
 							break;
 					}
-					break;
 			}
 		}
 		cond += order;
