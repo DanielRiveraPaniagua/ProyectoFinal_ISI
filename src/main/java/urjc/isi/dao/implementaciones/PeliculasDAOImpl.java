@@ -239,9 +239,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "idioma":
 					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula "+
 				            "and idioma='"+conditions.get("idioma")+"'";
-					cond+="(tituloenidioma like '"+conditions.get("titulo")+"' or "+
+					cond+="(tituloenidioma like '"+conditions.get("titulo")+"%' or "+
 							"case when tituloenidioma is null "+
-							"then titulo like '"+conditions.get("titulo")+"' end)";
+							"then titulo like '"+conditions.get("titulo")+"%' end)";
 
 					break;
 				case "rating":
