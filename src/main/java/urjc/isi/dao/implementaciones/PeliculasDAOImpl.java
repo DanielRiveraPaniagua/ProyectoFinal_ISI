@@ -272,7 +272,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			c.commit();
 			while(rs.next()){
 				Peliculas peli = fromResultSet(rs);
-				if(conditions.get("idioma") != null & rs.getString("tituloenidioma") != null) {
+				if(conditions.get("idioma") != null && rs.getString("tituloenidioma") != null) {
 					peli.setTitulo(rs.getString("tituloenidioma"));
 				}
 				filmList.add(peli);
