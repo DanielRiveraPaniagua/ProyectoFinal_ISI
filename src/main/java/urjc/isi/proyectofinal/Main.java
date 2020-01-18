@@ -86,6 +86,8 @@ public class Main {
         get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
         
+        System.out.println("Llegamos aquí");
+        
         String HtmlPageError = "<htlm><body>" + 
         						"<h1>Error 404<h1><br/><br/>" + 
         						"El recurso que has buscado no se encuentra en nuestra app<br/><br/>" +
@@ -93,6 +95,9 @@ public class Main {
         						"</body><html>";
         
 		notFound(HtmlPageError);
+		
+		System.out.println("Llegamos aqui 2");
+		
         redirect.get("*", "/welcome");
     }
 
