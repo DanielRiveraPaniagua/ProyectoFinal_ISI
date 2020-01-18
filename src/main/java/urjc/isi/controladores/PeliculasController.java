@@ -244,9 +244,10 @@ public class PeliculasController {
 			result += "<b>Rating: </b>"+ pelicula.getRating() + "&emsp;<b>Numero de votos: </b>" + pelicula.getNVotos() +"</br>";
 			result += "<b>Generos: </b>";
 			for(int i = 0; i < generos.size(); i++) {
-				result +=  generos.get(i).getNombre() +", ";
+				result +=  generos.get(i).getNombre();
+				result+= i<generos.size()-1?",":"</br>";
 			}
-			result += "</br><b>Dirigida por:</b></br>";
+			result += "<b>Dirigida por:</b></br>";
 			for(int i = 0; i < directores.size(); i++) {
 				result += "&emsp;" + directores.get(i).toHTMLString() +"</br>";
 			}
