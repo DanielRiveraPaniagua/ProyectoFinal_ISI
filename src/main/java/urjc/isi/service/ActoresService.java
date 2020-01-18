@@ -71,7 +71,7 @@ public class ActoresService {
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
 			result.put("actor", (Object)actoresDAO.selectByID(id));
-			result.put("peliculas", (Object)peliDAO.selectByActorID(id));
+			result.put("peliculas", (Object)peliDAO.selectByPersonaID("actor",id));
 		}
 		actoresDAO.close();
 		peliDAO.close();

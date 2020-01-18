@@ -94,46 +94,28 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return peli;
 	}
 
-	// Los siguientes tres metodos se podrían hacer de forma genérica para personas
-	public List<Peliculas> selectByActorID(String id){
+	@Override
+	public List<Peliculas> selectByPersonaID(String type, String id){
 		List<Peliculas> pelis = new ArrayList<>();
-		String sql = "SELECT * from peliculas as a "+
-					"Inner join peliculasactores as pa on pa.idpelicula=a.idpelicula "+
-					"WHERE pa.idpersona='"+id+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 pelis.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return pelis;
-	}
-
-	public List<Peliculas> selectByGuionistaID(String id){
-		List<Peliculas> pelis = new ArrayList<>();
-		String sql = "SELECT * from peliculas as a "+
-					"Inner join peliculasguionistas as pa on pa.idpelicula=a.idpelicula "+
-					"WHERE pa.idpersona='"+id+"'";
-		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 pelis.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return pelis;
-	}
-
-	public List<Peliculas> selectByDirectorID(String id){
-		List<Peliculas> pelis = new ArrayList<>();
-		String sql = "SELECT * from peliculas as a "+
-					"Inner join peliculasdirectores as pa on pa.idpelicula=a.idpelicula "+
-					"WHERE pa.idpersona='"+id+"'";
+		String sql = "";
+		switch(type) {
+			case "actor":
+				sql = "SELECT * from peliculas as a "+
+						"Inner join peliculasactores as pa on pa.idpelicula=a.idpelicula "+
+						"WHERE pa.idpersona='"+id+"'";
+				break;
+			case "guionista":
+				sql = "SELECT * from peliculas as a "+
+						"Inner join peliculasguionistas as pa on pa.idpelicula=a.idpelicula "+
+						"WHERE pa.idpersona='"+id+"'";
+				break;
+			case "director":
+				sql = "SELECT * from peliculas as a "+
+						"Inner join peliculasdirectores as pa on pa.idpelicula=a.idpelicula "+
+						"WHERE pa.idpersona='"+id+"'";
+				break;
+			
+		}
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			 ResultSet rs = pstmt.executeQuery();
 			 c.commit();
@@ -199,7 +181,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
 				case "duracion":
-					order += add_order?" AND p.duracion DESC":"p.duracion DESC";
+					order += add_order?" ,p.duracion DESC":"p.duracion DESC";
 					add_order = true;
 					if(conditions.get("duracion").indexOf("<") == 0) {
 						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
@@ -237,7 +219,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "order":
-					order += add_order?" AND ":"";
+					order += add_order?" ,":"";
 					add_order = true;
 					if(conditions.get("order").contains("-desc")) {
 						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";

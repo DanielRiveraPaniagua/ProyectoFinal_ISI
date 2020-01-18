@@ -70,7 +70,7 @@ public class DirectoresService {
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
 			result.put("director", (Object)directoresDAO.selectByID(id));
-			result.put("peliculas", (Object)peliDAO.selectByDirectorID(id));
+			result.put("peliculas", (Object)peliDAO.selectByPersonaID("director",id));
 		}
 		directoresDAO.close();
 		peliDAO.close();

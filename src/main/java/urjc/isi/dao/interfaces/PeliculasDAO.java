@@ -23,4 +23,5 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 	public List<Peliculas> selectAllByGenero(String genero);
 	
 	public List<Peliculas> selectAllBestorWorstFilmByYear(Dictionary<String,String> conditions);
+	public List<Peliculas> selectByPersonaID(String type, String id);
 }
