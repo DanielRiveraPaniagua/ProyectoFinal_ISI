@@ -170,7 +170,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return director;
+		  return persona;
 	}
 
 	public List<Personas> selectByPeliculaID(String id){

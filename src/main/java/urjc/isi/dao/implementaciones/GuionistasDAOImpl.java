@@ -169,7 +169,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return guionista;
+		  return persona;
 	}
 	public List<Personas> selectByPeliculaID(String id){
 		List<Personas> actores = new ArrayList<>();

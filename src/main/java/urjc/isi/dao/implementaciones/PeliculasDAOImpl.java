@@ -237,7 +237,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "order":
-          add_order = true;
+					add_order = true;
 					if(conditions.get("order").contains("-desc")) {
 						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
 					}else {
@@ -276,6 +276,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		if(add_order) {
 			cond += order;
 		}
+		System.out.println(sql+cond);
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();

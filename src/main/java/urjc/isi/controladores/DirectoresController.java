@@ -106,7 +106,7 @@ public class DirectoresController {
 			return "";
 		}
 
-		output = as.fullDirectoresInfo(request.queryParams("fullnombre"));
+		output = ds.fullDirectoresInfo(request.queryParams("fullnombre"));
 		//Peliculas pelicula = (Peliculas)output.get("pelicula");
 		Personas director = (Personas)output.get("director");
 		//List<Personas> actores = (List<Personas>)output.get("actores");

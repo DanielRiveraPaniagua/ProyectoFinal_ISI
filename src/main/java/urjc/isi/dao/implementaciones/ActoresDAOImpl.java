@@ -175,7 +175,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return actor;
+		  return persona;
 	}
 
 	public List<Personas> selectByPeliculaID(String id){
