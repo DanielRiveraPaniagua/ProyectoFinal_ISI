@@ -121,7 +121,7 @@ public class ActoresService {
 			str_graph = str_graph + idpeli + DELIMITER;
 			List<Personas> actores = actoresDAO.selectByPeliculaID(idpeli);
 			for (int j = 0; j < actores.size(); j++) {
-				String idactor = actores.get(i).getId();
+				String idactor = actores.get(j).getId();
 				str_graph = str_graph + idactor;
 				if (j == actores.size()-1) {
 					str_graph = str_graph + EOL;
