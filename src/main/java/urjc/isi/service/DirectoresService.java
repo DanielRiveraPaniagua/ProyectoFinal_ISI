@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.DirectoresDAOImpl;
-import urjc.isi.entidades.Personas;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.entidades.*;
 
 public class DirectoresService {
 
@@ -61,18 +61,35 @@ public class DirectoresService {
 		directores.close();
 		return result;
 	}
-	
+
 	public List<Personas> getDirectoresMuertos () throws SQLException {
 		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
 		List<Personas> result = directores.selectPerMuertas ();
 		directores.close();
 		return result;
 	}
-	
+
 	public List<Personas> getDirectoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
 		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
 		List<Personas> result = directores.selectPerByIntervaloNac (fechaIn, fechaFin);
 		directores.close();
+		return result;
+	}
+
+	public 	Dictionary<String,Object> fullDirectoresInfo(String name) throws SQLException{
+		DirectoresDAOImpl directoresDAO = new DirectoresDAOImpl();
+		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
+		Personas persona = new Personas();
+		persona = directoresDAO.selectByName(name);
+		String id = persona.getId();
+
+		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		if(id.length()>0){
+			result.put("director", (Object)directoresDAO.selectByID(id));
+			result.put("peliculas", (Object)peliDAO.selectByActorID(id));
+		}
+		directoresDAO.close();
+		peliDAO.close();
 		return result;
 	}
 }

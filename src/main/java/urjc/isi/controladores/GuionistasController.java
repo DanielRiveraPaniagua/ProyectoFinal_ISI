@@ -158,7 +158,7 @@ public class GuionistasController {
 			return "";
 		}
 
-		output = as.fullDirectoresInfo(request.queryParams("fullnombre"));
+		output = as.fullGuionistasInfo(request.queryParams("fullnombre"));
 		//Peliculas pelicula = (Peliculas)output.get("pelicula");
 		Personas guionista = (Personas)output.get("guionista");
 		//List<Personas> actores = (List<Personas>)output.get("actores");
