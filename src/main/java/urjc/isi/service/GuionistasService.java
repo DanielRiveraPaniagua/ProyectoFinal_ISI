@@ -86,7 +86,7 @@ public class GuionistasService {
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
 			result.put("guionista", (Object)guionistasDAO.selectByID(id));
-			result.put("peliculas", (Object)peliDAO.selectByActorID(id));
+			result.put("peliculas", (Object)peliDAO.selectByGuionistaID(id));
 		}
 		guionistasDAO.close();
 		peliDAO.close();
