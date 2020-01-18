@@ -100,15 +100,23 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 						cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						break;
 					case "intervalo_fecha_nac":
-						String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-						cond+= "d.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "d.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "d.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "d.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "d.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
 						break;
 					case "fecha_muer":
 						cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						break;
 					case "intervalo_fecha_muer":
-						String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-						cond+= "d.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "d.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "d.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "d.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "d.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
 						break;
 				}
 				if(k.hasMoreElements()) {
@@ -153,4 +161,19 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			  System.out.println(e.getMessage());
 		  }
 	}
+	
+	@Override
+	public Personas selectByName(String nombre) {
+		 String sql = "SELECT * from directores WHERE nombre=" + nombre;
+		  Personas director = new Personas();
+		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			  ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  director = fromResultSet(rs);
+	      } catch (SQLException e) {
+			  System.out.println(e.getMessage());
+		  }
+		  return director;
+	}
+	
 }

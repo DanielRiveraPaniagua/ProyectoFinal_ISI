@@ -16,4 +16,7 @@ public interface PersonasDAO extends GenericDAO<Personas>{
 	 * @return
 	 */
 	public List<Personas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en generic
+
+	public Personas selectByName(String name);
+	
 }

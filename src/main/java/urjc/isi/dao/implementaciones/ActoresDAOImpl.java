@@ -89,26 +89,35 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
 					case "id_act":
-						cond+= "a.idpersona = " + conditions.get("id_act");
+						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
 						break;
 					case "name":
-						cond+= "a.fullnombre = " + conditions.get("name");
+						cond+= "a.fullnombre LIKE '" + conditions.get("name") + "'";
 						break;
 					case "fecha_nac":
 						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						break;
 					case "intervalo_fecha_nac":
-						String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-						cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "a.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
 						break;
 					case "fecha_muer":
 						cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						break;
 					case "intervalo_fecha_muer":
-						String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-						cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "a.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
 						break;
 				}
+				
 				if(k.hasMoreElements()) {
 					cond+=" AND ";
 				}
@@ -150,6 +159,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 	}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 	@Override
@@ -215,4 +225,21 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	}
 =======
 >>>>>>> e26705b8ea7c599f4503168c42db55cb206f8a06
+=======
+	
+	@Override
+	public Personas selectByName(String nombre) {
+		 String sql = "SELECT * from actores WHERE nombre=" + nombre;
+		  Personas actor = new Personas();
+		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			  ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  actor = fromResultSet(rs);
+	      } catch (SQLException e) {
+			  System.out.println(e.getMessage());
+		  }
+		  return actor;
+	}
+	
+>>>>>>> 5e267db854837d5a688b1453b4421b3f943470a5
 }

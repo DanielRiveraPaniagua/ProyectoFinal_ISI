@@ -100,15 +100,23 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 						cond+= "g.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						break;
 					case "intervalo_fecha_nac":
-						String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-						cond+= "g.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "g.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "g.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "g.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "g.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
 						break;
 					case "fecha_muer":
 						cond+= "g.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						break;
 					case "intervalo_fecha_muer":
-						String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-						cond+= "g.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "g.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "g.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "g.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "g.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
 						break;
 				}
 				if(k.hasMoreElements()) {
@@ -153,4 +161,19 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			  System.out.println(e.getMessage());
 		  }
 	}
+	
+	@Override
+	public Personas selectByName(String nombre) {
+		 String sql = "SELECT * from guionistas WHERE nombre=" + nombre;
+		  Personas guionista = new Personas();
+		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			  ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  guionista = fromResultSet(rs);
+	      } catch (SQLException e) {
+			  System.out.println(e.getMessage());
+		  }
+		  return guionista;
+	}
+	
 }
