@@ -177,11 +177,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
 		String sql = "";
-		if(conditions.get("idioma") != null) {
-			sql = "SELECT * FROM (SELECT p.*, COALESCE(ti.tituloenidioma, p.titulo) as titulobueno from peliculas as p left join tituloidiomas as ti on p.idpelicula = ti.idpelicula and ti.idioma = '" + conditions.get("idioma") + "') as p ";
-		}else {
-			sql = "SELECT * from peliculas as p ";
-		}
+		
+		sql = "SELECT * from peliculas as p ";
 
 		String cond = "WHERE ";
 		String order = "ORDER BY ";
@@ -226,9 +223,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					if(conditions.get("adultos").equals("no"))
 						cond+= "calificacion::INTEGER = 0";
 				case "titulo":
-					if(conditions.get("idioma") != null) {
-						cond+= "titulobueno like "+"'"+conditions.get("titulo")+"%'";
-					}else {
+					if(conditions.get("idioma") == null) {
 						cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
 					}
 
@@ -242,7 +237,12 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "idioma":
-					cond+= "1 = 1";
+					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula"+
+				            "and idioma='"+conditions.get("idioma")+"'";
+					cond+="(tituloenidioma like '"+conditions.get("titulo")+"' or"+
+							"case when tituloenidioma is null"+
+							"then titulo like '"+conditions.get("titulo")+"' end)";
+
 					break;
 				case "rating":
 					if(conditions.get("rating").indexOf("<") == 0) {
@@ -264,17 +264,18 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				cond+=" AND ";
 			}
 		}
-		System.out.println(sql+cond);
 		if(add_order) {
 			cond += order;
 		}
+
+		System.out.println(sql+cond+order);
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
 				Peliculas peli = fromResultSet(rs);
-				if(conditions.get("idioma") != null) {
-					peli.setTitulo(rs.getString("titulobueno"));
+				if(rs.getString("tituloenidioma") != null) {
+					peli.setTitulo(rs.getString("tituloenidioma"));
 				}
 				filmList.add(peli);
 			}
