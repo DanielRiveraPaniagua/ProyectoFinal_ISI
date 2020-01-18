@@ -1,10 +1,9 @@
 package urjc.isi.controladores;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -58,77 +57,24 @@ public class ActoresController {
 	 * @throws SQLException
 	 */
 	public static String selectAllActores(Request request, Response response) throws SQLException {
-		List<Personas> output = as.getAllActores();
+		List<Personas> output;
 		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
-	
-	public static String selectActByFechaNac (Request request, Response response) throws SQLException {
-		String fecha = request.queryParams ("fecha_nac");
-		List<Personas> output = as.getActoresByFechaNac(fecha);
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
-	
-	public static String selectActMuertos (Request request, Response response) throws SQLException {
-		List<Personas> output = as.getActoresMuertos();
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
-	
-	public static String selectActByIntervaloNac (Request request, Response response) throws SQLException {
-		String fechaIn = request.queryParams ("fecha_in");
-		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getActoresByIntervaloNac(fechaIn, fechaFin);
-		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("id_act")!= null)
+			filter.put("id_act",request.queryParams("id_act"));
+		if(request.queryParams("name")!= null)
+			filter.put("name",request.queryParams("name"));
+		if(request.queryParams("fecha_nac")!= null)
+			filter.put("fecha_nac",request.queryParams("fecha_nac"));
+		if(request.queryParams("intervalo_fecha_nac")!= null)
+			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
+		if(request.queryParams("fecha_muer")!= null)
+			filter.put("fecha_muer",request.queryParams("fecha_muer"));
+		if(request.queryParams("intervalo_fecha_muer")!= null)
+			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
+		
+		output = as.getAllActores(filter);
+		
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -155,9 +101,6 @@ public class ActoresController {
 		get("/selectAll", ActoresController::selectAllActores);
 		get("/uploadTable", ActoresController::uploadTable);
 		post("/upload", ActoresController::upload);
-		get("/selectActByFechaNac", ActoresController::selectActByFechaNac);
-		get("/selectActMuertos", ActoresController::selectActMuertos);
-		get("/selectActByIntervaloNac", ActoresController::selectActByIntervaloNac);
 	}
 	
 }

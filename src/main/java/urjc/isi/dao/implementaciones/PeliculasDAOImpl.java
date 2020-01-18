@@ -308,7 +308,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
-
+  
 	@Override
 	public List<Peliculas> selectAllByGenero(String genero) {
 	  List<Peliculas> filmList = new ArrayList<>();

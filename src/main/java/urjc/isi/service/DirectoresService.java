@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.Dictionary;
 import java.util.List;
 
 import javax.servlet.MultipartConfigElement;
@@ -26,9 +27,14 @@ public class DirectoresService {
 	 * @return Lista de directores de la tabla Directores
 	 * @throws SQLException
 	 */
-	public List<Personas> getAllDirectores() throws SQLException{
+	public List<Personas> getAllDirectores(Dictionary<String,String> conditions) throws SQLException{
 		DirectoresDAOImpl directores = new DirectoresDAOImpl();
-		List<Personas> result = directores.selectAll();
+		List<Personas> result;
+		if(!conditions.isEmpty()) {
+			result = directores.selectAll(conditions);
+		}else {
+			result = directores.selectAll();
+		}
 		directores.close();
 		return result;
 	}
@@ -51,27 +57,6 @@ public class DirectoresService {
 		} catch (IOException | ServletException | SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		directores.close();
-		return result;
-	}
-
-	public List<Personas> getDirectoresByFechaNac (String fecha) throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerByFechaNac (fecha);
-		directores.close();
-		return result;
-	}
-	
-	public List<Personas> getDirectoresMuertos () throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerMuertas ();
-		directores.close();
-		return result;
-	}
-	
-	public List<Personas> getDirectoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerByIntervaloNac (fechaIn, fechaFin);
 		directores.close();
 		return result;
 	}
