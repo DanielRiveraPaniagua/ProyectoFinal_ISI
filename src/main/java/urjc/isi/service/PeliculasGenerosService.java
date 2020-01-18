@@ -1,6 +1,8 @@
 package urjc.isi.service;
 
 import java.io.BufferedReader;
+
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,14 +12,16 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.PeliculasActoresDAOImpl;
+import urjc.isi.dao.implementaciones.PeliculasGenerosDAOImpl;
 
-public class PeliculasActoresService {
-
+public class PeliculasGenerosService {
+	
+	private PeliculasGenerosDAOImpl pegc ;
+	
 	/**
 	 * Constructor por defecto
 	 */
-	public PeliculasActoresService() {}
+	public PeliculasGenerosService() {}
 	
 	/**
 	 * Metodo encargado de procesar la subida de los registros de la tabla PeliculasActores
@@ -25,10 +29,10 @@ public class PeliculasActoresService {
 	 * @return Estado de la subida
 	 */
 	public String uploadTable(Request req){
-		PeliculasActoresDAOImpl peac = new PeliculasActoresDAOImpl();
+		PeliculasGenerosDAOImpl peac = new PeliculasGenerosDAOImpl();
 		req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/tmp"));
 		String result = "File uploaded!";
-		try (InputStream input = req.raw().getPart("uploaded_peliculasactores_file").getInputStream()) {
+		try (InputStream input = req.raw().getPart("uploaded_peliculasgeneros_file").getInputStream()) {
 		    peac.dropTable();
 		    peac.createTable();
 			InputStreamReader isr = new InputStreamReader(input);

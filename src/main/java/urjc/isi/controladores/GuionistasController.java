@@ -12,21 +12,21 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
-import urjc.isi.service.ActoresService;
+import urjc.isi.service.GuionistasService;
 
-public class ActoresController {
-	private static ActoresService as;
+public class GuionistasController {
+	private static GuionistasService as;
 	private static String adminkey = "1234";
 	
 	/**
 	 * Constructor por defecto
 	 */
-	public ActoresController() {
-		as = new ActoresService();
+	public GuionistasController() {
+		as = new GuionistasService();
 	}
 	
 	/**
-	 * Maneja las peticiones que llegan al endpoint /actores/uploadTable
+	 * Maneja las peticiones que llegan al endpoint /guionistas/uploadTable
 	 * @param request
 	 * @param response
 	 * @return El formulario para subir el fichero con las pseudoqueries o una redireccion al endpoint /welcome
@@ -35,13 +35,13 @@ public class ActoresController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/actores/upload' method='post' enctype='multipart/form-data'>" 
-			    + "    <input type='file' name='uploaded_actores_file' accept='.txt'>"
+		return "<form action='/guionistas/upload' method='post' enctype='multipart/form-data'>" 
+			    + "    <input type='file' name='uploaded_guionistas_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
 	
 	/**
-	 * Metodo que se encarga de manejar las peticiones a /actores/upload
+	 * Metodo que se encarga de manejar las peticiones a /guionistas/upload
 	 * @param request
 	 * @param response
 	 * @return Mensaje de estado sobre la subida de los registros
@@ -51,14 +51,14 @@ public class ActoresController {
 	}
 	
 	/**
-	 * Maneja las peticiones al endpoint /actores/selectAll
+	 * Maneja las peticiones al endpoint /guionistas/selectAll
 	 * @param request
 	 * @param response
-	 * @return La lista de actores que hay en la tabla Actores de la base de datos en formato HTML o JSON
+	 * @return La lista de actores que hay en la tabla Guioistas de la base de datos en formato HTML o JSON
 	 * @throws SQLException
 	 */
-	public static String selectAllActores(Request request, Response response) throws SQLException {
-		List<Personas> output = as.getAllActores();
+	public static String selectAllGuionistas(Request request, Response response) throws SQLException {
+		List<Personas> output = as.getAllGuionistas();
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -79,9 +79,9 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectActByFechaNac (Request request, Response response) throws SQLException {
+	public static String selectGuioByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
-		List<Personas> output = as.getActoresByFechaNac(fecha);
+		List<Personas> output = as.getGuionistasByFechaNac(fecha);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -102,8 +102,8 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectActMuertos (Request request, Response response) throws SQLException {
-		List<Personas> output = as.getActoresMuertos();
+	public static String selectGuioMuertos (Request request, Response response) throws SQLException {
+		List<Personas> output = as.getGuionistasMuertos();
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -124,10 +124,10 @@ public class ActoresController {
 		return result;
 	}
 	
-	public static String selectActByIntervaloNac (Request request, Response response) throws SQLException {
+	public static String selectGuioByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getActoresByIntervaloNac(fechaIn, fechaFin);
+		List<Personas> output = as.getGuionistasByIntervaloNac(fechaIn, fechaFin);
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -148,16 +148,17 @@ public class ActoresController {
 		return result;
 	}
 	
+	
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /actores
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /guionistas
 	 */
-	public void actoresHandler() {
-		get("/selectAll", ActoresController::selectAllActores);
-		get("/uploadTable", ActoresController::uploadTable);
-		post("/upload", ActoresController::upload);
-		get("/selectActByFechaNac", ActoresController::selectActByFechaNac);
-		get("/selectActMuertos", ActoresController::selectActMuertos);
-		get("/selectActByIntervaloNac", ActoresController::selectActByIntervaloNac);
+	public void guionistasHandler() {
+		get("/selectAll", GuionistasController::selectAllGuionistas);
+		get("/uploadTable", GuionistasController::uploadTable);
+		post("/upload", GuionistasController::upload);
+		get("/selectGuioByFechaNac", GuionistasController::selectGuioByFechaNac);
+		get("/selectGuioMuertos", GuionistasController::selectGuioMuertos);
+		get("/selectGuioByIntervaloNac", GuionistasController::selectGuioByIntervaloNac);
 	}
 	
 }
