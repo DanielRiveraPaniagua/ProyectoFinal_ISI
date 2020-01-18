@@ -206,6 +206,8 @@ public class PeliculasController {
 		List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
 		List<Personas> directores = (List<Personas>)output.get("directores");
+		List<Generos> generos = (List<Generos>)output.get("generos");
+		
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
@@ -216,6 +218,7 @@ public class PeliculasController {
 			JsonArray jdirectores = new JsonArray();
 			JsonArray jguionistas = new JsonArray();
 			JsonArray jactores = new JsonArray();
+			JsonArray jgeneros = new JsonArray();
 			for(int i = 0; i < directores.size(); i++) {
 				jdirectores.add(directores.get(i).toJSONObject());;
 			}
@@ -225,9 +228,13 @@ public class PeliculasController {
 			for(int i = 0; i < actores.size(); i++) {
 				jactores.add(actores.get(i).toJSONObject());;
 			}
+			for(int i = 0; i < generos.size(); i++) {
+				jgeneros.add(generos.get(i).toJSONObject());;
+			}
 			json.add("directores", jdirectores);
 			json.add("guionistas",jguionistas);
 			json.add("actores",jactores);
+			json.add("generos",jgeneros);
 			result = json.toString();
 		}else{
 			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
@@ -235,7 +242,11 @@ public class PeliculasController {
 			result+=(pelicula.getCalificacion()==1)?"Adulta":"No adulta";
 			result += "&emsp;<b>Duración: </b>"+pelicula.getDuracion() + "</br>";
 			result += "<b>Rating: </b>"+ pelicula.getRating() + "&emsp;<b>Numero de votos: </b>" + pelicula.getNVotos() +"</br>";
-			result += "<b>Dirigida por:</b></br>";
+			result += "<b>Generos: </b>";
+			for(int i = 0; i < generos.size(); i++) {
+				result +=  generos.get(i).getNombre() +", ";
+			}
+			result += "</br><b>Dirigida por:</b></br>";
 			for(int i = 0; i < directores.size(); i++) {
 				result += "&emsp;" + directores.get(i).toHTMLString() +"</br>";
 			}

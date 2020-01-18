@@ -99,6 +99,7 @@ public class PeliculasService {
 		PersonasDAO direcDAO = new DirectoresDAOImpl();
 		PersonasDAO guioDAO = new GuionistasDAOImpl();
 		PersonasDAO actorDAO = new ActoresDAOImpl();
+		GenerosDAOImpl generosDAO = new GenerosDAOImpl();
 		Peliculas pelicula = pelisDAO.selectFilmByTitle(titulo);
 		String id = pelicula!=null?pelicula.getIdPelicula():"";
 		
@@ -109,11 +110,13 @@ public class PeliculasService {
 			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
 			result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
 			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
+			result.put("generos", (Object)generosDAO.selectByPeliculaID(id));
 		}
 		pelisDAO.close();
 		direcDAO.close();
 		actorDAO.close();
 		guioDAO.close();
+		generosDAO.close();
 		return result;
 	}
 

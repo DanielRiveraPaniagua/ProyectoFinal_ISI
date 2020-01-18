@@ -99,5 +99,23 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	  } catch (SQLException e) {
 		  System.out.println(e.getMessage());
 	  }
+	  
   }
+  @Override
+  public List<Generos> selectByPeliculaID(String id){
+		List<Generos> generos = new ArrayList<>();
+		String sql = "SELECT * from generos as g "+
+					"Inner join peliculasgeneros as pg on pg.idpelicula=d.idpelicula "+
+					"WHERE pd.idpelicula='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  while(rs.next()){
+				  generos.add(fromResultSet(rs));
+			  }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return generos;
+	}
 }
