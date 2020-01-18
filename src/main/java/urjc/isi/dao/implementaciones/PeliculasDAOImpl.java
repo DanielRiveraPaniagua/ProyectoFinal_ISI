@@ -225,6 +225,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "titulo":
 					if(conditions.get("idioma") == null) {
 						cond+= "p.titulo like "+"'"+conditions.get("titulo")+"%'";
+					}else {
+						cond+="true";
 					}
 
 					break;
@@ -274,7 +276,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			c.commit();
 			while(rs.next()){
 				Peliculas peli = fromResultSet(rs);
-				if(rs.getString("tituloenidioma") != null) {
+				if(conditions.get("idioma") == null & rs.getString("tituloenidioma") != null) {
 					peli.setTitulo(rs.getString("tituloenidioma"));
 				}
 				filmList.add(peli);
