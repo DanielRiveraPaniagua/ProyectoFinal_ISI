@@ -169,14 +169,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-<<<<<<< HEAD
-				case "duracion":
-					System.out.println(conditions.get("duracion"));
-					if(conditions.get("duracion").indexOf(">")==0) {
-						cond+= "p.duracion>="+"'"+conditions.get("duracion").split(">")[1]+"'";
-					}else if(conditions.get("duracion").indexOf("<")==0)
-						cond+= "p.duracion<="+"'"+conditions.get("duracion").split("<")[1]+"'";
-=======
 				case "duracion":
 					add_order = true;
 					order += "p.duracion DESC";
@@ -193,7 +185,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						String[] duracion = conditions.get("duracion").split("-");
 						cond+= "p.duracion >= " + "'" + duracion[0] + "'" + " and " + "p.duracion <= "+ "'"+ duracion[1] + "'" ;
 					}
->>>>>>> devel
 					break;
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
@@ -240,12 +231,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 			}
 		}
 		System.out.println(sql+cond);
-<<<<<<< HEAD
-=======
 		if(add_order) {
 			cond += order;
 		}
->>>>>>> devel
 		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
