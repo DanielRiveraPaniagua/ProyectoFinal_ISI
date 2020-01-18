@@ -83,7 +83,7 @@ public class Main {
 			+ "<p>Sustituyendo las x por los valores deseados</p>"
      		+ "<br>" + "<h2 style=color:#5B72EB;>GENEROS</h2>" + "<br>"
      		+ "<a href=https://prueba-grupo4.herokuapp.com/generos/selectAll>Imprimir todos los generos</a>"
-			+ "<p>Tambien puedes filtrar por generos:</p>"
+			+ "<p>Tambien puedes filtrar los generos por:</p>"
 			+ "-->" + "<a href=https://prueba-grupo4.herokuapp.com/generos/selectAll?name=x>nombre</a>" + "<br>"
      		+ "</form>";
     }
