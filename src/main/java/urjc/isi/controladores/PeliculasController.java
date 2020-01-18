@@ -275,8 +275,8 @@ public class PeliculasController {
 		output = ps.getfilmsbymood(filter);
 		
 		if(filter.isEmpty()) {
-			result = "Possible moods: \n Feliz, triste, chill, atrevido, indiferente";
-			result = result + form;
+			result = "Possible moods: <br/><br/> Feliz, triste, chill, atrevido, indiferente \n <br/>";
+			result = form + result;
 		}
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
