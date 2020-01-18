@@ -60,12 +60,17 @@ public class GuionistasService {
 		return result;
 	}
 
-	public 	Dictionary<String,Object> fullGuionistasInfo(String name) throws SQLException{
+	public 	Dictionary<String,Object> fullGuionistasInfo(String engine,boolean isid) throws SQLException{
 		GuionistasDAOImpl guionistasDAO = new GuionistasDAOImpl();
 		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
-		Personas persona = new Personas();
-		persona = guionistasDAO.selectByName(name);
-		String id = persona.getId();
+		String id;
+		if (!isid) {
+			Personas persona = guionistasDAO.selectByName(engine);
+			id = persona!=null?persona.getId():"";
+		}else {
+			Personas persona = guionistasDAO.selectByID(engine);
+			id = persona.getId()!=null?persona.getId():"";
+		}
 
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){

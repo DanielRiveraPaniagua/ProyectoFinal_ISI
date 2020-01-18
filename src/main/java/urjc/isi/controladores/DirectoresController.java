@@ -101,15 +101,24 @@ public class DirectoresController {
 	public static String infoDirectores(Request request, Response response) throws SQLException {
 		Dictionary<String,Object> output;
 		String result = "";
-
-		if(request.queryParams("fullnombre")== null){
-			return "";
+		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
+			return "Por favor introduce un nombre para buscar el director que deseas"+
+					"<form action='/directores/info' method='get' enctype='multipart/form-data'>"
+					+ "Nombre de Director: <input type=text name=nombre size=30>"
+					+ "<button type=submit value=Director>Buscar </button><br/></form>";
+		}
+		if(request.queryParams("id")!=null) {
+			output = ds.fullDirectoresInfo(request.queryParams("id"),true);
+		}else {
+			output = ds.fullDirectoresInfo(request.queryParams("nombre"),false);
+		}
+		if(output.isEmpty()) {
+			response.redirect("/directores/info");
+			return "El director no se encuentra en la base de datos";
 		}
 
-		output = ds.fullDirectoresInfo(request.queryParams("fullnombre"));
-		//Peliculas pelicula = (Peliculas)output.get("pelicula");
+	
 		Personas director = (Personas)output.get("director");
-		//List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -125,7 +134,8 @@ public class DirectoresController {
 			json.add("peliculas",jpelis);
 			result = json.toString();
 		}else {
-			result = "<b>Información de: " + director.getFullNombre() + " (" + director.getNacimiento() +"-" + director.getMuerte() +")</b> </br>";
+			result = "<b>Información de: " + director.getFullNombre() + " (" + director.getNacimiento() +"-" + director.getMuerte() +")</b>";
+			result +="&emsp;<b>IDirector: </b>"+director.getFullNombre()+"</br>";
 			result = result + "<b>Dirigió las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";

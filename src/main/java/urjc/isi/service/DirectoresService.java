@@ -60,12 +60,17 @@ public class DirectoresService {
 		return result;
 	}
 
-	public 	Dictionary<String,Object> fullDirectoresInfo(String name) throws SQLException{
+	public Dictionary<String,Object> fullDirectoresInfo(String engine, boolean isid) throws SQLException{
 		DirectoresDAOImpl directoresDAO = new DirectoresDAOImpl();
 		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
-		Personas persona = new Personas();
-		persona = directoresDAO.selectByName(name);
-		String id = persona.getId();
+		String id;
+		if (!isid) {
+			Personas persona = directoresDAO.selectByName(engine);
+			id = persona!=null?persona.getId():"";
+		}else {
+			Personas persona = directoresDAO.selectByID(engine);
+			id = persona.getId()!=null?persona.getId():"";
+		}
 
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){

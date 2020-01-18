@@ -102,15 +102,23 @@ public class GuionistasController {
 	public static String infoGuionistas(Request request, Response response) throws SQLException {
 		Dictionary<String,Object> output;
 		String result = "";
-
-		if(request.queryParams("fullnombre")== null){
-			return "";
+		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
+			return "Por favor introduce un nombre para buscar el guionista que deseas"+
+					"<form action='/actores/info' method='get' enctype='multipart/form-data'>"
+					+ "Nombre de Guionista: <input type=text name=nombre size=30>"
+					+ "<button type=submit value=Guionista>Buscar </button><br/></form>";
 		}
-
-		output = gs.fullGuionistasInfo(request.queryParams("fullnombre"));
-		//Peliculas pelicula = (Peliculas)output.get("pelicula");
+		if(request.queryParams("id")!=null) {
+			output = gs.fullGuionistasInfo(request.queryParams("id"),true);
+		}else {
+			output = gs.fullGuionistasInfo(request.queryParams("nombre"),false);
+		}
+		if(output.isEmpty()) {
+			response.redirect("/guionistas/info");
+			return "El guionista no se encuentra en la base de datos";
+		}
+		
 		Personas guionista = (Personas)output.get("guionista");
-		//List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -126,7 +134,8 @@ public class GuionistasController {
 			json.add("peliculas",jpelis);
 			result = json.toString();
 		}else {
-			result = "<b>Información de: " + guionista.getFullNombre() + " (" + guionista.getNacimiento() +"-" + guionista.getMuerte() +")</b> </br>";
+			result = "<b>Información de: " + guionista.getFullNombre() + " (" + guionista.getNacimiento() +"-" + guionista.getMuerte() +")</b>";
+			result +="<b>&emsp;IDGuionista: </b>"+guionista.getFullNombre()+"</br>";
 			result = result + "<b>Guionista en las películas:</b></br>";
 			for(int i = 0; i < pelis.size(); i++) {
 				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
