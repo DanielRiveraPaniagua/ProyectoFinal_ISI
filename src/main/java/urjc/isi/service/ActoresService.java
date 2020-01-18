@@ -16,7 +16,7 @@ import urjc.isi.entidades.*;
 import urjc.isi.grafos.*;
 
 public class ActoresService {
-	
+
 	/**
 	 * Constructor por defecto
 	 */
@@ -27,9 +27,14 @@ public class ActoresService {
 	 * @return Lista de actores de la tabla Actores
 	 * @throws SQLException
 	 */
-	public List<Personas> getAllActores() throws SQLException{
+	public List<Personas> getAllActores(Dictionary<String,String> conditions) throws SQLException{
 		ActoresDAOImpl actores = new ActoresDAOImpl();
-		List<Personas> result = actores.selectAll();
+		List<Personas> result;
+		if(!conditions.isEmpty()) {
+			result = actores.selectAll(conditions);
+		}else {
+			result = actores.selectAll();
+		}
 		actores.close();
 		return result;
 	}
@@ -56,27 +61,6 @@ public class ActoresService {
 		return result;
 	}
 
-	public List<Personas> getActoresByFechaNac (String fecha) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerByFechaNac (fecha);
-		actores.close();
-		return result;
-	}
-
-	public List<Personas> getActoresMuertos () throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerMuertas ();
-		actores.close();
-		return result;
-	}
-
-	public List<Personas> getActoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
-		ActoresDAOImpl actores = new ActoresDAOImpl ();
-		List<Personas> result = actores.selectPerByIntervaloNac (fechaIn, fechaFin);
-		actores.close();
-		return result;
-	}
-
 	public 	Dictionary<String,Object> fullActoresInfo(String name) throws SQLException{
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
 		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
@@ -93,27 +77,27 @@ public class ActoresService {
 		peliDAO.close();
 		return result;
 	}
-	
+
 	public List<Personas> getActoresByCercania (String actor_p, String dist_max_p, String factor_p) throws SQLException {
-		final Integer DIST_MAX = 10; /* 
-						     * considering this number as the maximum 
+		final Integer DIST_MAX = 10; /*
+						     * considering this number as the maximum
 						     * distance of relation between actors
 						     */
 		final Integer FACTOR = 5;  /*
-						   * the part of the actors that will be 
-						   * chosen for each percentage based on 
+						   * the part of the actors that will be
+						   * chosen for each percentage based on
 						   * their popularity
 						   */
 		final String DELIMITER = "/";
 		final String EOL = ";";
-		
+
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
 		List<Peliculas> peliculas = pelisDAO.selectAll();
-		
+
 		Integer dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
 		Integer factor = (factor_p.equals("None"))?FACTOR:Integer.valueOf(factor_p);
-		
+
 		// Create Graph
 		String str_graph = "";
 		for (int i = 0; i < peliculas.size(); i++) {
@@ -131,12 +115,12 @@ public class ActoresService {
 			}
 		}
 		Graph G = new Graph(str_graph, DELIMITER, EOL);
-		
+
         // create popularity data structure
         ST<String, Double> act_popularity = new ST<String, Double>();
         // create distances data structure
         ST<Double, SET<String>> act_distances = new ST<Double, SET<String>>();
-        
+
         // run breadth first search
         String actor_id = actoresDAO.selectByName(actor_p).getId();
         if (actor_id == null) {
@@ -146,15 +130,15 @@ public class ActoresService {
     		return result;
         }
         PathFinder finder = new PathFinder(G, actor_id);
-        
+
         // calculate the popularity and distance of each actor
         for (String actor : G.vertices()) {
         	Double dist = (double)finder.distanceTo(actor);
         	Double popularity = G.popularity(actor);
             if (dist % 2 != 0) continue;  // it's a movie vertex
-            
+
             act_popularity.put(actor, popularity);
-            
+
             if (actor.equals(actor_p)) continue;  // it's the same actor
             if (!act_distances.contains(dist/2)) {
             	act_distances.put(dist/2, new SET<String>());
@@ -171,11 +155,11 @@ public class ActoresService {
         	}else {
         		percent = 0.0;
         	}
-        	
+
         	act_distances.put(percent, act_distances.get((double)d));
         	act_distances.remove((double)d);
         }
-        
+
         List<Personas> result = new ArrayList<Personas>();
         for (Double p : act_distances) {
             int numb_act = (int) Math.ceil((double)act_distances.get(p).size()/factor);

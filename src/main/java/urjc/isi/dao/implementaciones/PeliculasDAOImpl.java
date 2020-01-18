@@ -180,7 +180,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		String cond = "WHERE ";
 		String order = "ORDER BY ";
 		boolean add_order = false;
-		
+
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
@@ -235,6 +235,15 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						String[] years = conditions.get("year").split("-");
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
+					break;
+				case "order":
+          add_order = true;
+					if(conditions.get("order").contains("-desc")) {
+						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
+					}else {
+						order += " p." + conditions.get("order");
+					}
+					cond += " 1 = 1";
 					break;
 				case "idioma":
 					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula "+

@@ -78,6 +78,59 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  return personaslist;
 	}
 
+	public List<Personas> selectAll(Dictionary<String,String> conditions) {
+		List<Personas> directoresList = new ArrayList<>();
+		  String sql = "SELECT * from directores as d ";
+		  String cond = "WHERE ";
+		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+				switch(k.nextElement()) {
+					case "id_dir":
+						cond+= "d.idpersona = " + conditions.get("id_dir");
+						break;
+					case "name":
+						cond+= "d.fullnombre = " + conditions.get("name");
+						break;
+					case "fecha_nac":
+						cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
+						break;
+					case "intervalo_fecha_nac":
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "d.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "d.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "d.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
+						break;
+					case "fecha_muer":
+						cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
+						break;
+					case "intervalo_fecha_muer":
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "d.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "d.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "d.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
+						break;
+				}
+				if(k.hasMoreElements()) {
+					cond+=" AND ";
+				}
+		  }
+
+		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			  ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  while(rs.next()){
+				  directoresList.add(fromResultSet(rs));
+			  }
+	    } catch (SQLException e) {
+			  System.out.println(e.getMessage());
+		  }
+		  return directoresList;
+	}
+
+
 	@Override
 	public Personas selectByID(String idpersona) {
 		  String sql = "SELECT * from directores WHERE idpersona='" + idpersona+"'";
@@ -117,56 +170,9 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return persona;
+		  return director;
 	}
 
-	@Override
-	public List<Personas> selectPerByFechaNac(String fecha) {
-		 List<Personas> actFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from directores WHERE fnacimiento=" + fecha;
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actFechaNac.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actFechaNac;
-	}
-
-	@Override
-	public List<Personas> selectPerMuertas() {
-		 List<Personas> dirMuertos = new ArrayList<>();
-		 String sql = "SELECT * from directores WHERE fmuerte < 2020";
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 dirMuertos.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return dirMuertos;
-	}
-
-	@Override
-	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
-		 List<Personas> dirFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from directores WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 dirFechaInter.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return dirFechaInter;
-	}
 	public List<Personas> selectByPeliculaID(String id){
 		List<Personas> actores = new ArrayList<>();
 		String sql = "SELECT * from directores as d "+

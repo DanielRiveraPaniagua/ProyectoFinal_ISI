@@ -124,7 +124,6 @@ public class PeliculasService {
 		generosDAO.close();
 		return result;
 	}
-
 	public List<Peliculas> getWorstORBestFilmBy(Dictionary<String,String> conditions) throws SQLException{
 		List<Peliculas> result;
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();

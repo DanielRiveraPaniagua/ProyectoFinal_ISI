@@ -16,14 +16,14 @@ import urjc.isi.service.DirectoresService;
 import urjc.isi.entidades.Peliculas;
 
 public class DirectoresController {
-	private static DirectoresService as;
+	private static DirectoresService ds;
 	private static String adminkey = "1234";
 
 	/**
 	 * Constructor por defecto
 	 */
 	public DirectoresController() {
-		as = new DirectoresService();
+		ds = new DirectoresService();
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class DirectoresController {
 	 * @return Mensaje de estado sobre la subida de los registros
 	 */
 	public static String upload(Request request, Response response) {
-		return as.uploadTable(request);
+		return ds.uploadTable(request);
 	}
 
 	/**
@@ -59,8 +59,24 @@ public class DirectoresController {
 	 * @throws SQLException
 	 */
 	public static String selectAllDirectores(Request request, Response response) throws SQLException {
-		List<Personas> output = as.getAllDirectores();
+		List<Personas> output;
 		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("id_dir")!= null)
+			filter.put("id_dir",request.queryParams("id_dir"));
+		if(request.queryParams("name")!= null)
+			filter.put("name",request.queryParams("name"));
+		if(request.queryParams("fecha_nac")!= null)
+			filter.put("fecha_nac",request.queryParams("fecha_nac"));
+		if(request.queryParams("intervalo_fecha_nac")!= null)
+			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
+		if(request.queryParams("fecha_muer")!= null)
+			filter.put("fecha_muer",request.queryParams("fecha_muer"));
+		if(request.queryParams("intervalo_fecha_muer")!= null)
+			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
+
+		output = ds.getAllDirectores(filter);
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -80,74 +96,6 @@ public class DirectoresController {
 		return result;
 	}
 
-	public static String selectDirByFechaNac (Request request, Response response) throws SQLException {
-		String fecha = request.queryParams ("fecha_nac");
-		List<Personas> output = as.getDirectoresByFechaNac(fecha);
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
-
-	public static String selectDirMuertos (Request request, Response response) throws SQLException {
-		List<Personas> output = as.getDirectoresMuertos();
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
-
-	public static String selectDirByIntervaloNac (Request request, Response response) throws SQLException {
-		String fechaIn = request.queryParams ("fecha_in");
-		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getDirectoresByIntervaloNac(fechaIn, fechaFin);
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
 
 	@SuppressWarnings("unchecked")
 	public static String infoDirectores(Request request, Response response) throws SQLException {
@@ -193,9 +141,6 @@ public class DirectoresController {
 		get("/selectAll", DirectoresController::selectAllDirectores);
 		get("/uploadTable", DirectoresController::uploadTable);
 		post("/upload", DirectoresController::upload);
-		get("/selectDirByFechaNac", DirectoresController::selectDirByFechaNac);
-		get("/selectDirMuertos", DirectoresController::selectDirMuertos);
-		get("/selectDirByIntervaloNac", DirectoresController::selectDirByIntervaloNac);
 		get("/info", DirectoresController::infoDirectores);
 	}
 

@@ -13,10 +13,12 @@ public interface PersonasDAO extends GenericDAO<Personas>{
 	 * @param Nombre de la persona a la que se desea buscar
 	 * @return
 	 */
+
 	//public List<Personas> selectAll(Dictionary<String,String> conditions);
 	public Personas selectByName(String name);
-	public List<Personas> selectPerByFechaNac (String fecha);
-	public List<Personas> selectPerMuertas ();
-	public List<Personas> selectPerByIntervaloNac (String fechaIn, String FehcaFin);
 	public List<Personas> selectByPeliculaID(String id);
+	public List<Personas> selectAll(Dictionary<String,String> conditions); //probablemente debería estar en generic
+
+	public Personas selectByName(String name);
+	
 }

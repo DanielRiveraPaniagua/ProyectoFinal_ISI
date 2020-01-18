@@ -16,14 +16,14 @@ import urjc.isi.service.GuionistasService;
 import urjc.isi.entidades.Peliculas;
 
 public class GuionistasController {
-	private static GuionistasService as;
+	private static GuionistasService gs;
 	private static String adminkey = "1234";
 
 	/**
 	 * Constructor por defecto
 	 */
 	public GuionistasController() {
-		as = new GuionistasService();
+		gs = new GuionistasService();
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class GuionistasController {
 	 * @return Mensaje de estado sobre la subida de los registros
 	 */
 	public static String upload(Request request, Response response) {
-		return as.uploadTable(request);
+		return gs.uploadTable(request);
 	}
 
 	/**
@@ -59,77 +59,26 @@ public class GuionistasController {
 	 * @throws SQLException
 	 */
 	public static String selectAllGuionistas(Request request, Response response) throws SQLException {
-		List<Personas> output = as.getAllGuionistas();
+		List<Personas> output;
 		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
 
-	public static String selectGuioByFechaNac (Request request, Response response) throws SQLException {
-		String fecha = request.queryParams ("fecha_nac");
-		List<Personas> output = as.getGuionistasByFechaNac(fecha);
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("id_guio")!= null)
+			filter.put("id_guio",request.queryParams("id_act"));
+		if(request.queryParams("name")!= null)
+			filter.put("name",request.queryParams("name"));
+		if(request.queryParams("fecha_nac")!= null)
+			filter.put("fecha_nac",request.queryParams("fecha_nac"));
+		if(request.queryParams("intervalo_fecha_nac")!= null)
+			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
+		if(request.queryParams("fecha_muer")!= null)
+			filter.put("fecha_muer",request.queryParams("fecha_muer"));
+		if(request.queryParams("intervalo_fecha_muer")!= null)
+			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
 
-	public static String selectGuioMuertos (Request request, Response response) throws SQLException {
-		List<Personas> output = as.getGuionistasMuertos();
-		String result = "";
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
+		output = gs.getAllGuionistas(filter);
 
-	public static String selectGuioByIntervaloNac (Request request, Response response) throws SQLException {
-		String fechaIn = request.queryParams ("fecha_in");
-		String fechaFin = request.queryParams ("fecha_fin");
-		List<Personas> output = as.getGuionistasByIntervaloNac(fechaIn, fechaFin);
-		String result = "";
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -192,9 +141,6 @@ public class GuionistasController {
 		get("/selectAll", GuionistasController::selectAllGuionistas);
 		get("/uploadTable", GuionistasController::uploadTable);
 		post("/upload", GuionistasController::upload);
-		get("/selectGuioByFechaNac", GuionistasController::selectGuioByFechaNac);
-		get("/selectGuioMuertos", GuionistasController::selectGuioMuertos);
-		get("/selectGuioByIntervaloNac", GuionistasController::selectGuioByIntervaloNac);
 		get("/info", GuionistasController::infoGuionistas);
 	}
 
