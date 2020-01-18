@@ -10,9 +10,13 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-
+import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
+<<<<<<< HEAD
 import urjc.isi.entidades.Personas;
+=======
+import urjc.isi.service.GenerosService;
+>>>>>>> devel
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -63,7 +67,11 @@ public class PeliculasController {
 		List<Peliculas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
+<<<<<<< HEAD
 
+=======
+		System.out.println("muestra");
+>>>>>>> devel
 		if(request.queryParams("actor")!= null)
 			filter.put("actor",request.queryParams("actor"));
 		if(request.queryParams("director")!= null)
@@ -79,6 +87,13 @@ public class PeliculasController {
 			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
+		if(request.queryParams("idioma")!=null)
+			filter.put("idioma", request.queryParams("idioma"));
+		if(request.queryParams("genero")!=null) {
+			return filmsByGenero(request, response);
+		}
+		if(request.queryParams("rating")!=null)
+			filter.put("rating", request.queryParams("rating"));
 
 		output = ps.getAllPeliculas(filter);
 
@@ -182,12 +197,12 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static String infoPeliculas(Request request, Response response) throws SQLException {
 		Dictionary<String,Object> output;
 		String result = "";
-		
+
 		if(request.queryParams("titulo")== null){
 			return result;
 		}
@@ -239,7 +254,75 @@ public class PeliculasController {
 	}
 
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculas
+	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
+	 * @param request
+	 * @param response
+	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
+	 * @throws SQLException
+	 */
+
+	public static String filmsByGenero(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		String generos =request.queryString();
+
+
+		output = ps.getAllPeliculasByGenero(generos);
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+				result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+
+		return result;
+	}
+
+
+	public static String WorstorBestFilmsByYear(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+
+		if(request.queryParams("year")!= null)
+			filter.put("year",request.queryParams("year"));
+		if(request.queryParams("score")!= null)
+			filter.put("score",request.queryParams("score"));
+
+		output = ps.getWorstORBestFilmBy(filter);
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
 		get("/selectAll", PeliculasController::selectAllPeliculas);
@@ -247,7 +330,11 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
+		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
 		get("/info", PeliculasController::infoPeliculas);
+
+		//filtrado por género se podría prescindir
+		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
 }

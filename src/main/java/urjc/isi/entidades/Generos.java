@@ -56,11 +56,11 @@ public class Generos {
   
 	@Override
 	public String toString(){
-		return "Nombre: " + getNombre();
+		return "Género: " + getNombre();
 	}
 	
 	public String toHTMLString() { //Método necesario para una buena respuesta en el servidor
-		return "Nombre: " + getNombre();
+		return "Género: " + getNombre();
 	}
 	
 	public JsonObject toJSONObject () {
