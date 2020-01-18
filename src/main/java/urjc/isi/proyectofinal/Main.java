@@ -34,6 +34,7 @@ public class Main {
    
 		result = "<html><body><meta charset=&quot;UTF-8&quot;>" + 
 					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
+					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					"<ul>\n" + 
 					"<li>/selectAll</li>\n" + 
 					"<li><strong>&nbsp;</strong></li>\n" + 
