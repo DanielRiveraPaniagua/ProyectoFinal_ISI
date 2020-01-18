@@ -190,15 +190,19 @@ public class PeliculasController {
 	@SuppressWarnings("unchecked")
 	public static String infoPeliculas(Request request, Response response) throws SQLException {
 		String result = "";
-
+		Dictionary<String,Object> output;
+		
 		if(request.queryParams("titulo")== null){
 			return "Por favor introduce un título o un id para buscar la película que deseas"+
 					"<form action='/peliculas/info' method='get' enctype='multipart/form-data'>"
 					+ "Título Pelicula: <input type=text name=titulo size=30>"
 					+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
 		}
-
-		Dictionary<String,Object> output = ps.fullPeliculasInfo(request.queryParams("titulo"));
+		if(request.queryParams("id")!=null) {
+			output = ps.fullPeliculasInfo(request.queryParams("id"),true);
+		}else {
+			output = ps.fullPeliculasInfo(request.queryParams("titulo"),false);
+		}
 		
 		if(output.isEmpty()) {
 			response.redirect("/peliculas/info");

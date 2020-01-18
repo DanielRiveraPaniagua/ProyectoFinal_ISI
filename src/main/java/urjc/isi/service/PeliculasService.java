@@ -94,15 +94,19 @@ public class PeliculasService {
 	}
 
 
-	public 	Dictionary<String,Object> fullPeliculasInfo(String titulo) throws SQLException{
+	public 	Dictionary<String,Object> fullPeliculasInfo(String engine,boolean isid) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		PersonasDAO direcDAO = new DirectoresDAOImpl();
 		PersonasDAO guioDAO = new GuionistasDAOImpl();
 		PersonasDAO actorDAO = new ActoresDAOImpl();
 		GenerosDAOImpl generosDAO = new GenerosDAOImpl();
-		Peliculas pelicula = pelisDAO.selectFilmByTitle(titulo);
-		String id = pelicula!=null?pelicula.getIdPelicula():"";
-		
+		String id;
+		if (!isid) {
+			Peliculas pelicula = pelisDAO.selectFilmByTitle(engine);
+			id = pelicula!=null?pelicula.getIdPelicula():"";
+		}else {
+			id=engine;
+		}
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		
 		if(id.length()>0){
