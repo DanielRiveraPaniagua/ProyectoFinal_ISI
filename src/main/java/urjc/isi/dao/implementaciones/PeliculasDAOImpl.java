@@ -186,8 +186,17 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
 					break;
+				case "order":
+          add_order = true;
+					if(conditions.get("order").contains("-desc")) {
+						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
+					}else {
+						order += " p." + conditions.get("order");
+					}
+					cond += " 1 = 1";
+					break;
 				case "idioma":
-					cond+= "1 = 1";
+					cond += " 1 = 1 ";
 					break;
 				case "rating":
 					if(conditions.get("rating").indexOf("<") == 0) {
