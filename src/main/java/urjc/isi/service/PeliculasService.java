@@ -103,6 +103,7 @@ public class PeliculasService {
 		String id = pelicula!=null?pelicula.getIdPelicula():"";
 		
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		
 		if(id.length()>0){
 			result.put("pelicula",(Object)pelisDAO.selectByID(id));
 			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
