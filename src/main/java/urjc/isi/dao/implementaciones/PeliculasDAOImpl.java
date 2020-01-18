@@ -199,8 +199,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
 				case "duracion":
-					add_order = true;
 					order += add_order?" AND p.duracion DESC":"p.duracion DESC";
+					add_order = true;
 					if(conditions.get("duracion").indexOf("<") == 0) {
 						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
 						break;
@@ -237,8 +237,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "order":
-					add_order = true;
 					order += add_order?" AND ":"";
+					add_order = true;
 					if(conditions.get("order").contains("-desc")) {
 						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
 					}else {
