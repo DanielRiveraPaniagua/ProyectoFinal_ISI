@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.Dictionary;
 import java.util.List;
 
 import javax.servlet.MultipartConfigElement;
@@ -26,9 +27,14 @@ public class GuionistasService {
 	 * @return Lista de guionistas de la tabla Guionistas
 	 * @throws SQLException
 	 */
-	public List<Personas> getAllGuionistas() throws SQLException{
+	public List<Personas> getAllGuionistas(Dictionary<String,String> conditions) throws SQLException{
 		GuionistasDAOImpl guionistas = new GuionistasDAOImpl();
-		List<Personas> result = guionistas.selectAll();
+		List<Personas> result;
+		if(!conditions.isEmpty()) {
+			result = guionistas.selectAll(conditions);
+		}else {
+			result = guionistas.selectAll();
+		}
 		guionistas.close();
 		return result;
 	}
@@ -54,27 +60,4 @@ public class GuionistasService {
 		guionistas.close();
 		return result;
 	}
-	
-	public List<Personas> getGuionistasByFechaNac (String fecha) throws SQLException {
-		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
-		List<Personas> result = guionistas.selectPerByFechaNac (fecha);
-		guionistas.close();
-		return result;
-	}
-	
-	public List<Personas> getGuionistasMuertos () throws SQLException {
-		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
-		List<Personas> result = guionistas.selectPerMuertas ();
-		guionistas.close();
-		return result;
-	}
-	
-	public List<Personas> getGuionistasByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
-		GuionistasDAOImpl guionistas = new GuionistasDAOImpl ();
-		List<Personas> result = guionistas.selectPerByIntervaloNac (fechaIn, fechaFin);
-		guionistas.close();
-		return result;
-	}
-
-	
 }
