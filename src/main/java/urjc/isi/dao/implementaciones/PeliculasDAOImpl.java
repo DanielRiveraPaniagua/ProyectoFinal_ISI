@@ -406,17 +406,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){
-		String sql = "SELECT * from peliculas WHERE titulo= '" + titulo+"'";
-		Peliculas pelicula = new Peliculas();
+		String sql = "SELECT idpelicula from peliculas WHERE titulo= '" + titulo+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			if(rs.next()){
-				pelicula = fromResultSet(rs);
+				return fromResultSet(rs);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return pelicula;
+		return null;
 	}
 }

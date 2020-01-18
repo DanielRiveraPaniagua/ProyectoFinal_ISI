@@ -122,13 +122,4 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	/**
-	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
-	 * @return Estado de salida
-	 */
-	/*public String crearTablaPeliculas()  throws SQLException{
-			pelisDAO.createTable();
-			return "Tabla creada con exito";
-	}*/
-
 }
