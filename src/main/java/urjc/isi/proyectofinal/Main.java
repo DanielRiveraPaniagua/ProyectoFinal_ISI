@@ -59,23 +59,31 @@ public class Main {
 			Controller.peliculasGuionistasHandler();
 		});
 		path("tituloidiomas",() -> {
-	    	TituloIdiomasController Controller = new TituloIdiomasController();
+			TituloIdiomasController Controller = new TituloIdiomasController();
 	    	Controller.tituloIdiomasHandler();
-	    });
-  	path("generos",()->{
-  		GenerosController Controller = new GenerosController();
-  		Controller.generosHandler();
-  	});
-  	path("peliculasgeneros",()->{
-  		PeliculasGenerosController Controller = new PeliculasGenerosController();
-  		Controller.peliculasHandler();
-  	});
+		});
+		path("generos",()->{
+	  		GenerosController Controller = new GenerosController();
+	  		Controller.generosHandler();
+	  	});
+	  	path("peliculasgeneros",()->{
+	  		PeliculasGenerosController Controller = new PeliculasGenerosController();
+	  		Controller.peliculasHandler();
+	  	});
     }
 
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
+        
+        String HtmlPageError = "<htlm><body>" + 
+        						"<h1>Error 404<h1><br/><br/>" + 
+        						"El recurso que has buscado no se encuentra en nuestra app<br/><br/>" +
+        						"Pulsa <a href=/welcome>aquí</a> para volver a la página principal " + 
+        						"</body><html>";
+        
+		notFound(HtmlPageError);
         redirect.get("*", "/welcome");
     }
 
