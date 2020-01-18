@@ -22,8 +22,17 @@ public class Main {
 	 * @throws URISyntaxException
 	 */
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-       String result = new String("Film application is in WIP. THANKS!");
+       String result = "";
+       result = "<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de pel&iacute;culas ISI 2019/2020</h1>\n" + 
+       		"<h2 style=\"color: #2e6c80;\">Como usar nuestra p&aacute;gina:</h2>\n" + 
+       		"<ul>\n" + 
+       		"<li>/selectAll</li>\n" + 
+       		"<li><strong>&nbsp;</strong></li>\n" + 
+       		"</ul>\n" + 
+       		"<p><strong>Enjoy!</strong></p>\n" + 
+       		"<p><strong>&nbsp;</strong></p>";
        return result;
+       
     }
 
 	/**
