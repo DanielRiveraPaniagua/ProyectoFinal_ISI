@@ -87,8 +87,9 @@ public class PeliculasService {
 
 	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		String result = pelisDAO.selectCalificacionForPelicula(name);
+		Peliculas pelicula = pelisDAO.selectFilmByTitle(name);
 		pelisDAO.close();
+		String result = pelicula!=null?Integer.toString(pelicula.getCalificacion()):"";
 		return result;
 	}
 
@@ -98,7 +99,7 @@ public class PeliculasService {
 		PersonasDAO direcDAO = new DirectoresDAOImpl();
 		PersonasDAO guioDAO = new GuionistasDAOImpl();
 		PersonasDAO actorDAO = new ActoresDAOImpl();
-		String id = pelisDAO.selectIDByTitle(titulo);
+		String id = pelisDAO.selectFilmByTitle(titulo).getIdPelicula();
 
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){

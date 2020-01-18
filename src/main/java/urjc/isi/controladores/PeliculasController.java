@@ -231,10 +231,10 @@ public class PeliculasController {
 			result = json.toString();
 		}else if (pelicula!=null){
 			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
-			result += "<b>PeliculaID: </b>"+ pelicula.getIdPelicula() + "<b>Calificacion: </b>";
+			result += "<b>PeliculaID: </b>"+ pelicula.getIdPelicula() + "&emsp;<b>Calificacion: </b>";
 			result+=(pelicula.getCalificacion()==0)?"Adulta":"No adulta" + "</br>";
-			result += "<b>Duración: </b>"+pelicula.getDuracion() + "</br>";
-			result += "<b>Rating: </b>"+ pelicula.getRating() + "<b>Numero de votos: </b>" + pelicula.getNVotos();
+			result += "&emsp;<b>Duración: </b>"+pelicula.getDuracion() + "</br>";
+			result += "<b>Rating: </b>"+ pelicula.getRating() + "&emsp;<b>Numero de votos: </b>" + pelicula.getNVotos() +"</br>";
 			result += "<b>Dirigida por:</b></br>";
 			for(int i = 0; i < directores.size(); i++) {
 				result += "&emsp;" + directores.get(i).toHTMLString() +"</br>";
