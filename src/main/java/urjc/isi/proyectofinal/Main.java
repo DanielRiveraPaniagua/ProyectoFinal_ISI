@@ -81,7 +81,7 @@ public class Main {
 	  	});
 	  	notFound((req, res) -> {
 	  		return "<htlm><body>" + 
-	  				"<h1>Error 404<h1><br/><br/>" + 
+	  				"<h1>Error 404</h1><br/><br/>" + 
 	  				"El recurso que has buscado no se encuentra en nuestra app<br/><br/>" +
 	  				"Pulsa <a href=/welcome>aquí</a> para volver a la página principal " + 
 	  				"</body><html>";
