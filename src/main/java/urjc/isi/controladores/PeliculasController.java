@@ -195,7 +195,7 @@ public class PeliculasController {
 		Dictionary<String,Object> output;
 		
 		if(request.queryParams("titulo")== null & request.queryParams("id")==null){
-			return "Por favor introduce un título o un id para buscar la película que deseas"+
+			return "Por favor introduce un título para buscar la película que deseas"+
 					"<form action='/peliculas/info' method='get' enctype='multipart/form-data'>"
 					+ "Título Pelicula: <input type=text name=titulo size=30>"
 					+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";

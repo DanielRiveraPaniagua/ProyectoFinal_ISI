@@ -61,13 +61,18 @@ public class ActoresService {
 		return result;
 	}
 
-	public 	Dictionary<String,Object> fullActoresInfo(String name) throws SQLException{
+	public 	Dictionary<String,Object> fullActoresInfo(String engine, boolean isid) throws SQLException{
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
 		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
-		Personas persona = new Personas();
-		persona = actoresDAO.selectByName(name);
-		String id = persona.getId();
-
+		String id;
+		if (!isid) {
+			Personas persona = actoresDAO.selectByName(engine);
+			id = persona!=null?persona.getId():"";
+		}else {
+			Personas persona = actoresDAO.selectByID(engine);
+			id = persona.getId()!=null?persona.getId():"";
+		}
+	
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
 		if(id.length()>0){
 			result.put("actor", (Object)actoresDAO.selectByID(id));

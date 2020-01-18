@@ -100,14 +100,23 @@ public class ActoresController {
 		Dictionary<String,Object> output;
 		String result = "";
 
-		if(request.queryParams("fullnombre")== null){
-			return "";
+		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
+			return "Por favor introduce un nombre para buscar la película que deseas"+
+					"<form action='/actores/info' method='get' enctype='multipart/form-data'>"
+					+ "Título Pelicula: <input type=text name=nombre size=30>"
+					+ "<button type=submit value=Actor>Buscar </button><br/></form>";
 		}
-
-		output = as.fullActoresInfo(request.queryParams("fullnombre"));
-		//Peliculas pelicula = (Peliculas)output.get("pelicula");
+		if(request.queryParams("id")!=null) {
+			output = as.fullActoresInfo(request.queryParams("id"),true);
+		}else {
+			output = as.fullActoresInfo(request.queryParams("nombre"),false);
+		}
+		if(output.isEmpty()) {
+			response.redirect("/peliculas/info");
+			return "La pelicula no se encuentra en la base de datos";
+		}
+		
 		Personas actor = (Personas)output.get("actor");
-		//List<Personas> actores = (List<Personas>)output.get("actores");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
