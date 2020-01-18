@@ -101,9 +101,9 @@ public class ActoresController {
 		String result = "";
 
 		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
-			return "Por favor introduce un nombre para buscar la película que deseas"+
+			return "Por favor introduce un nombre para buscar el actor que deseas"+
 					"<form action='/actores/info' method='get' enctype='multipart/form-data'>"
-					+ "Título Pelicula: <input type=text name=nombre size=30>"
+					+ "Nombre de Actor: <input type=text name=nombre size=30>"
 					+ "<button type=submit value=Actor>Buscar </button><br/></form>";
 		}
 		if(request.queryParams("id")!=null) {
@@ -112,8 +112,8 @@ public class ActoresController {
 			output = as.fullActoresInfo(request.queryParams("nombre"),false);
 		}
 		if(output.isEmpty()) {
-			response.redirect("/peliculas/info");
-			return "La pelicula no se encuentra en la base de datos";
+			response.redirect("/actores/info");
+			return "El actor no se encuentra en la base de datos";
 		}
 		
 		Personas actor = (Personas)output.get("actor");
