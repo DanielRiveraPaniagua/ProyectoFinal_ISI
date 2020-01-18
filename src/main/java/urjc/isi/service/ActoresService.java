@@ -138,7 +138,7 @@ public class ActoresService {
         ST<Double, SET<String>> act_distances = new ST<Double, SET<String>>();
         
         // run breadth first search
-        PathFinder finder = new PathFinder(G, actor_p);
+        PathFinder finder = new PathFinder(G, actoresDAO.selectByName(actor_p).getId());
         
         // calculate the popularity and distance of each actor
         for (String actor : G.vertices()) {
