@@ -92,7 +92,7 @@ public class Main {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
-        redirect.get("*", "/welcome");
+        /*redirect.get("*", "/welcome");*/
     }
 
     /**
