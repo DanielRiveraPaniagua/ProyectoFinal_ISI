@@ -92,13 +92,13 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						sql+= "join peliculasactores as pa on a.idpersona=pa.idpersona "+
 								"join peliculasdirectores as pd	on pa.idpelicula=pd.idpelicula "+
 								"join directores as d on d.idpersona=pd.idpersona ";
-						cond+= "d.fullnombre ='" + conditions.get("director")+"'";
+						cond+= "d.fullnombre =$$" + conditions.get("director")+"$$";
 						break;
 					case "guionista":
 						sql+= "join peliculasactores as pa2 on a.idpersona=pa2.idpersona "+
 								"join peliculasguionistas as pg	on pa2.idpelicula=pg.idpelicula "+
 								"join guionistas as g on g.idpersona=pg.idpersona ";
-						cond+= "g.fullnombre ='" + conditions.get("director")+"'";
+						cond+= "g.fullnombre =$$" + conditions.get("director")+"$$";
 						break;
  					case "id_act":
 						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
