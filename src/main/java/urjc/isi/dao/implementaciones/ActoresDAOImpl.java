@@ -6,14 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import urjc.isi.dao.interfaces.PersonasDAO;
 import urjc.isi.entidades.Personas;
 
 public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {
-	
+
 	public Personas fromResultSet(ResultSet rs) throws  SQLException{
 		Personas persona = new Personas();
 
@@ -23,7 +22,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		persona.setMuerte(rs.getString("fmuerte"));
 		return persona;
 	}
-	
+
 	@Override
 	public void createTable() throws SQLException {
 		Statement statement = c.createStatement();
@@ -51,9 +50,9 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    } catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
-		
+
 	}
-	
+
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 	    String s;
@@ -61,27 +60,81 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    	if(s.length()>0) {
 		      Personas persona = new Personas(s);
 		      insert(persona);
-		      c.commit();	
+		      c.commit();
 	    	}
 	    }
 	}
+	
+	@Override
+	public List<Personas> selectAll(){
+		List<Personas> actoresList = new ArrayList<>();
+		String sql = "SELECT * from actores";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				actoresList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return actoresList;
+	}
 
 	@Override
-	public List<Personas> selectAll() {
-		List<Personas> personaslist = new ArrayList<>();
-		  String sql = "SELECT * from actores";
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+	public List<Personas> selectAll(Dictionary<String,String> conditions) {
+		List<Personas> personasList = new ArrayList<>();
+		  String sql = "SELECT * from actores as a ";
+		  String cond = "WHERE ";
+		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+				switch(k.nextElement()) {
+					case "id_act":
+						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
+						break;
+					case "name":
+						cond+= "a.fullnombre LIKE '" + conditions.get("name") + "'";
+						break;
+					case "fecha_nac":
+						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
+						break;
+					case "intervalo_fecha_nac":
+						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
+							cond+= "a.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						}else {
+							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						}
+						break;
+					case "fecha_muer":
+						cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
+						break;
+					case "intervalo_fecha_muer":
+						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
+							cond+= "a.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						}else {
+							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						}
+						break;
+				}
+				
+				if(k.hasMoreElements()) {
+					cond+=" AND ";
+				}
+		  }
+		  
+		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
 			  while(rs.next()){
-				  personaslist.add(fromResultSet(rs));
+				  personasList.add(fromResultSet(rs));
 			  }
 	    } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return personaslist;
+		  return personasList;
 	}
-
+	
 	@Override
 	public Personas selectByID(String idpersona) {
 		  String sql = "SELECT * from actores WHERE idpersona=" + idpersona;
@@ -106,66 +159,19 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 	}
-
+	
 	@Override
-	public Personas selectByName(String name) {
-		 String sql = "SELECT * from actores WHERE fullnombre=" + name;
-		  Personas persona = new Personas();
+	public Personas selectByName(String nombre) {
+		 String sql = "SELECT * from actores WHERE nombre=" + nombre;
+		  Personas actor = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
+			  actor = fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return persona;
+		  return actor;
 	}
 	
-	@Override
-	public List<Personas> selectPerByFechaNac(String fecha) {
-		 List<Personas> actFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento=" + fecha;
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actFechaNac.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actFechaNac;
-	}	
-	
-	@Override
-	public List<Personas> selectPerMuertas() {
-		 List<Personas> actMuertos = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fmuerte < 2020";
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actMuertos.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actMuertos;
-	}
-	
-	@Override
-	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
-		 List<Personas> actFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento>" + fechaIn + " AND fnacimiento<" + fechaFin ;
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actFechaInter.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actFechaInter;
-	}
 }

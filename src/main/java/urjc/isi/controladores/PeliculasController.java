@@ -86,6 +86,9 @@ public class PeliculasController {
 		if(request.queryParams("genero")!=null) {
 			return filmsByGenero(request, response);
 		}
+		if(request.queryParams("rating")!=null)
+			filter.put("rating", request.queryParams("rating"));
+
 		output = ps.getAllPeliculas(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -224,6 +227,38 @@ public class PeliculasController {
 
 		return result;
 	}
+	
+
+	public static String WorstorBestFilmsByYear(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		
+		if(request.queryParams("year")!= null)
+			filter.put("year",request.queryParams("year"));
+		if(request.queryParams("score")!= null)
+			filter.put("score",request.queryParams("score"));
+
+		output = ps.getWorstORBestFilmBy(filter);
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
@@ -235,6 +270,8 @@ public class PeliculasController {
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
+		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
+
 
 		//filtrado por género se podría prescindir 
 		get("/filmsByGenero", PeliculasController::filmsByGenero);

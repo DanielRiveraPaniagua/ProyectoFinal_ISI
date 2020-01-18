@@ -129,7 +129,8 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		
 		String cond = "WHERE ";
-		String ordenar = "";
+		String order = "ORDER BY ";
+		boolean add_order = false;
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
 				case "actor":
@@ -147,7 +148,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						 "Inner join guionistas as g on pg.idpersona=g.idpersona ";
 					cond+= "g.fullnombre LIKE "+"'"+conditions.get("guionista")+"'";
 					break;
-				case "duracion":					
+				case "duracion":	
+					add_order = true;
+					order += "p.duracion DESC";
 					if(conditions.get("duracion").indexOf("<") == 0) {
 						cond+= "p.duracion <= "+"'"+conditions.get("duracion").split("<")[1]+"'";
 						break;
@@ -184,23 +187,42 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "order":
+          add_order = true;
 					if(conditions.get("order").contains("-desc")) {
-						ordenar = " order by p." + conditions.get("order").split("-desc")[0] + " desc ";
+						order += " p." + conditions.get("order").split("-desc")[0] + " desc ";
 					}else {
-						ordenar = " order by p." + conditions.get("order");
+						order += " p." + conditions.get("order");
 					}
 					cond += " 1 = 1";
 					break;
 				case "idioma":
 					cond += " 1 = 1 ";
 					break;
+				case "rating":
+					if(conditions.get("rating").indexOf("<") == 0) {
+						cond+= "p.rating <= "+"'"+conditions.get("rating").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("rating").indexOf(">") == 0){
+						cond+= "p.rating >= "+"'"+conditions.get("rating").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("rating").indexOf("-") == -1) {
+						cond+= "p.rating = "+"'"+conditions.get("rating")+"'";
+					}else {
+						String[] rating = conditions.get("rating").split("-");
+						cond+= "p.rating >= " + "'" + rating[0] + "'" + " and " + "p.rating <= "+ "'"+ rating[1] + "'" ;
+					}
+				
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
 			}
 		}
-		
-		try (PreparedStatement pstmt = c.prepareStatement(sql+cond+ordenar)) {
+		System.out.println(sql+cond);
+		if(add_order) {
+			cond += order;
+		}
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
 			while(rs.next()){
@@ -295,7 +317,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 
 		return calificacion;
 	}
-
+  
 	@Override
 	public List<Peliculas> selectAllByGenero(String genero) {
 	  List<Peliculas> filmList = new ArrayList<>();
@@ -322,5 +344,39 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		  System.out.println(e.getMessage());
 	  }
 	  return filmList;
+	}
+	
+	@Override
+	public List<Peliculas> selectAllBestorWorstFilmByYear(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p ";
+		String cond = "WHERE ";
+		String order = "ORDER BY ";
+		
+		order += "p.rating DESC LIMIT 1";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "year":
+					cond += "p.año = "+"'"+conditions.get("year")+"' ";
+					break;
+				case "score":
+					if(conditions.get("score").equals("worst")) {			
+						order = "ORDER BY p.rating ASC LIMIT 1";
+						break;
+					}
+			}
+		}
+		cond += order;
+
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
 	}
 }
