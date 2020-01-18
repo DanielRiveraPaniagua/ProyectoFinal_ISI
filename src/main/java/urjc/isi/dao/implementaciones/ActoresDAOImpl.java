@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.util.*;
 
 import urjc.isi.dao.interfaces.PersonasDAO;
-import urjc.isi.entidades.Generos;
-import urjc.isi.entidades.Peliculas;
 import urjc.isi.entidades.Personas;
 
 public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements PersonasDAO {

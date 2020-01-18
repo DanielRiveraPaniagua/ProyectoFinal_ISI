@@ -1,6 +1,5 @@
 package urjc.isi.dao.interfaces;
 
-import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Personas;
 
 import java.util.Dictionary;
