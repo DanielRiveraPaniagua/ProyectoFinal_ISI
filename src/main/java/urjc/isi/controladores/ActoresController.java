@@ -61,19 +61,19 @@ public class ActoresController {
 		List<Personas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("director")!=null)
+			filter.put("director", request.queryParams("director"));
+		if(request.queryParams("guionista")!=null)
+			filter.put("guionista", request.queryParams("guionista"));
 		if(request.queryParams("id_act")!= null)
 			filter.put("id_act",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
 			filter.put("name",request.queryParams("name"));
 		if(request.queryParams("fecha_nac")!= null)
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
-		if(request.queryParams("intervalo_fecha_nac")!= null)
-			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		if(request.queryParams("intervalo_fecha_muer")!= null)
-			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
-
+		
 		output = as.getAllActores(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
