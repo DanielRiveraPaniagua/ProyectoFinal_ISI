@@ -261,6 +261,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return filmList;
 	}
 
+	//Cambiar a que estos métodos devuelvan simplemente la entidad películas y sea en elmétodo donde se decida que se necesita
 	@Override
 	public String selectCalificacionForPelicula(String name){
 		String calificacion = "";

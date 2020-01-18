@@ -113,13 +113,14 @@ public class ActoresService {
 		String str_graph = "";
 		
 		// Create Graph
-		for (int i = 0; i < peliculas.length; i++) {
-			str_graph = str_graph + peliculas[i] + DELIMITER;
-			String id_peli = pelisDAO.selectIDByTitle(peliculas[i]);
-			List<Personas> actores = actoresDAO.selectByPeliculaID(id_peli);
-			for (int j = 0; j < actores.length; j++) {
-				str_graph = str_graph + actores[j];
-				if (j == actores.length - 1) {
+		for (int i = 0; i < peliculas.size(); i++) {
+			String idpeli = peliculas.get(i).getIdPelicula();
+			str_graph = str_graph + idpeli + DELIMITER;
+			List<Personas> actores = actoresDAO.selectByPeliculaID(idpeli);
+			for (int j = 0; j < actores.size(); j++) {
+				String idactor = actores.get(i).getId();
+				str_graph = str_graph + idactor;
+				if (j == actores.size()-1) {
 					str_graph = str_graph + EOL;
 				}else {
 					str_graph = str_graph + DELIMITER;
@@ -166,7 +167,7 @@ public class ActoresService {
         }
 		
         // Calculate result and return
-        SET<String> result = new SET<String>();
+        SET<String> preresult = new SET<String>();
         for (Double p : act_distances) {
             int numb_act = (int) Math.ceil((double)act_distances.get(p).size()/FACTOR);
             for (int i=1; i<=numb_act; i++) {
@@ -178,10 +179,12 @@ public class ActoresService {
 	                	actor = act;
 	                }
 	            }
-            	result.add(actor);
+            	preresult.add(actor);
             	act_distances.get(p).delete(actor);
             }
         }
+        List<Personas> result = null;
+        //Aquí el cambio entre SET y Personas RIAO
         actoresDAO.close();
 		pelisDAO.close();
 		return result;
