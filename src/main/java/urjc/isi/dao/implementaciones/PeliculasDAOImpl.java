@@ -370,4 +370,38 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+	
+	@Override
+	public List<Peliculas> selectMood(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql = "SELECT * from peliculas as p ";
+		String cond = "WHERE ";
+		String order = "ORDER BY ";
+		
+		order += "p.rating DESC LIMIT 1";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "year":
+					cond += "p.año = "+"'"+conditions.get("year")+"' ";
+					break;
+				case "score":
+					if(conditions.get("score").equals("worst")) {			
+						order = "ORDER BY p.rating ASC LIMIT 1";
+						break;
+					}
+			}
+		}
+		cond += order;
+
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
 }

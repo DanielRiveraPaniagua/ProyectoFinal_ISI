@@ -97,6 +97,14 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
+	
+	public List<Peliculas> getfilmsbymood(Dictionary<String,String> conditions) throws SQLException{
+		List<Peliculas> result;
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		result = pelisDAO.selectMood(conditions);
+		pelisDAO.close();
+		return result;
+	}
 	/**
 	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
 	 * @return Estado de salida
