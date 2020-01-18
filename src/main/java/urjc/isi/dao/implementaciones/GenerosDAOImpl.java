@@ -105,8 +105,8 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   public List<Generos> selectByPeliculaID(String id){
 		List<Generos> generos = new ArrayList<>();
 		String sql = "SELECT * from generos as g "+
-					"Inner join peliculasgeneros as pg on pg.idpelicula=d.idpelicula "+
-					"WHERE pd.idpelicula='"+id+"'";
+					"Inner join peliculasgeneros as pg on pg.id_pelicula=d.id_pelicula "+
+					"WHERE pd.id_pelicula='"+id+"'";
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			  c.commit();
