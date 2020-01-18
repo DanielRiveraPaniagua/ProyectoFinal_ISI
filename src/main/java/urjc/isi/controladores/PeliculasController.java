@@ -192,7 +192,7 @@ public class PeliculasController {
 		String result = "";
 		Dictionary<String,Object> output;
 		
-		if(request.queryParams("titulo")== null){
+		if(request.queryParams("titulo")== null & request.queryParams("id")==null){
 			return "Por favor introduce un título o un id para buscar la película que deseas"+
 					"<form action='/peliculas/info' method='get' enctype='multipart/form-data'>"
 					+ "Título Pelicula: <input type=text name=titulo size=30>"
@@ -206,6 +206,7 @@ public class PeliculasController {
 		
 		if(output.isEmpty()) {
 			response.redirect("/peliculas/info");
+			return "La pelicula no se encuentra en la base de datos";
 		}
 		
 		Peliculas pelicula = (Peliculas)output.get("pelicula");
