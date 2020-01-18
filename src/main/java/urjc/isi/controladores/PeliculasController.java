@@ -263,10 +263,21 @@ public class PeliculasController {
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
 		
+		String form = "Filtrar por: <br/><br/>"
+				+ "<form action='/peliculas/filmsbymood' method='get' enctype='multipart/form-data'>"
+				+ "Mood: <input type=text name=mood size=30><br/><br/>"
+				+ "<button type=submit>Enviar </button>"
+				+ "</form>";
+		
 		if(request.queryParams("mood")!= null)
 			filter.put("mood",request.queryParams("mood"));
 
 		output = ps.getfilmsbymood(filter);
+		
+		if(filter.isEmpty()) {
+			result = "Possible moods: \n Feliz, triste, chill, atrevido, indiferente";
+			result = result + form;
+		}
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
