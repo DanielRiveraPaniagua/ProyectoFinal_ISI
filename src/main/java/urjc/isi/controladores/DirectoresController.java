@@ -4,7 +4,7 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -13,6 +13,7 @@ import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
 import urjc.isi.service.DirectoresService;
+import urjc.isi.entidades.Peliculas;
 
 public class DirectoresController {
 	private static DirectoresService as;
@@ -35,7 +36,7 @@ public class DirectoresController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/directores/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/directores/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_directores_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
@@ -78,7 +79,7 @@ public class DirectoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectDirByFechaNac (Request request, Response response) throws SQLException {
 		String fecha = request.queryParams ("fecha_nac");
 		List<Personas> output = as.getDirectoresByFechaNac(fecha);
@@ -101,7 +102,7 @@ public class DirectoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectDirMuertos (Request request, Response response) throws SQLException {
 		List<Personas> output = as.getDirectoresMuertos();
 		String result = "";
@@ -123,7 +124,7 @@ public class DirectoresController {
 		}
 		return result;
 	}
-	
+
 	public static String selectDirByIntervaloNac (Request request, Response response) throws SQLException {
 		String fechaIn = request.queryParams ("fecha_in");
 		String fechaFin = request.queryParams ("fecha_fin");
@@ -148,6 +149,42 @@ public class DirectoresController {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
+	public static String infoDirectores(Request request, Response response) throws SQLException {
+		Dictionary<String,Object> output;
+		String result = "";
+
+		if(request.queryParams("fullnombre")== null){
+			return "";
+		}
+
+		output = as.fullDirectoresInfo(request.queryParams("fullnombre"));
+		//Peliculas pelicula = (Peliculas)output.get("pelicula");
+		Personas director = (Personas)output.get("director");
+		//List<Personas> actores = (List<Personas>)output.get("actores");
+		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			json.add("directordata", director.toJSONObject());
+			JsonArray jpelis = new JsonArray();
+			for(int i = 0; i < pelis.size(); i++) {
+				jpelis.add(pelis.get(i).toJSONObject());;
+			}
+			json.add("peliculas",jpelis);
+			result = json.toString();
+		}else {
+			result = "<b>Información de: " + director.getFullNombre() + " (" + director.getNacimiento() +"-" + director.getMuerte() +")</b> </br>";
+			result = result + "<b>Dirigió las películas:</b></br>";
+			for(int i = 0; i < pelis.size(); i++) {
+				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /Directores
@@ -159,6 +196,7 @@ public class DirectoresController {
 		get("/selectDirByFechaNac", DirectoresController::selectDirByFechaNac);
 		get("/selectDirMuertos", DirectoresController::selectDirMuertos);
 		get("/selectDirByIntervaloNac", DirectoresController::selectDirByIntervaloNac);
+		get("/info", DirectoresController::infoDirectores);
 	}
 
 }
