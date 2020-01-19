@@ -133,9 +133,8 @@ public class PeliculasController {
 		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {
 			filter.put("guionista",request.queryParams("guionista"));
 		}
-		/*if(request.queryParams("genero")!=null)
-			filter.put("duracion", request.queryParams("duracion"));
-			result = result + "Peliculas del género " + request.queryParams("genero") + " mejor valoradas" + "<br/><br/>";**/
+		if(request.queryParams("genero")!=null)
+			filter.put("genero", request.queryParams("genero"));
 
 		output = ps.getAllRanking(filter);
 
