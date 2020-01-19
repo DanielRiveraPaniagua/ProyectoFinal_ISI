@@ -10,9 +10,7 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-import urjc.isi.entidades.Generos;
-import urjc.isi.entidades.Peliculas;
-import urjc.isi.service.GenerosService;
+import urjc.isi.entidades.*;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -78,6 +76,10 @@ public class PeliculasController {
 			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
+		if(request.queryParams("idioma")!=null)
+			filter.put("idioma", request.queryParams("idioma"));
+		if(request.queryParams("order")!=null)
+			filter.put("order", request.queryParams("order"));
 		if(request.queryParams("genero")!=null) {
 			String[] generos = request.queryParamsValues("genero");
 			String entrada = "";
@@ -93,6 +95,9 @@ public class PeliculasController {
 				filter.put("genero", entrada);
 			} 
 		}
+		if(request.queryParams("rating")!=null)
+			filter.put("rating", request.queryParams("rating"));
+
 		output = ps.getAllPeliculas(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -196,6 +201,88 @@ public class PeliculasController {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
+	public static String infoPeliculas(Request request, Response response) throws SQLException {
+		String result = "";
+		Dictionary<String,Object> output;
+
+		if(request.queryParams("titulo")== null & request.queryParams("id")==null){
+			return "Por favor introduce un título para buscar la película que deseas"+
+					"<form action='/peliculas/info' method='get' enctype='multipart/form-data'>"
+					+ "Título Pelicula: <input type=text name=titulo size=30>"
+					+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
+		}
+		if(request.queryParams("id")!=null) {
+			output = ps.fullPeliculasInfo(request.queryParams("id"),true);
+		}else {
+			output = ps.fullPeliculasInfo(request.queryParams("titulo"),false);
+		}
+
+		if(output.isEmpty()) {
+			response.redirect("/peliculas/info");
+			return "La pelicula no se encuentra en la base de datos";
+		}
+
+		Peliculas pelicula = (Peliculas)output.get("pelicula");
+		List<Personas> actores = (List<Personas>)output.get("actores");
+		List<Personas> guionistas = (List<Personas>)output.get("guionistas");
+		List<Personas> directores = (List<Personas>)output.get("directores");
+		List<Generos> generos = (List<Generos>)output.get("generos");
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			json.add("filmdata", pelicula.toJSONObject());
+			JsonArray jarray = new JsonArray();
+			for(int i = 0; i < directores.size(); i++) {
+				jarray.add(directores.get(i).toJSONObject());;
+			}
+			json.add("directores", jarray);
+			jarray = new JsonArray();
+			for(int i = 0; i < guionistas.size(); i++) {
+				jarray.add(guionistas.get(i).toJSONObject());;
+			}
+			json.add("guionistas",jarray);
+			jarray = new JsonArray();
+			for(int i = 0; i < actores.size(); i++) {
+				jarray.add(actores.get(i).toJSONObject());;
+			}
+			json.add("actores",jarray);
+			jarray = new JsonArray();
+			for(int i = 0; i < generos.size(); i++) {
+				jarray.add(generos.get(i).toJSONObject());;
+			}
+			json.add("generos",jarray);
+			result = json.toString();
+		}else{
+			result = "<b>Información de: " + pelicula.getTitulo() + " (" + pelicula.getAño()+")</b> </br>";
+			result += "<b>PeliculaID: </b>"+ pelicula.getIdPelicula() + "&emsp;<b>Calificacion: </b>";
+			result+=(pelicula.getCalificacion()==1)?"Adulta":"No adulta";
+			result += "&emsp;<b>Duración: </b>"+pelicula.getDuracion() + "</br>";
+			result += "<b>Rating: </b>"+ pelicula.getRating() + "&emsp;<b>Numero de votos: </b>" + pelicula.getNVotos() +"</br>";
+			result += "<b>Generos: </b>";
+			for(int i = 0; i < generos.size(); i++) {
+				result +=  generos.get(i).getNombre();
+				result+= i<generos.size()-1?", ":"</br>";
+			}
+			result += "<b>Dirigida por:</b></br>";
+			for(int i = 0; i < directores.size(); i++) {
+				result += "&emsp;" + directores.get(i).toHTMLString() +"</br>";
+			}
+			result += "<b>Escrita por:</b></br>";
+			for(int i = 0; i < guionistas.size(); i++) {
+				result += "&emsp;" + guionistas.get(i).toHTMLString() +"</br>";
+			}
+			result += "<b>Lista de actores:</b></br>";
+			for(int i = 0; i < actores.size(); i++) {
+				result += "&emsp;" + actores.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
 	/**
 	 * Maneja las peticiones al endpoint /peliculas/filmsByGenero
 	 * @param request
@@ -203,7 +290,7 @@ public class PeliculasController {
 	 * @return Muestra el listado de las peliculas dado un genero elegido por el usuario.
 	 * @throws SQLException
 	 */
-	
+
 	public static String filmsByGenero(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
 		String result = "";
@@ -232,16 +319,93 @@ public class PeliculasController {
 		return result;
 	}
 
+
+	public static String WorstorBestFilmsByYear(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+
+		if(request.queryParams("year")!= null)
+			filter.put("year",request.queryParams("year"));
+		if(request.queryParams("score")!= null)
+			filter.put("score",request.queryParams("score"));
+
+		output = ps.getWorstORBestFilmBy(filter);
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
+	public static String SelectFilsbyMood(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+
+		if(request.queryParams("mood")!= null)
+			filter.put("mood",request.queryParams("mood"));
+
+		output = ps.getfilmsbymood(filter);
+
+		if(filter.isEmpty()) {
+			String base = "<h1> <em>Listado de moods posibles </em></h1> <br>";
+			String result2 = base + "<form action='/peliculas/filmsbymood' method='get' enctype='multipart/form-data'>" + "  <select name=\"mood\" size=\"5\"  multiple>\n";
+			result2 = result2 + "<option value='feliz'>Feliz</option>\n";
+			result2 = result2 + "<option value='triste'>Triste</option>\n";
+			result2 = result2 + "<option value='indiferente'>Indiferente</option>\n";
+			result2 = result2 + "<option value='chill'>Chill</option>\n";
+			result2 = result2 + "<option value='atrevido'>Atrevido</option>\n";
+			result2 = result2 + "  </select>\n" +
+					"  <br/><br/> <input type=\"submit\" value=\"Filtrar\">"
+					+ "</form>";
+			return result2;
+		}
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
 	public void peliculasHandler() {
-		//get("/crearTabla", AdminController::crearTablaPeliculas);
 		get("/selectAll", PeliculasController::selectAllPeliculas);
 		get("/uploadTable", PeliculasController::uploadTable);
 		post("/upload", PeliculasController::upload);
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
+		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
+		get("/info", PeliculasController::infoPeliculas);
+		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
 	}
 
 }

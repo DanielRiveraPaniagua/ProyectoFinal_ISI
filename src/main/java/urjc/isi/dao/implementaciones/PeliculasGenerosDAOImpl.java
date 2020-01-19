@@ -2,13 +2,6 @@ package urjc.isi.dao.implementaciones;
 
 import java.sql.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import urjc.isi.dao.interfaces.GenerosDAO;
-import urjc.isi.dao.interfaces.RelacionesDAO;
-import urjc.isi.entidades.Generos;
-import urjc.isi.entidades.Peliculas;
 import urjc.isi.entidades.Relaciones;
 
 import java.io.BufferedReader;

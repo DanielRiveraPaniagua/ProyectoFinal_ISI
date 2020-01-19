@@ -58,6 +58,10 @@ public class Main {
 			PeliculasGuionistasController Controller = new PeliculasGuionistasController();
 			Controller.peliculasGuionistasHandler();
 		});
+		path("tituloidiomas",() -> {
+	    	TituloIdiomasController Controller = new TituloIdiomasController();
+	    	Controller.tituloIdiomasHandler();
+	    });
   	path("generos",()->{
   		GenerosController Controller = new GenerosController();
   		Controller.peliculasHandler();

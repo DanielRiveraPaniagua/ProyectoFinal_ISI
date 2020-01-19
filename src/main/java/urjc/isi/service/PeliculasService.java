@@ -11,7 +11,8 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.PeliculasDAOImpl;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.dao.interfaces.*;
 import urjc.isi.entidades.*;
 
 public class PeliculasService {
@@ -86,17 +87,57 @@ public class PeliculasService {
 
 	public String getCalificacionForPelicula(String name) throws SQLException{
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		String result = pelisDAO.selectCalificacionForPelicula(name);
+		Peliculas pelicula = pelisDAO.selectFilmByTitle(name);
+		pelisDAO.close();
+		String result = pelicula!=null?Integer.toString(pelicula.getCalificacion()):"";
+		return result;
+	}
+
+
+	public 	Dictionary<String,Object> fullPeliculasInfo(String engine,boolean isid) throws SQLException{
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		PersonasDAO direcDAO = new DirectoresDAOImpl();
+		PersonasDAO guioDAO = new GuionistasDAOImpl();
+		PersonasDAO actorDAO = new ActoresDAOImpl();
+		GenerosDAOImpl generosDAO = new GenerosDAOImpl();
+		String id;
+		if (!isid) {
+			Peliculas pelicula = pelisDAO.selectFilmByTitle(engine);
+			id = pelicula!=null?pelicula.getIdPelicula():"";
+		}else {
+			Peliculas pelicula = pelisDAO.selectByID(engine);
+			id = pelicula.getIdPelicula()!=null?pelicula.getIdPelicula():"";
+		}
+		Dictionary<String,Object> result = new Hashtable<String,Object>();
+
+		if(id.length()>0){
+			result.put("pelicula",(Object)pelisDAO.selectByID(id));
+			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
+			result.put("directores", (Object)direcDAO.selectByPeliculaID(id));
+			result.put("guionistas", (Object)guioDAO.selectByPeliculaID(id));
+			result.put("generos", (Object)generosDAO.selectByPeliculaID(id));
+		}
+		pelisDAO.close();
+		direcDAO.close();
+		actorDAO.close();
+		guioDAO.close();
+		generosDAO.close();
+		return result;
+	}
+	public List<Peliculas> getWorstORBestFilmBy(Dictionary<String,String> conditions) throws SQLException{
+		List<Peliculas> result;
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		result = pelisDAO.selectAllBestorWorstFilmByYear(conditions);
 		pelisDAO.close();
 		return result;
 	}
 
-	/**
-	 * Crea una tabla peliculas con el formato adecuado y devuelve si se ha creado con exito
-	 * @return Estado de salida
-	 */
-	/*public String crearTablaPeliculas()  throws SQLException{
-			pelisDAO.createTable();
-			return "Tabla creada con exito";
-	}*/
+	public List<Peliculas> getfilmsbymood(Dictionary<String,String> conditions) throws SQLException{
+		List<Peliculas> result;
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		result = pelisDAO.selectMood(conditions);
+		pelisDAO.close();
+		return result;
+	}
+
 }
