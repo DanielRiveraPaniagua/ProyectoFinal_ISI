@@ -88,7 +88,7 @@ public class ActoresService {
 						     * considering this number as the maximum
 						     * distance of relation between actors
 						     */
-		final Integer FACTOR = 5;  /*
+		final Integer FACTOR = 1;  /*
 						   * the part of the actors that will be
 						   * chosen for each percentage based on
 						   * their popularity
@@ -99,10 +99,18 @@ public class ActoresService {
 		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
 		ActoresDAOImpl actoresDAO = new ActoresDAOImpl();
 		List<Peliculas> peliculas = pelisDAO.selectAll();
-
+		
+		// Params control
 		Integer dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
 		Integer factor = (factor_p.equals("None"))?FACTOR:Integer.valueOf(factor_p);
-
+		String actor_id = actoresDAO.selectByName(actor_p).getId();
+        if (actor_id == null || dist_max < 0 || factor < 0 || factor > 1) {
+        	List<Personas> result = new ArrayList<Personas>();
+        	actoresDAO.close();
+    		pelisDAO.close();
+    		return result;
+        }
+        
 		// Create Graph
 		String str_graph = "";
 		for (int i = 0; i < peliculas.size(); i++) {
@@ -127,24 +135,15 @@ public class ActoresService {
         ST<Double, SET<String>> act_distances = new ST<Double, SET<String>>();
 
         // run breadth first search
-        String actor_id = actoresDAO.selectByName(actor_p).getId();
-        if (actor_id == null) {
-        	List<Personas> result = new ArrayList<Personas>();
-        	actoresDAO.close();
-    		pelisDAO.close();
-    		return result;
-        }
         PathFinder finder = new PathFinder(G, actor_id);
 
         // calculate the popularity and distance of each actor
         for (String actor : G.vertices()) {
         	Double dist = (double)finder.distanceTo(actor);
-        	Double popularity = G.popularity(actor);
             if (dist % 2 != 0) continue;  // it's a movie vertex
-
+        	Double popularity = G.popularity(actor);
             act_popularity.put(actor, popularity);
-
-            if (actor.equals(actor_p)) continue;  // it's the same actor
+            if (actor.equals(actor_id)) continue;  // it's the same actor
             if (!act_distances.contains(dist/2)) {
             	act_distances.put(dist/2, new SET<String>());
             }
@@ -164,10 +163,12 @@ public class ActoresService {
         	act_distances.put(percent, act_distances.get((double)d));
         	act_distances.remove((double)d);
         }
-
+        
+        // Return the result
         List<Personas> result = new ArrayList<Personas>();
         for (Double p : act_distances) {
-            int numb_act = (int) Math.ceil((double)act_distances.get(p).size()/factor);
+        	System.out.println(p + "%: ");
+            int numb_act = (int) Math.ceil((double)act_distances.get(p).size()*factor);
             for (int i=1; i<=numb_act; i++) {
             	double pop = 0.0;
             	String id_actor = "";
@@ -177,6 +178,7 @@ public class ActoresService {
 	                	id_actor = id_actor_i;
 	                }
 	            }
+            	System.out.println(actoresDAO.selectByID(id_actor));
             	result.add(actoresDAO.selectByID(id_actor));
             	act_distances.get(p).delete(id_actor);
             }
