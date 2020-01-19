@@ -56,7 +56,7 @@ public class Main {
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
 					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,título]=[Dato a buscar]</li></ul>"+
-					"<li><a Grafos, con distancia max y factor opcionales --> actores/selectActByCercania?actor=...&dist_max=...&factor=..</li>"+
+					"<li>Grafos, con distancia max y factor opcionales --> actores/selectActByCercania?actor=...&dist_max=...&factor=..</li>"+
 					"</ul>" + 
 					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
 					"<li><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
