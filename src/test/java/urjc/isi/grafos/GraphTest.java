@@ -111,13 +111,18 @@ public class GraphTest {
 	      list.add("Actor B"); 
 	      list.add("Actor H"); 
 		  String v = "Movie 1";
-	      assertEquals("Test for adjacentTo", list, G.adjacentTo(v));
+		  
+		  int i = 0;
+		  for (String w:  G.adjacentTo(v)) {
+			  assertTrue("Test for adjacentTo", w.equals(list.get(i)));
+			  i++;
+		  }
 	   }
 	   
 	   @Test (expected = IllegalArgumentException.class)
 	   public void testForInvalidAdjacentTo()
 	   {
-		  String v = "Movie 1";
+		  String v = "Movie 5";
 	      G.adjacentTo(v);
 	   }
 	   
