@@ -259,6 +259,49 @@ public class PeliculasController {
 		}
 		return result;
 	}
+	
+	public static String SelectFilsbyMood(Request request, Response response) throws SQLException {
+		List<Peliculas> output;
+		String result = "";
+		Dictionary<String,String> filter = new Hashtable<String,String>();
+		
+		if(request.queryParams("mood")!= null)
+			filter.put("mood",request.queryParams("mood"));
+
+		output = ps.getfilmsbymood(filter);
+		
+		if(filter.isEmpty()) {
+			String base = "<h1> <em>Listado de moods posibles </em></h1> <br>";
+			String result2 = base + "<form action='/peliculas/filmsbymood' method='get' enctype='multipart/form-data'>" + "  <select name=\"mood\" size=\"5\"  multiple>\n";
+			result2 = result2 + "<option value='feliz'>Feliz</option>\n";
+			result2 = result2 + "<option value='triste'>Triste</option>\n";
+			result2 = result2 + "<option value='indiferente'>Indiferente</option>\n";
+			result2 = result2 + "<option value='chill'>Chill</option>\n";
+			result2 = result2 + "<option value='atrevido'>Atrevido</option>\n";
+			result2 = result2 + "  </select>\n" +
+					"  <br/><br/> <input type=\"submit\" value=\"Filtrar\">"
+					+ "</form>";
+			return result2;
+		}
+		
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			JsonArray array = new JsonArray();
+			for(int i = 0; i < output.size(); i++) {
+				array.add(output.get(i).toJSONObject());;
+			}
+			json.add("output", array);
+			result = json.toString();
+		}else {
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
@@ -271,6 +314,7 @@ public class PeliculasController {
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
+		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
 
 
 		//filtrado por género se podría prescindir 
