@@ -11,17 +11,22 @@ import urjc.isi.entidades.Peliculas;
 
 public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
-	
+
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions);
 	public Peliculas selectFilmByTitle (String titulo);
-	
+
 	// Ranking
 	public List<Peliculas> selectByRanking(Dictionary<String,String> conditions);
 	public List<Peliculas> selectByRanking();
 
   //Seleccionar peliculas del genero ...
 	public List<Peliculas> selectAllByGenero(String genero);
-	
+
 	public List<Peliculas> selectAllBestorWorstFilmByYear(Dictionary<String,String> conditions);
+
 	public List<Peliculas> selectByPersonaID(String type, String id);
+
+
+	public List<Peliculas> selectMood(Dictionary<String,String> conditions);
+
 }

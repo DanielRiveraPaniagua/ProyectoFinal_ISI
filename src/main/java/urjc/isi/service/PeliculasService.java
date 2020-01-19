@@ -109,7 +109,7 @@ public class PeliculasService {
 			id = pelicula.getIdPelicula()!=null?pelicula.getIdPelicula():"";
 		}
 		Dictionary<String,Object> result = new Hashtable<String,Object>();
-		
+
 		if(id.length()>0){
 			result.put("pelicula",(Object)pelisDAO.selectByID(id));
 			result.put("actores", (Object)actorDAO.selectByPeliculaID(id));
@@ -131,4 +131,13 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
+
+	public List<Peliculas> getfilmsbymood(Dictionary<String,String> conditions) throws SQLException{
+		List<Peliculas> result;
+		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
+		result = pelisDAO.selectMood(conditions);
+		pelisDAO.close();
+		return result;
+	}
+
 }

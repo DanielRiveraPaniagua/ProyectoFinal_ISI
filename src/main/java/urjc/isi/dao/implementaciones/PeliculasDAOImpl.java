@@ -398,6 +398,52 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		return filmList;
 	}
 
+
+	//Estado posibles feliz, triste, atrevido, indiferente y chill by el jefe
+	@Override
+	public List<Peliculas> selectMood(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql;
+		String cond = "WHERE ";
+		String order = "ORDER BY p.rating DESC";
+
+		sql="SELECT p.* from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula = pg.id_pelicula Inner join generos as g on pg.genero = g.nombre ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "mood":
+					switch(conditions.get("mood")) {
+						case "feliz":
+							cond+= "g.nombre IN ('Comedy', 'Animation', 'Musical', 'Music')";
+							break;
+						case "triste":
+							cond+= "g.nombre IN ('Romance','Drama')";
+							break;
+						case "indiferente":
+							cond+= "g.nombre IN ('Fantasy','Biography', 'History', 'Sport', 'Family')";
+							break;
+						case "chill":
+							cond+= "g.nombre IN ('Comedy','Action', 'Adeventure', 'Sci-Fi')";
+							break;
+						case "atrevido":
+							cond+= "g.nombre IN ('Crime','Mystery', 'War', 'Thriller', 'Horror', 'Western')";
+							break;
+					}
+			}
+		}
+		cond += order;
+
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+	
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){
 		String sql = "SELECT * from peliculas WHERE titulo= $$"+titulo+"$$";
