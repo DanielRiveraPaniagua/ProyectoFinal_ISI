@@ -48,7 +48,7 @@ public class Main {
 					"<ul><li> /peliculas/selectAll?rating=r1 --> Películas con rating igual al dado </li></ul>"+
 					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>"+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
-					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
+					"<li><a href=/peliculas/info>Info completa de una pelicula</a></li>"+
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
 					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> "+
@@ -56,7 +56,7 @@ public class Main {
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
 					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,título]=[Dato a buscar]</li></ul>"+
-					"<li><a href=/actores/selectActByCercania>Grafos</a></li>"+
+					"<li><a Grafos, con distancia max y factor opcionales --> actores/selectActByCercania?actor=...&dist_max=...&factor=..</li>"+
 					"</ul>" + 
 					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
 					"<li><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
