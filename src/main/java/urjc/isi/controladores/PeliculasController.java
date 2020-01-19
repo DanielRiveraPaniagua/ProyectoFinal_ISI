@@ -278,7 +278,7 @@ public class PeliculasController {
 			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n"; name = "atrevido";
 			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n";
 			result2 = result2 + "  </select>\n" +
-					"  <input type=\"submit\" <br/><br/> value=\"Filtrar\">"
+					"  <br/><br/> <input type=\"submit\" value=\"Filtrar\">"
 					+ "</form>";
 			return result2;
 		}
