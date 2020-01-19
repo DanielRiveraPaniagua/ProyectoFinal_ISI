@@ -85,7 +85,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
 					case "actor":
-						sql+= "join peliculasdirectores as pd on d.idpersona=pad.idpersona "+
+						sql+= "join peliculasdirectores as pd on d.idpersona=pd.idpersona "+
 								"join peliculasactores as pa on pd.idpelicula=pa.idpelicula "+
 								"join actpres as a on a.idpersona=pa.idpersona ";
 						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
