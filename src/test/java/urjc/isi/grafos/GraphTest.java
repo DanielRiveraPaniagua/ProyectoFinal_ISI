@@ -1,7 +1,8 @@
+package urjc.isi.grafos;
+
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.*;
-import urjc.isi.grafos.*;
 
 public class GraphTest {
 	   private Graph G;
