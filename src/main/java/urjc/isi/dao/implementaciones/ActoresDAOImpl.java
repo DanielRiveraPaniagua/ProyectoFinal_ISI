@@ -102,7 +102,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						break;
 					case "titulo":
 						sql+= "join peliculasactores as pa3 on a.idpersona=pa3.idpersona "+
-								"join peliculas as p on p.idpelicula=pa3.idpelicula";
+								"join peliculas as p on p.idpelicula=pa3.idpelicula ";
 						cond+= "p.titulo =$$" + conditions.get("titulo")+"$$";
  					case "id_act":
 						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";

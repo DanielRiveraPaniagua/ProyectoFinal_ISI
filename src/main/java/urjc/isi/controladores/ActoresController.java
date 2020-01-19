@@ -108,12 +108,6 @@ public class ActoresController {
 					+ "Nombre de Actor: <input type=text name=nombre size=30>"
 					+ "<button type=submit value=Actor>Buscar </button><br/></form>";
 		}
-		if(request.queryParams("titulo")== null & request.queryParams("id")==null){
-			return "Por favor introduce un título para buscar los actores que participan en esa película"+
-					"<form action='/actores/info' method='get' enctype='multipart/form-data'>"
-					+ "Título Pelicula: <input type=text name=titulo size=30>"
-					+ "<button type=submit value=Pelicula>Buscar </button><br/></form>";
-		}
 		if(request.queryParams("id")!=null) {
 			output = as.fullActoresInfo(request.queryParams("id"),true);
 		}else {
