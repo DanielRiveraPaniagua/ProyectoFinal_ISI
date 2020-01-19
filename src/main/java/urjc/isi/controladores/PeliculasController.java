@@ -79,7 +79,19 @@ public class PeliculasController {
 		if(request.queryParams("year")!=null)
 			filter.put("year", request.queryParams("year"));
 		if(request.queryParams("genero")!=null) {
-			filter.put("genero", request.queryString());
+			String[] generos = request.queryParamsValues("genero");
+			String entrada = "";
+			if(generos.length < 2) {
+				filter.put("genero", generos[0]);
+			} else {
+				for(int i=0; i< generos.length;i++) {
+					if(i==generos.length-1)
+						entrada += generos[i];
+					else
+						entrada += generos[i] + "%";
+				}
+				filter.put("genero", entrada);
+			} 
 		}
 		output = ps.getAllPeliculas(filter);
 

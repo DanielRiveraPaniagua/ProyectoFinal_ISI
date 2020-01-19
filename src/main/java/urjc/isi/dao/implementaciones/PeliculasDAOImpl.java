@@ -172,42 +172,17 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					}
 					break;
 				case "genero":
-					String generos="";
-					if(conditions.get("genero").indexOf("&") == -1) {
-						String[] genero = conditions.get("genero").split("=");
-						sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
-						cond+= "pg.genero= "+"'"+genero[1]+"'";
+					String diccionario =conditions.get("genero");
+					if(conditions.get("genero").indexOf("%") == -1) {
+						cond+= "pg.genero= "+"'"+diccionario+"'";
 					} else {
-						String[] fields = conditions.get("genero").split("genero");
-						if(fields.length ==2) {
-							String[] t1 = fields[1].split("=");
-							String[] t2 = t1[1].split("&");
-							generos =" pg.genero='" + t2[0] + "'";
-							
-						}else {
-							for (int i = 1; i < fields.length; ++i) {
-								String[] t1 = fields[i].split("=");
-								if(t1.length == 2) {
-									String[] t2 = t1[1].split("&");
-									if(generos == "") {
-										generos =" pg.genero='" + t2[0] + "'";
-									}else {
-										generos += " AND " + "pg.genero='" + t2[0] + "'";
-									}
-								}else {
-									String[] t2 = t1[1].split("&");
-									if(generos == "") {
-										generos =" pg.genero='" + t2[0] + "'";
-									}else {
-										generos += " AND " + "pg.genero='" + t2[0] + "'";
-									}
-								}
-							}
+						String[] generos = diccionario.split("%");
+						cond+= "pg.genero= "+"'"+generos[0]+"'";
+						for(int i=1; i< generos.length;i++) {
+							cond += " OR " + "pg.genero='" + generos[i] + "'";
 						}
-					 
-						sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
-						cond+= generos;
-					}
+					}					
+					sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
 					break;					
 			}
 			if(k.hasMoreElements()) {
