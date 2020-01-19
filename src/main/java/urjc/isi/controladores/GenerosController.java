@@ -37,8 +37,9 @@ public class GenerosController {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
 		return "<form action='/generos/upload' method='post' enctype='multipart/form-data'>"
-			    + "    <input type='file' name='uploaded_generos_file' accept='.txt'>"
-			    + "    <button>Upload file</button>" + "</form>";
+	    + "    <input type='file' name='uploaded_generos_file' accept='.txt'>"
+	    + "    <button>Upload file</button>" + "</form>";
+
 	}
 
 	/**
@@ -105,9 +106,9 @@ public class GenerosController {
 	}
 
 	/**
-	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
+	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /generos
 	 */
-	public void peliculasHandler() {
+	public void generosHandler() {
 		get("/selectAll", GenerosController::selectAllGeneros);
 		get("/uploadTable", GenerosController::uploadTable);
 		post("/upload", GenerosController::upload);
