@@ -36,10 +36,6 @@ public class Main {
 					"<ul><li>/peliculas/selectAll?year=[year1-year2]-->Películas en el rango de años</li></ul>"+
 					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
 					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(no)</li></ul>"+
-					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
-					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
-					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
-					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li> Filtrar películas segun su duración " +
 					"<ul><li>/peliculas/selectAll?duracion=>d --> Películas de duración mayor o igual a d</li></ul>" +
 					"<ul><li>/peliculas/selectAll?duracion=<d --> Películas de duración menor o igual a d</li></ul>" +
@@ -51,6 +47,10 @@ public class Main {
 					"<ul><li> /peliculas/selectAll?rating=>r1 --> Películas con rating mayor o igual al dado </li></ul>"+
 					"<ul><li> /peliculas/selectAll?rating=r1 --> Películas con rating igual al dado </li></ul>"+
 					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>"+
+					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
+					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
+					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
+					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> "+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
