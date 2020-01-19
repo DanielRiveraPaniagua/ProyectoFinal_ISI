@@ -10,7 +10,9 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
+
 import urjc.isi.entidades.*;
+
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -111,6 +113,10 @@ public class PeliculasController {
 			}
 			json.add("output", array);
 			result = json.toString();
+		}else if(request.queryParams("format")!= null && request.queryParams("format").equals("links")){
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toLinkedHTMLString() +"</br>";
+			}
 		}else {
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
