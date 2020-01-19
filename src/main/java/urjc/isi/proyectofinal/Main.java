@@ -51,10 +51,8 @@ public class Main {
 					"<ul><li> /peliculas/selectAll?rating=<r1 --> Películas con rating menor o igual al dado </li></ul>"+
 					"<ul><li> /peliculas/selectAll?rating=>r1 --> Películas con rating mayor o igual al dado </li></ul>"+
 					"<ul><li> /peliculas/selectAll?rating=r1 --> Películas con rating igual al dado </li></ul>"+
-					"<li>"+
 					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>"+
 					"</ul>" +
-					"<li>"+
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> "+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
