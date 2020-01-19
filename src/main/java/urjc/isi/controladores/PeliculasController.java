@@ -81,7 +81,19 @@ public class PeliculasController {
 		if(request.queryParams("order")!=null)
 			filter.put("order", request.queryParams("order"));
 		if(request.queryParams("genero")!=null) {
-			return filmsByGenero(request, response);
+			String[] generos = request.queryParamsValues("genero");
+			String entrada = "";
+			if(generos.length < 2) {
+				filter.put("genero", generos[0]);
+			} else {
+				for(int i=0; i< generos.length;i++) {
+					if(i==generos.length-1)
+						entrada += generos[i];
+					else
+						entrada += generos[i] + "%";
+				}
+				filter.put("genero", entrada);
+			} 
 		}
 		if(request.queryParams("rating")!=null)
 			filter.put("rating", request.queryParams("rating"));
@@ -391,14 +403,8 @@ public class PeliculasController {
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
-
 		get("/info", PeliculasController::infoPeliculas);
-
 		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
-
-
-		//filtrado por género se podría prescindir
-		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
 }
