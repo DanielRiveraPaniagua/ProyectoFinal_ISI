@@ -35,6 +35,13 @@ public class GraphTest {
 		   assertEquals("Test for edges", 8,G.E());
 	   }
 
+	   @Test (expected = IllegalArgumentException.class)
+	   public void testForInvalidDegree()
+	   {
+		  String v = "Actor Z";
+	      G.degree(v);
+	   }
+	   
 	   @Test
 	   public void testForDegree()
 	   {
@@ -42,11 +49,26 @@ public class GraphTest {
 	      assertEquals("Test for degree", 2,G.degree(v));
 	   }
 
+	   @Test (expected = IllegalArgumentException.class)
+	   public void testForInvalidPopularity()
+	   {
+		  String v = "Actor Z";
+	      G.popularity(v);
+	   }
+	   
 	   @Test
 	   public void testForPopularity()
 	   {
 		  String v = "Actor A";
 	      assertTrue("Test for popularity", G.popularity(v) == 1.75);
+	   }
+	   
+	   @Test (expected = IllegalArgumentException.class)
+	   public void testForInvalidEdge()
+	   {
+		   String v = "Movie 1";
+		   String w = "Actor Z";
+		   G.hasEdge(v,w);
 	   }
 	   
 	   @Test
@@ -79,6 +101,24 @@ public class GraphTest {
 		  String v = "Actor Z";
 		  G.addVertex(v);
 	      assertTrue("Test for add vertex", G.hasVertex(v));
+	   }
+	   
+	   @Test
+	   public void testForAdjacentTo()
+	   {
+		  ArrayList<String> list = new ArrayList<String>();
+		  list.add("Actor A"); 
+	      list.add("Actor B"); 
+	      list.add("Actor H"); 
+		  String v = "Movie 1";
+	      assertEquals("Test for adjacentTo", list, G.adjacentTo(v));
+	   }
+	   
+	   @Test (expected = IllegalArgumentException.class)
+	   public void testForInvalidAdjacentTo()
+	   {
+		  String v = "Movie 1";
+	      G.adjacentTo(v);
 	   }
 	   
 	   @Test
