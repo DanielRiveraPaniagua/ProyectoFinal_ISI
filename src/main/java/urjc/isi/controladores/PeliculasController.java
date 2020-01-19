@@ -10,9 +10,7 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
-import urjc.isi.entidades.Generos;
 import urjc.isi.entidades.Peliculas;
-import urjc.isi.service.GenerosService;
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {

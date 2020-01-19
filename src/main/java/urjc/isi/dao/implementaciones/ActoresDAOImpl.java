@@ -95,27 +95,20 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						cond+= "a.fullnombre LIKE '" + conditions.get("name") + "'";
 						break;
 					case "fecha_nac":
-						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
-						break;
-					case "intervalo_fecha_nac":
-						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
-							cond+= "a.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
-						}else {
-							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("fecha_nac").indexOf("-") == -1) {
+							cond+= "a.fnacimiento = "+"'"+conditions.get("fecha_nac")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + fechas[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ fechas[1] + "'" ;
 						}
 						break;
 					case "fecha_muer":
-						cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
-						break;
-					case "intervalo_fecha_muer":
-						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
-							cond+= "a.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
-						}else {
-							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("fecha_muer").indexOf("-") == -1) {
+							cond+= "a.fmuerte = "+"'"+conditions.get("fecha_muer")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + fechas[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ fechas[1] + "'" ;
 						}
-						break;
 				}
 				
 				if(k.hasMoreElements()) {
@@ -159,73 +152,6 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 	}
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-	@Override
-	public Personas selectByName(String name) {
-		 String sql = "SELECT * from actores WHERE fullnombre=" + name;
-		  Personas persona = new Personas();
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
-			  c.commit();
-			  persona = fromResultSet(rs);
-	      	  } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return persona;
-	}
-
-	@Override
-	public List<Personas> selectPerByFechaNac(String fecha) {
-		 List<Personas> actFechaNac = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento=" + "'" + "fecha" + "'";
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actFechaNac.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actFechaNac;
-	}
-
-	@Override
-	public List<Personas> selectPerMuertas() {
-		 List<Personas> actMuertos = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fmuerte < '2020'";
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actMuertos.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actMuertos;
-	}
-
-	@Override
-	public List<Personas> selectPerByIntervaloNac(String fechaIn, String fechaFin) {
-		 List<Personas> actFechaInter = new ArrayList<>();
-		 String sql = "SELECT * from actores WHERE fnacimiento>" + "'" + "fechaIn" + "'"+ " AND fnacimiento<" + "'" + "fechaFin" + "'" ;
-		 try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			 ResultSet rs = pstmt.executeQuery();
-			 c.commit();
-			 while(rs.next()){
-				 actFechaInter.add(fromResultSet(rs));
-			 }
-		 } catch (SQLException e) {
-			 System.out.println(e.getMessage());
-		 }
-		 return actFechaInter;
-	}
-=======
->>>>>>> e26705b8ea7c599f4503168c42db55cb206f8a06
-=======
 	
 	@Override
 	public Personas selectByName(String nombre) {
@@ -240,6 +166,4 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 		  }
 		  return actor;
 	}
-	
->>>>>>> 5e267db854837d5a688b1453b4421b3f943470a5
 }

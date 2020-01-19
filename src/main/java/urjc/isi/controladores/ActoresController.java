@@ -66,12 +66,8 @@ public class ActoresController {
 			filter.put("name",request.queryParams("name"));
 		if(request.queryParams("fecha_nac")!= null)
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
-		if(request.queryParams("intervalo_fecha_nac")!= null)
-			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		if(request.queryParams("intervalo_fecha_muer")!= null)
-			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
 		
 		output = as.getAllActores(filter);
 		
