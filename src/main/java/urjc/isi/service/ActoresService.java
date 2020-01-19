@@ -167,9 +167,14 @@ public class ActoresService {
         	}else {
         		percent = 0.0;
         	}
-
-        	act_distances.put(percent, act_distances.get((double)d));
-        	act_distances.remove((double)d);
+        	
+        	if (!act_distances.contains(percent)) {
+            	act_distances.put(percent, new SET<String>());
+            }
+        	for (String actor : act_distances.get((double)d)) {
+        		act_distances.get(percent).add(actor);
+            }
+        	act_distances.remove((double)d);        	
         }
         
         System.out.println("-----------PORCENTAJES------------");
