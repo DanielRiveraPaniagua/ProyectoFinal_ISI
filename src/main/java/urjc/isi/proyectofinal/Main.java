@@ -36,7 +36,7 @@ public class Main {
 					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
 					"<ul><li>/peliculas/selectAll?year=[year1-year2]-->Películas en el rango de años</li></ul>"+
 					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
-					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(si)</li></ul>"+
+					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(no)</li></ul>"+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
 					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
