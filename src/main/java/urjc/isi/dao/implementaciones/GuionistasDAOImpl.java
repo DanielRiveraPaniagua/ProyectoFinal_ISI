@@ -129,8 +129,6 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 					cond+=" AND ";
 				}
 		  }
-
-		  System.out.println(sql+cond);
 		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
