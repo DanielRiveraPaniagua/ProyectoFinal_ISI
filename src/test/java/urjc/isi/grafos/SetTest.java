@@ -173,4 +173,63 @@ public class SetTest {
 		union=st.union(ost);
 		assertTrue(union.equals(cmp));
 	}
+	@Test(expected=IllegalArgumentException.class)
+	public void intersectsIllegalArgumentException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.intersects(null);
+	}
+	@Test
+	public void intersectsOK()
+	{		
+		SET<String> st = new SET<String>();
+		SET<String> ost = new SET<String>();
+		SET<String> union  = new SET<String>();
+		SET<String> cmp  = new SET<String>();
+		st.add("Hello");
+		st.add("World");
+		ost.add("Hello");
+		ost.add("Pedro");
+		cmp.add("Hello");
+		union=st.intersects(ost);
+		assertTrue(union.equals(cmp));
+	}
+	@Test
+	public void intersectsEmpty()
+	{		
+		SET<String> st = new SET<String>();
+		SET<String> ost = new SET<String>();
+		SET<String> union  = new SET<String>();
+		SET<String> cmp  = new SET<String>();;
+		union=st.union(ost);
+		assertTrue(union.equals(cmp));
+	}
+	@Test
+	public void intersectsNotCoincidence()
+	{		
+		SET<String> st = new SET<String>();
+		SET<String> ost = new SET<String>();
+		SET<String> union  = new SET<String>();
+		SET<String> cmp  = new SET<String>();
+		st.add("World");
+		ost.add("Hello");
+		ost.add("Pedro");
+		union=st.intersects(ost);
+		assertTrue(union.equals(cmp));
+	}
+	@Test(expected=UnsupportedOperationException.class)
+	public void hasCodeException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.hashCode();
+	}
+	@Test
+	public void toStringOK()
+	{		
+		SET<String> st = new SET<String>();
+		st.add("World");
+		st.add("Hello");
+		st.add("Pedro");
+		assertTrue("{ Hello, Pedro, World }".equals(st.toString()));
+	}
 }
