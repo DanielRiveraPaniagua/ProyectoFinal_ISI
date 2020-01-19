@@ -170,7 +170,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public Personas selectByName(String name) {
-		 String sql = "SELECT * from guionistas WHERE fullnombre='" + name+"'";
+		 String sql = "SELECT * from guionistas WHERE fullnombre=$$" + name+"$$";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
@@ -181,7 +181,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return null;
 	}
-	
+
 	@Override
 	public List<Personas> selectByPeliculaID(String id){
 		List<Personas> actores = new ArrayList<>();
