@@ -47,7 +47,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	  		pstmt.setString(3, entity.getNacimiento());
 	      	pstmt.setString(4, entity.getMuerte());
 	  		pstmt.executeUpdate();
-	    } catch (SQLException e) {
+	    	} catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
 
@@ -113,20 +113,19 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 						break;
 					case "fecha_nac":
 						if(conditions.get("fecha_nac").indexOf("-") == -1) {
-							cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
-						}else {
-							String[] intervalo = conditions.get("fecha_nac").split("-");
-							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+							cond+= "a.fnacimiento = "+"'"+conditions.get("fecha_nac")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + fechas[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ fechas[1] + "'" ;
 						}
 						break;
 					case "fecha_muer":
 						if(conditions.get("fecha_muer").indexOf("-") == -1) {
-							cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
-						}else {
-							String[] intervalo2 = conditions.get("fecha_muer").split("-");
-							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+							cond+= "a.fmuerte = "+"'"+conditions.get("fecha_muer")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + fechas[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ fechas[1] + "'" ;
 						}
-						break;
 				}
 
 				if(k.hasMoreElements()) {
@@ -139,7 +138,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  while(rs.next()){
 				  personasList.add(fromResultSet(rs));
 			  }
-	    } catch (SQLException e) {
+	    	  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return personasList;
@@ -155,7 +154,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  if(rs.next()) {
 				  persona = fromResultSet(rs);
 			  }
-	      } catch (SQLException e) {
+      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
