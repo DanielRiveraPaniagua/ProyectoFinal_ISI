@@ -27,11 +27,16 @@ public class Main {
 					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					"<ul>\n" + 
-					"<li>/selectAll</li>\n" + 
-					"<li><strong>&nbsp;</strong></li>\n" + 
-					"</ul>\n" + 
-					"<p><strong>Enjoy!</strong></p>\n" + 
-					"<p><strong>&nbsp;</strong></p>" + 
+					"<p><span style=color: #0000ff;><strong>Actores</strong></span></p>" +
+					"<ul>"+
+					"<li>/selectAll</li>" +
+					"</ul>" +
+					"<p><strong><span style=color: #0000ff;>Peliculas</span></strong></p>" +
+					"<ul>" +
+					"<li>/selectAll" +
+					"<ul>" +
+					"<li>Hola</li>" +
+					"</ul>" +"</li>" +"</ul>" +
 					"</body></html>";
    
 		return result;
@@ -95,7 +100,6 @@ public class Main {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
-        /*redirect.get("*", "/welcome");*/
     }
 
     /**
