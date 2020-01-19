@@ -10,7 +10,9 @@ import com.google.gson.JsonObject;
 
 import spark.Request;
 import spark.Response;
+
 import urjc.isi.entidades.*;
+
 import urjc.isi.service.PeliculasService;
 
 public class PeliculasController {
@@ -81,7 +83,19 @@ public class PeliculasController {
 		if(request.queryParams("order")!=null)
 			filter.put("order", request.queryParams("order"));
 		if(request.queryParams("genero")!=null) {
-			return filmsByGenero(request, response);
+			String[] generos = request.queryParamsValues("genero");
+			String entrada = "";
+			if(generos.length < 2) {
+				filter.put("genero", generos[0]);
+			} else {
+				for(int i=0; i< generos.length;i++) {
+					if(i==generos.length-1)
+						entrada += generos[i];
+					else
+						entrada += generos[i] + "%";
+				}
+				filter.put("genero", entrada);
+			} 
 		}
 		if(request.queryParams("rating")!=null)
 			filter.put("rating", request.queryParams("rating"));
@@ -99,6 +113,10 @@ public class PeliculasController {
 			}
 			json.add("output", array);
 			result = json.toString();
+		}else if(request.queryParams("format")!= null && request.queryParams("format").equals("links")){
+			for(int i = 0; i < output.size(); i++) {
+			    result = result + output.get(i).toLinkedHTMLString() +"</br>";
+			}
 		}else {
 			for(int i = 0; i < output.size(); i++) {
 			    result = result + output.get(i).toHTMLString() +"</br>";
@@ -392,14 +410,8 @@ public class PeliculasController {
 		get("/ranking", PeliculasController::selectAllRanking);
 		get("/calificacion", PeliculasController::calificacion);
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
-
 		get("/info", PeliculasController::infoPeliculas);
-
 		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
-
-
-		//filtrado por género se podría prescindir
-		get("/filmsByGenero", PeliculasController::filmsByGenero);
 	}
 
 }
