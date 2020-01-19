@@ -18,84 +18,89 @@ import java.io.IOException;
 //servidor
 public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDAO{
 
-  public Generos fromResultSet(ResultSet rs) throws  SQLException{
+	public Generos fromResultSet(ResultSet rs) throws  SQLException{
 		Generos gene = new Generos();
-
+		
 		gene.setNombre(rs.getString("nombre"));
 		return gene;
 	}
+	
 	@Override
-  public void createTable() throws SQLException{
+	public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
 		statement.executeUpdate("create table generos ( nombre text, PRIMARY KEY (nombre))");
 		c.commit();	
 	}
+	
 	@Override
-  public void dropTable() throws SQLException {
+	public void dropTable() throws SQLException {
 		Statement statement = c.createStatement();
 		statement.executeUpdate("drop table if exists generos");
 		c.commit();
 	}
-  @Override
-  public void insert(Generos entity) {
-  	String sql = "INSERT INTO generos(nombre) VALUES(?)";
+	
+	@Override
+	public void insert(Generos entity) {
+		String sql = "INSERT INTO generos(nombre) VALUES(?)";
 
-  	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-  		pstmt.setString(1, entity.getNombre());
-  		pstmt.executeUpdate();
-    } catch (SQLException e) {
-  	    System.out.println(e.getMessage());
-  	}
-  }
-  @Override
-  public void uploadTable(BufferedReader br) throws IOException, SQLException {
-    String s;
-    while ((s = br.readLine()) != null) {
-    	if(s.length()>0) {
-	      Generos genero = new Generos(s);
-	      insert(genero);
-	      c.commit();
-    	}
-    }
-  }
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			pstmt.setString(1, entity.getNombre());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@Override
+	public void uploadTable(BufferedReader br) throws IOException, SQLException {
+		String s;
+		
+		while ((s = br.readLine()) != null) {
+			if(s.length()>0) {
+				Generos genero = new Generos(s);
+				insert(genero);
+				c.commit();
+			}
+		}
+	}
   
-  @Override
-  public List<Generos> selectAll(){
-	  List<Generos> generoList = new ArrayList<>();
-	  String sql = "SELECT * from generos";
-	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-		  ResultSet rs = pstmt.executeQuery();
-		  c.commit();
-		  while(rs.next()){
-			  generoList.add(fromResultSet(rs));
-		  }
-    } catch (SQLException e) {
-		  System.out.println(e.getMessage());
-	  }
-	  return generoList;
-  }
+	@Override
+	public List<Generos> selectAll(){
+		List<Generos> generoList = new ArrayList<>();
+		String sql = "SELECT * from generos";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				generoList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return generoList;
+	}
+   
+	@Override
+	public Generos selectByID (String idgenero){
+		return null;
+	}
+	
+	@Override
+	public void deleteByID(String idgenero){
+		;
+	}
   
-  
-  @Override
-  public Generos selectByID (String idgenero){
-	  return null;
-  }
-  @Override
-  public void deleteByID(String idgenero){
-	  ;
-  }
-  
-  @Override
+	@Override
 	public Generos selectByName(String nombre) {
-		 String sql = "SELECT * from generos WHERE nombre=" + nombre;
-		  Generos genero = new Generos();
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
-			  c.commit();
-			  genero = fromResultSet(rs);
-	      } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return genero;
+		String sql = "SELECT * from generos WHERE nombre=" + nombre;
+		Generos genero = new Generos();
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			genero = fromResultSet(rs);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return genero;
 	}
 }
