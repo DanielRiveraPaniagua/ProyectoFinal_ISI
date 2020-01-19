@@ -228,7 +228,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						for(int i=1; i< generos.length;i++) {
 							cond += " OR " + "pg.genero='" + generos[i] + "'";
 						}
-						cond+=")"
+						cond+=")";
 					}					
 					sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
 					break;					
