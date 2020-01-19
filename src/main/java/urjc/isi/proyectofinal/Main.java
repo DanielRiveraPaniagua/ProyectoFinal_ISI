@@ -37,6 +37,7 @@ public class Main {
 					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
 					"<ul><li>/peliculas/selectAll?year=[year]-->Películas en el rango de años</li></ul>"+
 					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
+					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(si)</li></ul>"+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
 					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
@@ -48,6 +49,10 @@ public class Main {
 					"<ul><li>/peliculas/selectAll?duracion=>d1-d2 --> Peliculas entre esas duraciones</li></ul></li>" +
 					"<li> Opciones según el rating de las películas " +
 					"<ul><li> /peliculas/selectAll?rating=r1-r2 --> Peliculas en ese rango de rating </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=<r1 --> Peliculas con rating menor o igual al dado </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=>r1 --> Peliculas con rating mayor o igual al dado </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=r1 --> Peliculas con rating igual al dado </li></ul>"+
+					"<ul><li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li></ul>"+
 					"<li>"+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
