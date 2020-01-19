@@ -1,6 +1,7 @@
 package urjc.isi.grafos;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.NoSuchElementException;
 
@@ -73,7 +74,7 @@ public class SetTest {
 		st.add(0);
 		st.add(1);
 		st.add(-1);
-	  	assertEquals(1,st.size());
+	  	assertTrue(1==st.max());
 	}
 	@Test(expected=NoSuchElementException.class)
 	public void minNoSuchElementException()
@@ -88,6 +89,88 @@ public class SetTest {
 		st.add(-1);
 		st.add(0);
 		st.add(1);
-	  	assertEquals(-1,st.size());
+	  	assertTrue(-1==st.min());
+	}
+	@Test(expected=NoSuchElementException.class)
+	public void ceilingNoSuchElementException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.add(-1);
+		st.add(0);
+		st.add(1);
+		st.ceiling(2);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void ceilingIllegalArgumentException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.ceiling(null);
+	}
+	@Test
+	public void ceilingOK()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.add(-2);
+		st.add(-1);
+		st.add(0);
+		st.add(1);
+		st.add(2);
+	  	assertTrue(0==st.ceiling(0));
+	}
+	@Test(expected=NoSuchElementException.class)
+	public void floorNoSuchElementException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.add(-1);
+		st.add(0);
+		st.add(1);
+		st.floor(-2);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void floorIllegalArgumentException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.floor(null);
+	}
+	@Test
+	public void floorOK()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.add(-2);
+		st.add(-1);
+		st.add(0);
+		st.add(1);
+		st.add(2);
+	  	assertTrue(0==st.floor(0));
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void unionIllegalArgumentException()
+	{		
+		SET<Integer> st = new SET<Integer>();
+		st.union(null);
+	}
+	@Test
+	public void unionOK()
+	{		
+		SET<String> st = new SET<String>();
+		SET<String> ost = new SET<String>();
+		SET<String> union  = new SET<String>();
+		SET<String> cmp  = new SET<String>();
+		st.add("Hello");
+		ost.add("World!");
+		cmp.add("Hello");
+		cmp.add("World!");
+		union=st.union(ost);
+		assertTrue(union.equals(cmp));
+	}
+	@Test
+	public void unionEmpty()
+	{		
+		SET<String> st = new SET<String>();
+		SET<String> ost = new SET<String>();
+		SET<String> union  = new SET<String>();
+		SET<String> cmp  = new SET<String>();;
+		union=st.union(ost);
+		assertTrue(union.equals(cmp));
 	}
 }
