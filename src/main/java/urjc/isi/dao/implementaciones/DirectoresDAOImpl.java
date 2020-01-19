@@ -87,7 +87,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 					case "actor":
 						sql+= "join peliculasdirectores as pd on d.idpersona=pd.idpersona "+
 								"join peliculasactores as pa on pd.idpelicula=pa.idpelicula "+
-								"join actpres as a on a.idpersona=pa.idpersona ";
+								"join actores as a on a.idpersona=pa.idpersona ";
 						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
 						break;
 					case "guionista":
