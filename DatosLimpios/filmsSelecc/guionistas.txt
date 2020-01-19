@@ -1,103 +1,1117 @@
+nm0657333	Chuck Palahniuk	1962	\N
+nm0880243	Jim Uhls	1957	\N
+nm0000233	Quentin Tarantino	1963	\N
+nm0000812	Roger Avary	1965	\N
+nm0343165	Winston Groom	1943	\N
+nm0744839	Eric Roth	1945	\N
 nm0001825	Andrew Kevin Walker	1964	\N
+nm0291905	David Franzoni	1947	\N
+nm0517589	John Logan	1961	\N
+nm0629933	William Nicholson	1948	\N
+nm0004170	Bob Kane	1915	1998
+nm0333060	David S. Goyer	1965	\N
+nm0634240	Christopher Nolan	1970	\N
 nm0000184	George Lucas	1944	\N
 nm0734441	Robert Rodat	1953	\N
+nm0447745	Thomas Keneally	1935	\N
+nm0001873	Steven Zaillian	1953	\N
+nm0102824	Leigh Brackett	1915	1978
+nm0001410	Lawrence Kasdan	1949	\N
 nm0000116	James Cameron	1954	\N
+nm0634300	Jonathan Nolan	1976	\N
 nm0050332	Alan Ball	1957	\N
+nm0254645	Ted Elliott	1961	\N
+nm0744429	Terry Rossio	1960	\N
+nm0064181	Stuart Beattie	\N	\N
+nm0938684	Jay Wolpert	\N	\N
 nm0571346	David McKenna	1968	\N
+nm0905152	Lilly Wachowski	1967	\N
+nm0905154	Lana Wachowski	1965	\N
+nm2331222	David Lloyd	1950	\N
+nm0000709	Robert Zemeckis	1951	\N
+nm0301826	Bob Gale	1951	\N
 nm0000108	Luc Besson	1959	\N
+nm0683380	Nicholas Pileggi	1933	\N
+nm0000217	Martin Scorsese	1942	\N
+nm0936537	William Wisher	\N	\N
+nm0000235	Uma Thurman	1970	\N
 nm0908824	Randall Wallace	1949	\N
+nm0004056	Andrew Stanton	1965	\N
+nm0677037	Bob Peterson	1961	\N
+nm0721675	David Reynolds	\N	\N
+nm1318843	Mark Fergus	\N	\N
+nm1319757	Hawk Ostby	\N	\N
+nm1436466	Art Marcum	\N	\N
+nm0391344	Matt Holloway	\N	\N
+nm0498278	Stan Lee	1922	2018
+nm1411347	Don Heck	1929	1995
+nm1293367	Larry Lieber	1931	\N
+nm0456158	Jack Kirby	1917	1994
+nm0369142	Lawrence Hauben	1931	1985
+nm0325743	Bo Goldman	1932	\N
+nm0450181	Ken Kesey	1935	2001
+nm0913670	Dale Wasserman	1914	2008
+nm0442109	Charlie Kaufman	1958	\N
+nm0327273	Michel Gondry	1963	\N
+nm1410028	Pierre Bismuth	1953	\N
+nm0442241	Philip Kaufman	1936	\N
+nm0005124	John Lasseter	1957	\N
+nm0230032	Pete Docter	1968	\N
+nm0710020	Joe Ranft	1960	2005
+nm0923736	Joss Whedon	1964	\N
+nm0169505	Joel Cohen	\N	\N
+nm0812513	Alec Sokolow	\N	\N
+nm0000341	Michael Crichton	1942	2008
+nm0462895	David Koepp	1963	\N
+nm0000354	Matt Damon	1970	\N
+nm0000255	Ben Affleck	1972	\N
+nm0001054	Joel Coen	1954	\N
+nm0001053	Ethan Coen	1957	\N
+nm0565092	Cormac McCarthy	1933	\N
+nm0191717	Jill Culton	\N	\N
+nm0682066	Jeff Pidgeon	1965	\N
+nm0250995	Ralph Eggleston	1965	\N
+nm0314870	Daniel Gerson	1966	2016
+nm0798899	David Silverman	1957	\N
+nm0047916	Robert L. Baird	\N	\N
+nm1014201	Rhett Reese	\N	\N
+nm0731271	Jonathan Roberts	\N	\N
+nm0622288	Jeff Nathanson	1965	\N
+nm0007646	Frank Abagnale Jr.	1948	\N
+nm1127221	Stan Redding	\N	\N
+nm0861636	Roderick Thorp	1936	1999
+nm0835732	Jeb Stuart	1956	\N
+nm0211823	Steven E. de Souza	1947	\N
+nm0639321	Dan O'Bannon	1946	2009
+nm0795953	Ronald Shusett	1935	\N
 nm0588340	Frank Miller	1957	\N
+nm0782968	Hubert Selby Jr.	1928	2004
+nm0004716	Darren Aronofsky	1969	\N
 nm0446819	Richard Kelly	1975	\N
+nm0811583	Zack Snyder	1966	\N
+nm0426500	Kurt Johnstad	\N	\N
+nm1290582	Michael B. Gordon	1976	\N
+nm2241067	Lynn Varley	1958	\N
+nm0000231	Oliver Stone	1946	\N
+nm0001328	Howard Hawks	1896	1977
+nm0372942	Ben Hecht	1894	1964
+nm0870660	Armitage Trail	1902	1930
 nm0001707	Paul Schrader	1946	\N
+nm0513130	Paulo Lins	1958	\N
+nm1130251	Bráulio Mantovani	\N	\N
+nm0228492	Steve Ditko	1927	2018
+nm0090151	Jeffrey Boam	1946	2000
+nm0583675	Menno Meyjes	1954	\N
+nm0698873	Mark Protosevich	1961	\N
+nm0326040	Akiva Goldsman	1962	\N
+nm0558577	Richard Matheson	1926	2013
+nm0181019	John William Corrington	1932	1988
+nm0181020	Joyce Hooper Corrington	1936	\N
+nm0266684	Hampton Fancher	1938	\N
+nm0672459	David Webb Peoples	1940	\N
+nm0001140	Philip K. Dick	1928	1982
 nm0741627	Reginald Rose	1920	2002
+nm0000040	Stanley Kubrick	1928	1999
+nm0380282	Michael Herr	1940	2016
+nm0368007	Gustav Hasford	1947	1993
+nm0318429	David Giler	\N	\N
+nm0001353	Walter Hill	1942	\N
+nm0920543	Irvine Welsh	1958	\N
+nm0388076	John Hodge	1964	\N
+nm0353673	Paul Haggis	1953	\N
+nm0101801	F.X. Toole	1930	2002
+nm0083348	Brad Bird	1957	\N
+nm0684342	Jan Pinkava	1963	\N
+nm0135296	Jim Capobianco	1969	\N
+nm1486235	Emily Cook	\N	\N
+nm1271884	Kathy Greenberg	\N	\N
+nm0355054	Jonathan Hales	1937	\N
+nm0746830	J.K. Rowling	1965	\N
+nm0460141	Steve Kloves	1960	\N
 nm0594503	Hayao Miyazaki	1941	\N
+nm0825308	William Steig	1907	2003
+nm0830294	Joe Stillman	\N	\N
+nm0776107	Roger S.H. Schulman	\N	\N
+nm0970606	Cody Cameron	1970	\N
+nm1844237	Chris Miller	1968	\N
+nm0970447	Conrad Vernon	1968	\N
+nm0649460	Roberto Orci	1973	\N
+nm0476064	Alex Kurtzman	1973	\N
+nm0736966	John Rogers	\N	\N
+nm0587518	John Milius	1944	\N
+nm0000338	Francis Ford Coppola	1939	\N
+nm0175676	Joseph Conrad	1857	1924
+nm0002009	Arthur C. Clarke	1917	2008
+nm0825010	Joseph Stefano	1922	2006
+nm0088645	Robert Bloch	1917	1994
+nm0748035	Danny Rubin	1957	\N
+nm0000601	Harold Ramis	1944	2014
+nm0701031	Neal Purvis	1961	\N
+nm0905498	Robert Wade	1962	\N
+nm0001220	Ian Fleming	1908	1964
+nm0003408	Chris Marker	1921	2012
+nm0672466	Janet Peoples	\N	\N
+nm0220892	Tom DeSanto	\N	\N
+nm0001741	Bryan Singer	1965	\N
+nm0371684	David Hayter	1969	\N
+nm0436543	Robert Mark Kamen	1947	\N
 nm0000520	Michael Mann	1943	\N
+nm0000576	Sean Penn	1960	\N
+nm1040556	Jon Krakauer	1954	\N
+nm0001940	Peter Benchley	1940	2006
+nm0331956	Carl Gottlieb	1938	\N
+nm0332184	Alfred Gough	1967	\N
+nm0587692	Miles Millar	1970	\N
+nm0149290	Michael Chabon	1963	\N
+nm0765091	Alvin Sargent	1927	2019
+nm0002041	Dean Devlin	1962	\N
+nm0000386	Roland Emmerich	1955	\N
+nm0255278	James Ellroy	1948	\N
+nm0001338	Brian Helgeland	1961	\N
+nm0000436	Curtis Hanson	1945	2016
 nm0005363	Guy Ritchie	1968	\N
+nm0105169	Ash Brannon	\N	\N
+nm0398763	Rita Hsiao	\N	\N
+nm0150155	Doug Chamberlin	\N	\N
+nm1274593	Chris Webb	\N	\N
+nm0672015	Zak Penn	1968	\N
+nm1002424	Michael Dougherty	1974	\N
+nm0003529	Dan Harris	1979	\N
+nm0258493	Julius J. Epstein	1909	2000
+nm0258525	Philip G. Epstein	1909	1952
+nm0462321	Howard Koch	1901	1995
+nm0122417	Murray Burnett	1910	1997
+nm0019706	Joan Alison	1901	1992
+nm0732452	Casey Robinson	1903	1979
+nm0192384	Lowell Cunningham	1959	\N
+nm0004412	Ed Solomon	1960	\N
 nm0000230	Sylvester Stallone	1946	\N
 nm0115310	William Broyles Jr.	1944	\N
+nm0425138	George Clayton Johnson	1929	2015
+nm0751207	Jack Golden Russell	\N	\N
+nm0113689	Harry Brown	1917	1986
+nm0496468	Charles Lederer	1911	1976
+nm0341372	Ted Griffin	1970	\N
+nm0670408	Simon Pegg	1970	\N
+nm0942367	Edgar Wright	1974	\N
+nm0291082	Scott Frank	1960	\N
+nm0169509	Jon Cohen	\N	\N
+nm0000759	Paul Thomas Anderson	1970	\N
+nm0801737	Upton Sinclair	1878	1968
+nm0899113	Jeff Vintar	\N	\N
+nm0001920	Isaac Asimov	1920	1992
+nm0001037	Graham Chapman	1941	1989
+nm0000092	John Cleese	1939	\N
+nm0001385	Eric Idle	1943	\N
+nm0000416	Terry Gilliam	1940	\N
+nm0001402	Terry Jones	1942	\N
+nm0001589	Michael Palin	1943	\N
+nm0000600	Sam Raimi	1959	\N
+nm0706898	Ivan Raimi	1956	\N
 nm1959505	Diablo Cody	1978	\N
+nm0495378	Charles Leavitt	\N	\N
+nm2057149	C. Gaby Mitchell	\N	\N
+nm0325533	Michael Goldenberg	1965	\N
+nm0009190	J.J. Abrams	1966	\N
+nm0509340	Jeffrey Lieber	\N	\N
+nm0511541	Damon Lindelof	1973	\N
+nm0193681	Carlton Cuse	1959	\N
+nm0395271	Adam Horowitz	\N	\N
+nm0457736	Edward Kitsis	\N	\N
+nm0765438	Elizabeth Sarnoff	\N	\N
+nm1206844	Drew Goddard	1975	\N
+nm0342057	Javier Grillo-Marxuach	1969	\N
+nm1592205	Brian K. Vaughan	1976	\N
+nm0225272	Leonard Dick	\N	\N
+nm2148402	Christina M. Kim	\N	\N
+nm1033788	Paul Zbyszewski	\N	\N
+nm0299236	David Fury	1959	\N
+nm0535348	Steven Maeda	\N	\N
+nm0684374	Jeff Pinkner	\N	\N
+nm1714574	Melinda Hsu Taylor	\N	\N
+nm1442234	Greggory Nations	\N	\N
+nm3169366	Graham Roland	\N	\N
+nm0975307	Jennifer Johnson	\N	\N
+nm1362905	Craig Wright	\N	\N
+nm2397784	Kyle Pennington	\N	\N
+nm1549211	Jim Galasso	\N	\N
+nm0227704	Paul Dini	1957	\N
+nm0514445	Lynne E. Litt	\N	\N
+nm0995597	Christian Taylor	1968	\N
+nm0281957	Brent Fletcher	\N	\N
+nm1002023	Janet Tamaro	1961	\N
+nm0483354	Dawn Lambertsen-Kelly	\N	\N
+nm1044428	Monica Owusu-Breen	\N	\N
+nm1875838	Matt Ragghianti	\N	\N
+nm1041459	Alison Schapker	\N	\N
+nm1819118	Jordan Rosenberg	\N	\N
+nm1285774	Monica Macer	\N	\N
+nm0392955	Homer	\N	\N
+nm1125275	David Benioff	1970	\N
 nm1334526	Simon Kinberg	1973	\N
+nm0607454	Barry Morrow	1948	\N
+nm0060103	Ronald Bass	1942	\N
+nm0254735	Bret Easton Ellis	1964	\N
+nm0366004	Mary Harron	1953	\N
+nm0877587	Guinevere Turner	1968	\N
+nm0190859	Alfonso Cuarón	1961	\N
+nm0786694	Timothy J. Sexton	\N	\N
+nm0033153	David Arata	\N	\N
+nm0416807	P.D. James	1920	2014
 nm0000455	John Hughes	1950	2009
+nm0816143	Terry Southern	1924	1995
+nm0313570	Peter George	1924	1966
+nm0000318	Tim Burton	1958	\N
+nm0003031	Caroline Thompson	1956	\N
+nm0404754	Willard Huyck	1945	\N
+nm0441718	Gloria Katz	1942	2018
 nm1578335	Michael Arndt	1965	\N
+nm5022110	Michael J. Wilson	\N	\N
+nm0073850	Michael Berg	\N	\N
+nm0010004	Peter Ackerman	\N	\N
+nm0107760	James Bresnahan	\N	\N
+nm0174024	Doug Compton	\N	\N
+nm0797053	Jeff Siergey	\N	\N
+nm0862211	Mike Thurmeier	\N	\N
+nm1154886	Galen T. Chu	\N	\N
+nm1157545	Xeth Feinberg	1960	\N
+nm0371088	John Michael Hayes	1919	2008
+nm0941280	Cornell Woolrich	1903	1968
+nm0888743	James Vanderbilt	1975	\N
+nm1172196	Robert Graysmith	1942	\N
+nm0001094	Roald Dahl	1916	1990
+nm0041864	John August	1970	\N
+nm0941314	Linda Woolverton	1952	\N
+nm0152312	Brenda Chapman	1962	\N
+nm0761498	Chris Sanders	1962	\N
+nm0560329	Burny Mattinson	1935	\N
+nm0363125	Kevin Harkey	\N	\N
+nm0683724	Brian Pimental	1964	\N
+nm0940849	Bruce Woodside	\N	\N
+nm0254085	Tom Ellery	\N	\N
+nm0038432	Kelly Asbury	1960	\N
+nm0501729	Robert Lence	\N	\N
+nm0207305	Jeanne-Marie Leprince de Beaumont	1711	1780
+nm3343855	Gabrielle-Suzanne Barbot de Villeneuve	1685	1755
 nm0193485	Richard Curtis	1956	\N
+nm1212331	Dennis Lehane	1965	\N
+nm1180620	Daniel Wallace	\N	\N
+nm0295264	Josh Friedman	\N	\N
+nm0920229	H.G. Wells	1866	1946
+nm0011470	Andrew Adamson	1966	\N
+nm0826425	J. David Stem	\N	\N
+nm0918955	David N. Weiss	\N	\N
+nm0230666	Walt Dohrn	1970	\N
+nm1019583	David P. Smith	1968	\N
+nm0008743	Jonathan Aibel	1969	\N
+nm0074184	Glenn Berger	1969	\N
+nm0717550	Ethan Reiff	1965	\N
+nm0903456	Cyrus Voris	\N	\N
 nm0776114	Tom Schulman	1950	\N
 nm0001068	Sofia Coppola	1971	\N
+nm0168379	Jay Cocks	1944	\N
+nm0518836	Kenneth Lonergan	1962	\N
+nm0378144	Jonathan Hensleigh	1959	\N
+nm0006904	Tony Gilroy	1956	\N
+nm0004307	Shane Salerno	1972	\N
+nm0690798	Robert Roy Pool	\N	\N
+nm0093560	Mark Bomback	1971	\N
+nm0545861	David Marconi	\N	\N
+nm1985343	John Carlin	1956	\N
+nm0909638	Fran Walsh	1959	\N
+nm0101991	Philippa Boyens	\N	\N
+nm0001392	Peter Jackson	1961	\N
+nm0178260	Merian C. Cooper	1893	1973
+nm0908624	Edgar Wallace	1875	1932
+nm0414893	Mark Jacobson	1948	\N
+nm0542534	Herman J. Mankiewicz	1897	1953
+nm0000080	Orson Welles	1915	1985
+nm0002144	John Houseman	1902	1988
+nm0219670	Roger Q. Denny	\N	\N
+nm0448809	Mollie Kent	\N	\N
 nm1732981	Martin McDonagh	1970	\N
+nm0329304	Frances Goodrich	1890	1984
+nm0352443	Albert Hackett	1900	1995
+nm0001008	Frank Capra	1897	1991
+nm0842485	Jo Swerling	1893	1964
+nm0827821	Philip Van Doren Stern	1900	1984
+nm0933858	Michael Wilson	1914	1978
+nm0312367	Bruce Geller	1930	1978
+nm0001801	Robert Towne	1934	\N
 nm0796117	M. Night Shyamalan	1970	\N
 nm0043742	David Ayer	1968	\N
-nm0000231	Oliver Stone	1946	\N
+nm0005036	Gale Anne Hurd	1955	\N
+nm0104335	John Brancato	1958	\N
+nm0274905	Michael Ferris	1961	\N
+nm0093328	Tedi Sarafian	1966	\N
+nm1191481	Leigh Whannell	1977	\N
+nm1490123	James Wan	1977	\N
+nm0857620	Justin Theroux	1971	\N
+nm0001774	Ben Stiller	1965	\N
+nm1000113	Etan Cohen	1974	\N
 nm0381221	Adam Herz	1972	\N
+nm0466175	Steve Koren	\N	\N
+nm0641479	Mark O'Keefe	\N	\N
+nm0644203	Steve Oedekerk	1961	\N
 nm0307497	Alex Garland	1970	\N
-nm0672459	David Webb Peoples	1940	\N
+nm0859029	Jim Thomas	\N	\N
+nm0859049	John Thomas	\N	\N
 nm0558953	Melissa Mathison	1950	2015
-nm0064181	Stuart Beattie	\N	\N
+nm0100736	Mark Bowden	1951	\N
+nm0634307	Ken Nolan	\N	\N
+nm0787323	Peter Shaffer	1926	2016
+nm0537004	Zdenek Mahler	1928	2018
+nm0104973	Michael Brandt	1968	\N
+nm0351929	Derek Haas	1970	\N
+nm0604555	Chris Morgan	\N	\N
+nm2092839	Mark Millar	1969	\N
+nm1631852	J.G. Jones	\N	\N
+nm0123666	Mark Burton	\N	\N
+nm1129905	Billy Frolick	1959	\N
+nm0201509	Eric Darnell	\N	\N
+nm0569891	Tom McGrath	1964	\N
+nm0000175	Stephen King	1947	\N
+nm0317279	Raynold Gideon	\N	\N
+nm0262595	Bruce A. Evans	1946	\N
+nm0460146	Jorgen Klubien	\N	\N
+nm1557594	Dan Fogelman	\N	\N
+nm1195697	Kiel Murray	\N	\N
+nm1198436	Phil Lorin	\N	\N
+nm0700760	Steve Purcell	\N	\N
+nm0166256	Ron Clements	1953	\N
+nm0615780	John Musker	1953	\N
+nm0021249	Roger Allers	1949	\N
+nm0423161	Daan Jippes	1945	\N
+nm0629734	Sue C. Nichols	\N	\N
+nm0322368	Francis Glebas	1953	\N
+nm0740311	Darrell Rooney	\N	\N
+nm0500858	Larry Leker	\N	\N
+nm0969162	James Fujii	\N	\N
+nm0361315	Kirk Hanson	\N	\N
+nm0510674	Kevin Lima	1962	\N
+nm0715949	Rebecca Rees	\N	\N
+nm1061362	David S. Smith	\N	\N
+nm0893358	Patrick A. Ventura	\N	\N
+nm1079776	George Nolfi	\N	\N
+nm0056187	Sacha Baron Cohen	1971	\N
+nm0385630	Anthony Hines	\N	\N
+nm0063165	Peter Baynham	\N	\N
+nm0563243	Dan Mazer	1971	\N
+nm0680846	Todd Phillips	1970	\N
+nm0178785	Alec Coppel	1907	1972
+nm0853138	Samuel A. Taylor	1912	2000
+nm0092267	Pierre Boileau	1906	1989
+nm0092268	Thomas Narcejac	1908	1998
+nm0027173	Maxwell Anderson	1888	1959
+nm0330565	Robert Gordon	\N	\N
+nm0266673	Barry Fanaro	\N	\N
+nm0358334	Sam Hamm	1955	\N
+nm0803730	Warren Skaaren	1946	1990
 nm1897957	Russell Gewirtz	\N	\N
+nm0905709	Walter Wager	1924	2004
+nm0724514	Doug Richardson	\N	\N
+nm0669311	Keir Pearson	\N	\N
+nm0313623	Terry George	1952	\N
+nm0264520	Steve Faber	\N	\N
+nm1462097	Bob Fisher	\N	\N
+nm0002071	Will Ferrell	1967	\N
+nm0570912	Adam McKay	1968	\N
+nm0704031	A.J. Quinnell	1940	2005
+nm0410331	Washington Irving	1783	1859
+nm0944892	Kevin Yagher	1962	\N
+nm1577281	Rosalind Wiseman	1969	\N
+nm0275486	Tina Fey	1970	\N
 nm1286500	George Wing	\N	\N
+nm0698925	Annie Proulx	1935	\N
+nm0573505	Larry McMurtry	1936	\N
+nm0652223	Diana Ossana	1949	\N
+nm0301274	Neil Gaiman	1960	\N
+nm0002718	Brian Koppelman	1966	\N
+nm0505522	David Levien	\N	\N
+nm0004111	Mark Frost	1953	\N
+nm0289833	Michael France	1962	2013
 nm0934483	Kurt Wimmer	1964	\N
+nm0483766	Jake LaMotta	1922	2017
+nm0141734	Joseph Carter	\N	\N
+nm0678014	Peter Savage	1920	1981
+nm0552731	Mardik Martin	1934	2019
 nm0000186	David Lynch	1946	\N
-nm0442109	Charlie Kaufman	1958	\N
+nm0322839	Greg Glienna	1963	\N
+nm0164898	Mary Ruth Clarke	1959	\N
+nm0381272	Jim Herzfeld	\N	\N
+nm0357453	John Hamburg	1970	\N
+nm0601822	Ronald D. Moore	1964	\N
+nm0103804	Brannon Braga	1965	\N
+nm0501380	Jonathan Lemkin	\N	\N
+nm2394211	Stephen Hunter	1946	\N
+nm0868219	Guillermo del Toro	1964	\N
+nm1486009	Peter Briggs	1965	\N
+nm0586005	Mike Mignola	1960	\N
+nm0001465	Elmore Leonard	1925	2013
+nm0304830	Robert Ben Garant	1970	\N
+nm0502073	Thomas Lennon	1970	\N
+nm2025683	Milan Trenc	\N	\N
+nm0000041	Akira Kurosawa	1910	1998
+nm0368074	Shinobu Hashimoto	1918	2018
+nm0644823	Hideo Oguni	1904	1996
+nm1168510	Diana Wynne Jones	1934	2011
 nm1429512	Jason Smilovic	\N	\N
+nm0467942	Jim Kouf	1951	\N
+nm0926727	Cormac Wibberley	1959	\N
+nm0926729	Marianne Wibberley	1965	\N
+nm0043233	Oren Aviv	1961	\N
+nm1469874	Charles Segars	1963	\N
+nm0340580	Harry Grey	1901	1980
+nm0073053	Leonardo Benvenuti	1923	2000
+nm0207401	Piero De Bernardi	1926	2010
+nm0575804	Enrico Medioli	1925	2017
+nm0033490	Franco Arcalli	1929	1978
+nm0274853	Franco Ferrini	1944	\N
+nm0001466	Sergio Leone	1929	1989
+nm0436757	Stuart Kaminsky	1934	2009
+nm0002759	Ernesto Gastaldi	1934	\N
+nm1393443	Jamie Delano	1954	\N
+nm1212017	Garth Ennis	1970	\N
+nm0110778	Kevin Brodbin	1964	\N
+nm0135141	Frank A. Cappello	\N	\N
+nm0693956	Jon Povill	\N	\N
+nm0325778	Gary Goldman	1953	\N
 nm0629272	Andrew Niccol	1964	\N
+nm0118224	Peter Buchman	1967	\N
+nm0668247	Alexander Payne	1961	\N
+nm0852591	Jim Taylor	1962	\N
+nm1319490	Bill Marsilii	1962	\N
+nm0852430	Greg Taylor	\N	\N
+nm0833164	Jim Strain	\N	\N
+nm0885575	Chris Van Allsburg	1949	\N
+nm0006872	Sergio Donati	1933	\N
+nm0000783	Dario Argento	1940	\N
+nm0000934	Bernardo Bertolucci	1941	2018
+nm0710698	Frederic Raphael	1931	\N
+nm0774217	Arthur Schnitzler	1862	1931
 nm0723351	Anne Rice	1941	\N
 nm0499626	Ernest Lehman	1915	2005
-nm0000759	Paul Thomas Anderson	1970	\N
-nm0923736	Joss Whedon	1964	\N
+nm0000735	Brian Aldiss	1925	2017
+nm0914668	Ian Watson	\N	\N
+nm0000229	Steven Spielberg	1946	\N
+nm0497369	Harper Lee	1926	2016
+nm0285210	Horton Foote	1916	2009
+nm0214036	Ed Decter	1959	\N
+nm0833828	John J. Strauss	1957	\N
+nm0268380	Peter Farrelly	1956	\N
+nm0268370	Bobby Farrelly	1958	\N
+nm0037247	Guillermo Arriaga	1958	\N
+nm0327944	Alejandro G. Iñárritu	1963	\N
+nm0527581	Karen McCullah	\N	\N
+nm0809006	Kirsten Smith	1970	\N
+nm0000636	William Shakespeare	1564	1616
+nm2092479	Steven Gould	\N	\N
+nm0000154	Mel Gibson	1956	\N
+nm1731154	Farhad Safinia	1975	\N
+nm0919925	Halsted Welles	1906	1990
+nm0000591	Roman Polanski	1933	\N
+nm0143596	Jim Cash	1941	2000
+nm0258390	Jack Epps Jr.	1949	\N
+nm1274594	Ehud Yonay	\N	\N
+nm0593565	Margaret Mitchell	1900	1949
+nm0397608	Sidney Howard	1891	1939
+nm0308177	Oliver H.P. Garrett	1894	1952
+nm0886668	John Van Druten	1901	1957
+nm0476071	Robert Kurtzman	1964	\N
 nm0493369	J.F. Lawton	1960	\N
+nm0345488	Paul Guay	\N	\N
+nm0563397	Stephen Mazur	\N	\N
+nm0696949	Jeffrey Price	1949	\N
+nm0780620	Peter S. Seaman	1951	\N
+nm0912403	Aron Warner	\N	\N
+nm0796950	Jerry Siegel	1914	1996
+nm0795975	Joe Shuster	1914	1992
 nm0003298	Scott Rosenberg	1963	\N
+nm0403804	Mitchell Hurwitz	\N	\N
+nm0885016	James Vallely	1954	\N
+nm1545076	Abraham Higginbotham	1969	\N
+nm3014378	Jim Brandon	\N	\N
+nm1770256	Paul Rust	1981	\N
+nm3015102	Brian C. Singleton	\N	\N
+nm0742711	Richard Rosenstock	1951	\N
+nm1058228	Karey Dornetto	\N	\N
+nm1770543	Maggie Rowe	\N	\N
+nm0271003	Barbie Adler	\N	\N
+nm0552092	Chuck Martin	\N	\N
+nm0520893	Dean Lorey	1967	\N
+nm0178589	Brad Copeland	\N	\N
+nm0505276	John Levenstein	\N	\N
+nm0206556	Richard Day	\N	\N
+nm1706644	Chris Marrs	\N	\N
+nm0851234	Chuck Tatham	\N	\N
+nm1546020	Courtney Lilly	\N	\N
+nm0918272	Ron Weiner	\N	\N
+nm1049335	Caroline Williams	\N	\N
+nm1307539	Evan Mann	\N	\N
+nm0721725	Gareth Reynolds	\N	\N
+nm2030867	Matt Kirshen	1980	\N
+nm1003810	Jake Farrow	\N	\N
+nm2023989	Sam Laybourne	1974	\N
+nm1836241	Lisa Parsons	\N	\N
+nm0766982	Tom Saunders	\N	\N
+nm9592107	Nick Runyeard	\N	\N
+nm0911910	Vincent Ward	1956	\N
+nm0272511	Larry Ferguson	1940	\N
+nm0077062	Jack Bernstein	\N	\N
+nm0001723	Tom Shadyac	1958	\N
+nm0000120	Jim Carrey	1962	\N
+nm0029125	Mark Andrus	\N	\N
+nm0000985	James L. Brooks	1940	\N
+nm0685587	Joseph D. Pistone	1939	\N
+nm0940361	Richard Woodley	\N	\N
+nm0001921	Paul Attanasio	1959	\N
+nm0914058	Daniel Waters	1962	\N
+nm0525303	Baz Luhrmann	1962	\N
+nm0668902	Craig Pearce	\N	\N
+nm0627159	Edward Neumeier	\N	\N
+nm0374423	Robert A. Heinlein	1907	1988
 nm1184258	William Monahan	1960	\N
+nm0000604	John C. Reilly	1965	\N
+nm0522554	Jim Lovell	1928	\N
+nm0460200	Jeffrey Kluger	\N	\N
+nm0718031	Al Reinert	1947	2018
 nm0781981	Jason Segel	1980	\N
-nm0462895	David Koepp	1963	\N
+nm0355181	H.B. Halicki	1940	1989
+nm0493042	T.E. Lawrence	1888	1935
+nm0004122	Robert Bolt	1924	1995
+nm0860219	Hunter S. Thompson	1937	2005
+nm0342617	Tony Grisoni	1952	\N
+nm0204000	Tod Davies	1955	\N
+nm0007182	Alex Cox	1954	\N
+nm0000500	Richard Linklater	1960	\N
+nm0471811	Kim Krizan	1961	\N
+nm0338557	Matt Greenberg	\N	\N
+nm0018735	Scott Alexander	1963	\N
+nm0438989	Larry Karaszewski	1961	\N
+nm0238893	Du Lu Wang	1909	1977
+nm0910924	Hui-Ling Wang	\N	\N
+nm0770005	James Schamus	1959	\N
+nm0874631	Kuo Jung Tsai	\N	\N
+nm0877273	John Turman	\N	\N
+nm0340485	Kevin Grevioux	1962	\N
+nm0936482	Len Wiseman	1973	\N
+nm0564286	Danny McBride	\N	\N
+nm0963359	Jane Goldman	1970	\N
+nm0891216	Matthew Vaughn	1971	\N
+nm0405190	Marc Hyman	\N	\N
+nm0310087	Peter Gaulke	\N	\N
+nm0841532	Gerry Swallow	\N	\N
+nm2186362	Jim Hecht	1975	\N
+nm0365383	Thomas Harris	1940	\N
+nm0000519	David Mamet	1947	\N
 nm0169540	Larry Cohen	1936	2019
+nm0000095	Woody Allen	1935	\N
+nm0108613	Marshall Brickman	1939	\N
+nm0366337	James V. Hart	1947	\N
+nm0755981	Carl Sagan	1934	1996
+nm0238668	Ann Druyan	1949	\N
+nm0037097	Giovanni Arpino	1927	1987
+nm0531431	Ruggero Maccari	1919	1989
+nm0728271	Dino Risi	1916	2008
 nm0001081	Cameron Crowe	1957	\N
+nm0024622	Alejandro Amenábar	1972	\N
+nm0317834	Mateo Gil	1972	\N
+nm0860155	Gary Scott Thompson	1959	\N
+nm0000807	Jane Austen	1775	1817
+nm0595738	Deborah Moggach	1948	\N
+nm0000668	Emma Thompson	1959	\N
+nm0848217	Ted Tally	1952	\N
 nm0027271	Paul W.S. Anderson	1965	\N
+nm0766153	Drake Sather	1959	2004
 nm0798788	Scott Silver	\N	\N
 nm0814085	Stephen Sommers	1962	\N
-nm0333060	David S. Goyer	1965	\N
+nm0568605	Ian McEwan	1948	\N
+nm0358960	Christopher Hampton	1946	\N
+nm0172523	Max Allan Collins	1948	\N
+nm0713479	Richard Piers Rayner	\N	\N
+nm0783100	David Self	\N	\N
+nm0760745	Robert D. San Souci	1946	2014
+nm0493857	Philip LaZebnik	1953	\N
+nm0802027	Raymond Singer	1948	\N
+nm0098316	Eugenia Bostwick-Singer	\N	\N
+nm0213450	Dean DeBlois	1970	\N
+nm0998551	John Sanford	\N	\N
+nm0930261	Chris Williams	1968	\N
+nm0388113	Tim Hodge	1963	\N
+nm1434301	Julius Aguimatang	\N	\N
+nm0177170	Lorna Cook	\N	\N
+nm0424556	Barry Johnson	\N	\N
+nm0258059	Thom Enriquez	\N	\N
+nm0326814	Ed Gombert	1951	\N
+nm0335469	Joe Grant	1908	2005
+nm0635488	Floyd Norman	1935	\N
+nm2131929	Jodi Ann Johnson	\N	\N
+nm0650276	Alan Ormsby	1943	\N
+nm0234837	Don Dougherty	\N	\N
+nm0723633	Denis Rich	1930	2007
+nm0252346	Joe Ekers	\N	\N
+nm2132236	Theodore Newton	\N	\N
+nm0774599	Larry Scholl	\N	\N
+nm0632893	Frank Nissen	\N	\N
+nm0811279	Jeff Snow	\N	\N
+nm1511627	Anonymous	\N	\N
 nm0431918	Mike Judge	1962	\N
+nm0000269	Jean-Jacques Annaud	1943	\N
+nm0323708	Alain Godard	\N	\N
+nm0825738	David H. Steinberg	\N	\N
+nm0335022	Carlos Grangel	\N	\N
+nm0972040	Pamela Pettler	\N	\N
+nm0692051	Bruce Porter	\N	\N
+nm0001024	Nick Cassavetes	1959	\N
+nm0277590	Anne Fine	1947	\N
+nm0802020	Randi Mayem Singer	\N	\N
+nm0228908	Leslie Dixon	\N	\N
+nm0000697	Billy Wilder	1906	2002
+nm0224634	I.A.L. Diamond	1920	1988
+nm0858329	Robert Thoeren	1903	1957
+nm0517615	Michael Logan	\N	\N
+nm0128997	Jeffrey Caine	1944	\N
+nm0270761	Bruce Feirstein	1956	\N
 nm0086658	Michael Blake	1945	2015
+nm0482780	Ross LaManna	\N	\N
+nm0004410	Mark Neveldine	1973	\N
+nm0962729	Brian Taylor	\N	\N
+nm0060761	Lee Batchler	1950	\N
+nm0060760	Janet Scott Batchler	1956	\N
+nm0956022	Claude Zidi	1934	\N
+nm0584770	Simon Michaël	1950	\N
+nm0436687	Didier Kaminka	1943	\N
+nm0001681	George A. Romero	1940	2017
+nm0348181	James Gunn	1966	\N
+nm0000948	Shane Black	1961	\N
+nm0001949	Andrew Birkin	1945	\N
+nm0251536	Bernd Eichinger	1949	2011
+nm0878756	Tom Tykwer	1965	\N
+nm0845752	Patrick Süskind	1949	\N
+nm0682757	Frank Pierson	1925	2012
+nm0460190	P.F. Kluge	1942	\N
+nm0601944	Thomas Moore	\N	\N
+nm0909063	Leslie Waller	1923	2007
+nm1135423	Darren Lynn Bousman	1979	\N
+nm0143599	Johnny Cash	1932	2003
+nm0219456	Gill Dennis	1941	2015
+nm0003506	James Mangold	1963	\N
+nm1789517	Patrick Carr	\N	\N
+nm0915465	Shawn Wayans	1971	\N
+nm0005541	Marlon Wayans	1972	\N
+nm0424688	Buddy Johnson	\N	\N
+nm0064556	Phil Beauman	\N	\N
+nm0294997	Jason Friedberg	1970	\N
+nm0783536	Aaron Seltzer	1974	\N
+nm0057381	J.M. Barrie	1860	1937
+nm0145309	Nick Castle	1947	\N
+nm0549369	Malia Scotch Marmo	1957	\N
+nm0591160	Michael Miner	\N	\N
+nm0414448	Jim Jacobs	1942	\N
+nm0143558	Warren Casey	1935	1988
+nm0940125	Bronte Woodard	1940	1980
+nm0139591	Allan Carr	1937	1999
 nm1098493	Rawson Marshall Thurber	1975	\N
 nm1140275	Steven Knight	1959	\N
-nm0545861	David Marconi	\N	\N
-nm0037247	Guillermo Arriaga	1958	\N
+nm0826042	Peter Steinfeld	\N	\N
+nm1615610	Allan Loeb	1969	\N
+nm0583826	Ben Mezrich	1969	\N
+nm0923646	Jim Wheat	1952	\N
+nm0003117	Ken Wheat	1950	\N
+nm0878638	David Twohy	1955	\N
+nm0604688	Glen Morgan	1947	\N
+nm0939128	James Wong	\N	\N
+nm0714695	Jeffrey Reddick	1969	\N
+nm0000365	Julie Delpy	1969	\N
+nm0000160	Ethan Hawke	1970	\N
+nm0000118	John Carpenter	1948	\N
+nm0384185	Debra Hill	1950	2005
+nm0607694	Fulvio Morsella	\N	2002
+nm0898812	Luciano Vincenzoni	1926	2013
+nm0217270	Enzo Dell'Aquila	\N	\N
+nm0223964	Fernando Di Leo	1932	2003
 nm0177769	Michael Cooney	1967	\N
+nm0303032	George Gallo	1956	\N
+nm0057398	Michael Barrie	\N	\N
+nm0611848	Jim Mulholland	\N	\N
 nm0425756	Mark Steven Johnson	1964	\N
+nm0148808	Mike Cerrone	1957	\N
+nm0606251	David Morrell	1943	\N
+nm0468997	Michael Kozoll	\N	\N
+nm0755266	William Sackheim	1919	2004
+nm0276144	Helen Fielding	1958	\N
+nm0203577	Andrew Davies	1936	\N
+nm0005421	Ron Shelton	1945	\N
+nm0821466	Jerry Stahl	1953	\N
 nm0000196	Mike Myers	1963	\N
 nm0638913	Ron Nyswaner	1956	\N
+nm0484907	Christopher Landon	1975	\N
+nm0255296	Carl Ellsworth	\N	\N
 nm1590998	Zach Helm	1975	\N
 nm0109300	John Briley	1925	2019
-nm0000812	Roger Avary	1965	\N
+nm0201304	Gregory Poirier	1961	\N
+nm0718646	Jason Reitman	1977	\N
+nm1740772	Christopher Buckley	1952	\N
+nm0567112	Michael McCullers	\N	\N
+nm0636435	Akiyuki Nosaka	1930	2015
+nm0847223	Isao Takahata	1935	2018
+nm1216189	Court Crandall	\N	\N
+nm0035905	Scot Armstrong	1970	\N
+nm0908753	Lew Wallace	1827	1905
+nm0876562	Karl Tunberg	1909	1992
+nm0000683	Gore Vidal	1925	2012
+nm0067103	S.N. Behrman	1893	1973
+nm0296737	Christopher Fry	1907	2005
+nm0356539	Brett Halliday	1904	1977
+nm0174374	Bill Condon	1955	\N
+nm0002080	Bob Fosse	1927	1987
+nm0247939	Fred Ebb	1928	2004
+nm0914362	Maurine Dallas Watkins	1896	1969
+nm0892705	David Veloz	\N	\N
+nm0752116	Richard Rutowski	\N	\N
+nm0635565	Marc Norman	1941	\N
+nm0001779	Tom Stoppard	1937	\N
+nm0099541	Pierre Boulle	1912	1994
+nm0465199	Lawrence Konner	\N	\N
+nm0742797	Mark Rosenthal	\N	\N
+nm0173679	Betty Comden	1917	2006
+nm0337582	Adolph Green	1914	2002
 nm0103785	Zach Braff	1975	\N
 nm0373282	Peter Hedges	1962	\N
+nm1065785	Tony Kushner	1956	\N
+nm0427305	George Jonas	1935	2016
 nm0003620	Kevin Smith	1970	\N
+nm0114083	Len Brown	\N	\N
+nm0312481	Woody Gelman	1915	1978
+nm0940071	Wally Wood	1927	1981
+nm0694035	Bob Powell	1916	1967
+nm0766921	Norman Saunders	1907	1989
+nm0312607	Jonathan Gems	\N	\N
+nm0651592	Ron Osborn	\N	\N
+nm0719734	Jeff Reno	\N	\N
+nm0905458	Kevin Wade	1954	\N
+nm0143281	Alberto Casella	1891	1957
+nm0274923	Walter Ferris	1882	1965
+nm0499628	Gladys Lehman	1892	1993
 nm0424735	Catherine Johnson	1957	\N
 nm1183854	David Berenbaum	\N	\N
 nm0000122	Charles Chaplin	1889	1977
-nm0000095	Woody Allen	1935	\N
+nm0082008	André Bijelic	\N	\N
+nm0622112	Vincenzo Natali	1969	\N
+nm0543919	Graeme Manson	\N	\N
+nm0018630	Michele Alexander	\N	\N
+nm0519009	Jeannie Long	\N	\N
+nm0118649	Kristen Buckley	\N	\N
+nm0716391	Brian Regan	\N	\N
+nm0824882	Burr Steers	1965	\N
+nm0000720	Jim Abrahams	1944	\N
+nm0001878	David Zucker	1947	\N
+nm0958387	Jerry Zucker	1950	\N
+nm0058826	Hall Bartlett	1922	1993
+nm0150712	John C. Champion	1923	1994
+nm0354150	Arthur Hailey	1920	2004
 nm0233563	David Dorfman	\N	\N
+nm0040022	Tom J. Astle	1960	\N
+nm0256079	Matt Ember	1961	\N
+nm0000316	Mel Brooks	1926	\N
+nm0377750	Buck Henry	1930	2020
+nm0460632	Allan Knee	\N	\N
+nm1341735	David Magee	1962	\N
+nm1140640	Patrick O'Brian	1914	2000
+nm0001837	Peter Weir	1944	\N
+nm0171722	John Collee	1955	\N
 nm0001279	William Goldman	1931	2018
+nm0938379	Marv Wolfman	1946	\N
+nm0170160	Gene Colan	1926	2011
+nm0568490	Don McEnery	\N	\N
+nm0789624	Bob Shaw	\N	\N
+nm0575293	Irene Mecchi	1949	\N
+nm0436314	Kaan Kalyon	\N	\N
+nm0927845	Kelly Wightman	\N	\N
+nm0142200	Randy Cartwright	1951	\N
+nm0708319	John Ramirez	\N	\N
+nm0314788	Vance Gerry	1929	2005
+nm1073262	Tamara Lusher	1968	\N
+nm0448208	Mark Kennedy	\N	\N
+nm0606407	Bruce Morris	1958	\N
+nm0153384	Sara B. Cooper	\N	\N
+nm0108273	Mike Werb	\N	\N
+nm0171718	Michael Colleary	\N	\N
+nm0922346	Simon West	1961	\N
+nm0557270	Patrick Massett	\N	\N
+nm0957003	John Zinman	\N	\N
+nm0868620	Edwin Torres	1931	\N
+nm0317450	Dr. Seuss	1904	1991
+nm0614742	Tab Murphy	\N	\N
+nm0879318	Bob Tzudiker	\N	\N
+nm0925276	Noni White	\N	\N
+nm0027459	Stephen J. Anderson	1970	\N
+nm0390511	Carole Holliday	\N	\N
+nm0110293	Gaëtan Brizzi	1951	\N
+nm0110294	Paul Brizzi	1951	\N
+nm0370696	Randy Haycock	\N	\N
+nm2320658	Don Hall	1969	\N
+nm0443855	Glen Keane	1954	\N
+nm0636236	John Norton	\N	\N
+nm0839720	Michael Surrey	1964	\N
+nm2150515	Chris Ure	\N	\N
+nm0910559	Mark Walton	1968	\N
+nm1850798	Stevie Wermers	1966	\N
+nm0123194	Edgar Rice Burroughs	1875	1950
+nm0381478	Jared Hess	1979	\N
+nm1415801	Jerusha Hess	1980	\N
+nm0601881	Simon Moore	1958	\N
+nm0300866	Stephen Gaghan	1965	\N
 nm0397322	Gregory Allen Howard	1962	\N
+nm0073688	Alec Berg	\N	\N
+nm0541635	David Mandel	1971	\N
+nm0769840	Jeff Schaffer	\N	\N
+nm0102818	Charles Brackett	1892	1969
+nm0551261	D.M. Marshman Jr.	1922	2015
+nm0379056	Tim Herlihy	1966	\N
+nm0001191	Adam Sandler	1966	\N
+nm0002657	Gary Ross	1956	\N
+nm0818576	Anne Spielberg	1949	\N
 nm0075044	Eleanor Bergstein	1938	\N
 nm0748022	Bruce Joel Rubin	1943	\N
 nm0001060	Chris Columbus	1958	\N
+nm0326092	Josh Goldsmith	1970	\N
+nm0951135	Cathy Yuspa	1971	\N
+nm0236884	Diane Drake	\N	\N
+nm0093501	Adriano Bolzoni	1919	2005
+nm8800791	Mark Lowell	\N	\N
+nm0146033	Víctor Andrés Catena	1925	2009
+nm0173549	Jaime Comas Gil	\N	\N
+nm0452878	Ryûzô Kikushima	1914	1989
+nm0856319	Duccio Tessari	1926	1994
+nm0884547	Tonino Valerii	1934	2016
 nm0001188	Nora Ephron	1941	2012
-nm0878756	Tom Tykwer	1965	\N
-nm0940790	Skip Woods	\N	\N
-nm0549256	Andrew W. Marlowe	\N	\N
-nm0446210	Bill Kelly	\N	\N
-nm0929186	Rich Wilkes	1966	\N
-nm1125275	David Benioff	1970	\N
+nm0529450	Miklós László	1903	1973
+nm0258286	Delia Ephron	1944	\N
+nm0806912	Robert Smigel	1960	\N
+nm0031976	Judd Apatow	1967	\N
+nm0565537	James McCausland	\N	\N
+nm0004306	George Miller	1945	\N
+nm0447945	Byron Kennedy	1949	1983
+nm0001639	Alex Proyas	1963	\N
+nm0229644	Lem Dobbs	1958	\N
+nm0831290	Bram Stoker	1847	1912
+nm0571650	Charles McKeown	1946	\N
+nm0023395	Charles Alverson	1935	\N
+nm0136262	Lorenzo Carcaterra	1954	\N
+nm0001469	Barry Levinson	1942	\N
+nm0505615	Ira Levin	1929	2007
+nm0492909	Marc Lawrence	1959	\N
+nm0974301	Katie Ford	\N	\N
+nm0524095	Caryn Lucas	\N	\N
+nm1375358	Jon Hurwitz	1977	\N
+nm1376383	Hayden Schlossberg	1978	\N
+nm0002417	Daniel Pyne	\N	\N
+nm1020896	Glenn Gers	\N	\N
 nm0001675	Robert Rodriguez	1968	\N
-nm0335666	Susannah Grant	1963	\N
-nm0002132	Amy Heckerling	1954	\N
+nm0957772	Rob Zombie	1965	\N
+nm1249684	Jeff Rendell	\N	\N
 nm0744834	Eli Roth	1972	\N
+nm1080440	Rob Cotterill	1971	\N
+nm2639032	Jason Eisener	\N	\N
+nm0000101	Dan Aykroyd	1952	\N
+nm0937757	Gary K. Wolf	\N	\N
+nm0681914	Rex Pickett	1956	\N
+nm0059493	Hal Barwood	1940	\N
+nm0069547	Jerry Belson	1938	2006
+nm0384398	John Hill	\N	\N
+nm0730422	Matthew Robbins	1945	\N
+nm0480166	Choderlos de Laclos	1741	1803
+nm0474955	Roger Kumble	1966	\N
+nm0940790	Skip Woods	\N	\N
+nm0113005	Amanda Brown	\N	\N
+nm0364862	Joanne Harris	1964	\N
+nm0414608	Robert Nelson Jacobs	\N	\N
+nm0705474	Peter Rader	\N	\N
+nm0549256	Andrew W. Marlowe	\N	\N
+nm0225942	William Diehl	1924	2006
+nm0787399	Steve Shagan	1927	2015
+nm0081189	Ann Biderman	1951	\N
+nm0219720	Pen Densham	1947	\N
+nm0914709	John Watson	\N	\N
+nm0342278	Jacob Grimm	1785	1863
+nm0342303	Wilhelm Grimm	1786	1859
+nm0780799	Ted Sears	1900	1958
+nm0187232	Richard Creedon	1890	1974
+nm0257481	Otto Englander	1906	1969
+nm0725439	Dick Rickard	\N	\N
+nm0403319	Earl Hurd	1880	1940
+nm0210112	Merrill De Maris	1898	1948
+nm0087490	Dorothy Ann Blank	\N	\N
+nm0810324	Webb Smith	1895	\N
+nm0108150	Gene Brewer	1937	\N
+nm0391132	Cliff Hollingsworth	\N	\N
+nm0446210	Bill Kelly	\N	\N
+nm1104077	Feng Li	\N	\N
+nm0955443	Yimou Zhang	1951	\N
+nm0910841	Bin Wang	\N	\N
+nm0929186	Rich Wilkes	1966	\N
+nm0650036	Susan Orlean	1955	\N
+nm0520485	Peter Lord	1953	\N
+nm0661910	Nick Park	1958	\N
+nm0456732	Karey Kirkpatrick	1964	\N
+nm0640976	John O'Farrell	1962	\N
+nm0746598	Ryan Rowe	\N	\N
+nm0324578	Ivan Goff	1910	1999
+nm0730850	Ben Roberts	1916	1984
+nm0783544	David Seltzer	1940	\N
+nm0551926	Anne-Marie Martin	1957	\N
+nm0168206	Robert Cochran	\N	\N
+nm0839695	Joel Surnow	1954	\N
+nm0330258	Howard Gordon	1961	\N
+nm1811187	Nicole Ranadive	\N	\N
+nm0516623	Michael Loceff	\N	\N
+nm0441707	Evan Katz	\N	\N
+nm1090637	Matt Michnovetz	\N	\N
+nm0182873	Manny Coto	\N	\N
+nm0472190	Stephen Kronish	\N	\N
+nm0423715	Chip Johannessen	\N	\N
+nm0304536	Alex Gansa	\N	\N
+nm0361927	Patrick Harbinson	\N	\N
+nm0218430	Duppy Demetrius	\N	\N
+nm1125049	Virgil Williams	\N	\N
+nm0335411	Gil Grant	\N	\N
+nm0599924	Sam Montgomery	\N	\N
+nm0006997	Peter M. Lenkov	1964	\N
+nm0403477	Maurice Hurley	1939	2015
+nm0155961	Michael S. Chernuchin	1954	\N
+nm1212043	Andrea Newman	\N	\N
+nm0251395	David Ehrman	\N	\N
+nm0182871	Juan Carlos Coto	\N	\N
+nm0041469	Remi Aubuchon	1953	\N
+nm1285688	Elizabeth Cosin	\N	\N
+nm0381127	Lawrence Hertzog	1951	2008
+nm0169649	Neil Cohen	\N	\N
+nm1093194	Anne Cofell Saunders	\N	\N
+nm0593749	Steven Long Mitchell	\N	\N
+nm0887978	Craig W. Van Sickle	\N	\N
+nm1469826	Adam Fierro	\N	\N
+nm3216711	Geoff Aull	\N	\N
+nm1850362	Shauna McGarry	\N	\N
+nm0394984	Nick Hornby	1957	\N
+nm0919363	Chris Weitz	1969	\N
+nm0919369	Paul Weitz	1965	\N
+nm1666018	Anthony Swofford	1970	\N
+nm0954345	J.D. Zeik	1959	\N
+nm0335666	Susannah Grant	1963	\N
+nm0347797	Sean Gullette	1968	\N
+nm0914615	Eric Watson	\N	\N
+nm0002132	Amy Heckerling	1954	\N
+nm0932229	Calder Willingham	1922	1995
+nm0860292	Jim Thompson	1906	1977
+nm0167767	Humphrey Cobb	1899	1944
+nm0576070	Thomas Meehan	1929	2017
+nm0334283	Ronny Graham	1919	1999
+nm0537363	Richard Maibaum	1909	1991
+nm0214989	Paul Dehn	1912	1976
+nm0367820	Johanna Harwood	\N	\N
+nm0558435	Berkely Mather	1909	1996
+nm0847295	Koushun Takami	\N	\N
+nm0297934	Kenta Fukasaku	1972	\N
+nm0606688	Judy Morris	1947	\N
+nm0171253	Warren Coleman	\N	\N
 nm0000390	Joe Eszterhas	1944	\N
+nm0222584	D.V. DeVincentis	\N	\N
+nm0684336	Steve Pink	\N	\N
+nm0000131	John Cusack	1966	\N
+nm0027572	Wes Anderson	1969	\N
+nm0005562	Owen Wilson	1968	\N
+nm0340674	Rudolph Grey	\N	\N
 nm0808076	Ebbe Roe Smith	1949	\N
-nm1129753	J.J. Connolly	\N	\N
-nm0291905	David Franzoni	1947	\N
-nm0000500	Richard Linklater	1960	\N
-nm0006904	Tony Gilroy	1956	\N
-nm1244760	Amole Gupte	\N	\N
+nm0531792	John D. MacDonald	1916	1986
+nm0916139	James R. Webb	1910	1974
+nm0834338	Wesley Strick	1954	\N
+nm0785245	Rod Serling	1924	1975
+nm0445934	John T. Kelley	1921	1972
+nm1224299	Rob Letterman	\N	\N
+nm0042006	Scott Aukerman	1970	\N
+nm0084190	Sean Bishop	\N	\N
+nm0692040	BJ Porter	\N	\N
+nm0931185	Lona Williams	\N	\N
+nm1659741	David Soren	1973	\N
+nm0632051	Steve Niles	1965	\N
 nm0625198	Brian Nelson	\N	\N
+nm2615528	Ben Templesmith	\N	\N
+nm0371249	Terry Hayes	1951	\N
+nm0360352	Brian Hannant	1940	\N
+nm0082772	Carl Binder	\N	\N
+nm0957798	Ralph Zondag	\N	\N
+nm0316727	Rob Gibbs	\N	\N
+nm1190000	Todd Kurosawa	\N	\N
+nm0548211	Duncan Marjoribanks	1953	\N
+nm0118333	Chris Buck	1958	\N
+nm0152284	Andrew Chapman	\N	\N
+nm0278181	Will Finn	1958	\N
+nm0424666	Broose Johnson	\N	\N
+nm0389445	T. Daniel Hofstedt	\N	\N
+nm0699213	David Pruiksma	\N	\N
+nm0710181	Nik Ranieri	\N	\N
+nm1786806	Vincent DeFrances	1954	1994
+nm0563602	Tom Mazzocco	1959	\N
+nm0300265	Mike Gabriel	1954	\N
+nm0169548	Lawrence D. Cohen	\N	\N
+nm1129753	J.J. Connolly	\N	\N
+nm1511619	Anonymous	\N	\N
+nm0477370	Christopher Kyle	\N	\N
+nm0436164	Laeta Kalogridis	1965	\N
+nm0001986	Truman Capote	1924	1984
+nm0043480	George Axelrod	1922	2003
+nm0725983	John Ridley	1964	\N
+nm0751102	David O. Russell	1958	\N
+nm0866062	Michael Tolkin	1950	\N
+nm0139714	Harry Carr	1877	1936
+nm0188357	Harry Crocker	1893	1958
+nm0005295	Trey Parker	1969	\N
+nm0001778	Matt Stone	1971	\N
+nm0103702	Pam Brady	\N	\N
+nm0614775	Warren Murphy	1933	2015
+nm0677943	Daniel Petrie Jr.	1952	\N
+nm0045301	Danilo Bach	1944	\N
+nm0668914	Donn Pearce	1928	\N
+nm0237543	Hal Dresner	1937	\N
+nm0443476	Susanna Kaysen	1948	\N
+nm0519666	Lisa Loomer	1950	\N
+nm0357703	Anna Hamilton Phelan	\N	\N
+nm0000552	Eddie Murphy	1961	\N
+nm0790775	David Sheffield	\N	\N
+nm0087904	Barry W. Blaustein	1955	\N
+nm0701374	Mario Puzo	1920	1999
+nm0628058	David Newman	1937	2003
+nm0628174	Leslie Newman	\N	\N
+nm0000914	Robert Benton	1932	\N
+nm0542539	Tom Mankiewicz	1942	2010
+nm0089676	Len Blum	1951	\N
+nm0131661	Lorne Cameron	\N	\N
+nm0395924	David Hoselton	\N	\N
+nm1212328	Michael Fry	\N	\N
+nm1213375	T. Lewis	\N	\N
+nm1938852	Chris Poche	\N	\N
+nm0221133	Mike de Seve	\N	\N
+nm0286790	Eric Forsberg	1959	\N
+nm1829796	Jeff Cox	1976	\N
+nm1837763	Craig Cox	\N	\N
+nm1014365	John Altschuler	1963	\N
+nm1015106	Dave Krinsky	1963	\N
+nm0005311	Busy Philipps	1979	\N
+nm1244760	Amole Gupte	\N	\N
+nm0719427	Robert Reneau	\N	\N
+nm0902376	Thea von Harbou	1888	1954
+nm0000485	Fritz Lang	1890	1976
+nm0033578	Jeff Arch	1954	\N
+nm0911486	David S. Ward	1945	\N
 nm0932078	Kevin Williamson	1965	\N
+nm2111875	Iris Yamashita	\N	\N
+nm2362326	Tadamichi Kuribayashi	1891	1945
+nm2359677	Tsuyoko Yoshido	\N	\N
+nm0960028	Katsuhiro Ôtomo	1954	\N
+nm0368051	Izô Hashimoto	1954	\N
+nm0909556	Bill Walsh	1913	1975
+nm0196119	Don DaGradi	1911	1991
+nm0871308	P.L. Travers	1899	1996
 nm0252155	Philip Eisner	\N	\N
 nm0112459	Aline Brosh McKenna	1967	\N
