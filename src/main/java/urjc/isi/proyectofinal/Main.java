@@ -32,8 +32,18 @@ public class Main {
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
 					"<li><a href/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
-					"<li>Ordenar por ranking con varios filtros -->;<a href=/peliculas/ranking>Ranking</a></li></ul>"+
-					
+					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li></ul>"+
+					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
+					"<li><Peliculas por <a href/peliculas/filmsbymood>mood</a></li>" +
+					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
+					"<li> Filtrar películas segun su duración " +
+					"<ul><li>/peliculas/selectAll?duracion=>d --> Peliculas de duracion mayor a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=<d --> Peliculas de duracion menor a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=d --> Peliculas de duracion d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=>d1-d2 --> Peliculas entre esas duraciones</li></ul></li>" +
+					"<li> Opciones según el rating de las películas " +
+					"<ul><li> /peliculas/selectAll?rating=r1-r2 --> Peliculas en ese rango de rating </li></ul>"+
+					"<li>"+
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=/actores/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
@@ -42,12 +52,13 @@ public class Main {
 					"<li><span style=color: #0000ff;><a href=/guionistas/uploadTable?key=1234>Subir tablas</a></span></li>" +
 					"<li><span style=color: #0000ff;><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
 					
-					"<p><strong><span style=color: #0000ff;>Directores</span></strong></p><ul>"+
+					"<p><span style=color: #0000ff;><strong>Directores</strong></span></p><ul>"+
 					"<li><span style=color: #0000ff;><a href=/directores/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"<li><span style=color: #0000ff;><a href=/directores/selectAll>Mostrar todos los directores</a></span></li>"+
 					"</ul>" +
-					"<p><strong><span style=color: #0000ff;>Géneros</span></strong></p></ul>"+
-					"<li><span style=color: #0000ff;><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
+					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p></ul>"+
+					"<li><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
+					"<li>Elegir peliculas según el <a href=/generos/searchByGenero>genero</a></li>"+
 					"</body></html>";
 
 		result_Victor = "<span style=bgcolor:#FF7247;</span><form action='/pag_principal' method='post' enctype='multipart/form-data'>"
