@@ -29,7 +29,7 @@ public class Main {
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
-					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
+					"<li><a /peliculas/selectAll>Mostrar todas las películas</a></li> "+
 					"<ul><li>/peliculas/selectAll?[titulo,actor,director,guionista]=[Dato a buscar]</li></ul>"+
 					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->Películas filtradas por géneros introducidos</li></ul>"+
 					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
