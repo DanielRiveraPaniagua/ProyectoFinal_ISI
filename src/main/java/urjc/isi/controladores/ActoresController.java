@@ -162,7 +162,7 @@ public class ActoresController {
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			for (Double p : output.keys()) {
+			for (Double p : output.descendingKeys()) {
 				JsonArray array = new JsonArray();
 				for(int i = 0; i < output.get(p).size(); i++) {
 					array.add(output.get(p).get(i).toJSONObject());;
@@ -171,7 +171,7 @@ public class ActoresController {
 			}
 			result = json.toString();
 		}else {
-			for (Double p : output.keys()) {
+			for (Double p : output.descendingKeys()) {
 				result = result + "Actores con porcentaje de similitud " + p + "%:</br>";
 				for (int i = 0; i < output.get(p).size(); i++) {
 					result = result + output.get(p).get(i).toHTMLString() +"</br>";

@@ -160,6 +160,10 @@ public class ST<Key extends Comparable<Key>, Value> implements Iterable<Key> {
     public Iterable<Key> keys() {
         return st.keySet();
     }
+    
+    public Iterable<Key> descendingKeys() {
+        return st.descendingKeySet();
+    }
 
     /**
      * Returns all of the keys in this symbol table.
