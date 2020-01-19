@@ -66,6 +66,8 @@ public class DirectoresController {
 			filter.put("actor", request.queryParams("actor"));
 		if(request.queryParams("guionista")!=null)
 			filter.put("guionista", request.queryParams("guionista"));
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_dir")!= null)
 			filter.put("id_dir",request.queryParams("id_dir"));
 		if(request.queryParams("name")!= null)
@@ -117,7 +119,7 @@ public class DirectoresController {
 			return "El director no se encuentra en la base de datos";
 		}
 
-	
+
 		Personas director = (Personas)output.get("director");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 

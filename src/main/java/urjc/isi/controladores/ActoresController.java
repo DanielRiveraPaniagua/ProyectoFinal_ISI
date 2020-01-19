@@ -67,6 +67,8 @@ public class ActoresController {
 			filter.put("director", request.queryParams("director"));
 		if(request.queryParams("guionista")!=null)
 			filter.put("guionista", request.queryParams("guionista"));
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_act")!= null)
 			filter.put("id_act",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
@@ -75,7 +77,7 @@ public class ActoresController {
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		
+
 		output = as.getAllActores(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -117,7 +119,7 @@ public class ActoresController {
 			response.redirect("/actores/info");
 			return "El actor no se encuentra en la base de datos";
 		}
-		
+
 		Personas actor = (Personas)output.get("actor");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
