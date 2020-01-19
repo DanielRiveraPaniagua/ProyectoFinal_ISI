@@ -97,7 +97,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
 						break;
 					case "titulo":
-						sql+= "join peliculasguionistas as pg3 on a.idpersona=pg3.idpersona "+
+						sql+= "join peliculasguionistas as pg3 on g.idpersona=pg3.idpersona "+
 								"join peliculas as p on p.idpelicula=pg3.idpelicula ";
 						cond+= "p.titulo =$$" + conditions.get("titulo")+"$$";
 						break;
