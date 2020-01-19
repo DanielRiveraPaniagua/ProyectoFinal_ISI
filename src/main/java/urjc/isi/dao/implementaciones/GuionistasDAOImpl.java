@@ -84,11 +84,23 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  String cond = "WHERE ";
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
+					case "director":
+						sql+= "join peliculasguionistas as pg on g.idpersona=pg.idpersona "+
+								"join peliculasdirectores as pd	on pg.idpelicula=pd.idpelicula "+
+								"join directores as d on d.idpersona=pd.idpersona ";
+						cond+= "d.fullnombre =$$" + conditions.get("director")+"$$";
+						break;
+					case "actor":
+						sql+= "join peliculasguionistas as pg2 on g.idpersona=pg2.idpersona "+
+								"join peliculasactores as pa on pa.idpelicula=pg2.idpelicula "+
+								"join actores as a on a.idpersona=pa.idpersona ";
+						cond+= "a.fullnombre =$$" + conditions.get("director")+"$$";
+						break;
 					case "id_guio":
-						cond+= "g.idpersona = " + conditions.get("id_guio");
+						cond+= "g.idpersona = '" + conditions.get("id_guio")+"'";
 						break;
 					case "name":
-						cond+= "g.fullnombre = " + conditions.get("name");
+						cond+= "g.fullnombre LIKE $$" + conditions.get("name")+"$$";
 						break;
 					case "fecha_nac":
 						cond+= "g.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
@@ -118,6 +130,7 @@ public class GuionistasDAOImpl extends GenericDAOImpl<Personas> implements Perso
 				}
 		  }
 
+		  System.out.println(sql+cond);
 		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();

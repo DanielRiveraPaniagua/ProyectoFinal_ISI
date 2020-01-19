@@ -62,18 +62,18 @@ public class DirectoresController {
 		List<Personas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("actor")!=null)
+			filter.put("actor", request.queryParams("actor"));
+		if(request.queryParams("guionista")!=null)
+			filter.put("guionista", request.queryParams("guionista"));
 		if(request.queryParams("id_dir")!= null)
 			filter.put("id_dir",request.queryParams("id_dir"));
 		if(request.queryParams("name")!= null)
 			filter.put("name",request.queryParams("name"));
 		if(request.queryParams("fecha_nac")!= null)
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
-		if(request.queryParams("intervalo_fecha_nac")!= null)
-			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		if(request.queryParams("intervalo_fecha_muer")!= null)
-			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
 
 		output = ds.getAllDirectores(filter);
 

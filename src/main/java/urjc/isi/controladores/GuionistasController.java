@@ -63,19 +63,19 @@ public class GuionistasController {
 		String result = "";
 
 		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("director")!=null)
+			filter.put("director", request.queryParams("director"));
+		if(request.queryParams("actor")!=null)
+			filter.put("actor", request.queryParams("actor"));
 		if(request.queryParams("id_guio")!= null)
 			filter.put("id_guio",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
 			filter.put("name",request.queryParams("name"));
 		if(request.queryParams("fecha_nac")!= null)
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
-		if(request.queryParams("intervalo_fecha_nac")!= null)
-			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		if(request.queryParams("intervalo_fecha_muer")!= null)
-			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
-
+		
 		output = gs.getAllGuionistas(filter);
 
 

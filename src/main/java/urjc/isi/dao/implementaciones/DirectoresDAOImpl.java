@@ -84,31 +84,37 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  String cond = "WHERE ";
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
+					case "actor":
+						sql+= "join peliculasdirctores as pd on d.idpersona=pad.idpersona "+
+								"join peliculasactores as pa on pd.idpelicula=pa.idpelicula "+
+								"join actpres as a on a.idpersona=pa.idpersona ";
+						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
+						break;
+					case "guionista":
+						sql+= "join peliculasdirectores as pd2 on d.idpersona=pd2.idpersona "+
+								"join peliculasguionistas as pg	on pd2.idpelicula=pg.idpelicula "+
+								"join guionistas as g on g.idpersona=pg.idpersona ";
+						cond+= "g.fullnombre =$$" + conditions.get("director")+"$$";
+						break;
 					case "id_dir":
-						cond+= "d.idpersona = " + conditions.get("id_dir");
+						cond+= "d.idpersona = '" + conditions.get("id_dir")+"'";
 						break;
 					case "name":
-						cond+= "d.fullnombre = " + conditions.get("name");
+						cond+= "d.fullnombre LIKE $$" + conditions.get("name")+"%$$";
 						break;
 					case "fecha_nac":
-						cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
-						break;
-					case "intervalo_fecha_nac":
-						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
-							cond+= "d.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						if(conditions.get("fecha_nac").indexOf("-") == -1) {
+							cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						}else {
-							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							String[] intervalo = conditions.get("fecha_nac").split("-");
 							cond+= "d.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "d.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
 						}
 						break;
 					case "fecha_muer":
-						cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
-						break;
-					case "intervalo_fecha_muer":
-						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
-							cond+= "d.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						if(conditions.get("fecha_muer").indexOf("-") == -1) {
+							cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						}else {
-							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							String[] intervalo2 = conditions.get("fecha_muer").split("-");
 							cond+= "d.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "d.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
 						}
 						break;
@@ -118,6 +124,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 				}
 		  }
 
+		  System.out.println(sql+cond);
 		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
