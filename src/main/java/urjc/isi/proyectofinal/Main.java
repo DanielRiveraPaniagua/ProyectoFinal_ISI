@@ -28,24 +28,24 @@ public class Main {
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
-					"<li><a href=href=https://peliculasurjc.herokuapp.com/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
-					"<li><a href=href=https://peliculasurjc.herokuapp.com/peliculas/selectAll>Mostrar todas las películas</a></li> "+
-					"<li>Ordenar por ranking con varios filtros -->;<a href=href=https://peliculasurjc.herokuapp.com/peliculas/ranking>Ranking</a></li></ul>"+
+					"<li><a href/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
+					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
+					"<li>Ordenar por ranking con varios filtros -->;<a href=/peliculas/ranking>Ranking</a></li></ul>"+
 					
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
-					"<li><a href=href=https://peliculasurjc.herokuapp.com/actores/uploadTable?key=1234>Subir tablas</a></li>"+
-					"<li><a href=href=https://peliculasurjc.herokuapp.com/actores/selectAll>Mostrar todos los actores</a></li> "+
+					"<li><a href=/actores/uploadTable?key=1234>Subir tablas</a></li>"+
+					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
 					
 					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
-					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/guionistas/uploadTable?key=1234>Subir tablas</a></span></li>" +
-					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
+					"<li><span style=color: #0000ff;><a href=/guionistas/uploadTable?key=1234>Subir tablas</a></span></li>" +
+					"<li><span style=color: #0000ff;><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
 					
 					"<p><strong><span style=color: #0000ff;>Directores</span></strong></p><ul>"+
-					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/directores/uploadTable?key=1234>Subir tablas</a></span></li>"+
-					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/directores/selectAll>Mostrar todos los directores</a></span></li>"+
+					"<li><span style=color: #0000ff;><a href=/directores/uploadTable?key=1234>Subir tablas</a></span></li>"+
+					"<li><span style=color: #0000ff;><a href=/directores/selectAll>Mostrar todos los directores</a></span></li>"+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Géneros</span></strong></p></ul>"+
-					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
+					"<li><span style=color: #0000ff;><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"</body></html>";
    
 		return result;
