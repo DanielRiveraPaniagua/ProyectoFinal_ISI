@@ -158,6 +158,13 @@ public class Peliculas {
 				"&emsp; Calificacion: "+getCalificacion()+"&emsp; Rating: "+getRating()+
 				"&emsp; Numero de Votos: "+getNVotos();
 	}
+	
+	public String toLinkedHTMLString() { //Método necesario para una buena respuesta en el servidor
+		return "Id Película: "+getIdPelicula()+"&emsp; Titulo: " + "<a href=\"/peliculas/info?id=" + getIdPelicula() + "\">" + getTitulo() +
+				" (" + getAño() + ") " + "</a>" + "&emsp; Duracion: "+getDuracion()+
+				"&emsp; Calificacion: "+getCalificacion()+"&emsp; Rating: "+getRating()+
+				"&emsp; Numero de Votos: "+getNVotos();
+	}
 
 	public JsonObject toJSONObject () {
 		JsonObject peliculaJSON = new JsonObject();
