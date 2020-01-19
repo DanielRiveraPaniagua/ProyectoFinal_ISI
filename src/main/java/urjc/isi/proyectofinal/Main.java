@@ -26,17 +26,20 @@ public class Main {
 		result = "<html><body><meta charset=&quot;UTF-8&quot;>" + 
 					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
+					
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
 					"<li><a href=href=https://peliculasurjc.herokuapp.com/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=href=https://peliculasurjc.herokuapp.com/peliculas/selectAll>Mostrar todas las películas</a></li> "+
 					"<li>Ordenar por ranking con varios filtros -->;<a href=href=https://peliculasurjc.herokuapp.com/peliculas/ranking>Ranking</a></li></ul>"+
+					
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=href=https://peliculasurjc.herokuapp.com/actores/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=href=https://peliculasurjc.herokuapp.com/actores/selectAll>Mostrar todos los actores</a></li> "+
-					"<p><strong><span style=color: #0000ff;>Guionistas</span></strong></p>" +
-					"<ul>" +
+					
+					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
 					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/guionistas/uploadTable?key=1234>Subir tablas</a></span></li>" +
 					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
+					
 					"<p><strong><span style=color: #0000ff;>Directores</span></strong></p><ul>"+
 					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/directores/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"<li><span style=color: #0000ff;><a href=href=https://peliculasurjc.herokuapp.com/directores/selectAll>Mostrar todos los directores</a></span></li>"+
