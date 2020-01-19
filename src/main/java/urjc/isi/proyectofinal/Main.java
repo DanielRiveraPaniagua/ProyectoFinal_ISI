@@ -27,14 +27,20 @@ public class Main {
 					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					"<ul>\n" + 
-					"<p><span style=color: #0000ff;><strong>Actores</strong></span></p>" +
+					"<p><span style=color: #0000ff;><strong>Peliculas</strong></span></p>" +
 					"<ul>"+
-					"<li>/selectAll</li>" +
+					"<li><a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll>Mostrar todas</a></li>" +
 					"</ul>" +
-					"<p><strong><span style=color: #0000ff;>Peliculas</span></strong></p>" +
+					"<li><a href=https://peliculasurjc.herokuapp.com/peliculas/uploadTable?key=1234>Subir tablas</a></li>" +
+					"</ul>" +
+					"<li>Ordenar peliculas por ranking y distintos filtros<li>"+
+					"</ul><li><a href=https://peliculasurjc.herokuapp.com/peliculas/ranking>Ranking</a></li></ul>" +
+					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p>" +
 					"<ul>" +
-					"<li>/selectAll" +
+					"<li><a href=https://peliculasurjc.herokuapp.com/actores/selectAll>Mostrar todos</a></li>" +
 					"<ul>" +
+					"<li><a href=https://peliculasurjc.herokuapp.com/actores/uploadTable?key=1234>Subir tablas</a></li>" +
+					"</ul>" +
 					"<li>Hola</li>" +
 					"</ul>" +"</li>" +"</ul>" +
 					"</body></html>";
