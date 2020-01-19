@@ -80,12 +80,12 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	public List<Personas> selectAll(Dictionary<String,String> conditions) {
 		List<Personas> directoresList = new ArrayList<>();
-		  String sql = "SELECT * from directores as d ";
+		  String sql = "SELECT distinct on (d.idpersona) * from directores as d ";
 		  String cond = "WHERE ";
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
 					case "actor":
-						sql+= "join peliculasdirctores as pd on d.idpersona=pad.idpersona "+
+						sql+= "join peliculasdirectores as pd on d.idpersona=pad.idpersona "+
 								"join peliculasactores as pa on pd.idpelicula=pa.idpelicula "+
 								"join actpres as a on a.idpersona=pa.idpersona ";
 						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
@@ -94,7 +94,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 						sql+= "join peliculasdirectores as pd2 on d.idpersona=pd2.idpersona "+
 								"join peliculasguionistas as pg	on pd2.idpelicula=pg.idpelicula "+
 								"join guionistas as g on g.idpersona=pg.idpersona ";
-						cond+= "g.fullnombre =$$" + conditions.get("director")+"$$";
+						cond+= "g.fullnombre =$$" + conditions.get("guionista")+"$$";
 						break;
 					case "id_dir":
 						cond+= "d.idpersona = '" + conditions.get("id_dir")+"'";
