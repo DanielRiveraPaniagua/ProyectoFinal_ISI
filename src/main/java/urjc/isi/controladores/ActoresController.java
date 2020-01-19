@@ -65,6 +65,8 @@ public class ActoresController {
 			filter.put("director", request.queryParams("director"));
 		if(request.queryParams("guionista")!=null)
 			filter.put("guionista", request.queryParams("guionista"));
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_act")!= null)
 			filter.put("id_act",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
