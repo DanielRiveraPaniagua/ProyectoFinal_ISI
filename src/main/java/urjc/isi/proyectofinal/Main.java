@@ -29,7 +29,6 @@ public class Main {
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
 					
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
-					"<li><a href/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
 					"<ul><li>/peliculas/selectAll?[titulo,actor,director,guionista]=[Dato a buscar]</li></ul>"+
 					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->Películas filtradas por géneros introducidos</li></ul>"+
@@ -55,22 +54,18 @@ public class Main {
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> "+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
-					"<li><a href=/actores/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
 					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" + 
 					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
-					"<li><a href=/guionistas/uploadTable?key=1234>Subir tablas</a></li>" +
 					"<li><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
 					"<ul><li>/guionistas/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,director,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" +
 					"<p><span style=color: #0000ff;><strong>Directores</strong></span></p><ul>"+
-					"<li><a href=/directores/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=/directores/selectAll>Mostrar todos los directores</a></li>"+
 					"<ul><li>/directores/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,guionista,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" +
 					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p></ul>"+
-					"<li><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"<li>Elegir peliculas según el <a href=/generos/searchByGenero>genero</a></li>"+
 					"</ul>" +
 					"</body></html>";
