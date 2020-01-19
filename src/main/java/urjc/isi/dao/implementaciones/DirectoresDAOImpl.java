@@ -96,6 +96,11 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 								"join guionistas as g on g.idpersona=pg.idpersona ";
 						cond+= "g.fullnombre =$$" + conditions.get("guionista")+"$$";
 						break;
+					case "titulo":
+						sql+= "join peliculasdirectores as pd3 on a.idpersona=pd3.idpersona "+
+								"join peliculas as p on p.idpelicula=pd3.idpelicula ";
+						cond+= "p.titulo =$$" + conditions.get("titulo")+"$$";
+						break;
 					case "id_dir":
 						cond+= "d.idpersona = '" + conditions.get("id_dir")+"'";
 						break;

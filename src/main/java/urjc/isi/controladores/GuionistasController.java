@@ -67,6 +67,8 @@ public class GuionistasController {
 			filter.put("director", request.queryParams("director"));
 		if(request.queryParams("actor")!=null)
 			filter.put("actor", request.queryParams("actor"));
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_guio")!= null)
 			filter.put("id_guio",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
@@ -75,7 +77,7 @@ public class GuionistasController {
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		
+
 		output = gs.getAllGuionistas(filter);
 
 
@@ -117,7 +119,7 @@ public class GuionistasController {
 			response.redirect("/guionistas/info");
 			return "El guionista no se encuentra en la base de datos";
 		}
-		
+
 		Personas guionista = (Personas)output.get("guionista");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
