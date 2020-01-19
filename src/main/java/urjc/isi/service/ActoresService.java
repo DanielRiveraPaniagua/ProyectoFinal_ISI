@@ -101,15 +101,25 @@ public class ActoresService {
 		List<Peliculas> peliculas = pelisDAO.selectAll();
 		
 		// Params control
-		Integer dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
-		Double factor = (factor_p.equals("None"))?FACTOR:Double.valueOf(factor_p);
-		String actor_id = actoresDAO.selectByName(actor_p).getId();
-        if (actor_id == null || dist_max < 0 || factor < 0.0 || factor > 1.0) {
+		Integer dist_max;
+		Double factor;
+		try {
+			dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
+			factor = (factor_p.equals("None"))?FACTOR:Double.valueOf(factor_p);
+		}catch (NumberFormatException e) {
+			ST<Double, List<Personas>> result = new ST<Double, List<Personas>>();
+        	actoresDAO.close();
+    		pelisDAO.close();
+    		return result;
+		}
+		Personas actor_from_p = actoresDAO.selectByName(actor_p);
+        if (actor_from_p == null || dist_max < 0 || factor < 0.0 || factor > 1.0) {
         	ST<Double, List<Personas>> result = new ST<Double, List<Personas>>();
         	actoresDAO.close();
     		pelisDAO.close();
     		return result;
         }
+        String actor_id = actor_from_p.getId();
         
 		// Create Graph
 		String str_graph = "";
