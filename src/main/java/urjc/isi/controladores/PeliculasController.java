@@ -271,12 +271,11 @@ public class PeliculasController {
 		if(filter.isEmpty()) {
 			String base = "<h1> <em>Listado de moods posibles </em></h1> <br>";
 			String result2 = base + "<form action='/peliculas/filmsbymood' method='get' enctype='multipart/form-data'>" + "  <select name=\"mood\" size=\"5\"  multiple>\n";
-			String name = "feliz";
-			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n"; name = "triste";
-			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n"; name = "indiferente";
-			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n"; name = "chill";
-			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n"; name = "atrevido";
-			result2 = result2 + "<option value=\"" + name + "\">" + name + "</option>\n";
+			result2 = result2 + "<option value='feliz'>Feliz</option>\n";
+			result2 = result2 + "<option value='triste'>Triste</option>\n";
+			result2 = result2 + "<option value='indiferente'>Indiferente</option>\n";
+			result2 = result2 + "<option value='chill'>Chill</option>\n";
+			result2 = result2 + "<option value='atrevido'>Atrevido</option>\n";
 			result2 = result2 + "  </select>\n" +
 					"  <br/><br/> <input type=\"submit\" value=\"Filtrar\">"
 					+ "</form>";
