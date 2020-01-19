@@ -232,9 +232,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					String titulo = conditions.get("titulo")!=null?conditions.get("titulo"):"";
 					sql+= "left join tituloidiomas as t on t.idpelicula=p.idpelicula "+
 				            "and idioma='"+conditions.get("idioma")+"' ";
-					cond+="(tituloenidioma like '"+titulo+"%' or "+
+					cond+="(tituloenidioma like $$"+titulo+"%$$ or "+
 							"case when tituloenidioma is null "+
-							"then titulo like '"+titulo+"%' end)";
+							"then titulo like $$"+titulo+"%$$ end)";
 
 					break;
 				case "rating":
