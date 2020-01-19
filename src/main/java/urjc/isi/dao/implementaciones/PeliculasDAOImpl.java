@@ -218,6 +218,19 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.año >= " + "'" + years[0] + "'" + " and " + "p.año <= "+ "'"+ years[1] + "'" ;
 					}
 					break;
+				case "genero":
+					String diccionario =conditions.get("genero");
+					if(conditions.get("genero").indexOf("%") == -1) {
+						cond+= "pg.genero= "+"'"+diccionario+"'";
+					} else {
+						String[] generos = diccionario.split("%");
+						cond+= "pg.genero= "+"'"+generos[0]+"'";
+						for(int i=1; i< generos.length;i++) {
+							cond += " OR " + "pg.genero='" + generos[i] + "'";
+						}
+					}					
+					sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
+					break;					
 				case "order":
 					order += add_order?" ,":"";
 					add_order = true;
@@ -251,7 +264,6 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						String[] rating = conditions.get("rating").split("-");
 						cond+= "p.rating >= " + "'" + rating[0] + "'" + " and " + "p.rating <= "+ "'"+ rating[1] + "'" ;
 					}
-
 			}
 			if(k.hasMoreElements()) {
 				cond+=" AND ";
