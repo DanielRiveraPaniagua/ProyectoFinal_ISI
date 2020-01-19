@@ -149,6 +149,14 @@ public class ActoresService {
             }
             act_distances.get(dist/2).add(actor);
         }
+        
+        System.out.println("-----------DISTANCIAS------------");
+        for (Double d : act_distances.keys()) {
+            System.out.println(d + ":");
+            for (String idact : act_distances.get(d)) {
+            	System.out.println(actoresDAO.selectByID(idact));
+            }
+        }
 
         // convert distances to percent
         Integer max = act_distances.max().intValue();
@@ -164,10 +172,19 @@ public class ActoresService {
         	act_distances.remove((double)d);
         }
         
+        System.out.println("-----------PORCENTAJES------------");
+        for (Double p : act_distances.keys()) {
+            System.out.println(p + "%:");
+            for (String idact : act_distances.get(p)) {
+            	System.out.println(actoresDAO.selectByID(idact));
+            }
+        }
+        
         // Return the result
+        System.out.println("-----------RESULTADO------------");
         List<Personas> result = new ArrayList<Personas>();
         for (Double p : act_distances) {
-        	System.out.println(p + "%: ");
+        	System.out.println(p + "%:");
             int numb_act = (int) Math.ceil((double)act_distances.get(p).size()*factor);
             for (int i=1; i<=numb_act; i++) {
             	double pop = 0.0;
