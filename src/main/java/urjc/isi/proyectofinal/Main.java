@@ -58,17 +58,17 @@ public class Main {
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=/actores/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> "+
-					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,titulo]=[Dato a buscar]</li></ul>"+
+					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" + 
 					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p></ul>" +
 					"<li><span style=color: #0000ff;><a href=/guionistas/uploadTable?key=1234>Subir tablas</a></span></li>" +
 					"<li><span style=color: #0000ff;><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li></ul>"+
-					"<ul><li>/guionistas/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,director,titulo]=[Dato a buscar]</li></ul>"+
+					"<ul><li>/guionistas/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,director,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" +
 					"<p><span style=color: #0000ff;><strong>Directores</strong></span></p><ul>"+
 					"<li><span style=color: #0000ff;><a href=/directores/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"<li><span style=color: #0000ff;><a href=/directores/selectAll>Mostrar todos los directores</a></span></li>"+
-					"<ul><li>/directores/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,guionista,titulo]=[Dato a buscar]</li></ul>"+
+					"<ul><li>/directores/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,guionista,título]=[Dato a buscar]</li></ul>"+
 					"</ul>" +
 					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p></ul>"+
 					"<li><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
