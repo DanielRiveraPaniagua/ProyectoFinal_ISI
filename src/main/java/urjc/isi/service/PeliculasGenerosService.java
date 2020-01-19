@@ -15,7 +15,6 @@ import spark.Request;
 import urjc.isi.dao.implementaciones.PeliculasGenerosDAOImpl;
 
 public class PeliculasGenerosService {
-	
 	/**
 	 * Constructor por defecto
 	 */
