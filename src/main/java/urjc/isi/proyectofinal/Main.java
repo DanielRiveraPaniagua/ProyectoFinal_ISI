@@ -24,7 +24,6 @@ public class Main {
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
 
 		String result = "";
-		String result_Victor = "";
 		result = "<html><body><meta charset=&quot;UTF-8&quot;>" + 
 					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
 					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
@@ -33,9 +32,9 @@ public class Main {
 					"<li><a href/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
 					"<ul><li>/peliculas/selectAll?[titulo,actor,director,guionista]=[Dato a buscar]</li></ul>"+
-					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->películas filtradas por generos introducidos</li></ul>"+
+					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->Películas filtradas por géneros introducidos</li></ul>"+
 					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
-					"<ul><li>/peliculas/selectAll?year=[year]-->Películas en el rango de años</li></ul>"+
+					"<ul><li>/peliculas/selectAll?year=[year1-year2]-->Películas en el rango de años</li></ul>"+
 					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
 					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(si)</li></ul>"+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
@@ -43,17 +42,20 @@ public class Main {
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
 					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li> Filtrar películas segun su duración " +
-					"<ul><li>/peliculas/selectAll?duracion=>d --> Peliculas de duracion mayor a d</li></ul>" +
-					"<ul><li>/peliculas/selectAll?duracion=<d --> Peliculas de duracion menor a d</li></ul>" +
-					"<ul><li>/peliculas/selectAll?duracion=d --> Peliculas de duracion d</li></ul>" +
-					"<ul><li>/peliculas/selectAll?duracion=>d1-d2 --> Peliculas entre esas duraciones</li></ul></li>" +
+					"<ul><li>/peliculas/selectAll?duracion=>d --> Películas de duración mayor o igual a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=<d --> Películas de duración menor o igual a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=d --> Películas de duración d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=>d1-d2 --> Películas entre esas duraciones</li></ul></li>" +
 					"<li> Opciones según el rating de las películas " +
-					"<ul><li> /peliculas/selectAll?rating=r1-r2 --> Peliculas en ese rango de rating </li></ul>"+
-					"<ul><li> /peliculas/selectAll?rating=<r1 --> Peliculas con rating menor o igual al dado </li></ul>"+
-					"<ul><li> /peliculas/selectAll?rating=>r1 --> Peliculas con rating mayor o igual al dado </li></ul>"+
-					"<ul><li> /peliculas/selectAll?rating=r1 --> Peliculas con rating igual al dado </li></ul>"+
-					"<ul><li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=r1-r2 --> Películas en ese rango de rating </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=<r1 --> Películas con rating menor o igual al dado </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=>r1 --> Películas con rating mayor o igual al dado </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=r1 --> Películas con rating igual al dado </li></ul>"+
 					"<li>"+
+					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>"+
+					"</ul>" +
+					"<li>"+
+					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> "+
 					"</ul>" +
 					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p><ul>"+
 					"<li><a href=/actores/uploadTable?key=1234>Subir tablas</a></li>"+
