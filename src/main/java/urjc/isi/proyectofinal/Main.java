@@ -32,6 +32,11 @@ public class Main {
 					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p><ul>"+
 					"<li><a href/peliculas/uploadTable?key=1234>Subir tablas</a></li>"+
 					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
+					"<ul><li>/peliculas/selectAll?[titulo,actor,director,guionista]=[Dato a buscar]</li></ul>"+
+					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->películas filtradas por generos introducidos</li></ul>"+
+					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
+					"<ul><li>/peliculas/selectAll?year=[year]-->Películas en el rango de años</li></ul>"+
+					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
 					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
