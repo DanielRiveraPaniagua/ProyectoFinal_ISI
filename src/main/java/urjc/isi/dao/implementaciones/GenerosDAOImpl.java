@@ -16,6 +16,7 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
+
 public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDAO{
 
 	public Generos fromResultSet(ResultSet rs) throws  SQLException{
@@ -102,5 +103,5 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 			System.out.println(e.getMessage());
 		}
 		return genero;
-	}
+
 }
