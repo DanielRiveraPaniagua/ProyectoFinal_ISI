@@ -83,12 +83,12 @@ public class ActoresService {
 		return result;
 	}
 
-	public List<Personas> getActoresByCercania (String actor_p, String dist_max_p, String factor_p) throws SQLException {
+	public ST<Double, List<Personas>> getActoresByCercania (String actor_p, String dist_max_p, String factor_p) throws SQLException {
 		final Integer DIST_MAX = 10; /*
 						     * considering this number as the maximum
 						     * distance of relation between actors
 						     */
-		final Integer FACTOR = 1;  /*
+		final Double FACTOR = 1.0;  /*
 						   * the part of the actors that will be
 						   * chosen for each percentage based on
 						   * their popularity
@@ -102,10 +102,10 @@ public class ActoresService {
 		
 		// Params control
 		Integer dist_max = (dist_max_p.equals("None"))?DIST_MAX:Integer.valueOf(dist_max_p);
-		Integer factor = (factor_p.equals("None"))?FACTOR:Integer.valueOf(factor_p);
+		Double factor = (factor_p.equals("None"))?FACTOR:Double.valueOf(factor_p);
 		String actor_id = actoresDAO.selectByName(actor_p).getId();
-        if (actor_id == null || dist_max < 0 || factor < 0 || factor > 1) {
-        	List<Personas> result = new ArrayList<Personas>();
+        if (actor_id == null || dist_max < 0 || factor < 0.0 || factor > 1.0) {
+        	ST<Double, List<Personas>> result = new ST<Double, List<Personas>>();
         	actoresDAO.close();
     		pelisDAO.close();
     		return result;
@@ -174,7 +174,7 @@ public class ActoresService {
         	for (String actor : act_distances.get((double)d)) {
         		act_distances.get(percent).add(actor);
             }
-        	act_distances.remove((double)d);        	
+        	act_distances.remove((double)d);
         }
         
         System.out.println("-----------PORCENTAJES------------");
@@ -185,11 +185,9 @@ public class ActoresService {
             }
         }
         
-        // Return the result
-        System.out.println("-----------RESULTADO------------");
-        List<Personas> result = new ArrayList<Personas>();
+        // Build and return the result
+        ST<Double, List<Personas>> result = new ST<Double, List<Personas>>();
         for (Double p : act_distances) {
-        	System.out.println(p + "%:");
             int numb_act = (int) Math.ceil((double)act_distances.get(p).size()*factor);
             for (int i=1; i<=numb_act; i++) {
             	double pop = 0.0;
@@ -200,8 +198,10 @@ public class ActoresService {
 	                	id_actor = id_actor_i;
 	                }
 	            }
-            	System.out.println(actoresDAO.selectByID(id_actor));
-            	result.add(actoresDAO.selectByID(id_actor));
+            	if (!result.contains(p)) {
+                	result.put(p, new ArrayList<Personas>());
+                }
+            	result.get(p).add(actoresDAO.selectByID(id_actor));
             	act_distances.get(p).delete(id_actor);
             }
         }
