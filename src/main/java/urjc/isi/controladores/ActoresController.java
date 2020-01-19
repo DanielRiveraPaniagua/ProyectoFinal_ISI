@@ -11,7 +11,6 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
-import urjc.isi.grafos.SET;
 import urjc.isi.grafos.ST;
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.ActoresService;
