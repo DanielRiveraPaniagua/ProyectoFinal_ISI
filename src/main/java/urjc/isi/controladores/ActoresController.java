@@ -11,6 +11,8 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
+import urjc.isi.grafos.SET;
+import urjc.isi.grafos.ST;
 import urjc.isi.entidades.Peliculas;
 import urjc.isi.service.ActoresService;
 
@@ -65,8 +67,6 @@ public class ActoresController {
 			filter.put("director", request.queryParams("director"));
 		if(request.queryParams("guionista")!=null)
 			filter.put("guionista", request.queryParams("guionista"));
-		if(request.queryParams("titulo")!=null)
-			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_act")!= null)
 			filter.put("id_act",request.queryParams("id_act"));
 		if(request.queryParams("name")!= null)
@@ -75,7 +75,7 @@ public class ActoresController {
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-
+		
 		output = as.getAllActores(filter);
 
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -117,7 +117,7 @@ public class ActoresController {
 			response.redirect("/actores/info");
 			return "El actor no se encuentra en la base de datos";
 		}
-
+		
 		Personas actor = (Personas)output.get("actor");
 		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
 
@@ -154,7 +154,7 @@ public class ActoresController {
 		String dist_max = (request.queryParams("dist_max")!= null)?request.queryParams("dist_max"):"None";
 		String factor = (request.queryParams("factor")!= null)?request.queryParams("factor"):"None";
 
-		List<Personas> output = as.getActoresByCercania(actor, dist_max, factor);
+		ST<Double, List<Personas>> output = as.getActoresByCercania(actor, dist_max, factor);
 
 		String result = "";
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
@@ -162,15 +162,20 @@ public class ActoresController {
 			JsonObject json = new JsonObject();
 			json.addProperty("status", "SUCCESS");
 			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
+			for (Double p : output.keys()) {
+				JsonArray array = new JsonArray();
+				for(int i = 0; i < output.get(p).size(); i++) {
+					array.add(output.get(p).get(i).toJSONObject());;
+				}
+				json.add(p + "%", array);
 			}
-			json.add("output", array);
 			result = json.toString();
 		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
+			for (Double p : output.keys()) {
+				result = result + "Actores con porcentaje de similitud " + p + "%:</br>";
+				for (int i = 0; i < output.get(p).size(); i++) {
+					result = result + output.get(p).get(i).toHTMLString() +"</br>";
+	            }
 			}
 		}
 		return result;
