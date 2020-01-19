@@ -5,15 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.Dictionary;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.GuionistasDAOImpl;
-import urjc.isi.entidades.Personas;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.entidades.*;
 
 public class GuionistasService {
 
@@ -58,6 +57,28 @@ public class GuionistasService {
 			System.out.println(e.getMessage());
 		}
 		guionistas.close();
+		return result;
+	}
+
+	public 	Dictionary<String,Object> fullGuionistasInfo(String engine,boolean isid) throws SQLException{
+		GuionistasDAOImpl guionistasDAO = new GuionistasDAOImpl();
+		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
+		String id;
+		if (!isid) {
+			Personas persona = guionistasDAO.selectByName(engine);
+			id = persona!=null?persona.getId():"";
+		}else {
+			Personas persona = guionistasDAO.selectByID(engine);
+			id = persona.getId()!=null?persona.getId():"";
+		}
+
+		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		if(id.length()>0){
+			result.put("guionista", (Object)guionistasDAO.selectByID(id));
+			result.put("peliculas", (Object)peliDAO.selectByPersonaID("guionista",id));
+		}
+		guionistasDAO.close();
+		peliDAO.close();
 		return result;
 	}
 }
