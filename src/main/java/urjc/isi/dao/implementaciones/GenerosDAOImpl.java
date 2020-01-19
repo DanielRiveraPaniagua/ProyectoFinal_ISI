@@ -21,13 +21,13 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   public Generos fromResultSet(ResultSet rs) throws  SQLException{
 		Generos gene = new Generos();
 
-		gene.setNombre(rs.getString("genero"));
+		gene.setNombre(rs.getString("nombre"));
 		return gene;
 	}
 	@Override
   public void createTable() throws SQLException{
 		Statement statement = c.createStatement();
-		statement.executeUpdate("create table generos ( genero text, PRIMARY KEY (genero))");
+		statement.executeUpdate("create table generos ( nombre text, PRIMARY KEY (nombre))");
 		c.commit();	
 	}
 	@Override
@@ -38,7 +38,7 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	}
   @Override
   public void insert(Generos entity) {
-  	String sql = "INSERT INTO generos(genero) VALUES(?)";
+  	String sql = "INSERT INTO generos(nombre) VALUES(?)";
 
   	try (PreparedStatement pstmt = c.prepareStatement(sql)) {
   		pstmt.setString(1, entity.getNombre());
@@ -86,8 +86,8 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
   }
   
   @Override
-	public Generos selectByName(String genero) {
-		 String sql = "SELECT * from generos WHERE genero=" + genero;
+	public Generos selectByName(String nombre) {
+		 String sql = "SELECT * from generos WHERE nombre=" + nombre;
 		  Generos genero = new Generos();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
