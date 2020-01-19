@@ -74,26 +74,48 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	  }
 	  return generoList;
   }
+  
+  
   @Override
   public Generos selectByID (String idgenero){
-	  return null;
+	  String sql = "SELECT * from generos WHERE nombre='" + idgenero +"'";
+	  Generos genero = new Generos();
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+		  ResultSet rs = pstmt.executeQuery();
+		  c.commit();
+		  if(rs.next())
+			  genero = fromResultSet(rs);
+      } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  return genero;
   }
   @Override
   public void deleteByID(String idgenero){
-	  ;
+	  String sql = "DELETE from generos WHERE nombre='" + idgenero +"'";
+	  try (PreparedStatement pstmt = c.prepareStatement(sql)){
+		  pstmt.executeUpdate();
+		  c.commit();
+	  } catch (SQLException e) {
+		  System.out.println(e.getMessage());
+	  }
+	  
   }
-  
   @Override
-	public Generos selectByName(String nombre) {
-		 String sql = "SELECT * from generos WHERE nombre=" + nombre;
-		  Generos genero = new Generos();
-		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
-			  ResultSet rs = pstmt.executeQuery();
+  public List<Generos> selectByPeliculaID(String id){
+		List<Generos> generos = new ArrayList<>();
+		String sql = "SELECT * from generos as g "+
+					"Inner join peliculasgeneros as pg on pg.genero=g.nombre "+
+					"WHERE pg.id_pelicula='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  genero = fromResultSet(rs);
-	      } catch (SQLException e) {
-			  System.out.println(e.getMessage());
-		  }
-		  return genero;
+			  while(rs.next()){
+				  generos.add(fromResultSet(rs));
+			  }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return generos;
 	}
 }

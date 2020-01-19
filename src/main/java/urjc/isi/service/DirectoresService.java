@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletException;
 
 import spark.Request;
-import urjc.isi.dao.implementaciones.DirectoresDAOImpl;
-import urjc.isi.entidades.Personas;
+import urjc.isi.dao.implementaciones.*;
+import urjc.isi.entidades.*;
 
 public class DirectoresService {
 
@@ -26,9 +26,14 @@ public class DirectoresService {
 	 * @return Lista de directores de la tabla Directores
 	 * @throws SQLException
 	 */
-	public List<Personas> getAllDirectores() throws SQLException{
+	public List<Personas> getAllDirectores(Dictionary<String,String> conditions) throws SQLException{
 		DirectoresDAOImpl directores = new DirectoresDAOImpl();
-		List<Personas> result = directores.selectAll();
+		List<Personas> result;
+		if(!conditions.isEmpty()) {
+			result = directores.selectAll(conditions);
+		}else {
+			result = directores.selectAll();
+		}
 		directores.close();
 		return result;
 	}
@@ -55,24 +60,25 @@ public class DirectoresService {
 		return result;
 	}
 
-	public List<Personas> getDirectoresByFechaNac (String fecha) throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerByFechaNac (fecha);
-		directores.close();
-		return result;
-	}
-	
-	public List<Personas> getDirectoresMuertos () throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerMuertas ();
-		directores.close();
-		return result;
-	}
-	
-	public List<Personas> getDirectoresByIntervaloNac (String fechaIn, String fechaFin) throws SQLException {
-		DirectoresDAOImpl directores = new DirectoresDAOImpl ();
-		List<Personas> result = directores.selectPerByIntervaloNac (fechaIn, fechaFin);
-		directores.close();
+	public Dictionary<String,Object> fullDirectoresInfo(String engine, boolean isid) throws SQLException{
+		DirectoresDAOImpl directoresDAO = new DirectoresDAOImpl();
+		PeliculasDAOImpl peliDAO = new PeliculasDAOImpl();
+		String id;
+		if (!isid) {
+			Personas persona = directoresDAO.selectByName(engine);
+			id = persona!=null?persona.getId():"";
+		}else {
+			Personas persona = directoresDAO.selectByID(engine);
+			id = persona.getId()!=null?persona.getId():"";
+		}
+
+		Dictionary<String,Object> result = new Hashtable<String,Object>();
+		if(id.length()>0){
+			result.put("director", (Object)directoresDAO.selectByID(id));
+			result.put("peliculas", (Object)peliDAO.selectByPersonaID("director",id));
+		}
+		directoresDAO.close();
+		peliDAO.close();
 		return result;
 	}
 }
