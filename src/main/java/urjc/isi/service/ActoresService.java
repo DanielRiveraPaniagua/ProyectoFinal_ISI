@@ -149,14 +149,6 @@ public class ActoresService {
             }
             act_distances.get(dist/2).add(actor);
         }
-        
-        System.out.println("-----------DISTANCIAS------------");
-        for (Double d : act_distances.keys()) {
-            System.out.println(d + ":");
-            for (String idact : act_distances.get(d)) {
-            	System.out.println(actoresDAO.selectByID(idact));
-            }
-        }
 
         // convert distances to percent
         Integer max = act_distances.max().intValue();
@@ -175,14 +167,6 @@ public class ActoresService {
         		act_distances.get(percent).add(actor);
             }
         	act_distances.remove((double)d);
-        }
-        
-        System.out.println("-----------PORCENTAJES------------");
-        for (Double p : act_distances.keys()) {
-            System.out.println(p + "%:");
-            for (String idact : act_distances.get(p)) {
-            	System.out.println(actoresDAO.selectByID(idact));
-            }
         }
         
         // Build and return the result
