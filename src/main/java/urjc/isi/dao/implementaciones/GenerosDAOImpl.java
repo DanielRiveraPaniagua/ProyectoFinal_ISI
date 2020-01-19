@@ -16,12 +16,11 @@ import java.io.IOException;
 //A estos metodos son a los que llamaremos para
 //implementar las distintas respuestas para el
 //servidor
-
-public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDAO {
+public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDAO{
 
 	public Generos fromResultSet(ResultSet rs) throws  SQLException{
 		Generos gene = new Generos();
-		
+
 		gene.setNombre(rs.getString("nombre"));
 		return gene;
 	}
@@ -55,7 +54,6 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 	@Override
 	public void uploadTable(BufferedReader br) throws IOException, SQLException {
 		String s;
-		
 		while ((s = br.readLine()) != null) {
 			if(s.length()>0) {
 				Generos genero = new Generos(s);
@@ -80,28 +78,49 @@ public class GenerosDAOImpl extends GenericDAOImpl<Generos> implements GenerosDA
 		}
 		return generoList;
 	}
-   
-	@Override
-	public Generos selectByID (String idgenero){
-		return null;
-	}
-	
-	@Override
-	public void deleteByID(String idgenero){
-		;
-	}
+  
   
 	@Override
-	public Generos selectByName(String nombre) {
-		String sql = "SELECT * from generos WHERE nombre=" + nombre;
+	public Generos selectByID (String idgenero){
+		String sql = "SELECT * from generos WHERE nombre='" + idgenero +"'";
 		Generos genero = new Generos();
 		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			ResultSet rs = pstmt.executeQuery();
 			c.commit();
-			genero = fromResultSet(rs);
+			if(rs.next())
+				genero = fromResultSet(rs);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 		return genero;
+	}
+	
+	@Override
+	public void deleteByID(String idgenero){
+		String sql = "DELETE from generos WHERE nombre='" + idgenero +"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)){
+			pstmt.executeUpdate();
+			c.commit();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@Override
+	public List<Generos> selectByPeliculaID(String id){
+		List<Generos> generos = new ArrayList<>();
+		String sql = "SELECT * from generos as g "+
+					"Inner join peliculasgeneros as pg on pg.genero=g.nombre "+
+					"WHERE pg.id_pelicula='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			ResultSet rs = pstmt.executeQuery();
+			  c.commit();
+			  while(rs.next()){
+				  generos.add(fromResultSet(rs));
+			  }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return generos;
 	}
 }
