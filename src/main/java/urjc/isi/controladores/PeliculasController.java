@@ -133,9 +133,9 @@ public class PeliculasController {
 		if(request.queryParams("guionista")!= null && !request.queryParams("guionista").equals("")) {
 			filter.put("guionista",request.queryParams("guionista"));
 		}
-		if(request.queryParams("genero")!=null)
+		if(request.queryParams("genero")!=null && !request.queryParams("genero").equals("")) {
 			filter.put("genero", request.queryParams("genero"));
-
+		}
 		output = ps.getAllRanking(filter);
 
 		if(filter.isEmpty()) {

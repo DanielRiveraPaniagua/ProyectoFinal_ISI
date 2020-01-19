@@ -279,7 +279,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 					break;
 				case "genero":
 					sql+="Inner join peliculasgeneros as pge on p.idpelicula = pge.idpelicula ";
-					cond+= "pge.nombre LIKE "+"'"+conditions.get("genero")+"'";
+					cond+= "pge.genero LIKE "+"'"+conditions.get("genero")+"'";
 					break;
 			}
 			if(k.hasMoreElements()) {
