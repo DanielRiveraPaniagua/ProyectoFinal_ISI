@@ -34,7 +34,7 @@ public class Main {
 					"<li><a href/peliculas/selectAll>Mostrar todas las películas</a></li> "+
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>"+
 					"<li><a href/peliculas/info>Info completa de una pelicula</a></li>"+
-					"<li><a href/peliculas/filmsbymood>Peliculas segun mood</a></li>" +
+					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>"+
 					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li> Filtrar películas segun su duración " +
 					"<ul><li>/peliculas/selectAll?duracion=>d --> Peliculas de duracion mayor a d</li></ul>" +
@@ -60,6 +60,7 @@ public class Main {
 					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p></ul>"+
 					"<li><a href=/generos/uploadTable?key=1234>Subir tablas</a></span></li>"+
 					"<li>Elegir peliculas según el <a href=/generos/searchByGenero>genero</a></li>"+
+					"</ul>" +
 					"</body></html>";
 
 		result_Victor = "<span style=bgcolor:#FF7247;</span><form action='/pag_principal' method='post' enctype='multipart/form-data'>"
