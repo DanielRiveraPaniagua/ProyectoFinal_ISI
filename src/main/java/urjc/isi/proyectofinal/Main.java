@@ -139,8 +139,8 @@ public class Main {
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);
-				get("/", Main::defaultResponse);
         path("/",() -> {tables();});
+				get("/", Main::defaultResponse);
     }
 
     /**
