@@ -71,7 +71,7 @@ public class Main {
 					"<ul>" +
 					"<li><a href=/directores/selectAll>Mostrar todos los directores</a></li>" +
 					"<ul><li>/directores/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,guionista,título]=[Dato a buscar]</li></ul>" +
-					"<li><a href=/peliculas/info>Info completa de director</a></li>" +
+					"<li><a href=/directores/info>Info completa de director</a></li>" +
 					"</ul>" +
 					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p>" + 
 					"<ul>" +
