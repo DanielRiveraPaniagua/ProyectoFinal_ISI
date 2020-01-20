@@ -158,7 +158,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT distinct p.* from peliculas as p ";
+		String sql = "SELECT * from peliculas as p ";
 		String cond = "WHERE ";
 		String order = " ORDER BY ";
 		boolean add_order = false;
