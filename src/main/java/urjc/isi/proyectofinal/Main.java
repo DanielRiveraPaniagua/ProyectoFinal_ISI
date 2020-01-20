@@ -22,69 +22,66 @@ public class Main {
 	 * @throws URISyntaxException
 	 */
 	public static String defaultResponse(Request request, Response response) throws ClassNotFoundException, URISyntaxException {
-		return "<span style=bgcolor:#FF7247;</span><form action='/pag_principal' method='post' enctype='multipart/form-data'>"
-        		+ "<h1 style=color:#1821EB;>Bienvenido a nuestra web de peliculas</h1>"
-        		+ "<br>" + "<h2 style=color:#5B72EB;>ACTORES</h2>" + "<br>"
-        		+ "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll>Imprimir todos los actores</a>"
-        		+ "<p>Tambien puedes filtrar los actores por:</p>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?id_act=x>id</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?name=x>nombre</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?fecha_nac=x>fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?fecha_nac=x-x>intervalo fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?fecha_muer=x>fecha de muerte</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/actores/selectAll?fecha_muer=x-x>intervalo fecha de muerte</a>" + "<br>"
-        		+ "<p>Sustituyendo las x por los valores deseados</p>"
-        		+ "<br>" + "<h2 style=color:#5B72EB;>PELICULAS</H2>" + "<br>"
-        		+ "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll>Imprimir todas las peliculas</a>"
-        		+ "<p>Tambien puedes filtrar las peliculas por:</p>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?titulo=x>titulo</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?actor=x>actor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?director=x>director</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?guionista=x>guionista</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?year=x>año</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?year=x-x>intervalo de años</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?idioma=x>idioma</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?adultos=x>adultos(si/no)</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?duracion=>x>duracion mayor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?duracion=<x>duracion menor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?duracion=x>duracion</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?duracion=x-x>intervalo de duracion</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?rating=x-x>intervalo de puntuacion</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?rating=>x>puntuacion mayor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?rating=<x>puntuacion menor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/selectAll?rating=x>puntuacion</a>" + "<br>"
-        		+ "<p>Sustiyendo las x por los valores deseados</p>"
-        		+ "<br>" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/ranking>Diez peliculas mejor valoradas</a>"
-        		+ "<p>Tambien puedes filtrar las peliculas por:</p>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/ranking?actor=x>actor</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/ranking?director=x>director</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/ranking?guionista=x>guionista</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/peliculas/ranking?genero=x>genero</a>" + "<br>"
-        		+ "<p>Sustituyendo las x por los valores deseados</p>"
-        		+ "<br>" + "<h2 style=color:#5B72EB;>DIRECTORES</h2>" + "<br>"
-        		+ "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll>Imprimir todos los directores</a>"
-        		+ "<p>Tambien puedes filtrar los directores por:</p>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?id_dir=x>id</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?name=x>nombre</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?fecha_nac=x>fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?fecha_nac=x-x>intervalo fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?fecha_muer=x>fecha de muerte</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/directores/selectAll?fecha_muer=x-x>intervalo fecha de muerte</a>" + "<br>"
-        		+ "<p>Sustituyendo las x por los valores deseados</p>"
-        		+ "<br>" + "<h2 style=color:#5B72EB;>GUIONISTAS</h2>" + "<br>"
-        		+ "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll>Imprimir todos los guionistas</a>"
-        		+ "<p>Tambien puedes filtrar los guionistas por:</p>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?id_guio=x>id</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?name=x>nombre</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?fecha_nac=x>fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?fecha_nac=x-x>intervalo fecha de nacimiento</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?fecha_muer=x>fecha de muerte</a>" + "<br>"
-        		+ "-->" + "<a href=https://peliculasurjc.herokuapp.com/guionistas/selectAll?fecha_muer=x-x>intervalo fecha de muerte</a>" + "<br>"
-        		+ "<p>Sustituyendo las x por los valores deseados</p>"
-        		+ "<br>" + "<h2 style=color:#5B72EB;>GENEROS</h2>" + "<br>"
-        		+ "<a href=https://peliculasurjc.herokuapp.com/generos/selectAll>Imprimir todos los generos</a>"
-     		+ "</form>";
+
+		String result = "";
+		
+		result = "<html><body><meta charset=&quot;UTF-8&quot;>" + 
+					"<h1 style=\"color: #5e9ca0;\">Bienvenido a la app de películas ISI 2019/2020</h1>\n" + 
+					"<h2 style=\"color: #2e6c80;\">Como usar nuestra página:</h2>\n" + 
+					"<p><span style=color: #0000ff;><strong>Películas</strong></span></p>" + 
+					"<ul>" +
+					"<li><a href=/peliculas/selectAll>Mostrar todas las películas</a></li> "+
+					"<ul><li>/peliculas/selectAll?[titulo,actor,director,guionista]=[Dato a buscar]</li></ul>"+
+					"<ul><li>/peliculas/selectAll?genero=[genero1]&genero=[genero2]-->Películas filtradas por géneros introducidos</li></ul>"+
+					"<ul><li>/peliculas/selectAll?year=[year]-->Películas del año introducido</li></ul>"+
+					"<ul><li>/peliculas/selectAll?year=[year1-year2]-->Películas en el rango de años</li></ul>"+
+					"<ul><li>/peliculas/selectAll?idioma=[idioma]-->Devuelve el título en el idioma introducido</li></ul>"+
+					"<ul><li>/peliculas/selectAll?adultos=[si/no]-->Devuelve las películas para adultos(si) y para todos los públicos(no)</li></ul>"+
+					"<li> Filtrar películas segun su duración " +
+					"<ul><li>/peliculas/selectAll?duracion=>d --> Películas de duración mayor o igual a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=<d --> Películas de duración menor o igual a d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=d --> Películas de duración d</li></ul>" +
+					"<ul><li>/peliculas/selectAll?duracion=>d1-d2 --> Películas entre esas duraciones</li></ul></li>" +
+					"<li> Opciones según el rating de las películas " +
+					"<ul><li> /peliculas/selectAll?rating=r1-r2 --> Películas en ese rango de rating </li></ul>"+
+					"<ul><li> /peliculas/selectAll?rating=<r1 --> Películas con rating menor o igual al dado </li></ul>" +
+					"<ul><li> /peliculas/selectAll?rating=>r1 --> Películas con rating mayor o igual al dado </li></ul>" +
+					"<ul><li> /peliculas/selectAll?rating=r1 --> Películas con rating igual al dado </li></ul>" +
+					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>" +
+					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>" +
+					"<li><a href=/peliculas/info>Info completa de una pelicula</a></li>" +
+					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>" +
+					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
+					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> " +
+					"</ul>" +
+					"<p><strong><span style=color: #0000ff;>Actores</span></strong></p>" + 
+					"<ul>" +
+					"<li><a href=/actores/selectAll>Mostrar todos los actores</a></li> " +
+					"<ul><li>/actores/selectAll?[id_act,name,fecha_nac,fecha_muer,guionista,director,título]=[Dato a buscar]</li></ul>" +
+					"<li>Grafos, con distancia max y factor opcionales --> actores/selectActByCercania?actor=...&dist_max=...&factor=..</li>" +
+					"<li><a href=/actores/info>Info completa de actor/actriz</a></li>" +
+					"</ul>" + 
+					"<p><span style=color: #0000ff;><strong>Guionistas</strong></span></p>" + 
+					"<ul>" +
+					"<li><a href=/guionistas/selectAll>Mostrar todos los guionistas </a></li>" +
+					"<ul><li>/guionistas/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,director,título]=[Dato a buscar]</li></ul>" +
+					"<li><a href=/guionistas/info>Info completa de guionista</a></li>" +
+					"</ul>" +
+					"<p><span style=color: #0000ff;><strong>Directores</strong></span></p>" + 
+					"<ul>" +
+					"<li><a href=/directores/selectAll>Mostrar todos los directores</a></li>" +
+					"<ul><li>/directores/selectAll?[id_act,name,fecha_nac,fecha_muer,actor,guionista,título]=[Dato a buscar]</li></ul>" +
+					"<li><a href=/directores/info>Info completa de director</a></li>" +
+					"</ul>" +
+					"<p><span style=color: #0000ff;><strong>Géneros</strong></span></p>" + 
+					"<ul>" +
+					"<li>Elegir peliculas según el <a href=/generos/searchByGenero>genero</a></li>" +
+					"</ul>" +
+					"</body></html>";
+
+		return result;
     }
+
 
 	/**
 	 * Este metodo es un gestor de los endpoints asociados a cada una de las tablas de la base de datos
@@ -119,24 +116,30 @@ public class Main {
 			Controller.peliculasGuionistasHandler();
 		});
 		path("tituloidiomas",() -> {
-	    	TituloIdiomasController Controller = new TituloIdiomasController();
+			TituloIdiomasController Controller = new TituloIdiomasController();
 	    	Controller.tituloIdiomasHandler();
-	    });
-  	path("generos",()->{
-  		GenerosController Controller = new GenerosController();
-  		Controller.peliculasHandler();
-  	});
-  	path("peliculasgeneros",()->{
-  		PeliculasGenerosController Controller = new PeliculasGenerosController();
-  		Controller.peliculasHandler();
-  	});
+		});
+		path("generos",()->{
+	  		GenerosController Controller = new GenerosController();
+	  		Controller.generosHandler();
+	  	});
+	  	path("peliculasgeneros",()->{
+	  		PeliculasGenerosController Controller = new PeliculasGenerosController();
+	  		Controller.peliculasHandler();
+	  	});
+	  	notFound((req, res) -> {
+	  		return "<htlm><body>" + 
+	  				"<h1>Error 404</h1><br/>" + 
+	  				"El recurso que has buscado no se encuentra en nuestra app<br/><br/>" +
+	  				"Pulsa <a href=/welcome>aquí</a> para volver a la página principal " + 
+	  				"</body><html>";
+	  	});			
     }
 
     public static void main(String[] args) throws ClassNotFoundException,SQLException {
         port(getHerokuAssignedPort());
         get("/welcome", Main::defaultResponse);
         path("/",() -> {tables();});
-        redirect.get("*", "/welcome");
     }
 
     /**
