@@ -222,16 +222,16 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 				case "genero":
 					String diccionario =conditions.get("genero");
 					if(conditions.get("genero").indexOf("%") == -1) {
-						cond+= "pg.genero= "+"'"+diccionario+"'";
+						cond+= "pgg.genero= "+"'"+diccionario+"'";
 					} else {
 						String[] generos = diccionario.split("%");
-						cond+= "(pg.genero= "+"'"+generos[0]+"'";
+						cond+= "(pgg.genero= "+"'"+generos[0]+"'";
 						for(int i=1; i< generos.length;i++) {
-							cond += " OR " + "pg.genero='" + generos[i] + "'";
+							cond += " OR " + "pgg.genero='" + generos[i] + "'";
 						}
 						cond+=")";
 					}
-					sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
+					sql+="Inner join peliculasgeneros as pgg on p.idpelicula=pgg.id_pelicula ";
 					break;
 				case "order":
 					order += add_order?" ,":"";
