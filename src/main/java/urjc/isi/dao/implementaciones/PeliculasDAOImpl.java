@@ -158,7 +158,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 	@Override
 	public List<Peliculas> selectAll(Dictionary<String,String> conditions){
 		List<Peliculas> filmList = new ArrayList<>();
-		String sql = "SELECT * from peliculas as p ";
+		String sql = "SELECT distinct on (p.*) * from peliculas as p ";
 		String cond = "WHERE ";
 		String order = " ORDER BY ";
 		boolean add_order = false;
@@ -229,9 +229,9 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 							cond += " OR " + "pg.genero='" + generos[i] + "'";
 						}
 						cond+=")";
-					}					
+					}
 					sql+="Inner join peliculasgeneros as pg on p.idpelicula=pg.id_pelicula ";
-					break;					
+					break;
 				case "order":
 					order += add_order?" ,":"";
 					add_order = true;
@@ -457,7 +457,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
-	
+
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){
 		String sql = "SELECT * from peliculas WHERE titulo= $$"+titulo+"$$";
