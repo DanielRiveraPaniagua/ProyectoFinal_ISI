@@ -4,9 +4,7 @@ import static spark.Spark.get;
 import static spark.Spark.post;
 
 import java.sql.SQLException;
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.*;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -15,6 +13,7 @@ import spark.Request;
 import spark.Response;
 import urjc.isi.entidades.Personas;
 import urjc.isi.service.DirectoresService;
+import urjc.isi.entidades.Peliculas;
 
 public class DirectoresController {
 	private static DirectoresService ds;
@@ -37,7 +36,7 @@ public class DirectoresController {
 		if(!adminkey.equals(request.queryParams("key"))) {
 			response.redirect("/welcome"); //Se necesita pasar un parametro (key) para poder subir la tabla
 		}
-		return "<form action='/directores/upload' method='post' enctype='multipart/form-data'>" 
+		return "<form action='/directores/upload' method='post' enctype='multipart/form-data'>"
 			    + "    <input type='file' name='uploaded_directores_file' accept='.txt'>"
 			    + "    <button>Upload file</button>" + "</form>";
 	}
@@ -63,21 +62,23 @@ public class DirectoresController {
 		List<Personas> output;
 		String result = "";
 		Dictionary<String,String> filter = new Hashtable<String,String>();
+		if(request.queryParams("actor")!=null)
+			filter.put("actor", request.queryParams("actor"));
+		if(request.queryParams("guionista")!=null)
+			filter.put("guionista", request.queryParams("guionista"));
+		if(request.queryParams("titulo")!=null)
+			filter.put("titulo", request.queryParams("titulo"));
 		if(request.queryParams("id_dir")!= null)
 			filter.put("id_dir",request.queryParams("id_dir"));
 		if(request.queryParams("name")!= null)
 			filter.put("name",request.queryParams("name"));
 		if(request.queryParams("fecha_nac")!= null)
 			filter.put("fecha_nac",request.queryParams("fecha_nac"));
-		if(request.queryParams("intervalo_fecha_nac")!= null)
-			filter.put("intervalo_fecha_nac",request.queryParams("intervalo_fecha_nac"));
 		if(request.queryParams("fecha_muer")!= null)
 			filter.put("fecha_muer",request.queryParams("fecha_muer"));
-		if(request.queryParams("intervalo_fecha_muer")!= null)
-			filter.put("intervalo_fecha_muer",request.queryParams("intervalo_fecha_muer"));
-		
+
 		output = ds.getAllDirectores(filter);
-		
+
 		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
 			response.type("application/json");
 			JsonObject json = new JsonObject();
@@ -97,6 +98,54 @@ public class DirectoresController {
 		return result;
 	}
 
+
+	@SuppressWarnings("unchecked")
+	public static String infoDirectores(Request request, Response response) throws SQLException {
+		Dictionary<String,Object> output;
+		String result = "";
+		if(request.queryParams("nombre")== null & request.queryParams("id")==null){
+			return "Por favor introduce un nombre para buscar el director que deseas"+
+					"<form action='/directores/info' method='get' enctype='multipart/form-data'>"
+					+ "Nombre de Director: <input type=text name=nombre size=30>"
+					+ "<button type=submit value=Director>Buscar </button><br/></form>";
+		}
+		if(request.queryParams("id")!=null) {
+			output = ds.fullDirectoresInfo(request.queryParams("id"),true);
+		}else {
+			output = ds.fullDirectoresInfo(request.queryParams("nombre"),false);
+		}
+		if(output.isEmpty()) {
+			response.redirect("/directores/info");
+			return "El director no se encuentra en la base de datos";
+		}
+
+
+		Personas director = (Personas)output.get("director");
+		List<Peliculas> pelis = (List<Peliculas>)output.get("peliculas");
+
+		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
+			response.type("application/json");
+			JsonObject json = new JsonObject();
+			json.addProperty("status", "SUCCESS");
+			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
+			json.add("directordata", director.toJSONObject());
+			JsonArray jpelis = new JsonArray();
+			for(int i = 0; i < pelis.size(); i++) {
+				jpelis.add(pelis.get(i).toJSONObject());;
+			}
+			json.add("peliculas",jpelis);
+			result = json.toString();
+		}else {
+			result = "<b>Información de: " + director.getFullNombre() + " (" + director.getNacimiento() +"-" + director.getMuerte() +")</b>";
+			result +="&emsp;<b>IDirector: </b>"+director.getId()+"</br>";
+			result = result + "<b>Dirigió las películas:</b></br>";
+			for(int i = 0; i < pelis.size(); i++) {
+				result = result + "&emsp;" + pelis.get(i).toHTMLString() +"</br>";
+			}
+		}
+		return result;
+	}
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /Directores
 	 */
@@ -104,6 +153,7 @@ public class DirectoresController {
 		get("/selectAll", DirectoresController::selectAllDirectores);
 		get("/uploadTable", DirectoresController::uploadTable);
 		post("/upload", DirectoresController::upload);
+		get("/info", DirectoresController::infoDirectores);
 	}
 
 }

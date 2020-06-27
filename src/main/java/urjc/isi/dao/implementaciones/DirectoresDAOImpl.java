@@ -2,14 +2,8 @@ package urjc.isi.dao.implementaciones;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Enumeration;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
 
 import urjc.isi.dao.interfaces.PersonasDAO;
 import urjc.isi.entidades.Personas;
@@ -83,38 +77,49 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return personaslist;
 	}
-	
+
 	public List<Personas> selectAll(Dictionary<String,String> conditions) {
 		List<Personas> directoresList = new ArrayList<>();
-		  String sql = "SELECT * from directores as d ";
+		  String sql = "SELECT distinct on (d.idpersona) * from directores as d ";
 		  String cond = "WHERE ";
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
+					case "actor":
+						sql+= "join peliculasdirectores as pd on d.idpersona=pd.idpersona "+
+								"join peliculasactores as pa on pd.idpelicula=pa.idpelicula "+
+								"join actores as a on a.idpersona=pa.idpersona ";
+						cond+= "a.fullnombre =$$" + conditions.get("actor")+"$$";
+						break;
+					case "guionista":
+						sql+= "join peliculasdirectores as pd2 on d.idpersona=pd2.idpersona "+
+								"join peliculasguionistas as pg	on pd2.idpelicula=pg.idpelicula "+
+								"join guionistas as g on g.idpersona=pg.idpersona ";
+						cond+= "g.fullnombre =$$" + conditions.get("guionista")+"$$";
+						break;
+					case "titulo":
+						sql+= "join peliculasdirectores as pd3 on d.idpersona=pd3.idpersona "+
+								"join peliculas as p on p.idpelicula=pd3.idpelicula ";
+						cond+= "p.titulo =$$" + conditions.get("titulo")+"$$";
+						break;
 					case "id_dir":
-						cond+= "d.idpersona = " + conditions.get("id_dir");
+						cond+= "d.idpersona = '" + conditions.get("id_dir")+"'";
 						break;
 					case "name":
-						cond+= "d.fullnombre = " + conditions.get("name");
+						cond+= "d.fullnombre LIKE $$" + conditions.get("name")+"%$$";
 						break;
 					case "fecha_nac":
-						cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
-						break;
-					case "intervalo_fecha_nac":
-						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
-							cond+= "d.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
+						if(conditions.get("fecha_nac").indexOf("-") == -1) {
+							cond+= "d.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
 						}else {
-							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
+							String[] intervalo = conditions.get("fecha_nac").split("-");
 							cond+= "d.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "d.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
 						}
 						break;
 					case "fecha_muer":
-						cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
-						break;
-					case "intervalo_fecha_muer":
-						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
-							cond+= "d.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
+						if(conditions.get("fecha_muer").indexOf("-") == -1) {
+							cond+= "d.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
 						}else {
-							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
+							String[] intervalo2 = conditions.get("fecha_muer").split("-");
 							cond+= "d.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "d.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
 						}
 						break;
@@ -123,7 +128,6 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 					cond+=" AND ";
 				}
 		  }
-		  
 		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
@@ -135,16 +139,18 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 		  }
 		  return directoresList;
 	}
-	
+
 
 	@Override
 	public Personas selectByID(String idpersona) {
-		  String sql = "SELECT * from directores WHERE idpersona=" + idpersona;
+		  String sql = "SELECT * from directores WHERE idpersona='" + idpersona+"'";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
+			  if(rs.next()) {
+				  persona = fromResultSet(rs);
+			  }
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
@@ -153,7 +159,7 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 
 	@Override
 	public void deleteByID(String idpersona) {
-		  String sql = "DELETE from directores WHERE idpersona=" + idpersona;
+		  String sql = "DELETE from directores WHERE idpersona='" + idpersona+"'";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
 			  c.commit();
@@ -161,19 +167,35 @@ public class DirectoresDAOImpl extends GenericDAOImpl<Personas> implements Perso
 			  System.out.println(e.getMessage());
 		  }
 	}
-	
+
 	@Override
-	public Personas selectByName(String nombre) {
-		 String sql = "SELECT * from directores WHERE nombre=" + nombre;
-		  Personas director = new Personas();
+	public Personas selectByName(String name) {
+		 String sql = "SELECT * from directores WHERE fullnombre=$$" + name+"$$";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  director = fromResultSet(rs);
+			  if(rs.next())
+				  return fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return director;
+		  return null;
 	}
-	
+	@Override
+	public List<Personas> selectByPeliculaID(String id){
+		List<Personas> actores = new ArrayList<>();
+		String sql = "SELECT * from directores as d "+
+					"Inner join peliculasdirectores as pd on pd.idpersona=d.idpersona "+
+					"WHERE pd.idpelicula='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actores.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actores;
+	}
 }

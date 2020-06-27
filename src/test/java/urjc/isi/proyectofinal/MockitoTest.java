@@ -19,14 +19,14 @@ public class MockitoTest {
 
 	@Test
 	public void MockListSize() {
-		List list = mock(List.class);
+		List<?> list = mock(List.class);
 		when(list.size()).thenReturn(10);
 		assertEquals(10, list.size());
 	}
 
 	@Test
 	public void MockListSizeWithMultipleReturnValues() {
-		List list = mock(List.class);
+		List<?> list = mock(List.class);
 		when(list.size()).thenReturn(10).thenReturn(20);
 		assertEquals(10, list.size()); // Primera llamada
 		assertEquals(20, list.size()); // Segunda llamada
@@ -71,7 +71,7 @@ public class MockitoTest {
 
 	@Test
 	public void MockWithArguments(){
-		Comparable c=mock(Comparable.class);
+		Comparable<String> c=mock(Comparable.class);
 		when(c.compareTo("Test")).thenReturn(1);
 		assertEquals(1,c.compareTo("Test"));
 		assertEquals(0,c.compareTo("Foo"));
@@ -80,7 +80,7 @@ public class MockitoTest {
 
 	@Test
 	public void MockWithUnspecifiedArguments(){
-		Comparable c=mock(Comparable.class);
+		Comparable<Integer> c=mock(Comparable.class);
 		when(c.compareTo(anyInt())).thenReturn(-1);
 		when(c.compareTo(3)).thenReturn(0);
 		assertEquals(-1, c.compareTo(5));

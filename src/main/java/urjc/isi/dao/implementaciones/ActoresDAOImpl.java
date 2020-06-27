@@ -47,7 +47,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	  		pstmt.setString(3, entity.getNacimiento());
 	      	pstmt.setString(4, entity.getMuerte());
 	  		pstmt.executeUpdate();
-	    } catch (SQLException e) {
+	    	} catch (SQLException e) {
 	  	    System.out.println(e.getMessage());
 	  	}
 
@@ -64,7 +64,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	    	}
 	    }
 	}
-	
+
 	@Override
 	public List<Personas> selectAll(){
 		List<Personas> actoresList = new ArrayList<>();
@@ -84,66 +84,77 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 	@Override
 	public List<Personas> selectAll(Dictionary<String,String> conditions) {
 		List<Personas> personasList = new ArrayList<>();
-		  String sql = "SELECT * from actores as a ";
+		  String sql = "SELECT distinct on (a.idpersona) * from actores as a ";
 		  String cond = "WHERE ";
 		  for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 				switch(k.nextElement()) {
-					case "id_act":
+					case "director":
+						sql+= "join peliculasactores as pa on a.idpersona=pa.idpersona "+
+								"join peliculasdirectores as pd	on pa.idpelicula=pd.idpelicula "+
+								"join directores as d on d.idpersona=pd.idpersona ";
+						cond+= "d.fullnombre =$$" + conditions.get("director")+"$$";
+						break;
+					case "guionista":
+						sql+= "join peliculasactores as pa2 on a.idpersona=pa2.idpersona "+
+								"join peliculasguionistas as pg	on pa2.idpelicula=pg.idpelicula "+
+								"join guionistas as g on g.idpersona=pg.idpersona ";
+						cond+= "g.fullnombre =$$" + conditions.get("director")+"$$";
+						break;
+					case "titulo":
+						sql+= "join peliculasactores as pa3 on a.idpersona=pa3.idpersona "+
+								"join peliculas as p on p.idpelicula=pa3.idpelicula ";
+						cond+= "p.titulo =$$" + conditions.get("titulo")+"$$";
+						break;
+ 					case "id_act":
 						cond+= "a.idpersona = '" + conditions.get("id_act") + "'";
 						break;
 					case "name":
-						cond+= "a.fullnombre LIKE '" + conditions.get("name") + "'";
+						cond+= "a.fullnombre LIKE $$" + conditions.get("name") + "%$$";
 						break;
 					case "fecha_nac":
-						cond+= "a.fnacimiento = " + "'" + conditions.get("fecha_nac") + "'";
-						break;
-					case "intervalo_fecha_nac":
-						if(conditions.get("intervalo_fecha_nac").indexOf("-") == -1) {
-							cond+= "a.fnacimiento = " + "'" + conditions.get("intervalo_fecha_nac") + "'";
-						}else {
-							String[] intervalo = conditions.get("intervalo_fecha_nac").split("-");
-							cond+= "a.fnacimiento >= " + "'" + intervalo[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ intervalo[1] + "'" ;
+						if(conditions.get("fecha_nac").indexOf("-") == -1) {
+							cond+= "a.fnacimiento = "+"'"+conditions.get("fecha_nac")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_nac").split("-");
+							cond+= "a.fnacimiento >= " + "'" + fechas[0] + "'" + " and " + "a.fnacimiento <= "+ "'"+ fechas[1] + "'" ;
 						}
 						break;
 					case "fecha_muer":
-						cond+= "a.fmuerte = " + "'" + conditions.get("fecha_muer") + "'";
-						break;
-					case "intervalo_fecha_muer":
-						if(conditions.get("intervalo_fecha_muer").indexOf("-") == -1) {
-							cond+= "a.fmuerte = " + "'" + conditions.get("intervalo_fecha_muer") + "'";
-						}else {
-							String[] intervalo2 = conditions.get("intervalo_fecha_muer").split("-");
-							cond+= "a.fmuerte >= " + "'" + intervalo2[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ intervalo2[1] + "'" ;
+						if(conditions.get("fecha_muer").indexOf("-") == -1) {
+							cond+= "a.fmuerte = "+"'"+conditions.get("fecha_muer")+"'";
+						} else {
+							String[] fechas = conditions.get("fecha_muer").split("-");
+							cond+= "a.fmuerte >= " + "'" + fechas[0] + "'" + " and " + "a.fmuerte <= "+ "'"+ fechas[1] + "'" ;
 						}
-						break;
 				}
-				
+
 				if(k.hasMoreElements()) {
 					cond+=" AND ";
 				}
 		  }
-		  
 		  try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
 			  while(rs.next()){
 				  personasList.add(fromResultSet(rs));
 			  }
-	    } catch (SQLException e) {
+	    	  } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return personasList;
 	}
-	
+
 	@Override
 	public Personas selectByID(String idpersona) {
-		  String sql = "SELECT * from actores WHERE idpersona=" + idpersona;
+		  String sql = "SELECT * from actores WHERE idpersona='" + idpersona+"'";
 		  Personas persona = new Personas();
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  persona = fromResultSet(rs);
-	      } catch (SQLException e) {
+			  if(rs.next()) {
+				  persona = fromResultSet(rs);
+			  }
+      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
 		  return persona;
@@ -151,7 +162,7 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 
 	@Override
 	public void deleteByID(String idpersona) {
-		  String sql = "DELETE from actores WHERE idpersona=" + idpersona;
+		  String sql = "DELETE from actores WHERE idpersona='" + idpersona+"'";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)){
 			  pstmt.executeUpdate();
 			  c.commit();
@@ -159,19 +170,35 @@ public class ActoresDAOImpl extends GenericDAOImpl<Personas> implements Personas
 			  System.out.println(e.getMessage());
 		  }
 	}
-	
+
 	@Override
-	public Personas selectByName(String nombre) {
-		 String sql = "SELECT * from actores WHERE nombre=" + nombre;
-		  Personas actor = new Personas();
+	public Personas selectByName(String name) {
+		 String sql = "SELECT * from actores WHERE fullnombre=$$" + name + "$$";
 		  try (PreparedStatement pstmt = c.prepareStatement(sql)) {
 			  ResultSet rs = pstmt.executeQuery();
 			  c.commit();
-			  actor = fromResultSet(rs);
+			  if(rs.next())
+				  return fromResultSet(rs);
 	      } catch (SQLException e) {
 			  System.out.println(e.getMessage());
 		  }
-		  return actor;
+		  return null;
 	}
-	
+	@Override
+	public List<Personas> selectByPeliculaID(String id){
+		List<Personas> actores = new ArrayList<>();
+		String sql = "SELECT * from actores as a "+
+					"Inner join peliculasactores as pa on pa.idpersona=a.idpersona "+
+					"WHERE pa.idpelicula='"+id+"'";
+		try (PreparedStatement pstmt = c.prepareStatement(sql)) {
+			 ResultSet rs = pstmt.executeQuery();
+			 c.commit();
+			 while(rs.next()){
+				 actores.add(fromResultSet(rs));
+			 }
+		 } catch (SQLException e) {
+			 System.out.println(e.getMessage());
+		 }
+		 return actores;
+	}
 }

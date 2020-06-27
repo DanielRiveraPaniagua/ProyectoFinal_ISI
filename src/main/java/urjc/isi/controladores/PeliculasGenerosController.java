@@ -5,20 +5,10 @@ import static spark.Spark.get;
 
 import static spark.Spark.post;
 
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Set;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
 import spark.Request;
 import spark.Response;
-import urjc.isi.entidades.Generos;
-import urjc.isi.entidades.Peliculas;
-import urjc.isi.service.GenerosService;
+
 import urjc.isi.service.PeliculasGenerosService;
-import urjc.isi.service.PeliculasService;
 
 public class PeliculasGenerosController {
 	private static PeliculasGenerosService pgs;
