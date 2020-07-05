@@ -458,6 +458,48 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+	
+	//Estado posibles soleado, lluvioso, nublado y airoso
+	@Override
+	public List<Peliculas> selectWeather(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql;
+		String cond = "WHERE ";
+		String order = "ORDER BY p.rating DESC";
+
+		sql="SELECT p.* from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula = pg.id_pelicula Inner join generos as g on pg.genero = g.nombre ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "mood":
+					switch(conditions.get("mood")) {
+						case "soleado":
+							cond+= "g.nombre IN ('Comedy', 'Animation', 'Musical', 'Music')";
+							break;
+						case "lluvioso":
+							cond+= "g.nombre IN ('Romance','Drama')";
+							break;
+						case "nubaldo":
+							cond+= "g.nombre IN ('Fantasy','Biography', 'History', 'Sport', 'Family')";
+							break;
+						case "airoso":
+							cond+= "g.nombre IN ('Crime','Mystery', 'War', 'Thriller', 'Horror', 'Western')";
+							break;
+					}
+			}
+		}
+		cond += order;
+
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
 
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){
