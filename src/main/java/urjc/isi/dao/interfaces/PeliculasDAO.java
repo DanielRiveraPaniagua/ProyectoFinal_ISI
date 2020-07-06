@@ -28,7 +28,8 @@ public interface PeliculasDAO extends GenericDAO<Peliculas>{
 
 
 	public List<Peliculas> selectMood(Dictionary<String,String> conditions);
-	
+
 	public List<Peliculas> selectWeather(Dictionary<String,String> conditions);
+
 
 }

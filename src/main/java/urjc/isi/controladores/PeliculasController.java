@@ -398,6 +398,7 @@ public class PeliculasController {
 		}
 		return result;
 	}
+
 	
 	public static String SelectFilmsbyWeather(Request request, Response response) throws SQLException {
 		List<Peliculas> output;
@@ -441,6 +442,7 @@ public class PeliculasController {
 		return result;
 	}
 
+
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
 	 */
@@ -453,7 +455,9 @@ public class PeliculasController {
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
 		get("/info", PeliculasController::infoPeliculas);
 		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
+
 		get("/filmsbyweather", PeliculasController::SelectFilmsbyWeather);
+
 	}
 
 }
