@@ -411,7 +411,7 @@ public class PeliculasController {
 		output = ps.getfilmsbymood(filter);
 
 		if(filter.isEmpty()) {
-			String base = "<h1> <em>Listado de moods posibles </em></h1> <br>";
+			String base = "<h1> <em>Listado de weathers posibles </em></h1> <br>";
 			String result2 = base + "<form action='/peliculas/filmsbyweather' method='get' enctype='multipart/form-data'>" + "  <select name=\"weather\" size=\"5\"  multiple>\n";
 			result2 = result2 + "<option value='soleado'>Soleado</option>\n";
 			result2 = result2 + "<option value='lluvioso'>Lluvioso</option>\n";

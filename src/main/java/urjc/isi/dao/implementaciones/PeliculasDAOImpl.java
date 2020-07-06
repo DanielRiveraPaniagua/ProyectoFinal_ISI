@@ -471,7 +471,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		sql="SELECT p.* from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula = pg.id_pelicula Inner join generos as g on pg.genero = g.nombre ";
 		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
 			switch(k.nextElement()) {
-				case "mood":
+				case "weather":
 					switch(conditions.get("weather")) {
 						case "soleado":
 							cond+= "g.nombre IN ('Comedy', 'Animation', 'Musical', 'Music')";
