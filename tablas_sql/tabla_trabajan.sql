@@ -1,4 +1,4 @@
-.open sample.db 
+.open sample.db
 
 CREATE TABLE trabajan(
 	      id_film INT NOT NULL,
