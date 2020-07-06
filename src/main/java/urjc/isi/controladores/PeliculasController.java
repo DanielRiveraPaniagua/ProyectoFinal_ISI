@@ -408,7 +408,7 @@ public class PeliculasController {
 		if(request.queryParams("weather")!= null)
 			filter.put("weather",request.queryParams("weather"));
 
-		output = ps.getfilmsbymood(filter);
+		output = ps.getfilmsbyweather(filter);
 
 		if(filter.isEmpty()) {
 			String base = "<h1> <em>Listado de weathers posibles </em></h1> <br>";
@@ -455,7 +455,6 @@ public class PeliculasController {
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
 		get("/info", PeliculasController::infoPeliculas);
 		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
-
 		get("/filmsbyweather", PeliculasController::SelectFilmsbyWeather);
 
 	}
