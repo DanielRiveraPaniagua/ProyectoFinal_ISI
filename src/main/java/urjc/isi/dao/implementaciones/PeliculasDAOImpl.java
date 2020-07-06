@@ -458,6 +458,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+
 	
 	//Estado posibles: soleado, lluvioso, despejado y aire
 	@Override
@@ -500,6 +501,7 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+
 
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){
