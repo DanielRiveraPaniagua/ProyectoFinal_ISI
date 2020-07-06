@@ -51,7 +51,6 @@ public class Main {
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>" +
 					"<li><a href=/peliculas/info>Info completa de una pelicula</a></li>" +
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>" +
-					"<li>Elegir peliculas según el <a href=/peliculas/filmsbyweather>weahter</a></li>" +
 					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> " +
 					"</ul>" +

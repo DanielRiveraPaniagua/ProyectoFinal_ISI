@@ -398,48 +398,6 @@ public class PeliculasController {
 		}
 		return result;
 	}
-	
-	public static String SelectFilmsbyWeather(Request request, Response response) throws SQLException {
-		List<Peliculas> output;
-		String result = "";
-		Dictionary<String,String> filter = new Hashtable<String,String>();
-
-		if(request.queryParams("weather")!= null)
-			filter.put("weather",request.queryParams("weather"));
-
-		output = ps.getfilmsbyweather(filter);
-
-		if(filter.isEmpty()) {
-			String base = "<h1> <em>Listado de estdos de tiempo posibles </em></h1> <br>";
-			String result2 = base + "<form action='/peliculas/filmsbyweather' method='get' enctype='multipart/form-data'>" + "  <select name=\"weather\" size=\"5\"  multiple>\n";
-			result2 = result2 + "<option value='soleado'>Soleado</option>\n";
-			result2 = result2 + "<option value='lluvioso'>Lluvioso</option>\n";
-			result2 = result2 + "<option value='nublado'>Nublado</option>\n";
-			result2 = result2 + "<option value='airoso'>Airoso</option>\n";
-			result2 = result2 + "  </select>\n" +
-					"  <br/><br/> <input type=\"submit\" value=\"Filtrar\">"
-					+ "</form>";
-			return result2;
-		}
-
-		if(request.queryParams("format")!= null && request.queryParams("format").equals("json")) {
-			response.type("application/json");
-			JsonObject json = new JsonObject();
-			json.addProperty("status", "SUCCESS");
-			json.addProperty("serviceMessage", "La peticion se manejo adecuadamente");
-			JsonArray array = new JsonArray();
-			for(int i = 0; i < output.size(); i++) {
-				array.add(output.get(i).toJSONObject());;
-			}
-			json.add("output", array);
-			result = json.toString();
-		}else {
-			for(int i = 0; i < output.size(); i++) {
-			    result = result + output.get(i).toHTMLString() +"</br>";
-			}
-		}
-		return result;
-	}
 
 	/**
 	 * Metodo que se encarga de manejar todos los endpoints que cuelgan de /peliculasactores
@@ -453,7 +411,6 @@ public class PeliculasController {
 		get("/filmoftheyear", PeliculasController::WorstorBestFilmsByYear);
 		get("/info", PeliculasController::infoPeliculas);
 		get("/filmsbymood", PeliculasController::SelectFilsbyMood);
-		get("/filmsbyweather", PeliculasController::SelectFilmsbyWeather);
 	}
 
 }

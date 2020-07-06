@@ -139,13 +139,5 @@ public class PeliculasService {
 		pelisDAO.close();
 		return result;
 	}
-	
-	public List<Peliculas> getfilmsbyweather(Dictionary<String,String> conditions) throws SQLException{
-		List<Peliculas> result;
-		PeliculasDAOImpl pelisDAO = new PeliculasDAOImpl();
-		result = pelisDAO.selectWeather(conditions);
-		pelisDAO.close();
-		return result;
-	}
 
 }
