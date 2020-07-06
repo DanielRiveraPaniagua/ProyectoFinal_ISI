@@ -23,7 +23,7 @@ inner join generos g on g.field1 = r.field2
 
 * Obtengo relacion_generos_peliculas.txt *
 select DISTINCT r.* from peliculas p
-inner join relacion_peliculas_generos r on r.field1 = p.field1
+inner join relacion_peliculas_generos r on r.field1 = p.field1 
 
 
 
