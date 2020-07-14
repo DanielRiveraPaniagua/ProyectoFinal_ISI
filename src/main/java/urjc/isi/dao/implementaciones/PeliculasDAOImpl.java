@@ -197,6 +197,20 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.duracion >= " + "'" + duracion[0] + "'" + " and " + "p.duracion <= "+ "'"+ duracion[1] + "'" ;
 					}
 					break;
+				case "nvotos":
+					if(conditions.get("nvotos").indexOf("<") == 0) {
+						cond+= "p.nvotos <= "+"'"+conditions.get("nvotos").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("nvotos").indexOf(">") == 0){
+						cond+= "p.nvotos >= "+"'"+conditions.get("nvotos").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("nvotos").indexOf("-") == -1) {
+						cond+= "p.nvotos = "+"'"+conditions.get("nvotos")+"'";
+					}else {
+						String[] nvotos = conditions.get("nvotos").split("-");
+						cond+= "p.nvotos >= " + "'" + nvotos[0] + "'" + " and " + "p.nvotos <= "+ "'"+ nvotos[1] + "'" ;
+					}
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
 						cond+= "calificacion::INTEGER = 1";
@@ -458,6 +472,50 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 		}
 		return filmList;
 	}
+
+	
+	//Estado posibles: soleado, lluvioso, despejado y aire
+	@Override
+	public List<Peliculas> selectWeather(Dictionary<String,String> conditions){
+		List<Peliculas> filmList = new ArrayList<>();
+		String sql;
+		String cond = "WHERE ";
+		String order = "ORDER BY p.rating DESC";
+
+		sql="SELECT p.* from peliculas as p Inner join peliculasgeneros as pg on p.idpelicula = pg.id_pelicula Inner join generos as g on pg.genero = g.nombre ";
+		for(Enumeration<String> k = conditions.keys(); k.hasMoreElements();) {
+			switch(k.nextElement()) {
+				case "weather":
+					switch(conditions.get("weather")) {
+						case "soleado":
+							cond+= "g.nombre IN ('Comedy', 'Animation', 'Musical', 'Music')";
+							break;
+						case "lluvioso":
+							cond+= "g.nombre IN ('Romance','Drama')";
+							break;
+						case "despejado":
+							cond+= "g.nombre IN ('Fantasy','Biography', 'History', 'Sport', 'Family')";
+							break;
+						case "aire":
+							cond+= "g.nombre IN ('Crime','Mystery', 'War', 'Thriller', 'Horror', 'Western')";
+							break;
+					}
+			}
+		}
+		cond += order;
+
+		try (PreparedStatement pstmt = c.prepareStatement(sql+cond)) {
+			ResultSet rs = pstmt.executeQuery();
+			c.commit();
+			while(rs.next()){
+				filmList.add(fromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return filmList;
+	}
+
 
 	@Override
 	public Peliculas selectFilmByTitle (String titulo){

@@ -50,7 +50,13 @@ public class Main {
 					"<li> /peliculas/selectAll?order=[x] --> Ordena según el criterio </li>" +
 					"<li>Ordenar por ranking con varios filtros --><a href=/peliculas/ranking>Ranking</a></li>" +
 					"<li><a href=/peliculas/info>Info completa de una pelicula</a></li>" +
+					"<li> Opciones según el numero de votos de las películas " +
+					"<ul><li> /peliculas/selectAll?nvotos=n1-n2 --> Películas en ese rango de numero de votos </li></ul>"+
+					"<ul><li> /peliculas/selectAll?nvotos=<n1 --> Películas con numero de votos menor o igual al dado </li></ul>" +
+					"<ul><li> /peliculas/selectAll?nvotos=>n1 --> Películas con numero de votos mayor o igual al dado </li></ul>" +
+					"<ul><li> /peliculas/selectAll?nvotos=n1 --> Películas con numero de votos igual al dado </li></ul>" +
 					"<li>Elegir peliculas según el <a href=/peliculas/filmsbymood>mood</a></li>" +
+					"<li>Elegir peliculas según el <a href=/peliculas/filmsbyweather>weather</a></li>" +
 					"<li>Mejor o peor película del año --> /peliculas/filmoftheyear?year=año&score=best/worst</li>" +
 					"<li><a href=/peliculas/calificacion>Mostrar calificación de la película introducida</a></li> " +
 					"</ul>" +
