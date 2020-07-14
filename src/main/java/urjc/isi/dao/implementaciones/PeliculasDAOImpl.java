@@ -197,6 +197,23 @@ public class PeliculasDAOImpl extends GenericDAOImpl<Peliculas> implements Pelic
 						cond+= "p.duracion >= " + "'" + duracion[0] + "'" + " and " + "p.duracion <= "+ "'"+ duracion[1] + "'" ;
 					}
 					break;
+				case "nvotos":
+					order += add_order?" ,p.nvotos DESC":"p.nvotos DESC";
+					add_order = true;
+					if(conditions.get("nvotos").indexOf("<") == 0) {
+						cond+= "p.nvotos <= "+"'"+conditions.get("nvotos").split("<")[1]+"'";
+						break;
+					}else if(conditions.get("nvotos").indexOf(">") == 0){
+						cond+= "p.nvotos >= "+"'"+conditions.get("nvotos").split(">")[1]+"'";
+						break;
+					}
+					if(conditions.get("nvotos").indexOf("-") == -1) {
+						cond+= "p.nvotos = "+"'"+conditions.get("nvotos")+"'";
+					}else {
+						String[] nvotos = conditions.get("nvotos").split("-");
+						cond+= "p.nvotos >= " + "'" + nvotos[0] + "'" + " and " + "p.nvotos <= "+ "'"+ nvotos[1] + "'" ;
+					}
+					break;
 				case "adultos":
 					if(conditions.get("adultos").equals("si"))
 						cond+= "calificacion::INTEGER = 1";
