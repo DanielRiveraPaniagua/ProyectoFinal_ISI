@@ -99,6 +99,9 @@ public class PeliculasController {
 		}
 		if(request.queryParams("rating")!=null)
 			filter.put("rating", request.queryParams("rating"));
+		
+		if(request.queryParams("nvotos")!=null)
+			filter.put("nvotos", request.queryParams("nvotos"));
 
 		output = ps.getAllPeliculas(filter);
 
